@@ -65,3 +65,30 @@
 - Derlenen bir programlama dilidir.
 
 <img src="6.png" width="auto">
+
+***
+# 2) .NET Framework ve .NET Core Nedir? Farkları Nelerdir?
+- Biz Microsoft'un bize sunduğu teknolojileri kullanarak yazılımlarımızı geliştiriyoruz.
+
+- .NET Dil/Mimari/Kütüphane gibi yapılanmaları sunan çatıdır.
+
+- .NET Microsoft'un developerler için geliştirdiği teknolojileri sunuduğu bir çatı.
+
+| .NET Framework | .NET Core| 
+|----------------|----------|
+|İlk Çıkan Sürümdür.|.NET Core daha sonradan çıkmıştır.|
+|Windows Ekosistemine yönelik çözümler getirir.|Cross Platform'dur. Çeşitli işletim sistemleri uygulamaları destekler|
+|Geliştirdiğiniz ürün sadece Windows'a göre çözümler getirir. Microsoft'a bağlıdır. |Developer'ların her yerde geliştirme yapabileceği/çalıştırabileceği/serve edebileceği  bir çekirdek oluşturdu.|
+|Sadece Windows 'işletim sisteminde çalışabilirsiniz.|Tüm işletim sistemlerinde çalışma sergileyebilir.|
+|Open Source değildir.|.Net Framework'teki Windows bağımlılığını ortadan kaldırarak daha evrensel uygulamalar geliştirmemizi sağlamaktadır.|
+||Modülerdir. Open Source'tur.|
+
+
+- İkisinde de farketmeksizin bütün platformlara uygun geliştirmeler yapabilmekteyiz.
+
+
+<img src="7.png" width="auto">
+<img src="8.png" width="auto">
+
+***
+# 3) Compiler Nedir?
