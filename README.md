@@ -1,2 +1,2 @@
-# CSharp_10_Programlama_Egitimi
- https://www.youtube.com/playlist?list=PLQVXoXFVVtp3e_urGZcMNAHx2Eo4Rm5Xk
+- ## [Başlarken](https://github.com/musauyumaznotes/CSharp_10_Programlama_Egitimi/blob/main/1-Ba%C5%9Flarken/ReadMe.md)
+
