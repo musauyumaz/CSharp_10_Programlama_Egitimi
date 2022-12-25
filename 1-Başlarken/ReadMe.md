@@ -255,3 +255,22 @@
 <img src="22.png" width="auto">
 <img src="23.png" width="auto">
 <img src="24.png" width="auto">
+
+***
+# 10) Dotnet CLI Nedir?
+- Command Line Interface(Komut Satırı Arayüzü)
+
+- .NET uygulamalarını geliştirirken bize eşlik eden bir komut satırı arayüzüdür.
+
+- Programlama yaparken yazmış olduğumuz koda eşlik edecek bir asistanımızın olması lazım. Örneğin ben proje oluşturucaksam bu projeyi bir zahmet bu asistanın oluşturması gerekiyor. Benzer mantıkla kodumu yazdım en son güncellemem gerekiyor bu güncelleme işlemini manuel bir şekilde yapıp kendim sonucunu test ediyorsam bu büyük bir zamansal maliyet haliyle bunu yapacak başka bir asistana daha ihtiyacım oluyor. Bu işlemleri dotnet CLI ile de yapabiliriz.
+ 
+- Herhangi dosyayı/projeyi oluştururken artık görsel bir grafik arayüz üzerinden işlem yapmıyorum. Çünkü iki satır kod ile ha deyince sana istediğin yapılanmayı oluşturabiliyor ve bu iki satır kopdu yazabileceğin yer herhangi bir görsellik gerektiren bir yer değil. o yüzden günümüzde CLI denilen yapılanmalar kullanıyoruz. Bu yazılımların arayüzü yoktur. Direkt konsoldan talimat alırlar.
+
+- .NET uygulamaları geliştirmeyi, oluşturmayı, çalıştırmayı ve yayınlamayı sağlar.
+
+- .NET SDK ile birlikte gelir.
+    * SDK dediğimiz geliştirme kitimizdir. C# kodlarını yazmak çalıştırmak için SDK'ya ihtiyacımız var.
+
+- Prototip => Dotnet [command]
+
+<img src="25.png" width="auto">
