@@ -220,3 +220,38 @@
 - Build işlemini CLI dediğimiz kod üzerinden gerçekleştiririz.
 
 <img src="20.png" width="auto">
+
+***
+# 9) Visual Studio Code İle Proje Oluşturma ve Derleme
+- Visual Studio Code, Visual Studio gibi direkt efektif komponentler barındırmamaktadır. Bu yüzden hali hazırda proje oluşturacak bir menü taşımamaktadır.
+
+- Proje oluşturmak için dotnet cli komutlarından yararlanırız. 
+
+- Dotnet CLI bizim komut satırı arayüzümüz aynı zamanda asistanımız da diyebiliriz. Bu asistanın bir arayüzü yok. Bu asistana cmd'den/powershell'den/Console'dan yani bir komut satırından talimat vermemiz gerekiyor.
+
+- Bu talimatı verebilmek için Visual Studio Code'dan Terminal penceresini açarız.
+
+- Öncelikle dikkat edilmesi gereken şu; Talimatı verdiğiniz dizin çok önemlidir. Çünkü projeyi o dizine oluşturacaktır.
+
+- İlgili dizini seçtikten sonra ilgili dizinde dotnet cli komutlarını çağırırız.
+
+- dotnet => Dotnet CLI'i çağırır. Bundan sonrasında talimat verebiliriz.
+
+- dotnet'te ne yapacağınızı bilmezseniz direkt enter tuşuna basabilirsiniz o sizi bilgilendirir.
+
+- dotnet --info => Dotnet CLI ile ilgili bilgi verir.
+
+- dotnet --help => Dotnet CLI ile yapacaklarınızı görebilirsiniz.
+
+- dotnet new => dediğimiz zaman bir proje oluştur demiş oluyoruz.
+
+- dotnet new projectType --name projectName => Şu formata uyduğunuz sürece ilgili type'da(Console/MVC/WebApi) ve --name parametresinden sonra verdiğiniz isimde bir proje oluşturulacaktır.
+
+- dotnet build => bulunduğunuz dizindeki projeyi build edecektir.
+
+- dotnet run => bu dizindeki projeyi hem derleyecek hem de run edecektir/çalıştıracaktır.
+
+<img src="21.png" width="auto">
+<img src="22.png" width="auto">
+<img src="23.png" width="auto">
+<img src="24.png" width="auto">
