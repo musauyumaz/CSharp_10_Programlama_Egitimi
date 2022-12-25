@@ -173,3 +173,34 @@
 - Mesela bir banka uygulamasında ekibin bir kısmı Bakiye projesinde çalışırken bir kısmı bankamatik projesinde çalışıyor olabilir başka bir kısmı ERP projesi vardır orada çalışıyordur Her proje birbirinden farklı ama kendi aralarında bir entegrasyon var. İşte biz bunların her birini bir Solution altında toplayabiliyoruz.
 
 <img src="13.png" width="auto">
+
+# 7) Visual Studio İle Proje Oluşturma ve Derleme
+1. İlk olarak hangi proje de çalışacağımızı seçeriz. Hangi platform'da çalıştığınız önemli değil.
+
+2. Sonra açılan ekranda proje ismi ve Solution ismi belirlenir. Ve aynı zaman da yapılan Solution'ın/kaynak dosyalarının hangi lokasyon'da/nerede depolanması gerektiği belirtilir.
+    * Diyelim ki bir banka uygulaması; Banka uygulamasında solution Banka olur Projeler de Bankamatik, Bakiye, ERP bunların hepsini Banka Solution'ı daha evrensel bir isim altında toplamış olursunuz. 
+    * Bir Solution altında birden fazla aynı isimde proje bulunamaz.
+
+- Hangi platform da çalıştığımız önemli olmaksızın her daim Solution Explorer penceresinde ilgili projenin dosyalarını görebilirsiniz.
+
+- Bir solution'a birden fazla proje eklemek için solution oluşturulduktan sonra Solution üzerinde sağ click yaparak Add->New Project diyerek projeler ekleyebilirsiniz
+
+- Proje derlemeyi ister Proje bazlı isterseniz de Solution bazlı yapabilirsiniz. Solution'da derleme yaparsanız altındaki bütün projeler derlenir. Eğer ki proje bazlı yaparsanız sadece o proje derlenir. 
+
+- İlgili projeye sağ click yaptığınızda;
+    * Build : Derlemeyi yapar.
+    * Rebuild : Önceden derlenip çıktı alınan dosyaları siler yeniden üzerine derleme yapar.
+    * Clean : Derlenmiş dosyaları siler.
+
+- Proje üzerinde sağ click Open Folder in File Explorer dediğimizde projenin kaynak dosyalarına erişebiliriz.
+
+- Hangi proje seçiliyse başlat düğmesine tıklayarak ilgili projenin derlenip arkada üretilen exe dosyası çalıştırılacaktır.
+
+- Proje üzerinde sağ click Set As Startup Project dersek eğer ilgili/seçilen proje o Solution'da başlangıç projesi olacaktır.
+
+<img src="14.png" width="auto">
+<img src="15.png" width="auto">
+<img src="16.png" width="auto">
+<img src="17.png" width="auto">
+<img src="18.png" width="auto">
+<img src="19.png" width="auto">
