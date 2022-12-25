@@ -204,3 +204,19 @@
 <img src="17.png" width="auto">
 <img src="18.png" width="auto">
 <img src="19.png" width="auto">
+
+***
+# 8) Visual Studio Code Ortam Tanıtımı
+- Visual Studio Code çok hızlıdır.
+
+- Microsoft tarafından UI teknolojileri için geliştirilen bir editör olduğundan dolayı hızlı kod yazmamızı/geliştirmemizi sağlıyor.
+
+- Backend'de geliştirebilirsiniz.
+
+- dotnet CLI dediğimiz asistana Terminal(komut satırı) üzerinden çok rahat bir şekilde komutlar verebiliyoruz.
+
+- debugging yapabiliyorsunuz.
+
+- Build işlemini CLI dediğimiz kod üzerinden gerçekleştiririz.
+
+<img src="20.png" width="auto">
