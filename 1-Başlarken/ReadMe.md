@@ -274,3 +274,29 @@
 - Prototip => Dotnet [command]
 
 <img src="25.png" width="auto">
+
+# 11) Dotnet CLI - Temel Komutlar - Help Komutu
+- Bir program yazarken genellikle kullanacağımız .NET CLI komutlarımız bunlardır. Temel komutlar olarak geçerler.
+
+- help
+
+- new
+
+- restore
+
+- build
+
+- publish
+
+- run
+
+## Help
+- Dotnet CLI tarafından desteklenen komutlar hakkında ayrıntılı bilgi veren komuttur.
+
+- dotnet help
+
+- konsept olarak dotnet help yazdığınız zaman size neyi hangi konseptle çağırmanız gerektiğini ne şekilde kullanabileceğinizi bildiren bir komuttur.
+
+
+<img src="26.png" width="auto">
+<img src="27.png" width="auto">
