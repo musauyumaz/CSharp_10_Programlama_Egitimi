@@ -324,3 +324,20 @@
 - Eğer ki force paramteresiyle zorlarsan bir önceki projeyi ezecek ve yeniden oluşturacaktır.
 
 <img src="30.png" width="auto">
+
+# 13) Dotnet CLI - Temel Komutlar - Restore Komutu
+- Proje sürecinde referans edilen yahut referansı kaldırılan paketlerin restarasyonunu sağlar.
+
+- Bir yazılımın gelişim sürecinde o yazılımla ilgili işlemleri/iş mantıklarını genellikle kah kendimiz tarafından kah başkaları tarafından önceden yazılmış kütüphanelerin desteğini alarak çözmeye biz referans mantığı diyoruz.
+
+- Örneğin bir resim geliyor ve resimdeki yüzü almamız gerekiyor. Bu yüzü algılama algoritmasını siz önceden yazdıysanız bunu bir kütüphane olarak tutuyorsunuz ve bir daha ilgili proje de lazım olduğunda tekrardan aynı kodları yazmaksızın bu kütüphaneyi çağırıp buranın kodlarından istifade edebiliyorsunuz. İşte biz buna referans mantığı diyoruz. 
+
+- Tabi ilgili kütüphane/kayda alınmış kütüphane/önceden oluşturulmuş kütüphane illa sizin oluşturmuş olmanıza gerek yok bunu başkaları ya da bir community tarafından oluşturulmuş kütüphane de olabilir önemli değil. Önceden oluşturulmuş mu oluşturulmuş. Önceden var olan yazılmış hali hazırdaki paketleri/kütüphaneleri kendi uygulamamızda kullanabilmek için bizim bunları uygulama da çekmemiz lazım. 
+
+- Siz diyelim ki paketleri bir şekide referans ettiniz ve yükleyeceğinizi bildirdiniz. Bildirdiğiniz/referans ettiğiniz bu paketleri uygulamaya yükleyebilmek için uygulamayı Restore etmeniz lazım.
+
+- Restore işleminde olmayıpta kendine referans edilmiş paketleri kendisi nuget dediğimiz bir havuzdan çeker.
+
+- Harici paketleri sisteme yüklememizi sağlayan yapılanma Restore yapılanmasıdır.
+
+<img src="31.png" width="auto">
