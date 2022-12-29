@@ -354,3 +354,25 @@
 - Yani bir projeyi derleyebilmek için öncelikle onun var olan bütün kütüphanelerinin/referanslarının/bağımlılıklarının elden geçirilmiş olması lazım. Eğer ki güvenliyse/okey'se artık bunu compile/build etmesi gerekecektir.
 
 <img src="32.png" width="auto">
+
+***
+# 15) Dotnet CLI - Temel Komutlar - Publish Komutu
+- Projeyi derleyerek yayınlanabilir dosyaları çıktı olarak verir.
+
+- Çıktı olarak;
+    * .dll
+    * .deps.json(projenin tüm bağımlılıklarını içerir)
+    * .runtimeconfig.json(runtime konfigürasyonları)
+    * Uygulama bağımlılıklarının dll'leri
+
+- \bin\Debug\net5.0\publish dizinine çıktı verir.
+
+- Herhangi bir proje kaynak kodlarıyla birlikte inşa edilip piyasaya sunulmadan önce bu projenin kaynak kodlarını biz gizlemek isteriz. Bazen algoritmayı piyasaya sunmak istemeyiz. Dolayısıyla böyle bir durumda projeyi yayınlanabilir yani piyasaya sunulabilir hale getirmemiz lazım eğer ki bu proje bir web uygulaması ise bu projeyi hosting'e atabilir yayınlayabilir hale getirmemiz gerekmektedir. Haliyle kaynak kodları/dosyaları bizde olacak şekilde biz bunların çıktılarını alıp yayınlayabilmeliyiz. İşte bunu yapmamızı sağlayan Publish komutudur.
+
+- Publish işlemi için dotnet publish yazmanız yeterlidir.
+
+- Projeyi ilk baş derler. Daha sonra yayınlanacak çıktılarını alır.
+
+- Bir uygulama başka bir uygulamayı kullanıyorsa, başka bir kütüphaneyi ya da paketi kullanıyorsa ona bağımlıdır. Orada bir bağımlılık söz konusudur. Dolayısıyla Publish işlemi bu bağımlılıkları referanslayan bir dosya verecektir.
+
+<img src="33.png" width="auto">
