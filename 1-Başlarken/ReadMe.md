@@ -325,6 +325,7 @@
 
 <img src="30.png" width="auto">
 
+***
 # 13) Dotnet CLI - Temel Komutlar - Restore Komutu
 - Proje sürecinde referans edilen yahut referansı kaldırılan paketlerin restarasyonunu sağlar.
 
@@ -341,3 +342,15 @@
 - Harici paketleri sisteme yüklememizi sağlayan yapılanma Restore yapılanmasıdır.
 
 <img src="31.png" width="auto">
+
+***
+# 14) Dotnet CLI - Temel Komutlar - Build Komutu
+- Projeyi derler ve sonuç olarak .exe ve .dll çıktıları verir.
+
+- Derlemeden önce projeyi Restore eder.
+
+- \bin\Debug\net5.0 dizinine çıktı verir.
+
+- Yani bir projeyi derleyebilmek için öncelikle onun var olan bütün kütüphanelerinin/referanslarının/bağımlılıklarının elden geçirilmiş olması lazım. Eğer ki güvenliyse/okey'se artık bunu compile/build etmesi gerekecektir.
+
+<img src="32.png" width="auto">
