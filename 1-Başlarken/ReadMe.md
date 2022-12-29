@@ -275,6 +275,7 @@
 
 <img src="25.png" width="auto">
 
+***
 # 11) Dotnet CLI - Temel Komutlar - Help Komutu
 - Bir program yazarken genellikle kullanacağımız .NET CLI komutlarımız bunlardır. Temel komutlar olarak geçerler.
 
@@ -300,3 +301,26 @@
 
 <img src="26.png" width="auto">
 <img src="27.png" width="auto">
+
+***
+# 12) Dotnet CLI - Temel Komutlar - New Komutu
+- dotnet CLI üzerinden proje oluşturmak istiyorsak new komutunu kullanabiliriz.
+
+- Prototip olarak dotnet new dedikten sonra .net'e bir proje oluşturacağınızı bildiriyorsunuz. Ardından projenin türünü bildirip name parametresi eşliğinde projenin ismini belirtmeniz yeterli olacaktır. Bu işlemden sonra ilgili proje hangi dizinde enter tuşuna bastıysanız oraya oluşturulacaktır.
+
+- dotnet new [project type] --name [project name]
+
+- dotnet new komutunu yazdığınızda bu dotnet new  komutu ile hangi türleri oluşturabiliyorum bana onun bir yardımcısı ol söyle bakalım.
+
+<img src="28.png" width="auto">
+<img src="29.png" width="auto">
+
+
+## NEW FORCE PARAMETRESİ
+- dotnet new [project type] --name [project name] --force
+
+- Eğer ki ilgili dizinde bir proje oluşturacaksanız ve oluşturacağınız projenin ismi önceki projelerle çakışıyorsa force ile siz bunu zorunlu hale getirebilirsiniz yani zorlayabilirsiniz.
+
+- Eğer ki force paramteresiyle zorlarsan bir önceki projeyi ezecek ve yeniden oluşturacaktır.
+
+<img src="30.png" width="auto">
