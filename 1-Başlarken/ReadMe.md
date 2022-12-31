@@ -417,3 +417,15 @@
 - dotnet add package [package name] => o dizindeki projeye bu kütüphane yüklenmiş olacaktır.
 
 <img src="37.png" width="auto">
+
+***
+# 19) Dotnet CLI - Proje Modifikasyon Komutları - add reference Komutu
+- Uygulamaya fiziksel bir dll dosyasını referans etmemizi sağlar
+
+- dotnet add [source project].csproj reference [target project].csproj
+
+- Bir solution altından birden fazla proje kullanabiliriz. Diyelim ki uygulamamızda çok fazla proje var ve projeler birbirlerini referans etmek zorundalar. Örneğin veritabanı işlemlerinin sorumluluğunu sen bir projeye verirsin iş mantığını/algoritmaları başka bir projeye verirsin. Haliyle algoritmaların/stratejilerin/tüm mevzuların döndüğü bu proje de veritabanı işlemlerini yapmadan direkt elindeki veritabanı projesini kullanarak operasyonlarını gerçekleştirirsin. Burada ki veritabanı desteğini diğer proje verir. İşte bu desteği verebilmesi için bu proje de/iş mantığı projesinde veritabanı projesinin kullanılabilir olması yani referans edilebilir olması gerekir. İşte bu durumda Add Reference'ı kullanırız.
+
+- dotnet add myproject.csproj reference ../ornekproje/ornekproje.csproj => myproject'te ornekproject'teki dll'i referans olarak alıyorum yani ornek projeyi sen myproject'te referans al onu kullan onun sen burada dll'ini çıktısını sen burada kullan demiş oluyoruz. Haliyle myproject ornekproject'teki tüm erişim belirleyicisi izin veren class'lara erişim sağlayıp kullanabilecek.
+
+<img src="38.png" width="auto">
