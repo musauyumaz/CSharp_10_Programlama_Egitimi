@@ -376,3 +376,14 @@
 - Bir uygulama başka bir uygulamayı kullanıyorsa, başka bir kütüphaneyi ya da paketi kullanıyorsa ona bağımlıdır. Orada bir bağımlılık söz konusudur. Dolayısıyla Publish işlemi bu bağımlılıkları referanslayan bir dosya verecektir.
 
 <img src="33.png" width="auto">
+
+***
+# 16) Dotnet CLI - Temel Komutlar - Run Komutu
+- Uygulamayı derler, ayağa kaldırır ve çalıştırır.
+
+- dotnet run dediğinizde ilgili dizindeki projeyi derleyecek ve ardından da çalıştıracaktır.
+
+- dotnet run --no-build => Uygulamayı derlemeden direkt ayağa kaldırır. Mevcut en son derlenmiş hali neyse uygulamayı onun üzerinden ayağa kaldıracaktır.
+
+<img src="34.png" width="auto">
+<img src="35.png" width="auto">
