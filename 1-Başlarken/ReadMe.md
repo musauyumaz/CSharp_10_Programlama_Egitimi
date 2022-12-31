@@ -387,3 +387,21 @@
 
 <img src="34.png" width="auto">
 <img src="35.png" width="auto">
+
+***
+# 17) Dotnet CLI - Paket ile Referans Arasındaki Fark Nedir?
+- Proje seviyesinde işlemler yapmamızı sağlayan projeyle ilgili kütüphane ekleme/çıkarma referans ekleme/çıkarma işlemlerini yapmamızı sağlayan proje modifikasyon komutlarıdır.
+
+- Paket/Kütüphane bunlar nuget dediğimiz bir havuzdan gelir.
+
+- Referanslar ise önceden yazılmış .dll'lerdir. Yani fiziksel olarak elimizde bulunan .dll dosyalarıdır.
+
+- Siz bir projeyi oluşturdunuz ve oluşturduğunuz projeyi build ettiğinizde o gelen .dll dosyası esasında şu anlama gelir : Bu .dll dosyası bir yazılım tarafından kullanılabilir bir dosya.
+
+- Eğer ki siz yazdığınız bir kodu son kullanıcıya/insana kullandırtacaksanız çıktısı .exe'dir. Eğer ki senin yazılımını bir başka yazılım kullanacaksa onun da çıktısı .dll'dir. Yazılımın kullanacağı yazılımı .dll olarak gönderir.
+
+- .dll dosyalarına referans ama nuget dediğimiz bir havuzdaki farklı kütüphanelere(uzaktan,internetten çektiklerimiz) ise paket diyoruz. Tabi bir yandan referans olanlar da bizim için bir paket mahiyetinde olabilirler ama genel anlamda teknik olarak bu ikisi bu şekilde ayrılmaktadır. 
+
+- Bir fiziksel elinde dosya var ve uzantısı .dll ise bunu projene eklerken referans olarak eklersin yok eğer sen nuget dediğimiz havuzdan bir kütüphaneyi uygulamana çekeceksen eğer onu da paket olarak çekersin 
+
+<img src="36.png" width="auto">
