@@ -429,3 +429,11 @@
 - dotnet add myproject.csproj reference ../ornekproje/ornekproje.csproj => myproject'te ornekproject'teki dll'i referans olarak alıyorum yani ornek projeyi sen myproject'te referans al onu kullan onun sen burada dll'ini çıktısını sen burada kullan demiş oluyoruz. Haliyle myproject ornekproject'teki tüm erişim belirleyicisi izin veren class'lara erişim sağlayıp kullanabilecek.
 
 <img src="38.png" width="auto">
+
+***
+# 20) Dotnet CLI - Proje Modifikasyon Komutları - remove package Komutu
+- Uygulamaya yüklenmiş olan paketlerin/kütüphanelerin silinmesini sağlar.
+
+- dotnet remove package [package name]
+
+<img src="39.png" width="auto">
