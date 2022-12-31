@@ -405,3 +405,15 @@
 - Bir fiziksel elinde dosya var ve uzantısı .dll ise bunu projene eklerken referans olarak eklersin yok eğer sen nuget dediğimiz havuzdan bir kütüphaneyi uygulamana çekeceksen eğer onu da paket olarak çekersin 
 
 <img src="36.png" width="auto">
+
+***
+# 18) Dotnet CLI - Proje Modifikasyon Komutları - add package Komutu
+- Uygulamaya Nuget'ten paket/kütüphane yüklememizi sağlar.
+
+- Nuget havuzundan bir paketi uygulamaya yüklemeye biz paket yöntemi diyoruz.
+
+- Kah sen Nuget'ten yüklemişsin kah .dll olarak eklemişsin her ikisi de kütüphanedir ama biz Nuget'ten gelene paket diyoruz.
+
+- dotnet add package [package name] => o dizindeki projeye bu kütüphane yüklenmiş olacaktır.
+
+<img src="37.png" width="auto">
