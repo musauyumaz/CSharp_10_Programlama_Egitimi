@@ -447,3 +447,11 @@
 <img src="40.png" width="auto">
 
 ***
+# 22) Dotnet CLI - Proje Modifikasyon Komutları - List Reference Komutu
+- Bir uygulamadaki kullanılan tüm referansları gösteren komuttur. 
+
+- Uygulama da referans edilen tüm komutları listeler.
+
+- dotnet list reference
+
+<img src="41.png" width="auto">
