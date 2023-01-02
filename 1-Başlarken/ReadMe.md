@@ -455,3 +455,27 @@
 - dotnet list reference
 
 <img src="41.png" width="auto">
+
+***
+# 23) Programlamaya Başlarken Temel İlkeler
+- Bir dil öğreneceğiz Bu dil beşeri bir dil olmayabilir ama makinalarla ve bilgisayarlarla iletişim kurmamızı sağlayacak bir dil öğreneceksiniz.
+
+- Nihayetinde herhangi bir beşeri dilin nasıl bir öznesi yüklemi varsa kendine göre bir edebi anlayışı varsa bu da bir programlama dili ama bir dil olduğu için kendine has yapılanmaları, kültürü, geleneği, prensipleri, fesehatı, belegatı(ileride düzgün kod yazma sanatları diyeceğiz. Design patternlar var) var.
+
+- Öğreneceğimiz bir dildir. Her ne kadar programlama dili olsa da bir iletişim kurmamızı sağlayan bu dile hakim olursak bilgisayara ya da makinelere istediğimiz her türlü derdimizi anlatıp işlem yaptıracağımız bir dildir.
+
+- Her programlama dili başlangıçta bir gelenek ve kabulle yola çıkar. Biz bunlara prensipler diyoruz. Belirli prensipler/kabuller ışığında/çizgisinde/hizasında hareket ederseniz o dili öğrenmeniz o dil üzerinde hakikaten edebiyat yapmanız çok kolaylaşacaktır.
+
+- Programlada temel ilkelerimiz vardır. Bu ilkeler olmazsa olmaz. 
+
+- İlke sosyolojik açıdan yaparsanız doğrudur ama yapmazsanız yanlış demek değildir/sıkıntı yoktur.
+
+- İlkeler genellikle değişmezler. Çünkü evrensel doğrulardır/Kabuldürler. Gelenekesel bir anlayışın üzerine oturmuş doğrular değildir. Bunlar genel/evrensel doğrulardır. Ne zaman yaparsan yap, ne zaman uygularsan uygula her daim bir doğruluk ve sana doğru bir yönlendirme rehberlik sağlayacaktır. 
+
+- Dolayısıyla biz kod inşa edeceğiz, kodsal düşüneceğiz, kodların mantığında bir program zihniyetinde/bir yazılımcı zihniyetinde olayları yorumlayacağız bunları yaparken de prensipler çerçevesinde yaparsak hem düşünce sanatımız o prensipler çerçevesinde doğru olacak ,doğru şekilde gelişecek hem de yazdığımız koda buradaki doğruluk yansıyacaktır.
+
+- Bu prensiplerin hepsi altın değerinde yılların yazılımcıların geçtiği yollarda ayaklarına takılan taşları eleyerek ortaya koydukları kolonlardır. Bu kolonları sizlerde yolunuza ihtiyaç olmadan koyarsanız her daim sağlam bir çatının altında hareket etmiş olacaksınız. Onun için prensipler/ilkeler her işte olduğu gibi çok ama çok önemlidir.
+
+- Temiz kod yazma sanatında bizim için prensipler olmazsa olmazdır. Prensipsiz temiz kod yazamazsınız.
+
+- Bir programcı ilkeli birisi olmalıdır.
