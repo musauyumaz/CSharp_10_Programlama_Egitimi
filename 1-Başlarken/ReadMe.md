@@ -437,3 +437,13 @@
 - dotnet remove package [package name]
 
 <img src="39.png" width="auto">
+
+***
+# 21) Dotnet CLI - Proje Modifikasyon Komutları - remove reference Komutu
+- Uygulamaya referans edilmiş dll'leri kaldırır.
+
+- dotnet remove reference [reference name]
+
+<img src="40.png" width="auto">
+
+***
