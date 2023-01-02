@@ -511,5 +511,12 @@
 <img src="43.png" width="auto">
 <img src="44.png" width="auto">
 
+***
+# 25) Programlamaya Başlarken Temel İlkeler - Anlamlı İsimlendirme
+- Yazılıma başlarken kabul etmemiz gereken bir diğer husus ise anlamlı isimlendirmedir.
 
+- Bir isimlendirme yaparken sen anlamlı değilde gidip saçma sapan bir isim verirsen bu kodun gelişiminde ciddi manada maliyete sebep oluyor ve bunu günlük hayatta çok rahat görebiliyoruz.
 
+- Lisedeki matematikte x, y değişkenlerini kullanmayı programlamaya matematiğin o geleneğini taşımayacağız. Mantığını taşıyacağız onu bırakacağız. Yazılımda ne kullanıyorsan anlamlı bir isim vereceksin.
+
+- Kullanacağımız yapı neye hizmet ediyorsa o şekilde anlamlı bir isimlendirme de bulunmamız gerekiyor.
