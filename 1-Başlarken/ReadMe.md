@@ -479,3 +479,37 @@
 - Temiz kod yazma sanatında bizim için prensipler olmazsa olmazdır. Prensipsiz temiz kod yazamazsınız.
 
 - Bir programcı ilkeli birisi olmalıdır.
+
+***
+# 24) Programlamaya Başlarken Temel İlkeler - Don't Repeat Yourself
+- Bir programcı kendisini tekrar etmez.
+
+- Önceden yazmış olduğun bir kodu sürekli başka başka yerlerde yazmamalısın.
+
+- Bir programcı komutları sürekli tekrar etmektense öğrendiği yapılarla bunu daha analitik çözüm haline getirip tekrarlı değilde tek seferli hale getirebilmelidir.
+
+- Bir kod inşa edilirken mümkün mertebe elinizdeki bildiklerinizle ve o dilin desteklediği bütün her şeyi bildiğinizi varsayalım. Çözüm getidiğiniz şeylerde kodunuzda tekrar varsa eğer bu koddaki tekrarı ortadan kaldırın. Tek elden yönetmek için çabalayın. Çünkü her yerde aynı algoritma çalışacaktır. Aynı algoritmayı bir gün değiştirmen gerekirse her tekrar eden noktada değiştirmen gerekecek buda büyük bir sıkıntı. Onun için tek bir yerde bu algoritmayı yazıp o yazdığını her yerde kullanacak şekilde bir tasarıma geçebilmen lazım. Değişiklik olduğu zaman bir noktayı değiştirirsin onu kullanan her yere o değişiklik yansıyacaktır. İşte doğru tasarım budur.
+
+- Satrançta bir taktiği yakalarsın sen ondan sonra durmadan o taktiği uygulayarak başlarsın bu kendini tekrar etmektir. Yani belirli senaryolarda belirli stratejileri uygulamak ileride buna design pattern diyeceğiz ama belirli algoritmalarda sürekli önceden yazdığın algoritmayı tekrar ederek olayı canlandırmak bir yerden sonra sizin yaratıcılık zekanızı öldürecektir. Yani bırakın ezberlemeyin. Algoritma ezberlemesi tekrarı yapmayın o anda çözüm getirmeye çalışın mümkün mertebe bırakın maliyetini kodun performanslı çalışmasını vs. Sizin için o andaki önemli olan şey o problemi çözmektir. Önceden çözdüğün tecrübeden destek almak ayrı bişeydir. Bir algoritmayı ezberleyip aynısını her yerde uygulamak ayrı bişeydir. Bu öldürücü bir tekniktir. Tecrübelerden faydalanmak yaratıcılığı destekler. Siz tecrübelerinizi faydalınabilir hale getirin. Ama algoritmaları ezberleyip belirli yerlere not alıp durmadan aynı algoritmayı benzer noktalarda kullanmak doğru bir gelişimsel süreç sağlamayacaktır.
+
+- Örneğin tüm personellerin maaşına %10 zam yapan algoritmayı geliştirdin ya bunu bir daha aklında tutma Birgün bir daha buna ihtiyacın olursa onu tekrar edeceğine o anda bir daha ona çözüm üret. Bunu bir yerden sonra alışkanlık haline getirdiğinizde inanın ki aklınızda bilgi/kuramlar olacak ezbere algoritmalar olmayacak.
+
+- Kendimizi hem kod açısından hem de yaşadıklarımızı ezberleme açısından tekrar etmiyoruz. her daim kodlarımızı sade tekil yani çağrılan bir kodu bir kere yazacağız ondan sonra çağıracağız. Aynı kod aynı blokta tekrar tekrar yazılmamış olmasına özen göstereceğiz. 
+
+- Şöyle bir bakacağız burada bir tekrar var ben bunu daha analitik nasıl düşünebilirim diye korkma düşün. Hani demiş ya şair Sar ruhunu geceler diye sen de sar zihnini düşüncelere çıkama işin içinden kodu boz. Ama bir düşün bir tefekkürünü et ulan ben bunu nasıl yaparım demeyi bil birazcık ilgilen yazdığın kodla ilgilen. Yaptığın işi artık işin olarak benimse. Yazdığın kod bir muhasebecinin yazdığı kodla aynı olmamalı, bir kasabın yazacağı kodla aynı olmamalı onu herkes yazabilir. Sen bu işi yapan bir adam olarak fark yaratmalısın. Tabikide ilk başta olmayacak ama zamanla niyetin prensibin bu olacak. Bu ilkeler ışığında olacaksın gördüğün anda onu düzeltecek onu takıntı haline getireceksin gece uykunu bununla kaçıracaksın ya ben bu kodu adam haline getireceğim diyeceksin. İleride biz buna refactoring diyeceğiz. Yeniden düzenleme kodu yeniden adam haline getirme. 
+
+- Sen bunu başta bir prensip olarak kabul edeceksin. Kendini tekrar etmeyeceksin. Aklında ezbere algoritma olmayacak. Tecrübelerin olacak onlarla iç güdüsel çözümler getirip düşünsel anlık olarak çözümler getireceksin. Ezbere stratejiler var design patternlar burada onu kastetmiyoruz. Yani sen algoritma ezberlemeyle design patternları karıştırma.
+
+- Özetle 
+    * Kendimizi tekrar etmiyoruz.
+    * Algoritmaları ezberleyip tekrar etmiyoruz.
+    * Anlık çözüm getiriyoruz. Benzer olabilirler tecrübelerimizden faydalanıyoruz.
+    * Yapıları öğrendiklerimizi kullanıp daha da gelişmiş/efektif/sistematik bir kod inşa etmeye odaklı hale getiriyoruz. En azından bunu başta bir prensip olarak kabul ediyoruz.
+
+
+<img src="42.png" width="auto">
+<img src="43.png" width="auto">
+<img src="44.png" width="auto">
+
+
+
