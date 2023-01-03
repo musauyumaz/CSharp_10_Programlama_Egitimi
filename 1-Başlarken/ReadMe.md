@@ -660,3 +660,17 @@
 - Kodu kategorize hale getimemize inanılmaz derece de yardımcı oluyor. Bize inanılmaz derece de hız kazandırıyor. Anlamlı hale getiriyor kodumuzu. 
 
 <img src="53.png" width="auto">
+
+***
+# 30) Todo Nedir?
+- Kodun içine alınan notlara çabuk erişebilmemizi sağlayan bir özelliktir.
+
+- Açıklama yazıyoruz ama bu açıklama oradaki kodu izah etmekten ziyade orada yapılması gereken eksik bir şeyi izah eder.
+
+- Örneğin bir uygulama geliştiren bir yazılımcısınız bu projede birçok kişi çalışıyor. Ve siz burada yapılması gereken bir işi arkadaşınıza açıklama yaparak yazıyorsunuz. Bir projede birçok sınıf ve binlerce açıklama olabilir. İşte arkadaşınızın bu düzenlemeyi hangi noktaya yapması gerektiğini yazmış olduğunuz açıklama satırını bulması dakikalarını saatlerini alabilir. Ama biz açıklama satırının başına todo yazıp boşluk bırakırsak(todo ...) buradaki todo Visual Studio tarafından algılanacak ve bir pencereye düşecektir.
+
+- todo .... => bu bir keyword özelliği görmektedir. İlgili pencere bu yapılanma üzerinden ilgili yorumları Task/Görev olarak algılayacak ve pencere de gösterecektir.
+
+- Tabi buradaki süreç compiler tarafından değil editörümüzün bize sunduğu bir nimettir. Compiler buradaki sorumluluğu üstlenmez.
+
+<img src="54.png" width="auto">
