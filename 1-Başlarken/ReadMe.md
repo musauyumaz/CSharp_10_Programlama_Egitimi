@@ -576,3 +576,53 @@
 <img src="46.png" width="auto">
 <img src="47.png" width="auto">
 <img src="48.png" width="auto">
+
+***
+# 28) Top-Level Statements (C# 9.0) Özelliği
+- Biz herhangi yeni bir konuda araştırma yapıyor olabiliriz ve bu konuyla ilgili test komutları çalıştırmamız gerekiyor olabilir. Bir deneme yapmam lazım ve bir projetye ihtiyacım var. Böyle bir durumda bir developer gider bir Console uygulaması açar ve orada deneme yapar.
+
+- Basit denemelerde bile ekranda birçok komuta maruz kalırız.
+
+- Bişey deneyeceksin ama basmakalıp belirli bir kodun burada inşa edilmiş olması gerekiyor Buna Boilerplate denir. Basmakalıp bir kod geliyor ve o kodun içerisinde denememizi yapmak zorundayız.
+
+- Bu gelen özellik sayesinde basmakalıp kod bloğunu yazmaksızın using'ten sonra ilgili işlemlerimizi gerçekleştirebiliriz.
+
+<img src="49.png" width="auto">
+
+- Sıradan bir işlem için bile oluşturulan console uygulamasında bile basmakalıp(boilerplate) kodların gelmesi gerekmektedir. Günlük hayatta basit kodlar inşa edebilmek ve test süreçlerinde hızlı denemeler yapabilmek için bu tarz bir kod bloğuna maruz kalmamıza gerek var mı?
+
+- C# 9.0 ile gelen top level statements özelliği ile Main fonksiyonunun zoraki imzasının tanılanması kaldırılmıştır.
+
+- Main fonksiyonunun kullanılması developer'ın kararına bağlıdır.
+
+- Yani ister yazabilirsin ister yazmayabilirsin ama bil ki her halükarda arkada varsayılan bir main fonksiyonu olacaktır.
+
+<img src="50.png" width="auto">
+
+- Eskiden ekrana Hello World yazdırabilmek için bile Main fonksiyonunda yazmamız gerekiyordu. Artık C# 9.0 ile sen bu komutu yazacaksan direkt yazabilirsin.
+
+- Normalde C# 9.0'dan önce bu kod derlenmeyecekti. Çünkü böyle bir syntax bulunmamaktaydı. Lakin C# 9.0 ile Top Level Statements özelliği bizlere bu şekilde bir kod inşa etmemizi sağlamaktadır.
+
+- Kurallar;
+    1. Using blokları ile namespace arasında kodlar yazılabilir. 
+    2. Bu işlem sade ve sadece Program.cs dosyasında geçerlidir. Yani Main fonksiyonunda yazılacak komutların direkt burada yazılmasına müsaade edilmekte lakin farklı bir dosyada bu işlemi gerçekleştirememekteyiz.
+
+- Bu şekilde yazılan komutlar derlendikten sonra esasında bir Main fonksiyonu içerisine alınacaktır.
+
+- Yani sen kodu inşa ederken artık bir Main'de inşa etmek zorunda değilsin. Amma velakin derledikten sonra sistem kendisi otamatik bir Main'de görecektir.
+
+- using bloklarıyla namespace arasındaki kodları algılayacaktır. Onlar direkt Main'in kodları olarak kabul edilecek ve arkada oluşturulan Main'e direkt onları yazacaktır.
+
+- Eğer namespace varsa using ile namespace arasında olmalı.
+
+- Uygulama derlenirken Program.cs dosyasında varsa Top Level Statements özelliği bu dosyaya özel algılayacak ve ilgili alana yazılan kodları Main içerisinde yorumlayacaktır.
+
+- Bunun dışında zaten bu özelliği başka bir dosyada kullanamayacağımızdan dolayı sadece Program.cs dosyasına has bir özelliktir.
+
+<img src="51.png" width="auto">
+
+- Top Level Statements genellikle Microservices yapılanmasında kodun gelişimi açısından hız kazandırıcı bir niteliğe sahiptir.
+
+- Bu bir özelliktir. Bir düğme gibi düşünebilirsiniz kullansanız da olur kullanmasanız da.
+
+<img src="52.png" width="auto">
