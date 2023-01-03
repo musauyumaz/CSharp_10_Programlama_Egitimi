@@ -520,3 +520,41 @@
 - Lisedeki matematikte x, y değişkenlerini kullanmayı programlamaya matematiğin o geleneğini taşımayacağız. Mantığını taşıyacağız onu bırakacağız. Yazılımda ne kullanıyorsan anlamlı bir isim vereceksin.
 
 - Kullanacağımız yapı neye hizmet ediyorsa o şekilde anlamlı bir isimlendirme de bulunmamız gerekiyor.
+
+***
+# 26) Main Fonksiyonu Nedir?
+- Bir programda zorunlu olarak bulunması gereken fonksiyondur.
+
+- Oluşturduğumuz tüm uygulamalarda bir ana fonksiyon olması gerekiyor o ana fonksiyonun adı Main fonksiyonudur.
+
+- Uygulamaların altında Program.cs adlı bir dosya vardır. Program.cs dosyası bizim programın başlangıç dosyası gibi düşünebilirsiniz.
+
+- Başlangıç kodlarının bulunduğu dosya Program.cs dosyasıdır.
+
+- Uygulamalarda Program.cs dosyası başlangıç kodlarının bulunduğu yani uygulamanın ayağa kalkabilmesi için başlangıç kodlarının bulunduğu bir dosyadır.
+
+- .cs uzantılı dosyalar C#'a karşılık gelir.
+
+- Uygulama ayağa kalktığında işletim sistemiyle iletişim kurabilecek metodun ve bu metot içerisinde başlangıca dair gerekli komutların inşa edildiği bir yapılanmadır.
+
+- Siz bir uygulamayı çalıştırdığınızda bu uygulamanın bulunduğu işletim sistemiyle iletişimini kontağını sağlayan fonksiyona biz main fonksiyonu diyoruz.
+
+- Başlangıç kodlarını biz Main'in içinde yazarız. Bir uygulama ayağa kalkarken işletim sistemiylede ilişkiyi kurar ilk ilişkiyi kurduğundan dolayı ilk tetiklenen fonksiyonda budur zaten.
+
+- Herhangi bir uygulama olsa da bu main fonksiyonundan sade ve sadece 1 adet olmak zorundadır.
+
+- Main fonksiyonu uygulamada Program.cs dosyası içerisinde Main isminde bulunur.
+
+- Main fonksiyonu uygulama adına işletim sistemiyle iletişim kurar.
+
+- Yani bu fonksiyon uygulama ilk ayağa kalktığında ilk tetiklenen fonksiyondur. Dolayısıyla ilk kodlarımızı bu fonksiyonda yazarız.
+
+- Bir uygulamada Main isimli fonksiyon sade ve sadece 1 tane olabilir ve 1 tane olmak zorundadır başka bir yerde başka bir dosyanın içerisinde main isimli bir fonksiyon olamaz. 
+
+- Bu fonksiyonla işletim sistemiyle konfigürasyon/iletişim/kontak sağlanır. Bu kontak neticesinde bizim uygulamamıza işletim sistemi veri gönderebiliyor. Bizde bu veriyi kontağı sağladığımız Main üzerinden yakalayıp içeride işleyebiliriz.
+
+- İşletim sistemi bişey gönderirken bu uygulama eğer sağlıklı bir uygulamaysa uygulamanın içerisinde Program.cs altında 1 tane Main isimli bir fonksiyon var oraya göndereceğini biliyor.
+
+- Haliyle uygulamanın içerisinde Main yoksa ayağa kaldıramazsınız/derleyemezsiniz. Olmak zorundadır. 
+
+<img src="45.png" width="auto">
