@@ -558,3 +558,21 @@
 - Haliyle uygulamanın içerisinde Main yoksa ayağa kaldıramazsınız/derleyemezsiniz. Olmak zorundadır. 
 
 <img src="45.png" width="auto">
+
+***
+# 27) dotnet run -value- Yapısı İle Uygulamayı Çalıştırme ve args Parametresine Değer Gönderme
+- Main uygulama ayağa kalktığı anda işletim sistemiyle kontağı kuran bir yapılanmaya sahip.
+
+- Metotlar parametre alan yapılardır.
+
+- dotnet cli komutlarıyla eğer ki biz bu uygulamayı çalıştırırsak buradaki uygulamaya args parametresine değer gönderip uygulama içerisinde bu değeri yakalayabiliyorum
+
+- Komut istemi işletim sisteminin olduğu kısımdır.
+
+- dotnet run [parameter] => parametreleri bu şekilde gönderebilirsin.
+
+- İstediğin kadar değeri arada boşluk bırakarak gönderebilirsin.
+
+<img src="46.png" width="auto">
+<img src="47.png" width="auto">
+<img src="48.png" width="auto">
