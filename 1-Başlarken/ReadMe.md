@@ -626,3 +626,37 @@
 - Bu bir özelliktir. Bir düğme gibi düşünebilirsiniz kullansanız da olur kullanmasanız da.
 
 <img src="52.png" width="auto">
+
+***
+# 29) Yorum Satırları ve Region
+- Biz kod yazacağız ve bazen yazdığımız kodlar komkleks olabilir. Kompleks yazılmış bir kodu açıklama satırlarıyla zengilneştiririz. Daha niteliksel hale getiririz.
+
+- Benim yazmış olduğum kodda örneğin bir işlem gerçekleştirmişimdir. Yapmış olduğum bu işlemi benim bir şekilde izah edebilmem lazım. İşte bu izahati yorum/açıklama satırlarıyla yapıyoruz.
+
+- Biz yorum satırı kullandığımız zaman uygulamayı derlersek eğer  '//' bu operatör sayesinde satırın bir yorum satırı olduğunun farkına varacak ve burayı derlemeyecektir. Yani kod olarak görmeyecektir.
+
+- Genellikle biz açıklama satırlarını kodun izahatini yapmak için kullanırız. Küçük/Ufak/Kısa izahatler destan yazmanız doğru olmayacaktır.
+
+## Açıklama Satırları/Yorum Satırları
+- Kodun niteliğini, anlaşılabilirliğini, kalitesini arttırabilmek için kullanılırlar.
+
+- Kritik noktalarda ve özet olarak kodları izah etmeliyiz.
+
+- // Tek Satırlık
+- /* Çok Satırlık Yorum Alanı */
+
+- Nerede Kullanılırlar? : İstediğin her yerde yorum yazabilirsin lakin kod konseptini ve semantik akışı bozmaman kaydıyla..
+
+- Her yerde yorum satırı oluşturabilirsiniz.
+
+## Region
+
+- Kod dosyasını kategorik hale getirmemizi sağlayan bir ön işlemci komutudur. 
+
+- Ön işlemci komutu editörün yorumlayabildiği bir yapılanmadır.
+
+- Developer'ın yazmış olduğu kodu daha net görmesini ve kategorize etmesini sağlar.
+
+- Kodu kategorize hale getimemize inanılmaz derece de yardımcı oluyor. Bize inanılmaz derece de hız kazandırıyor. Anlamlı hale getiriyor kodumuzu. 
+
+<img src="53.png" width="auto">
