@@ -740,3 +740,57 @@
 - Dolayısıyla biz bazen yazılımları geliştirdiğimizde sadece derleyip debugsız ayağa kaldırıp test etmek isteriz. Hani geliştirdin derle ayağa kaldır ama herhangi bir debug süreci arada olmasın ben debug maliyetini aradan kaldırmak istiyorum. İşte burada maliyetten düşürmek hızlı bir şekilde test edebilmek için Debug'ı biz aradan kaldırırız.
 
 - Eğer bir uygulamayı direkt kaldırırsak default/varsayılan olarak debug edileceğinden dolayı Debug modda debug'ı Breakpoint yakalayacaktır. Eğer ben bu uygulamayı debug modunda çalıştırmazsam bu uygulama ayağa kaldırılacaktır fakat debug modda kaldırılmadığı için Breakpoint ilgili debug'ı yakalamayacaktır. Yani kodun akışı Breakpoint noktasına geldiği zaman debugging başlamayacaktır.
+
+***
+# 35) Başlarken Yaptıklarımızı Kısaca Özetleyelim
+- C# Nedir?
+    * .NET Framework ve .NET Core Nedir? Farkları Nelerdir?
+
+- Compiler Nedir?
+    * Kodlar Nasıl Compile Edilir?
+
+- Ortam Tanıtımı
+    * Visual Studio
+        - Proje ve Solution Kavramları
+        - Proje Oluşturma 
+        - Derleme
+    * Visual Studio Code
+        - Proje Oluşturma
+        - Derleme
+
+- Dotnet CLI
+    * Nedir?
+    * Temel Komutlar
+        - help
+        - new
+        - restore
+        - build
+        - publish
+        - run
+    * Proje Modifikasyon Komutları
+        - add package
+        - add reference
+        - remove package
+        - remove reference
+        - list reference
+
+- Başlarken Temel İlkeler
+    * Don't Repeat Yourself
+    * Anlamlı İsimlendirme
+
+- Main Fonksiyonu
+    * dotnet run -value- Yapısı İle Uygulamayı Çalıştırma ve args Parametresine Değer Gönderme(Parametrenin Ne Olduğunu Bilmeseniz Dahi?)
+    * Top-Level Statements(C# 9.0)
+
+- Yorum Satırları ve Region
+
+- Todo Nedir?
+
+- Debugging Nedir?
+    * Breakpoint Nedir ve Nasıl Yapılır?
+    * Watch Penceresi
+    * Debugsız Uygulamyı Çalıştırma Nasıl Yapılır?
+
+- Özet
+
+<img src="60.png" width="auto">
