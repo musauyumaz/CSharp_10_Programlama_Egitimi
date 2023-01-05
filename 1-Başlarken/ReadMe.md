@@ -700,3 +700,22 @@
 - Debug/Debug Etmek/Debugging vs.
 
 <img src="55.png" width="auto">
+
+***
+# 32) BreakPoint Nedir ve Nasıl Yapılır?
+- Debug'ın amacı bir koddaki hatayı ayıklamak, bir koddaki yapılanmayı daha da efektif hale getirmek, var olan mantıksal hataları rahat bir şekilde temizleyebilmek.
+
+- Bir kodu Debug'a tabi tutmak demek zaten çalıştırdığımızda varsayılan olarak Debug modda ilgili kodu çalıştırmak demektir. 
+
+- Break Point : İşaretlenen kodun debug edilmesini sağlayan bir teknoloji/yapı...
+
+<img src="56.png" width="auto">
+
+- Bir uygulama debug modda ayağa kaldırıldığında akış break point'in işaretlediği koda/satıra geldiğinde biz kodu debug edebileceğiz.
+
+<img src="57.png" width="auto">
+
+- Break point ile debug edilen kodun devam edebilmesi için F10 tuşuna basmalıyız kodun akışını adım adım izleyebiliriz. Eğer ki F5 tuşuna basarsak kodu salmış yani debug'ı sonlandırmış oluruz.
+
+<img src="58.png" width="auto">
+
