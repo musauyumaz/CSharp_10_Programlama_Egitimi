@@ -717,5 +717,14 @@
 
 - Break point ile debug edilen kodun devam edebilmesi için F10 tuşuna basmalıyız kodun akışını adım adım izleyebiliriz. Eğer ki F5 tuşuna basarsak kodu salmış yani debug'ı sonlandırmış oluruz.
 
-<img src="58.png" width="auto">
 
+
+***
+# 33) Watch Penceresi
+- Bir algoritmayı debug ederken o algoritma içerisinde bulunan değişkenlerin değerlerini daha hızlı bir şekilde görmemizi sağlayan penceredir.
+
+- Bir kodun içerisinde yapılan operasyon esnasında eğer ki siz bu operasyonu debug ediyorsanız debug edilen operasyon içerisinde değişken denilen noktalar var. Bu değişkenlerin değişen değerlerini daha hızlı, net, düzgün bir şekilde görebilmek istiyorsanız Watch dediğimiz pencereyi kullanabilmekteyiz.
+
+- Breakpoint debug modda çalışan uygulama da ilgili nokta tetiklenirken devreye giren yani orayı debug etmemizi sağlayan bir yapıdır.
+
+<img src="59.png" width="auto">
