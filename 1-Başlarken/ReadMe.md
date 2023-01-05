@@ -674,3 +674,29 @@
 - Tabi buradaki süreç compiler tarafından değil editörümüzün bize sunduğu bir nimettir. Compiler buradaki sorumluluğu üstlenmez.
 
 <img src="54.png" width="auto">
+
+***
+# 31) Debugging Nedir?
+- Programlamanın her aşamasında hemen hemen sürekli danışacağımız en yoğun kullanacağımız özelliklerden bir tanesidir. Hatta 1.sidir.
+
+- Platform ve seviye farketmeksizin her teknolojide her noktada her kodlama sürecinde kullanacağımız bir teknolojidir.
+
+- İçerisinde bol bol mantıksal çalışma yapılan bir kod inşa ettiğimizi düşünelim.
+
+- Debugging: hata ayıklamaktır.
+
+- Programın hatalarını yok etmeye yönelik yazılan kodu gözden geçirme, düzeltme aktiviteleridir.
+
+- Formülde bir hata olduğunda/mantıksal bir hata da yani genel grammer'de bir hata yok ama formülde yaptığın hatayı yakalayabilmen ve çözümleyebilmen için debugging dediğimiz tekniği kullanman gerekecektir. Bu teknik çok mantıksal algoritmalarda ilgili problemi yakalayabilmen için süreci inanılmaz derece de hızlandırır.
+
+- Debugging: kodun akışı esnasıda kodu okuyabilmemizi ve gözlemleyebilmemizi sağlamaktadır.
+
+- Kompleks algoritmalarda zaman alıcıdır. 
+
+- Şimdi diyelim ki image processing yapıyorsun ve bir insanın gözünü kaşından itibaren alman gerekiyor ama yazdığın kodda bir sıkıntı var kod çalışıyor ama komple yüzünün sağ tarafını alıyor senin burada yaptığın hatayı koda bakarak görebilmen neredeyse mümkün değil. Kör halı dikicisi gibi işte bunu takip edebilmen için senin debugging teknolojisini kullanman lazım orada ne oluyor. Kod o anda akarken neden komple sağ tarafını alıyorda sadece gözünü almıyor. İşte bunu normal koda bakarak çözemezken ya da çözmesi çok uzun zaman alırken Debugging sayesinde bu süreç çok daha hızlanıyor.
+
+- Eğer debug olmasaydı dünya tahminen 60 yıl önceki teknolojide olurdu...
+
+- Debug/Debug Etmek/Debugging vs.
+
+<img src="55.png" width="auto">
