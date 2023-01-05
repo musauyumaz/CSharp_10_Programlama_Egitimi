@@ -728,3 +728,15 @@
 - Breakpoint debug modda çalışan uygulama da ilgili nokta tetiklenirken devreye giren yani orayı debug etmemizi sağlayan bir yapıdır.
 
 <img src="59.png" width="auto">
+
+***
+# 34) Debugsız Uygulamayı Çalıştırma Nasıl Yapılır?
+- Herhangi bir uygulamayı direkt ayağa kaldırdığımızda/çalıştırdığımızda varsayılan/default olarak debug modda ayağa kalkar.
+
+- Debug maliyetli bir süreçtir.
+
+- Elinizde çpk ağır bir proje örneğin E-Ticaret projesi vardır ve derlemeniz ve bunu ayağa kaldırmanız uzun bir süre alıyor olabilir. Ekstradan üzerinde Debug modu koyarsanız zamandan ciddi manada bir maliyet söz konusu olacaktır. 
+
+- Dolayısıyla biz bazen yazılımları geliştirdiğimizde sadece derleyip debugsız ayağa kaldırıp test etmek isteriz. Hani geliştirdin derle ayağa kaldır ama herhangi bir debug süreci arada olmasın ben debug maliyetini aradan kaldırmak istiyorum. İşte burada maliyetten düşürmek hızlı bir şekilde test edebilmek için Debug'ı biz aradan kaldırırız.
+
+- Eğer bir uygulamayı direkt kaldırırsak default/varsayılan olarak debug edileceğinden dolayı Debug modda debug'ı Breakpoint yakalayacaktır. Eğer ben bu uygulamayı debug modunda çalıştırmazsam bu uygulama ayağa kaldırılacaktır fakat debug modda kaldırılmadığı için Breakpoint ilgili debug'ı yakalamayacaktır. Yani kodun akışı Breakpoint noktasına geldiği zaman debugging başlamayacaktır.
