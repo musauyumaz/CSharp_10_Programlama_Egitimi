@@ -5,4 +5,5 @@
 ***
 
 - ## [Başlarken](https://github.com/musauyumaznotes/CSharp_10_Programlama_Egitimi/blob/main/1-Ba%C5%9Flarken/ReadMe.md)
+- ## [2-Değişken Nedir](https://github.com/musauyumaznotes/CSharp_10_Programlama_Egitimi/blob/main/2-De%C4%9Fi%C5%9Fken%20Nedir/ReadMe.md)
 
