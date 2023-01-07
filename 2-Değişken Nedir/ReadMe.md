@@ -274,3 +274,42 @@ Değişken Tanımlama Kuralları
         
     //4. Bir scope içerisinde aynı isimde birden fazla değişken TANIMLANAMAZ
 ```
+
+***
+# 45) İsimlendirme Kuralları - Name Convention(Pascal Case/Camel Case /Snake Case)
+
+<img src = "16.png" width="auto">
+
+## Pascal Case
+- Her kelimenin ilk harfi büyük yazılmalıdır.
+    * AdSoyad
+    * TcKimlikNo
+    * Satislar
+    * DogumTarihi
+
+<img src = "17.png" width="auto">
+
+- Kısaltma iki harfliyse her iki harfte büyük yazılmalıdır.
+    * In/Out = IO
+    * InOutStream = IOStream
+
+<img src = "18.png" width="auto">
+
+## Camel Case
+- İlk kelime haricindeki tüm kelimelerin baş harfi büyüktür.
+    * satisDurumu
+    * personelAdi
+    * orderId
+    * userName
+    * user
+    * userNamePassword
+
+<img src = "19.png" width="auto">
+
+# Snake Case
+- Tüm kelimeler küçük olarak başlamalı ve araları _ karakteri ile ayrılmalıdır.
+    * kullanici_adi
+    * isim_soyisim
+    * personel_giderleri
+
+<img src = "20.png" width="auto">
