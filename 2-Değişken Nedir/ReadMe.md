@@ -154,3 +154,26 @@
 2. C# programlama dili tip güvenliği olan bir dildir. RAM'e değişken aracılığıyla koyacağımız verinin türünü önceden bildirmemiz gerekiyordu. Bildirmeden hareket edemiyorduk illa bildirmem gerekiyordu ve bildirdiğim tür ne ise o türde bir veriyi koymam gerekliydi işte buna tip güvenliği denir.
 
 <img src = "7.png" width="auto">
+
+***
+# 41) Değişken Tanımlama
+- Değişken tanımlamak bir konsept meselesidir.
+
+- Bir değişken tanımlamak istiyorsanız öncelikle değişkenin modelini/prototipini oluşturmanız gerekiyor.
+
+- Prototip : degisken_turu degisken_adi; => ilk olarak değişkenin türünü bildiriyoruz daha sonrasında ise değişkenin adını ve en son ; ile konsepti kapatıyorum.
+    * int x;
+    * string adi; Bu uygulama derlendiğinde bellekte string türde adi isminde bir değişken tanımlanmış olacak.
+    * int yas; Derlendiğinde bellekte int türünde yas isminde bir alan tutacaktır. 
+
+<img src = "8.png" width="auto">
+
+```C#
+#region Değişken Tanımlama
+    int yas;
+    bool medeniHal;
+    string soyadi;
+#endregion
+```
+
+<img src = "9.png" width="auto">
