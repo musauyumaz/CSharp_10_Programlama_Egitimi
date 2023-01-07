@@ -177,3 +177,33 @@
 ```
 
 <img src = "9.png" width="auto">
+
+***
+# 42) RAM'in Yapısı(Stack)
+- Temelde iki tane yapılanmadan oluşmaktadır.Bu yapılanmalar Stack ve Heap'tir.
+
+- Bu yapılanmalar RAM'in temelde kullandığımız iki alanıdır.
+
+- Stack => İçerisinde değer türlü değişkenleri tutabildiğimiz bölümdür.
+
+- Heap => Nesneleri tutabildiğimiz bölümdür.
+
+<img src = "10.png" width="auto">
+
+- RAM'in yapısında birçok bölüm vardır. Bunlardan bir tanesi Stack'tir. 
+
+- Stack içerisinde farklı değerler tutabilmektedir. İçerisinde tuttuğu yapılar;
+    * Değiken türü, adı ve değeri
+    * Metot isimleri(Bellek adresleri)
+
+- Stack sadece değişkenin değerini değil ,değer türlü değerleri değil Değer türlü değişkenleri de burada tutuyor bunların türlerinin bilgisini de burada tutuyor ve aynı zamanda adlarını da tutmaktadır.
+    * int a = 5 => hepsi Stack'te tutulur
+- Stack'te tutulan değişken ismini nadirde olsa referans dendiğini görebilirsiniz.(Değer türlü olsa bile)
+
+- a referansı dendiğinde tuttuğu değere referanslık eden isim.
+
+- Metotların bellek adresleri de Stack'te tutulur.
+
+- Metotlarımızı oluşturuyoruz. Metotlar oluşturulduğunda belleğin Stack kısmında tutulurlar. Metodu ismi üzerinden çağırabilirsin o isminin bellekteki karşılık gelen bellek adresi Stack'te tutulur.
+
+<img src = "11.png" width="auto">
