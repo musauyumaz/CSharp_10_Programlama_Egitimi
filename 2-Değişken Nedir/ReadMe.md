@@ -207,3 +207,17 @@
 - Metotlarımızı oluşturuyoruz. Metotlar oluşturulduğunda belleğin Stack kısmında tutulurlar. Metodu ismi üzerinden çağırabilirsin o isminin bellekteki karşılık gelen bellek adresi Stack'te tutulur.
 
 <img src = "11.png" width="auto">
+
+***
+# 43) Değişkenler RAM'de Nasıl Tutulur?
+- Değişkenler koda yazılır yazılmaz alan tahsisinde bulunmazlar kod ne zaman çalıştırılır ne zaman o alan compiler tarafından derlendikten sonra yani runtime'da/calıştırılma anında/çalışma zamanında kodlara karşılık alan tahsisleri gerçekleştirilir.
+
+- Senkronizasyona göre kodu çalıştırdığınızda genellikle yukarıdan aşağı doğru nitelendirilen konsept konsept ilerleyerek bellekte yerler ayrılır.
+
+- Senkronizasyona göre sırayla Compiler Stack'te tanımlama yapar.
+
+- Yani değişkenler sırasıyla konseptte hangisi öncelikliyse o öncelik sırasına göre Stack'te tanımlanacaktır.
+
+- Stack LIFO (Last In First Out) mantığına göre çalışır. Yani Son giren ilk çıkar.
+
+<img src = "12.png" width="auto">
