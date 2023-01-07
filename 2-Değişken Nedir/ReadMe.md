@@ -221,3 +221,56 @@
 - Stack LIFO (Last In First Out) mantığına göre çalışır. Yani Son giren ilk çıkar.
 
 <img src = "12.png" width="auto">
+
+***
+# 44) Değişken Tanımlama Kuralları
+## Anlamlı İsimlendirme
+- Değişken isimleri süreçte developer açısından bir karışıklığa mahal vermemek için anlamlı olmalıdır.
+
+- Diyelim ki bir personelin yaşını tutacaksam eğer 'int yas, int personelYas' gibi tutacağım değerin anlamını ifade eden bir isim vermem developer sürecinde bize çok faydalı olacaktır.
+
+- Eğer anlamsız bir isim verirsem yaş tutacağın değişkene 'int x, int y, int huseyin' gibi saçma sapan değerler verirsen bu süreçte inanılmaz bir karışıklığa yol açacaktır.
+
+- Kod yazma iradesi bizde ben neyi nerde tuttuğumu düzenli bir şekilde isimlendirebilme hakkına sahibim. Siz bu iradenizi hakkınızı kullanacaksınız anlamlı isimlendirme yapacaksınız.
+
+- Ne yazık ki bazen gerçekten yazılan kodlarda sembolik terimler kullanılan kodlarla karşılaşacaksınız. Bunun gibi karışıklığa sebeb olan şeyler hem sizin açısından hem de başka bir developer açısından kodun analizini yaparken ciddi manada sıkıntı oluşturucaktır. Keza sonraki süreçte kodu yazma esnasında yukarılarda tanımlanan bir değişkeni kodun aşağılarında bir yerlerde çağırmaya çalıştığınızda bile ciddi manada sıkıntı yaşabiliyorsunuz. Kompleks algoritmalarda değişkenlerin isimlerinin anlamlı olmasına özellikle dikkat edeceğiz.
+
+<img src = "13.png" width="auto">
+
+## Özel Karakterler
+- Değişken isimleri ' , . vs. gibi özel karakterler barındıramazlar!
+
+- '_' karakteri istisnadır.
+
+- '_' özel karakterler arasında değişken isimlerinde kullanabildiğimiz yegane tek bir özel karakterdir.
+
+<img src = "14.png" width="auto">
+
+## Sayısal İfadeler
+- Değiken isimleri sayısal ifadelerle başlayamaz!
+
+- Lakin sayısal ifade barındırabilir.
+
+- Bir scope içerisinde aynı isimde birden fazla değişken TANIMLANAMAZ
+
+<img src = "15.png" width="auto">
+
+```C#
+Değişken Tanımlama Kuralları
+    //1.Anlamlı isimlendirme
+    int yas;
+    int personelYas;
+    int x;
+    int y;
+
+    //2. Özel karakter olmamalı!
+    double stok_adedi;
+    // double ?av;
+
+    //3. Sayısal İfadeler 
+    int sayi1;
+    int sayi2;
+    // int 3sayi;
+        
+    //4. Bir scope içerisinde aynı isimde birden fazla değişken TANIMLANAMAZ
+```
