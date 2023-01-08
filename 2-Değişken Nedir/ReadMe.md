@@ -437,3 +437,41 @@ Değişken Tanımlama Kuralları
 
 <img src = "31.png" width="auto">
 <img src = "32.png" width="auto">
+
+***
+# 49) (_a, _b) = (a, b) Tuple Türüyle Değer Atama
+- Tek bir syntax üzerinde birden fazla değişken tanımlamamızı sağlayan bir nesnedir.
+
+- Örneğin; `(int a,int b,type c, type d,...)z;`
+
+- Tuple değişkenin içerisinde birden fazla aynı türde veyahut farklı türde değişken tanımı olur.
+
+- Tuple dediğimiz nesne içerisinde bir veya birden fazla nesne tanımlayabildiğimiz tek bir tanımlık nesnedir.
+    * `(int a,string b) c = (5,"ahmet")` 
+    * bizim bunlara erişebilmemiz için `c.a` => değişkeni getirecektir. `c.b` => string türdeki değişkeni getirecektir.
+
+<img src = "33.png" width="auto">
+
+- Tek bir değişken içerisinde birden fazla değişken tutan konsept tuple konseptidir.
+
+- Tuple Stack'teki davranışı diğer değişkenlerde olduğu gibi aynıdır.
+
+- Nesnenin değerden farkı değerlerle bir araya gelmesidir.
+
+- Tuple nesne olarak tutulur.
+
+- Oluşturduğumuz değişkende sıralı bir şekilde yani buradaki değerlere karşılık gelecek şekilde değerlerini atamak zorundayız.
+
+```C#
+    (_a, _b) = (a, b) Tuple Türüyle Değer Atama
+    int a = 5;
+    int b = 10;
+
+    (int x,int y) c = (5,10);
+    (int yas,string adi,bool medeniHal) kisi = (23,"Musa",true);
+    kisi.yas = 5;
+
+    (int x,char y) z;
+
+    z = (5, 'a');
+```
