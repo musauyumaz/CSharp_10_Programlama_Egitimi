@@ -379,3 +379,10 @@ Değişken Tanımlama Kuralları
         a = 20;
     ```
 <img src = "28.png" width="auto">
+
+# 47.2) Tanımlanmış Değişkene Değer Atama
+- Tanımlanmış olan değişkene türüne uygun bir değer atılmalıdır.
+
+- değişken int ise int değer, string ise string değer atanmalıdır. 
+
+<img src = "29.png" width="auto">
