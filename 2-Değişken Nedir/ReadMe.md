@@ -331,3 +331,51 @@ Değişken Tanımlama Kuralları
 - Programlama da bir keyword'e karşılık gelen metini değişken ismi olarak kullanmak istiyorsanız onun başına @ işaretini/operatörünü koymanız gerekmektedir.
 
 <img src = "21.png" width="auto">
+
+***
+# 47.1) Tanımlanmış Değişkene Değer Atama
+- Tanımlandıktan sonra değer atayabiliriz çünkü bir değişken tanımlamadan değer atayamayız.
+
+- Tanımladığımız değer türlü değişkenler, değerleri, tür bilgileri belleğin Stack kısmında tutulur.
+
+- Tanımlama esnasında değişkene değer atayacaksam eğer assign/atama operatöründen(=) faydalanırım Örneğin `int x = 5;` 
+
+- Assing(=) operatörü atama işleminin sorumululuğunu üstlenir.
+
+| int | = | value |
+|---|---|---|
+
+- `=` Assign operatörü diye geçer atama operatörüdür. Matematikteki = ile alakası yoktur. Matematikte 3 = 3 dediğimiz operatör oradaki eşitlik anlamına gelir. Yazılımda ise C# dilinde `=` operatörü atama yapar
+
+- `=` Assign operatörü sağdaki tarafra verilen değeri soldaki değişkene, field, property'e vs. atar.
+
+- Bir değişkene değer atayacaksanız değişken sol tarafta olmalı atayacağınız değer sağdan gönderilmelidir. Assign operatörü (`=`) sağındaki değeri soldundaki değişkene gönderecektir.
+
+- Bir değişkene değer atarken bellekte ilk olarak verdiğin türde bir alan tahsisinde bulunulur ve compiler kodu işlerken daha sonlandırmadan atayacağın değeri burada tahsiste bulunulmuş alana atar.
+
+<img src = "22.png" width="auto">
+
+- Normalde değişkeni tanımlarken sadece tanımlayacaksam konsepti değişken adının sonunda `;` ile sonlandırıyorum. Yok eğer tanımlama yaparken değer de atayacaksam artık değerin sonunda `;` ile konseptimi sonlandırıyorum.
+    * `int x;` 
+    * `int x = 123;`
+
+<img src = "23.png" width="auto">
+
+- Eğer ki bir değişken ismi assign operatörünün(`=`) solunda çağırılıyorsa o alana değişkenin kendisi gelecektir. Yani o alan tahsisi gelecektir. Onun için senin atadığın değer ilgili değişkene yani oradaki alana gönderilmiş olacaktır.
+
+- Değişken ismi assign operatörünün(`=`) soluna geliyorsa oraya değişkenin kendisi gelir değeri atadığında bulunan alan tahsisinin içine değer koyulur.
+ 
+<img src = "24.png" width="auto">
+<img src = "25.png" width="auto">
+<img src = "26.png" width="auto">
+<img src = "27.png" width="auto">
+
+- Dikkat 
+    * Bir değişkene atanan en son değer geçerlidir.
+    * Eğer atama varsa tahsis edilen alandaki tutulan değer değiştirilir. Yeni bir alan tahsisinde bulunulmaz. Yani tutulan değer ezilir.
+    ```C#
+        int a = 5;
+        a = 15;
+        a = 20;
+    ```
+<img src = "28.png" width="auto">
