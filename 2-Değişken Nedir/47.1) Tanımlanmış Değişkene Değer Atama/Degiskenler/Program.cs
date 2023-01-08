@@ -33,9 +33,9 @@ class Program
         #endregion
         //Dikkat 
         //Bir değişkene atanan en son değer geçerlidir.
-        int a = 5;
-        a = 15;
-        a = 20;
+        int e = 5;
+        e = 15;
+        e = 20;
         #endregion
     }
 }

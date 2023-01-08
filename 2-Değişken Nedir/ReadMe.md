@@ -386,3 +386,54 @@ Değişken Tanımlama Kuralları
 - değişken int ise int değer, string ise string değer atanmalıdır. 
 
 <img src = "29.png" width="auto">
+
+***
+# 48) Değişkene Değer Atama Kuralları
+- 4 Kategori de değer türlerimiz var 
+    * Metinsel Değerler
+        - `string` keywordü ile tutulmaktadırlar.
+        - `string` keywordunde tutulan metinsel değerler çift tırnak(`"...."`) içerisinde tutulmalıdır.
+        - `"Musa"`, 
+        - `"12345678901"` Bir sayısal ifade metinsel olarak tutuluyorsa eğer yazılım açısından o metinsel bir ifadedir. Yani üzerinde matematiksel işlem yapılmayan ve `"Hüseyin"` `"Ahmet"` vs. gibi metinsel ifadelerden farkı olmayan bir değerdir.
+        - Metinsel ifadelerde herşeyi tutabilirsiniz. Örneğin `"Musa 23 Yaşındadır."`
+        - Çift tırnak (`""`) içerisine yazılan tümmmm değerler string keywordüyle karşılanmalıdır.  `string x = "asfsafasdafasf";`
+
+    * Karaktersel Değerler
+        - `char` keywordü ile tutulmaktadırlar.
+        - Karaktersel değerler tek tırnak(`''`) içerisinde yazılmalıdır.
+        - Örneğin `char x = 'M';`, `','`,`'.'`,`'?'`
+        - İçerisinde sadece tek bir karakter barındırabilir.
+
+    * Mantıksal Değerler
+        - `bool` keywordü ile tutulmaktadırlar.
+        - Mantıksal ifadeler direkt olarak `true` ya da `false` ile belirtilir.
+        - Örneğin `bool medeniHal = true;`
+        - `true`:1'e karşılık gelir yani doğruya karşılık gelir.
+        - `false`:0'a karşılık gelir yani yanlışa karşılık gelir.
+
+    * Sayısal Değerler
+        - Değer babında en kompleks değerlerdir diyebiliriz. Çünkü çok fazla sayısal değerimiz var.
+        - Sayısal ifadelere değer atarken direkt olarak değeri göndeririz.
+        - Sayısal ifadelerde bir değer default/varsayılan olarak integer(`int`) kabul edilir.
+        - Örneğin `1000`
+
+    * Ondalıklı Sayılar
+        - Tümm ondalıklı sayıları karşılayabilirler. 
+        - `float`, `decimal`,`double`
+        - `float` türünde bir küsuratlı değer tutarken ilgili değerin sonuna f ya da F getirilmelidir. örneğin `3.14f` ya da `3.14F` `float f = 3.14f;`
+        - `double` türünde bir küsuratlı değer tutarken ilgili değerin sonuna d ya da D getirilmelidir. örneğin `3.14d` ya da `3.14D`
+        - `decimal` türünde bir küsuratlı değer tutarken ilgili değerin sonuna m ya da M getirilmelidir. örneğin `3.14m` ya da `3.14M`
+        - Ondalıklı türlerde bir değer default olarak `double`'dır ve default olduğundan dolayı ondalıklı bir değeri double ile tutarken d ya da D'yi kullanmak zorunda değiliz!
+
+<img src = "30.png" width="auto">
+
+- Soldaki tür neyse sağdaki değerle/değerin türüyle eşdeğer olmalı. 
+
+- Bir sayısal tür değer aralığına girmeyen değeri tutamaz! Compiler hata verir!
+
+- Sayısal ifadelerin kendi aralarında tür dönüşümü sırasında veri kaybı soz konusu olabilir.
+
+- Dolayısıyla değeri karşılayabilecek en uygun tür neyse onda tutulması mantıklıdır.
+
+<img src = "31.png" width="auto">
+<img src = "32.png" width="auto">
