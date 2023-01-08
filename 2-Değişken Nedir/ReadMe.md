@@ -306,10 +306,28 @@ Değişken Tanımlama Kuralları
 
 <img src = "19.png" width="auto">
 
-# Snake Case
+## Snake Case
 - Tüm kelimeler küçük olarak başlamalı ve araları _ karakteri ile ayrılmalıdır.
     * kullanici_adi
     * isim_soyisim
     * personel_giderleri
 
 <img src = "20.png" width="auto">
+
+***
+# 46) Değişken İsimlerini @ Operatörüyle Tanımlama
+- Bir değişkenin ismi sade bir şekilde de olabilir ya da başına @ işaretini koyduğumuzda da olabilir.
+
+- @ işareti kelimenin başında özel karakter anlamına gelmemektedir. Ama kelimenin içinde kullanırsanız özel karakter anlamına gelmektedir hata alırsınız.
+
+- Değişken isminin başına getirilen @ özel bir karakterden ziyade anlamlı bir karakter haline geliyor.
+
+- Değişken isimlerinde programatik keyword kullanılmaz! Eğer ki bir değişken isminde programatik olarak kullanılan bir keywordü vermek istiyorsanız eğer bunu @ operatörü ile ezebilir ve öylece verebilirsiniz.
+
+- Eğer ki programatik keyword kullanacaksanız başına @ işareti koyarak programatik keywordü ezebilir ve artık o keyword programatik keyword değil normal bir metin olduğunu ifade edebilirsiniz. 
+
+- @ operatörü ile anlamlı keywordleri değişken ismi olarak kullanabiliyorsunuz.
+
+- Programlama da bir keyword'e karşılık gelen metini değişken ismi olarak kullanmak istiyorsanız onun başına @ işaretini/operatörünü koymanız gerekmektedir.
+
+<img src = "21.png" width="auto">
