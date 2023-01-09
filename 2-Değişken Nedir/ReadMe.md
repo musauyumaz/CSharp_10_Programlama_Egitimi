@@ -576,3 +576,14 @@ c = b;
 
 <img src = "36.png" width="auto">
 <img src = "37.png" width="auto">
+
+***
+# 55) Tanımlanmış Değişkenin Değerini Okuma
+- Bir değişkenin kendisini kendi değerine atama yaparsak eğer assing operatörünün(`=`) sol tarafında kalan yere değişkenin kendisi yani bellek adresi gelecektir. assing operatörünün(`=`) sağ tarafında kalan yere ise değişkenin değeri yani bellek adresinde tutulan değer gelecektir. ve değişkenin önceden var olan değeri silinecek ve gelen değer değişkene set edilmiş olacaktır.
+
+```C#
+int a = 5;
+a = a;
+```
+
+<img src = "38.png" width="auto">
