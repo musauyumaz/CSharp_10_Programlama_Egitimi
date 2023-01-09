@@ -535,3 +535,24 @@ char c = default(char);
 bool x = default;
 decimal y = default;
 ```
+
+***
+# 53) Tanımlanmış Değişkenin Değerini Okuma
+- Bir değişkenin değerini okuyabilmemiz için öncelikle ilgili değişkeni tanımlamamız gerekiyor ardından değer atamamız gerekiyor.
+
+- Bir değişkenin değerini elde edebilmek için değişkenin isminden/adından faydalanmaktayız.
+
+- Bir değişkenin adı assing(`=`) operatörünün sağında yahut metotların parametrelerinde çağırılıyorsa ilgili değişkenin değeri gönderilir.
+
+- `Console.WriteLine()` ekrana çıktı veren, ekrana bişey yazmamızı sağlayan bir komuttur
+    * Console bir sınıftır/class'tır. Bu sınıfın üzerinden direkt bir member'a erişilebildiği için `static` bir yapılanmadır. Bu static member'ın bir metot olduğunu buna erişirkende static yapılanmadan faydalanıp erişebildiğimizi `.`'nın modifier access operatörü olduğunu metotların parametre alabildiğini ileride göreceğiz.
+
+- `Console.WriteLine(x)` => metodun parametresinde çağrıldığı için x'in kendisi değil değeri gidecektir.
+
+- `int y = x;` => x assign'ın sağında kaldığı için y değişkenine x'in değeri atanacaktır.
+
+- Tanımlanmış değişkenin değerini biz değişkenin ismi üzerinden okuruz. Bu yüzden değişkenin adı anlamlı olmalıdır. 
+
+- Bir değişkende bir değeri alacaksan eğer o değişkenin isminden alacaksın. Yaşını tuttuğun değişkene x maaşını tuttuğun değişkene y dersen ulan x'miydi y'miydi diyene kadar direkt yaş ve maaş isimlerini kullanman daha mantıklı olacaktır. 
+
+<img src = "35.png" width="auto">
