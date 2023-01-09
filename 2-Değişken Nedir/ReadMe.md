@@ -481,3 +481,44 @@ Değişken Tanımlama Kuralları
 - Kompleks sayısal ifadeleri _(Alt tire) ile düzenlememizi sağlayan özelliktir. `int sayi = 1_000_000;`
 
 - Değişkenlerimizin değerlerini alt tire(`_`) ile daha görsel daha hoş okunabilir semantik kullanabiliriz.
+
+***
+# 51) Değişken Türüne Uygun Default Değer Atama
+- Tüm değişkenlerin bir default değeri vardır.
+
+- İleride OOP dediğimiz yaklaşımı gördüğümüzde class içerisinde tanımlanan değişkenlerin default değerlerinin otomatik atandığını konuşacağız...
+
+- default keywordü : içerisine verilen türün varsayılan değerini geriye döndürür.
+
+- Main içerisinde oluşturulan değişkenlerin ilk değerlerini manuel atmaya özen gösteriniz.
+
+- Main içerisinde oluşturduğunuzun ilk değerlerini Compiler kendisi veremez. Class'ta verir
+
+
+- Metinsel değerlere null atanır null değersiz demektir. Null ile boş arasında fark vardır. Null boş demek değildir. Boşluk space dediğimiz bir karakterdir. Null değeri yok anlamına gelir.
+    * `string` : `null`
+    * `char` : `\0`
+- Sayısal ifadelerin hepsinde varsayılan 0 söz konusudur.
+    * `int` : `0`
+    * `float` : `0`
+
+- boolean'da ise false'tur.
+    * `bool` : `false`
+
+- Elimizdeki değişkene default değerini biz atamak istersek `default(değişken türü)` 'nü atama yaparız.
+    * `bool x = default(bool)`
+    * `int y = default(int);`
+    * `string z = default(string);`  	
+    * `char c = default(char);`
+
+<img src = "34.png" width="auto">
+
+```C#
+//default keywordü : içerisine verilen türün varsayılan değerini geriye döndürür.
+bool x = default(bool);
+int y = default(int);
+string z = default(string);
+char c = default(char);
+//Main içerisinde oluşturulan değişkenlerin ilk değerlerini manuel atmaya özen gösteriniz.
+// Main içerisinde oluşturduğunuzun ilk değerlerini Compiler kendisi veremez. Class'ta verir
+```
