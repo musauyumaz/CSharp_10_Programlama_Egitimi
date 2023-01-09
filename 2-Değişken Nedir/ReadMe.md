@@ -556,3 +556,23 @@ decimal y = default;
 - Bir değişkende bir değeri alacaksan eğer o değişkenin isminden alacaksın. Yaşını tuttuğun değişkene x maaşını tuttuğun değişkene y dersen ulan x'miydi y'miydi diyene kadar direkt yaş ve maaş isimlerini kullanman daha mantıklı olacaktır. 
 
 <img src = "35.png" width="auto">
+
+***
+# 54) Tanımlanmış Değişkenin Değerini Okuma - Kritik 1
+- Bir değişken assign operatörünün(`=`) sağındaysa değeri gelir.
+
+- Bir değişken ismi assign operatörünün solundaysa kendini getiriyor.
+
+- Değişkenler sürekli değişebilir amma velakin her zaman bir değişkenin değeri son atanan değerdir. Önceki değerler ezilecek/silinecektir.
+
+```C#
+int a = 5;
+int b = 10;
+int c = b;
+int d = a;
+b = a;
+c = b;
+```
+
+<img src = "36.png" width="auto">
+<img src = "37.png" width="auto">
