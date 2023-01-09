@@ -522,3 +522,16 @@ char c = default(char);
 //Main içerisinde oluşturulan değişkenlerin ilk değerlerini manuel atmaya özen gösteriniz.
 // Main içerisinde oluşturduğunuzun ilk değerlerini Compiler kendisi veremez. Class'ta verir
 ```
+
+***
+# 52) Default Literals (C# 7.1)
+- C# 7.1 versiyonuyla gelen Default Literals özelliği sayesinde biz değişken türlerine uygun default değerleri atarken kullandığımız `default` keywordünü daha spesifik halde kullanabilmekteyiz.
+
+- Önceden default keywordünden sonra parantez içinde türü belirtirken artık bu şekilde değilde direkt default keywordüyle değişken tipine uygun default türü atamaktadır. 
+
+- `default` keywordünü hangi değişkene karşı assign ediyorsan otomatik sana o değişkenin varsayılan değerini geri döndürecektir.
+
+```C#
+bool x = default;
+decimal y = default;
+```
