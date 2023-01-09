@@ -475,3 +475,9 @@ Değişken Tanımlama Kuralları
 
     z = (5, 'a');
 ```
+
+***
+# 50) Literal Düzenlemeler(C# 7.0)
+- Kompleks sayısal ifadeleri _(Alt tire) ile düzenlememizi sağlayan özelliktir. `int sayi = 1_000_000;`
+
+- Değişkenlerimizin değerlerini alt tire(`_`) ile daha görsel daha hoş okunabilir semantik kullanabiliriz.
