@@ -687,3 +687,86 @@ a = a;
             }
         }
     `
+
+***
+# 60) Değişmezler/Sabitler(const)
+- Bir değeri işleyeceksek bunu RAM'e koymamız lazım bunuda değişkenler sayesinde gerçekleştirmekteyiz.
+
+- Biz kodu inşa ederken yazılımda bir veriyi en doğru şekilde işleyip sonucu üretebilmek. İşleyeceğimiz veri her daim değişiklik göstermeyebilir. Bazen sabit değerlerle de çalışmamız gerekebilir. 
+
+- Hiçbir zaman işin iradesini kul hakkı boyutuna bırakmayacağız.
+
+- Sabitler değişmeyen değerleri/değişmeyecek değerleri/değişmemesi gereken değerleri tutmak için oluşturulmuş yapılardır.
+
+- Bazen kod yazarken bazen katsayılarınız matematiksel sabitleriniz olacak. Örneğin en barizi Pi sayısıdır. Eğer sen yapmış olduğun uygulama da Pi sayısıyla ilgili işlem yapıyorsan bunu değişkene değil sabite ataman lazım. Çünkü yanlışlıkla Pi değerini değiştirirsen yapacağın hiçbir hesabın tutmayacağına eminiz.
+
+- Süreçte var olan değeri değiştirilemez, değiştirilmeye çalışıldığı taktirde compiler tarafından hata verilir. 
+
+- Bir değişkene koyduğun değeri süreçte değiştirebiliyorsun ama sabite koyduğun değer bir tanedir. Ondan sonra süreçte sen onu değiştiremezsin korunaklıdır o değer.
+
+<img src = "43.png" width="auto">
+
+- `const` keywordüyle sabitlerimizi tanımlayabiliyoruz.
+
+- Constant
+
+- Değişmeyendir.
+
+- Prototip olarak değişkenlere çok benzer lakin davranışsal olarak değeri bir daha değiştirilemez.
+
+- Özünde static yapılanmadır.
+
+- Sabit değerlerimizi tutacağımız değişkenlere biz Constant diyeceğiz.
+
+- Sabitler ilk değerini alır bir daha değişmez.
+
+<img src = "44.png" width="auto">
+
+- Static Uygulama bazlı veri depolayabildiğimiz bellekte bir alandır. Bu alana bir değer koyabilmen için senin bunu `static` keywordüyle işaretlemen gerekir.
+
+- RAM'in alanları;
+    * Stack
+    * Heap
+    * Static
+
+- Static alana koyulan bir değer/değişken evrenseldir. Scope dinlemez. uygulama bazlıdır. Yani sen her yerden ona erişip işlem yapabilirsin.
+
+<img src = "45.png" width="auto">
+
+- static değişkenler adı üzerinde değerleri değişebilir lakin constlar sabittir.
+
+- const fıtrat olarak bir static'tir. Ama sabit olan bir statiktir. Yani yapısal olarak static'te tutulur.
+
+- static değişkenlerde adı üzerinde değeri değişebilen static değişkenlerdir. Static'te olsa değişkendir nihayetinde.
+ 
+- İleride static konusunu incelerken biz orada nesneyi de bilmeliyiz. Nesne üzerinden erişilebilir yapılarla nesneye ihtiyaç duyulmayan yapılar arasında farkı static koyacaktır.
+
+<img src = "46.png" width="auto">
+
+- `readonly` sadece okunabilir değişkenler tanımlamaktır.
+
+- const'tan farkı sadece tanımlandığı yerde değil, ayrıca constructor içerisinde de değeri atanabilir. Dependency Injection deseninde çok sık tercih edilir.
+
+- Eğer ki const ile bir değişmeyen tanımlıyorsanız tanımlama aşamasındayken değerini atamak zorundasınız başka bir varyasyon yok ama readonly'de constructor dediğimiz bir metot olacak bunun içerisinde de değer atayabiliyorsunuz ya da anında atayabiliyorsunuz. Başka yerde atama yapamıyorsunuz.
+
+- const diyor ki ben tanımlanır tanımlanmaz bana değer atamalısın readonly diyor ki ben tanımlanır tanımlanmaz bana direkt değer atamalısın ya da bir tek constructor'da atayabilirsin. Başka bir yerde atayamazsın.
+
+- ayrıca static değildir readonly
+
+- constlar tanımlanır tanımlanmaz değerlerini almak zorundadırlar.
+
+<img src = "47.png" width="auto">
+
+- Senin oluşturduğun bir değişkenin değerini senin kodunu kullanan başka bir developer'a değiştirtmemen gerektiği durumlarda onu const yaparız.
+
+- Değişmemesi gereken değerleri sabitleyeceğiz.
+
+- `const degisken_tipi degisken_adi`
+
+- Bir const tanımlandığında STACK'te ilgili türde alan tahsis edilecektir ve ilk atanan değer dışında bir daha değer kabul etmeyecektir.
+
+- const'lar değiştirilemez lakin istenildiği kadar okuanbilir/değerleri elde edilebilir...
+
+<img src = "48.png" width="auto">
+
+- const değişkenler tanımlama aşamasında değerlerini isterler... Aksi taktirde hata alınır...
