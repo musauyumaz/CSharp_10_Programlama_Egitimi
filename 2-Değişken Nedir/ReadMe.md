@@ -610,3 +610,21 @@ a = a;
 - Bir metot içerisinde tanımlanan değişkenlerin ilk değerlerini manuel olarak vermeyi alışkanlık haline getiriniz... Çünkü programın rahatça işlenebilir ve kodlanabilir olması için
 
 <img src = "39.png" width="auto">
+
+***
+# 57) Değişken Davranışları Genel Bakış(ref için farkındalık)
+- Değişken davranışsal olarak RAM'de kendi türüne uygun alan tahsisinde bulunuyor ve bulunduğu alana göre uygun türlerde değerleri o alanda tutup o değerleri o alandan alıp işlememizi sağlıyor. Yani değişken benim yerime yazılımda veri tutan yapılanma.
+
+- RAM'e direkt yazılımcı olarak erişemiyoruz. Aslında erişebiliyoruz yani pointer'ları kullanarak erişebiliyoruz ama bu erişim sürecinde biz değişkeni kullanarak işimizi daha da kolaylaştırıyoruz. Değişkenler bizim yerimize hem bellek optimizasyonu yapıyor hem nerde alan tahsisi yapacağını bilebiliyor. Böylece ilgili türde bir alan tanımlıyor ve verdiğim değeri direkt oraya koyuyor. Sen uğraşmak zorunda kalmıyorsun ve istediğin zaman ilgili değeri sana getiriyor. Yani yazılımda lazım olduğunda da ilgili değeri alıp işleyebiliyorsun. 
+
+- İşte bu süreçte davranışsal olarak değişkenler isimleri üzerinden hareket ediyor.
+
+- Bir değişkenin ismini assign operatörünün(`=`) solunda çağırıyorsak değişkenin kendisini(bellekteki adresini/kısmı/ o alanı) getirir. dolayısıyla bir atama işlemi yapabilirsin o alana. Eğer değişkenin ismini assign operatörünün(`=`) sağında çağırıyorsak değişkenin değerini/bellekteki değeri getirir. Dolayısıyla sen bu değer üzerinde gönderebilirsin/işlem yapabilirsin.
+    * Değişkenin Kendisi`a`  `=` Değişkenin Değeri geldi. `a`
+
+- Benzer olarak metotlarda/fonksiyonlarda da aynı özelliği sergilemektedir. 
+    * `X(a)` Değişkenin değerini göndermiş olacaktır...
+
+- Değişkenin davranışında değişkenin kendisini göndermesiyle değerini göndermesi arasındaki farkı `ref` keywordünde göreceğiz.
+
+<img src = "40.png" width="auto">
