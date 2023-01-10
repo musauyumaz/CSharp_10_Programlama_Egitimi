@@ -587,3 +587,26 @@ a = a;
 ```
 
 <img src = "38.png" width="auto">
+
+***
+# 56) Değeri Olmayan Değişkenler!
+- Bir değişkeni Main metodu içerisinde oluşturduğunuzda bu değişken için Stack'te bir alan tahsisinde bulunuldu amma velakin içerisinde herhangi bir değer yok.
+`int a;`
+
+- Class içerisinde tanımladığımız değişkenlerin varsayılan default değerleri atanacaktır. Ve bu default değerlerde;
+    * Metinsellerin `null`
+    * Sayısalların  `0`
+    * Mantıksalların `false`
+    * Charların `\0` 'dır.
+
+- Varsayılan değeri olmayan ya da değeri olmayan değişkenle hiç bişey yapamazsınız.
+
+- Örneğin;
+    * İlk başta bir değeri olmayan değişkeni bir yerde çağıramazsınız. `Console.WriteLine(a);`
+    * Bir başka değişkene değerini atayamazsınız. `int b = a;`
+
+- Class içerisinde tanımlanan değişkenlerde varsayılan değer otomatik atanmaktadır. Lakin main içerisinde tanımlanan değişkenlerde varsayılan değer atanmadığı için böyle boş tanımlanan değişkenlerde ilk değeri manuel vermediğimiz sürece işlem yapamayız!
+
+- Bir metot içerisinde tanımlanan değişkenlerin ilk değerlerini manuel olarak vermeyi alışkanlık haline getiriniz... Çünkü programın rahatça işlenebilir ve kodlanabilir olması için
+
+<img src = "39.png" width="auto">
