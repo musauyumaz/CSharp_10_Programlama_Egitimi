@@ -658,3 +658,32 @@ a = a;
 <img src = "41.png" width="auto">
 <img src = "42.png" width="auto">
 
+***
+# 59) Custom Scope Oluşturmak
+- Scope'ların kullanıldığı alanlar;
+    * class'lar
+    * interface'ler
+    * metotlar
+    * namespace'ler
+    * Akış Kontrol yapılanmalarında (if,switch)
+    * döngülerde (for,while,do while)
+    * iterasyonlarda (foreach)
+    * Hata kontrol yapılanmalrı(try-catch)
+
+- Kendimiz kodun içinde metodu faaliyet alanlarına bölebiliyoruz.
+
+- Herhangi bir koda bağlı olmaz ve istediğiniz kadar Custom Scope oluşturabilirsiniz.
+    * `{
+            {
+                {
+                    {
+                        {
+                            {
+                                
+                            }
+                        }
+                    }
+                }
+            }
+        }
+    `
