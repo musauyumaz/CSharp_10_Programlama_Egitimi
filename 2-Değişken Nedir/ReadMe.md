@@ -628,3 +628,33 @@ a = a;
 - Değişkenin davranışında değişkenin kendisini göndermesiyle değerini göndermesi arasındaki farkı `ref` keywordünde göreceğiz.
 
 <img src = "40.png" width="auto">
+
+***
+# 58) Değişkenlerin Faaliyet Alanları(Scope Kavramı)
+- Scope : faaliyet alanı,kapsam.
+
+- Programlama dillerinde Scope değişken ve fonksiyonların kapsadığı context'i belirler
+
+- Değişken ve fonksiyonların erişilebilirlik sınırlarını belirleyen alandır.
+
+- Tanımlamalarda ve algoritmik çalışmalarda karşıklılığı önleyen bir sınır çizer.
+
+- Bir scope'ta tanımladığın bir değişken farklı bir scope'da aynı isimde yine tanımlanabilir ve scope'lar fark yarattığı için karışıklılığı önleyecektir.
+
+- C#'ta scope'lar Süslü Parantez (`{}`) ile ifade edilmektedir.
+
+- Bir scope içerisinde tanımlanan değişkene o scope içerisinde her yerde erişilebilir.(Tabi tanımlandıktan sonra) Aynı zamanda bu scope içerisinde oluşturulan diğer scope'lardan da erişim sağlanabilir. Eğer ki farklı bir scope'dan değişkene erişmeye çalışırsan erişim sağlayamazsın.
+
+- Hatırlarsanız eğer bir scope'da aynı isimde birden fazla değişken olamaz demiştik. Halbuki farkli scope'larda aynı isimde değişken olabilir...
+
+- Scope'lar iç içe tanımlanabilir.
+
+- Scope'lar iç içe erişim gösterebilirken yatay düzlemde erişim gösteremezler.
+
+- Bir değişken sade ve sadece tanımlandığı scope'un içerisinde erişilebilir ve kullanılabilir.
+
+- Bir değişkenin nerede tanımlandığına dikkat edilmelidir. Bir değişkeni nerede tanımladıysanız o erişilebilir olacağı noktayı iyi seçmeniz lazım.
+
+<img src = "41.png" width="auto">
+<img src = "42.png" width="auto">
+
