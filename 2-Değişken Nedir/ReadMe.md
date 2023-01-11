@@ -885,3 +885,43 @@ class Program
 - Shallow Copy OOP derlerinde ele alacağımız nesne ve referans arasındaki ilişkide varsayılan davranış olarak kabul edilmektedir. Bu konuyla ilgili eğitimlerimizde değinirken, nesneler üzerinde de ayriyetten Deep Copy'nin nasıl gerçekleştirileceğini de ele alacağız...
 
 <img src = "55.png" width="auto">
+
+***
+# 65) object Türü
+- Bir değer türüne uygun bir değişkende tutulmalıdır.
+
+- Yazılımda assign operatörünün(`=`) sağ tarafındaki tür neyse sol tarafındaki türde aynı olmalıdır. Sağ ile sol eşit türlerde olmalı. Birbirlerini karşılamalı. Bu sağ sol prensibidir.
+
+- object : Tümmmmm türleri tek başına karşılayabilen bir türdür...
+
+- Tüm türlerin üst çatısı object türüdür. 
+
+- Tüm türler varsayılan olarak object'ten türerler. Referans türlülerde olabilir Değer türlüler de olabilir.
+
+- Birşey birşeyden türediği zaman türeyen türetilen tarafından temsil edilebilir. Yani object'ten string türüyorsa string aynı zamanda object'tir.
+
+- object string'tende geniş olduğu için string'ide kapsadığından dolayı string'i tutabiliyor.
+
+- object bütün değerleri karşılayabilecek evrensel bir tür. Türlerin Adem'idir...
+
+- Object türlerin ademidir. Bu yüzden tümmm türleri karşılayabilmektedir.
+
+- object; referans türlü bir değişkendir... Lakin değer türlü değerleri de karşılayabilir...
+
+- object aynı zamanda nesneleri de işaretleyebilir. 
+
+<img src = "56.png" width="auto">
+
+- Object değişkenler ilgili verileri RAM'de object türde tutarlar. Lakin verinin öz türünü de içerisinde bozmadan saklarlar. Yaniiii object içerisindeki veri kendi öz türünde tutulur.
+
+- object dışarıdan objeye çeviriyor ilgili veriyi ama içeride verinin türünü tutabiliyor.
+
+- Bu durum object içerisindeki veriyi kendi türünde tekrar elde edebiliriz anlamına gelmektedir....
+
+- Bir veriyi object'in içerisine koymaya Boxing/kutulama/objectleme diyoruz. O veriyi object içerisinden kendi türünde elde etmeye Unboxing diyoruz.
+
+- object'e atanan değer object türünde RAM'de saklanıyor ama içerisinde saklanan değer neyse o'dur herhangi bir değişim olmaz. string koyduysan string olarak object'in içerisinde tutulur.
+
+- Bir T türündeki değeri object'e koymaya boxing/kutulama bu değeri T türünde çıkarmaya unboxing denir.
+
+<img src = "57.png" width="auto">
