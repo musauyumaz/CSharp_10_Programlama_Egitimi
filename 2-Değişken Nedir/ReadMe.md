@@ -770,3 +770,37 @@ a = a;
 <img src = "48.png" width="auto">
 
 - const değişkenler tanımlama aşamasında değerlerini isterler... Aksi taktirde hata alınır...
+
+***
+# 61) Global Değişkenler
+- Aslında bildiğiniz değişkenin ta kendisi ama konumlandığı/koyulduğu yere göre bir değişken ya global oluyor ya da local oluyor. İsmi değişiyor oradaki sorumluluğu/yapısı/işleyişi değişmiyor.
+
+- Terminoloji de bir değişken class scope'u içerisinde tanımlanıyorsa buna global değişken diyoruz... Method scope'ları içerisinde tanımlananlara da local değişken diyoruz.
+
+- Bir değişken class elemanıysa buna global değişken diyoruz.
+
+- Aslında hangi scope'u baz alırsanız ona göre bir değişken local ya da global olur.
+
+```C#
+class Program
+{
+    //Bir değişken class scope'u içerisinde tanımlanıyorsa buna global değişken diyoruz...
+    int a;//Global Değişken
+    int b;//Global Değişken
+    int c;//Global Değişken
+    static void Main(string[] args)
+    {
+        int z;//Local Değişken
+
+        {
+
+        }
+        {
+            {
+
+            }
+        }
+    }
+}
+
+```
