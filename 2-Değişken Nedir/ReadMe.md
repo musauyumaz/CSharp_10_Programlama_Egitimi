@@ -804,3 +804,13 @@ class Program
 }
 
 ```
+
+***
+# 62) Değişken Tanımlama Varyasyonları
+- Değişkenleri tanımlarken iki varyasyonda değişkenler tanımlanabilmektedir. 
+    1. Değişkenin tipini yazıyorsun ve ardından bir isim veriyorsun ister hemen değer atayabiliyorsun istersen daha sonra değer atayabiliyorsun
+        - `int a = 5;`
+        - `int b = 10;` 
+    2. Aynı türden birden fazla değişken oluşturulacaksa eğer bu değişkenleri tek imzada aşağıdaki gibi tanımlayabiliriz. Buradaki varyasyonda da ister hemen değer atayabilir ister daha sonra atama yapabilirsiniz.
+        - `int a = 5, b = 10;`
+        - Dikkat edilmesi gereken husus aynı türden olmaları gerekmektedir.
