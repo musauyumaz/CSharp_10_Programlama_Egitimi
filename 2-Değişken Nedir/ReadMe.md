@@ -855,3 +855,33 @@ class Program
 - Bir değişkendeki değer başka bir değişkene klonlanıp atandıysa yani iki değer farklı değerlerse tamam birbirlerine eşit olabilir ama farklı değerlerdir. Birbirlerini etkilemezler. İşte bir değişkende yapılan değişiklik diğer değişkene yansımayacaktır.
 
 <img src = "54.png" width="auto">
+
+***
+# 64) Değişkenler Arası Değer Atama Durumları - Shallow Copy
+- Shallow Copy davranış olarak biraz daha gelişmiş bir yapılanma.
+
+- İki tane değişken olduğunu varsayalım a ve b olmak üzere. Ama bu değişkenlerin değer türlü değil referans türlü olduklarını düşünelim.
+
+- Değişkenler arası değer atamalarında değeri türetmek/çoğaltmak/klonlamak yerine var olanı birden fazla referansla işaretlemeye dayalı kopyalama yöntemidir.
+
+- Bellekte birden fazla referansın tek bir veriyi işaret etmesidir.
+
+- Neticede ilgili değer bir değişikliğe uğradığında tüm işaretleyen referanslara bu değişiklik yansıyacaktır.
+
+- Elimizde bir veri var sen bu veriyi tutan değişkeni bir başka değişkene gönderdiğinde yani atadığın zaman buradaki değer türetilmiyorsa/klonlanmıyorsa var olan değeri sadece diğer değişkende işaretliyorsa biz buna Shallow Copy diyoruz. Yani yüzeysel kopyalama. Aslında referansını kopyalıyoruz.
+
+- Bir tane değerimiz var ve bu değer Heap bölgesinde Heap'teki değeri hem a hem de b ikisi birlikte bu değeri işaretliyor aynı değeri işaretliyorlar. İşte bu yüzeysel bir kopyalamadır.
+
+- Default olarak Shallow Copy referans türlü değişkenlerde geçerlidir.
+
+- Referanslar/birden fazla referans bellekte tek bir veriyi işaretliyorsa bilin ki onlar kendi aralarında yüzeysel/shallow kopyalama yapmıştır.
+
+- Birden fazla referans/değişken aynı türde atama sonucunda farklı değerleri referans ediyorlarsa orada da Deeğ Copy söz konusudur.
+
+- Normalde Değer Türlü değişkenler default olarak Deep Copy edilirler.
+
+- Bu eğitimin ilerideki konusu olan `ref` keyword'ü ile Değer Türlü değişkenlerde nasıl Shallow Copy yapıldığını ele alacağız.
+
+- Shallow Copy OOP derlerinde ele alacağımız nesne ve referans arasındaki ilişkide varsayılan davranış olarak kabul edilmektedir. Bu konuyla ilgili eğitimlerimizde değinirken, nesneler üzerinde de ayriyetten Deep Copy'nin nasıl gerçekleştirileceğini de ele alacağız...
+
+<img src = "55.png" width="auto">
