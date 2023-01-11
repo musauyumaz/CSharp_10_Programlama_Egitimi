@@ -814,3 +814,44 @@ class Program
     2. Aynı türden birden fazla değişken oluşturulacaksa eğer bu değişkenleri tek imzada aşağıdaki gibi tanımlayabiliriz. Buradaki varyasyonda da ister hemen değer atayabilir ister daha sonra atama yapabilirsiniz.
         - `int a = 5, b = 10;`
         - Dikkat edilmesi gereken husus aynı türden olmaları gerekmektedir.
+
+***
+# 63) Değişkenler Arası Değer Atama Durumları - Deep Copy
+
+<img src = "49.png" width="auto">
+
+- Değişkenler arası değer atanırken verisel açıdan iki davranış söz konusudur.
+    * Deep Copy : değeri klonlayıp, tekrar edip, yeniden oluşturup atayabilir.
+    * Shallow Copy : yüzeysel bir kopyalama yaparak atama işlemini gerçekleştirebilir.
+
+<img src = "50.png" width="auto">
+
+- Varsayılım ki Stack'te iki tane değişkenimiz olsun değişkenlerden biri a diğeri b olsun ve a 5 değerine eşit olsun ve ardından b değişkenine a değişkeninin değerini atayalım böyle bir durumda b değişkenine a'daki 5 değeri gönderilecektir.
+
+- Deep copy(derin kopylama) neticesinde eldeki veri çoğalır/klonlanır.
+
+- Deep copy dediğimi derin kopyalama net yani varolan bir veriyi derinden kopyalıyor/klonluyor.
+
+- Deep Copy'de eldeki veri çoğaltılır/klonlanır. Eldeki veri bir iken iki olur.
+
+- Mesela koyun doly Deep Copy yapılmıştır. koyunu klonlamışlar/çoğaltmışlar aynısından bir tane daha oluşturmuşlar.
+
+- Mesela telefonlar fabrika da sürekli modeli çoğaltılıyor deep copy yapılıyor Yani eldeki veri çoğalır/klonlanır.
+
+- Temel değişkenlerde değişkenin değerini bir başka değişkene atadığımızda ilgili değer çoğaltılır.
+
+- Deep Copy'de elimizdeki veri çoğalır bu çoğalma neticesinde RAM'de bir tane veri varken aynı veriden bir tane daha olacaktır.
+
+<img src = "51.png" width="auto">
+
+- Değer türlü değişkenler birbirlerine atanırken default olarak deep copy geçerlidir. Yani veri otomatik olarak türetilir.
+
+<img src = "52.png" width="auto">
+
+- Decimal'deki bir 1000 değerini farklı bir decimal değişkene ya da farklı bir sayısal değişkene gönderirken oradaki değer yeniden üretilecek ve yeniden o değişkene gönderilecektir. Yani derin bir kopyalama yapılıp çoğaltılacak/klonlanacaktır.
+
+<img src = "53.png" width="auto">
+
+- Bir değişkendeki değer başka bir değişkene klonlanıp atandıysa yani iki değer farklı değerlerse tamam birbirlerine eşit olabilir ama farklı değerlerdir. Birbirlerini etkilemezler. İşte bir değişkende yapılan değişiklik diğer değişkene yansımayacaktır.
+
+<img src = "54.png" width="auto">
