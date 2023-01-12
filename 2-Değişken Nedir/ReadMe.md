@@ -990,3 +990,16 @@ class Program
 - `int` türünde boxing edilmiş bir değeri `int` türünde UnBoxing etmelisiniz... Gidipte `int` türünde boxing edilmiş bir veriyi `char` türünde UnBoxing etmeye çalışıyorsanız yüksek ihtimalle bir hatayla karşılaşacaksınız.
 
 <img src = "61.png" width="auto">
+
+***
+# 68.2) object - Unboxing
+- `object _yas = 23`
+- `string yas = (string)_yas` _yas içerisinde gelen değeri `string` olarak geldiğini varsayacak.
+    * Bu durumda kodu semantik açıdan/konsept olarak doğru yazdığımızdan dolayı herhangi bir sıkıntı yok. Derleme yani compile ettikten sonra ayağa kaldırırken Runtime'da Boxing/UnBoxing işlemleri gerçekleştiriliyor dolayısıyla ayağa kalkarken hata meydana gelecektir.
+    * kardeşim ben `int` türündeki değerini ben `string` türe cast edemiyorum/dönüştüremiyorum diyor.
+
+- Ne olarak koyduysan o olarak çıkarmalısın...
+
+<img src = "62.png" width="auto">
+
+- Boxing edilmiş bir değeri UnBoxing ederken türünü bilmiyorsan 
