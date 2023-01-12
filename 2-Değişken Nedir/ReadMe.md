@@ -953,3 +953,22 @@ class Program
 - Herhangi bir değer object türe assign ediliyorsa eğer bu işlem Boxing'tir...
 
 <img src = "58.png" width="auto">
+
+***
+# 67) Cast Operatörü
+- Unboxing işlemlerinde kullanacağımız operatördür.
+
+- Boxing edilmiş/object'te dönüştürülmüş/object'te set edilmiş/object'te assign edilmiş/object'te atanmış bir veriyi kendi türünde elde etmemizi sağlayan bir operatördür.
+
+- Bilinçli tür dönüşümlerinde kullanılır.
+
+- Kalıtımsal durumlarda Base class'ın referansından ondan türeyen derived class dediğimiz class'ın nesnesini de kendi referansında elde etmek istiyorsak yine cast operatöründen faydalanırız.
+
+- Cast operatörü `()`(parantezdir) ve yanına object değeri alır.
+
+- Cast operatörü object olan değişkenin solunda o object'i hangi türe Unboxing etmek istiyorsak parantez içerisine hedef türü bildirerek kullanılır.
+    * `int a = 5;`
+    * `object b = a;` Boxing işlemi gerçekleştirildi.
+    * `(int)b;` Cast operatörü b değişkeni/objesi içerisindeki değeri bana int olarak ver demektedir.
+
+<img src = "59.png" width="auto">
