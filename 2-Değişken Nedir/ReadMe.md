@@ -1049,3 +1049,58 @@ class Program
     * `var` atanan değerin türüne bürünürken, `object` atanan değeri Boxing yaparak `object`'te dönüştürür.
 
 <img src = "64.png" width="auto">
+
+***
+# 70) C# dynamic Keyword'ü Nedir? Ne İşe Yarar
+- Çok fazla kullanmayız ama spesifik noktalarda hayat kurtaran bir keyworddür.
+
+- `dynamic` keywordü `var` keywordüne çok benzer `var`'ın runtime'daki versiyonudur.
+
+- `var` bir değişken oluşturduğumda compiler değere bakıyordu bunu development/compile aşamasında/seviyesinde değerin türüne göre davranış sergilettiriyordu.
+
+- `dynamic a = 5;` development aşamasında a'nın hala dynamic olduğu gözlemlenecektir. Ne zaman ki uygulama derlenip çalıştırılır yani runtime'da o zaman `dynamic` ilgili değerin türüne bürünmüş olacaktır.
+
+- `var` derleme aşamasında değerin türüne bürünürken `dynamic` ise runtime'da verilen değerin türüne bürünecektir...7
+
+<img src = "65.png" width="auto">
+
+- `var a = 5;`
+- `dynamic _a = 5;` derleme aşamasında bu türe bürünemeyeceği için dynamic hala dynamic kalacaktır. Çalıştırma aşamasında runtime'da bürünecektir.
+- `_a.` hala dynamic olduğundan dolayı şu anda türü hala belli olmadığından dolayı herhangi bir member'a/metoda vs. erişememekteyim. Çünkü türünü bilmemektedir.
+
+- Runtime'da gelen verilere bürünen bir keyworddür.
+
+- Uzaktan bir veri geliyor. Gelen verinin türünü bilmiyorsunuz ona karşı bir karşılayıcı bir tür oluşturmamışsınız. `dynamic`'te sen bunu karşılarsın. runtime'da gelen türe direkt bürüneceğinden dolayı runtime'da sen bunu çok rahat yönetebilirsin.
+
+- `dynamic`'in yapısal olarak Runtime'da atanan değerin türüne bürüneceğinden dolayı atanan değerin fonksiyonlarına ya da alttaki property dediğimiz özelliklerine runtime'da erişebiliyor.
+
+- biz çağıracağımız nitelikleri de metotları da property'leri de bilemeyeceğimizden dolayı dynamic kullanımı biraz zahmetli ama çok kritik noktalarda bayaa bayaa işlem görüyor.
+
+```C#
+var a = 5;
+dynamic _a = 5;//derleme aşamasında bu türe bürünemeyeceği için dynamic hala dynamic kalacaktır. Çalıştırma aşamasında runtime'da bürünecektir.
+_a.ToString(); //hala dynamic olduğundan dolayı şu anda türü hala belli olmadığından dolayı herhangi bir member'a/metoda vs. erişememekteyim. Çünkü türünü bilmemektedir.
+
+System.Console.WriteLine(_a.GetType());
+System.Console.WriteLine(_a * 5); //Sağdakini sayısal verdin sıkıntı yok soldakini ise dynamic verdin bu muhtemelen sayısal olursa ben runtime'da bu işlemi gerçekleştiririm diyor. Sayısal olmaz başka bir türdolursa patlarım diyor. Runtime'da tür belli olacağından dolayı compile aşamasında hata vermiyor.
+
+//dynamic keywordü runtime'da türü belirleyecektir lakin kararlı davranmayacaktır.
+dynamic x = "Ahmet";
+Console.WriteLine(x.GetType());
+x = 3.14D;
+Console.WriteLine(x.GetType());
+```
+
+- `dynamic` Runtime'a bırakıyor bütün kararı. ama `var` direkt türü bileceğinden dolayı gelen türe göre işlem gerçekleştirebilir.
+
+- `dynamic` keywordü runtime'da türü belirleyecektir lakin kararlı davranmayacaktır. bir kez atadığın türüne bürünmesini ve başka bir türe atanmamasını beklersin ama dynamic bu konuda karaktersiz davranıyor ve runtime'da benim türümü değiştirebilirsin diyor.
+
+- Runtime'da esnek çalışabilmeni sağlayan bir keyworddür.
+
+- Gelen datanın türünü bilmiyorsan eğer datayı runtime'da `dynamic` ile karşılayabilirsin.
+
+- Uzaktan gelen veriler var keywordü ile karşılanamaz!!! Çünkü var keywordü tanımlandığı esnada verinin atanmasını ister!!!
+
+- Kullanıcıların kullandığı client'lardan gelen istekleri karşılarken bazen türü bilemeyebiliyoruz bazen hayat kurtarıcı bir keyword olabiliyor.
+
+<img src = "66.png" width="auto">
