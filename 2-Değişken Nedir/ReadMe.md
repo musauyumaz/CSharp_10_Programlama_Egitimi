@@ -972,3 +972,21 @@ class Program
     * `(int)b;` Cast operatörü b değişkeni/objesi içerisindeki değeri bana int olarak ver demektedir.
 
 <img src = "59.png" width="auto">
+
+***
+# 68.1) object - Unboxing
+- UnBoxing Boxing edilmiş bir veriyi kendi öz türünde object'ten çıkarmaktır.
+
+- Boxing yapılmış bir değerin üzerinde kendi öz türündeymiş gibi işlem gerçekleştirilemez
+
+- Boxing edilmiş veriyi kendi öz türündeki nitelikleriyle kullanamıyorduk. Yani elimdeki int veriyi matematiksel işlemlere object olduğu için tabi tutamıyoruz.
+
+<img src = "60.png" width="auto">
+
+- object içerisine Boxing edilmiş bir değeri kendi öz türünde dışarı çıkarırken UnBoxing yaparız.
+
+- UnBoxing esnasında Boxing edilmiş verinin orjinal türü ne ise o bildirilmelidir. Çünkü sen `int` koyduğun bir değeri `char` olarak UnBoxing etmeye çalışırsan Runtime'da patlarsın. Kendi öz türü neyse o türde elde etmen lazım.
+
+- `int` türünde boxing edilmiş bir değeri `int` türünde UnBoxing etmelisiniz... Gidipte `int` türünde boxing edilmiş bir veriyi `char` türünde UnBoxing etmeye çalışıyorsanız yüksek ihtimalle bir hatayla karşılaşacaksınız.
+
+<img src = "61.png" width="auto">
