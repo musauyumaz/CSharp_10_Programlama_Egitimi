@@ -1003,3 +1003,49 @@ class Program
 <img src = "62.png" width="auto">
 
 - Boxing edilmiş bir değeri UnBoxing ederken türünü bilmiyorsan 
+
+***
+# 69) C# var Keyword'ü Nedir? Ne İşe Yarar
+- `var` keywordü bir değişken türü değildir. Bir keyworddür ve belirli bir işlem yapar.
+
+- Eğer ki tutacağınız değere göre değişkenin türünü compiler'a belirletmek istiyorsanız `var` keywordünü kullanabilirsiniz.
+
+- Tutulacak değerin türüne uygun bir değişken tanımlayabilmek için kullanılan keyword'dür.
+
+- Normalde tutulacak değerin türüne uygun değişkeni manuel tasarlıyoruz ya `var` keywordü compiler tarafından otomatik olarak belirleniyor.
+
+- `var` keywordü kendisine atanan değerin türüne bürünür.
+    * `var medeniHal = true;` Değer `bool` olduğundan dolayı `var` `bool` türüne bürünecektir.
+
+- `var` keywordü, compiler tarafından değerin türüne göre otomatik büründürülen bir keyworddür. Lakin bir tür DEĞİLDİR.
+
+- `var` bir keyworddür ve verilen değerin türüne dönüşüyor. Kendisi RunTime'da o türdeymiş gibi hareket ediyor.
+
+- Genellikle yazacağımız değişkenlerin türlerini yazmaktan üşendiğimiz için kullanmaktayız!!! Halbuki esas olma sebebi ise farklı diller arasında desteklenmeyen türlerdeki verileri karşılayabilmek için oluşturulmuş ortak bir keyword'dür. Anonim türleri de karşılayabilmektedir.
+
+- Diller arasındaki entegrasyonda kullanılıyordu...
+
+- `var yas = 25;` Compiler değere bakacak ve değerin türünü `int` olarak algılayacak ve `var` keywordüne diyecek ki sen `int` davranışı sergileyeceksin diyecek. Burada maliyet var performansı olumsuz etkileyen bir durum var.
+
+- Türünü bilebildiğimiz verilerin değişken türlerini var ile compiler'a yaptırmak ufakta olsa bir maliyettir! Bunun için bizler bu maliyetten kaçınmak adına bildiğimiz türleri mümkün mertebe üşenmeden belirteceğiz...
+
+- Hedefimiz Compiler'daki maliyeti azaltmak.
+
+- `var` keywordü verilen değere göre kendi türünü belirleyen bir değişken tanımlama keywordüdür. Biraz da maliyetlidir.
+
+- `var` keywordü Yazdığınız anda bodoslama dönüşüm yapmaz Compiler seviyesinde gerekli türde davranış sergileyecektir.
+
+<img src = "63.png" width="auto">
+
+- `var` keywordüyle tanımlanan değişkenin değeri tanımlanma aşamasında verilmelidir. Verilmelidir ki türü belirleyip direkt ona dönüşebilsin o türde davranış sergileyebilsin...
+
+- `var` keywordüyle tanımlanan değişkene ilk değer verildikten sonra o değerin türüne bürüneceği için sonraki durumlarda değeri farklı türlerde verilemez!!!
+
+- `var` - `object` arasındaki fark;
+    * `var x = 5;` Stack'te `int` türünde değeri 5 olarak şekilde tutacaktır.
+    * `object y = 15;` `object` türünde içerisinde `int` türünde değeri 15'i tutacaktır.
+    * `var` ile tanımladığın değere direkt erişip kendi öz türünde işlem yapabilirken `object`'te ise boxing etmiş olursun unboxing etmek zorunda kalırsın
+    * `var` ilgili değeri `object`'tin yaptığı gibi boxing yapmaz bu yüzden unboxing'e de gerek kalmaz. Çünkü Compiler aşamasında çalışan operasyonel bir keyworddür. `object` ise bir türdür.
+    * `var` atanan değerin türüne bürünürken, `object` atanan değeri Boxing yaparak `object`'te dönüştürür.
+
+<img src = "64.png" width="auto">
