@@ -925,3 +925,31 @@ class Program
 - Bir T türündeki değeri object'e koymaya boxing/kutulama bu değeri T türünde çıkarmaya unboxing denir.
 
 <img src = "57.png" width="auto">
+
+***
+# 66) object Türü - Boxing
+- object türdeki bir değişkene herhangi bir türdeki değeri göndermek Boxing olarak nitelendirilmektedir.
+
+- object varsa Boxing söz konusudur.
+
+* `int yas = 23;` RAM'de int türünde değişken üzerinden bir alan tahsisi yapar ve oraya 23 değerini koyar. `int` olarak konulur ve çağırdığında da `int` olarak gelir.
+* `object _yas = 23;` Bir tane obje açıyor ve içine `int` türdeki 23 değerini yerleştiriyor. Buraya yerleştirilen 23 `int` olarak yerleştirilmiş oluyor.
+
+- Herhangi bir değeri object değişkene atadığınızda o değer otomatik object'te dönüştürülür. Dönüştürülme işlemine Boxing denmektedir.
+
+- Boxing işlemi neticesinde ilgili değer objectin içerisinde kendi türüyle saklanır. Lakin! ilgili değer bizlere object türde gelecektir.
+
+- Burada dikkat ederseniz object türden elde edilen değer üzerinde türüne özgü işlemler gerçekleştirilemez! 
+    * Örneğin sayısal bir değer varsa o değer object olarak geleceğinden dolayı matematiksel işlemler yapılamaz!
+
+- Boxing yapılmış yani object türüne atanmış değerin üzerinde kendi türünde işlem yapabilmem için değeri object değilde kendi türünde elde etmem lazım bu olaya Unboxing denir.
+
+- object'te atanan bir değer o objecet türünden çağrılıyorsa sana object(paketlenmiş/kutulanmış) olarak gelecektir. Sen onun üzerinde türüne özgü herhangi bir işlem YAPAMAZSIN!
+
+- Object bir değişkenin içerisindeki değer üzerinde türüne özgü işlemler yapabilmek için o object'in içeriisnde değeri kendi/has/özgün türünde elde etmemiz gerekmektedir. İşte bu işleme de UnBoxing(kutudan çıkarma) diyeceğiz...
+
+- Herhangi bir değer object değişkene atanıyorsa Boxing işlemine tabi tutulur.
+
+- Herhangi bir değer object türe assign ediliyorsa eğer bu işlem Boxing'tir...
+
+<img src = "58.png" width="auto">
