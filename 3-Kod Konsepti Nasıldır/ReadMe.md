@@ -72,3 +72,53 @@
 - Tabikide bir konsepti ifade edebilmek için sadece bir tane `;` operatörü kullanmanız hani 2 tane 3 tane gereksiz yere kullanmanızdan daha temiz bir kod görüntüsü karşılayacağından dolayı yeterli olacaktır.
 
 <img src="4.png" width="auto">
+
+***
+# 75) C#'ta Satır Satır Kod Mantığı Hatası!
+- Genellikle düşünürken yanlışa sürükleyen line to line yani satır satır kod konseptinin aslında bir yanlıştır.
+
+- Kod satır satır okunmaz.
+
+- Kod satır satır compiler tarafından yorumlanmaz. Derlenmez.
+
+- Siz zannediyormusunuz ki compiler kodu yukarıdan aşağı satır satır okuyor. Belki bilgisayar bilimlerinde bunun bir yeri olabilir ama bizim direkt temasta bulunduğumuz bu kod yüzeyinde böyle bir kural yoktur.
+
+- Compiler kodu derlerken satır satır değil konsept konsept derliyor.
+
+- `namespace LineToLine;class Program{ static void Main(string[] args){int a = 5;string b = "Musa";}}` Kodu tek satırda yazmamıza rağmen hala kod derlenmekte ve çalışmakta aynı zamanda işlemler devam etmektedir.
+
+- Biz kodu satır satır yazmamızın sebebi yazdığımız kodu daha rahat okuyabilmek hızlı bir şekilde koda adapte olabilmek yani okunabilir kod inşa etmek yoksa sen kodları tek satırda da yazabilirsin.
+
+- Satır satır kod bizim seviyemizde yoktur yanlıştır. Bilgisayar bilimleri seviyesinde belki olur öyle bir kavram vardır ama C#'ı yazarken biz bunla ilgilenirken kodu inşa ederken satır satır mantığıyla değil konsept konsept mantığıyla düşüneceğiz. Yani kodları satır olarak değilde bir konsept olarak değerlendireceksin.
+
+- Kodlar aynı satırda olabilir ama aynı satırdaki iki farklı komutu konseptler ayıracaktır. Bu konseptleri de ayırmamızı sağlayan `;` operatörüdür. Tabi ileride farklı scope gibi kavramlarında konsepti ayırdığını göreceğiz.
+
+```C#
+namespace LineToLine;
+class Program
+{ 
+    static void Main(string[] args)
+    {
+        int
+         a
+          =
+           5
+           ;
+        string b = "Musa";
+    }
+}
+```
+- Eğer satır satır kod diye bir mantık olsaydı bu işlemi gerçekleştiremezdiniz. Bu kod yine derlenecek ve çalışacaktır. Çünkü konsept konsept işlem görür.
+
+
+```C#
+namespace LineToLine;
+class Program
+{ 
+    static void Main(string[] args)
+    {
+        int a = 5;
+        string b = "Musa";
+    }
+}
+```
