@@ -31,3 +31,17 @@
 - Bizim kodumuz senkron bir şekilde derlenir ve senkron bir şekilde çalışır.
 
 <img src="1.png" width="auto">
+
+***
+# 73) Kod Konsepti Nasıldır? Nasıl Oluşturulur?
+- `int a = 5;` Bir kodu inşa ederken genellikle C#'ta bu şekilde yazacağız.
+    * Yani sol tarafta bişey olacak bir karşılayıcı/tür/referans/değişken arada assign ya da referans etme operatörü olacak ve sağ taraftan gelen kod upuzun bir kod olabilir farketmiyor. Bu kod bir işlem yapıp değer döndürecek genellikle konseptimiz bu şekilde olacak.
+
+- Ya da sağ taraftaki kod değer döndürmeyen kodda olabilir direkt sağdaki kodumuzu inşa edeceğiz. Herhangi bir değer döndürmeyecekse sadece bir işlem yapacak ama bir değer döndürmeüyorsa direkt bu şekilde bırakacağız. herhangi bir yere assign ya da referans etmeyeceğiz.
+
+- Bir işlem yapacaksın bunun gelen değerini soldaki bir değere atayacaksın oradan devam edeceksin başka bir işlemde yine soldakine atayacaksın böyle böyle devir daim gidecek. Koda baktığınızda neredeyse %95 kullanacağımız bir konseptten bahsediyoruz. 
+
+- Bir işlem yaptın sonuç mu var bir yere ata. Tabikide sonucuna türüne uygun bir yere ata.
+
+<img src="2.png" width="auto">
+<img src="3.png" width="auto">
