@@ -122,3 +122,11 @@ class Program
     }
 }
 ```
+
+***
+# 76) C# Kod Konseptini Özetleyelim
+- Kod Nasıl Çalışır?
+- Kod Konsepti Nasıldır?
+- ; Operatörü
+- Satır Satır Kod Mantığı Yoktur!
+- Özet
