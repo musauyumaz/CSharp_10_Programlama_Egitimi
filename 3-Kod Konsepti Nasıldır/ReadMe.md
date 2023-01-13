@@ -45,3 +45,30 @@
 
 <img src="2.png" width="auto">
 <img src="3.png" width="auto">
+
+***
+# 74) C#'ta ;(Noktalı Virgül) Operatörü Nedir? Ne Amaçla Kullanılır?
+- Kodun konseptinin bittiğini ifade etmemizi sağlayan operatördür.
+
+- C# programlama dilinde kodun konseptinin bittiğini ifade eder.
+
+- Sen bir kod yazıyorsun konsepti oluşturdun oluşturduğun konsept devam ededebilir bitede bilir. Örneğin;
+    * `int a = 5;` 
+    * `int a = 5.ToString().Split().. .. . ..;`
+
+- `;` operatörü kod konseptinin o aşamada sona erdiğini ifade eder. Devam edebilecek koduda sonlandırabiliyorsunuz bu şekilde.
+
+- Kod konseptinde sona gelindiğini ifade eden bir operatördür.
+
+- Compiler `;` operatörü ile kod konseptlerini ayırıp konsept konsept kodları yorumlamaktadır. 
+
+- Bir kod konsepti sona erdiğinde `;` operatörü kullanılmak zorundadır. Aksi taktirde hata verecektir!!! Compiler bu kodu compile etmeyecek derlemeyecektir.
+
+- `;` operatörü bir konseptin sonunda istenildiği kadar kullanılabilir.
+    * `int a = 5;;;;;;;;;;;;;;`
+    * `int a = 123.ToString().Split().Rank;;;;;;;;;;;;;;;;;;;;;;;;;;;;`
+    * `int a = 123.ToString().Split().Rank;`
+
+- Tabikide bir konsepti ifade edebilmek için sadece bir tane `;` operatörü kullanmanız hani 2 tane 3 tane gereksiz yere kullanmanızdan daha temiz bir kod görüntüsü karşılayacağından dolayı yeterli olacaktır.
+
+<img src="4.png" width="auto">
