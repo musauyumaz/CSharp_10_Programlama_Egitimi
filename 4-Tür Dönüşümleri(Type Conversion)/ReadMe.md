@@ -98,3 +98,21 @@ System.Console.WriteLine(medeniHal2);
 string v = "ab";
 char v2 = char.Parse(v);
 ```
+
+***
+# 79) Metinsel İfadelerin Diğer İfadelere Dönüştürülmesi - Convert Fonksiyonları
+- Convert fonksiyonu bir tek Parse fonksiyonunda olduğu gibi stringleri diğerlerine dönüştürmüyor her birini birbilerine karşı dönüştürme işlemini sağlıyor.
+
+- Burada türüne uygun bir veriyi dönüştürmeye dikkat edeceksiniz. Nihayetinde uygun değilse yine hata verecektir.
+
+```C#
+Convert Fonksiyonları
+
+string x = "25";
+int x2 = Convert.ToInt32(x);
+
+
+string y = "3,14";
+double y2 = Convert.ToDouble(y);
+System.Console.WriteLine(y2 * 5);
+```
