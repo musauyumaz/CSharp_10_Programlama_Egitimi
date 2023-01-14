@@ -44,3 +44,57 @@
 - Zaten elindeki elmayı armut yapmak istiyorsan elmadan armut çıkaramayacağını bilmen lazım bir kodlama sürecinde. Armutu farklı algoritmayla üretmen gerektiğini de farketmen gerekiyor.
 
 <img src="1.png" width="auto">
+
+***
+# 78) Metinsel İfadelerin Diğer İfadelere Dönüştürülmesi - Parse Fonksiyonu
+- Parse metodu sadece string dataları hedef türe dönüştürürken kullanılır!
+
+- `int` değeri `char`'a dönüştürürken Parse metodunu kullanamazsın!
+
+- Elindeki `string` ifadeyi herhangi bir type'a herhangi bir T türüne dönüştürmek istiyorsan Parse metodunu kullanabilirsin.
+
+- Parse'ın fıtratı şu şekildedir.
+    * `string a = 123;` sen bu değeri hangi türe dönüştürmek istiyorsan öncelikle o türü yazıyorsun ardından (`type.Parse(....)`) .Parse() diyerek  ardından parantez içine string ifadeyi yerleştiriyorsun bu bir değişkende olabilir ya da direkt manuel olarak yerleştirebilirsin artık bu komut buradaki `type` ne ise geriye o türde değer döneceğinden dolayı o türle karşılanabilir o değer. Örneğin;
+        * `type y = type.Parse(.....);`
+
+<img src="2.png" width="auto">
+
+- Tür dönüşümlerinde dikkat edilmesi gereken tek bir husus vardır ki, o da ; dönüşüm yapılacak verinin türüne uygun bir hedef tür belirlenmelidir.
+    * Yani elinde elma varsa elmayı karşılayabilecek türlere dönüştürmen en doğrusu olacaktır. Nihayetinde elinde elma var sen gidipte bunu karpuza dönüştürmeye çalışırsan haliyle orada hata alacaksın.
+
+- Dönüşüm yaparken derleme zamanında sıkıntı olmaz. Yani semantik açıdan olayı değerlendirirsek syntax'ta herhangi bir problem olmaz. Compiler bunu derlerken sıkıntı yaşamayacak Runtime'da hata verecek. Çünkü dönüşüm Runtime'da gerçekleşir.
+
+- Dönüşüm sırasında dönüştürülen türe verilen değer eğer uygun olmayan bir değerse ya da uygun olmayan formatta bir değerse dönüşüm yapamayacak hata vercektir/fırlatacaktır. Patlayacaktır.
+
+- Parse metodu elimizdeki string ifadeyi hedeflediğimiz türe dönüştürmemizi sağlayan bir metod sen bu metodu istediğin yerde istediğin türe dönüşüm yapmak için kullanabilirsin. Sadece elindeki değerin hedeflediğin türe uygun olup olmaması çok önemli ona dikkat ediyorsun ondan sonrasını/geri kalanını fonksiyonumuz hallediyor.
+
+```C#
+Metinsel İfadelerin Diğer İfadeler Dönüştürülmesi
+//Tür dönüşümlerinde dikkat edilmesi gereken tek bir husus vardır ki, o da ; dönüşüm yapılacak verinin türüne uygun bir hedef tür belirlenmelidir.
+Parse Metodu
+//Parse metodu sadece string dataları hedef türe dönüştürürken kullanılır!
+
+
+string x = "123";
+// System.Console.WriteLine(x * 5);
+short x2 = short.Parse(x);
+System.Console.WriteLine(x2 * 5);
+System.Console.WriteLine(short.Parse(x) * 5);
+
+
+//Tür HATALI
+string a = "Ahmet";
+int a2 = int.Parse(a);
+System.Console.WriteLine(a2);
+
+
+//Tür HATALI
+string medeniHal = "Evli";
+bool medeniHal2 = bool.Parse(medeniHal);
+System.Console.WriteLine(medeniHal2);
+
+
+//Tür HATALI
+string v = "ab";
+char v2 = char.Parse(v);
+```
