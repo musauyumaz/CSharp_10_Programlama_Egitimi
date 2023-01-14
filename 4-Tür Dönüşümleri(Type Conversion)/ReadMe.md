@@ -116,3 +116,34 @@ string y = "3,14";
 double y2 = Convert.ToDouble(y);
 System.Console.WriteLine(y2 * 5);
 ```
+
+***
+# 80) Diğer İfadelerin Metinsel İfadelere Dönüştürülmesi
+- Eğer ki elimizdeki veriyi string'e dönüştürmek istersek Convert fonksiyonunu ve ToString fonksiyonunu kullanabiliriz.
+
+- Elimizdeki veri dönüşüm yapacağımız veriye kesinlikle uyması gerek demiştik burada buna dikkat etmenize gerek yok. Herhangi bir veri `string` ile çok rahat bir şekilde ifade edilebilir.
+
+- Hangi veri varki string'le ifade edemeyeceğiniz? Dolayısıyla aklınıza gelen tüm verileri string'e dönüştürebiliyorsunuz.
+
+- Diğer ifadelerin metinsel ifadelere dönüşmesini hızlı bir biçimde yapmamızı sağlayan ToString fonksiyonu mevcuttur.
+
+- Bir yazılım sürecinde genellikle tür dönüşümlerinde metinselden diğer türlere değil de diğer türlerden metinsel'e doğru olur. Elinizdeki herhangi bir veriyi metinsele daha çok dönüştürüyorsunuz.
+
+- ToString fonksiyonu tümmmm ama tüm türlerde mevcuttur.
+
+- Kalıtımsal bir işlem neticesinde tüm türlere aktarılan bir fonksiyondur.
+
+```C#
+Diğer İfadelerin Metinsel İfadelere Dönüştürülmesi
+Convert Fonksiyonu
+
+int a = 25;
+string a2 = Convert.ToString(a);
+
+
+ToString Fonksiyonu
+//ToString fonksiyonu tümmmm ama tüm türlerde mevcuttur.
+
+float f = 35F;
+string f2 = f.ToString();
+```
