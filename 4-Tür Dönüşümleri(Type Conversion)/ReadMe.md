@@ -184,3 +184,32 @@ string f2 = f.ToString();
 - Compiler bilinçsiz tür dönüşümünü ben hallederim diyor.Herhangi bir türdeki sayısal değeri kendisinden büyük olan sayısal değere dönüştürme yaparken bunun sorumluluğunu üstleniyor ama elimizdeki bir sayısal değeri kendisinden küçük olan sayısal değerlere dönüştürürken Compiler orada veri kaybı ihtimali olduğu için bu riski/sorumluluğu almıyor. Taşın altına elini sokmuyor. Sen kendi iradenle karar ver. İşte buradaki karar durumu da bilinçli tür dönüşümü oluyor.
 
 <img src="5.png" width="auto">
+
+***
+# 82) C# Bilinçsiz Tür Dönüşümü - Implicit Type Conversion
+- Elimizdeki sayısal ifadenin bulunduğu türden daha geniş aralıklardaki türlere dönüşüm yapılırken bunu compiler'ın kendisinin sorumluluğu alması yani bizim irademize/bilincimize/kararımıza gerek kalmaksızın dönüşümü otomatik olarak gerçekleştirmesidir.
+    * 3000 değerini biz `int` türünde ele alırsak şimdi `int`'den büyük olan bir tane değer/tür örneğin `float` türü bu değeri `int` türünden `float` türüne dönüştürmeye çalıştığımda zaten `float`'ta 3000 değerini kapsayan bir tür olduğundan dolayı buradaki dönüşüm otomatik gerçekleşecektir. Yani compiler diyecek ki ulan zaten `int`'e giren değer `float`'a da her halükarda girecek o yüzden buradaki dönüşüm sorumluluğunu ben kendim üstleniyorum diyecektir. İşte burada biz developer'ın herhangi bir sorumluluğu olmadığından dolayı biz buna bilinçsiz tür dönüşümü diyoruz.
+    * `int a = 3000;`
+    * `float f = a;` Burada bir tür dönüşümü söz konusudur. Çünkü elimde `int` tutulan bir değeri `float` cinsinden RAM'de depolayabildim. Yani türünü dönüştürdüm. Lakin buradaki tür dönüşümü bizim irademizle/kararımızla/bilincimizle yaptığımız bir dönüşüm değildir. Zaten compiler bunu otomatik kendisi algıladı. Dolayısıyla `float` `int`'i kapsadığı için otomatik buradaki tür dönüşümünü herhangi bir sıkıntı olmadan zaten herhangi bir sıkıntı olacak durum yok Compiler buradaki sorumluluğu kendisi üstlenmektedir. Dolayısıyla tür dönüşümü başarılı bir şekilde gerçekleşmiştirilmiştir.
+    * Normalde sol sağ kuralı vardı. Soldaki türümüz neyse sağdaki değeri karşılayan bir tür olmalıydı. Ama istisnai durumlar vardır. Mesela kapsayıcı durumlar. Hatta ileride göreceğiz kalıtımda polimorfizm dediğimiz çok biçimlilik var bu çok biçimlilikte de farklı referanslar farklı türdeki nesneleri karşılayabilmektedirler. 
+    * Mesela elimdeki `int` türdeki a değişkeninin değerini `float`'a verdiğim zaman herhangi bir tür dönüşümü yapmama gerek yok.
+
+- Bir sayısal türün kendisinden daha geniş aralıktaki bir başka sayısal türe atanması bilinçsiz tür dönüşümüdür.
+
+<img src="6.png" width="auto">
+<img src="7.png" width="auto">
+<img src="8.png" width="auto">
+
+```C#
+Bilinçsiz Tür Dönüşümü
+//Bir sayısal türün kendisinden daha geniş aralıktaki bir başka sayısal türe atanması bilinçsiz tür dönüşümüdür.
+
+int a = 3000;
+float f = a;
+
+
+short x = 123;
+long y = x;
+
+```
+<img src="9.png" width="auto">
