@@ -213,3 +213,52 @@ long y = x;
 
 ```
 <img src="9.png" width="auto">
+
+***
+# 83) C# Bilinçli Tür Dönüşümü - Explicit Type Conversion
+- Sayısal türlerin kendi aralarında tür dönüşümünde en önemlisi olan bilinçli tür dönüşümüdür.
+
+- Elimizdeki herhangi bir sayısal ifadeyi kendisinden daha dar/küçük alana sahip olan bir türe atamaya çalıştığımızda compiler burada veri kaybı söz konusu olabileceğinden dolayı sorumluluğu almıyor üstlenmiyor. Diyor ki kardeşim bunu ben yapmam taşın altına sen elini sok veri kaybı olacaksa da bunun kararını sen ver en azından beni bu belaya sürükleme ve bilinçli bir şekilde kararını ver diyor. Buradaki veri kaybı ihtimalini bilinçli bir şekilde kararını/sorumluluğunu sen al diyor.
+    * `int x = 3000;`
+    * `short y = (short)x;`
+    * Elimizdeki `int` türündeki 3000 değerini `short` 'a atamaya çalıştığımızda biliyoruz ki `short` türü normalde 3000'i karşılayabilir ama compiler şu anda elimizdeki değerle ilgilenmiyor direkt prensiple ilgileniyor. Diyor ki ya kardeşim bu değişken değerden bağımsız olarak `int`'de tutuabildiğin bir değer her daim `short`'a sığmayabilir. Sığmama ihtimali olduğundan dolayı da hangi değer olursa olsun istersen sığan olsun istersen sığmayan olsun farketmez büyük türden küçük türe bir atama söz konusu varsa buradaki dönüşümün sorumluluğunu ne olursa olsun ben almam. Değişkenin değerine bakmam sen sorumluluğun kararını vereceksin. Sorumluluğu sen üstleneceksin. Dolayısıyla hata verecektir.
+    * Elimdeki x değeri normalde `int`, `int` `short`'a compiler kendisi atamıyor. Şimdi irademizde diyeceğiz ki kardeşim `int` olan x değişkenini sen `short`'a ata buradaki sorumluluğu ben alıyorum. Yani burada x değişkeninin içerisindeki veriyi sen `short` ile karşıla varsa bir veri kaybı bunu ben üstleniyorum diye bunu bilinçli bir şekilde yazdık
+
+- Bilinçsiz tür dönüşümünde biz atamayı çok rahat bir şekilde yapabiliyorduk ve orada bir dönüşüm vardı görmesekte Compiler'ın üstlendiği bir bilinçsiz bir tür dönüşümü söz konusuydu ama burada diyor ki ya kardeşim bunu ben yapmam bunu senin yapman lazım işte görüldüğü üzere elimizde herhangi bir değer kendisinden daha küçük değer aralığına sahip türe dönüşüm yaparken elimizdeki değer ilgili dönüşüm yapmaya çalıştığımız hedef türün dışındaysa burada veri kaybı olacaktır. Modunu alıyordu. Böyle bir durumda sorumluluğu compiler almıyor. Buna bilinçli tür dönüşümü diyoruz.
+
+<img src="10.png" width="auto">
+
+- Bilinçli tür dönüşümü yazılımda yine cast operatörüyle `()` gerçekleştirilir.
+
+- Boxing işlemlerinde tanıştığımız cast operatörü bilinçli tür dönüşümünde de sayısal türleri kendi aralarında dönüştürürken iradeli bir şekilde bu işlemin yapılmasını sağlayan bir operatördür.
+
+<img src="11.png" width="auto">
+
+- Bilinçsiz tür dönüşümünde ilgili değişkeni cast etmenize gerek yoktu ama bilinçli tür dönüşümünde cast edeceksiniz sen bilinçli bir şekilde bu talimatı vereceksin.
+
+- Senin dönüştüreceğin sayısal değer hedeflediğin sayısal türün aralığına girerse herhangi bir veri kaybı olmaz. Amma velakin aralığa girmezse o zaman veri kaybı yaşanacaktır.
+
+- Bilinçli tür dönüşümünde veri kaybı olmasının altında yatan şey buradaki sorumluluğu bilinçli bir şekilde bizim almamızdır. Bilgisayar burada kendisini aklıyor.
+
+<img src="12.png" width="auto">
+
+```C#
+Sayısal İfadelerin Kendi Aralarında Tür Dönüşümü
+Bilinçli Tür Dönüşümü
+
+int x = 3000;
+short y = (short)x;
+Console.WriteLine(y);
+
+
+int a = 60000;
+short b = (short)a;
+Console.WriteLine(b);
+
+
+Örnek 3
+int c = 60000;
+byte d = (short)c;
+Console.WriteLine(d);
+
+```
