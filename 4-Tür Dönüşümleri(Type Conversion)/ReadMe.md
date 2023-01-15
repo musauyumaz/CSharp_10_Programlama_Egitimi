@@ -260,5 +260,16 @@ Console.WriteLine(b);
 int c = 60000;
 byte d = (short)c;
 Console.WriteLine(d);
-
 ```
+
+***
+# 84) Bilinçli Tür Dönüşümü - Kritik Yapalım(Mülakatlar İçin)
+```C#
+int a = 3000;
+short s = (byte)a;//int'den byte türüne bilinçli bir dönüşüm yapılmıştır. daha sonrasında ise byte olan değeri short'a atama yapmış bu yüzden burada ise bilinçsiz tür dönüşümü yapmıştır.
+```
+- Bilinçli tür dönüşümü mü yapılmış bilinçsiz tür dönüşümümü.
+
+- `(byte)a` burada bilinçli tür dönüşümü yapılarak elde edilen `byte`'a dönüştürülmüş değer `short` türünden bir değişkene atanarak bilinçsiz tür dönüşümü yapılmıştır.
+
+<img src="13.png" width="auto">
