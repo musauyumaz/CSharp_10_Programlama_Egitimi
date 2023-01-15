@@ -147,3 +147,40 @@ ToString Fonksiyonu
 float f = 35F;
 string f2 = f.ToString();
 ```
+
+***
+# 81) C# Sayısal İfadelerin Kendi Aralarında Tür Dönüşümü
+<img src="3.png" width="auto">
+
+- Sayısal türler kendi aralarında dönüşüm yaparken birazcık farklı bir derinlikte kontrol gerektirebiliyor.
+
+- Bir sayısal değeri tuttuğum türün üstündeki değerlere dönüştürürken herhangi bir dönüşüm yapmaya ihtiyacımız yoktur.
+
+- Diyelim ki elimizde `int` türünde bir n değerimiz var. Bu değeri `long`'a, `float`'a , `decimal`'a  yani `int` aralığına giren tüm değerler bu aralıklara da girecektir. O yüzden burada ekstradan bir dönüşüm yapmaya gerek yoktur.
+
+- Sayısal türler arasında eğer ki bir veriyi kendisinden üst olan türe dönüştürüyorsanız biz buna bilinçsiz tür dönüşümü diyeceğiz.
+
+- `int` türde tuttuğumuz değeri daha dar aralıklara sahip olan sayısal türlere dönüştürmeye çalışırsan çok dikkat etmek zorundasın. Çünkü int` aralığa sığan her değerin `short`'a `byte`'a ya da daha az değer aralığındaki türe sığabileceğinin garantisini veremiyoruz.
+
+- Kendisinin tutulduğu alanın değer aralığının altındaki bir türe dönüştürmeye çalışırken burada alt türe dönüşüm esnasında o değer aralığına sığmayabilir değerimiz. Yani `int` aralığa sığan her değerin `short`'a `byte`'a sığabileceğinin garantisini veremiyoruz.
+
+- Eğer ki bir sayısal değer nasıl ki kendisinden tutulduğu türden üst türlere dönüştürülürken bilinçsiz tür dönüşümü diyorsak artık kendisinin tutulduğu türden alt türlere dar aralıklı sayısal türlere dönüştürülürken buna bilinçli tür dönüşümü diyoruz.
+
+- Bir sayısal değer kendi türünden daha büyük değer aralığına sahip olan diğer türlere dönüştürülürken burada herhangi bir işlem yapmamıza gerek kalmayacağı için bu dönüştürme işlemine bilinçsiz tür dönüşümü denir.
+
+- Bir sayısal değer kendi türünden daha küçük değer aralığına sahip olan diğer türlere dönüştürülürken hedef türün ilgili veriyi karşılayamama(değer aralığına sığamama) riskinden dolayı buradaki işlemi bilinçli yapmamız gerekecek haliyle buna bilinçli tür dönüşümü denir.
+
+- Bilinçli ve bilinçsiz tür dönüşümü var bu iki kavram sayısal türlerde ve ileri düzey programlamada da var. Nesneler arasında biz bunu sağlayacağız. Ama temelde sayısal türlerde geçerlidir.
+
+- Elimdeki bir değeri kendisinden büyük olan türlere dönüştürüyorsam bununla ilgili benim bilinçli iradeli bir şekilde işlem yapmama gerek yok. O zaman ben yapmıyorsam bu işlemi bilinçsiz tür dönüşümüdür. Elimdeki bir değeri kendisinden daha dar aralığa sahip olan bir sayısal türe dönüştürürken burada sığmama ihtimali var aralıktan daha büyük olma ihtimali var. Bilgisayar diyor ki y kardeşim ben bu ihtimali göze alamam o kadar da değil. Developer olarak bilinçli bir şekilde tür dönüşümünü yap diyorum orada irademizi ortaya koyuyoruz. Alta doğru giderken değer aralığı daraldıkça elindeki veriyi oradaki daralan değer aralığına dönüştürürken buradaki kararı sen kendi iradenle vermiş oluyorsun. Buradaki iradeye bilinçli tür dönüşümü diyoruz. Diğerinde senin iradene gerek yok bişey yapmana gerek yok kendisi zaten yapıyor. İradeni ortaya koymana gerek yok buna da bilinçsiz tür dönüşümü diyoruz.
+
+<img src="4.png" width="auto">
+
+- Diyelim ki elimde 37000 değeri var ve biz bunu `int` türde tutuyoruz. Şimdi `int`'de tuttuğumuz 37000 değeri kendisinden büyük olan diğer değer aralıklarına otomatik girer. Bunlara dönüşüm yaparken bilince ihtiyaç yok bilgisayar kendisi hallediyor. İradeli bir şekilde karar vermiyorsun kendisi bilinçsiz bir şekilde hallediyor. Amma velakin elindeki `int`'de tutulan 37000 değerini sen `int`'den küçük olan sayısal değerlere dönüştürürken her değer aralığına girmeme ihtimali vardır. Yazılım diyor ki sana ya kardeşim senin elindeki değerle ben ilgilenmem bir sayısal türün içerisindeki değer ne olursa olsun 3'te olsa farketmiyor kendisinden küçük olanlara dönüştürülmeye çalışıldığında buna ben müsaade etmem sen kendi iradenle yapacaksın ben bunu kendim yapmam senin iradenle bunu yaparım. Senin sorumluluğun lazım burada diyecektir. Buradaki riski developer alır.
+
+- Bir sayısal türün alt türüne bir veriyi dönüştürdüğümüzde eğer ki veri o alt türün değer aralığına girmiyorsa veri kaybı söz konusu olacaktır. Evet dönüşüm sağlanacak ama veri kaybı olacaktır. Yani dönüştürmeye çalıştığımız değeri alt türün değer aralığına göre modunu alacak ve kalanı oraya yazacaktır.
+    * Örneğin `int` türde tutulan 37000 değerini `byte`'a dönüştürdüğümüzde veri kaybı olacaktır.Evet dönüşüm sağlanacak ama veri kaybı olacaktır. `byte`'ın değer aralığı 0-255 arasındadır. Durmadan verdiğimiz değeri 256'ya bölecek yani 256'ya göre modunu alacak ve kalan değeri oraya yazacaktır. Kalan değer olacaktır geri kalanı da değer/veri kaybı olarak geçecektir. İşte compiler diyor ki buradaki sorumluluğu ben almam kardeşim sen yapacaksın. bunu diyor.
+
+- Compiler bilinçsiz tür dönüşümünü ben hallederim diyor.Herhangi bir türdeki sayısal değeri kendisinden büyük olan sayısal değere dönüştürme yaparken bunun sorumluluğunu üstleniyor ama elimizdeki bir sayısal değeri kendisinden küçük olan sayısal değerlere dönüştürürken Compiler orada veri kaybı ihtimali olduğu için bu riski/sorumluluğu almıyor. Taşın altına elini sokmuyor. Sen kendi iradenle karar ver. İşte buradaki karar durumu da bilinçli tür dönüşümü oluyor.
+
+<img src="5.png" width="auto">
