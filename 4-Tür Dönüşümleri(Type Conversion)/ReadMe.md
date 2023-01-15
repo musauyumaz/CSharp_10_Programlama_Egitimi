@@ -273,3 +273,37 @@ short s = (byte)a;//int'den byte türüne bilinçli bir dönüşüm yapılmışt
 - `(byte)a` burada bilinçli tür dönüşümü yapılarak elde edilen `byte`'a dönüştürülmüş değer `short` türünden bir değişkene atanarak bilinçsiz tür dönüşümü yapılmıştır.
 
 <img src="13.png" width="auto">
+
+***
+# 85) C# checked Bloğu İle Bilinçli Tür Dönüşümü Kontrolü
+- `checked` komutu bilinçli tür dönüşümü yapılırken eğer ki veri kaybı söz konusuysa runtime'da bir hata fırlatılmasını sağlar. Örneğin;
+    * ` int a = 123;`
+    * `byte b = (byte)a;` herhangi bir veri kaybı söz konusu değildir. Nihayetinde a'nın içerisindeki değer `byte`'ın içerisine sığan bir değer olduğu için bu tür dönüşümü esnasında veri kaybı söz konusu olmayacak.
+
+- `checked` veri kaybı olan bilinçli tür dönüşümlerinde bizleri çalışma zamanında hata fırlatarak uyaran bir kod bloğudur.
+
+- `checked` öncelikle checked keywordüyle birlikte scope'larını oluşturuyoruz. Daha sonrasında ise veri kaybı söz konusu olabilecek kodlarımızı bu scope içerisine yerleştiriyoruz.
+
+- Elimizdeki değer eğer ki sınırı aşıyorsa `checked` veri kaybı olacağı durumda bunu kontrol edecek ve biz developer'ı runtime'da uyaracaktır.
+
+<img src="14.png" width="auto">
+
+- `checked`'in biz developerlar açısından runtime'da bir veri kaybı söz konusuysa bizi bilgilendirmesidir.
+
+- Bilinçli tür dönüşümü esnasında bir veri kaybı söz konusu olursa eğer runtime'da bizleri uyaracak olan bir kontrol mekanizmasıdır.
+
+```C#
+Checked
+int a = 123;
+byte b = (byte)a;
+System.Console.WriteLine(b);
+checked
+{
+    int a = 500;
+    byte b = (byte)a;
+    System.Console.WriteLine(b);
+}
+```
+
+<img src="15.png" width="auto">
+
