@@ -391,3 +391,25 @@ int l = -123;
 bool e = Convert.ToBoolean(l);
 System.Console.WriteLine(e);
 ```
+
+***
+# 89) char Türünün Sayısal Türe Dönüştürülmesi (ASCII)
+- Bilgisayardaki her bir klavyede gördüğünüz karakterin aslında arka planda bir tam sayı karşılığı vardır. Büyük küçük olarakta bunlar ayrılır. örneğin;
+    * 'C' karakteri 67 iken 'c' 99'dur.
+    * Bunlar standarttır. Yani dünya standardıdır. Her yerde aynıdır. Her bilgisayarda bu ASCII kodları birebir aynı şekilde standart hale getirilmiştir.
+
+- ASCII : Bilgisayardaki her bir karakterin sayısal bir karşılığı vardır. Bu sayısal değerler ASCII kaynak kodu denmektedir.
+
+- Örneğin ben 'a' harfi yazmaya çalıştığımda aslınad bilgisayar onu 97 olarak algılıyor diye düşünebilirsiniz.
+
+- Bir karakteri(`char`) `int`'e cast edersek buradaki işlem neticesinde elimizdeki karakterin bize ASCII kaynak kodunu verecektir.
+
+- Benzer mantıkla elimizdeki herhangi bir `int` değeri `char`'a cast edersek elimizdeki `int`'e karşılık gelen `char`'ın karakterini verecektir. Tabiki elimizdeki `int` değer ASCII kaynaklarından birisi olması gerekmektedir.
+
+- Klavye üzerindeki bütün tuş kombinasyonlarının esasında arka planda bir ASCII kaynak kodu vardır.
+
+<img src="17.png" width="auto">
+
+- Cast operatörünü `()` UnBoxing, Bilinçli tür dönüşümü, ve `char` to `int` dönüşümünde kullandık. Bir operatör yeri ve konumuna göre farklı sorumluluklar üstlenebiliyor. Burada da ASCII kaynak kodunu elde etmek için ya da elimizdeki kaynak kodundan `char`'ı elde edebilmek için kullandığımız bir operatöre dönüşüyor cast operatörü `()`
+
+- Sayısal türlerin hepsi için geçerlidir. Herhangi bir farklı tür üzerinde bu işlemi gerçekleştirememekteyiz.
