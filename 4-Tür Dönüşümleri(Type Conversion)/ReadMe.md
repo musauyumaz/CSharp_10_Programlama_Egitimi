@@ -325,3 +325,30 @@ System.Console.WriteLine(b);
 - Default olan `unchecked`'tir. Eğer ki siz bunu kontrol etmek istiyorsanız `checked` yazmanız gerekiyor.
 
 <img src="16.png" width="auto">
+
+***
+# 87) bool Türünün Sayısal Türe Dönüştürülmesi
+- İki tane özel türümüz var bu özel türler arasında yapılan dönüşümlerden biri `bool` -> `int` bir diğeri `char` -> `int` arasında yapılan tür dönüşümüdür.
+
+- `bool` türdeki bir değişkeni/değeri sayısal bir türe daha doğrusu `int`'e dönüştürürseniz convert ederseniz direkt elindeki değerin sana sayısal karşılığını verecektir.
+
+- Elimizde `bool` bir değişkenimiz var ve bunun değeri `true` ya da `false` olabilir. Sen bunu `int`'e Convert edersen bunun sonucu sayısal olarak aktarılacak/dönüştürülecektir bu özel bir dönüşümdür. `true`'yu 1 `false`'u da 0 olarak dönüştürecektir.
+
+- Burada sadece `int`'e değil sayısal türlerden herhangi birine de dönüşüm sağlayabilirsiniz.
+
+- Elinizdeki herhangi bir mantıksal değeri herhangi bir sayısal değere dönüştürdüğünüzde onun sayısal karşılığını çok rahat edinebilirsiniz.
+
+- Elimizdeki mantıksal bir değeri herhangi bir sayısal değere convert edersek ilgili değerin mantıksal karşılığını elde edebiliriz...
+
+```C#
+bool Türünün Sayısal Türe Dönüştürülmesi
+//Elimizdeki mantıksal bir değeri herhangi bir sayısal değere convert edersek ilgili değerin mantıksal karşılığını elde edebiliriz...
+
+bool b = true;
+int i = Convert.ToInt32(b);
+System.Console.WriteLine(i);
+
+bool c = false;
+long l = Convert.ToInt64(c);
+System.Console.WriteLine(l);
+```
