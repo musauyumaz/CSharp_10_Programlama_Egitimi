@@ -352,3 +352,42 @@ bool c = false;
 long l = Convert.ToInt64(c);
 System.Console.WriteLine(l);
 ```
+
+***
+# 88) Sayısal Türlerin bool Türüne Dönüştürülmesi
+- Elimizdeki herhangi bir sayısal ifadeyi `bool` türüne dönüştürebilmekteyiz.
+
+- Tür dönüşümlerindeki en önemli nokta dönüştüreceğimiz verinin hedef türe uygun olmasıydı.
+
+- 0'ın dışındakilerin hepsi `true` olarak döndürülecektir. Yani sadece 0'ın dışındaki değerler `true` 0 ise `false` olarak değerlendirilecektir.
+
+- tür dönüşümlerinde dönüştürülecek türün hedef türe uygun olması gerekiyordu. Ama burada istisnalar var. Normalde 1'in `true` 0'ın `false`'a eşit olması ve geri kalanının mümkün olmaması gerekmektedir. Halbuki burada 0'ın dışındaki tümmm değerler `true` olarak kabul edilmesi bir istisnadır.
+
+```C#
+#region Sayısal Türlerin bool Türüne Dönüştürülmesi
+//Tür dönüşümlerinde dönüştürülecek türün hedef türe uygun olması gerekiyordu.
+//Burada bir istisna var.
+//normal de;
+//1 -> true
+//0 -> false
+//eşit olması ve geri kalanının mümkün olmaması gerekmektedir. Halbuki burada 0'ın dışındaki tümmmm değerler true olarak kabul edilmesi bir istisnadır.
+
+int i = 1;
+bool b = Convert.ToBoolean(i);
+System.Console.WriteLine(b);
+
+
+int j = 0;
+bool c = Convert.ToBoolean(j);
+System.Console.WriteLine(c);
+
+
+int k = 123;
+bool d = Convert.ToBoolean(k);
+System.Console.WriteLine(d);
+
+
+int l = -123;
+bool e = Convert.ToBoolean(l);
+System.Console.WriteLine(e);
+```
