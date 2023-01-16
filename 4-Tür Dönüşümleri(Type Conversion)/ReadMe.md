@@ -413,3 +413,23 @@ System.Console.WriteLine(e);
 - Cast operatörünü `()` UnBoxing, Bilinçli tür dönüşümü, ve `char` to `int` dönüşümünde kullandık. Bir operatör yeri ve konumuna göre farklı sorumluluklar üstlenebiliyor. Burada da ASCII kaynak kodunu elde etmek için ya da elimizdeki kaynak kodundan `char`'ı elde edebilmek için kullandığımız bir operatöre dönüşüyor cast operatörü `()`
 
 - Sayısal türlerin hepsi için geçerlidir. Herhangi bir farklı tür üzerinde bu işlemi gerçekleştirememekteyiz.
+
+- Elimizdeki herhangi bir karakterin ben ASCII kaynak kodunu elde etmek istiyorsam herhangi bir sayıya cast etmem yeterli olacaktır.
+
+<img src="18.png" width="auto">
+
+***
+# 90) Sayısal Türlerin char Türüne Dönüştürülmesi
+- Elimizdeki sayısal türlü değeri eğer ki ASCII kaynak kodunda karşılığı varsa dönüştürme yaparak o karakteri getirecektir.
+
+- Elimdeki kaynak kodlarını `char`'a cast edersem `char` karşılıklarını elde edebilirim.
+
+- Elinizdeki herhangi bir tam sayısal değeri `char`'a cast ederseniz ASCII karşılığı olan karakteri sizlere getirecektir.
+
+```C#
+Sayısal Türlerin char Türüne Dönüştürülmesi
+int oAscii = 111;
+int OAscii = 79;
+System.Console.WriteLine((char)oAscii);
+System.Console.WriteLine((char)OAscii);
+```
