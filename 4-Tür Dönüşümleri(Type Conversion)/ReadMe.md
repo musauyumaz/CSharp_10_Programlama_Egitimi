@@ -307,3 +307,21 @@ checked
 
 <img src="15.png" width="auto">
 
+***
+# 86) C# unchecked Bloğu İle Bilinçli Tür Dönüşümü Kontrolü
+- Bilinçli tür dönüşümü sırasında veri kaybı söz konusuysa eğer bunu görmezden gelir ve runtime'da hata vermez.
+
+```C#
+int a = 500;
+byte b = (byte)a;
+System.Console.WriteLine(b);
+```
+- Bu kod runtime'da veri kaybına sebep olabilecek bir koddur.
+
+- Eğer ki siz buradaki veri kaybını `unchecked` ile kontrol ederseniz veri kaybını göz ardı edecek ve bu kodu çalıştıracaktır.
+
+- Normal bir kod bloğu default olarak `unchecked`'tir. Yani kodu ha `unchecked` içine yazmışsın ha da `unchecked` kullanmadan yazmışsın farketmiyor. Her halükarda veri kaybına izin verecektir. 
+
+- Default olan `unchecked`'tir. Eğer ki siz bunu kontrol etmek istiyorsanız `checked` yazmanız gerekiyor.
+
+<img src="16.png" width="auto">

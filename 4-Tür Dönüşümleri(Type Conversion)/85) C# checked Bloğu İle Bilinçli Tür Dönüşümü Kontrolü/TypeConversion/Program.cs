@@ -10,9 +10,9 @@ class Program
         System.Console.WriteLine(b);
         checked
         {
-            int a = 500;
-            byte b = (byte)a;
-            System.Console.WriteLine(b);
+            int c = 500;
+            byte d = (byte)c;
+            System.Console.WriteLine(d);
         }
         #endregion
     }
