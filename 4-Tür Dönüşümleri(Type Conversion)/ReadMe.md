@@ -433,3 +433,21 @@ int OAscii = 79;
 System.Console.WriteLine((char)oAscii);
 System.Console.WriteLine((char)OAscii);
 ```
+
+***
+# 91) Tür Dönüşümlerinde Neler Öğrendik Özetleyelim
+- Tür Dönüşümü Nedir? Neden Verilerin Türlerini Değiştirmek/Dönüştürmek İsteriz?
+- Metinsel İfadelerin Diğer İfadelere Dönüştürülmesi | Parse Metodu
+- Metinsel İfadelerin Diğer İfadelere Dönüştürülmesi | Convert Fonksiyonları
+- Diğer İfadelerin Metinsel İfadelere Dönüştürülmesi
+- Sayısal İfadelerin Kendi Aralarında Tür Dönüşümü
+- Bilinçsiz Tür Dönüşümü
+- Bilinçli Tür Dönüşümü
+- Kritik(Mülakatlar İçin)
+- checked
+- unchecked
+- bool Türünün Sayısal Türe Dönüştürülmesi
+- Sayısal Türlerin bool Türüne Dönüştürülmesi
+- char Türünün Sayısal Türe Dönüştürülmesi | ASCII
+- Sayısal Türlerin char Türüne Dönüştürülmesi
+- Özet
