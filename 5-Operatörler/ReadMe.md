@@ -52,3 +52,51 @@
     * Diğer/Özel İşlem Operatörler
 
 <img src="2.png" width="auto">
+
+***
+# 94) C# Aritmetik Operatörler Neledir? Geriye Dönüş Değeri Nedir?
+- Aritmetik operatörler `+`,`-`,`*`,`/`,`%` olmak üzere 5 tanedir.
+
+- Aritmetik operatörlerin geriye dönüş değerleri vardır.
+
+- Aritmetik operatörler iki sayısal değer üzerinde işlem yapan operatörler oldukları için işlem neticesinde geriye 'uygun türde' sonuç dönerler.
+
+- `int sonuc = 3 + 5;` `+` operatörü diyor ki : Soluma ve sağıma vermiş olduğun iki `int` tür üzerinde ben bir işlem yaparım. Bu işlem neticesinde sana sonucu da `int` döndürürüm.
+- `int sonuc2 = x * y;` `*` operatörü diyor ki : Soluma ve sağıma vermiş olduğun değerler üzerinde ben bir işlem yaparım kombinasyon uygularım. Bu işlem neticesinde sana sonucu da `int` döndürürüm.
+
+- Aritmetik operatörlerde işlem yaparken hangi türlerde çalışıyorsanız o türlerde sonuç döner.
+
+- Aynı türde olan sayısal türler üzerinde işlem yaparken sonuç türü aynı olacaktır.
+
+```C#
+Aritmetik Operatörler
+// +
+// -
+// *
+// /
+// %
+Aritmetik Operatörler Geriye Dönüş Değeri
+//Aritmetik operatörler iki sayısal değer üzerinde işlem yapan operatörler oldukları için işlem neticesinde geriye 'uygun türde' sonuç dönerler.
+
+int sonuc = 3 + 5;
+
+
+int x = 3,
+    y = 5;
+// int y = 5;
+int sonuc2 = x * y;
+
+//Aynı türde olan sayısal türler üzerinde işlem yaparken sonuç türü aynı olacaktır.
+
+double s1 = 123;
+double s2 = 321;
+double sonuc3 = s1 + s2;
+
+
+decimal sayi1 = 123123;
+decimal sayi2 = 3214532;
+decimal sonuc4 = sayi1 % sayi2;
+
+```
+
+<img src="3.png" width="auto">
