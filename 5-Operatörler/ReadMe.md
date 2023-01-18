@@ -121,3 +121,16 @@ double s2 = 5;
 double sonuc = s1 + s2;
 ```
 - Burada senin verdiğin `int`'i bakmış ikisine de demiş ki ulan `double` `int`den daha büyük o zaman ben `int`i dönüştürüyorum ve `int` olan değeri `double` mış gibi algılıyorum yani orada bilinçsiz tür dönüşümü yapıyorum sonucu da `double` döndürüyorum.
+
+***
+# 96) Aritmetik Operatörlerde Kritik Yapalım 2
+- `byte` ile herhangi bir sayısal tür örneğin `int` ile yapılan sayısal işlemi ele aldığımızda kapsam alanı büyük olan yani `int`'de sonuç dönmesini bekliyoruz.
+
+- Genel prensibimiz iki farklı türdeki sayısal değerler kendi aralarında aritmetik işleme tabi tutuluyorsa sonuç kapsam alanı büyük olanın türünde dönecektir.
+
+```C#
+(byte) * (int) = ?
+int s1 = 3;
+byte s2 = 123;
+int sonuc = s1 - s2;
+```
