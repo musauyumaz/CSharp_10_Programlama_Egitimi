@@ -152,3 +152,11 @@ System.Console.WriteLine(deger);
 ```
 
 <img src="6.png" width="auto">
+
+***
+# 98) C#'da Matematiksel İşlemlerde Öncelik Sırası Nasıldır?
+- Matematiksel kuralların hepsi programlama da geçerlidir.  
+
+- İşlem öncesi dediğimiz kanunlar kurallar parantez mevzuları aynen birebir yazılımda da geçerli olacaktır.
+
+- Matematik prensipleri programlama da %100 geçerlidir.
