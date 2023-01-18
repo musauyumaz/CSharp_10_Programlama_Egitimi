@@ -134,3 +134,21 @@ int s1 = 3;
 byte s2 = 123;
 int sonuc = s1 - s2;
 ```
+
+***
+# 97) Aritmetik Operatörlerde Kritik Yapalım 3(Mülakat Sorusu)
+- Aynı türlerdeki sayısal değerler üzerinde yapılan herhangi bir aritmetik işlem neticesinde sonuç aynı türde döner.
+
+- Amma velakin iki `byte` arasında yapılan sayısal/aritmetik işlemlerde sonuç her daim `int` olarak dönecektir. 
+
+- Normalde iki aynı türdedeki sayısal değer üzerinde yapılan aritmetik işlem neticesinde sonuç aynı türde dönecekken, bu iki değer `byte` ise sonuç her daim `int` dönecektir. Böyle kabul edilmiştir... İstisnadır...
+
+```C#
+(byte) * (byte) = ? (İstisna! - Mülakat!!!)
+byte s1 = 10;
+byte s2 = 5;
+int deger = s1-s2;
+System.Console.WriteLine(deger);
+```
+
+<img src="6.png" width="auto">
