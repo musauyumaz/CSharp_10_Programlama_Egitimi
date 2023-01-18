@@ -160,3 +160,18 @@ System.Console.WriteLine(deger);
 - İşlem öncesi dediğimiz kanunlar kurallar parantez mevzuları aynen birebir yazılımda da geçerli olacaktır.
 
 - Matematik prensipleri programlama da %100 geçerlidir.
+
+***
+# 99) C# Karşılaştırma Operatörleri Nelerdir?
+- İki sayısal değer arasında büyüklük, küçüklük ve eşitlik durumuna göre karşılaştırma yapan ve sonuç dönen operatörlerdir.
+
+- Ayriyeten metinsel değerlerde de eşitlik durumunu kontrol edebiliriz.
+
+- Karşılaştırma operatörlerimiz;
+    * `<` (küçüklük) Soldaki ifade sağdakinden küçük mü? `x < y`
+    * `>` (büyüklük) Soldaki ifade sağdakinden büyük mü? `x > y`
+    * `<=` (küçük veya eşitlik) Soldaki ifade sağdakinden küçük mü veya eşit mi? `x <= y`
+    * `>=` (büyük veya eşitlik) Soldaki ifade sağdakinden büyük mü veya eşit mi? `x >= y`
+    * `==` (eşitlik) Soldaki ifade sağdakine eşit mi? `x == y`
+
+<img src="7.png" width="auto">
