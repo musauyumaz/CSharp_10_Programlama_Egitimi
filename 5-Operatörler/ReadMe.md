@@ -175,3 +175,17 @@ System.Console.WriteLine(deger);
     * `==` (eşitlik) Soldaki ifade sağdakine eşit mi? `x == y`
 
 <img src="7.png" width="auto">
+
+***
+# 100) Karşılaştırma Operatörlerinin Geriye Dönüş Değerleri Nedir?
+- Karşılaştırma operatörleri sayısal değerler arasında yahut metinsel ifadelerde de iki değer birbirleriyle karşılaştırılıyorsa geriye `boolean` türde yani `true` ya da `false` döndürecektir.
+
+- Karşılaştırma operatörleri geriye her daim bool türde bir değer döndürecektir.
+
+```C#
+Karşılaştırma Operatörlerinin Geriye Dönüş Değerleri
+//Karşılaştırma operatörleri geriye her daim bool türde bir değer döndürecektir.
+int i1 = 123;
+int i2 = 321;
+bool sonuc = i1 > i2;
+```
