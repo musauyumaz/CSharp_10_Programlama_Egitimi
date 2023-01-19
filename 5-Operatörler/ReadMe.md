@@ -189,3 +189,64 @@ int i1 = 123;
 int i2 = 321;
 bool sonuc = i1 > i2;
 ```
+
+***
+# 101) C# Mantıksal Operatörler Nelerdir?
+- Yazılım sürecinde kod yazarken algoritmalar oluştururken genellikle çok kullandığımız o algoritmadaki mantık boyutlarında olmazsa olmaz diyeceğimiz operasyonlarımız operatörlerimiz mantık operatörleridir.
+
+- Belirli şartların durumunu değerlendirip kendine göre sonuç döndüren operatörlerdir. Ve, Veya, Ya da operatörleridir.
+
+- Günlük hayatta beşeri hayatta biz bunları kullanıyoruz Yani kullanış dilimizde var. Birilerinden bişey isterken birilerine talimat verirken ya da aldığımız emirleri yerine getirirken oradaki Ve, Ya da Veya ya dikkat ediyoruz.
+
+- Tüm şartları değerlendirip kendine göre sonuç döndüren operatörlerdir.
+
+- Ve veya'dan farklı kendine göre farklı şekilde değerlendirir. Veya bambaşka durumları değerlendirir.
+
+- ve(`&&`) operatörü, tümmm şartların yerine getirilmiş olmasını isterrrr. 
+    * Anne bana mutfaktan patates ve köfte getir dedin. Şimdi annen sana patates ve köfteyi getirirse ve mantığına göre hem patatesin gelmesi gerekecek hem de köftenin gelmesi gerekecek Eğer ki bu ikisinden biri ya da ikisi de gelmezse sen razı olmazsın.
+    * İkiside geldiği sürece iki koşul/şart doğrulandığı yerine getirildiği sürece ve doğrulanmış olacaktır.
+
+- veya(`||`) operatörü, şartlardan en az bir tanesinin yerine getirilmiş olması yeterlidir.
+    * Anne bana mutfaktan patates veya köfte getirir misin dedin. Şimdi annen sana ya patatesi getirebilir ya da köfteyi getirebilir sen razı olursun tamahkarsın yani sıkıntı yok patatesi de getirebilir, ikisini de getirebilir, köfteyi de getirebilir, sıkıntı yok ama en az bir tanesinin gelmesine razısın.
+    * İki şarttan en az bir tanesinin sağlanması gerekmektedir.
+
+- yada(`^`) operatörü şartlardan kesinlike bir tanesinin yerine getirilmesini isterr...
+    * Diyelim ki sınıftayız yan sınıfla kavgaya gideceğiz. Sen veya sen benle geleceksin dediğimde ikisinden biride gelebilir olur ikiside gelebilir olur ama ikisi de gelmezse olmaz. Veya kullanıyorsam şartlardan birinin gelmesi yeterlidir.
+    Yada da ise sen ya da sen geleceksin dediğim zaman ya sen geleceksin ya da sen geleceksin ikiniz aynı anda gelemezsiniz ikinizin gelmeme durumu da olmaz ikinizin aynı anda gelme durumu da olmaz.
+    * En fazla bir tanesinin ve en az da bir tanesinin yerine getirilmesini ister.
+
+- Küçük bir çocuk var yanınızda parayı verdiniz dediniz ki al yeğenim bana parliament ve marlbora al dediniz.
+    * Gitti parliament getirdi marlbora getirmedi OLMADI
+    * Gitti marlbora getirdi parliament getirmedi OLMADI
+    * Gitti ikisini de getirmedi OLMADI
+    * Gitti marlbora getirdi parliament getirdi OLDU
+    
+- Küçük bir çocuk var yanınızda parayı verdiniz dediniz ki al yeğenim bana parliament veya marlbora al dediniz.
+    * Gitti parliament getirdi marlbora getirmedi OLDU
+    * Gitti marlbora getirdi parliament getirmedi OLDU
+    * Gitti marlbora getirdi parliament getirdi OLDU
+    * Gitti ikisini de getirmedi OLMADI
+
+- Küçük bir çocuk var yanınızda parayı verdiniz dediniz ki al yeğenim bana parliament ya da marlbora al dediniz.
+    * Gitti parliament getirdi marlbora getirmedi OLDU
+    * Gitti marlbora getirdi parliament getirmedi OLDU
+    * Gitti marlbora getirdi parliament getirdi OLMADI
+    * Gitti ikisini de getirmedi OLMADI
+
+```C#
+Mantıksal Operatörler
+// Tüm şartları değerlendirip, kendine göre sonuç döndüren operatörlerdir.
+ve &&
+//ve(&&) operatörü, tümmm şartların yerine getirilmiş olmasını isterrrr.
+//Patates ve Köfte
+// true   && true
+
+veya   ||
+//veya(||) operatörü, şartlardan en az bir tanesinin yerine getirilmiş olması yeterlidir.
+//Patates veya Köfte
+// true/false || false/true
+
+yada ^
+//ya da  ^ operatörü şarlardan kesinlikle birtanesinin yerine getirilmesini isterrr...
+//true ^ false veyahut false ^ true
+```
