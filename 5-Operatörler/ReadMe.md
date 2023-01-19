@@ -250,3 +250,35 @@ yada ^
 //ya da  ^ operatörü şarlardan kesinlikle birtanesinin yerine getirilmesini isterrr...
 //true ^ false veyahut false ^ true
 ```
+
+***
+# 102) Mantıksal Operatörler Kullanım Mantığı Nasıldır?
+- Mantıksal operatörler iki tane değer arasında mantıksal ilişkiyi değerlendirir.
+
+- Salt veri türlerinde bu operatörleri kullanamayız. Ve veya ile kullanacağın durumlar mantıksal bir spesifikte olmalıdır.
+
+- Eğer ki mantıksal operatörleri kullanıyorsak kullancağımız değerler mantıksal değerler olması lazım.
+
+- Mantıksal operatörler, mantıksal değerler üzerinde kullanılır...
+
+- Diyelim ki sen patates ve köfte durumunu mantıksal olarak değerlendiriyorsun. Sen bunları salt değer olarak mantıksal olarak kullanamazsın en fazla mantıksal olarak verebilirsin. Çünkü elindeki mantıksal operatör patatesin ya geldiğiyle ilgilenir ya da gelmediğiyle ilgilenir. İşte böyle bir durumda patates veya köfte, patates ve köfte, patates ya da köfte durumlarını incelerken biz `boolean` durumları incelemiş oluyoruz. Yani uzun lafın kısası mantıksal operatörleri kullanacağınız değerlerin kesinlikle `boolean` olması gerekmektedir
+
+- Mantıksal operatörler  geriye bool/mantıksal sonuçlar dönerler...
+
+- Özet olarak her iki değer de boolean türden değerler olmalıdır. Başka bir şansınız yoktur.
+
+```C#
+Mantıksal Operatörlerin Kullanım Mantığı
+bool patetes = true, kofte = false;
+bool sonuc1 = patetes && kofte;
+bool sonuc2 = patetes || kofte;
+bool sonuc3 = patetes ^ kofte;
+
+System.Console.WriteLine(sonuc1);
+System.Console.WriteLine(sonuc2);
+System.Console.WriteLine(sonuc3);
+//Mantıksal operatörler  geriye bool/mantıksal sonuçlar dönerler...
+#endregion
+```
+<img src="8.png" width="auto">
+
