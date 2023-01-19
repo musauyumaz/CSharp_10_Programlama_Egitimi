@@ -332,3 +332,61 @@ System.Console.WriteLine(((true && true) || false && ((true ^ false) && false) |
 ```
 
 <img src="9.png" width="auto">
+
+***
+# 104) C# Arttırma(++) Azaltma(--) Operatörleri
+- Aslında birer aritmetik operatörlerdir.
+
+- Arttırma ve azaltma operatörleri bir sayıyı 1 arttırır ya da bir azaltır.
+
+- Sayısal olarak elimideki bir n sayısı ya 1 arttıracaktır ya da bir azaltacaktır `n+1` ^ `n-1`
+
+- Bu operatörlerin var olmasının sebebi biz yazılım süreçlerinde döngü dediğimiz yapılanmaları sıkça kullanırız. Döngülerde kombinasyonlar vardır. O kombinasyon geçerli olduğu sürece döngü dönmeye devam edecektir. İşte oradaki kombinasyonda genellikle şunu yaparız. Mesela 1'den 100'e kadar bir kombinasyon oluşturursun elinde bir değişken olur bunu 1 arttırırsın. Oradaki kombinasyon 1'den 100'e kadar artarken sen arada 100 kere işlem yapmış olursun. Kombinasyona göre işlem sayını belirliyorsun. Programlama da birşeyi şu kadar yap diye bişey yok. Orada bir kombinasyon oluşturman lazım matematiksel formül koyman lazım. İşte böyle durumlarda genellikle biz elimizdeki sayıları 1 arttırırız.
+
+- Programlama da şöyle bakarsanız eldeki sayıları 1 arttırmak 1 azaltmak aşırı derece de yüksek oranda kullanılan operasyonlardır. Bu operasyonlara özel operatörler geliştirilmiştir. 
+    * Arttırma operatörü `++`
+    * Azaltma operatörü `--`
+
+- `int i = 10;`
+    * `i++;` Öncelikle i değeri döndürür sonrasında ise i değerini 1 arttırır. İlk bellektekini getir sonra bellektekini 1 arttır.
+    * `++i;` Öncelikle i değeri 1 arttırılır ardından i değerini döndürür. İlk bellektekini arttır sonra bellektekini getir.
+    * `Console.WriteLine(i++)` Önce i'yi döndürecek sonra arttıracak yani 10 değerini ekrana yazacaktır. Ekranda 11 olsa da bellekte 11 olacaktır.
+    * `Console.WriteLine(++i)` Önce i'yi arttıracak sonra i yi döndürecektir yani 11 değerini ekrana yazacaktır. Ekrandaki değerle bellekteki değer aynıdır.
+
+- Arttırma azaltma operatörleri spesifik açıdan çok hızlı hareket etmemizi sağlayan operatörlerdir.
+
+```C#
+Arttırma Azaltma Operatörleri
+Örnek 1
+ // ++
+int i = 5;
+i++;
+System.Console.WriteLine(i);
+++i;
+System.Console.WriteLine(i++); // Çıktı : 5 | Bellek : 6
+System.Console.WriteLine(++i); // Çıktı : 7 | Bellek : 7
+// --
+
+
+Örnek 2 
+int a = 5;
+int b = a++;
+System.Console.WriteLine(a);
+System.Console.WriteLine(b);
+
+
+Örnek 3
+int i1 = 5;
+int i2 = ++i1;
+int i3 = i1;
+i2 = ++i2;
+//++i2;
+System.Console.WriteLine(i1);
+System.Console.WriteLine(i2);
+System.Console.WriteLine(i3);
+```
+
+<img src="10.png" width="auto">
+<img src="11.png" width="auto">
+<img src="12.png" width="auto">
+<img src="13.png" width="auto">
