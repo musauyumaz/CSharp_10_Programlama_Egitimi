@@ -282,3 +282,53 @@ System.Console.WriteLine(sonuc3);
 ```
 <img src="8.png" width="auto">
 
+***
+# 103) Mantıksal Operatörlerde Geriye Dönüş Değerleri Nelerdir?
+- Mantıksal Operatörler `boolean` türdeki değerler üzerinde işlem yaparlar. Nasıl ki aritmetik operatörler sayısal türler üzerinde işlem yapıyorsa nasıl ki karşılaştırma operatörleri genellikle sayısal türler üzerinde bir karşılaştırma yapıyorsa benzer mantıkla Mantıksal Operatörlerde sadece `boolean` türler üzerinde işlem yaparlar.
+
+- Gidipte sen x, y, z tür üzerindeki değerlerde mantıksal operatörleri kullanıp işlem yapamazsın.
+
+- ve (`&&`)
+    * `true && true;` true
+    * `true && false;` false
+    * `false && true;` false
+    * `false && false;` false
+
+- veya (`||`)
+    * `true || true;` 
+    * `true || false;` 
+    * `false || true;` 
+    * `false || false;` 
+
+- ve (`^`)
+    * `true ^ true;` 
+    * `true ^ false;` 
+    * `false ^ true;` 
+    * `false ^ false;` 
+
+```C#
+#region Mantıksal Operatörlerin Geriye Dönüş Değeri
+//ve &&
+System.Console.WriteLine(true && true);  //true
+System.Console.WriteLine(true && false); //false
+System.Console.WriteLine(false && true); //false
+System.Console.WriteLine(false && false);//false
+
+//veya ||
+System.Console.WriteLine(true || true);  //true
+System.Console.WriteLine(true || false); //true
+System.Console.WriteLine(false || true); //true
+System.Console.WriteLine(false || false);//false
+
+//yada ^
+System.Console.WriteLine(true ^ true);  //false
+System.Console.WriteLine(true ^ false); //true
+System.Console.WriteLine(false ^ true); //true
+System.Console.WriteLine(false ^ false);//false
+//SHIFT + 3 + SPACE
+
+Örnek
+System.Console.WriteLine(((true && true) || false && ((true ^ false) && false) || true));//true
+```
+
+<img src="9.png" width="auto">
