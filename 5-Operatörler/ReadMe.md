@@ -352,6 +352,8 @@ System.Console.WriteLine(((true && true) || false && ((true ^ false) && false) |
     * `++i;` Öncelikle i değeri 1 arttırılır ardından i değerini döndürür. İlk bellektekini arttır sonra bellektekini getir.
     * `Console.WriteLine(i++)` Önce i'yi döndürecek sonra arttıracak yani 10 değerini ekrana yazacaktır. Ekranda 11 olsa da bellekte 11 olacaktır.
     * `Console.WriteLine(++i)` Önce i'yi arttıracak sonra i yi döndürecektir yani 11 değerini ekrana yazacaktır. Ekrandaki değerle bellekteki değer aynıdır.
+    * `i++` Arka planda `i = i + 1` şeklinde çalışır
+    * `i--` Arka planda `i = i - 1` şeklinde çalışır
 
 - Arttırma azaltma operatörleri spesifik açıdan çok hızlı hareket etmemizi sağlayan operatörlerdir.
 
@@ -390,3 +392,35 @@ System.Console.WriteLine(i3);
 <img src="11.png" width="auto">
 <img src="12.png" width="auto">
 <img src="13.png" width="auto">
+
+*** 
+# 105) Üzerine Ekleme/Yığma Operatörleri
+- Birer aritmetik operatörlerdir.
+
+- Pratik şekilde aritmetik işlem yapmamızı sağlar.
+
+- Matematiksel işlemleri daha hızlı daha praitk yapmamızı sağlarlar.
+
+- Genellikle kullanırız. 
+    * Çünkü yazılımcılar üşengeçtir. Tembelizdir. Yani tembel derken deli divane çalışırsın amma velakin yazacağın kodun mümkün mertebe daha pratik ve daha okunabilirlik açısından düşünebilirsiniz ama daha kısa kod yazmaktır amacımız.
+    * Bonkör değilizdir. Lüzumsuz yera herhangi bir alanda tahsis edilmesini istemeyiz. Ya da bellekte kullanmadığım değerin bulunması beni rahatsız eder.
+
+- Arttırma azaltma operatörleri bir sayının değerini sadece ve sadece 1 arttırmak ya da 1 azaltmak için kullandığımız operatörlerdi. Bunun dışında bir sayısal ifadeye 1 den fazla değer eklemek istiyorsam mesela 3 değerini burada arttırma azaltma operatörlerini kullanamayız işte burada devreye üzerine ekleme/yığma operatörleri girmektedir. Sadece ekleme çıkarma değil tüm aritmetik operasyonları (toplama, çıkarma, çarpma, bölme, mod alma) gerçekleştirebiliriz.
+    * `i = i + 3;` Bunu kullanabiliriz. ancak bunun yerine;
+        + `i+=3;` arka planda bu şekilde çalışır : `i = i + 3;`
+        + `i-=3;` arka planda bu şekilde çalışır : `i = i - 3;`
+        + `i*=3;` arka planda bu şekilde çalışır : `i = i * 3;`
+        + `i/=3;` arka planda bu şekilde çalışır : `i = i / 3;`
+        + `i%=3;` arka planda bu şekilde çalışır : `i = i % 3;`
+
+
+```C#
+Üzerine Ekleme Yığma Operatörleri
+// +=
+// -=
+// *=
+// /=
+// %=
+```
+
+<img src="14.png" width="auto">
