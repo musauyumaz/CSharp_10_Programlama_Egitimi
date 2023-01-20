@@ -424,3 +424,38 @@ System.Console.WriteLine(i3);
 ```
 
 <img src="14.png" width="auto">
+
+***
+# 106) Metinsel İfadelerde Kullanılan Operatörler
+- Metinsel ifadeler `+` operatörüyle yanyana birleştirilebilirler. Normalde sayısal değerler `+` operatörüyle aritmetik işleme tabi tutulurlar ama elindeki değerler eğer ki metinselse bu metinsel değerlerde bu sefer metinsel birleştirme operasyonuna tabi tutulurlar.
+    * `int a = 5, b = 3; System.Console.WriteLine(a + b);` Aritmetik operasyon yapılır sayılar toplanır. Çıktı : 8
+    * `string c = "Ahmet", d = "Mehmet"; System.Console.WriteLine(c + d);` Burada ise metinsel birleştirme yapılır Çıktı : AhmetMehmet
+
+- İşin içinde metin varsa eğer buradaki toplama aritmetik bir toplama değil yanyana birleştirme olacaktır.
+    * `int e = 5; string f = "abc"; Console.WriteLine(e + f)`  Burada yine metinsel birleştirme yapılır Çıktı : 5abc
+        + Burada `int` değer object'e dönüştürülür. Burada da bilinçsiz bir tür dönüşümü vardır aslında. Boxing yapılmıştır. Boxing esasında bir yandan da bilinçsiz tür dönüşümüne benzer.
+        + Elimizde bulunan `int` değeri `object`'e çevirmiş yani boxing yapmış. `string` bize diyor ki sen elindeki herhangi bir `string` ifade ile bir `object` değeri toplarsan/`+` operatörüne tabi tutarsan sonuç yine `string` olacaktır. 
+
+- Tür dönüşümlerinde herhangi bir değeri `string`'e dönüştürebilmek için .ToString fonksiyonunu kullanıyorduk. Ayriyetten ilgili türü `string`'e dönüştürebilmek için `string` bir ifade ile `+` operatörüne tabi tutulması yeterli olacaktır.
+
+- `string` ile herhangi bir türdeki ifadeleri topladığınızda yani `+` operatörüne tabi tuttuğunuzda sonuç `string` dönecektir ve yanyana birleştirme yapılacaktır.
+
+<img src="15.png" width="auto">
+
+- Metinsel ifadelerde `+=` operatörünü de kullanabilmekteyiz. Yani metinsel ifadeler birbilerinin üstlerine yığılabilmektedir.
+
+- `string g = "ahmet"; string h = "mehmet"; g+=h;` Bu durumda ilk olarak g değişkenine h değişkenini ekleyecek ve bu değeri g değişkenine atayacaktır. Yani buradaki değer g'ye yığılmış olacaktır.
+
+- `==` operatörü ile metinsel ifadeleri kıyaslayabilir yani karşılaştırabiliriz. Eşitlik durumunu karşılaştırabiliyoruz.
+
+- `string i ="Ahmet";string j = "Mehmet"; i == j;` Bu durumda i ve j içerik/değer olarak birbirlerinin aynısı mı? 
+    * `==` operatörü iki `string` değeri algılayacak ve sonuç olarak boolean dönecektir.
+
+- `string` değerlerde karşılaştırma operatörlerini direkt kullanamayız. Çünkü `string` ifadeler bir matematiksel aritmetik işlem yapabileceğimiz bir sayısal değer değildir. Dolayısıyla büyüklük küçüklük sayısal değerlere göre olacaktır. Biz insanlar şu bardak öbür bardaktan büyüktür diyebiliyoruz. Ama gözümüzün gördüğü o niceliği hesaplayabildiğinden dolayı bu yorumda bulunabiliyorsun. Ama sen yazılımda iki metinsel ifadeyi birbirleriyle büyüklük küçüklük olarak neye göre ifade etmek istersin örneğin karakter sayısına göre değil mi? İşte burada onu da bildirmek zorundayız.
+    * `string i ="Ahmet";string j = "Mehmet"; i.Length > j.Length;`  Bize mevcudiyette bulunan değerin karakter sayısını döndürür `.Length` fonksiyonu 
+
+- Demek ki elindeki metinsel değerlerin birinin diğerinden büyük mü küçük mü olduğunu anlayabilmen için bunların Length'lerini yazdırıp o şekilde kıyaslamaya tabi tutabilirsin. Aksi taktirde elindeki metinlerin türü `string` olduğu sürece davranışsal olarak bunları karşılaştırabilmen mümkün değildir. Çünkü tür karşılaştırmaya uygun değildir.
+
+- Elimizdeki metinsel ifadeleri bizler karşılaştırma da sadece eşitlik durumunu karşılaştırabiliyoruz değersel anlamda onun dışında iki metinsel ifadeyi birbirinden büyük mü küçük mü diye karşılaştırma yapamamaktayız.
+
+- Eşit değil mi operatörünü(`!=`) de kullanabiliyoruz.
