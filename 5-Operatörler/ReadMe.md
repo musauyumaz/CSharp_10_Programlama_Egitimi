@@ -491,3 +491,36 @@ System.Console.WriteLine(i3);
 - Örneğin Elimizde bir kullanıcının satış yapıp yapmadığına dair verileri çekeceğiz çektiğimiz veriler boş mu dolu mu bunun kontrolünü yaparken `!` operatörü ile manevralar sağlayabiliyoruz.
 
 <img src="17.png" width="auto">
+
+***
+# 108) C# Operatörler - Ternary Operatörü
+- Kalıpsal bir operatördür. Çok fazla kullanırız.
+
+- Şarta bağlı değer döndüren bir operatördür.
+
+- Akış kontrol şemalarında duruma göre farklı kodları çalıştırmak nasıl gerçekleştirilir ileride bunu inceleyeceğiz.
+
+- Duruma göre farklı değeri döndürebilmek için normalde if ya da switch yapılanmalarını kullanabiliyoruz ama bir değer döndürmek için bu kadar kalıba gerek yoktur. İşte ternary operatörü kendi kalıbında şarta göre duruma göre farklı değerleri döndürmemizi sağlayan bir operatördür.
+
+- Bir değişkene/metoda/property'e değer atarken, eğer ki bu değer şarta göre fark edecekse satır bazlı/tek satırda bu şart kontrolünü yaparak duruma göre değeri döndürmemizi sağlayan bir kalıpsal operatördür.
+    * Örneğin eğer hava yağmurluysa şemsiye al yok eğer değilse şemsiyeyi alma.
+ 
+- Diyelim ki biz evlilere ve bekarlara kampanya yapan bir şirkette çalıştığımızı varsayalım Eğer ki evliyse 'Evlilere Kampanya' bekarsa 'Bekarlara Kampanya' sisteminden yararlanacak.
+    * `bool medeniHal;` 
+    * `string mesaj;`
+
+- Ternary operatörünü kullanmak için; `.......Şart/Durum.......... ? .......Birinci Durum........ : .......İkinci Durum........`
+    * Şartta geriye bir değer döndüren, karşılaştırma yahut mantıksal işlem neticesinde bool sonuc...
+        + Örneğin medeniHal `true`'mu 3 5'ten büyük mü? hava yağmurlu mu?
+        + Eğer şart `true` ise Birinci Durum yok eğer dşart `false` ise ikinci durum döndürülecektir.
+    * Ve biz bureadan dönen değeri değişkenimizle karşılarız.
+    * Geriye döndüreceğimiz değer iki durumda da aynı türde olmalıdır.
+    * Geriye dönen değeri karşılayacağın bir tane türün/değişkenin/alanın olacak. eğer ki birinci durum `string` ikinci durum `int` olursa buradaki karşılayan değişken dönen değere göre şeklini belirleyemeyecektir. Dönecek değerler ikisi de aynı türde olmalıdır.
+    * Dönen değerler farklı olabilir ama aynı türde olmalıdır. Dolayısıyla aynı türde olacakki sen ortak türdeki bir değişkenle karşılayacaksın
+
+- C# 9.0 ile Polimorfizm kurallarına göre birbirlerinden türeyen değerlerde artık desteklenmektedir.
+
+- Satır bazlı şarta  bağlı değerleri döndürebildik.
+
+<img src="18.png" width="auto">
+<img src="19.png" width="auto">
