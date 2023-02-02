@@ -459,3 +459,35 @@ System.Console.WriteLine(i3);
 - Elimizdeki metinsel ifadeleri bizler karşılaştırma da sadece eşitlik durumunu karşılaştırabiliyoruz değersel anlamda onun dışında iki metinsel ifadeyi birbirinden büyük mü küçük mü diye karşılaştırma yapamamaktayız.
 
 - Eşit değil mi operatörünü(`!=`) de kullanabiliyoruz.
+
+***
+# 107) C# Operatörler - ! Operatörü
+- Programlama da olumsuzluk anlamına gelir yani tersi/değili anlamına gelecektir.
+
+- Mantıksal yapılarda olumsuzluk ifade eder. `true` ya da `false`
+    * `!true = false` 
+    * `!false = true` 
+
+- `!` operatörü bizlere yine olumsuzluk mahiyetinde eşit değillik durumunu da bizlere bildirmektedir.
+    * `==` -> Eşitlik
+    * `!=` -> Eşit Değillik
+
+- `!` operatörü gördüğümüz her yerde bir olumsuzluk aklımıza gelmelidir.
+
+- `!` operatörü Null References(C# 8.0) özelliğini de yerine getirmektedir.
+    * `string` ifadelerde `null` durumlarında belirli kontroller yapmamızı sağlar. 
+
+- `!` operatörü `!=` dışında sade ve sadece mantıksal değerlerin yanında kullanılabilir...
+    * `!3` , `!"Ahmet"` gibi değerlerde kullanamayız.
+    * `!true` burada kullanabiliriz. 
+    * Mantıksallarda sadece tersine bir olumsuzluk alabiliriz. Doğruyu yanlış yanlışı doğru yapmış oluruz.
+
+<img src="16.png" width="auto">
+
+- Diyelim ki senin elinde bir veri var ve bu veri yani bri işlem yapıyorsun yapmış olduğun bu işlem `bool` döndüğünü düşünürsek dönen sonucun tersini alabiliriz.
+
+- Manevratik bir operatördür.
+
+- Örneğin Elimizde bir kullanıcının satış yapıp yapmadığına dair verileri çekeceğiz çektiğimiz veriler boş mu dolu mu bunun kontrolünü yaparken `!` operatörü ile manevralar sağlayabiliyoruz.
+
+<img src="17.png" width="auto">
