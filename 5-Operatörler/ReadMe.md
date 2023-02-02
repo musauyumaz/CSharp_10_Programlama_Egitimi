@@ -490,7 +490,18 @@ System.Console.WriteLine(i3);
 
 - Örneğin Elimizde bir kullanıcının satış yapıp yapmadığına dair verileri çekeceğiz çektiğimiz veriler boş mu dolu mu bunun kontrolünü yaparken `!` operatörü ile manevralar sağlayabiliyoruz.
 
+```C#
+System.Console.WriteLine(!true);
+int i = 3;
+int i2 = 5;
+System.Console.WriteLine(i != i2);
+System.Console.WriteLine(!(i != i2));
+```
+
 <img src="17.png" width="auto">
+
+
+
 
 ***
 # 108) C# Operatörler - Ternary Operatörü
@@ -522,5 +533,28 @@ System.Console.WriteLine(i3);
 
 - Satır bazlı şarta  bağlı değerleri döndürebildik.
 
+```C#
+//Bir değişkene/metoda/property'e değer atarken, eğer ki bu değer şarta göre fark edecekse satır bazlı/tek satırda bu şart kontrolünü yaparak duruma göre değeri döndürmemizi sağlayan bir kalıpsal operatördür.
+bool medeniHal = true;
+string mesaj = medeniHal == true ? "Evlilere Kampanya...." : "Bekarlara Kampanya....";
+System.Console.WriteLine(mesaj);
+```
+
 <img src="18.png" width="auto">
 <img src="19.png" width="auto">
+***
+
+# 109) C# Operatörler - Ternary Operatörü - Birden Fazla Condition Uygulamak
+- Bazen kontrol etmemiz gereken durumlar birden fazla olabilir. Böyle durumda aynı kalıp üzerinde semantik bir ayar çekmemiz gerekebilir.
+
+- Birden fazla Condition `:` operatöründen sonra tekrardan `?` operatörünü kullanarak çok rahat bir şekilde oluşturulabilir. İstediğimiz kadar kullanabiliriz.
+    * `string sonuc = yas < 25 ? "A" : (yas == 25 ? "B" : "C");`
+
+```C#
+int yas = 25;
+//Yaşı 25'den büyük olanlara A, 25 olanlara B ve 25'den büyük olanlara C değerini döndüren ternary operatörünü oluşturalım
+string sonuc = yas < 25 ? "A" : (yas == 25 ? "B" : "C");
+System.Console.WriteLine(sonuc);
+```
+
+<img src="20.png" width="auto">
