@@ -628,3 +628,41 @@ int a = 5;
 ```
 
 <img src="25.png" width="auto">
+
+***
+# 113) C# Operatörler - Member Access(Üye Erişim Operatörü)
+- Elimizdeki değerler/değerlerin türleri alt elemanlara sahiptir. Bu alt elemanlara Member Access/Üye Erişim(`.`) operatörü ile erişim sağlayabiliriz.
+
+- `int i= 5;`
+    * `i.` dediğimiz anda `int` üzerinden erişebildiğimiz elemanlar karşımıza çıkar. İşte biz bu elemanlara member'lar deriz.
+
+- İleride Object Oriented Programming'te kendi `class`'larımızı oluşturacağız. Örneğin Öğrenci diye bir `class` oluşturacaksın. Öğrencini adı, Öğrencinin soyadı bunlara property diyeceğiz. Bu property'lerde öğrenci `class`ının elemanları olacak. Öğrencinin notunu hesaplayan bir metot koyacaksın. O da bir eleman/member olacak. 
+
+- Yani eleman dediğimiz olay bir türün altındaki kodlardır. Altında erişebildiğiniz Property ya da metotlardır. 
+
+- Bir kodun devamında çağırabildiğin bütün kodlar o kodun o türün memberlarıdır.
+
+- Member Access Operatörü(`.`) elimizdeki kodun değerin türüne uygun memberlara erişmemizi sağlayan bir operatördür. Örneğin;
+    * `i.ToString();` `int` türünün member'ı olan `ToString()`'e `.` operatörü ile erişebiliyorum. `ToString()` metodu değeri `string`e çevirir.
+    * `ToString()`ten sonra da bizler `.` operatörü ile erişimlerimize devam edebiliriz. Ta ki elimdeki değerin değer olmayacağı duruma kadar. Ya da işim bitene kadar.
+
+- Bir kod yazdın onun altındaki türlerden birine erişmeni sağlayan `.` operatörüdür. Bununda altındaki türlerden birine erişmeni sağlayan `.` operatörüdür.
+
+- Yani devamını getireceksen bir alt member'ı çağıracaksan biz member access `.` operatörünü kullanmaktayız.
+
+<img src="26.png" width="auto">
+
+- Member access, elimizdeki bir değerin türüne uygun elemanlarını/fonksiyonlarını/metotlarını/property'lerini/fieldlarını erişmemizi/çalıştırmamızı/çağırmamızı sağlayan bir operatördür.
+
+- Member access kodun devamını getirir.
+
+- Sen eğer yazdığın kodunda devamı gelecekse member access'le getirebiliyorsun. .bilmemne.bilmemne.bilmemne şeklinde. Burada şöyle düşünebilirsin bir tane çaydanlık var işte .SuKoy.SuyuIsıt.ÇayKoy.ÇayıDemle gibi Burada istediğin nitelikleri elemanları çağırabilirsin. Çağırıp çağırıp üzerinde işlemler gerçekleştirebilirsin.
+
+- `.` operatörünü gördüğün zaman o değerin altındaki/içerisinde bulunan bir eleman çağırılmış.
+
+```C#
+//Member access, elimizdeki bir değerin türüne uygun elemanlarını/fonksiyonlarını/metotlarını/property'lerini/fieldlarını erişmemizi/çalıştırmamızı/çağırmamızı sağlayan bir operatördür.
+//Member access kodun devamını getirir.
+int i = 5;
+System.Console.WriteLine(i.ToString());
+```
