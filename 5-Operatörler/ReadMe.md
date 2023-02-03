@@ -605,3 +605,26 @@ System.Console.WriteLine(havaDurumu == "Yağmurlu" ? "Şemsiye almalısın" : (h
 - Ternary operatörü gelişmiş mimarilerde tek seferlik değer atamayı sağlayan ve şartları hızlıca kontrol etmemizi sağlayan operatördür.
 
 - Bir yazılımcı olarak bunu kullanmak/okumak zahmetli şeklinde ön yargılarla kendini doldurma. Kompleks olup olmaması mesele değil. Burada işine yarayıp yaramaması efektif olup olmaması meseledir. Bazen If blokları ternary operatörünün kullanıldığı yerlerden daha kompleks bir yapıya bürünebiliyor.
+
+***
+# 112) C# Operatörler - Atama(Assign) Operatörü
+- Assign Operatörü(`=`) bir değişkene/alana/field'a/property'e değer atamamızı sağlayan bir operatördür.
+
+- Atama assign operatörü olarak geçmektedir. Herhangi bir elimizdeki değişkene değer atarken sol taraftaki değişken kısmına sağ taraftaki değeri atamamızı sağlayan bir operatördür.
+
+<img src="23.png" width="auto">
+
+- Atama operatörünün sağı ve solu bizim için önem arz etmektedir. 
+    * Eğer ki bir değişkeni atama operatörünün solunda çağırıyorsak burada değişkenin kendi gelir. 
+    * Eğer ki bir değişken atama operatörünün sağında çağırıyorsak burada değişkenin değeri gelir.
+    * Assign operatörünün `=` kullanıldığı operasyonlarda değişken sağda çağırılıyorsa o değişkenin değeri yok eğer solda çağrılıyorsa değişkenin kendisi gelecektir ki gelen değeri kendisine o değişkene atayabilsin.
+
+<img src="24.png" width="auto">
+
+- İleride Referans türlü değişkenlerde atama operatörünün sorumluluğu değişip referans etme operatörü olduğunu konuşacağız...
+
+```C#
+int a = 5;
+```
+
+<img src="25.png" width="auto">
