@@ -692,4 +692,35 @@ System.Console.WriteLine(i.ToString());
 
 - Base class dediğimiz bir ata tür olacak onun kendisinden türeyen başka bir nesneyi referans ettiği zaman onu kendi türünde elde etmek. Yani bir nevi Unboxing'i kendi nesnelerimiz üzerinde nasıl yaptığımızı inceleyeceğiz.
 
+```C#
+//Genellikle tür dönüşümlerine kullanılan bir operatördür.
+//1. Boxing -> Unboxing
+object x = 1;
+int x2 = (int)x;
+//2. Bilinçli Tür Dönüşümü
+int a = 5;
+short b = (short)a;
+//3. char -> int | int -> char (ASCII)
+int ascii = 93;
+char c = (char)ascii;
+char d = 'd';
+int asciiNumber = (int)d;
+//İleride polimorfizm durumunda base class referansıyla işaretlenen bir nesneyi kendi türünde de elde edebilmemizi sağlamaktadır.
+```
+
 <img src="27.png" width="auto">
+
+***
+# 115) C# Operatörler - sizeof Operatörü
+- `sizeof` operatörü metinsel bir keyworddür.
+
+- Verilen türün bellekte kaç byte'lık yer kapladığını `int` olarak geriye döndürür
+
+- `sizeof(type)` dediğimizde parantez içinde verdiğimiz türün bellekte kaç byte'lık yer kapladığını bize bildirir.
+
+```C#
+//Verilen türün bellekte kaç byte'lık yer kapladığını `int` olarak geriye döndürür.
+System.Console.WriteLine("int : " + sizeof(int));
+System.Console.WriteLine("long : " + sizeof(long));
+System.Console.WriteLine("decimal : " + sizeof(decimal));
+```
