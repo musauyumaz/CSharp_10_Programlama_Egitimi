@@ -666,3 +666,30 @@ int a = 5;
 int i = 5;
 System.Console.WriteLine(i.ToString());
 ```
+
+***
+# 114) C# Operatörler - Cast Operatörü
+- Yapısal olarak genellikle dönüşümlerde kullandığımız bir operatördür. Birden fazla sorumluluk üstlenmektedir.
+
+- 3 farklı noktada cast operatörünü (`()`) inceledik.
+    1. Boxing -> Unboxing => Boxing yapılan değeri Unboxing yaparken kullandık.
+        + Elimizdeki `object` türdeki değişkene herhangi bir türdeki değeri atadığımızda boxing yapmış oluruz. İşte biz bu değeri kendi türünde elde etmek istiyorsak Cast operatörünü çağırıp kendi türünü belirterek elde edebiliriz.
+            - `object x = 123;`
+            - `intx2 = (int)x;`
+    2. Bilinçli Tür Dönmüşümü yaparken kullanıyorduk.
+        + Elimizdeki bir sayısal türü kendisinden daha az değer aralığına sahip bir başka türe dönüştürmektir burada bilinçli bir şekilde kendi irademizle karar vermeliyiz. İşte biz burada değer aralığı az olan değişkene değer aralığı fazla olan değişkeni direkt atama yapamayız. Çünkü büyük değer aralığında olanın değeri küçük değer aralığına sığmayabilir. Veri kaybı söz konusu olabilir işte buradaki sorumluluğu sen üstleneceksin. Ve cast operatöründen faydalanacaksın.
+            - `int a = 5;`
+            - `short b = (short)a;`
+    3. Elimizdeki bir `char`'ı `int`e ya da elimizdeki `int`i `char`a dönüşütürürken burada ASCII kaynak kodları üzerinden dönüşümü sağlarken kullanıyorduk. 
+        + Yani sen `int`'i `char`a cast edersen sana ASCII'ye karşılık gelen karakteri verecektir.
+        + Benzer mantıkla tam tersini yaptığında yani `char`ı `int`e cast ettiğinde burada karaktere karşılık gelen ASCII kaynak kodunu döndürecektir.
+            - `int ascii = 93;`
+            - `char c = (char)ascii;`
+
+- Cast operatörünün(`()`) fıtratı elimizde bir değer var başında cast operatörünü biz çağırıyorduk. Cast operatörünün içerisinde vermiş olduğumuz tür neyse ona uygun dönüşümü sağlar.
+
+- İleride polimorfizm durumunda base class referansıyla işaretlenen bir nesneyi kendi türünde de elde edebilmemizi sağlamaktadır.
+
+- Base class dediğimiz bir ata tür olacak onun kendisinden türeyen başka bir nesneyi referans ettiği zaman onu kendi türünde elde etmek. Yani bir nevi Unboxing'i kendi nesnelerimiz üzerinde nasıl yaptığımızı inceleyeceğiz.
+
+<img src="27.png" width="auto">
