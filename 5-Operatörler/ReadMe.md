@@ -583,4 +583,25 @@ System.Console.WriteLine("Sonuç : " + sonuc);
 - `Console.ReadLine()` komutu kullanicinin console'dan bir değer girmesini bekler.
 <img src="22.png" width="auto">
 
+***
+# 111) C# Operatörler - Ternary Operatörünü Örneklendirelim 2
+```C#
+//Hava durumunu tutan string değişkenin değerine göre aşağıdaki önergeleri uygulayan programı yazınız.
+//"Yağmurlu" => "Şemsiye almalısın"
+//"Güneşli"  => "Bol bol d vitamini alman dileğiyle..." 
+//"Kapalı"   => "Yağmur Yağabilir"
+string havaDurumu = "";
+System.Console.WriteLine(havaDurumu == "Yağmurlu" ? "Şemsiye almalısın" : (havaDurumu == "Güneşli" ? "Bol bol d vitamini alman dileğiyle..." : "Yağmur Yağabilir"));
+```
 
+- En sonuncu önerge de şartını bildirmek zorunda değiliz. Zaten en sona geldiğimizde başka ihtimal yok. 
+
+- Bize önerge de verilen duruma göre en son farklı bir olmamazlık gibi yani hiçbir ihtimalin olmayacağı durumu vermezse son önergeyi kontrol etmemize gerek yoktur.
+
+- Algoritmalar da bu böyledir. 3 tane şart verdiyse 3. zaten diğer ikisinin olmadığı durumda geçerli olan şarttır. Yok eğer 4 tane şart varsa artık bu 4.'sü de hiçbirinin anlamına geliyorsa hiçbirinin olmadığı durumlarda geçerliyse 3.'yü de kontrol edersin eğer o da değilse hiçbiri anlamına gelen sonuncu şartın değerini uygularsın.
+
+- Algoritma yazarken aman aman bir eğitime ihtiyacınız yoktur. Algoritma da her daim analitik düşünmeniz lazım. Eğer oraya analitiği yerleştirirseniz zaten takır takır gelecektir.
+
+- Ternary operatörü gelişmiş mimarilerde tek seferlik değer atamayı sağlayan ve şartları hızlıca kontrol etmemizi sağlayan operatördür.
+
+- Bir yazılımcı olarak bunu kullanmak/okumak zahmetli şeklinde ön yargılarla kendini doldurma. Kompleks olup olmaması mesele değil. Burada işine yarayıp yaramaması efektif olup olmaması meseledir. Bazen If blokları ternary operatörünün kullanıldığı yerlerden daha kompleks bir yapıya bürünebiliyor.
