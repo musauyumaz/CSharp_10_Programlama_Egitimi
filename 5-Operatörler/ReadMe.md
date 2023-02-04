@@ -828,3 +828,36 @@ System.Console.WriteLine(x is Program);
 //İleride if yapılanmasında vs. çok tercih ettiğimiz bir operatör olacaktır.
 //OOP yapılanmasında polimorfizm `is` operatörüyle kalıtımsal durumlardaki nesnelerin türlerini de öğrenebiceleğiz...
 ```
+
+***
+# 119) C# Operatörler - is null Operatörü
+- Bir değerin `null` olup olmamasını kontrol eden ve sonuç olarak `bool` döndüren bir operatördür.
+
+- `is null` operatörünü sadece `null` olabilen türlerde kullanabilmekteyiz.
+
+- Bizim iki türlü değişkenlerimiz vardır. Bunlar değer türlü değişkenler ve Referans türlü değişkenler.
+    * Referans türlü değişkenler `null` olabilen yani nullable olan değişkenlerdir
+        + Herhangi bir referans türlü değişkene `null` değer atayabilirsin.
+    * Değer türlü değişkenler `null` olamayan yani not nullable değişkenlerdir.
+        + Yani sen `int` değişkene `null` değeri veremezsin.
+
+- Değer türlerinde `null` kullanamayız çünkü değer türlerin illaki bir değeri olmalı hiç yoktan default değerlerden biri olmalıdır. Varsayılan bir değer olmalıdır.
+
+- Referans türlerde referansın yapısı olan `null` olma durumu hiçbir nesneyi işaretlememesinden öne gelir. Yani bir referans türlü değişken bir değer işaret etmek zorunda değildir. 
+
+- Dolayısıyla `is null` operatörünü değer türlü değişkenlerde kullanamazsınız.
+
+- Değer türlü değişkenlerde `null` alıp alamama durumunu ileride nullable operasyonuyla daha farklı hale getireceğiz.
+
+- Değer türlü değişkenler normal şartlarda `null` alamaz.
+
+```C#
+//Bir değişkenin değerinin null olup olmamasını kontrol eden ve sonuç olarak bool döndüren bir operatördür.
+string a = null;
+System.Console.WriteLine(a is null);
+//is null operatörünü sadece null olabilen türlerde kullanabilmekteyiz.
+int b = null;
+System.Console.WriteLine(b is null);
+```
+
+<img src="30.png" width="auto">
