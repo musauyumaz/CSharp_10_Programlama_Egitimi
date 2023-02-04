@@ -761,3 +761,40 @@ System.Console.WriteLine(t.IsValueType);
 
 <img src="28.png" width="auto">
 <img src="29.png" width="auto">
+
+***
+# 117) C# Operatörler - default Operatörü
+- Herhangi bir değerin/türün default değerini döndüren bir operatördür.
+
+- Belirtilen türün default değerini döndüren bir operatördür.
+
+- Belirtilen türün default değerini döndüren bir operatördür...
+
+- Default değer ne demektir? Default değerler, her tür için yazılım tarafında tanımlanmış bir varsayılan değer demektir.
+    * sayısal = 0
+    * bool = false
+    * string = null
+    * char = \0
+    * referans = null
+    * Herhangi bir değişken tanımladığında eğer ki değer atamazsanız default olarak sistem tarafından verilecek değerler bunlardır.
+
+- Hangi türün hangi değere sahip olduğunu bilmiyorsak default keywordüyle operatörüyle çok rahat öğrenebiliyoruz.
+
+- Elimizdeki herahngi bir değişkene default değerini vermek istiyorsak eğer direkt `default` keywordünü atayabiliriz. `int a = default;`
+
+```C#
+//Belirtilen türün default değerini döndüren bir operatördür...
+//Default değer ne demektir? Default değerler, her tür için yazılım tarafında tanımlanmış bir varsayılan değer demektir.
+//sayısal = 0
+//bool = false
+//string = null
+//char = \0
+//referans = null
+System.Console.WriteLine(default(decimal));
+System.Console.WriteLine(default(string));
+System.Console.WriteLine(default(Program));
+System.Console.WriteLine(default(short));
+System.Console.WriteLine(default(byte));
+int a1 = default;
+int a2 = default(int);
+```
