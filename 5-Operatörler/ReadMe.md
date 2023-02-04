@@ -861,3 +861,22 @@ System.Console.WriteLine(b is null);
 ```
 
 <img src="30.png" width="auto">
+
+***
+# 120) C# Operatörler - is not null Operatörü
+- `is null` operatörü varsa haliyle `is not null` operatörü de olacaktır.
+
+- Elimizdeki değerin `null` olup olmamasıyla ilgilenmekte ve geriye `bool` döndürmektedir.
+
+- `is null` operatörüne nazaran tam tersi mantıkta çalışıyor/işliyor. `is null` `null` olduğunda `true` döndürürken `is not null` `null` olmadığında `true` döndürür.
+
+- Sadece `null` alabilen türlerde kullanılabilir.
+
+- Değer türlü bir değişkende kontrol yapamazsın. Nullable olan değerlerde çalıştırabilmekteyiz.
+
+```C#
+//Elimizdeki değerin null olup olmamasıyla ilgilenmekte ve geriye bool döndürmektedir.
+string a = null;
+System.Console.WriteLine(a is not null);
+//Sadece null alabilen türlerde kullanılabilir.
+```
