@@ -798,3 +798,33 @@ System.Console.WriteLine(default(byte));
 int a1 = default;
 int a2 = default(int);
 ```
+
+***
+# 118) C# Operatörler - is Operatörü
+- Elimizde herhangi bir boxing'e tabi tutulmuş değerin öz türünü öğrenmek için kullandığımız bir operatördür.
+
+- Boxing'e tabi tutulmuş değerin öz türünü öğrenebilmek/check edebilmek/kontrol edebilmek için kullanılan bir operatördür.
+
+- `is` operatörü denetleme neticesinde durumu bool yani true ya da false olarak döndürecektir.
+
+- Bazen elimizdeki object'in içerisindeki değerin hangisi olduğunu bilemeyebiliriz. İşte bilemediğimiz durumlarda `is` operatörü ile kontrol edeceğiz.
+
+- `object x = true; //Boxing` //x'in içerisinde programatik olarak hangi türün olduğunu öğrenmek istiyorsam `is` operatörünü kullanabilirim.
+- `Console.WriteLine(x is bool)`//Diyecez ki sen `bool`' mısın eğer ki `bool` ise `true` ise dönen değer `bool`'a cast edeceğiz. Yok eğer `false` ise etmeyeceğiz. Çünkü bir Unboxing işleminde öz tür neyse o türe göre bir Unboxing yapmamız gerekir. Farklı bir türe Unboxing işlemini yaparsak patlama meydana geliyordu. Dolayısıyla bizim ilk önce check etmemiz gerekebilir. Check edeceğimiz durumlarda da `is` operatörünü kullanmamız gerekecektir.
+
+- İleride if yapılanmasında vs. çok tercih ettiğimiz bir operatör olacaktır.
+
+- Nihayetinde elimize gelen bir object türdeki değişkenin değerlerini kontrol ederken diyeceksinki eğer x'in değeri `bool` ise şu işlemi yap yok eğer x'in değeri `decimal`sa şu işlemi yap gibisinden farklı farklı algoritmalar çalıştırabileceksin. 
+
+- OOP yapılanmasında polimorfizm `is` operatörüyle kalıtımsal durumlardaki nesnelerin türlerini de öğrenebiceleğiz...
+
+```C#
+//Boxing'e tabi tutulmuş değerin öz türünü öğrenebilmek/check edebilmek/kontrol edebilmek için kullanılan bir operatördür.
+//is operatörü denetleme neticesinde durumu bool yani true ya da false olarak döndürür.
+object x = true; //Boxing
+System.Console.WriteLine(x is bool);
+System.Console.WriteLine(x is int);
+System.Console.WriteLine(x is Program);
+//İleride if yapılanmasında vs. çok tercih ettiğimiz bir operatör olacaktır.
+//OOP yapılanmasında polimorfizm `is` operatörüyle kalıtımsal durumlardaki nesnelerin türlerini de öğrenebiceleğiz...
+```
