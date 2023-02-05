@@ -880,3 +880,49 @@ string a = null;
 System.Console.WriteLine(a is not null);
 //Sadece null alabilen türlerde kullanılabilir.
 ```
+
+***
+# 121) C# Operatörler - as Operatörü
+- cast operatörüne(`()`) alternatif olarak üretilmiş bir operatördür. Yani dönüşümde kullandığımız operatör olacaktır.
+
+- cast operatörünü 3 farklı dönüşümde kullanırız;
+    * UnBoxing
+    * Bilinçli Tür Dönüşümü
+    * `int` `char` arasında ASCII kaynak kodları üzerinden bir dönüşüm yaparken kullanabiliriz.
+
+- `as` operatörü cast operatörünün(`()`) UnBoxing boyutuna alternatif olarak üretilmiş bir operatördür.
+
+- Cast operatörünün UnBoxing işlemine alternatif olarak üretilmiş bir operatördür...
+
+- Cast operatöründe UnBoxing işlemini uygularken elimizdeki herhangi bir `object` türünden bir değişkende Boxing edilmiş bir değişkeni biz kendi öz türünde elde etmek için Cast operatörünü(`()`) kullanabiliriz. 
+    * `object x = 123;`
+    * `(int)x` Buradaki temel husus Boxing edilmiş bir değerin dışarıya Cast operatörüyle(`()`) UnBoxing edilmesinde dikkat edilmesi gereken kural türüne uygun bir şekilde Cast edilmesi gerekiyor! Eğer ki farklı bir türde Cast edilirse hata verecektir.
+
+- Amma velakin `as` operatörü buradaki davranışa bir alternatif getirir. Eğer ki UnBoxing yaparken Boxing edilmiş değerle aynı türde değilse hata vermiyorum `null` döndürüyorum diyor.
+
+- `as` operatöründe türüne uygun bir şekilde `as` edilmesi zaruri değildir... Eğer ki tür uygunsa UnBoxing işlemi başarıyla yapılacak, yok eğer tür uygun değilse HATA VERMEYECEK `null` değer döndürecektir...
+
+- Bu durumda programatik olarak yazılımın sonlanmadan akışta kontrol edilmesine müsaade edecek ve işleme devam edecektir.
+
+- Prototip => `object x = 123`; 
+    * `Type y = x as Type;` => as operatörü tür uygun olmadığı taktirde geriye `null` döndüreceği için bu `null`ı karşılayabilen türlerle çalışmak isteyecektir. Haliyle `as` operatörü değer türlü değişkenlerde kullanılamaz!!! 
+    * Nullable olmayan türlerle çalışamaz.
+    * Referans türlerdeki değişkenlerle çalışabilir...
+
+- Genellikle OOP'de kullanacağımız bir operatördür.
+
+<img src="31.png" width="auto">
+
+```C#
+as Operatörü
+//Cast operatörünün UnBoxing işlemine alternatif olarak üretilmiş bir operatördür...
+Cast Örneklendirmesi
+object x = "Ahmet";
+int x2 = (int)x;
+System.Console.WriteLine(x2);
+
+as Örneklendirmesi
+object y = "Mehmet";
+Program y1 = y as Program;
+System.Console.WriteLine(y1);
+```
