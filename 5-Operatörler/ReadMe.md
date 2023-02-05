@@ -964,3 +964,34 @@ as Örneklendirme
 object x = 123;
 int? y = x as int?;
 ```
+
+***
+# 123) C# Operatörler - Null Coalescing Operatörü
+- Null birleştirme operatörü(`??`)
+
+- Elimizdeki değişkenlerden `null` olan varsa eğer yerine başka bir değeri göndermeyi sağlayan bir operatördür.
+
+- Elimizdeki değişkenin değerinin `null` olma durumuna istinaden farklı bir değeri göndermemizi sağlayan operatördür.
+
+- Diyelim ki elimizde;
+    * `string a = null` a değişkeni var ve biz bu a değişkeninin `null` olup olmadığını bilmiyoruz.
+    * `a ?? "Merhaba"` a'nın değeri eğer `null` değilse a'nın değerini yazdır. Yok eğer a'nın değeri `null` ise `"Merhaba"` yazdır demiş olduk.
+
+<img src="33.png" width="auto">
+
+- Null Coalescing Operatörü(`??`) if'ten else'ten ve bunun gibi kontrollerden bizleri kurtarmaktadır.
+    * `a == null ? "Merhaba" : a` normalde bu şekilde yazman gereken kontrolü;
+    * `a ?? "Merhaba"` bu şekilde yazarak daha hızlı/efektif/sistematik bir şekilde sonucu elde et diye Null Coalescing operatörü(`??`) üretilmiştir.
+
+- Null Coalescing Operatöründe(`??`) her iki taraftaki değişken yahut değerler aynı türde olmalıdır.
+
+<img src="34.png" width="auto">
+
+```C#
+//Elimizdeki değişkenin değerinin null olma durumuna istinaden farklı bir değeri göndermemizi sağlayan operatördür.
+string a = "Ahmet";
+System.Console.WriteLine(a ?? "Merhaba");
+System.Console.WriteLine(a == null ? "Merhaba" : a);
+System.Console.WriteLine(a ?? 3);
+//Sol ve sağdaki türler birebir aynı olmalıdır. Aksi taktirde derleyici hata verecektir...
+```
