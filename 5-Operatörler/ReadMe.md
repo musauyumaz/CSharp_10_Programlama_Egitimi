@@ -926,3 +926,41 @@ object y = "Mehmet";
 Program y1 = y as Program;
 System.Console.WriteLine(y1);
 ```
+
+***
+# 122) C# Operatörler - Nullable Operatörü
+- C# programlama dilinde normal şartlarda değer türlü değişkenler(`int`,`short`,`byte`,`char`, `bool`) `null` değeri alamaz. Eğer ki bir değer türlü değişkenin `null` değerini almasını istiyorsanız onu nullable yapmanız gerekiyor. Bunu da nullable operatörü(`?`) ile yapabilirsiniz.
+
+- Prototip : `degişken_türü? değişken_adı;` -> Bu formatta tanımlanan değişkenler `null` değer alabilir.
+
+<img src="32.png" width="auto">
+
+- Bir değer türlü değişkeni nullable operatörüyle(`?`) `null` değer alabilir hale getiriyorsanız artık `is null` ve `is not null` kontrollerini yapabiliyorsunuz anlamına gelir. Hatta ve hatta `as` operatörünü de kullanabiliriz.
+
+- Bir değer türlü değişken nullable yapıldıysa eğer; `is null`, `is not null`, `as` gibi `null` ile çalışan operatörleri üzerinde kullanabiliriz.
+
+- C# programlama dilinde değer türlü değişkenler normal şartlarda null değer alamazlar(Not Nullable)
+
+- Bir değer türlü değişkenbin null değer alabilmesi için (yani nullable olabilmesi için) ? operatörünün kullanılması gerekmektedir.
+
+- `int? a = null;`Bir değer türlü değişkenden ziyade referans türlüymüş gibi hareket edecek ve `null` değerlerini karşılayabilecek
+
+- İleride EntityFramework dediğimiz ORM aracında bazen veritabanında oluşturulacak bazı kolonların nullable olup olmamasını biz nullable operatörüyle(`?`) ORM üzerinden belirleyebiliyoruz. Yani bir değişkenin `null` olup olmamasını nullable operatörüyle(`?`) belirleyebiliyoruz.
+
+```C#
+//C# programlama dilinde değer türlü değişkenler normal şartlarda null değer alamazlar(Not Nullable)
+//Bir değer türlü değişkenbin null değer alabilmesi için (yani nullable olabilmesi için) ? operatörünün kullanılması gerekmektedir.
+int? a = null;//Bir değer türlü değişkenden ziyade referans türlüymüş gibi hareket edecek ve null değerlerini karşılayabilecek
+bool? b = null;
+System.Console.WriteLine(a);
+System.Console.WriteLine(a is null);
+System.Console.WriteLine(b is not null);
+object sayi = 4;
+int? sayi2 = sayi as int?;
+Console.WriteLine(sayi2);
+//Bir değer türlü değişken nullable yapıldıysa eğer; is null, is not null, as gibi null ile çalışan operatörleri üzerinde kullanabiliriz.
+
+as Örneklendirme
+object x = 123;
+int? y = x as int?;
+```
