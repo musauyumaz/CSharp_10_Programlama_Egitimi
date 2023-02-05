@@ -995,3 +995,29 @@ System.Console.WriteLine(a == null ? "Merhaba" : a);
 System.Console.WriteLine(a ?? 3);
 //Sol ve sağdaki türler birebir aynı olmalıdır. Aksi taktirde derleyici hata verecektir...
 ```
+
+***
+# 124) C# Operatörler - Null Coalescing Assignment(C# 8.0)
+- C# 8.0 ile gelmiştir.
+
+- Null Coalescing Operatörünün(`??`) assigment/assign/atama işlemini yapan daha gelişmiş bir versiyonudur.
+
+- Amacı elimizdeki değerler eğer `null` ise değerini değiştirmeyi yok eğer değilse de var olan değerini korumayı sağlayan bir operatördür.
+
+- `x ??= "Merhaba";` x'in değeri eğer `null` ise `"Merhaba"` değerini x'e ata demiş oluyoruz.
+
+- `System.Console.WriteLine(x ??= "Merhaba");` x'in değeri `null` ise `"Merhaba"` yazdır ve `"Merhaba"` değerini x'e atama yap. Eğer ki `null` değilse direkt olarak x'in değerini yazdıracaktır.
+
+<img src="35.png" width="auto">
+
+- Gerçek hayatta uzaktan sana kullanıcın id değeri geldi varsayalım. Eğer ki gelen id `null` ise varsayılan bir değer atama yapabilirsin. Eğer `null` değilse id ne ise o şekil devam etsin demiş oluyorsun.
+
+- Birebir Null Coalescing Operatörüyle(`??`) aynı mantıkta çalışır.
+
+```C#
+string x = null;
+System.Console.WriteLine(x ??= "Merhaba");
+System.Console.WriteLine(x);
+int? id = null;
+id ??= 1;//id null ise 1 değerini ata, yok eğer değilse değerini koru...
+```
