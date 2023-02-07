@@ -111,3 +111,55 @@
 <img src="8.png" width="auto">
 
 - `switch` yapılanması kodu belirli bir şarta göre farklı yönlendiren bir akış mekanizmasıdır.
+
+```C#
+#region Switch Case
+//Switch case, kodun akışında belirli bir şarta göre yönlendirme yapmamızı(farklı algoritma çalıştırmamızı/farklı operasyon gerçekleştirmemizi/tetiklememizi) sağlayan yapılanmadır.
+//Switch case yapılanması sadece bir değişkenin değerinin sadece eşitlik durumları kontrol ederken kullanılabilir.
+//Sadece eşitlik durumu check edilecekse o zaman switch kullanılabilir.
+string adi = "Ahmet";
+switch (adi)//kontrol edilen türü ne ise case bloklarında da aynı türde değerlerle kontrol edilmelidir.
+{
+    case "Mehmet":
+        Console.WriteLine("Adı Mehmet");
+        break;
+    case "Ahmet":
+        Console.WriteLine("Adı Ahmet");
+        break;
+    case "Hilmi":
+        Console.WriteLine("Adı Hilmi");
+        break;
+    default:
+        Console.WriteLine("Hiçbiri değil");
+        break;
+}
+```
+
+***
+# 128) Akış Kontrol Mekanizmaları - Switch Case'de When Şartı
+- `switch` yapılanmasında temelde kullandığımız yapılanma eşitlik durumuna göre bir kıyas oluşturmamızı sağlıyordu. Yani kodun akışı esnasında elindeki bir değerin farklı değerlerle eşitlik durumunu hızlıca `switch` ile kontrol edebiliriz. bu süreçteyken sen ekstradan eşitliğin dışında başka şeyleri de kontrol etmek istiyorsan eğer `when` keywordünü kullanabiliyorsun.
+
+- `switch` yapılanmasında sadece elimizdeki değerin eşitlik durumunu kontrol edebilmekteyiz. Bunun dışında bu kontrol esnasında farklı şartları da değerlendirmek istiyorsak eğer `when` keywordünü kullanabiliriz.
+
+- `when` ilgili eşleştirme/eşitlik durumunu kontrol ederken ekstraları da/başka şartları da kontrol etmemizi sağlayan `switch`i zenginleştiren özel bir keyworddür.
+
+<img src="8.png" width="auto">
+
+- Şart mı var sonuç her daim mantıksaldır `bool`'dur. Programlama da şart diyince aklına her daim `bool` gelecek.
+
+- `case 100 when (3 == 5):` `when` senden bir şart oluşturmanı bekliyor burdaki şarta göre de buradaki durum bir ve/and(`&&`) hem case eşit olacak ve hem de `when` yapısının içindeki şartta doğrulanmış olacak ancak o zaman komple doğrulandığı zaman buradaki blok tetiklenecektir.
+
+- Biz burada yapısal olarak biz case bloklarındaki eşitliğin yanında ekstradan farklı şartnamelerde koymuş olduk. `when`le ekstradan şartnameler koyabilmekteyiz. 
+
+- `when` ve/and(`&&`) mantığıyla çalışır. Bu yüzden hem `case` şartı hem de `when` şartı doğru olursa o blok çalışabilmektedir.
+
+```C#
+int satisTutari = 1000;
+switch (satisTutari)
+{
+    case 1000 when (3 == 5):
+        break;
+    case 1000 when (3 == 3):
+        break;
+}
+```
