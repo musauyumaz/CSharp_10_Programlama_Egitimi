@@ -217,3 +217,52 @@ switch (i)
         goto case 5;
 }
 ```
+
+***
+# 130) C# 8.0 Switch Expressions Nedir?
+- C# 8.0 ile gelmiştir.
+
+- Tek satırlık işlemler için maliyet düşürücü ve kullanışlı semantiklerdir.
+
+- switch expression ile denetlenen yapılanma semantik açıdan `switch` öncesine alınır ardından `switch` yazılır. Yazdıktan sonra her bir yazılan değer check edilme durumu yapılacak değerlerdir. Hangi değere denk geliyorsa/eşleşiyorsa o anki denetlenen değer ilgili değer o değişkene atanır. Tek satırlık işlemlerde kullanılan ifadedir
+
+<img src="16.png" width="auto">
+
+- case ile break arasında tek satırlık bir işlem yapılıyorsa tek satırlık bir işlem olacak ve bu tek satırlık işlemde değişkene değer atama işlemi olacak işte böyle bir durumda switch expressions'ıda kullanabiliyorsunuz.
+
+- kod maliyeti açısından yeni yöntem eski yöntemden bin kat daha iyi.
+
+- Yapısal olarak tüm kurallar burada da geçerli. Senin denetlediğin değer tür neyse o türde bir değerlerle karşılaştırma yapıyorsun ve hangi değişkene atama yapıyorsan o değişkene uygun bir değer gönderiyorsun. Tek satırlık işlem yaparken kullandığımız bir format. Eğer ki çok satırlı işlem yapılıyorsa bu formatı kullanamayız. 
+ 
+```C#
+#region Switch Expressions
+#region Eski Yöntem
+string isim = "";
+int i = 10;
+switch (i)
+{
+    case 5:
+        isim = "Hilmi";
+        break;
+    case 7:
+        isim = "Rıfkı";
+        break;
+    case 10:
+        isim = "Gençay";
+        break;
+    case 17:
+        isim = "Musa";
+        break;
+    default:
+}
+#endregion
+#region Yeni Yöntem
+int j = 10;
+string ad = i switch
+{
+    5 => "Hilmi",
+    7 => "Rıfkı",
+    10 => "Gençay",
+    17 => "Musa"
+};
+```
