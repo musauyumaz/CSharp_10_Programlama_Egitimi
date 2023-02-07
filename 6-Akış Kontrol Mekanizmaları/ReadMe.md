@@ -143,7 +143,7 @@ switch (adi)//kontrol edilen türü ne ise case bloklarında da aynı türde de�
 
 - `when` ilgili eşleştirme/eşitlik durumunu kontrol ederken ekstraları da/başka şartları da kontrol etmemizi sağlayan `switch`i zenginleştiren özel bir keyworddür.
 
-<img src="8.png" width="auto">
+<img src="9.png" width="auto">
 
 - Şart mı var sonuç her daim mantıksaldır `bool`'dur. Programlama da şart diyince aklına her daim `bool` gelecek.
 
@@ -161,5 +161,59 @@ switch (satisTutari)
         break;
     case 1000 when (3 == 3):
         break;
+}
+```
+
+***
+# 129) Akış Kontrol Mekanizmaları - Switch Case'de goto Keyword'ü
+- `goto` komutuyla `switch` yapılanmasında `case` blokları arasında atlama gerçekleştirebiliyoruz.
+
+- `switch case` yapılanmasında sadece eşitlik durumunu inceleyebildiğimiz için mantıksal bir işlem gerçekleştirememekteyiz. Dolayısıyla bazen farklı değerlere eşit olma durumunda aynı operasyonu/kodu/akışı kullanacağımız senaryolarla karşılaşabilmekteyiz...
+
+- Farklı eşitliklerde aynı kodu çalıştıracaksak eğer kod tekrarına girmemek için goto keywordü ile şu `case`'deki kodu çalıştır diyebiliyoruz... Yani `case`ler arasında zıplama yapabiliyoruz....
+
+- Kod tekrarına girme diyelim ki 50 tane `case` bloğum var bunlardan 3'ü 5'i aynı kod bloğunu çalıştıracaksa eğer 3'ünde 5'inde aynı tekrara gireceğine sadece bir tanesini yönlendirip/sadece bir tanesinde var olan yazılmış kodu çalıştırırsın bu şekilde de tekrardan kurtulmuş olursun. Teknik olarakta `case`ler arasında zıplamayı `goto` keywordüyle yapabilmekteyiz.
+
+<img src="10.png" width="auto">
+
+- Bazen bazı `case`'lerde aynı kodları çalıştırmak zorunda kalabiliriz. İşte böyle durumlarda kodu sadece tek `case`'e yazmalı diğer `case`'de ise `goto` kullanarak kod yazılan `case`'e yönlendirme yapmalıyız. `switch`de veya mantığı yapamayız.
+
+<img src="11.png" width="auto">
+
+- `goto case 5;` `case` 5'deki kodu çalıştır demiş oluyoruz. `goto` kullanılan `case`de `break` komutunu kullanmıyoruz!!!
+
+<img src="12.png" width="auto">
+
+- `goto` keywordüyle yolldağın zaman şarta bakmaz direkt algoritmasını/bloğu çalıştırır.
+
+- `goto`keywordünün kullanıldığı case'in eşleştirmesine bakmaksızın direkt olarak kodunu/bloğunu çalıştıracaktır.
+
+<img src="13.png" width="auto">
+
+- `case 7:`
+- `case 10: goto case 5` her ikisinden bir olduğu durumda `case` 5'e yönlendir demiş oluyoruz.
+
+<img src="14.png" width="auto">
+<img src="15.png" width="auto">
+
+```C#
+goto
+int i = 10;
+switch (i)
+{
+    case 5:
+        System.Console.WriteLine(i * 10); 
+        break;
+    case 6:
+        System.Console.WriteLine(i / 5);
+        break;
+    case 7:
+        // System.Console.WriteLine(i * 10);//kod tekrarı vardır
+        // break;
+        // goto case 5;
+    case 10:
+        // System.Console.WriteLine(i * 10);//kod tekrarı vardır
+        // break;
+        goto case 5;
 }
 ```
