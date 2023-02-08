@@ -9,4 +9,5 @@
 - ## [Kod Konsepti Nasıldır](https://github.com/musauyumaznotes/CSharp_10_Programlama_Egitimi/blob/main/3-Kod%20Konsepti%20Nas%C4%B1ld%C4%B1r/ReadMe.md)
 - ## [Tür Dönüşümleri(Type Conversion)](https://github.com/musauyumaznotes/CSharp_10_Programlama_Egitimi/blob/main/4-T%C3%BCr%20D%C3%B6n%C3%BC%C5%9F%C3%BCmleri(Type%20Conversion)/ReadMe.md)
 - ## [Operatörler](https://github.com/musauyumaznotes/CSharp_10_Programlama_Egitimi/blob/main/5-Operat%C3%B6rler/ReadMe.md)
+- ## [Akış Kontrol Mekanizmaları](https://github.com/musauyumaz/CSharp_10_Programlama_Egitimi/blob/main/6-Ak%C4%B1%C5%9F%20Kontrol%20Mekanizmalar%C4%B1/ReadMe.md)
 
