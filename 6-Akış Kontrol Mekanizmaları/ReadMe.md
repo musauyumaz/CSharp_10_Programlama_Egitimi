@@ -266,3 +266,31 @@ string ad = i switch
     17 => "Musa"
 };
 ```
+
+***
+# 131.1) C# 8.0 Switch Expressions - when Şartı Uygulamak
+- Switch expression'larda `when` şartını da kullanabilmekteyiz. `when` şartını kullanırken dikkat edilmesi gereken nokta hem `when` şartı kullanılabiliyor yani ekstradan senin kullanmış olduğun switch expression ne de olsa bir `switch` ve bu `switch` yapılanmasında eşitlik durumunu kontrol ederken ekstradan başka şartları da devreye sokabiliyorsunuz. Hem de bunu yaparken değişken de tanımlayarak gerçekleştirebiliyorsunuz.
+
+- Siz elinizde kontrol ettiğiniz değeri değişkene tanımlayarak atayabilirsiniz. Dolayısıyla ilgili değişken üzerinden birden fazla farklı condition'ı da verebiliyorsunuz.
+
+<img src="17.png" width="auto">
+
+- Elimizdeki değeri kontrol ederken eşitlik durumlarını ise operatörlerinden(`=>`) önce yazıyoruz ya burada çalışırken 2 türlü çalışma yapabiliyoruz. `when` şartını kullanabiliyoruz
+    1. `5 when ...ŞART... =>`  Direkt `when` şartını kullanma eşitlik değerini yazdıktan sonra ise operatöründen `=>` önce eşitlik değerinden sonra `when` yazıp başka bir şart/başka bir condition koyabiliyorsun ortaya.
+    2. `var x when x == 7 && x % 2 == 1 =>` İçeride bir değişken tanımlayıp ve tanımladığımız değişkene kontrol edilecek değerin o anki değerini verip oluşturacağımız condition'a daha derinlemesine bir şart mekanizması oluşturabiliyoruz.
+        + Bir değişken kullanıyorsak kullandığımız değişkende direkt eşitlik durumunu kontrol edeceğimiz bir değer tanımlamaya gerek kalmamaktadır.
+        + Yani sen bir değişken tanımlamasını gerçekleştiriyorsan sabit bir eşitlik durumu kontrol ettiğin değeri kullanmak yasaklanmıştır/kaldırılmıştır.
+
+- Devamında ise hem `when` şartını normal kullanabiliyorsunuz hem değişken tanımlayıp bir condition kullanabiliyorsunuz ve en son hiçbiri değilse/ hiçbirinin olmadığı durumda ise yapısal olarak `var x = "Hiçbiri"` bunu kullanabiliyorsunuz. Bu default tanımlamasına denk gelecektir.
+
+```C#
+int i = 10;
+string isim = i switch 
+{
+    5 when 3 == 3 => "Hilmi",
+    var x when x == 7 && x % 2 == 1 => "Rıfkı",
+    10 => "Gençay",
+    5 when 3 == 3 => "Musa",
+    var x => "Hiçbiri",//default : Hiçbirinin olmadığı durumda default tanımlamasına karşılık gelecektir.
+};
+```
