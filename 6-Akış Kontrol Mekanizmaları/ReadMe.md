@@ -376,3 +376,16 @@ string mesaj = (s1, s2) switch
 System.Console.WriteLine(mesaj);
 ```
 
+***
+# 134) C# 8.0 Switch Expressions - Positional Patterns
+- Positional patterns ise `Deconstruct` özelliği olan nesneleri kıyaslmaak yahut değersel karşılaştırmak için kullanılan bir gelişimdir.
+
+- `Deconstruct` : Nesnelerin direkt özetini veren çıktısında istediğimiz formatta özet veren bir özelliştirilmiş fonksiyondur. Esasında bu geriye Tuple gibi bir değer döner.
+
+- `Deconstruct` bulunduran `class`'tan üretilen bir nesnenin üzerinde sen switch expression ile girdiğin zaman `Deconstruct`ın dönmüş olduğu o özet Tuple ile kıyaslama yapabiliyorsun. İşte bunu yaptığın zaman bir nesne üzerinde `Deconstruct`ın döndüğü Tuple değerine eğer ki sen switch expression'la müdahale bulunuyorsan biz buna Positional Pattern diyoruz. 
+
+- Switch expression'larda eğer ki Tuple kullanıyorsanız kullandığınızın Tuple'ın hiçbiri anlamına gelen değeri discard dediğimiz(`_`) kavramıyla gerçekleştirilmektedir.
+
+- `_ =>` default anlamına gelmektedir. Hiçbiri olmadığı durum anlamına gelmektedir.
+
+<img src="20.png" width="auto">
