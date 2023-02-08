@@ -389,3 +389,9 @@ System.Console.WriteLine(mesaj);
 - `_ =>` default anlamına gelmektedir. Hiçbiri olmadığı durum anlamına gelmektedir.
 
 <img src="20.png" width="auto">
+
+***
+# 135) C# 8.0 Switch Expressions - Positional Patterns when Şartı Uygulamak
+- `when` şartını kullanmak birebir aynı mantıkta bir değeri/nesneyi/class'ı kıyaslarken biz yine `when` şartını ise operatöründen (`=>`) önce ya da değişken eşliğinde kullanabilmekteyiz.
+
+<img src="21.png" width="auto">
