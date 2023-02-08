@@ -313,3 +313,44 @@ string isim = i switch
     int x => "Hiçbiri"
 };
 ```
+
+***
+# 132) C# 8.0 Switch Expressions - Tuple Patterns
+- Tuple patterns ise `switch` yapılanmasını tuple nesnelerini kontrol edebilecek şekilde hem standart hemde yeni yapılanmayla bizlere sunmaktadır.
+
+- Eşitlik durumunu kontrol ettiğimiz yere Tuple nesnesi de koyabilmekteyiz. Yani birden fazla değerimizi Tuple olarak buraya verebiliyoruz. Ve verdiğimiz değerleri Tuple olarak eşitlik durumunu kıyaslayabiliyoruz.
+
+- Artık bu özellikte geliştirildi ve tek satırda bu işlemi gerçekleştirebiliyoruz.
+
+- Tek satırlık yapılan bu işlemleri siz bir değişkene atıyorsanız gene değişkende ilgili Tuple nesnesini belirliyorsunuz ve ilgili Tuple'lar tek tek ise operatörü(`=>`) ile değerlendirilmekte atanan sonuç değerler neyse mesaja gönderilmektedir.
+
+<img src="18.png" width="auto">
+
+- Eski `switch` yapılanmasında bir tane değer kontrol edebiliyordum. Artık birden fazla değer kontrol edebiliyorum.
+
+- Eğer ki `switch case` yapılanmasının içinde tek satırlık işlem yapıyorsak yapmış olduğumuz tek satırlık işlemde bir değişkene değer atıyorsak switch expression mantığını kullanabiliriz.
+
+```C#
+int s1 = 10;
+int s2 = 20;
+string mesaj = "";
+switch (s1, s2)
+{
+    case (5, 10):
+        mesaj = "5 ile 10 değerleri";
+        break;
+    case (10, 20):
+        mesaj = "10 ile 20 değerleri";
+        break;
+}
+System.Console.WriteLine(mesaj);
+int s3 = 15;
+int s4 = 15;
+string mesaj2 = (s3, s4) switch
+{
+    (5, 10) => "5 ile 10 değerleri",
+    (10, 20) => "10 ile 20 değerleri",
+    (15, 15) => "15 ile 15 değerleri"
+};
+System.Console.WriteLine(mesaj2);
+```
