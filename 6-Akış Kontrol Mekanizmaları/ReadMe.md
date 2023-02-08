@@ -354,3 +354,25 @@ string mesaj2 = (s3, s4) switch
 };
 System.Console.WriteLine(mesaj2);
 ```
+
+***
+# 133) C# 8.0 Switch Expressions - Tuple Patterns when Şartı Uygulamak
+- Yine aynı mantıksa ise operatöründen(`=>`) önce `when` şartını kullanabilirsiniz. Ya da değişken tanımlayarak aynı işlemi gerçekleştirebilirsiniz.
+
+- Değişken tanımlarken artık Tuple'ın tipi birden fazla değişkeni bir araya gelmesinden oluştuğu için bunun ortak bir türü yok muadil olarak bu Tuple olduğu için ortak bir türle karşılanmıyor. Dolayısıyla `var` keywordü ile karşılarız.
+
+- Tek dikkat edilmesi gereken Tuple'da tür tek olmadığı için bunu karşılayabilecek bir türümüz yok. O yüzden burada `var` keywordu kullanmanız gerekecek
+
+<img src="19.png" width="auto">
+
+```C#
+int s1 = 10;
+int s2 = 20;
+string mesaj = (s1, s2) switch
+{
+    (5, 10) when (true) => "5 ile 10 değerleri",
+    var x when x.s1 % 2 == 1 || x.s2 == 10 => "10 ile 20 değerleri"
+};
+System.Console.WriteLine(mesaj);
+```
+
