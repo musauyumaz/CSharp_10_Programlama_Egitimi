@@ -294,3 +294,22 @@ string isim = i switch
     var x => "Hiçbiri",//default : Hiçbirinin olmadığı durumda default tanımlamasına karşılık gelecektir.
 };
 ```
+
+***
+# 131.2) C# 8.0 Switch Expressions - when Şartı Uygulamak
+- İlgili değişkenin türüne uygun bir değişken tanımlamalıyız. `int x when x == 7 && x % 2 == 1 => "Rıfkı"`
+
+- İster değişkeni `var` keywordü ile karşılabilirsin istersende kendi türünde karşılayabilirsin.
+
+- Tanımlanacak değişkenin türü ya `var` keywordüyle compiler tarafından tanımlanan bir değişken olabilir ya da sen kendi türünü manuel bir şekilde elinle de belirtebilirsin.
+
+```C#
+int i = 10;
+string isim = i switch 
+{
+    5 when 3 == 3 => "Hilmi",
+    int x when x == 7 && x % 2 == 1 => "Rıfkı",
+    10 => "Musa",
+    int x => "Hiçbiri"
+};
+```
