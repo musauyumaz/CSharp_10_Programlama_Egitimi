@@ -395,3 +395,15 @@ System.Console.WriteLine(mesaj);
 - `when` şartını kullanmak birebir aynı mantıkta bir değeri/nesneyi/class'ı kıyaslarken biz yine `when` şartını ise operatöründen (`=>`) önce ya da değişken eşliğinde kullanabilmekteyiz.
 
 <img src="21.png" width="auto">
+
+***
+# 136) C# 8.0 Switch Expressions - Property Patterns
+- Property patterns nesnenin propertylerine girerek belirli durumları hızlı bir şekilde kontrol etmemizi gerçekleştiren ve bunu farklı değerler için birden fazla kez tekrarlı bir şekilde yapmamıza olanak sağlayan güzel bir gelişimdir.
+
+- `class`ımız var ve bu `class`tan bir nesne üretmişiz. bu nesne üzerinden herhangi bir property'e erişerek o nesnenin property'sini `switch` bloğuyla kontrol edebiliyoruz.
+
+- `double maas = ogrenci switch {};` Property pattern ile birlikte nesne üzerinden switch expression'a girerek daha sonrasında nesnenin property'lerine erişebilmek için scope oluşturuyoruz. Yani burada bir anonim tip oluşturuyoruz. Yani oradaki türü temsil eden bir tür oluşturmuş oluyorsun. Nesne oluşturuyorsun ve o nesnenin içerisindeki propery'leri kıyaslama yapabiliyorsun.
+
+- Patternlar desen getiriyor yani kodun maliyetini ve yapısını biraz daha düzenliyor daha yakışıklı bir kod ortaya çıkarmamızı sağlıyor. Kodumuz bunlarla beraber daha profesyonel bir semantiğe kavuşmuş oluyor.
+
+<img src="22.png" width="auto">
