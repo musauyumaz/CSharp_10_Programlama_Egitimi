@@ -480,3 +480,29 @@ System.Console.WriteLine("Dünya");
 ```
 
 <img src="26.png" width="auto">
+
+***
+# 140) Akış Kontrol Mekanizmaları - if Yapısı Üzerine Kritik Yapalım 2
+- `if`in şart kısmında eğer ki `bool` değişken değer kullanıyorsak karşılaştırma operatörünü kullanmak zorunda değiliz...
+
+- `bool` türdeki değişkenlerin değerleri zaten `bool` olacağından dolayı karşılaştırma operatörünü kullanmak zorunda değiliz...
+
+- `bool` değerleri kıyaslarken illa karşılaştırma operatörlerini kullanmana gerek yok zaten direkt `bool` değer verebiliyorsun. Çünkü `if(.....Şart.....)` şart kısmı `bool` olmak zorunda. Ulan burası zaten `bool` olacakken sen bir daha karşılaştırma yapıp varolan `bool` üzerine bir daha `bool` aynı sonucu niye elde etmeye çalışıyorsun ki?
+
+<img src="27.png" width="auto">
+
+- Elindeki `bool` sonucun tersini alman gerekirse `!` operatörünü kullanabilirsin. 
+    * `if(medeniHal)` : medeniHal `true` ise 
+    * `if(!medeniHal)` : medeniHal `false` ise 
+
+- Elindeki `bool` değerleri siz `if`de check ederken bunu karşılaştırma operatörüne tabi tutmanıza gerek yok direkt değerini yazdırıp oradaki değerin mantığına göre çalışabilirsiniz.
+
+```C#
+bool medeniHal = true;
+// if (medeniHal == true)
+if (!medeniHal)
+{
+    System.Console.WriteLine("Hayırlı Olsun");
+}
+#endregion
+```
