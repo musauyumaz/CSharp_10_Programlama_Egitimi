@@ -462,3 +462,21 @@ if (medeniHal == true)
 }
 //if yapılanması tek başına kullanılıyorsa sadece şarta bağlı çalışacak koda odaklanır..
 ```
+
+***
+# 139) Akış Kontrol Mekanizmaları - if Yapısı Üzerine Kritik Yapalım 1
+- `if` yapılanmasında illaki `else` kullanmak zorunda değiliz. `if`ten sonra normal kodlarımızı kullanbiliriz. 
+
+- Uygulamayı derleyip çalıştırdığında `if` bloğunda eğer ki şart `true` ise ilk önce scope içindeki kodlar çalışacak daha sonrasında `if` yapılanması sona erdiğinde ondan sonra hangi komut varsa onları işlemeye devam edecektir.
+
+```C#
+//if yapılanmasında illaki else kullanmak zorunda değiliz.
+int i = 10;
+if (i != 10)
+{
+    System.Console.WriteLine("Merhaba");
+}
+System.Console.WriteLine("Dünya");
+```
+
+<img src="26.png" width="auto">

@@ -4,7 +4,6 @@ class Program
     static void Main(string[] args)
     {
         bool medeniHal = true;
-
         if (medeniHal == true)
         {
             System.Console.WriteLine("Allah tek yatıkta kocatsın...");
