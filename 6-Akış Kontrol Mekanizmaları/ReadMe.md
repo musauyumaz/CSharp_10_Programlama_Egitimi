@@ -415,3 +415,50 @@ System.Console.WriteLine(mesaj);
 - Switch expression'a girdiğimiz zaman nesnenin property'sini direkt kontrol edebiliyoruz ya da istersek değişkenle condition uygulayabiliyoruz ya da ilgili ise operatöründen(`=>`) önce gelecek olan değerin hemen ardından ise operatörü(`=>`) değer arasında her zaman yaptığımız gibi `when` şartını kullanıp yine ekstradan `switch` yapılanmasını zenginleştirebiliyoruz. Daha farklı şartları incelemiş oluyoruz.
 
 <img src="23.png" width="auto">
+
+***
+# 138) Akış Kontrol Mekanizmaları - if Yapısı
+- `if` yapılanması da `switch case` gibi bir akış kontrol mekanizmasıdır. Yani uygulama da programın/yazılımın akışı esnasında belirli şartlara göre farklı algoritmaları/operasyonları tetiklememizi sağlayan yapılanmadır.
+
+- `switch` ile aynı amaca hizmet ederler sadece teknik olarak aralarında ufak bir fark vardır. `switch` sadece elimizdeki bir değerin farklı değerlere olan eşitlik durumunu kontrol eder Yani eşitliği kontrol eder ama diğer küçüktür, büyüktür gibi diğer durumları diğer condition'ları ortaya koymamızı sağlamaz `if` yapılanmasında ise biz bütün şartları ortaya koyabiliyoruz. `if` yapılanmasında karşılaştırma operatörlerinin hepsini eşitlik durumu da dahil yani `switch`i de kapsıyor eşit değillik, büyüktür, küçüktür, büyük eşittir, küçük eşittir vs bütün karşılaştırmalar onun dışında mantıksal operatörler neticesinde elde edilen sonuçları da kıyaslamayı `if` ile gerçekleştirebiliyoruz ve hatta operatörlerde örneğin `is null`, `is not null`, `is` operatörü gibi yapılanmalarla daha da zenginleştirebiliyoruz. Yani şartın farklı türevlerini de `if` ile tam olarak kullanabilmekteyiz.
+
+- Programlama da `switch`i değilde `if`i bildiğiniz zaman akış kontrol mekanizmaları bitmiş oluyor.
+
+- `switch` yapılanamsı sadece eşitlik durumunda belki bir nebze olsun bir kolaylık getiriyor hele hele şu son zamanlarda çıkan patternlar sayesinde switch expression konusunun altında incelediğimiz ve bundan sonra inceleyeceğimiz patternlar sayesinde `switch` inanılmaz derece de efektif hale geldi. Yani eşitlik durumlarında `if`e nazaran daha hızlı bir semantikte kod geliştirmemizi sağlayan bir yapılanma oldu.
+
+- `switch case` : Elimizdeki bir değerin sadece eşitlik durumunu check eden/kontrol eden kıyaslayan bir akış kontrol mekanizmasıdır. Yani senin elindeki bir değere göre o değerin eşitlik durumuna göre şu kodu çalıştır şuna eşitse bunu çalıştır diyebildiğimiz bir mekanizmadır. Eşit değilse, küçüktür, büyüktür vs karşılaştırmaları `switch` ile yapamamaktayız.
+
+- `if` yapılanması elimizdeki bir değerin eşitlik durumu da dahil tümmmm aklına gelen bütün karşılaştırmaları yapmamızı sağlayan ve sonuca göre akışı yönlendirmemizi sağlayan bir yapıalnamadır. Zaten bir akış kontrol mekanizmasıdır.
+
+- `if` yapılanamsı `switch`de dahil `switch`in yapmış olduğu eşitlik durumunu kontrol etme de dahil diğer aklınıza gelecek bütün işlemleri bütün kontrolleri yapmamızı sağlayan evrensel bir yapılanmadır.
+
+- `switch` yapıalnamsını bilmeyip sadece `if` yapılanamsını bile bilseniz akış kontrol mekanizmaları bitmiştir. Bundan sonra uzaya füze de göndersen herhangi bir şarta göre farklı bir operasyon gerçekleştireceksen `if` seni her türlü destekleyecektir.
+
+- Eşitlik durumlarında hele hele sonucu tek sonuç döndüğünüz ve bir değişkene atadığınız durumlarda `switch case`i kullanmanız `if`e nazaran daha semantik daha şık ve kısa pratik kod yazmanızı sağlayacaktır. Onun dışında `if` yapılanması da programın yegane yapı taşıdır. Yani herhangi bir programlama dili elinize alın bugün `if` yapılanmasını çok rahat içinde görebilirsiniz. Hiçbirşey bilmeyen `if` yapılanmasını bilir. 
+
+- Prototip : `if(....kontrol edilecek değer/şart....){kodlar}` Eğer ki şart doğruysa/true ise scope'un içi yani scope içindeki kodlar tetiklenecektir. Yok eğer şart doğru değilse/false ise compiler `if`in scope'undan çıkacak/`if`in scope'una hiç girmeyecek ve yoluna devam edecektir.
+
+- Eğer ki sen belirli bir şarta göre belirli bir kodu işleyeceksen `if`i kullanman yeterli olacaktır.
+
+<img src="24.png" width="auto">
+
+- `if` yapılanmasında şart kısmı her daim `bool` türde olmalıdır...
+
+- Eğer ki bir şart varsa eğer kesinlikle bunun sonucu `bool` olmalıdır. `true` ya da `false`. Ya doğrulanmış olacak ya da doğrulanmamış olacak. Nihayetinde bir şartın sonucu 3, 5, ahmet gibi değerler olamaz. Bu `bool` duruma göre sen şartını belirleyip ona göre kodunu işliyorsun.
+
+- `if`in şart kısmında karşılaştırma operatörleri ve mantıksal operatörlerin hepsi burada kullanılabilir.... Karşılaştırma operatörleri geriye `true` ya da `false` yani `bool` döndürür. Aynı şekilde mantıksal operatörlerde geriye `true` ya da `false` yani `bool` döndürür. Demek ki `if`in içinde hem mantıksal hem de karşılaştırma üzerine bütün operasyonlarını/bütün kıyaslamalarını/bütün şart kontrollerini/bütün kontrollerinin hepsini yapabiliyorsun. İşte buna göre de belirli bir algoritmayı tetikleyeceğiz.
+
+<img src="25.png" width="auto">
+
+- `if` yapılanmasında sadece işe odaklanılır. Şartın çalıştıracağı koda odaklanılır.
+
+- `if` yapılanması tek başına kullanılıyorsa sadece şarta bağlı çalışacak koda odaklanır..
+
+```C#
+bool medeniHal = true;
+if (medeniHal == true)
+{
+    System.Console.WriteLine("Allah tek yatıkta kocatsın...");
+}
+//if yapılanması tek başına kullanılıyorsa sadece şarta bağlı çalışacak koda odaklanır..
+```
