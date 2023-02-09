@@ -407,3 +407,11 @@ System.Console.WriteLine(mesaj);
 - Patternlar desen getiriyor yani kodun maliyetini ve yapısını biraz daha düzenliyor daha yakışıklı bir kod ortaya çıkarmamızı sağlıyor. Kodumuz bunlarla beraber daha profesyonel bir semantiğe kavuşmuş oluyor.
 
 <img src="22.png" width="auto">
+
+***
+# 137) C# 8.0 Switch Expressions - Property Patterns when Şartı Uygulamak
+- Diğerlerinden hiçbir farkı yoktur.
+
+- Switch expression'a girdiğimiz zaman nesnenin property'sini direkt kontrol edebiliyoruz ya da istersek değişkenle condition uygulayabiliyoruz ya da ilgili ise operatöründen(`=>`) önce gelecek olan değerin hemen ardından ise operatörü(`=>`) değer arasında her zaman yaptığımız gibi `when` şartını kullanıp yine ekstradan `switch` yapılanmasını zenginleştirebiliyoruz. Daha farklı şartları incelemiş oluyoruz.
+
+<img src="23.png" width="auto">
