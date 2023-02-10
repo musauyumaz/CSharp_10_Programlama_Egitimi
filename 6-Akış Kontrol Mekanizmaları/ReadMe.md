@@ -668,3 +668,57 @@ else if (sayi > 20 && sayi <= 30)
 }
 #endregion
 ```
+
+***
+# 145) Akış Kontrol Mekanizmaları - if Else if Yapısı Üzerine Kritik Yapalım 1
+- `if`, `if else`, `if else if` yapılanmaları birer bütündür. Yani tek bir yapılanma tek bir iskelette olduklarından dolayı sadece tek bir blok tetiklenecektir. `if else` yapılanmasında `if` doğruysa `if` ya da `else if` lerden doğru olan tetiklenecektir.
+
+- Bazen birden fazla şartın doğru olduğu durumlarda birden fazla işlem yapmak isteyebiliriz.
+
+- Birden fazla şartın arasından bir tane operasyon yapmak değilde birden fazla şarta göre birden fazla işlem yapma söz konusu ise burada `else if` bizim için mantıksal hataya sebep olabilir.
+
+```C#
+int sayi = int.Parse(Console.ReadLine());
+if (sayi > 100 && sayi <= 200)
+{
+    System.Console.WriteLine("100 ile 200 arasında");
+}
+else if (sayi > 200 && sayi <= 300)
+{
+    System.Console.WriteLine("200 ile 300 arasında");
+}
+else if (sayi > 200 && sayi <= 400)
+{
+    System.Console.WriteLine("300 ile 400 arasında");
+}
+```
+
+- Senin `if else` `else if` vs. bunun gibi yapılanmaları kullanırken amacın neyse yapacağın operasyonun fıtratına uygun bir şekilde bunları kullanman lazım. Yani her daim birden fazla şart durumunda `if else if`i de kullanmak doğru değildir.
+
+- Birden fazla şartın doğru olduğu durumda birden fazla işlem yapabilmek istiyoruz.
+
+```C#
+int sayi = int.Parse(Console.ReadLine());
+if (sayi > 100 && sayi <= 200)
+{
+    System.Console.WriteLine("100 ile 200 arasında");
+}
+if (sayi > 200 && sayi <= 300)
+{
+    System.Console.WriteLine("200 ile 300 arasında");
+}
+if (sayi > 300 && sayi <= 400)
+{
+    System.Console.WriteLine("300 ile 400 arasında");
+}
+```
+
+- `if`ler birbirinden bağımsızdır. 
+
+- `else if` tek başına kullanılamaz.
+
+- Birden fazla şartı kontrol edeceğin durumda şartları `if`le mi yoksa `else if`le mi kontrol edeceğinin kararını vermelisin.
+
+- `if else if` yapılanmasıyla `if` leri parçalayıp yapmak birbirinden farklı işlemlerdir. `if`te `true` da olsa `false` da olsa tüm şartları kontrol eder amma velakin `if else if`te `true` olursa eğer diğer şartları kontrol etmeden bloğu terkeder diğer şartları göz önünde bulundurmaz bile.
+
+- Şartlardan sadece birinin çalıştırılması durumunda birçok geçerli olan şartların içerisinden ilk geçerli olandan sadece bir tanesini çalıştırmakla bütün geçerli olanlardaki algoritmaları çalıştırmak arasında fark olacaktır.
