@@ -550,3 +550,36 @@ else
     System.Console.WriteLine("i değeri 5'ten küçüktür.");
 }
 ```
+
+***
+# 142) Akış Kontrol Mekanizmaları - if Else Yapısı Üzerine Kritik Yapalım 1
+- `if else` yapılanmasında bizler yazmış olduğumuz kodun bazen tersini de yazmak isteyebiliriz. Manevratik bir şekilde onu tersine çevirebiliriz.
+
+- `if else` yapılanmasında şartın işleyişine davranışına göre `true` ya da `false` döneceği için buradaki algoritma takla atabilir. Yani `if`'teki kodu `else`e `else`teki kodu `if`e vereceksin. Buna manevra diyoruz. Aslında kulağı nasıl tuttuğun gibi.
+
+- Elimizdeki değil operatörüyle(`!`) şartın tersini alarak yapabiliriz.
+
+- Algoritmalarda bunu çok kullanıyoruz.
+
+```C#
+int i = 10;
+if (i == 10)
+{
+    System.Console.WriteLine("i değeri 10");
+}
+else
+{
+    System.Console.WriteLine("i değeri 10 değil");
+}
+
+Manevra
+
+if (i != 10)
+{
+    System.Console.WriteLine("i değeri 10 değil");
+}
+else
+{
+    System.Console.WriteLine("i değeri 10");
+}
+```
