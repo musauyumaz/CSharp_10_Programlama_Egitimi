@@ -506,3 +506,47 @@ if (!medeniHal)
 }
 #endregion
 ```
+
+***
+# 141) Akış Kontrol Mekanizmaları - if else Yapısı
+- `if` şarta göre bir kodun çalışıp çalışmamasını belirlemektedir. Ayriyetten bir kodun şarta göre çalışıp o şartın olmadığı durumda başka bir kodun çalışmasını belirlemek istiyorsak burada `else` durumunu yani değilse durumunu devreye sokmamız gerekiyor. Eğer şöyleyse şunu yap değilse de bunu yap dememiz gerekiyor. 
+
+- `if` yapısı -> Şarta göre bir kodun çalışıp çalışmayacağını belirleyen bir yapılanma...
+
+- `if else` yapısı -> Şarta göre bir kodun çalışıp şartın olmadığı durumda bir başka kodun çalışmasını belirleyen bir yapılanma.... 
+
+- Eğer sen değilseyi devreye sokuyorsan şartın olmadığı durumda da hangi kodun çalıştırılacağını akışı yine yönlendiriyorsun.
+
+- `if` yapısında Normal akan bir kodda eğer ki şartın doğruysa şunu yap sonra yoluna devam et Eğer ki şartın doğru değilse yoluna yine devam et.
+
+- `if else` yapısında ise Normal akan bir kodda eğer ki şartın doğruysa şunu yap sonra yoluna devam et Eğer ki şartın doğru değilse bunu yap demiş oluyorsun. Aslında bir yol var dümdüz giderken karşına 2 ayrı güzergaha giden yol çıkıyor. Sen de şartının doğruluğuna göre birini seçiyor ve gidiyorsun.
+
+- `if else` yapısında illa akışı yönlendirmek zorundasın. Akışa illa `else` ile de olsa `if` ile de olsa araya kod sokmuş oluyorsun.
+
+- `else` yapılanmasında şartın olumsuz/değil durumunda da çalışacak kodu belirlemiş oluyoruz!!!
+
+- Prototip : `if(....Şart....){} else{}` Eğer ki buradaki şart `true` ise `if` bloğu çalışacak. Yok eğer şartımız `false` ise `else` bloğu çalışacaktır/tetiklenecektir..
+
+- `if` bloğunda else varsa şartın `false` olması durumunda kesinlikle else bloğu tetiklenir....
+
+- `if` yapılanmasında `else` bloğunu illaki kullanmak zorunda değiliz. Normalde `if` bloğunda `else` bloğu olmadığı durumlarda Şart `false` ise direkt compiler devam eder. Ama `else` bloğu varsa Şart `false` ise `else` bloğunun içerisindeki kodları tetikleyecektir.
+
+- `if else` yapılanmasında şart doğru olduğunda sadece `if` yanlış olduğunda ise sadece `else` blokları tetiklenir. Aynı anda iki blokta kesinlikle tetiklenemez. Mantığa/Matematiğe aykırıdır.
+
+<img src="28.png" width="auto">
+
+- Sadece `if` bloğunun kullanıldığı durumlarda şart `true` ise `if` bloğu tetiklenecek yok eğer şart `false` ise yoluna devam edecektir. Amma velakin `if else` yapılanmasının kullanıldığı durumlarda şart `true` ise `if` bloğu tetiklenecek yok eğer şart `false` ise kesinlikle `else` bloğu tetiklenecek ve compiler yoluna devam edecektir. 
+
+- Kalıbın içindeki kodlardan hangisinin tetikleneceğini ve `if` ve `else` durumdaki kalıptaki o davranışa göre belirleyebiliyoruz. Şart eğer `false` ise `else` kesinlikle tetiklenecek `true` ise `if` tetiklenecek.
+
+```C#
+int i = 3;
+if (i > 5)
+{
+    System.Console.WriteLine("i değeri 5'ten büyüktür.");
+}
+else
+{
+    System.Console.WriteLine("i değeri 5'ten küçüktür.");
+}
+```
