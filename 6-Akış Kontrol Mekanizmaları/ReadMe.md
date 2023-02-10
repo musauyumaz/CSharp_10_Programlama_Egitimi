@@ -583,3 +583,49 @@ else
     System.Console.WriteLine("i değeri 10");
 }
 ```
+
+***
+# 143) Akış Kontrol Mekanizmaları - if Else Yapısı Üzerine Kritik Yapalım 2
+- Programlama da DRY(do not repeat yourself/Kendini Tekrar Etme) prensibini öncesinde öğrenmiştik.
+
+- `if else` yapılanmasında eğer şartımız doğruysa `if` bloğuna yanlışsa `else` bloğuna girdiğini biliyoruz. Diyelim ki `if`e de girse `else`e de girse ikisinde de çalıştırmam gereken bir kod parçasının olduğunu varsayalım nasıl bir yol izlemeliyiz?
+
+```C#
+int i = 10;
+if (i == 10)
+{
+    System.Console.WriteLine("Merhaba");
+    System.Console.WriteLine("i değeri 10");
+}
+else
+{
+    System.Console.WriteLine("Merhaba");
+    System.Console.WriteLine("i değeri 10 değil");
+}
+```
+- Her iki durumda da aynı kod olacaksa eğer biz bu kodu alacağız ve dışarıya yani kod bloklarının dışına yazacağız... 
+
+- `if else` yapılanmasında `if` ve `else` bloklarında aynı işlemleri yapacaksak eğer bunları ikisinde de ayrı ayrı blok içerisinde tekrarlı bir şekilde yapmamamız GEREKMEKTEDİR!!! 
+
+<img src="29.png" width="auto">
+
+```C#
+int i = 10;
+if (i == 10)
+{
+    System.Console.WriteLine("i değeri 10");
+}
+else
+{
+    System.Console.WriteLine("i değeri 10 değil");
+}
+System.Console.WriteLine("Merhaba");
+```
+
+- Kod tekrarı varsa mümkün mertebe tekile indirmeye çalışacaksın. Özellikle kod tekrarları `if`, `if else`, `if else if` yapılanmalarında aşırı derecede olduğu için dikkat edeceksin. Ortak kullanman gerekenleri blokların dışına alacaksın ortak kullanmaman gerekenleri `if` ya da `else` bloklarında ilgili yerlere yerleşetireceksin. 
+
+- Her iki durumda da ortak olacak olan/çalıştırılacak olan komutları `if else` bloğunun dışına yazmamız olayı çözecektir.
+
+- Kod tekrar ediyorsa çok kötü/iğrenç bir kod yazdığının sinyalini bir al. Onu bir yakala.
+
+<img src="30.png" width="auto">
