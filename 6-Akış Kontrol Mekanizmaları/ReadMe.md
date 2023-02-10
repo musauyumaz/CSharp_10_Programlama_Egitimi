@@ -629,3 +629,42 @@ System.Console.WriteLine("Merhaba");
 - Kod tekrar ediyorsa çok kötü/iğrenç bir kod yazdığının sinyalini bir al. Onu bir yakala.
 
 <img src="30.png" width="auto">
+
+***
+# 144) Akış Kontrol Mekanizmaları - if Else if Yapısı
+- `if else if` Yapılanması birden fazla şartın kontrol edilmesini sağlayan bir yapılanmadır. `if` yapılanmasının iskeletinin devamıdır.
+
+- Eğer ki `if` `else` demeden `else if` diyorsanız mevcut şartın dışında başka bir şartı da kontrol edeceğinizi belirtiyorsunuz. Örneğin hava yağmurluysa şemsiyeni al değilse alma şimdi bu `if else` yapılanması. Biz burada şartı şu şekilde versek hava yağmurluysa şemsiyeni al yok eğer hava yağmurlu değil soğuksa montunu giy yok eğer bu da değilse şuysa şunu yap buysa bunu yap farklı şartlar söz konusu. Hiçbiri değilse `else` şunu yap diyebiliyorsunuz.
+
+- Birden fazla şartı kontrol etmemizi sağlayan bir yapılanmadır.
+
+- `if`, `if else`, `if else if` farketmez bunlarda her daim en başta bir tane `if` bulunmak zorunda. Yani sen bir şartı kontrol edeceksin. İlgili şart kontrol edildikten sonra başka bir şart geliyorsa eğer `else if` diyerek devam edeceksin. ve aynı zamanda `if`lerin yanında her daim bir şart bloğu(`(.....Şart.....)`) bulunmak zorundadır  ve `else if` istediğiniz kadar Kaç tane şartınız varsa o kadar belirtebilirsiniz.
+
+- Prototip : `if(...ŞART...){} else if(...ŞART...){}` 
+
+- Hangi şart `true` ise o blok tetiklenecektir. Yani oradaki kodlar çalıştırılacaktır. Hiçbiri doğrulanmazsa eğer `if` bloğundan çıkacak ve yoluna devam edecektir.
+
+- `if` yapılanmasında herhangi biri doğrulandıysa eğer diğer `if`ler denetlenmeyecektir... yola devam edilecektir.
+
+- Tek bir `if` bloğu yazıyorsunuz birden fazla şartı birden fazla durumu kontrol etmek istiyorsanız `else if` yapılanmasını kullanabilirsiniz. Aslında tek bir `if` bloğu var ve biz burada diğer şartlarımız için `else if`lerle uzatılmış bir iskelet yapmış oluyoruz ve bu durumda sadece bir blok tetiklenecektir.
+
+<img src="31.png" width="auto">
+
+- `if else` yapılanmasında kod akarken ilk önce birinci `if`in şartından başlar eğer `true` ise burdaki bloğu tetikler ve tetiklendikten sonra `if` bloğundan dışarı çıkar. Biri tetiklendiği zaman diğerlerini bir daha kontrol etmez. Yok eğer `false` ise bir sonraki `else if`e geçer aynı işi onda da yapacaktır yani bunda da şartı kontrol edecek eğer doğruysa girecek değilse girmeyecektir ve bu süreç tüm `if`ler için devam edecektir.
+
+```C#
+int sayi = 30;
+if (sayi > 5 && sayi <= 10)
+{
+    System.Console.WriteLine(sayi * 5);
+}
+else if (sayi > 10 && sayi <= 20)
+{
+    System.Console.WriteLine(sayi * 10);
+}
+else if (sayi > 20 && sayi <= 30)
+{
+    System.Console.WriteLine(sayi * 20);
+}
+#endregion
+```
