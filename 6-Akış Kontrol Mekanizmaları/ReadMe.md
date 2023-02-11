@@ -722,3 +722,25 @@ if (sayi > 300 && sayi <= 400)
 - `if else if` yapılanmasıyla `if` leri parçalayıp yapmak birbirinden farklı işlemlerdir. `if`te `true` da olsa `false` da olsa tüm şartları kontrol eder amma velakin `if else if`te `true` olursa eğer diğer şartları kontrol etmeden bloğu terkeder diğer şartları göz önünde bulundurmaz bile.
 
 - Şartlardan sadece birinin çalıştırılması durumunda birçok geçerli olan şartların içerisinden ilk geçerli olandan sadece bir tanesini çalıştırmakla bütün geçerli olanlardaki algoritmaları çalıştırmak arasında fark olacaktır.
+
+***
+# 146) Akış Kontrol Mekanizmaları if Else if Else Yapısı
+- Birden fazla şartı kontrol etmemizi sağlıyor ve hiçbiri değilse de `else` bloğuyla var olan akışı karşılamamızı sağlıyor.
+
+`if else if else` yapılanması birden fazla şartı kontrol edip hiçbir şart geçerli olmadığı durumda da `else` bloğunun tetiklenmesini sağlayıp akışı orada karşılamamızı sağlayan bir yapılanmadır.
+
+```C#
+int i = 100;
+if (i < 100)
+{
+    System.Console.WriteLine("100'den küçük");
+}
+else if (i > 100)
+{
+    System.Console.WriteLine("100'den büyük");
+}
+else
+{
+    System.Console.WriteLine("100'e eşit");
+}
+```
