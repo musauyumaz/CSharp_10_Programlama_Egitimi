@@ -782,3 +782,51 @@ if (true)
     System.Console.WriteLine("B");
 }
 ```
+
+***
+# 148) Akış Kontrol Mekanizmaları - if Yapisi Örnek 1
+
+- `Write` yazar kalır. `WriteLine` yazar bir satır aşağı geçer. Dolayısıyla sonraki yazdıklarınız bir satır aşağıda devam edecektir. Ama `Write` ile yazdığın yerde kalır devam edersen yazmaya yanına yazmaya devam eder.
+
+- `Console.ReadLine()` : Kullanıcının girmiş olduğu değeri ben sana `string` olarak getiririm. Ne girerse girsin bu adam ben sana buradaki değeri `string` olarak getiririm.
+
+```C#
+//Klavyeden iki ürünün fiyatı girildiğinde toplam fiyat 200 TL'den fazla ise, 2.üründen %25 indirim yaparak ödenecek tutarı gösteren uygulamayı yapalım.
+Çözümüm
+
+System.Console.Write("Birinci Ürünün Fiyatını Giriniz :");
+float birinciUrunFiyat = float.Parse(Console.ReadLine());
+System.Console.Write("İkinci Ürünün Fiyatını Giriniz :");
+float ikinciUrunFiyat = float.Parse(Console.ReadLine());
+if ((birinciUrunFiyat + ikinciUrunFiyat) > 200)
+    System.Console.WriteLine(birinciUrunFiyat + (ikinciUrunFiyat * 0.75));
+else
+    System.Console.WriteLine(birinciUrunFiyat + ikinciUrunFiyat);
+```
+```C#
+Hocanın Çözümü
+
+System.Console.Write("Lütfen birinci ürünün fiyatını giriniz : ");
+int birinciUrununFiyati = int.Parse(Console.ReadLine());
+System.Console.Write("Lütfen ikinci ürünün fiyatını giriniz : ");
+int ikinciUrununFiyati = int.Parse(Console.ReadLine());
+
+1. Kritik
+int toplam = birinciUrununFiyati + ikinciUrununFiyati;
+if (toplam > 200)
+{
+    //.....
+}
+
+2. Kritik
+if (birinciUrununFiyati + ikinciUrununFiyati > 200)
+{
+    // int toplamSonTutar = birinciUrununFiyati + (ikinciUrununFiyati * 75 / 100);
+    //System.Console.WriteLine(toplamSonTutar);
+    System.Console.WriteLine(birinciUrununFiyati + (ikinciUrununFiyati * 75 / 100));
+}
+else
+{
+    System.Console.WriteLine(birinciUrununFiyati + ikinciUrununFiyati);
+}
+```
