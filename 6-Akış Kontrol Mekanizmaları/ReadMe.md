@@ -744,3 +744,41 @@ else
     System.Console.WriteLine("100'e eşit");
 }
 ```
+
+***
+# 147) Akış Kontrol Mekanizmaları - Scopesuz If Yapısı
+- Tüm `if` yapıları için geçerlidir.
+
+- Eğer ki tek bir konseptlik kaba tabirle tek satırlık bir işlem yapılacaksa bunu scope içerisine yazmak zorunda değiliz.
+
+- `if`in içinde tek bir işlem yapılacaksa bu işlemi scope içerisinde yazabilirsiniz ama mecbur değilsiniz.
+
+- `if` yapılanması tek satırlık/konseptlik bir işlem gerçekleştiriyorsa eğer bunu scope içerisinde yazmak mecburiyetinde değiliz....
+
+<img src="32.png" width="auto">
+
+- Kodu daha da temizlemek istiyorsanız tek konseptlik/satırlık işlemlerde kabarık yazmaktansa bu yöntemi tercih edebilirsiniz.
+
+- Arada herhangi bir performans kaybı falan vs hiçbişey yok hangisini kullanacaksanız kullanın.
+
+- Eğer ki çok konseptlik bir çalışma yapacaksanız bunları kesinlikle scope içerisine yazmanız lazım.
+
+- Eğer ki birden fazla konsept/işlem/operasyon barındıracaksa bunları kesinlikle scope içerisine almamız gerekmektedir... Aksi taktirde scopesuz çalışılırsa ilk işlemi `if` bloğu alacak diğerlerini almayacaktır...
+
+- Birden fazla işlem yapılıyorsa scope'lu yazmak zorundasınız. Eğer tek işlem yapılıyorsa scope'lu ya da scope'suz yazabilirsin oradaki insiyatif sana kalmış.
+
+<img src="33.png" width="auto">
+
+```C#
+if (true)
+{
+    System.Console.WriteLine("adsgasgagaf");
+}
+if (true)
+    System.Console.WriteLine("adsgasgagaf");
+if (true)
+{
+    System.Console.WriteLine("A");
+    System.Console.WriteLine("B");
+}
+```
