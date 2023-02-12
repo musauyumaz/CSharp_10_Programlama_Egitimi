@@ -956,3 +956,41 @@ System.Console.WriteLine(sonuc);
 System.Console.WriteLine(islemTuruH == '+' ? sayi1H + sayi2H : (islemTuruH == '-' ? sayi1H - sayi2H : (islemTuruH == '*' ? sayi1H * sayi2H : sayi1H / sayi2H)));
 ```
 
+***
+# 151) Akış Kontrol Mekanizmaları - if Yapisi Örnek 4
+- Hepimiz bir şairiz en güzel belagatı yapabilen olmak.
+
+- Kodu herkes yazar önemli olan doğru bir şekilde yazabilmek.
+
+```C#
+Senaryo 4
+//Girilen sayının değeri 10 değilse ekrana "sayı yanlış" yazdıralım.
+
+Çözümüm
+System.Console.Write("Sayı Giriniz : ");
+int sayi = int.Parse(Console.ReadLine());
+if (sayi != 10)
+    System.Console.WriteLine("sayı yanlış");
+
+Hocanın Çözümü
+System.Console.Write("Sayı Giriniz : ");
+int sayiH = int.Parse(Console.ReadLine());
+
+Kritik 1
+if (sayiH == 10)
+{
+}
+else
+{
+    System.Console.WriteLine("sayı yanlış");
+}
+
+Kritik 2
+if (sayiH != 10)
+{
+    System.Console.WriteLine("sayı yanlış");
+}
+
+Kritik 3
+System.Console.WriteLine(sayiH == 10 ? "" : "sayı yanlış");
+```
