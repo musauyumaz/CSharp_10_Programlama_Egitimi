@@ -1027,3 +1027,42 @@ else
     sonuc = "Pozitif";
 System.Console.WriteLine(sonuc);
 ```
+
+***
+# 153) C# 7.0 Pattern Matching - Type Pattern
+- Akış kontrol mekanizmalarında belirli kontrolleri yapabildiğimiz yapılanmaların daha da desenleştirilmiş halidir.
+    * Örneğin `is` operatörünü kullanıyorsunuz `is` operatörüyle `object`in içerisindeki herhangi bir türü biz belirleyebiliyorduk. Check edebiliyorduk ve ona göre hareket edebiliyoruz. İşte buradaki `is` operatörüne ekstradan Pattern Matching ile desen getiriliyor. Bu desen olayı daha da kolaylaştırıcı daha da olayı spesifik hale getiren efektif hale getiren bir yapılanma.
+
+- İşte böyle desenler bunun gibi durumları daha da güçlü daha da semantiğe yatkın bir şekilde çözmemizi sağlayan yeniliklere biz Pattern Matching yani tasarım eşleştirmeleri yani şu senaryoya bu tasarım eşleşiyor gibisinden düşünebilirsiniz bunu gibi çözümler getiriliyor bunlara da Pattern Matching deniliyor.
+
+- Pattern Matching dediğimiz olay C# 7.0'da zaten gelmişti ama C# 9.0 ile var olan Pattern Matching'ler daha da güçlendirildi.
+
+- Pattern Matching belirli desenlere eşleştirme söz konusu Belirli senaryolarda bak şu deseni de kullanabilirsin diyebileceğimiz yapılanmaları getiriyor.
+
+- Temelde 4 tane Pattern'ımız var.
+    * Type Pattern
+    * Constant Pattern
+    * Var Pattern 
+    * Recursive Pattern
+
+<img src="35.png" width ="auto">
+
+## Type Pattern
+- Object içerisindeki bir tipin belirlenmesinde kullanılan `is` operatörünün desenleştirilmiş halidir.
+
+- `is` operatörünün daha da kolay daha da efektif kullanmamızı sağlayan bir versiyonudur.
+
+- `is` ile belirlenen türün direkt dönüşümünü sağlar.
+
+- İlgili türün hangisi olduğunu Runtime'da check edip bulduktan sonra o `object`in içerisindeki değeri UnBoxing yaparken ya `as` operatörü ile ya da cast operatörü(`()`) ile bir şekilde UnBoxing yapıyorum. Biz bunu yaparken uzun uzun kod yazmış oluyoruz. Yani desen olarak desen varken desene nazaran uzuuuuunnnnn kod yazmış oluyorsun.
+
+- Desen diyor ki kardeşim sen check ederken bu check esnasında eğer ki doğrulama söz konusu olursa ben sana bunun direkt sonucu döndürürüm. 
+
+- Type Pattern buradaki `is` kullanımını senaryoyla eşleştiriyor.
+    * `object x = 125;`
+    * `if(x is string xx)`eğer x `string` ise xx değişkenine değer atanacaktır.
+
+<img src="36.png" width ="auto">
+
+***
+# 
