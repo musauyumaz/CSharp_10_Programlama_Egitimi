@@ -1065,4 +1065,49 @@ System.Console.WriteLine(sonuc);
 <img src="36.png" width ="auto">
 
 ***
-# 
+# 154) C# 7.0 Pattern Matching - Type Pattern Kritik Yapalım
+- Herhangi bir `object`te yani Boxing işlemine tabi tutulmuş bir değerin türünü tespit ettikten sonra cast işlemini `is` operatöründen sonra otomatik olarak yapan bir desendir. Yani `is` operatörünün desenleştirilmiş halidir.
+
+- Type Pattern diyor ki ya kardeşim bu kadar curcunaya gerek yok istiyorsan sen eğer türü belirlediysen tür kesinlike check edildiyse ben sana bunun direkt değerini döndürürüm kardeşim diyor.
+
+- Biz tpye pattern'da tanımlanan değişkenlere manuel olarak dışarıdan erişebiliyoruz.
+
+- `object x = "Musa";`
+- `if (x is string a)` C# 7.0'dan itibaren artık if şart bloğu içine direkt değişken ismi belirleyebiliyoruz. Tabi bu değişken ismi öncekilerle çakışmayacak bir değişken ismi olmalı ve anlamlı olmalı.
+    * Type pattern diyor ki eğer bu objectin içindeki değer string ise ben bunu a'ya cast eder sana string olarak veririm diyor. Hiç içeride cast yapmaya ihtiyacın yok
+- `string _x = (string)x;` Önceden bu şekilde erişim sağlıyorduk yani kendimiz cast operatörüyle birlikte değişkene atıyorduk
+    System.Console.WriteLine(a);
+    * a değişkeni scope içerisinde yani if scope'u içerisinde tanımlanmamıştır.
+
+- `System.Console.WriteLine(a);` a if scope'u içerisinde tanımlanmadığı için ben a'ya erişebiliyorum. Amma velakin burada hata verecektir. 
+    * Biz Type pattern'da tanımlanan değişkenlere manuel olarak dışarıdan erişebiliyoruz. Ama ilgili değişken `null` olma ihtimali olduğundan dolayı dışarıdan erişim sağlarken hata alıyoruz..
+    * Burada `x` `string` olmazsa `x`in değerini `a` ya `string` cast etmeyeceğinden dolayı `a` değerinin dolu gelip gelmemesi garanti değil. `a` nın `null` olma durumundan dolayı gönül rahatlığıyla kullanamıyoruz.
+    * `if` scope'u içinde kullanabilirsin ama `if` dışında kullanırken sana kızacaktır. Çünkü `if` scope'u içerisinde değer dolu olacaktır ama dışarıda olursa değerin `null` gelme ihtimalinden dolayı compiler kızacaktır.
+    * Çağırırken değerini okurken hata verecektir ama yukarıdaki en nihayetinde bir değişken olduğu için değer verirken sıkıntı yaşatmayacaktır.
+
+- Bir değişken `null` ise ne çağırabilirsin ne üzerinden değişken çağırabilirsin ne de değerini çağırabilirsin. Sadece ona bir değer atayabilirsin.
+
+- Bir şeyin yarısı doğru yarısı yanlışsa tamamı yanlış kabul edilir.
+
+- Type Pattern'ı kullanıp dönüşüm yapacaksan aynı isimde değişken tanımlayamazsın.
+
+- Aynı scope içerisinde aynı isimde birden fazla değişken tanımlanamaz.
+
+```C#
+Type Pattern
+object x = "Musa";
+if (x is string a)//C# 7.0'dan itibaren artık if şart bloğu içine direkt değişken ismi belirleyebiliyoruz. Tabi bu değişken ismi öncekilerle çakışmayacak bir değişken ismi olmalı ve anlamlı olmalı.
+{//Type pattern diyor ki eğer bu objectin içindeki değer string ise ben bunu a'ya cast eder sana string olarak veririm diyor. Hiç içeride cast yapmaya ihtiyacın yok
+    // string _x = (string)x;// Önceden bu şekilde erişim sağlıyorduk yani kendimiz cast operatörüyle birlikte değişkene atıyorduk
+    System.Console.WriteLine(a);
+    //a değişkeni scope içerisinde if scope'u içerisinde tanımlanmamıştır.
+}
+else if (x is int b)
+{
+    
+}
+
+a = "agasgasgasg";
+System.Console.WriteLine(a); //a if scope'u içerisinde tanımlanmadığı için ben a'ya erişebiliyorum. Amma velakin burada hata verecektir. 
+//Biz Type pattern'da tanımlanan değişkenlere manuel olarak dışarıdan erişebiliyoruz.
+```
