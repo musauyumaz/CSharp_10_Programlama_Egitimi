@@ -994,3 +994,36 @@ if (sayiH != 10)
 Kritik 3
 System.Console.WriteLine(sayiH == 10 ? "" : "sayı yanlış");
 ```
+
+***
+# 152) Akış Kontrol Mekanizmaları - if Yapisi Örnek 5
+- Gerçek hayatta bazen `if`, `else if`, `else`, `switch` vs. bunun gibi akış kontrol mekanizmaları kullanırken yapmış olduğun işlemde hangi akış kontrol mekanizması kullanıyorsan ondan çıkıp kod devam etmeye başladığında orada elde ettiği bazı değerleri dışarı taşımak isteyebilir. Yani biz akış kontrol mekanizmalarında elde ettiğimiz sonucu programatik olarak akış kontrol mekanizmalarının dışında isteyebliriz. İşte böyle durumlarda bu sonucu içeriden dışarı taşıyacak bir değişkene ihtiyacım olacaktır.
+
+- Akış kontrol mekanizmalarında şarta göre bir kodu işlediğinizde o kod işlendikten sonra elbet devam edecek compiler, Compiler'ın devam etme sürecinde o şarta bağlı bir değeri süreçte kullanmak istiyorsam onu mekanizmanın içinden dışarıya taşımak gerekecektir.
+
+- İçeride elde ettiğimiz bir değeri dışarıda kullanabiliriz.
+
+- Belirli şartlara göre çalışan kodlarda içeride üretilen değerin içeriden dışarıya çıkarılıp kullanılması için başta tanımlanan bir değişkenin içeride değer atamasıyla böyle bir manevrayla taşıma işlemini gerçekleştiriyoruz.
+
+- İleride Dependency Injection denilen yapılanma var bir tasarımsal kalıptır. bu kalıbı uygularken gene aynı mantığı kullanıyoruz. Dışarıda global olarak tanımlanmış bir değişken içeriden gelen değer ona atanıyor. Dışarıda tanımlandığı için herhangi bir scope'a da gönderilebiliyor oradan da erişilebiliyor farklı scope'lardan da.
+
+```C#
+Senaryo 5
+//Girilen sayının negatif ya da pozitif olduğunu gösteren uygulamayı yazalım.
+
+Çözümüm
+Console.Write("Sayı Giriniz : ");
+int sayi = int.Parse(Console.ReadLine());
+Console.WriteLine(sayi > 0 ? "Pozitif" : "Negatif");
+
+Hocanın Çözümü
+int sayiH = int.Parse(Console.ReadLine());
+string sonuc = "";
+if (sayiH < 0)
+    // Console.WriteLine("Negatif");
+    sonuc = "Negatif";
+else
+    // System.Console.WriteLine("Pozitif");
+    sonuc = "Pozitif";
+System.Console.WriteLine(sonuc);
+```
