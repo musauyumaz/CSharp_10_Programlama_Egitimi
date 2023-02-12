@@ -1111,3 +1111,20 @@ a = "agasgasgasg";
 System.Console.WriteLine(a); //a if scope'u içerisinde tanımlanmadığı için ben a'ya erişebiliyorum. Amma velakin burada hata verecektir. 
 //Biz Type pattern'da tanımlanan değişkenlere manuel olarak dışarıdan erişebiliyoruz.
 ```
+
+***
+# 155) C# 7.0 Pattern Matching - Constant Pattern
+- Elimizdeki veriyi sabit bir değer ile karşılaştırabilmemizi sağlayan bir desendir.
+
+- Elimizdeki herhangi bir değişken normalde `==` operatörüyle değerini karşılaştırırken ya da `switch` ile karşılaştırma yaparken `is` operatörüyle de direkt değerini karşılaştırmamızı yapabilen bir operatördür.
+
+- Yapısal olarak Constant Pattern direkt `==` operatörünün yaptığı kontrolü sağlayan patterndır.
+
+- `is` operatörü direkt `==` operatörüne karşılık gelmektedir.
+
+<img src="37.png" width ="auto">
+
+- `int x = 123;`
+    * `Console.WriteLine(x == 123)` ya da `Console.WriteLine(x is 123)` kullanılabilir.
+
+<img src="38.png" width ="auto">
