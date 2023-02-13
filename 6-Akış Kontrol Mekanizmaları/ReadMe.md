@@ -1166,3 +1166,15 @@ System.Console.WriteLine(a is "5");
 System.Console.WriteLine(a is "asasgsafasfa");
 System.Console.WriteLine(a is false);
 ```
+
+***
+# 157) C# 7.0 Pattern Matching - Var Pattern
+- Eldeki veriyi `var` değikeni ile elde etmemizi sağlamaktadır.
+
+- Elimizde bir tane değişkenimiz var ve bu değişken üzerinde türü belirlemek için `is` keywordüyle türünü sorman gerekir. `x is int`, `x is string` buradaki işlemi sorduktan sonra ya Type Pattern'la bir değişkene alıyoruz ya da içeride cast ediyoruz. Buradaki operasyon bizim açımızdan daha da kolaylaştırılmıştır ve Var Pattern ortaya konulmuştur. Var Pattern ile değişkenin türü ne olursa olsun o türde sen direkt şu değişkene çıkart.
+
+- `var` keywordü verilen değerin türüne bürünen bir keyworddür.... Runtime'da bürünme işlemini gerçekleştirmektedir.
+
+- Elindeki ilgili değişkenin değerini direkt kendi türünde sana verecektir. Yani Type Pattern'ın daha da hızlandırılmış halidir diyebiliriz.
+
+<img src="39.png" width ="auto">
