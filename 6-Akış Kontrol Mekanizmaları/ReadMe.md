@@ -1227,3 +1227,19 @@ if (x is var a)//x'in türü her neyse x'in değerini burada cast edip a'ya vere
 ```
 
 <img src="41.png" width ="auto">
+
+***
+# 160) C# 7.0 Pattern Matching - Var Pattern Kritik Yapalım 3
+- Var Pattern'daki `var` keywordü runtime'da türünü belirlemektedir dedik ama Runtime'da türünü belirleyen bir keyword daha biliyorduk o keyword `dynamic` keywordü.
+
+- Burada `dynamic` keywordünü kullanamıyorsunuz. Var Pattern `var` keywordüyle kullanılan bir desendir. 
+
+- Siz eğer ki değişken babunda atanan değerin türüne Runtime'da bürünmek istiyorsanız bu `dynamic`tir. Ama bir pattern uyguluyorsanız buradaki gibi bu senaryo da `var` keywordünün yerini `dynamic` keywordü alamaz. 
+
+- `dynamic c = "aswfasfasfasf";` Runtime'da türü belirlenecek bir değişken.
+
+- `var b = "asgfassdafsa";` Derleme aşamasında türü belirlenecek bir değişkendir.
+
+- Ama sen hem elindeki değerin türünü kontrol edip ardından o değeri kendi öz türünde/verisinde/tipinde UnBoxing edeceksen yani kendi özünde elde edeceksen burada bir pattern kullanacaksan Var Pattern'dan başka şansın yok.
+
+- `if (x is var a)` var pattern bu formatta kullanılmalıdır.
