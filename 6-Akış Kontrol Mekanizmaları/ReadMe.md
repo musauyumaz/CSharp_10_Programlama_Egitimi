@@ -1128,3 +1128,41 @@ System.Console.WriteLine(a); //a if scope'u içerisinde tanımlanmadığı için
     * `Console.WriteLine(x == 123)` ya da `Console.WriteLine(x is 123)` kullanılabilir.
 
 <img src="38.png" width ="auto">
+
+***
+# 156) C# 7.0 Pattern Matching - Constant Pattern Kritik Yapalım
+- Constant Pattern `is` operatörüne sabit değerleri check etmemizi sağlayan yani `==` durumunu/eşitlik durumunu kontrol etmemizi sağlayan bir desendir.
+
+- `is` operatörü bir değişkenin türünü sormamızı/belirlememizi sağlayan bir operatördür ve bu operatörün kullanıldığı değişkenlerin türü illa bir referans türlü olmak zorunda değildir.
+
+- İsterseniz değer türlü değişkenlerde de `is` operatörü kullanılabilmektedir ve hatta primitive türlerde bile kullanılabilmektedir...
+
+- Yani senin `is` operatörünü kullanacağın değişkenin türü illaki `object` olmak zorunda değil. Biz şu ana kadar `object`i kontrol ettik `object`in içerisindek, boxing edilmiş orjinal türü kontrol ettik ama sen elindeki herhangi bir değer türlü değişkende de bunu yapabilirsin.
+
+- Eğer ki `is` operatöründe tür kontrolü yapıyorsanız bu Constant Pattern değildir. Yok eğer elindeki herhangi bir değişkende tür değilde değer kontrolü yapıyorsanız bu Constant Patterndır. Tabiki de bu değerlendirme türe uygun bir değerlendirme olmalıdır. Yani `int` değeri `string` değer ile karşılaştırmamalıyız!!!
+    * `int a = 5;` Değerlendirme aşamasında `int` değerler ile karşılaştırmalıyız.
+        + `System.Console.WriteLine(a is 5);` bu şekilde karşılaştırma yapılmalıdır.
+        + `System.Console.WriteLine(a is "beş");` bu şekilde karşılaştırma yapılmamalıdır. Hata verecektir. Türe uygun değildir.
+
+- Değer kontrolü yaparken türe göre değerlerle karşılaştırma yapılmalıdır. 
+
+- Tür kontrolü yaparken zaten türü bilmediğimizden dolayı her türle karşılaştırma gerçekleştirebilirsiniz.
+
+- `is` operatörüne bir değer check etme operasyonu artık Constant Pattern ile yüklenmiştir.
+
+- `System.Console.WriteLine(a is string);` Buradakiler ise normal `is` operatörünün kendi fıtratındaki işlemdir.
+
+- `System.Console.WriteLine(a is 5);` Eğer ki is operatörüyle bir değişkenin değerini == operatörünün sorsumluluğuyla check ediyorsak işte buna Constant pattern denmektedir...
+
+```C#
+//is operatörü bir değişkenin türünü sormamızı/belirlememizi sağlayan bir operatördür ve bu operatörün kullanıldığı değişkenlerin türü illa bir referans türlü olmak zorunda değildir.
+//İsterseniz değer türlü değişkenlerde de is operatörü kullanılabilmektedir ve hatta primitive türlerde bile kullanılabilmektedir...
+int a = 5;
+System.Console.WriteLine(a is int);
+System.Console.WriteLine(a is string); //Buradakiler ise normal `is` operatörünün kendi fıtratındaki işlemdir.
+System.Console.WriteLine(a is bool);
+System.Console.WriteLine(a is 5); //Eğer ki is operatörüyle bir değişkenin değerini == operatörünün sorsumluluğuyla check ediyorsak işte buna Constant pattern denmektedir...
+System.Console.WriteLine(a is "5");
+System.Console.WriteLine(a is "asasgsafasfa");
+System.Console.WriteLine(a is false);
+```
