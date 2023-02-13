@@ -1178,3 +1178,26 @@ System.Console.WriteLine(a is false);
 - Elindeki ilgili değişkenin değerini direkt kendi türünde sana verecektir. Yani Type Pattern'ın daha da hızlandırılmış halidir diyebiliriz.
 
 <img src="39.png" width ="auto">
+
+***
+# 158) C# 7.0 Pattern Matching - Var Pattern Kritik Yapalım 1
+- Elimizdeki ifadenin türünü belirlerken `is` operatörüyle ardından türünü yazıyoruz ya içeride cast ediyoruz ya da Type Pattern kullanarak direkt değişkene alabiliyoruz.
+
+- `if (x is string a)` x eğer string'se al sana değişkeni tanımla demiş oluyorsun. Normalde bu Type Pattern'ın ta kendisi.
+'
+- `if (x is var a)` x'in türü her ne olursa olsun direkt `var` runtime'da ilgili x'in türünü UnBoxing edecek ve sana a olarak getirecektir. Type Pattern'ın bir üst versiyonudur.
+
+- `var`ın üzerine geldiğimizde atanan değer ne ise o değere direkt bürünüyordu yani derleme sürecinde bürünüyordu ama burada `var` runtime'da bürünme işlemini gerçekleştirecektir.
+
+- Type Pattern'a nazaran türler birden fazla hangisiyse direkt onunla dışarı çıkartabiliyoruz.
+
+```C#
+Var Pattern - Kritik
+object x = "agasgasgsagsagsag";
+if (x is var a)
+{
+    
+}
+```
+
+<img src="40.png" width ="auto">
