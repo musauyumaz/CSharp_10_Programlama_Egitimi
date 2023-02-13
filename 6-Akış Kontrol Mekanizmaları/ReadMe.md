@@ -1201,3 +1201,29 @@ if (x is var a)
 ```
 
 <img src="40.png" width ="auto">
+
+***
+# 159) C# 7.0 Pattern Matching - Var Pattern Kritik Yapalım 2
+- Normal `var`dan farkı `var` normalde derleyici sürecinde türü belirlerken Var Pattern'daki `var` runtime'da türü belirlemektedir. Aradaki fark budur.
+
+- Mormalde senin tanımlamış olduğun `var` bir değişken aldığı değerin türüne derleme zamanında otomatik bürünmektedir. Ama Var Pattern'daki kullanılan `var` değişkeni ise almış olduğu değeri runtime'da alacağından dolayı türü runtime'belirlenir.
+
+- `if (x is var a)` x'in türü her neyse x'in değerini burada cast edip a'ya vereceğinden dolayı bu işlemi runtime'da yapacaktır. Runtime'de türü belirlenecektir.
+
+- `var` keywordü ile Var Pattern'deki `var` yapılanması arasında davranış farkı vardır.
+    * `var` keywordü : Derleme zamanında türünü belirler
+    * Var Patterndaki `var` yapılanması : Runtime'da türünü belirleyecektir.
+
+- İkisinde de yapısal benzerlik var ikisinde de `var` keywordünü kullanıyoruz. Ama davranış açısından ikisi de birbirinden farklıdır. Birisi derleme zamanında bir diğeri Runtime'da
+
+```C#
+Var Pattern - Kritik
+object x = "asfsafsafsaf";
+var b = "faassafafasf";
+if (x is var a)//x'in türü her neyse x'in değerini burada cast edip a'ya vereceğinden dolayı bu işlemi runtime'da yapacaktır. Runtime'de türü belirlenecektir.
+{
+    
+}
+```
+
+<img src="41.png" width ="auto">
