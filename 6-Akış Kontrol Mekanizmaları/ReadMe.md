@@ -1346,3 +1346,17 @@ System.Console.WriteLine(o2);
 
 <img src="47.png" width ="auto">
 <img src="48.png" width ="auto">
+
+***
+# 165) C# 9.0 Pattern Matching - Relational Pattern
+- İlişkisel kıyaslamayı yapabildiğimiz bir pattern'dır.
+
+- Desenlerde `<`, `>`, `<=`, `>=` operatörleri kullanılabilmekte ve belirli karşılaştırmalar hızlıca gerçekleştirilebilmektedir.
+
+- `switch` özü itibariyle sadece eşitlik durumunu inceleyen akış kontrol şemasıydı... Relational Pattern ile diğer türlü karşılaştırmaları da yapabilmekteyiz.
+
+<img src="49.png" width ="auto">
+
+- Eşitlik durumunu kontrol etmek istiyorsanız değerin direkt kendisini yazmanız yeterli olacaktır. Onun dışında kıyaslama yapılacak değerlerin başına `<`, `>`, `<=`, `>=` operatörleri yazabiliyorsunuz.
+
+<img src="50.png" width ="auto">
