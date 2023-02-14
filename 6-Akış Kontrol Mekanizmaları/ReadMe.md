@@ -1321,3 +1321,15 @@ System.Console.WriteLine(o2);
 ```
 
 <img src="45.png" width ="auto">
+
+***
+# 163) C# 9.0 Pattern Matching Enhancements
+- Bu geliştirmeler C# 9.0 ile beraber gelmiştir.
+
+- Bu geliştirmeler;
+    * Simple Type Pattern => Normal Pattern Matching yapılanmalarındaki Type Pattern'ın daha geliştirilmiş haline denk geliyor.
+    * Relational Pattern 
+    * Logical Pattern 
+    * Not Pattern 
+
+<img src="46.png" width ="auto">
