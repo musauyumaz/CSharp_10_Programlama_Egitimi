@@ -1243,3 +1243,29 @@ if (x is var a)//x'in türü her neyse x'in değerini burada cast edip a'ya vere
 - Ama sen hem elindeki değerin türünü kontrol edip ardından o değeri kendi öz türünde/verisinde/tipinde UnBoxing edeceksen yani kendi özünde elde edeceksen burada bir pattern kullanacaksan Var Pattern'dan başka şansın yok.
 
 - `if (x is var a)` var pattern bu formatta kullanılmalıdır.
+
+***
+# 161) C# 7.0 Pattern Matching - Recursive Pattern
+- Bu desen `switch - case` yapılanması üzerinde birçok yenilik getirmektedir.
+
+- `switch` bloğunda referans türlü değişkenlerde kontrol edilebilmektedir.
+
+- Eğer ki C# 7.0'dan önceki sürümlerde olsaydık `switch(...Şarta Uğrayacak Değer...)` bloğunda değer türlü değişkenleri kontrol edebiliyorduk taa ki C# 7.0'a kadar.
+
+<img src="42.png" width ="auto">
+
+- Recursive Pattern sayesinde biz `switch` bloğunda biz değer türlü değişkenler dışında da referans türlü değişkenleri kontrol edebilmekteyiz.
+
+- Ayrıca `switch` bloğuna `when` komutu ile çeşitli şart/koşul niteliği kazandırılmıştır.
+
+- Recursive Pattern ile `when` komutu gelmiştir.
+
+- Interface yapılanması bir referans türlü değişkenleri referans edebilen bir türdür. İleri de OOP'de  göreceğiz.
+
+- Recursive Pattern tür kontrolü yaptığı için Type Pattern'ı kapsamaktadır. Yani sen `switch - case` yapılanmasında referans türlü değişkenlerin türlerini check edebiliyorsun ve check ettikten sonra değişkenlerde bunları karşılayabiliyorsun.
+
+- Recursive pattern, `case null` komutu ile ilgili türün/referansın `null` olup olmamasını kontrol edebilmesinden dolayı Constant pattern'ini kapsamaktadır.
+
+- Recursive pattern `switch` yapılanmasında çoğu özelliği getiren `switch`i daha da esnek hale getiren pattern'dır. Bunun dışında ekstradan diğer pattern'ları da kapsayan daha gelişmiş bir yapılanmadır.
+
+<img src="43.png" width ="auto">
