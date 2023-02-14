@@ -1333,3 +1333,16 @@ System.Console.WriteLine(o2);
     * Not Pattern 
 
 <img src="46.png" width ="auto">
+
+***
+# 164) C# 9.0 Pattern Matching - Simple Type Pattern
+- Normal Type Pattern'ın birebir karşılığıdır. Daha da geliştirilmiş halidir.
+
+- Bir değişken içerisindeki değerin belirli bir türde olup olmadığını hızlı bir şekilde kontrol etmemizi sağlayan desendir.
+
+- C# 9.0'dan önce Type Pattern ile yapılan tür bildirimlerinin yanına değişken adı tanımlanması yahut discard ifadesinin(`_`) kullanılması zaruriydi. C# 9.0 ile bu gereksiz zorunluluk ortadan kaldırılmış ve direkt olarak tür kontrol işlemine odaklanılması sağlanmıştır.
+
+- Simple Type Pattern ufakta olsa değişken isimlerinin zorunluluğunu ortadan kaldıran bir özelliktir var olan Type Pattern'ı daha da güçlü, daha da semantik açıdan anlamlı hale getirmiştir.
+
+<img src="47.png" width ="auto">
+<img src="48.png" width ="auto">
