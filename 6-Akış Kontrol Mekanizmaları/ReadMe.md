@@ -1269,3 +1269,55 @@ if (x is var a)//x'in türü her neyse x'in değerini burada cast edip a'ya vere
 - Recursive pattern `switch` yapılanmasında çoğu özelliği getiren `switch`i daha da esnek hale getiren pattern'dır. Bunun dışında ekstradan diğer pattern'ları da kapsayan daha gelişmiş bir yapılanmadır.
 
 <img src="43.png" width ="auto">
+
+***
+# 162) C# 7.0 Pattern Matching - Type ve Var Pattern Üzerine Kritik Yapalım
+- Patternlar sadece akış kontrol mekanizmalarında değil birçok yerde kullanılabilmektedirler.
+
+- Var Pattern, Type Pattern'ı akış kontrol mekanizmasına ihtiyaç duymadan da kullanbiliyorsun.
+
+- `object x = "asfsasafasf";`
+- `bool result = x is string o;` değişkenlere `if` dışında eriştiğimizde değişkenlerin `null` olma ihtimallerinden dolayı kullanamıyoruz.
+    * x `string` ise result değerine `true` ya da `false` değerini yani `bool` sonucu aldık.
+    * Aynı zamanda x değişkeninin değerini o değişkenine `string` olarak cast ettirmiş olduk.
+    * Dolayısıyla burada x'in olmadığı durumda o'nun `null` olma ihtimali var. İşte bu `null` olma ihtimalinden dolayı kullanamıyoruz.
+    * Burada tanımlayabiliyorsun ama kullanırken sıkıntı çünkü `null` olma ihtimali var. `null` olma ihtimalinden dolayı kullanmaya kalkarsak burada hata alırız
+
+- Hem `if` e bağlı değiliz hem de `if`in dışında kullanmaya çalıştığımızda ilgili değişkenleri yani tanınlanan Type Pattern'la, Var Pattern'la tanımlanan değişkenleri `null` olma ihtimalinden dolayı kullanmamıza müsaade etmiyor.
+
+<img src="44.png" width ="auto">
+
+- `object x = "asfsasafasf";`
+- `if (x is string a)` `true` döndüğü sürece sen bunu `if` ile kullandığın zaman a'nın bir değere sahip olduğu kesinlikle %100 garantidir. O zaman bunu compiler'da biliyor. Bu desenler `if` yapılanmasıyla compiler açısından derleme aşamasında güvenceye alınmış.
+    * Eğer ki sen bunu `if` yapılanamsının içinde kullanıyorsan bu a kesinlikle dolu geleceği için burada yani `if` scope'unda sen bu a değişkenini kullanbilirsin.
+
+- Desen eşleştirmeleri budur. Yani `if`in içerisindeki bir senaryoyla eşleştirilen desenlerdir bunlar illaki siz bunu `if`te kullanmak zorunda değilsiniz ama oradaki senaryoya eşleştiği için bu deseni kullanıyoruz.
+
+- `var` keywordü derleme aşamasında türü belirlerken Var Pattern'daki `var` runtime'da türü belirler.
+
+- `bool result = x is var o;` x'in türü ne olursa olsun buradaki o değişkenine ata. Hangi tür olursa olsun atayacağından dolayı runtime'da bunun `null` gelme ihtimali olmadığından dolayı da kullanabiliyoruz.
+    * Type Pattern ya da Var Pattern kullanırken Var Pattern her türlü türü karşılayacağı için yani `var` olduğu zaman o o türün değerini direkt kendi öz türünde alacağından dolayı `null` gelme ihtimali olmayacak. Dolayısıyla ilgili değeri/değişkeni kullanmamızı sağlayacak.
+
+- `bool result = x is string o1;`
+- `System.Console.WriteLine(o1);`  
+    * Type Pattern'da x değişkeninin değerinin `string` olmama ihtimalinde o1'in `null` olma ihtimali söz konusu olduğu için o1 kullanılırken hata vermektedir..
+
+- `bool result2 = x is var o2;`
+- `System.Console.WriteLine(o2);`
+    * Var Pattern'da ise x değişkeninin değeri ne olursa olsun var ile o2'ye atanacağından dolayı o2'nin `null` olma ihtimali yoktur. Dolayısıyla o2'yi rahatça kullanabilmekteyiz...
+
+```C#
+object x = 123;
+if (x is string a)
+{
+}
+if (x is var b)
+{
+}
+bool result = x is string o1;
+System.Console.WriteLine(o1);
+bool result2 = x is var o2;
+System.Console.WriteLine(o2);
+```
+
+<img src="45.png" width ="auto">
