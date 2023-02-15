@@ -1360,3 +1360,7 @@ System.Console.WriteLine(o2);
 - Eşitlik durumunu kontrol etmek istiyorsanız değerin direkt kendisini yazmanız yeterli olacaktır. Onun dışında kıyaslama yapılacak değerlerin başına `<`, `>`, `<=`, `>=` operatörleri yazabiliyorsunuz.
 
 <img src="50.png" width ="auto">
+
+***
+# 166) C# 9.0 Pattern Matching - Relational Pattern Kritik Yapalım
+- Bir gün mülakatta `if` ile `switch` arasındaki farkı sorarlarsa eğer `switch` normal eşitlik durumuna bakmakta `if` ise bütün karşılaştırmaları yapabilmektedir cevabını beklerler. Amma velakin Relational Pattern sayesinde artık `switch` sadece eşitlik durumuna değil tüm ihtimallere tüm karşılaştırma durumlarına bakabilmektedir. Dolayısıyla artık `switch` durumu eşitliğe bakmakta ama C# 9.0 versiyonuyla gelen Relational Pattern ile de diğer kıyaslamaları da yapabilmektedir.
