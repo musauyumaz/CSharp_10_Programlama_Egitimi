@@ -1386,3 +1386,17 @@ System.Console.WriteLine(o2);
 - Logical Pattern'da `and`, `or`, `not` gibi keyword'ler `switch` tarafından bile kullanıbilir hale getirilmiştir.
 
 <img src="52.png" width ="auto">
+
+***
+# 168) C# 9.0 Pattern Matching - Not Pattern
+- `not` operatörünün kullanılabildiği bir desendir.
+
+- `not` operatörü Logical Pattern'da gelen hani değilse mantığını kullandığımız bir operatör. Bir yandan Not Pattern altında da değerlendirilen bir keyworddür.
+
+- İlgili türün/değerin hangisi olmadığını `not` keywordünü kullanarak inceleme yapmaktayız. 
+
+- Hem mantıksal bir keyword olarak kullanabiliyoruz hem de Not Pattern adı altında telaffuz edilen bir keyworddür.
+
+- `not` keywordünü `is not null`, `is not`, `is not type` gibi durumlarda kullandığımız gibi `switch` bloğunda da, Relational Pattern durumlarında da aynı şekilde kullanabiliyoruz. Yeter ki uygun yer olsun.
+
+<img src="53.png" width ="auto">
