@@ -1364,3 +1364,25 @@ System.Console.WriteLine(o2);
 ***
 # 166) C# 9.0 Pattern Matching - Relational Pattern Kritik Yapalım
 - Bir gün mülakatta `if` ile `switch` arasındaki farkı sorarlarsa eğer `switch` normal eşitlik durumuna bakmakta `if` ise bütün karşılaştırmaları yapabilmektedir cevabını beklerler. Amma velakin Relational Pattern sayesinde artık `switch` sadece eşitlik durumuna değil tüm ihtimallere tüm karşılaştırma durumlarına bakabilmektedir. Dolayısıyla artık `switch` durumu eşitliğe bakmakta ama C# 9.0 versiyonuyla gelen Relational Pattern ile de diğer kıyaslamaları da yapabilmektedir.
+
+***
+# 167) C# 9.0 Pattern Matching - Logical Pattern
+- Programlamaya mantıksal bir desen getiren pattern'dır.
+
+- `and`, `or`, `not` gibi mantıksal operatörler kullanılabilmektedir.
+
+- Tek satırlık işlem gerçekleştirebiliyorsunuz.
+
+<img src="51.png" width ="auto">
+
+- Relational Pattern ile oldukça uyumludur.
+
+- `switch` ile Relational Pattern üzerinden kontrol yaparken değer aralıklarını belirleyebilmek için `and` gibi `or` gibi keywordleri bu şekilde kullanbiliyoruz.
+
+- `not` keyword'ünü de Logical Pattern sayesinde programlamaya kazandırdık. Dolayısıyla bunu da burada kullanabiliyoruz. Yani `switch` yapılanmasında eşit değillik durumunu `not` keywordüyle belirtebiliyorsunuz.
+
+- Artık `switch` sade ve sadece eşitlik durumunu değil bütün kıyas durumlarını kontrol edebildiğimiz bir akış kontrol mekanizmasına dönüştürülmüş türdür.
+
+- Logical Pattern'da `and`, `or`, `not` gibi keyword'ler `switch` tarafından bile kullanıbilir hale getirilmiştir.
+
+<img src="52.png" width ="auto">
