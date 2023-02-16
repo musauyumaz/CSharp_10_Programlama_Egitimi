@@ -182,3 +182,50 @@ System.Console.WriteLine("Toplam : " + (sayi1 + sayi2));
 ```
 
 - Olası hatayı verebilecek olan kodu keşfettikten sonra bunların üzerinde manipülasyon işlemi yapabilmemizi sağlayacak olan yapılanma `try catch` yapılanmasıdır.
+
+***
+# 174) try - catch Mekanizması Teorik Anlatım
+- Runtime'da alınan hataları manipüle etmemizi/karşılamamızı/kontrol etmemizi sağlayan bir programatik yapıdır.
+
+- Programalama dilinin dahilindedir.
+
+- Runtime'daki patlamalarda hata durumlarına ilgili hatayı kontrol etmemizi/doğru manipülasyonlar ya da istediğimiz manipülasyonları yapmamızı sağlayan yapılanmaya `try catch` yapılanması diyoruz.
+
+- Çalışma zamanında alınan olası hataları kontrol etmemizi, karşılamamızı, manipüle etmemizi sağlayan bir yapılanmadır.
+
+- Gelen bir şeyi doğru bir şekilde manipüle etmek mesela dövüş sanatında karşıdan gelen saldırıyı manipüle edip ya sonlandırabiliyor ya da karşıdan gelen saldırıyı manipüle edip aynı etkiyi kendisine döndürüyor. Yani manipülasyon demek gelen etkiyi istediğiniz gibi birşeye dönüştürebilmek dolayısıyla burada bir patlama oluyor. Burada bir etki oluşuyor oluşan bu etkiyi başka bir şeye dönüştürmek kullanıcıya hissettirmeden bir mesaj vermek bir patlama değilde sanki yazılımın doğal bir süreciymiş gibi yazılımda bir refleks göstermektir manipülasyon. İşte biz bunu `try catch` yapılanmasıyla gerçekleştiriyoruz.
+
+- `try - catch` yapılanamsı, uygulama sürecinden yaşanan olası hatayı kullanıcıya hissettirmeksizin farklı bir durum ya da olağan bir mesaj gibi göstermemizi sağlayan ve bunun yanında patlamaya/hataya dair bizlere bilgi sunan ve böylece bu bilgiler eşliğinde kayılar/log oluşturmamızı sağlayan bir programatik yapılanmadır.
+
+- Uygulama da ister istemez hatalar alacağız. İşte bu alacağımız hatalar çalışma zamanında alınıyorsa bunları biz kontrol ederken `try - catch` yapılanamsını kullanıyoruz.
+
+- `try - catch` yapılanamsının amacı;
+    1. Kullancıya alınan hatayı hissettirmemek
+    2. Alınan hatanın nedenine dair kullanıcıya bilgilendirmek.
+        * orada bir patlama oluyor sen kullanıcıya hissettirmeden güzel bir şekilde manipüle etmen gerekiyor. Ya kardeşim bak sen bunu burada yaptığın zaman bu olmuyor diye kullanıcıyı uyarabilmen lazım bilgilendirebilmen lazım bunu uygulama sona ermeden yapabilmen lazım işte `try - catch` yapılanması ile yapacaksın.
+    3. işletim sistemleri aykırı durum yaşandığında uygulamayı sonlandırmak isterler ve sonlandırırlar. `try - catch` yapılanması ile alınan hataya dair bir manipülasyon gerçekleştiriliyor ve uygulamanın kapanmadan devam edilmesi sağlanabiliyor...
+        * Alınan her çalışma hatasında uygulamayı sonlandırmaktansa hatayı doğru bir şekilde manipüle edip uygulamanın devam etmesini sağlamak ve bu hataya sebep olan durumlara karşı doğru uyarılarda mesajlarda bulunmak bizim amacımız bu.
+        * Örneğin banka sistemlerine giriş yaparken senden sayısal bir değer istiyor telefona mesaj gönderiyor gelen mesaj üzerinden diyor ki işte oradaki sayısal değeri buraya yaz. Oradaki sayısal değerin yerine gidip metinsel karakterlerde yazmaya çalıştığında seni uyarıyor. Hop kardeşim buraya sen metinsel yazamazsın. Yazacağın değerler sayısal olması gerekiyor. işte bu durumu biz arka planda daha gelişmiş yapılanmalarda Validation'lar falan kullanılıyor ama şöyle düşünün sen oraya metinsel bir ifade yazdın gönderdin arkada patlıyor patlayınca manipüle ediyor ve seni uyarıyor buraya sadece sayısal ifadeler girebilirsin diye.
+
+- `try - catch` yapılanması hataları kontrol etmemizi hataları doğru şekilde manipüle etmemizi yönlendirmemizi sağlayan bir yapılanma.
+
+- Prototip : `try {Olası çalışma zamanı hatalarını verebilcecek kodları buraya yazıyoruz...} catch(){try içerisinde olası hata söz konusuysa kodun akışı orada kesilecek ve akış catch bloğundan devam edecektir.}`
+
+- Olası çalışma zamanı hatası veren ve belirli parametlere/değerlere göre çalışma zamanında hata fırlatan kodlarımı `try` bloğu içine yazarız.
+
+- Hata alındıktan sonra yapacağın işlemleri de `catch` bloğu içerisine yazarız.
+
+- Örneğin `Console.ReadLine()`dan gelen `string` ifadeyi eğer ki elimizdeki ifade integer'a dönüştürülemeyecek bir ifadeyse orada biz patlıyorduk. İşte oradaki kodları `try` bloğu içerisine yazacağız. Çünkü runtime'da verilen değerin türüne göre/formatına göre çalışma zamanı hatası üretebiliyor işte ürettiği zamanda `catch` bloğu içerisine Lütfen sayısal değer giriniz diyeceğiz. Ya da beklenmyen bir hata oluştu diyeceğiz. Ama uygulama hata verdiği noktada kesilmeyecek uygulama `catch`den devam edecek ve ondan sonra ne yapıyorsanız artık o işlemden devam edecektir.
+
+- Uygulama da çalışma zamanında alınan hataları yönetmemizi kontrol etmemizi sağlayan yapılanma `try - catch` yapılanmasıdır. Uygulama hata verdiği zaman bu yapılanma sayesinde Runtime'da alınan hata neticesinde manipülasyon edilecektir hata ve hatayla ilgili bize bilgi verecektir. İstediğimiz bilgiyi elde edebiliyoruz. Loglama ya da kayıt işlemlerini yapmamıza imkan tanıyor. Bunun dışında bir de ekstradan uygulamayı sonlandırmadan uygulamanın yaşamasını/uygulamanın ayakta kalmasını devam ettiren bir yapılanmadır. 
+
+```C#
+#try - catch Yapılanması
+System.Console.WriteLine("Lütfen birinci sayıyı giriniz.");
+int sayi1 = int.Parse(Console.ReadLine());
+System.Console.WriteLine("Lütfen ikinci sayıyı giriniz.");
+int sayi2 = int.Parse(Console.ReadLine());
+System.Console.WriteLine("Toplam : " + (sayi1 + sayi2));
+```
+
+<img src="12.png" width = "auto">
