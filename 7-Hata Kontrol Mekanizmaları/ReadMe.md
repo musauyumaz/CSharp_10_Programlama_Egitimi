@@ -229,3 +229,52 @@ System.Console.WriteLine("Toplam : " + (sayi1 + sayi2));
 ```
 
 <img src="12.png" width = "auto">
+
+***
+# 175) try - catch Mekanizması Pratik Anlatım
+- `try` bloğunda olası çalışma zamanı hatası verebilecek kod yazılır. Çalışma zmaanında bir hata alınırsa eğer direkt uygulama/akış `catch` bloğuna düşer. Hataya dair ya da hata alındıktan sonra neler yapılacaksa onları burada belirtiyoruz.
+
+- Olası çalışma zamanı hatalarını barındıran/verebilecek olan kodları `try` bloğuna yazıyoruz.
+
+- try içerisinde bir hata söz konusu olduğunda catch bloğu tetiklenecektir Hataya dair;
+    * log
+    * Kullanıcı bilgilendirme
+    * Kontrollü kapanış vs.
+- `catch` bloğu artık son bişey yapman içindir. Sen hata alındı artık bu hataya dair gerekli manipülasyon yapacağın neyse onu burada yapacaksın. Genellikle kullanıcıya doğru bir bilgi sunarız ve loglama işlemlerini yaparız ama bu demek değildir ki birtek bunları yaparız istediğin neyse yani oradaki ihtiyacımız her neyse onların hepsini `catch` bloğunda yapabiliriz.
+
+- Uygulama normalde `try catch` kullanmıyorsanız sonlanıyor `try catch` kullanıyorsanız hata alındığında sonlanmıyor `catch`den devam ediyor.
+
+- `try` da hata alınıyor `catch`e düşüyor. `catch`de yapacağını yapıyorsun ondan sonra uygulama devam ediyor akışa.
+
+- `try` bloğunda hata alınmazsa `catch` bloğu çalışmayacaktır. `catch` bloğunun çalışabilmesi için `try` bloğunda bir patlama olması gerekmektedir. Yani bir çalışma zamanı hatasının meydan gelmiş olması gerekiyor.
+
+- Sen durumun farkındasın kullanıcı hangi durumda hangi parametreyi girdiğinde çalışma zamanı hatası fırlattığını farkındasın yazılımcı dediğin bunun farkında olur ve bütün senaryolarda bu bellidir zaten. Senaryoya göre kullanıcıyı uyarman lazım. Alakasız bir şekilde uyarmaman lazım. Ya da geniş böyle ne olduğu belli olmayacak detaysız bir şekilde uyarı da vermemek lazım. Örneğin bir hata alınmıştır. Kullanıcı diyecek tamam kardeşim bir hata alınmıştır da neye gör bir hata alınmıştır? Hani ben ne yaptımda hata alındı onu bana söylersen ben ona göre bu uygulamayı kullanırım diyecek.
+
+- `catch` bloğu sadece hata durumlarında çalışan bir bloktur.
+
+```C#
+#try - catch Yapılanması
+#try -catch İskelet Yapısı
+try
+{
+    //Olası çalışma zamanı hatalarını barındıran/verebilecek olan kodları buraya yazıyoruz.
+}
+catch
+{
+    //try içerisinde bir hata söz konusu olduğunda catch bloğu tetiklenecektir. 
+    //Hataya dair; log, Kullanıcı bilgilendirme, Kontrollü kapanış vs.
+}
+
+try
+{
+    System.Console.WriteLine("Lütfen birinci sayıyı giriniz.");
+    int sayi1 = int.Parse(Console.ReadLine());
+    System.Console.WriteLine("Lütfen ikinci sayıyı giriniz.");
+    int sayi2 = int.Parse(Console.ReadLine());
+    System.Console.WriteLine("Toplam : " + (sayi1 + sayi2));
+}
+catch 
+{
+    System.Console.WriteLine("Lütfen doğru bir ifade giriniz.");
+}
+```
