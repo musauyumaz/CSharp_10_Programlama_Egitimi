@@ -147,3 +147,38 @@
 <img src="10.png" width = "auto">
 
 - Çalışma zamanı semantik açıdan/syntax açısından herhangi bir problemin olmadığı bir durumda alınan hatalardır. Bunlar kullanıcıya gösterilmeksizin manipüle edilmesi gereken hatalar çünkü ticari açıdan risk taşıyor. Risk taşıdıklarından dolayı bunları çalışma zamanında olası olan bu hataları bir şekilde manipüle etmemiz lazım işte bunu da yapabilmek için hata kontrol mekanizmlarını yani `try catch` bloklarını kullanmamız gerekecek.
+
+***
+# 173) Çalışma Zamanı/Run-Time Hata Durumları​na Örnek Verelim
+- Olmayan bir dosya olmayan bir nesne üzerinde işlem yaparken alınan hatalardır.
+
+- Olmayan bir dosyayı açmaya yahut üzerine yazmaya okumaya vs. çalışmak
+
+- Olmayan değer üzerinde işlem yapmaya çalışmak 
+
+- Uygun olmayan formatlarda çalışmak.
+
+- Veritabanı bağlantısının kopması.
+
+- Çalışma esnasında varolan bağlantının kopması durumunda.
+
+- Başta olmayan bir bağlantı derleme zamanında zaten yok. Zaten kuramazsın derleme zamanında sonra eğer hiç veritabanı bağlantısı yoksa. Ama varolan bir veritabanı bağlantısı süreçte koptuğunu düşünürsek bu çalışma zamanında bir hataya sebep olacaktır. Ya da bunun gibi başka bağlantıların entegrasyonel yapılanmaların birbirinden kopması bağlantıların kesilmesi uzaktan dinlediğimiz servislerin yanıt vermemesi gibi durumlar çalışma zamanlarında hatalara sebep olacaktır.
+
+<img src="11.png" width = "auto">
+
+- Çalışma zamanındaki olası parametrik değerler üzerinde olası vermiş olduğumu değerler üzerinde alınan çalışma zamanı hatalarını iyi tespit edip bunlara göre önlem almamız gerekiyor.
+
+- Önemli olan problemin ne olduğunu bilebilmek. Sen zaten problemin ne olduğunu biliyorsan gerisi artık teferruata kalır. Problemi tespit edebilmek sıkıntı. Yazılım süreçlerinde her daim bizim problemimiz yani bizim asıl gayemiz problemi teşhis edebilmek. Problemi çözmek değil Problemi çözmekte sıkıntı yok.
+
+
+```C#
+Çalışma Zamanı Hata Durumları Örnek
+
+System.Console.WriteLine("Lütfen birinci sayıyı giriniz.");
+int sayi1 = int.Parse(Console.ReadLine());
+System.Console.WriteLine("Lütfen ikinci sayıyı giriniz.");
+int sayi2 = int.Parse(Console.ReadLine());
+System.Console.WriteLine("Toplam : " + (sayi1 + sayi2));
+```
+
+- Olası hatayı verebilecek olan kodu keşfettikten sonra bunların üzerinde manipülasyon işlemi yapabilmemizi sağlayacak olan yapılanma `try catch` yapılanmasıdır.
