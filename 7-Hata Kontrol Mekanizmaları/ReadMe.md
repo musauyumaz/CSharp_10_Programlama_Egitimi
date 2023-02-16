@@ -50,3 +50,100 @@
 - Hataları bilebildiğimiz/görebildiğimiz/anlayabildiğimiz/farkına varabildiğimiz için çözülmesi ve fark edilmesi ennnnn kolay hata türüdür.
 
 <img src="2.png" width = "auto">
+
+***
+# 172) Hata Türleri - Run-Time(Çalışma Zamanı) Hataları
+- Kodunuzu yazdınız;
+    * Syntax'da bir problem yok,
+    * kodun semantiği kusursuz,
+    * çalışma zamanında patlamaya sebeb veren hatalardır.
+    * Kodunuz derleniyorsa,
+    * Derlendikten sonra çalışma zamanında hatalar alıyorsanız işte bu hatalara/patlamalara sebebiyet veren hatalardır. 
+
+<img src="3.png" width = "auto">
+
+- Yazılım ayaktayken ortaya çıkan bir takım aykırı durumlardan dolayı programın işletim sistemi tarafından kesilmesiyle/sonlandırılmasıyla sonuçlanır.
+
+- Uygulamayı sen ayağa kaldırdın çalışma zamanında herhangi bir hata bir aykırılık söz konusu olursa işletim sistemiyle hani entegrasyon oluyordu ya hani bir iletişim kuruyorduk nihayetinde işte işletim sistemi kendi üzerinde çalışan yazılımlardan herhangi birinde bir aykırı durum görürse onu çalışma zamanında sonlandırıyor ve sonlandırırken de belirli bir mesaj gönderir.
+
+<img src="4.png" width = "auto">
+
+- Çalışma zamanı hataları programın işleyişinin ortasında direkt kullanıcıyla temas edebilecek hatalardır. 
+
+- Yani sen kullanıcın diyelim ki Word'ü kullanıyorsun yazdın yazdın yazdın orada bir aykırı durum oluştu yazılımsal boyutta karşına bir hata çıktı işte o hata çalışma zamanı hatasıdır.
+
+- Bilgisayar kullanıcıları oynadığı oyunlarda çalıştırdığı programlarda çalışma zamanı hatalarıyla çok fazla karşılaşabilirler.
+
+- Ve hiçbir yazılımcı son kullanıcının hatayla karşılaşmasını istemez...
+
+- Genellikle kültürden kültüre boyutu değişse de bir hatayla karşılaşan son kullanıcı derinden kulak kaşındırabilir.
+
+- Böyle bir durumda çalışma zamanında alınabilecek olan hataları yönetmek ve bir şekilde manipule etmemiz gerekecektir.
+
+- Son kullanıcıya bir yazılımın hatayı göstermesi kullanıcı kullanım esnasındayken hatayla karşılaşması ticari açıdan da sıkıntı yaratacaktır. Nihayetinde kullanıcının tercihi nasıl ki bir insan mont alırken kaliteli bir markadan kaliteli bir mont alıyor aynı şekilde kullanıcı senin yazılımını kullanabilmesi için tercih edebilmesi için hatalardan arındırılmış arayüzü güzel kullanıcının işlemlerine hızlıca ve efektif boyutta eşlik eden bir yazılım olması gerekiyor. Arada böyle hata fırlatan kullanıcıyı böyle iş yaparken durduk yere böyle ekranlarla oyalayan bir yazılımı hangi kullanıcı tercih edebilir ve nihayetinde şöyle düşünün siz hangi yazılımı yazarsanız yazın elbette bir rekabete girdiğiniz başka bir marka tarafından aynı yazılım üretiliyordur. Mümkün mertebe bir yazılımın son kullanıcıya hata göstermemesi gerekiyor.
+
+- Senin çalışma zamanında alacağın olası hataları bir şekilde tespit edebilmen lazım ve tespit edebildiğin durumlarda alınabilecek olası çalışma zamanı hatalarını kullanıcıya çaktırmadan göstermeden manipule etmen lazım.
+
+<img src="5.png" width = "auto">
+
+- Çalışma zamanı hataları genellikle kullanılan mimari de öntanımlı mesajları verecektir.
+    * Örneğin Olmayan bir dosyayı yazılımınızda açmaya çalıştığınızda mimarinizde olmayan dosyayı yazılımla açmaya çalıştığınıza dair ön tanımlı bir mesaj varsa bunu verecektir. Yoksa bu hatayı işletim sistemi seviyesinde verecek. İşletim sistemi tarafından hatanın karşılığı hangi mesajsa İşletim sisteminde tanımlanmış o mesaj verilecektir. 
+
+- Eğer ki alınan hatanın mimaride bir karşılığı yoksa işletim sistemi dili kullanılacak ve daha kompleks bir açıklamayla karşılaşılacaktır.
+
+- Bir yazılım kendisinde çalışma zamanında alınan hataları işletim sistemi seviyesinde mesajlarla veriyorsa bu mesajlar çok anlamsız ve kompleks bir türde olabilir. Dolayısıyla biz bunları da istemeyiz. 
+    * Şimdi kullanıcı orada örneğin metinsel bir değer yazması gereken yere sayısal bir değer yazdı diyelim ya da bununla ilgili arkada çalışan kod metinsel çalışan bir kod olduğu için sayısal değerde hop patladı. Şimdi biz burada şunu yazmalıyız kullanıcı şunu görmeli; Ya kardeşim işte metinsel yazman gereken yere sayısal bir değer yazdın diye görmeli. Bunu görmeyipte işletim sistemi seviyesinde karman çorman bir hata alıyorsa kullanıcı da neden hata yaptığını bilemez ve bunu loglama sistemleri de olacak ileride mimarisel yapılanmalarda yazılım hata veriyorsa verilen hata bir yere kaydedilir ki biz yazılımcılar daha sonraki süreçte onu daha sağlam bir şekilde geliştirelim onları minimize edelim diye loga baktığında da birşey anlamazsın işletim sistemi seviyesindeki mesajlardan.
+
+<img src="6.png" width = "auto">
+
+- Dolayısıyla çalışma zamanı hatasında olması gereken durum hataların önceden prograncılar tarafından tespit edilip daha anlaşılabilir bir şekilde düznelenmesi gerekiyor.
+
+- Olması gereken ise çalışma zamanı hatalarının çmceden tespit edilip programcı tarafından daha anlaşılabilir bir şekilde düzenlenmesidir.
+
+- Sen bir yazılım geliştirdin geliştirdiğin yazılımda çalışma zamanında alabileceğin olası hatalı durumlar varsa bunlar senin önceden tespit etmen, öngörebilmen ve bir şekilde önlem alman lazım. Ya da anlamlı şekilde manipüle etmen lazım. 
+
+- Tabi bunun içinde çalışma zamanı hatalarının sağlam bir öngörüyle tespit çalışması yapılması gerekmektedir. 
+
+<img src="7.png" width = "auto">
+
+- Çalışma zamanı hatalarını önceden kestirmek oldukça zor olabilmektedir.
+
+- Nihayetinde sen bir yazılım yaptın ama yani önceden bunun süreçte verebileceği hatalar belki 1 dk sonra belki 3 gün sonra verebileceği hataları öngörebilmen bazen zor olabiliyor.
+
+- Bu hataları öngörebilmek genellikle testerların işidir.
+
+- Yazılımcı olarak sen bunu görüyorsun uygulamayı yapabildiğin kadar yapıyorsun uygulamayı koydun. Tester dediğimiz testçi arkadaşlara verdin artık onlar durmadan test ediyor uygulamanın hangi çalışma zamanı durumlarında hataları var bunların hepsini test ede ede  yani kullanarak kullanıcı olarak test ederek bunlar uygulamadaki çalışma zamanı hatalarını rapor ediyorlar ve tespit edilenler biz yazılımcılar tarafından tespit edilen noktaya göre uygun çözümlerle manipüle ediliyor.
+
+- Uygulama mümkün mertebe test edilerek çalışma zamanı hataları tespit edilmeli ve programcı tarafından tanımlanmalıdır.
+
+- Diyelim ki iki sayıyı toplayan bir yazılım geliştirdin ve tester'a yolladın. Şimdi iki sayıyı toplayan ve bu iki sayının dışarıdan kullanıcı tarafından girildiğini varsayalım. Toplama işlemi sayısal türlerde yapılır. Şimdi kullanıcının girmiş olduğu değerler ya sayısal değilse sayısal olmadığı durumda patlıyor işte bak semantikte bir sıkıntı yok. Sen Ahmet'le Mehmet'i toplamaya çalıştığında aritmetik işleme tabi tutmaya çalıştığında orada uygulama patlıyor. Gittin testera verdin tester bunu deniyor 3'ü girdin 5'i girdin sonuç olarak orada 8 değeri döndü bunda sıkıntı yok birde tester dedi ki ya ben burada metinsel değer yollayıp toplayabiliyor muyum dedi ve ahmetle hilmiyi toplamaya çalıştı ve program orada patladı ve tester sana yani kodu yazana rapor ediyor senin yazmış olduğun bu uygulama da şu noktada şu cinste değerleri girdiğimde patlıyor bak ya bunları engelle sadece tek bir cinste veri girilebilsin. Ya da patlama oluyorsa düzgün bir şekilde kullanıcıyı uyaralım. İşte tester dediğiniz durmadan ilgili yazılımı dener. Deneme yanılma yöntemleriyle de hangi durumlarda hangi değerlerde hangi parametrelerde bu yazılımın çalışma zamanı hatası verdiğini tespit ederler.
+
+- Tüm bunlara rağmen gözden kaçan durumlar olması oldukça normaldir. Dolayısıyla bir programın gelişimi sahadaki belli bir sürece bağlıdır.
+
+- En nihayetinde Facebook olsun instagram olsun bunlar senin benim sayemde gelişti. Yani sen bşey yapıyorsun hop patlıyor orada değil mi adamlara rapor gidiyor onu düzeltiyorlar. Yani milyarlarca insanın günlük hayatta kullandığı bir yazılımda aldıkları hatayı 3 5 kişilik arkadaki ekip ne kadar hangi ömürle kaç tane kaç kere denemeyle test edebilir ki?
+
+- Son kullanıcın da almış olduğu hataları log mekanizmalarıyla toplayıp nerelerde hangi durumlarda hangi değerlerde hangi parametrelerde çalışma zamanı hataları alınıyormuş tespit edilebilir. İşte bu da artık yapılan yazılımı süreçteki kullanıcıdan gelen dönütlere bilgilere bağlı olacaktır. Zaten hayatta böyle birisi araba üretiyor ürettiği araba ilk ürettiğiyle 2000'de ürettiği segmentle şimdiki ürettiği segment arasında tank farkı var neredeyse. Diğeri yürürken dağılacak ama şimdiki arabalar bayaa hani gelişmiş vaziyette. İşte burada gelişim sürecini tamam bilim ilerletiyor ilerletmesine ama kullanıcılardan gelen trafiklerden gelen kaza oranlarından gelen bütün raporların değerlendirilmesi sonucu gelişiyor. işte bazı şeylerin artık sahaya sürülmesi gerekiyorsa da sürülüyor.
+
+- Bu süreçten toplanan loglar ve son kullanıcı dönütleri değerlendirilerek çalışma zamanı hataları tespit edilip arındırılabilir.
+
+- Sahaya sürülmüş bir yazılımda bu sahadaki sürecinde toplanan loglar ve son kullanıcı dönütleri değerlendirilerek çalışma zamanı hataları gene tespit edilebilmekte.
+
+<img src="8.png" width = "auto">
+
+- Tespit edilen çalışma zamanlarının manipülasyonunun oldukça önemli olduğunu söyledik.
+
+- Nihayetinde bodoslama kullanıcıya vermektense hatayı ilgili patlamayı sen manipüle edip sen kullanıcıya başka bir şekilde başka bir hata vermen daha doğru olacaktır. Hani kullanıcı onu bir yazılımın gereği gibi düşünsün. Hani bir patlama hata değilde yazılımın gereği olan bir uyarı gibi düşünmesini sağlaman lazım.
+
+<img src="9.png" width = "auto">
+
+- Yazılımdaki hata kontrol mekanizmalarını devreye sokarak...
+
+- Hata kontrol mekanizmaları çalışma zamanı hatalarını kullanıcıya hissettirmeden yakalayabilmek ve ilgili hatayı manipüle edebilmek için var olan bir yapıdır.
+
+- `try catch` yapılanmasını hata kontrol mekanizmasının ta kendisidir.
+
+- Hata kontrol mekanizması çalışma hataları için vardır. Syntax/semantik hatalar için `try catch` yapılanmasını kullanamazsınız ya da mantıksal hatalarda da gidip `try catch` yapılanmasını kullanamazsınız. Onların çözümleri başka. Ama bizim ticari açıdan kritik arz eden çalışma zamanı hatalarının bir şekilde manipüle edebilmek için işte `try catch` dediğimiz hata kontrol mekanizmaları bunlar için soz konusudur. Çalışma zamanı hatası için söz konusudur.
+
+<img src="10.png" width = "auto">
+
+- Çalışma zamanı semantik açıdan/syntax açısından herhangi bir problemin olmadığı bir durumda alınan hatalardır. Bunlar kullanıcıya gösterilmeksizin manipüle edilmesi gereken hatalar çünkü ticari açıdan risk taşıyor. Risk taşıdıklarından dolayı bunları çalışma zamanında olası olan bu hataları bir şekilde manipüle etmemiz lazım işte bunu da yapabilmek için hata kontrol mekanizmlarını yani `try catch` bloklarını kullanmamız gerekecek.
