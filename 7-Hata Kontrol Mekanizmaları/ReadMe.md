@@ -367,3 +367,24 @@ System.Console.WriteLine("Toplam : " + (sayi1 + sayi2));
 - Exception parametresi `catch` bloğuna yazılmak/tanımlanmak zorunda değildir... Eğer ki tanımlama yapılırsa hataya dair bilgi alabiliriz... Yok eğer tanımlama yapılmazsa hata neticesinde `catch` bloğu çalışacak lakin bilgi alamayacağız...
 
 <img src="17.png" width = "auto">
+
+***
+# 178) try - catch Hata Türleri
+- Hata durumları birer türe aittir.
+
+<img src="18.png" width = "auto">
+
+- `catch` bloğunda hataya dair parametre tanılmayabiliyoruz. O parametreyi de şu ana kadar `Exception` ile tanımladık.
+
+- Tüm hatalar `Exception`dan türer.
+
+- Tüm hata türleri `Exception` tarafından karşılanabilir.
+
+- Eğer ki istiyorsanız `catch` parametresine ilgili hata türlerini de yazabilirsiniz. Fırlatılan tür `DivideByZeroException` sa onu `catch` bloğunun parametresinde `DivideByZeroException` ile karşılaştırabilirsin/karşılayabilirsin. Ama başka bir türde bir hataysa `DivideByZeroException` ile karşılayamazsın. Biz bütün hepsini ortak olarak karşılayabilmek için `Exception`la karşıladık.
+
+- Özelleştirilmiş parametrelerle de hata karşılayabilmekteyiz.
+
+- `Exception` tüm hata türlerinin atasıdır. Bütün veri türlerinin atası `Object`tir. `Exception` referans türlü bir değişkendir/değerdir/türdür
+
+<img src="19.png" width = "auto">
+<img src="20.png" width = "auto">
