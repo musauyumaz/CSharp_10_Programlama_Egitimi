@@ -326,3 +326,44 @@ catch
 }
 System.Console.WriteLine("Toplam : " + (sayi1 + sayi2));
 ```
+
+***
+# 177) try - catch Hata Parametreleri
+- Çalışma zamanında alınan hataya dair bizlere bilgi veren bilgi taşıyan parametrelerdir.
+
+- Farklı hata durumlarına göre farklı parametrelerle hatalar fırlatılmakta.
+
+- Runtime'da hata alındığında bunu editör üzerinde görebilmekteyiz. Bu hatanın türünü görebilmekteyiz.
+
+- Alınan hatanın yapısına/fıtratına göre hata türü fırlatılacaktır. 
+
+- `int a = 10 / 0;` Bir sayıyı sıfıra bölmeye çalıştığınızda DivideByZeroException türünde hata fırlatılacaktır.
+
+- `object x = null;`
+- `x.ToString();` Herhangi bir değeri `null` olan değişken üzerinde işlem yapmaya çalışıyorsak. `null` olan yani Olmayan bişey üstünde işlem yapmaya çalışmak bir tutarsızlık bir aksi durum söz konusu. Dolayısıyla bu da çalışma zamanı hatasına sebebiyet verecektir. NullReferenceException türünde hata fırlatılacaktır.
+
+- `int.Parse("asgsagdasfalkfsa");` Elimizdeki herhangi bir metinsel ifadeyi sayısal ifadeye `Convert` ya da `Parse` ederken eğer ki metinsel ifade sayısal ifadenin formatına uygun değilse yine hata alacağız. FormatException türünde hata fırlatılacaktır.
+ 
+<img src="14.png" width = "auto">
+
+- Yapmış olduğumuz işlem neyse ona göre hata fırlatılıyor.
+
+- Çalışma zamanında alınan hataya göre bize bir hata türü fırlatıyor. İşte biz çalışma zamanında alınan hatanın hangisi olduğunu bu türleri yakalayarak çok rahat raporlayabiliyoruz.
+
+- `try catch` yapılanmasında `try`da hata oldu mu patlamayı `catch` bloğu karşılar. Hangi hata bilgisi olduğunu bize taşıyacak/getirecek olan blok `catch` bloğudur.
+
+- Exception : Bizlere fıraltılan hatayla ilgili tümmm bilgileri getirecek olan bir üst türdür... Yani bütün hataları karşılayabilen bir türdür.
+
+<img src="15.png" width = "auto">
+
+- `catch (Exception ex)` bloğunun parametresi olan ex sayesinde bizler alınan hataya dair bilgiler edinebilmekte ve gerekli loglama vs. gibi operasyonları gerçekleştirebilmekteyiz...
+
+<img src="16.png" width = "auto">
+
+- `try` bloğunun içinde alınan hata her neyse onu `catch` bloğunun parantezinin içinde yani parametresinde yakalayabiliyorum.
+
+- Çalışma zamanında alınan hatalar alındığı duruma göre farklı türlerde fırlatmalar yapıyor. İşte bu farklı türleri de farkettikten sonra hangi türde hata aldığımızı Exception üzerinden bunu çok rahat bir şekilde öğrenebiliyoruz.
+
+- Exception parametresi `catch` bloğuna yazılmak/tanımlanmak zorunda değildir... Eğer ki tanımlama yapılırsa hataya dair bilgi alabiliriz... Yok eğer tanımlama yapılmazsa hata neticesinde `catch` bloğu çalışacak lakin bilgi alamayacağız...
+
+<img src="17.png" width = "auto">
