@@ -366,6 +366,26 @@ System.Console.WriteLine("Toplam : " + (sayi1 + sayi2));
 
 - Exception parametresi `catch` bloğuna yazılmak/tanımlanmak zorunda değildir... Eğer ki tanımlama yapılırsa hataya dair bilgi alabiliriz... Yok eğer tanımlama yapılmazsa hata neticesinde `catch` bloğu çalışacak lakin bilgi alamayacağız...
 
+```C#
+#region try - catch Yapılanması - Hata Parametreleri
+//Çalışma zamanında alınan hataya dair bizlere bilgi veren bilgi taşıyan parametrelerdir...
+int s1 = 0, s2 = 10;
+int a = s2 / s1;
+object x = null;
+x.ToString();
+int.Parse("asgsagdasfalkfsa");
+try
+{
+    int s1 = 0, s2 = 10;
+    int a = s2 / s1;
+}
+catch (Exception ex)
+{
+    System.Console.WriteLine("Mesaj : " + ex.Message);
+}
+#endregion
+```
+
 <img src="17.png" width = "auto">
 
 ***
@@ -388,3 +408,42 @@ System.Console.WriteLine("Toplam : " + (sayi1 + sayi2));
 
 <img src="19.png" width = "auto">
 <img src="20.png" width = "auto">
+
+***
+# 179) try - catch Exception Dışında Farklı Bir Tür İle Hata Yakalama
+- `Exception` hataları kapsayan bir tür olduğundan dolayı hangi hatayı verirse versin biz `Exception` ile ilgili hatayı yakalayabiliyor ve hatayla ilgili bilgi edinebiliyorduk. Bir de ekstradan biz alınacak hatanın türüne uygun bir parametrede tanımlayabiliyoruz.
+
+- `DivideByZeroException` `Exception`ın altında olan `class`lardan birisidir.
+
+- `catch` bloğu bir parametre tanımlanmazsa eğer tümm hataları karşılayabilen bir bloktur. Eğer ki parametre tanımlanır ve bu parametrenin türü `Exception`sa yine tüm hataları karşılayabilecektir. Eğer ki parametre `Exception` değil özelleştirilmiş bir hataya indirgenmişse böyle bir durumda sadece ilgili türe ait hataları yakalayabilecek/karşılayabilecektir.
+
+- `Exception` dışında başka bir türle hata yakalayabiliyoruz ama birtek o türde yakalayabiliyoruz.
+
+<img src="21.png" width = "auto">
+
+- `catch` bloğunda varolan hataya uygun olmayan bir hata fırlatılırsa `try` bloğunda yine patlama meydana gelecektir.
+
+- Eğer ki `catch` bloğu tek bir hata türüne özgü ise(Genel Olmayan,yani `Exception` değilse) böyle bir durumda sadece o türden hataları yakalayabilen/karşılayabilen bir yapı haline gelmektedir. Eğer ki `catch`bloğu hatayı karşılamazsa `try catch` bloğu kullanıldığı halde fiziksel olarak patlama meydan gelecek ve uygulama sona erecektir.
+
+- Dolayısıyla `try catch` bloğu hangi parametre tanımlandıysa o parametrenin yakalayabileceği türdeki hataları manipüle etmekte eğer ki parametrenin dışında farklı bir türde hata fırlatırlırsa `try catch` bloğu ilgili hatayı manipule etmeyecek ve fiziksel olarak uygulamayı patlatıp sonlandıracaktır....
+
+- Çözüm olarak bu durumda birden fazla `catch` bloğu ile diğer türdeki parametreleri kontrol etmek olacaktır....
+
+- Dikkat ederseniz `catch` bloğu verilen parametrenin türüyle bağdaşmaktadır... Senin verdiğin parametrenin türü ne ise o türe uygun hatalarda birtek tetiklenmektedir.
+
+```C#
+Exception Dışında Farklı Bir Tür İle Hata Yakalama
+try
+{
+    int s1 = 0, s2 = 10;
+    int a = s2 / s1;
+    int.Parse("asfasfsafsa");
+}
+catch (DivideByZeroException ex)
+{
+    System.Console.WriteLine("Mesaj : " + ex.Message);
+}
+```
+
+<img src="22.png" width = "auto">
+<img src="23.png" width = "auto">
