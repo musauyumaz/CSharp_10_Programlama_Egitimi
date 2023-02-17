@@ -447,3 +447,42 @@ catch (DivideByZeroException ex)
 
 <img src="22.png" width = "auto">
 <img src="23.png" width = "auto">
+
+***
+# 180) try - catch Birden Çok Catch Durumu
+- Bir `try catch` yapılanmasında birden fazla `catch` durumuna ihtiyacımız olabilir. Çünkü `try` içerisinde kontrol/check edilen kodlar çalışma zamanında birden farklı türde hata fırlatabilme ihtimali vardır ki ondan dolayı.
+
+- `catch` bloğuna `Exception` parametresini geçersek eğer her hata türünde de aynı davranışı sergileyecektir. Dolayısıyla farklı durumlardaki hata durumlarında bu şekilde bir fark oluşturamayız...
+    * Örneğin `DivideByZeroException` da şu kodu çalıştır `FormatException` dada şu türü çalıştır demek istiyorum. İşte böyle durumlarda birden fazla `catch` bloğu bildirebilirsiniz.
+
+<img src="24.png" width = "auto">
+
+- Farklı parametrelerle birden fazla `catch` bloğu oluşturabiliyorsunuz.
+
+<img src="25.png" width = "auto">
+
+- `catch` de tanımalanan parametrelerin dışında farklı bir türde hata alınırsa eğer o hatayı da karşıalyan bir `catch` bloğu tanımlanmalıdır...
+
+<img src="26.png" width = "auto">
+
+- Eğer ki tüm hataları öngörememek gibi bir durum varsa öngörebildiklerini `catch` parametrelerine yazarsın ve en son bir `catch` bloğuna genel tüm hataları kapsayan `Exception` parametresini geçersin.
+
+- `Exception` tüm hata durumlarını karşılayabilen bir türdür. Eğer ki sen `catch` bloklarının en sonuna `Exception`ı tanımlarsan üsttekilerden hiçbiri değilse en son bu tetikleyecek ve karşılayacaktır.
+
+- `catch` bloklarının en sonuna `Exception` türünde `catch`e parametre tanımlarsan alınan hata üstteki türlerden herhangi biri değilse kesinlikle bu `Exception` tarafından karşılanabilir olacağından dolayı en kötü bu `catch` bloğuna girecektir.
+
+<img src="27.png" width = "auto">
+
+- Anlaşılıyor ki `try - catch` yapılanamsı olası runtime hatası alındığında `catch` sıralamasına göre/senkron bir şekilde/oradaki sıralamaya riayet ederek kontrol etmektedir. Sıralama burada önemlidir.
+
+- Bu sıralama önemlidir....
+
+- Eğer ki birden fazla `catch` bloğunun tanımlanmasında `Exception` parametresi kullanılacaksa eğer bu `Exception`ının ennn sona tanımlanması gerekmektedir!!!
+
+<img src="28.png" width = "auto">
+
+- Eğer ki sen gelipte `Exception`ını en başa yazarsan her daim alınan hatalar `Exception` olduğundan dolayı diğerlerine zaten bakmayacaktır. `Exception` varsa özelleştirilmiş türler önce yazılır ardından `Exception` yazılır. Hatta `Exception`ı başa yazarsan compiler buna izin vermeyecektir. `Exception` türünde kontrol yapan `catch` bloğu en sona yazılmak zorundadır.
+
+- `try` bloğu içerisinde alınan hatanın türüne göre farklı işlemler yapacaksanız bunları farklı `catch`lere bölüp türlerinden farkı oluşturabilirsiniz. İşte burada alınan türle hangi `catch`in tetikleneceğini buradaki tür kıyaslaması sağlamaktadır.
+
+- Sıralama çok önemli `Exception` en sona yazılması gerekiyor. Onun dışında özel türlerin sıralaması önemli değil `Exception` yazmasanızda olur ama sizin öngörebildiğiniz türlerin dışında varsa bir ihtimal bunu da `Exception`la yakalayıp en azından olası hatayı manipüle edip uygulamanın sonlanmasını engelleyebilirsiniz.
