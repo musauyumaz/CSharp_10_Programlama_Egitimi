@@ -278,3 +278,51 @@ catch
     System.Console.WriteLine("Lütfen doğru bir ifade giriniz.");
 }
 ```
+
+***
+# 176) try - catch Mekanizması Kritik Yapalım
+- `try catch` yapılanmasında olası hata verecek kodları `try` bloğunda yazılır. Hata neticesinde çalışacak kodlar ise `catch` bloğuna yazılır.
+
+- `try catch` yapılanması olası hata verecek kodları durmadan denetleyen bir yapılanmadır. Yani bir transaction var gibi düşünebilirsiniz veritabanındaki olan yapılanmadaki gibi. Durmadan işlemi check eden durmadan o kodlarda bir patlama var mı yok mu kontrol eden bir yapılanmadır.
+
+- `try catch` yapılanması olası hatanın ihtimali olduğu kodları durmadan kontrol eden maliyetli bir yapıdır. Dolayısıyla `try` içerisinde kontrol edilen kodlar lüzumsuz yere tüm kodlar olmamalıdır. Sadece olası hata verebilecek kodları barındıran bir yaklaşım sergilememiz kontrol maliyeti açısından daha verimli ve performanslı olacaktır.
+
+- Bir uygulama da ne kadar çok `try catch` yapılanması kullanılıyorsa o uygulama o kadar maliyetlidir. Yani sistemleri sunucuları ve kaynakları çok fazla tüketir. Dolayısıyla `try catch` yapılanmasında sizin tasarruflu kullanım yapmanız lazım. 
+
+- Şimdi biz bütün kodları `try catch` yapılanması ile kontrol etmektense sadece ihtimal dahilinde olanları uygun algoritmayla kontrol etmem daha doğru olacaktır.
+
+- `try catch` yapılanması maliyetli bir yapılanma olduğu için hedef yani olası hatayı verebilecek noktayı bloklayıp orayı almak orayı manipüle etmek geri kalanını dışarı da tanımlamak gerekiyor.
+
+<img src="13.png" width = "auto">
+
+- `try` içerisine koyulan kodlar hedef kodlar yani sadece olası hatayı verebilecek kodların olması bizim için tercihtir. Böyle bişey yapabiliyorsanız bu tercihi yapabilecek seviye de bir algoritma oluşturabiliyorsanız bunu yapın yok eğer çok artık curcunaya dönüyor arap saçına çevirmen gerekyior kodları bir yerden sonra orada dur tamnam yine `try catch` kullanman gereken yerde kullan ne varsa koy içine. Koyabilidğin en az şekilde yine koyman gerekenleri koy.
+
+- `try catch` yapılanması alınan hataya/patlamaya dair bize bilgi veren bir yapılanmadır.
+
+```C#
+#try - catch Yapılanması
+#try -catch İskelet Yapısı
+try
+{
+    //Olası çalışma zamanı hatalarını barındıran/verebilecek olan kodları buraya yazıyoruz.
+}
+catch
+{
+    //try içerisinde bir hata söz konusu olduğunda catch bloğu tetiklenecektir. 
+    //Hataya dair; log, Kullanıcı bilgilendirme, Kontrollü kapanış vs.
+}
+
+System.Console.WriteLine("Lütfen birinci sayıyı giriniz.");
+int sayi1 = 0, sayi2 = 0;
+try
+{
+    sayi1 = int.Parse(Console.ReadLine());
+    System.Console.WriteLine("Lütfen ikinci sayıyı giriniz.");
+    sayi2 = int.Parse(Console.ReadLine());
+}
+catch
+{
+    System.Console.WriteLine("Lütfen doğru bir ifade giriniz.");
+}
+System.Console.WriteLine("Toplam : " + (sayi1 + sayi2));
+```
