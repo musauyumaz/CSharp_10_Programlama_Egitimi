@@ -486,3 +486,57 @@ catch (DivideByZeroException ex)
 - `try` bloğu içerisinde alınan hatanın türüne göre farklı işlemler yapacaksanız bunları farklı `catch`lere bölüp türlerinden farkı oluşturabilirsiniz. İşte burada alınan türle hangi `catch`in tetikleneceğini buradaki tür kıyaslaması sağlamaktadır.
 
 - Sıralama çok önemli `Exception` en sona yazılması gerekiyor. Onun dışında özel türlerin sıralaması önemli değil `Exception` yazmasanızda olur ama sizin öngörebildiğiniz türlerin dışında varsa bir ihtimal bunu da `Exception`la yakalayıp en azından olası hatayı manipüle edip uygulamanın sonlanmasını engelleyebilirsiniz.
+
+```C#
+Birden Çok Catch Durumu
+try
+{
+    int s1 = 0, s2 = 10;
+    int a = s2 / s1;//DivideByZeroException
+    int.Parse("asasfsadasfsaf");//FormatException
+}
+catch (DivideByZeroException ex)//DivideByZeroException hatası alındığında bu hatayı karşılayacak olan catch haline getirilmiş oldu...
+{
+}
+catch (FormatException ex)//FormatException hatası alındığında bu hatayı karşılayacak olan catch haline getirilmiş oldu...
+{
+}
+catch (Exception ex)
+{
+}
+```
+
+***
+# 181) try - catch finally Bloğu
+- `try` bloğunda hata verme ihtimali olan kodları
+- `catch` bloğunda ise hata alındıktan sonra yapılacak işlem kodlarını yazarız.
+
+- `try - catch` yapılanmasında `catch` bloğuna girse de girmese de her iki durumda da hata alınsa da alınmasa da tetiklenmesi gereken bazı kodlar vardır. O kodları biz `finally` bloğunda tetikleriz.
+
+- `finally` bloğu `try catch` yapılanmasında hata alınsa da alınmasa da her iki durumda da tetiklenmesi/çalıştırılması gereken kodları yazdığımız bloktur.
+
+- `finally` bloğu `try catch`ten sonra en sona tanımalanır. Birden fazla `catch` bloğunuz olsa dahi en sona gelip `finally` bloğunu tanımlayabilirsiniz.
+
+- `finally` bloğunu en sona tanımlamamız gerekiyor. En son ne yapacağına dair bilgilendirme yaptığın gerekli en son her iki durumda da çalışmasını istediğin kodları bu blokta belirliyorsun.
+
+- Eskiden veritabanına bağlantıyı yapıyorduk daha sonra veritabanıyla işimizi bitirdikten sonra bağlantıyı koparıyorduk. Veritabanı bağlantısını açıyorduk işlem yapıyorduk eğer ki bir patlama olursa `catch` bloğunda artık veritabanından bağımsız bir yere düşüyorsun yani veritabanına erişememe ihtimalin var vs. Program patlamış bambaşka bir noktaya gelmişsin yani olay akış değişiyor. İşte ne olursa olsun `try` başarılı bir şekilde sonlansa da ya da `catch`e düşsek de çalışma zamanı hatasından dolayı farketmeksizin her iki durumda da veritabanı bağlantısını kesmemiz gerekiyorsa eğer bunu `finally`de yapıyoruz. `finally`de yapıp ne olur ne olmaz her türlü veritabanı bağlantısını kes diyorduk.
+
+```C#
+#finally Bloğu
+//finally bloğu try catch yapılanmasında hata alınsa da alınmasa da her iki durumda da tetiklenmesi/çalıştırılması gereken kodları yazdığımız bloktur.
+try
+{
+    //hata verebilecek kodlar buraya
+    System.Console.WriteLine("try");
+}
+catch
+{
+    //hata alındıktan sonra yapılacak işlemler buraya
+    System.Console.WriteLine("catch");
+}
+finally
+{
+    //Her iki durumda da çalışmasını istediğimiz kodlar buraya
+    System.Console.WriteLine("finally");
+}
+```
