@@ -540,3 +540,37 @@ finally
     System.Console.WriteLine("finally");
 }
 ```
+
+***
+# 182) try - catch when Yapısı İle Hata Filtreleme (C# 6.0)
+- `try - catch` yapılanmasına C# 6.0 sürümünde `when` keywordüyle ekstradan şart ifadeleri ekleyerek hataları daha da detaylı filtrelememizi sağlayan yeni bir özellik gelmiş bulunmaktadır. 
+
+- `when` keywordünü kullanmak isterseniz `catch` keywordünden sonra kullanabilirsiniz. Parametreden sonra ya da parametre tanımlı değilse direkt `catch` keywordünden sonra direkt tanımlayabilirsin. `when` deki mantık ve mantığıdır.
+
+- `when` keywordüyle elimizdeki hataları daha da detaylı bir şekilde filtreleyebiliyoruz.
+
+- Diyelim ki `catch` parametresinde gelen hatayı yakaladın ama `when` şartını karşılayamadın o zaman hata verecek ve uygulama patlayacaktır. Her ikisini de tutturman gerekiyor. ve kapısı gibi. Bu durumda ne olur olmaz diye `Exception` türünde bir parametreli `catch` bloğu tanımlamak akıl karı olacaktır.
+
+- `try catch` bloklarına `when` keywordü ile şart uygulayabilmekteyiz...
+
+```C#
+#when Yapısı İle Hata Filtreleme(C# 6.0)
+//try catch bloklarına when keywordü ile şart uygulayabilmekteyiz...
+string x = "a";
+try
+{
+    int s1 = 0, s2 = 10;
+    int a = s2 / s1;
+}
+catch (DivideByZeroException ex) when (x == "a")
+{
+    System.Console.WriteLine("Mesaj : " + ex.message);
+}
+catch (DivideByZeroException ex) when (x == "b")
+{
+    System.Console.WriteLine("Mesaj : " + ex.message);
+}
+catch (Exception ex)
+{
+}
+```
