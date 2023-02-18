@@ -574,3 +574,55 @@ catch (Exception ex)
 {
 }
 ```
+
+***
+# 183) Hata Türleri - Mantıksal Hatalar
+- Programın mantığında/akışında/algoritmasında/stratejisinde bir takım şeylerin yanlış hesaplanması/düşünülmesi/tasarlanması neticesinde alınan hatalardır.
+
+- Mantıksal hatalar genellikle yapılan hamleyle alakalıdır. Yazılımsal bir hata değil mantığıyla ilgili hatadır. Sen nasıl satranç oynarken kurallara uygun bir şekilde hamle yapabilirsin ama yapmış olduğun hamle bazen mantığa hatalı aykırı olabilir. İşte yazılımda da yapmış oldupun hatalar aynen bu şekilde. Mantıksal mantığa aykırıdır. Senin normalde ışığın yanıp ynamadığını ona göre bir sensörün veri alıp almama durumunu kontrol ettiğini varsayalım. Işık yanıyorsa sensör veriyi alsın ışık yanmıyorsa sensör veriyi almasın. Şimdi böyle bir durumda sen kodu ışığın yanmadığı durumda sensör veriyi alsın diye kodlarsan bu kod derlenebilir ama mantıksal bir hata yapmış olursun.
+
+<img src="29.png" width = "auto">
+
+- Syntax'ta kodnun derlenmesinde de hatta çalışma zamanında da hata yoktur. 
+
+- Kod çalışır sonuç verir.
+
+- Lakin sonuçlar hatalıdır. Beklenen sonuçlar elde edilemez!
+
+- Anlaşılan kodun mantığında ve hesapta bir yanlış vardır.
+
+<img src="30.png" width = "auto">
+
+- Mantıksal hatalar ancak test süreçlerinde yahut müşteri kullanımında tespit edilebilir.
+
+<img src="31.png" width = "auto">
+
+- Bazen hesaplanması gereken bir değerin eksik hesaplanmasıyla, bazen yanlış katsayının kullanılmasıyla, bazende mantıksal işlemdeki yapılan bir hatayla ortaya çıkabilir.
+
+<img src="32png" width = "auto">
+
+- Günlük hayattaki karşılığı 'Bug'tır.
+
+- Günlük hayatta yazılımlarda biz bug dediğimiz böcek anlamına gelen terim işte bu mantıksal hatalar için geçerlidir.
+
+- Facebook herhangi bir fiziksel bir hata veriyor mu vermior ama Facebook'ta belirli bir kombinasyon uyguladığın zaman kişinin profil bilgileri tarayıcı da depolanıyor. Bu bir bug'tır. Burada mantıksal bir hata var. Kullanıcının bilgilerini oradaki mantıksal hata sayesinde kötü niyetli insanlar elde edebiliyor. Ya da günlük hayatta kullandığınız herhangi bir yazılımda belirli bir işlem yaparken işlemin sonucu bambaşka bir şekilde gelebiliyor. Nihayetinde buna da biz bug diyoruz
+
+<img src="33png" width = "auto">
+
+- Tespiti çok zor olduğu için hata türleri arasında en tehlikeli hatadır.
+
+- Nihayetinde herhangi bir derleyici olsun editör olsun size yardımcı olmuyor bütün kod herşey akışında aslında bilgisayar açısından herşey normal sen hangi amaca hizmet etmek istiyorsan o amaç doğrultusunda yapacağın işlemin sonuçları hatalı geliyor. Yani mantıksal bir hata var semantik bir hata yok işte onuın için tespiti çok zor ve hata türleri arasında en tehlikeli diyebileceğimiz hatadır. 
+
+- Hatta hatayı çözme sürecinde en maliyetli hatadır diyebiliriz. Çünkü bulunma hatayı keşfedebilme sürecimiz inanılmaz derecede fazla olabiliyor.
+ 
+<img src="34png" width = "auto">
+
+- Mantıksal hatalarda bazen tek çözüm debug'dır.
+
+- Debug koddaki hataları giderebilmek ve bu mevcut olan mantıksal hatalardaki durumları tespit edebilmek için değişkenlerin akışın vs. kontrol edilmesini sağlayan bir teknoloji adım adım kodu biz tek tek inceleyip ona göre koddaki durumun gidişatın ne şekilde olduğunu inceleyebiliyorduk debug sayesinde  
+
+- Mantıksal hatalar bazen tek çözüm debug'tır dememizin altında yatan sebep yani koddaki akışı kontrol etmeden yaşanan durumla ilgili yorum yapmak neredeyse bazı durumlarda profesyonel hayatta imkansız olabiliyor. 
+
+- Debug olmasaydı dünya 60 yıl önceki teknolojide olurdu. Nihayetinde mantıksal hatalarla kaynayan bu teknolojinin hızlı bir şekilde gelişmesi için mantıksal hatalardan arındırılması lazım. Dolayısıyla biz burada efektif olarak Debug yöntemini kullanıp mantıksal hataları arındırabilmekteyiz. Bu bile zahmetli oluyor artık siz düşünün bunun olmadığı durumu.
+
+<img src="35png" width = "auto">
