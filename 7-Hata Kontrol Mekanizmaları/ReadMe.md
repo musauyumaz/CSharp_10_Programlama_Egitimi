@@ -626,3 +626,14 @@ catch (Exception ex)
 - Debug olmasaydı dünya 60 yıl önceki teknolojide olurdu. Nihayetinde mantıksal hatalarla kaynayan bu teknolojinin hızlı bir şekilde gelişmesi için mantıksal hatalardan arındırılması lazım. Dolayısıyla biz burada efektif olarak Debug yöntemini kullanıp mantıksal hataları arındırabilmekteyiz. Bu bile zahmetli oluyor artık siz düşünün bunun olmadığı durumu.
 
 <img src="35png" width = "auto">
+
+***
+# 184) Mantıksal Hata Durumlarına Örnek 1
+- Kodun semantiğinde/syntax yapılanmasında/gramerinde herhangi bir sıkıntı yok kod derlendi çalışma zamanında herhangi bir hata yok sonuç alındı. Ama istediğmiz sonucu elde edemedik. İşte biz buna mantıksal hata diyoruz. Çünkü ben bir işlemde/operasyonda/tasarımda buradaki işlemlerde hata yapıyorsam eğer buna mantıksal hata diyoruz.
+
+- Kompleks yapılanmalarda mantıksal hataları bulup düzeltmek çok kolay olmayacaktır.
+
+```C#
+Mantıksal Hatalar - Örnek 1
+System.Console.WriteLine(2 * 6);
+```
