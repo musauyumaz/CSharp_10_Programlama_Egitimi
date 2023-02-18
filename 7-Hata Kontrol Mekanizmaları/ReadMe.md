@@ -635,5 +635,21 @@ catch (Exception ex)
 
 ```C#
 Mantıksal Hatalar - Örnek 1
+//Senaryo 2 ile 5'i çarpmamız istendi
 System.Console.WriteLine(2 * 6);
+```
+
+***
+# 185) Mantıksal Hata Durumlarına Örnek 2
+
+```C#
+Mantıksal Hatalar - Örnek 2
+//Senaryo => Bir evlilik durumunu tutan değişkeni check edelim ve kişi evliyse bir promosyon/hediye gönderelim değilse de göndermeyelim.
+bool medeniHal = true;
+if(!medeniHal){
+    System.Console.WriteLine("Hediye Gönder...");
+}
+else{
+    System.Console.WriteLine("Hediye Gönderme...");
+}
 ```
