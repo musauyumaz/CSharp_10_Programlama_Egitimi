@@ -61,3 +61,64 @@ System.Console.WriteLine("Musa UYUMAZ");
 - Döngülere birbirinden farklı yapılar olarak bakmayacaksın. Birbirlerinden ayrılar farklılar tamam ama senaryo senaryo bakmayacaksın. Diyeceksin ki bu döngülerin hepsi aynı. Aynı şeyi öğreniyorum aynı işi yapabileceğim yapılanmayı öğreniyorum sadece bunlar senaryolara yakışabilecek durumları vardır onun dışında hepsinin kurallarını bildikten sonra kullanımlarıyla aynı sonuçları üretebilirim diyeceksin
 
 <img src="1.png">
+
+***
+# 190) For Döngüsünü İnceleyelim
+- Prosedürel programlama da döngü yapılarından birisi de `for` döngüsüdür.
+
+- Genellikle kombinasyonel olarak ardışık işlemlerde kullanılan bir döngü yapılanmasıdır
+
+- Örneğin ben 1'den 100'e kadar yazdıracaksam 1'den 100'e kadar olan bütün sayıları birer birer, ikişer ikişer, beşer beşer, on yedişer on yedişer olsun ardışık nihayetinde bunlar için `for` döngüsünü kullanbilirsiniz.
+
+- Ardışık bir işlem ardışık bir algoritma yapacaksanız ardışıklık üzerinden gidecekseniz algoritmanız üzerinde `for` döngüsünü kullanabilirsiniz.
+
+- Prototip `for(int i = 0; i<10 ; i++) {}` Döngü de 3 tane parametremiz olacaktır. Bu parametreleri `;` ile ayırıyoruz.
+    * ilk parametre de Genellikle başlangıç değeri ismi verilen değişken tanımlanabilir. İlk parametre olmasa da olur. `for` döngüsünde başlangıç değeri dediğimiz değişken eğer tanımalanacaksa burada tanımlanabilir. Bu birinci parametre kısmı başlangıç değeri ya da ilk değer denilen değişkeni tanımlamak için vardır ama illa kullanmak zorunda değilsin.
+    * İkinci parametre de kombinasyonun şartını yazdığımız yer.
+    * Üçüncü parametre de genellikle başlangıç değerinin değerini arttırmak ya da azaltmak için burası kullanılır.
+
+- `for` döngüsü parametreleri zoraki yapmak zorundasın demiyor.
+
+- `for` döngüsü belirli bir ardışık algoritmalarda kullanılan bir döngü. Ardışık algoritmalarda bir ardışık işleme başlayabilmek için ilk değere ihtiyacımız var.
+
+- Genellikle for döngüsünde başlangıç değeri olarak `int` bir sayısal değer tanımlanır işte 0'dan ya da 1'den başlatılır ardından şart ilk değere yani başlangıç değerine bağlı bir şekilde şart kontrol edilir. Biz ilk değere yani başlangıç değerine bağlı şart yazmak zorunda da değiliz.
+
+- Örneğin sen ilk değerde 1 değerini tanımladın `int i = 1` dedin şartta da diyorsun ki elimdeki bu i 10'dan küçük olduğu sürece/küçükse diyorsun. i değeri 10'dan küçük olduğu sürece tetiklenecek yani kendi scopeları içerisindeki kodlar tekrarlı bir şekilde işleyecektir.
+
+
+- Başlangıç değer ya da ilk değer atama kısmı : Ardışık algoritmalalarda genellikle bir ilk değere ihtiyaç vardır İşte bu ihtiyacı burada tanımlayabiliriz. Amma velakin bu tanımlama zorunlu DEĞİLDİR!!!
+    * Burası illa sayısal bir değer olmak zorunda değil. Sen bunu metinsel/char/boolean tanımlayabilirsin yani burası bir değişken tanımlama alanı.
+    * Genellikle buradaki kombinasyonda kullanacağımız değişkeni tanımlarız.
+    * Başlangıç değeri burada tanımlanıyorsa eğer illa ki bir değerin atanması gerekmektedir.
+
+- Şart Kısmı : Herhangi bir şart koşul ifadesi tanımlanabilir. Lakin genellikle ilk döngü olarak tanımlanan değişken durumu burada kontrol edilir. Yani bir şarta bağlanır. Şart `true` olduğu sürece döngü tetiklenecektir. 
+    * Genellikle biz başlangıç değeri olarak tanımlanan değişken üzerinden bir şart koyarız. Zorunlu değildir ama bu şekilde şart koyarız.
+    * Şart `true` olduğu sürece döngü dönecektir. İçindeki kodları tetikleyecektir.
+
+- Arttırma Kısmı : Herhangi bir değişken üzerinde işlem yapabiliriz. Genellikle bir başlangıç değeri üzerinde bir arttırma yahut azaltma işlemi yapılır. Amma velakin bir değerinin dışında diğer arttırma ve azaltma işlemleri de ihtiyaca binaen yapılabilmektedir. Veee illa ki kullanmak zorunda da değiliz. Arttırma ve azaltma operasyonlarını biz başka yerde yapabiliriz.
+    * Genellikle başlangıç değerinin değeri arttırılır.
+
+- Scope Kısmı : Şart `true` oldukça bu scope tetiklenecek ve döngü çalıştırılmış olacaktır.
+
+<img src="2.png">
+
+- `for` döngüsünde parametleri tanımlamak zorunda değilsin. Peki neden oluşturuldu parametreler? Bir algoritma oluşturuyorsun o algoritma da kullanılan parametrelerin onun kalıbında olması kontrol açısından daha kolaylaştırıcıdır.
+
+- Kombinasyonda yapacağın işlemin sadece o işleme özel parametrelerse bunların koordinasyonun yapıldığı noktanında tek bir merkezden yönetilmesi esasında bizim içinde bir avantajdır.
+
+- Temelde biz bir başlangıç değeri tanımlarız ardından bir şart uygularız ilgili başlangıç değişkenine ve ardından ilgili başlangıç değişkeninin değerini arttırırız.
+
+- Compiler kodları tek tek işlerken bir geliyor `for` ahanda `for` şimdi döngüye girecez. İlk olarak `for` u gördükten sonra;
+    1. Akış ilk olarak başlangıç değişkeni tanımlama kısmına girecektir. Eğer ki bir değişken tanımlama ifadesi varsa ilgili değişkeni tanımlayacaktır.
+    2. Ardından koşula gidecek ve koşulu değerlendirecektir.
+    3. Eğer ki koşul `true` ise döngüye girecektir.
+        * Koşul kontrol edildikten sonra döngü ilgili değeri arttıracak parametreye gidecek ve yapılan aritmetik işlemi değişkene uygulayacaktır.
+        * Sayısal değeri arttırılmış ya da azaltılmış yani değiştirilmiş/değiştirilmemiş olan değişkenden sonra yeniden koşulu kontrol edecek ve ardından `true` ise 3 değilse 4. adımlar tekrar edecektir.
+    4. Yok eğer koşul `true` değil ise döngüden çıkacaktır.
+
+- I. adıma bir kereye mahsus girecektir `for` döngüsünde 2. ve 3. adımlar kendi aralarında durmadan paslaşacaktır. Yani ilk önce `for` döngüsüne girdiğinde 1. adıma gidecek değişkeni tanımlayacak 2. adıma gidecek şartı kontrol edecek ardından eğer `true` ise döngüye girecek değilse döngüden çıkacak. Döngüye girerse eğer işlemini bitirdikten sonra değişkenin değerinde değişiklik yapmaya gidecek değeri değiştirecek ya da değiştirmeyecek daha sonra koşula geri dönecek koşul eğer hala sağlanıyorsa bir daha döngüye girecek daha sonra geri bir daha değişkenin değerinde değişiklik yapmaya gidecek daha sonra koşula tekrar gidecek vs şeklinde paslaşma yapacak ta ki koşul `false` olana kadar buradaki işlemler tekrar edecek ve döngü tetiklenmiş olacaktır.
+
+- Yapısal olarak `for` döngüsü bir kombinasyona bir ardışık operasyonlarda kullanılabilirliğe daha yatkın bir döngüdür. Nihayetinde burada arttırma azaltma işlemlerini çok fazla yaparız. O yüzden ardışık operasyonlarda çok kullanırız diye nitelendiriyoruz.
+
+<img src="3.png">
+
