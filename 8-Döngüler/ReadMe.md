@@ -32,3 +32,32 @@ System.Console.WriteLine("Musa UYUMAZ");
 System.Console.WriteLine("Musa UYUMAZ");
 System.Console.WriteLine("Musa UYUMAZ");   
 ```
+
+***
+# 189) ‘Hangi Döngü Nerede Kullanılır’ Yanlış Bir Sorudur! Doğru Soru ‘Hangi Döngü Nereye Yakışır’
+- Yapısal olarak biz 3 tane döngü yapısını inceleyeceğiz.
+    * `for` döngüsü
+    * `while` döngüsü
+    * `do while` döngüsü
+
+- Hangi döngü nerede kullanılıyor sorusu yanlış bir sorudur. Çünkü hepsi bir kombinasyona bağlıdır. Hepsi bir mantığa göre çalışmakta o kombinasyondaki sonucun doğrulanmasına göre çalışan yapılanmalardır. Yani birini diğerinin yerine kullanabilirsin. Ya da sadece birini öğrenip diğerlerini öğrenmeyebilirsin. Programlama hayatın boyunca da onu kullanbilirsin.
+
+- Döngülerde hepsi birbirlerinin yerine kullanılabiliyor. Ama bazı senaryolara bazı döngüler daha yatkındır. Örneğin ardışık bir sayım işlemi oluyorsa `for` döngüsü daha yatkındır daha çok yakışır. Ya da sonsuz bir yapılanma söz konusuysa `while` ya da `do while` daha çok yakışacaktır. `do while` ise böyle manevratik takla atacağımız belirli bir mantığa göre işleyen bir yapılanmadır. Hepsi birbirinin yerine oturabilmekte nihayetinde hepsinde bir temel bir mantık/kombinasyon işlemekte ama daha çok yakılan yönleri vardır ya da böyle yakışmayan yönleri vardır ama yakışmayan yerde de yine istediğin döngüyü kullanbilirsin.
+
+- Hangi döngü nerede kullanılmalıdır? sorusu YANLIŞTIR! Doğru soru hangi döngü nereye/hangi senaryoya daha çok yakışır...
+
+- Sen bir çözüm bulacan elindeki senaryoya göre bir tane döngüyü seçmen lazım rastgele gözün kapalı seçebilirsin sıkıntı yok ama hangisi daha çok yakışır sorusunu soracaksın cevabını arayacaksın.
+
+- 1'den 100'e kadar sayman lazım bunun için `do while`de de yapabilirsin `while` de de yapabilirsina ama ardışık işlemlerde `for` döngüsünü kullanman bu senaryoda daha çok yakışacaktır.
+
+- Sonsuz bir denetleme yapman lazım sonsuza giden bir durum yani sonunu bilemeyeceğimiz sonunu hiçbir zaman tahmin edemeyeceğimiz durumlarda işlem yapmam gerekiyorsa işte burada `for` ile de yapabilirsin `do while` ile de yapabilirsin. Ama `while`'ı daha çok severiz biz böyle durumlarda. Diğerleriyle yapamazsın anlamına gelmiyor.
+
+- Bu döngülerin hepsi bir kombinasyona bağlı bir şekilde çalıştıkları için ennnn nihayetinde birbirlerinin yerine kullanılabilirler...
+ 
+- Senaryoda istediğin dönügüyü seçebilirsin `for`la çözebildiğini `while`la da `do while`la da çözebilirsin. `do while`la çözdüğünü `for`la da çözebilirsin vs. 
+
+- Nihayetinde bunlar senaryoya uygun iskeletler değil bunlar kombinasyonla sadece tetikleme yapıyor. Bir kombinasyonu var orada ona göre tetikleme yapıyorsa sen buna istediğini kullan. Madem ki bişey döndüreceksin madem ki belirli bir kod tetikleyeceksin istediğin döngüyü kullanbilirsin buradaki önemli olan hangisi daha çok elindeki senaryoya uygundur hangisi daha çok yakışıyor ona bakacaksın.
+
+- Döngülere birbirinden farklı yapılar olarak bakmayacaksın. Birbirlerinden ayrılar farklılar tamam ama senaryo senaryo bakmayacaksın. Diyeceksin ki bu döngülerin hepsi aynı. Aynı şeyi öğreniyorum aynı işi yapabileceğim yapılanmayı öğreniyorum sadece bunlar senaryolara yakışabilecek durumları vardır onun dışında hepsinin kurallarını bildikten sonra kullanımlarıyla aynı sonuçları üretebilirim diyeceksin
+
+<img src="1.png">
