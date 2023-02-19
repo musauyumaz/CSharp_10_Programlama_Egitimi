@@ -653,3 +653,14 @@ else{
     System.Console.WriteLine("Hediye Gönderme...");
 }
 ```
+
+***
+# 186) Mantıksal Hata Durumlarına Örnek 3
+- İşlem fazlalığı, işlem eksikliği ekstra işlemdeki değer eksikliği vs bunun gibi durumların hepsi mantıksal hataya bizi sürükleyecektir. Çalışma da herhangi bir sıkıntı yok ama işlemin sonucunda mantıksal bir hata aldık.
+
+```C#
+#Mantıksal Hatalar - Örnek 3
+//Senaryo Elimizdeki iki sayının aritmetik ortalamasını ekrana yazdıran bir uygulama yapalım.
+int i = 10, i2 = 20;
+System.Console.WriteLine(i + i2);
+```
