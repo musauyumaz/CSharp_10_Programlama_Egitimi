@@ -139,3 +139,39 @@ for (int i = 1; i < 10; i++)
     System.Console.WriteLine("Musa UYUMAZ");
 }
 ```
+
+***
+# 192) For Döngüsü Kritik Yapalım 2
+- Başlangıç değişkenine verilen değer ne ise ona göre bundan sonraki mantıksal kombinasyon şekillenecek.
+
+- `for` döngüsündeki esas mantıktır. `for` döngüsünün parantezleri içerisindeki formülü çözdüğünüz zaman ilgili operasyon o formüle göre tetiklenecektir.
+
+- Biz mümkün mertebe 0'lardan 1'lerden başlatıp olayı ele almayı severiz. Çünkü hesaplaması kolay oluyor.
+
+- Matematik niye var? Minimize edilmiş rakamlarla siz devasa major yapılanmaları göresiniz diye var.
+
+- `for` döngüsündeki mantığı diğer döngülerde de aslında aynı `for` döngüsündeki mantığı kurduğunuz zaman operasyon bitiyor.
+
+- `for` döngüsünde kombinasyona odaklanacaksınız çünkü kombinasyon önemli.
+
+```C#
+#for Döngüsü - İnceleme 2
+//Serhat değerini 10 kere ekrana yazdıralım.
+#Ameleus
+System.Console.WriteLine("Serhat");
+System.Console.WriteLine("Serhat");
+System.Console.WriteLine("Serhat");
+System.Console.WriteLine("Serhat");
+System.Console.WriteLine("Serhat");
+System.Console.WriteLine("Serhat");
+System.Console.WriteLine("Serhat");
+System.Console.WriteLine("Serhat");
+System.Console.WriteLine("Serhat");
+System.Console.WriteLine("Serhat");
+
+#Döngü ile
+for (int i = 0; i < 50; i += 5)
+{
+    System.Console.WriteLine("Serhat");
+}
+```
