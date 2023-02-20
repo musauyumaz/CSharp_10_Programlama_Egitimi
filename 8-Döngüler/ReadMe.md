@@ -122,3 +122,20 @@ System.Console.WriteLine("Musa UYUMAZ");
 
 <img src="3.png">
 
+***
+# 191) For Döngüsü Kritik Yapalım 1
+- Başlangıç değeri her daim tanımlanmak zorunda değildir ama tanımlıyorsanız eğer bir değer atanmak zorundadır.
+
+- Şartımız herhangi bir şart olabilir mesela `true` şimdi şart kısmı normalde şart dediğimiz bir kıyaslamadır kıyaslama neticesinde sonuç `bool` dönecektir `true` ya da `false` eğer sen direkt gelir buraya `true` yazarsan bu döngü hangi değer olursa olsun farketmiyor sürekli sonsuza kadar şartı koşulu `true` olacağından dolayı sonsuz döngü olacaktır.
+
+- Compiler kodun akışında `for` döngüsünü gördüğü zaman öncelikle başlangıç değerini ya da ilk değer dediğimiz değişkeni tanımlama alanına gelecektir. Varsa ilgili değişken tanımlayacaktır tanımladıktan sonra koşula bakacaktır. Koşul `true` olduğu sürece döngüye girecektir. Yani scope içine girecektir. Daha sonrasında değişken değerini değiştime alanına gelecek daha sonrasında ise tekrar koşula bakacaktır.  Koşul `true` olduğu sürece yine döngüye girecektir. Böyle böyle koşul `false` olana kadar devam edecek koşul `false` olduğunda ise döngüden çıkacaktır.
+
+- Ardışık operasyonlarda geliştirilen algoritmalarda `for` döngüsü daha efektiftir. Çünkü hızlı bir şekilde ardışık yapılanmayı sana verecektir
+
+```C#
+#for Döngüsü
+for (int i = 1; i < 10; i++)
+{
+    System.Console.WriteLine("Musa UYUMAZ");
+}
+```
