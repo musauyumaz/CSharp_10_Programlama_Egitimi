@@ -224,3 +224,37 @@ for (int i = 50; i < 60; i++)
     System.Console.WriteLine(i - 49);
 }
 ```
+
+***
+# 195) For Döngüsü Örnek Yapalım 2
+- Herşeyi sen bilemzsin problem sana vermeli. Problem sana vermeli. Problem ne istediğini sana vermediği sürece o da ayrı bir problem.
+
+- Bir ardışıklık söz konusuysa aklına `for` döngüsü gelmeli. `while`lada `do while`lada yapabilirsin. Ama `for` döngüsü bu senaryoya en yatkını.
+
+- Senaryo => 1 ile 40(Dahil) arasındaki çift sayıları toplayarak sonucu ekranda gösterelim.
+    * `for (int i = 1; i <= 40; i++)` Bu kombinasyon her bir turda 40 ile 1 arasındaki bütün değerleri i değişkeni üzerinden bana veremeyecek mi verecek.
+        + Burada başlangıç değerine ve bitiş değerine sen karar vermeyeceksin yazılım karar verecek.
+    * Bir sayının çift olma durumunu ilgili sayıyı 2'ye bölerek öğrenebilirim.
+    * İlgili sayıyı ikiye böldükten sonra kalanın 0 olup olmamasını nasıl değerlendiririm? Burada bir karşılaştırma değerlendirme var değil mi yani akış kontrol mekanizmaları.
+    * `for` içerisinde her şeyi kullanabilirsin. `if`, `switch`, `try catch` vs.
+    * Gerek olmayan bişeyi yazmayın. Gördüğün algoritmada şartla bakma. Algoritmaya mantıkla bak akılla bak.
+
+```C#
+#Örnek 1
+//1 ile 40(Dahil) arasındaki çift sayıları toplayarak sonucu ekranda gösterelim.
+int toplamSonuc = 0;
+for (int i = 1; i <= 40; i++)
+{
+    if (i % 2 == 0)
+    {
+        toplamSonuc += i;
+    }
+}
+#İkinci Çözüm
+int toplamSonuc = 0;
+for (int i = 0; i <= 40; i += 2)
+{
+    toplamSonuc += i;
+}
+System.Console.WriteLine("Toplam Sonuç : " + toplamSonuc);
+```
