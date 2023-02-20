@@ -175,3 +175,24 @@ for (int i = 0; i < 50; i += 5)
     System.Console.WriteLine("Serhat");
 }
 ```
+
+***
+# 193) For Döngüsü Kritik Yapalım 3
+- Bir `for` döngüsünde illa hep artış yapmak zorunda değilsiniz. Algoritmayı tersine de alabilirsiniz.
+
+- `for` döngüsündeki kombinasyona ne kadar hakim olursan ne kadar oradaki kombinasyonu çözebilecek analitiğe sahip olursan döngüyle falan problemin kalmıyor.
+
+- Eğer ki ardışık işlemlerde artış yapılıyorsa i'nin değeri genellikle `<`(Küçüklük) durumuyla değerlendirilir. Yani sen burada küçüklüğüne bakıyorsun çünkü o artıyordur bişeyden küçük olduğu sürece oradaki şart doğrulanacaktır. O küçüklük bir gün aştığı zaman yani küçük olmadığı zmaan oradaki döngüden çıkacaktır.
+
+- Yok eğer ardışık işlem eksiliş gösteriyorsa i'nin değeri genellikle `>`(Büyüklük) durumuyla değerlendirilir. Nihayetinde orada büyüklük durumu yani orada i büyüktür belirli bir eşiğe kadar gelecektir bundan büyük oldukça tetiklenecektir. Bu eşiğe eşit ya da küçük olduğu durumlarda tetiklenmeyecektir. 
+
+```C#
+#for Döngüsü - İnceleme 3
+//Serhat değerini 10 kere ekrana yazdıralım.
+for (int i = 50; i > 0; i -= 5)
+{
+    System.Console.WriteLine("Serhat");
+}
+```
+
+<img src="4.png">
