@@ -196,3 +196,31 @@ for (int i = 50; i > 0; i -= 5)
 ```
 
 <img src="4.png">
+
+***
+# 194) For Döngüsü Örnek Yapalım 1
+- Hangi senaryo da hangisini kullanmalıyızdan ziyade hangi senaryoya hangisi daha çok yakışır diye sorulduğunda eğer ki bir ardışık operasyon varsa `for` döngüsü direkt aklımıza gelecek.
+
+- Benden problem ne istiyorsa benim onu karşılayabilmem lazım.
+
+- İlla değerler sizin için önemli değildir aslında kombinasyon önemli.
+
+- Mümkün mertebe analitik çözüm getirmeye çalışıyorsunuz.
+
+- Kompleksliği analitiklik olarak algılayan yazılımcılar var bu böyle değildir alakası da yoktur. Analitiklik basitlik demektir. Ne kadar basit çözebilirseniz. Ama basitlik profesyonel olmayan kod anlamına gelmiyor Analitiklik, Basitlik, Profesyonellik bunlar birbirine bağlı yapılanmalar. Öbür türlü komplekslik dışarıda bambaşka yapılanma işte komplekslik istemediğimiz sonuç zaten Analitik yazılan Basit yazılan kod profesyoneldir. Dolayısıyla her ikisinide kapsar. Yani kompleks olmaması gerekiyor. Onun için kompleks yapacağım yazdığım kodu daha değerli göstereceğim diye derdiniz o olursa biraz saçmalamış olursunuz. Mümkün mertebe en doğru hamlelerle en doğru verilerle çalışmaya özen göstereceğiz
+
+```C#
+#Örnek 1
+//1'den 10'a ladar olan sayıları alt alta ekrana yazdıralım.
+#1. Çözüm
+for (int i = 1; i <= 10; i++)
+{
+    System.Console.WriteLine(i);
+}
+
+#2. Çözüm
+for (int i = 50; i < 60; i++)
+{
+    System.Console.WriteLine(i - 49);
+}
+```
