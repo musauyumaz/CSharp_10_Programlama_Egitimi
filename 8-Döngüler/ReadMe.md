@@ -298,3 +298,22 @@ for (int i = sayi; i > 0; i--)
 }
 System.Console.WriteLine("Faktöriyel : " + sonuc + faktoriyel);
 ```
+
+***
+# 197) For Döngüsü Varyasyonları 1
+- İlk varyasyonu `for(int i = 0; i < 10; i++) {}`
+    * İlk parametrede bir başlangıç değeri tanımlarız.
+    * İkinci parametrede başlangıç değerine bağlı bir şart oluşturuyoruz genellikle ama illaki bağlı olmak zorunda değil.
+    * Üçüncü parametrede ise başlangıç değerini arttırdığımız operasyonunu gerçekleştirdiğimiz alanı tanımlıyoruz.
+
+- Bu varyasyonda hiçbişey zorunlu değil istersen başlangıç değerini tanımla tanımldaıktan sonra şartı bambaşka bişey üstünden ver illa başlangıç değeri üzerinden vermek zorunda değilsin. Herhangi bir değişkenin değerini burada arttırıp azaltabilirsin. İlla ki başlangıç değerini arttırıp azaltmak zorunda değilsin.
+
+- Burada amaç Bir döngüde operasyonel olarak kullanılan tüm parametrelerin tek bir çatı altında toplanması hani bakınca tek bir seferde görebilmektir. Zaten buradaki parametrelerin hiçbiri zorunlu değil.
+
+```C#
+#Varyasyonlar
+for (int i = 0; i < 10; i++)
+{
+    
+}
+```
