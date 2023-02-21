@@ -332,3 +332,21 @@ for (; i < 10; i++)
     
 }
 ```
+
+***
+# 199) For Döngüsü Varyasyonları 3
+- Başlangıç değerinin dışarıda tanımlayarak gene içeride referans gösterebiliyorsunuz. Amma velakin burada bişeye dikkat etmemiz gerekiyor her ne kadar dışarıda tanımlanısada içeride hata verecektir. Çünkü yine başlangıç değeri tekrardan bir değer ataması yapılmak zorunda.
+
+- Dışarıda tanımlıyorsan bir değişkeni içeriye verdiğin taktirde içeride bir daha buna bir değişken başlangıç değeri ataman gerekiyor diye uyarmaktadır.
+
+- Bu varyasyonda dışarıda tanımlanan değişkeni `for` döngüsünde başlangıç değeri olarak göstermek istiyorsak eğer yine bu değişkene bir başlangıç değeri atamamızı zorunlu kılmaktadır... Yani içeride bu başlangıç değerini vermemiz gerekmektedir.... Aksi taktirde derlenmeyecektir kodumuz.
+
+```C#
+#Varyasyon 3
+int i = 0;
+for (i = 0; i < 10; i++)
+{
+}
+```
+
+<img src="6.png" width="auto">
