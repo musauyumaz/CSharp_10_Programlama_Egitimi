@@ -350,3 +350,19 @@ for (i = 0; i < 10; i++)
 ```
 
 <img src="6.png" width="auto">
+
+***
+# 200) For Döngüsü Varyasyonları 4
+- `for ( ;i < 10;)`
+- `for` döngüsünde başlangıç değerini dışarıda tanımlayabiliyorduk aynı şekilde başlangıç değerinin arttırıp azaltma işlemini de yani değişim işlemini de burada yapmak zorunda değiliz. buradan da kaldırıp boş geçebiliriz. Eğer burayı da boş geçiyorsak arttırıp azaltma işlemini de yani değişim işlemini içeride yapabiliriz. Ya da duruma göre uygun bir noktada i'yi/başlngıç değerini arttırıp azaltmanız gerekecektir.
+
+- Varyasyon olarak dışarıda tanımlayıp ne buraya bildirmek zorundasınız ne de burada arttırmak zorundasın.
+
+```C#
+#Varyasyon 4
+int i = 0;
+for ( ;i < 10;)
+{   
+    i++;
+}
+```
