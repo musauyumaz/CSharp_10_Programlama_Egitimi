@@ -258,3 +258,43 @@ for (int i = 0; i <= 40; i += 2)
 }
 System.Console.WriteLine("Toplam Sonuç : " + toplamSonuc);
 ```
+
+***
+# 196) For Döngüsü Örnek Yapalım 3
+
+<img src="5.png" width="auto">
+
+- Senaryo Klavyeden girilen sayının faktöriyelini bulan programı yapalım.
+    * Birinci Çözüm olarak 1'den başlayıp sayıya kadar olan sayıları çarpıp elde edebiliriz.
+    * İkinci Çözüm olarak sayıdan'dan başlayıp 1'e kadar olan sayıları çarpıp elde edebiliriz.
+
+- Bir döngünün içerisindeki aritmetik işlemleri toplayan, çarpımların sonuçlarını toplayan kendisinde tutan sayısal ifadeler döngünün dışında tanımlanır. Zaten bu algoritmanın gereğidir. İçeride durmadan değeri ezmektense dışarıda tanımlanmış bir değişkende ilgili değerleri toplamayı yeğleriz.
+
+```C#
+#Örnek 3
+//Klavyeden girilen sayının faktöriyelini bulan programı yapalım.
+System.Console.WriteLine("Faktöriyelini alacağımız sayıyı girelim.");
+int sayi = int.Parse(Console.ReadLine());
+int faktoriyel = 1;
+
+#1. Çözüm
+for (int i = 1; i <= sayi; i++)
+{
+    faktoriyel *= i;
+}
+System.Console.WriteLine("Faktöriyel : " + faktoriyel);
+
+#2. Çözüm
+int faktoriyel = 1;
+string sonuc = "";
+for (int i = sayi; i > 0; i--)
+{
+    faktoriyel *= i;
+    sonuc += i + (i == 1 ? " = " : " x ");
+    if (i == 1)
+        sonuc += i + " = ";
+    else
+        sonuc += i + " x ";
+}
+System.Console.WriteLine("Faktöriyel : " + sonuc + faktoriyel);
+```
