@@ -317,3 +317,18 @@ for (int i = 0; i < 10; i++)
     
 }
 ```
+
+***
+# 198) For Döngüsü Varyasyonları 2
+- Başlangıç değerini tanımlamadan direkt dışarıda da tanımlayabilmektesiniz. Başlangıç değerini dışarıda tanımladıktan sonra `for` döngüsünde Başlangıç parametresini boş geçip ardından koşula odaklı bir şekilde değerinizi yazıp başlangıç değerini burada yönetiyor olabilirsiniz.
+
+- Değişkenin değerinin dışarı da tanımlandığı ve içeriye herhangi bir şekilde tanımlama yapılmaksızın direkt koşullarda ve arttırma azaltma noktasında kullanıldığı bir varyasyon.
+
+```C#
+#Varyasyon 2
+int i = 0;
+for (; i < 10; i++)
+{
+    
+}
+```
