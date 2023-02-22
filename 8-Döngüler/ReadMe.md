@@ -388,3 +388,19 @@ for (int i = 0; a != i * 2; i++)
     Console.WriteLine("Musa");
 }
 ```
+
+***
+# 202) For Döngüsü Varyasyonları 6
+- Başlangıç değerini vermek zorunda değiliz. Aynı zmaanda koşulu da vermek zorunda değiliz. Hatta arttırma azaltma miktarını da bildirmek zorunda değiliz. Bu şekilde bir `for` döngüsü tanımlanabilir.
+
+- Bu döngü sonsuz döngüdür. Scope'undaki kodlar durmadan işler.
+
+- İçerisinde bulunan ilgili kodları sonsuza kadar ebediyyen yazdıracaktır. 
+
+```C#
+#Varyasyon 6
+for (; ; )
+{
+    System.Console.WriteLine("Musa");
+}
+```
