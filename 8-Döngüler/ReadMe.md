@@ -404,3 +404,15 @@ for (; ; )
     System.Console.WriteLine("Musa");
 }
 ```
+
+***
+# 203) For Döngüsü Varyasyonları 7
+- Bir şart belirtiyorsanz bu şarta uygun bir şekilde hareket edecektir. Amma velakin siz başlangıcı ya da artış azalış miktarını belirttiniz ama şartı belirtmiyorsanız bu yine bir sonsuz döngüye alamet olacaktır.
+
+```C#
+#Varyasyon 7
+for (int i = 0; ; i++)
+{
+    System.Console.WriteLine("Musa");
+}
+```
