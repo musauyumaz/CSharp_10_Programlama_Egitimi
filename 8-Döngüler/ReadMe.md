@@ -443,3 +443,29 @@ for (int i = 0, i2 = 0; i < 10 && i2 < 5; i++, i2++)
     System.Console.WriteLine(i2);
 }
 ```
+
+***
+# 205) While Döngüsünü İnceleyelim
+- `while` döngüsü `for` döngüsüne bakarak daha sade daha ilkel ilk varyasyonlardan biri gibi.
+
+- Hiçbirşeyi yok sadece bir scope'u ve parantezi var. `while(........) {}`
+
+- `while` döngüsünün parantezinde sadece Şart var ne bir başlangıç değeri var ne bir başka arttırma azaltma noktası var.
+
+- `while` döngüsü şart doğrulandıkça tetiklenir...
+
+- Şart doğrulandığı sürece `while` döngüsü tetiklenecektir.
+
+- `while` döngüsü sadece şarta bağlı bir döngüdür. Şart doğrulandıkça tetiklenecektir.
+
+- `for`a nazaran daha ilkel ve sade bir döngüdür.
+
+- `while` döngüsü programlamanın ilk tasarlanmış döngüsüdür.
+
+- `for` olmayan dil vardır ama `while` döngüsü tüm dillerde vardır. Hiçbir döngü yoksa `while` döngüsü varsa bütün işlemlerini bu döngüyle yapabilirsin. Keza `for` döngüsüyle `while` döngüsüyle ne yapabiliyorsan onuda yapabiliyorsun. 
+
+- Genellikle sonsuz döngülerde yahut süreci bilinmeyen durumlarda kullanılan bir döngüdür. Amma velakin istediğiniz yerde kullanabilirsiniz.
+
+- `for` döngüsünü nerelerde kullandıysan `while` döngüsünü de birebir o noktalarda kullanabilmektesin.
+
+<img src="7.png" width="auto"> 
