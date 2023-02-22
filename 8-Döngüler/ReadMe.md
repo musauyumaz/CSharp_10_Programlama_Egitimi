@@ -366,3 +366,25 @@ for ( ;i < 10;)
     i++;
 }
 ```
+
+***
+# 201) For Döngüsü Varyasyonları 5
+- Şart kısmı illaki başlangıç değerine bağlı olmak zorunda değildir.
+
+- Şart kısmını genellikle başlangıç değerine bağlı olarak kullanırız ama her zaman değil.
+
+- Buradaki parametrelerde illaki normal yüzeysel tanımlar yapılan içeriklerde olduğu gibi illa başlangıç değerin olacak illa şartın ona göre olacak illa arttırman olacak vs. Bunlar olmak zorunda değil hepsi opsiyonel hepsi senin iradene bağlı ama genellikle biz başlangıç değerini tanımlar ona bağlı bir şekilde koşul oluştururuz.
+
+```C#
+#Varyasyon 5
+string adi = "Serhat";
+for (int i = 0; adi == "ahmet"; i++)
+{
+}
+
+int a = 10;
+for (int i = 0; a != i * 2; i++)
+{
+    Console.WriteLine("Musa");
+}
+```
