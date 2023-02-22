@@ -416,3 +416,30 @@ for (int i = 0; ; i++)
     System.Console.WriteLine("Musa");
 }
 ```
+
+***
+# 204) For Döngüsü Varyasyonları 8
+- `for` döngüsünün başlangıç değerini tanımlama kısmında birden fazla değişken tanımlaması yapabilmekteyiz. 
+
+- Nihayetinde bakarsanız eğer başlangıç kısmı bir değişken tanımlama kısmı ve burada bir değişken tanımlanmakta dolayısıyla biz , diyerek birden fazla değişken tanımlaması yapabilmekteyim.
+
+- Eğer ki `for` içerisinde birden fazla değişken ihtiyacınız varsa tabikide bu değişkeni dışarıda tanımlayabilirsiniz. Tabiki ezilme pahasına da olsa içeride de tanımlayabilirsiniz ama hani şöyle kalıba baktığında direkt göreyim istiyorsan başlangıç kısmında normal değişken tanımlar gibi tanımlayabiliyorsunuz.
+
+- Aynı şekilde bu değişkene `for` döngüsü içinde erişerek kullanabiliyoruz. Gerek şart kısmında gerek artış kısmında gerekse scope kısmında.
+
+- Bu yapılanmaya baktığımızda `,` ile sen bir değişken daha oluşturdun hem şarta da ekleyebiliyorsun. Şarta normal mantıksal yapılanmayla ekledik. Artış kısmında da `,` ile  diğer değişkeninde değerinde artış azalış yani değişiklik sağlayabiliyoruz.
+
+- Bu şekilde birden fazla tanımlama yapabiliyorsan yine bu şekilde birden fazlasınında değerini arttırıp azaltabilirsin.
+
+- Birden fazla değişken durumunda `,` ile bunları arttırma azaltma kısmında ayırdığımıza dikkatinizi çekerim. 
+
+- İçeri de ise her ikisine de erişim sağlayabiliyoruz.
+
+```C#
+#Varyasyon 8
+for (int i = 0, i2 = 0; i < 10 && i2 < 5; i++, i2++)
+{
+    System.Console.WriteLine(i);
+    System.Console.WriteLine(i2);
+}
+```
