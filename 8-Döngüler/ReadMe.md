@@ -572,3 +572,21 @@ while (i <= 100)
     i++;
 }
 ```
+
+***
+# 210) While Döngüsü Kritik Yapalım 4
+- Senaryo : Klavyeden girilen sayının faktöriyelini hesaplayalım.
+
+- Bir formülasyonda kullanacağımız değeri arttırıp azaltma işlemini önceden yapmayacağız o formülasyondan/algoritmadan/koddan önce yapmayacağız sonra yapacağız. Öncesinde arttırıp azaltırsak eğer değerle oynadığımız için işlemin sonucu değişecek ve ortaya mantık hataları çıkacaktır.
+
+```C#
+#İnceleme 4
+//Klavyeden girilen sayının faktöriyelini hesaplayalım.
+int sayi = int.Parse(Console.ReadLine());
+int faktoriyel = 1;
+while (sayi > 0)
+{
+    faktoriyel *= sayi--;
+    // sayi--;
+}
+```
