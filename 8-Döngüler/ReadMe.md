@@ -549,3 +549,26 @@ while (sayi >= 0)
     sayi--;
 }
 ```
+
+***
+# 209) While Döngüsü Kritik Yapalım 3
+- Senaryo : 0 ile 100 arasındaki tek sayıları toplayarak sonucu ekranda gösteren programı yapalım.
+
+- Birşeyi 2'ye böldüğünde kalan 1 ise bu sayı tek sayıdır. 0'sa çift sayıdır. Bu tarz algoritmalarda etkisiz elemanı kullanmalıyız.
+
+- Eğer ki senin içeride kullanmış olduğun değer bir yandan arttırman ya da azaltman gereken değerse işlemden önce/algoritmadan önce onu işleme tabi tutmamalısın/çalışma yapmamalısın. Aksi taktirde sen oradaki çalışmayı bozarsın. Doğru değerle çalışmak için ilk önce bir çalışayım ardından değeri değiştireyim.
+
+- `while` döngüsünde ya da `for` döngüsünde döngüden bağımsız hani bu biraz daha manevratik görebileceğiniz bir yapılanma değeri toplarkende direkt `toplam += i++;` diyebilirsiniz. Nihayetinde `i++` operatörü ilk i'nin değerini döndürecek sonra i'nin değerini 1 arttıracaktır. Amma velakin bu senaryoda maalesefki işe yaramayacaktır. Çünkü i değerinin mod değeri 1 ise artacaktır değilse sonsuz döngüye girecektir.
+
+```C#
+#İnceleme 3
+//0 ile 100 arasındaki tek sayıları toplayarak sonucu ekranda gösteren programı yapalım.
+int i = 0, toplam = 0;
+while (i <= 100)
+{
+    //i++;
+    if (i % 2 == 1)
+        toplam += i;
+    i++;
+}
+```
