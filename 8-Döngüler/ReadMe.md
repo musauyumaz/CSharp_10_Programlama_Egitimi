@@ -469,3 +469,40 @@ for (int i = 0, i2 = 0; i < 10 && i2 < 5; i++, i2++)
 - `for` döngüsünü nerelerde kullandıysan `while` döngüsünü de birebir o noktalarda kullanabilmektesin.
 
 <img src="7.png" width="auto"> 
+
+***
+# 206) While Döngüsünü For İle Kıyaslayalım 
+- `for (int i = 0; i < 10; i++) {}` `for` döngüsünün genel iskeleti bu şekilde bir başlangıç değişkenimiz var bir şartımız var ve ilgili değişkenin artış azalış miktarını belirttiğimiz bir operasyonumuz var.
+
+- `while (true){}` `while` döngüsü ise görüldüğü üzere sadece bir şarttan ibaret. Yani buraya sadece şart yazıyoruz.
+
+- `while` döngüsünde `for` gibi çalışmak için kombinasyonu kendimiz oluşturmalıyız.
+
+<img src="8.png" width="auto"> 
+
+- Kombinasyonu oluşturabilmem için `while` döngüsünün parantezleri içinde parametreleri yok yani bir başlangıç değeri tanımlayabileceğim bir artış azalış miktarını belirleyebileceğim bir alan yok. Dolayısıyla `while` döngüsünde başlangıç değerimi dışarıda tanımlıyorum devamında ise şartım neyse parantez içine bunu yazıyorum daha sonrasında ise artış miktarını her bir döngü döndüğünde kendi içerisinde değeri arttırsın. Yani scope içine yazıyorum. 
+
+<img src="9.png" width="auto"> 
+
+- Compiler yukarıdan gelecek bakacak `while` döngüsü diyecek ki şarta bakacak eğer ki `true` ise döngüye girecek. Diyelim ki işlemini bitirdi bitirdikten sonra yine şarta bakacak `true` ise yine döngüye girecek yine şarta bakacak döngüye girecek şarta bakacak ta kii `while` döngüsü şart `false` olana kadar tetiklenecektir.
+
+<img src="10.png" width="auto"> 
+
+- Yapısal olarak `for`dan farkı vardır ama işleyiş olarak mantığı kurduğunuz an hiçbir fark olmayacaktır. Hani sonuçta aynı sonuçları elde edebilirsiniz.
+
+```C#
+#while Döngüsü - for İle Kıyaslama
+        
+for (int i = 0; i < 10; i++)
+{
+    System.Console.WriteLine("Musa");
+}
+System.Console.WriteLine("**********************************");
+
+int _i = 0;
+while (_i < 10)
+{
+    System.Console.WriteLine("Musa");
+    _i++;
+}
+```
