@@ -506,3 +506,24 @@ while (_i < 10)
     _i++;
 }
 ```
+
+***
+# 207) While Döngüsü Kritik Yapalım 1
+- Senaryo :Ekrana 10 kere "Merhaba Dünya" yazdıran bir program yazalım
+
+- 1'den 10'a kadar saydırmak belki `for` ile daha kolay olabilir amma velakin operasyonel olarak `while`da nasıl yapılır buna bakacağız.
+
+- `while` döngüsü şarta bağlı bir şekilde içindeki kodu yazdıran bir döngü. İçindeki kodu şart `true` olduğu sürece çalıştıracaktır/tetikleyecektir.
+
+- Bu senaryoya göre yapacağımız manevralar `for` dakiyle aynı mantıkta olacaktır. Yani benim süreci takip edebileceğim kontrol edebileceğim bir sayısal değer oluşturmam gerekiyor. Ardından buna uygun bir kombinasyonsa koşul yapıyorum. Ve ardından tabikide sayısal değeri attırmam gerekiyor ki sonsuz döngüye girmesin.
+
+```C#
+#İnceleme 1
+//Ekrana 10 kere "Merhaba Dünya" yazdıran bir program yazalım
+int i = 1;
+while (i <= 10)
+{
+    i++;
+    System.Console.WriteLine("Merhaba Dünya");
+}
+```
