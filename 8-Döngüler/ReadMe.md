@@ -527,3 +527,25 @@ while (i <= 10)
     System.Console.WriteLine("Merhaba Dünya");
 }
 ```
+
+***
+# 208) While Döngüsü Kritik Yapalım 2
+- Senaryo : Klavyeden girilen sayıdan geriye doğru 0'a kadar sayan bir sayaç hazırlayalım.
+
+- `while` döngüsünde arttırma azaltma işlemlerini yaparken yaptığınız yere dikkat edin. Arttırıp azaltacağınız değer algoritmada o an kullanacağımız bir değerse algoritmada kullanılacak değer önceden işleme tabi tutulmamalıdır.
+
+- Bu senaryoya göre sayıyı yazdırmadan önce sayıya müdahale edersem yanlış çıktılar alırım. Yani bir mantıksal hata yapmış oluruz. Böyle bir algoritmada sayının değeri işlem yapıldıktan sonra değiştirilmelidir.
+
+- `while` döngüsünde çalışırken arttırma azaltma işlemlerini nerede yapıldığına iyi dikkat etmeniz gerekiyor.
+
+```C#
+#İnceleme 2
+//Klavyeden girilen sayıdan geriye doğru 0'a kadar sayan bir sayaç hazırlayalım.
+int sayi = int.Parse(Console.ReadLine());
+while (sayi >= 0)
+{
+    //sayi--;
+    System.Console.WriteLine(sayi);// Bu senaryoda 
+    sayi--;
+}
+```
