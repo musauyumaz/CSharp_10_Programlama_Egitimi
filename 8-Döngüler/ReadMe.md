@@ -590,3 +590,23 @@ while (sayi > 0)
     // sayi--;
 }
 ```
+
+***
+# 211) While Döngüsü Kritik Yapalım 5
+- Senaryo : O anki tarihin saniye değeri 5'in katıysa eğer tarihih ekranda gösteren uygulamayı yazalım.
+
+- Tarih değerini direkt `while(...)` Şart kısmında kontrol edersek eğer şart sağlanmadığı anda `false` döneceği için döngüden çıkacaktır. Yani bir süreklilik arz eden bir kod olmayacaktır.
+
+- Sonsuza giden bir algoritma da içeride kontrol yaparken `while` daha şık olacaktır.
+
+- `for` döngüsüyle de yapabilirdik ama sonsuza gitmemiz gereken durumlarda `while` daha şık olduğundan `while`ı tercih ediyoruz
+
+```C#
+#İnceleme 5
+//O anki tarihin saniye değeri 5'in katıysa eğer tarihih ekranda gösteren uygulamayı yazalım.
+while (true)
+{
+    if (DateTime.Now.Second % 5 == 0)
+        System.Console.WriteLine(DateTime.Now);
+}
+```
