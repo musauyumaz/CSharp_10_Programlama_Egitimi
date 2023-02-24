@@ -672,8 +672,18 @@ for (int i = 0; i < 10; i++)
 
 while (true)
     System.Console.WriteLine("");
-    
+
 do
     System.Console.WriteLine("asfdasfdsad");
 while (true);
 ```
+
+***
+# 215) Sonsuz Döngüler Nelerdir?
+- Bu kavram bazen bizim için bir hataya girmiş olduğumuz farkında olmadan iradesizce girmiş olduğumuz bir hatayı tarif ederken bazen de bazı operasyonlarda irademizle kasıtlı bir şekilde kullandığımız bir durumu tarif etmektedir. 
+
+- Bir döngünün kombinasyonun eğer ki sonsuza kadar olma ihtimali/olma durumu ya da koşulu sonsua kadar sağlama durumu söz konusuysa o döngü hiçbir zaman sonlanmayacağından dolayı sonsuz kere çalışacak yani sonsuz bir döngüye girecektir. Bir başka deyişle bir döngünün sonlanması için kombinasyonel bir koşul var Eğer ki o koşul asla ve asla sağlanmayacak durumdaysa o döngüye de sonsuz döngü denmektedir. Yani her türlü bir döngünün sonlanmasını sağlayacak koşul doğrulanmış bir şekilde doğru bir mantıkla inşa edilmediyse sonsuz döngüye gireceksiniz.
+
+- İnşa edilen kodlarda bazen biz yazılımcılar açısından yanlışlıkla girilen ya da belirli mantıksal hatalardan dolayı istemsizce girilebilen döngülerdir. Bazen de bazı operasyonlarda sonsuzluk durumunda kontrol etmemiz gereken bazı durumları kontrol edebilmek için irademizce kullandığımız bir döngü yapılanmasıdır.
+
+- Şimdi sen bir yazılımcı olarak sen kod yazıyorsun. Yazmış olduğun kodu daha pratik yazabilmek için döngüleri kullanıyorsun. İşte döngülerde kombinasyon oluşturuyorsun yeri gelecek sonsuz döngü kullanacaksın yeri gelecek sonsuz döngüden kaçınacaksın oradaki koşulla ilgili döngü yapacağın işlemden sonra sonlandırabilecek bir şekilde düşünebilirsin. Dikkat edilmesi gereken nokta sonsuz döngülerde tüm yapılanmalarda nasıl kontrol edebileceğini bilmek yani ihtiyacın olduğu durumda sonsuz döngüyü nasıl kullanacaksın ve bunu nasıl kontrol altına alacaksın bunları bilmen gerekiyor.
