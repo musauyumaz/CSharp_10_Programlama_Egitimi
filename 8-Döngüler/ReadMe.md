@@ -640,3 +640,19 @@ while (true)
 `do while` döngüsü ile `while` döngüsü amcaoğludur :)
 
 <img src="11.png" width="auto">
+
+***
+# 213) Do While Döngüsünü While İle Kıyaslayalım
+- `while` şarta bakar daha sonra kodu tetikler `do while` ise ilk baş kodu tetikler daha sonra şarta bakar.
+
+```C#
+#do while döngüsü
+while (false)
+{
+    System.Console.WriteLine("while döngüsü");
+}
+do
+{
+    System.Console.WriteLine("do while döngüsü");
+} while (false);
+```
