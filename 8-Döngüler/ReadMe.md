@@ -610,3 +610,33 @@ while (true)
         System.Console.WriteLine(DateTime.Now);
 }
 ```
+
+***
+# 212) Do While Döngüsünü İnceleyelim
+- `while` döngüsüne inanılmaz derecede benzer.
+
+- `while` döngüsünde yapı `while(...ŞART...) {İlgili Çalışacak Kodlar}` `do while` döngüsünde ise `do{Çalışacak kodlar}while(...ŞART...)`
+
+- `while` döngüsü şart `true` oldukça döngü tetiklenecektir. `do while` döngüsü ise yine aynı mantıkla şart `true` oldukça tetiklenecektir.
+
+- Aralarında küçük bir teknik vardır onun dışında birebir aynı çalışıyorlar. 
+
+- `while` döngüsü önce şarta bakar daha sonra kodu çalıştırır davranışı bu şekildedir. Yani önce şarta bakar şart `true` ise kodu çalıştırır yok `false` ise kodu çalıştırmaz. 
+
+- `do while` döngüsü ise önce kodu çalıştırır sonra şarta bakar.
+
+- `do while` döngüsü kodu bir çalıştırır ondan sonra şarta bakar `while` döngüsü ise şarta bakar kodu çalıştırır. Aradaki teknik fark budur.
+
+- Hangi durum olursa olsun siz bir kodu `while` ile çalıştırıyorsanız hiç çalışmama ihtimali de var ya da şarta uygun çalışma ihtimali de var. Amma velakin `do while` ile çalıştırıyorsanız şart `true` da olsa `false` da olsa ilgili döngü bir kereye mahsus tetiklenecektir.
+
+- `while` ile yapılan kontrolde şart `true` olursa döngü tetiklenecek, `false` olursa hiçbir zaman tetiklenmeyecektir.
+
+- `do while` döngüsü şart `true` da olsa `false` da olsa ennn az bir kere tetiklenecektir.
+
+- `while` döngüsü şudur. Önce havaya bakarsın duruma göre şemsiye alırsın. Bazen de şunu yaparız önce şemsiyeyi alırız sonra havaya bakarız yağmurlu da olsa yağmursuz da olsa şemsiyeyi bir kereye mahsus alıyorsun.
+
+- Öncelikli işlemler yapılıp ardından şartı kontrol edip daha sonra tekrar edecek durumlar varsa `do while` döngüsünü tercih ediyoruz. Önceden birden fazla veritabanı sorgusu çalıştırılacaksa bu birden fazla veritabanı sorgusunu tek bir `string` üzerinde yazıyorduk. Bunları `do while` ile işleme sokuyorduk. Diyorduk ki al sen bunu çalıştır ilk önce 1.sini çalıştırıyordu daha sonra kontrol ediyordu ikincisi var mı varsa bir daha çalıştırıyordu. Bak şimdi zaten ilk verdiğin zaten vardır. `do while` 'daki `while` ikinciye bakıyordu var mı daha diye varsa eğer bir daha giriyordu ikinciyi tetikliyorduk daha sonra bir daha soruyordu var mı diye diye o şekilde kullanıyorduk o senaryolarda.
+
+`do while` döngüsü ile `while` döngüsü amcaoğludur :)
+
+<img src="11.png" width="auto">
