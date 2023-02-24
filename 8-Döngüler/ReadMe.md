@@ -656,3 +656,24 @@ do
     System.Console.WriteLine("do while döngüsü");
 } while (false);
 ```
+
+***
+# 214) Döngüleri Scope'suz Kullanma
+- Herhangi bir döngü `for`, `while` `do while` fark etmiyor yapacağı işlem eğer tek satırlık tek konseptlik işlemse scope'suz tanımlayabilmekteyiz.
+
+- Tek satırda yazılan kodlarda genellikle kodun maliyetini vs düşürmek için kullanıyoruz.
+
+- İlgili döngüye ait birden fazla komut işleyecekseniz bunların hepsinin scope içerisine alınması gerektiğine dikkat ediyorsunuz.
+
+```C#
+#Scopesuz Döngüler
+for (int i = 0; i < 10; i++)
+    System.Console.WriteLine("Musa UYUMAZ");
+
+while (true)
+    System.Console.WriteLine("");
+    
+do
+    System.Console.WriteLine("asfdasfdsad");
+while (true);
+```
