@@ -687,3 +687,18 @@ while (true);
 - İnşa edilen kodlarda bazen biz yazılımcılar açısından yanlışlıkla girilen ya da belirli mantıksal hatalardan dolayı istemsizce girilebilen döngülerdir. Bazen de bazı operasyonlarda sonsuzluk durumunda kontrol etmemiz gereken bazı durumları kontrol edebilmek için irademizce kullandığımız bir döngü yapılanmasıdır.
 
 - Şimdi sen bir yazılımcı olarak sen kod yazıyorsun. Yazmış olduğun kodu daha pratik yazabilmek için döngüleri kullanıyorsun. İşte döngülerde kombinasyon oluşturuyorsun yeri gelecek sonsuz döngü kullanacaksın yeri gelecek sonsuz döngüden kaçınacaksın oradaki koşulla ilgili döngü yapacağın işlemden sonra sonlandırabilecek bir şekilde düşünebilirsin. Dikkat edilmesi gereken nokta sonsuz döngülerde tüm yapılanmalarda nasıl kontrol edebileceğini bilmek yani ihtiyacın olduğu durumda sonsuz döngüyü nasıl kullanacaksın ve bunu nasıl kontrol altına alacaksın bunları bilmen gerekiyor.
+
+***
+# 216) For İle Sonsuz Döngü Nasıl Yapılır?
+- `for` döngüsünde sonsuz döngüye girmek istiyorsanız koşulu ilelebet `true` yapacak şekilde ayarlamanız gerekiyor. 
+
+- Şimdi sen `for` üzerinden sonsuz döngüye giriyorsan dikkat etmen gereken noktalar var.
+    * Döngü ne kadar sonsuz bir döngü gibi gözükse de esasında sonlu bir döngüdür. Çünkü bir başlangıç değeri var önemli olan bu değil amma velakin artış miktarını uyguladığın operasyonun var elbetteki birgün buradaki değer türün değer aralığını aşacak ve patlayacaktır. Bu durum döngünün sonu olacağı anlamına geliyor.
+
+- Eğer ki biz `for` döngüsüyle sonsuz döngüye gireceksek eğer başlangıç değeriyle artış azalış miktarını belirtmeyiz.
+
+- `for` yapılanmasında biz sonsuz döngüye girdiğimizde birgün çıkmakta isteyebiliriz. İşte bu çıkma operasyonu yani sonsuz bir döngüde denetleme yaparken `for`da çıkmak istiyorsan ileri de inceleyeceğimiz manevratik keywordleri kullanabiliriz. Ya da bizim şartı bir şekilde kontrol edecek yapılanmaya ihtiyacımız olacaktır ve o yapılanmayı da bir şekilde inşa etmemiz gerekecektir.
+
+- Sonsuz döngüye girdim ve sonsuza kadar bir aksiyonu sonsuz boyutta arıyorum ve birgün bulduğunuz anda sonsuz döngüden çıkmanız mı gerekiyor o zaman şart kısmına bağlayıcı bir değişken atamanız lazım. Eğer ki birgün döngü içinde aradığınızı bulursanız işte bu değişkenin tam tersini bu değişkene atarsın. İşte böyle bir durumda burada döngü değişir. Al sana döngü `bool` olduğundan dolayı ilgili `for`un şartını buradaki döngüye bağlarsın. Şimdi normalde senin aradığın aksiyon neyse sonsuzlukta aradığın herhangi bir operasyon olabilir her neyse onu bulana kadar o `true` olana kadar değişkenin değeri değişmeyeceğinden sonsuz döngüye sokacaktır. Bulduğun zamanda içeride değişkenin değeri değişeceğinden dolayı değişkenin tersini alarak döngüye atıyoruz. yani `true` iken `false` oluyor yani burada bir sonraki turda değişkenin değeri değiştiği ve şartı karşılamadığı için sonsuz döngüden çıkmış oluyoruz.
+
+- `while`, `do while`, `for` döngüsü olsun bunlardaki sonsuz yapılanmalarda yapısal olarak fark vardır ama teknik olarak maliyet olsun kaynak tüketimi olsun bunlar gibi durumlara istinaden herhangi bir artısı ya da eksisi olduğu kanaatinde değiliz. Dolayısıyla istediğin herhangi bir döngüyü istediğin herhangi bir noktada kullanablirsin.
