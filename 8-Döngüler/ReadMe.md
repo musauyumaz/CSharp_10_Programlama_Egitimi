@@ -768,3 +768,47 @@ for (int i = 0; i < 10; i++)
     }
 }
 ```
+
+***
+# 220) For İle İç İçe Döngü Oluşturma
+- İç içe `for` döngüsü yapılanmasında dikkat edilmesi gereken nokta çok bariz belli değişken isimleri. İçteki ve dıştaki döngülerde tanımlanacak olan başlangıç değerleri olarak kullanacağımız değişkenleri tanımlarken biz bunları farklı isimlerde tanımlamaya dikkat etmeliyiz. Mesela diyelim i değişkeni `for` scope'undan her yerden erişilebileceği için bu scope'un içerisinde bir başka i isminde değişken tanımlayamayız. Temel değişken kuralları burada geçerlidir.
+
+- İç içe `for` döngülerinde değişken isimleri farklı olmalıdır.
+
+<img src="12.png" width="auto">
+
+- Döngü yapılanmasında illa `for` içerisinde `for` `do while` içerisinde `do while` kullanacaksınız diye bir kaide yok. İstediğiniz herhangi bir döngünü içerisinde başka bir döngü kullanabilirsiniz.
+
+- İç içe döngülerde maliyet hesaplarken döngüleri tur sayısını hesaplarız ve birbirleriyle çarparız.
+
+- İç içe döngülerde maliyet tüm döngülerin maliyetinin/tur sayısının/periyodik çalışmasının çarpımına eşittir. Bu çarpım totaldeki maliyeti verecektir.
+
+- Maliyet hesabı türden bağımsızdır.
+
+<img src="13.png" width="auto">
+
+- Zaten sen bir algoritma yazıyorsan buradaki maliyet sayısal olarak bir anlam ifade etmeyecek senin algoritmik düşüncen de yapacağın operasyonda hani olayın ne kadar seyredebileceğini görmeni sağlayacak.
+
+- Diyelim ki elimde bir raf var ve bu rafa kitap dizecem şimdi 3 raf var ve 3 tane de dikey raf var. Dikey raflar ile yatay raflar arasında döngüsel çalışma yaparken ilk döngü 1 tur attığında içerideki döngü tam tur atacaktır.
+
+- Dıştaki döngünün her bir turuna karşılık içteki döngü tam tur atacaktır haliyle burada çarpma vardır. Ve mantığı vardır. Dıştaki bir kere tur atacak içteki tam tur atacak. Kısaca bu maliyet dıştakiyle içtekinin çarpımıdır.
+
+```C#
+#İç İçe Döngüler - For
+for (int i = 0; i < 10; i++)
+{
+    for (int j = 0; j < 5; j++)
+    {
+        for (int o = 0; o < 3; o++)
+        {
+            int p = 0;
+            while (p < 4)
+            {
+                p++;
+            }
+        }
+    }
+}
+```
+
+<img src="14.png" width="auto">
