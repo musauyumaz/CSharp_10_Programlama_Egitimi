@@ -726,3 +726,21 @@ while (!durum)
     }
 }
 ```
+
+***
+# 218) Do While İle Sonsuz Döngü Nasıl Yapılır?
+- `do while` döngüsü bütün operasyonlarda `while`la birebir aynı mantıkta aynı kurallarda çalışmaktadır. `do while`ın yapılanması da/altyapısı da/fıtratı da gene sonsuz döngüye çok yatkındır.
+
+- Önemli olan sonsuz döngünü nasıl kontrol edildiğidir. Hepsinde aynı mantık. Dışarıda bir tane değişken tanımlıyorsun. bu değişkeni şarta bağlıyorsun eğer ki sonsuzlukta aradığın şart geçerli olduysa değişkenin değerinin tersini alıp değişkene atıyarak değiştiriyoruz. böyle bir durum söz konusu olduğunda ilgili sonsuz döngü sona ermiş olacak ve compielr yoluna devam edecektir.
+
+```C#
+#Sonsuz Döngü - Do While
+bool durum = true;
+do
+{
+    if (true)
+    {
+        durum = !durum;
+    }
+} while (durum);
+```
