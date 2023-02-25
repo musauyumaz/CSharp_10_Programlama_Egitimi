@@ -702,3 +702,27 @@ while (true);
 - Sonsuz döngüye girdim ve sonsuza kadar bir aksiyonu sonsuz boyutta arıyorum ve birgün bulduğunuz anda sonsuz döngüden çıkmanız mı gerekiyor o zaman şart kısmına bağlayıcı bir değişken atamanız lazım. Eğer ki birgün döngü içinde aradığınızı bulursanız işte bu değişkenin tam tersini bu değişkene atarsın. İşte böyle bir durumda burada döngü değişir. Al sana döngü `bool` olduğundan dolayı ilgili `for`un şartını buradaki döngüye bağlarsın. Şimdi normalde senin aradığın aksiyon neyse sonsuzlukta aradığın herhangi bir operasyon olabilir her neyse onu bulana kadar o `true` olana kadar değişkenin değeri değişmeyeceğinden sonsuz döngüye sokacaktır. Bulduğun zamanda içeride değişkenin değeri değişeceğinden dolayı değişkenin tersini alarak döngüye atıyoruz. yani `true` iken `false` oluyor yani burada bir sonraki turda değişkenin değeri değiştiği ve şartı karşılamadığı için sonsuz döngüden çıkmış oluyoruz.
 
 - `while`, `do while`, `for` döngüsü olsun bunlardaki sonsuz yapılanmalarda yapısal olarak fark vardır ama teknik olarak maliyet olsun kaynak tüketimi olsun bunlar gibi durumlara istinaden herhangi bir artısı ya da eksisi olduğu kanaatinde değiliz. Dolayısıyla istediğin herhangi bir döngüyü istediğin herhangi bir noktada kullanablirsin.
+
+***
+# 217) While İle Sonsuz Döngü Nasıl Yapılır?
+- Sonsuz döngü diyince fıtrat olarak bu olaya en yakın olan `while` döngüsüdür.
+
+- `while` döngüsü yapısal olarak bir sonsuz döngüye girebilecek bunun için zaten öncelikli bir hazırlığa sahip olan döngü diyebiliriz. Nihayetinde direkt şart `true` olduğu sürece sonsuz döngüye girmiş olacaktır.
+
+- `for` döngüsündeki gibi ekstralar olmadığı için ekstradan parametre kısımları vs oladığı için direkt şartı `true` yaptığınızda sonsuz döngüye girebilirsiniz. Herhangi bir patlama durumu yok bişey yok nihayetinde içerideki algoritmada herhangi bir çalışma zamanı hatası almadığınız sürece `while` döngüsüyle sonsuz döngüye zaten direkt giriş yapabiliyoruz. Burada önemli olan sonsuza girdiğimiz zaman `while` döngüsünde bunu nasıl kontrol edebildiğimiz.
+
+- Diyelim ki biz sonsuz bir işlem yapıyoruz ve bir ara bu işlemi sona erdirmek istersek işte burada `while` döngüsünden çıkarmamız gerekecektir. işte böyle bir durumda dışarıda bir durum/state tanımlarız. İşte bu `while` sonsuzluğunun şartını bu değişkene bağlarız. Bu değişkenin değerini içeride değiştirirsem eğer sonsuzu kontrol edebiliyorum. Sonsuz döngüyü. Birgün aradığınız her neyse bulduğunuzu varsayarsak ya da ilgili algoritma bir şekilde gerektiği noktaya vardığını düşünürsek buradaki değişkenin tersini tekrardan değişkene atarak döngüden çıkmasını sağlıyoruz.
+
+- `while` döngüsü ekstradan bir işlem gerektirmeden direkt zaten sonsuz döngüye girme fıtratına sahip. Önemli olan sonsuzu kullanırken iradeli kullanabilmek ve daha da önemlisi olan sonsuzluk esnasında bunu yönetebilmek ve yeri geldi mi bu sonsuz döngüden çıkabilmek.
+
+```C#
+#Sonsuz Döngü - While
+bool durum = false;
+while (!durum)
+{
+    if (true)
+    {
+        durum = !durum;
+    }
+}
+```
