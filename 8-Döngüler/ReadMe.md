@@ -744,3 +744,27 @@ do
     }
 } while (durum);
 ```
+
+***
+# 219) İç İçe Döngüler Nelerdir?
+- Döngüler içerisinde istediğiniz herhangi bir başka döngüyü ya da kendisinden kendi türünden olan bir döngüyü de başlatabiliyorsunuz ve bunun bir derinliği yok yani bir döngü içerisinde başka bir döngü onun içerisinde de bir başka döngü ve bu şekilde  derinlikleri arttıracak şekilde döngüler tanımlayabiliyoruz.
+
+- Normal bir döngü zaten maliyetlidir. İç içe döngüler daha çok maliyetlidir. 
+
+- Döngü yapılanmalarının içerisinde farklı döngüleri biz programatik olarak yeri geldimi kullanıyoruz algoritmalarıza bazen çok sık yer ederler. Döngüler farklı döngüleri de içlerinde barındırabilmektedirler.
+
+- Durduk yere iç içe döngü kullanmayız. Belirli bir amaca hizmet etmesi için yapıyoruz. O anda çalıştığın algoritma her neyse onun için yaparsın vs. Yani gerektiğinden iç içe döngü kullanırsın.
+
+```C#
+#İç İçe Döngüler       
+for (int i = 0; i < 10; i++)
+{
+    for (int i = 0; i < 5; i++)
+    {
+        while (true)
+        {
+            
+        }
+    }
+}
+```
