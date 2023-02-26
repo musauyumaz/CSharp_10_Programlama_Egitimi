@@ -1405,49 +1405,49 @@ System.Console.WriteLine(o2);
 # 169) Akış Kontrol Mekanizmalarında Neler İnceledik Gelin Özetleyelim
 - Akış Kontrol Mekanizmaları Nedir?
 - Switch Case
-- when
-- goto
-- Switch Expressions (C# 8.0)
-- Switch Expression
-- Switch Expression when Şartı Uygulamak
-- Tuple Patterns
-- Tuple Patterns when Şartı Uygulamak
-- Property Patterns
-- Property Patterns when Şartı Uygulamak
-- Positional Patterns
-- Positional Patterns when Şartı Uygulamak
+    * when
+    * goto
+    * Switch Expressions (C# 8.0)
+        + Switch Expression
+            - Switch Expression when Şartı Uygulamak
+        + Tuple Patterns
+            - Tuple Patterns when Şartı Uygulamak
+        + Property Patterns
+            - Property Patterns when Şartı Uygulamak
+        + Positional Patterns
+            - Positional Patterns when Şartı Uygulamak
 - if …. else Yapısı
-- if Yapısı
-- Kritik 1
-- Kritik 2
-- If – Else Yapısı
-- Kritik 1
-- Kritik 2
-- If – Else If Yapısı
-- Kritik
-- If – Else If – Else Yapısı
-- Scopesuz If Yapısı
-- Örnek Senaryolar
-- 1. Senaryo
-- 2. Senaryo
-- 3. Senaryo
-- 4. Senaryo
-- 5. Senaryo
+    * if Yapısı
+        + Kritik 1
+        + Kritik 2
+    * If – Else Yapısı
+        + Kritik 1
+        + Kritik 2
+    * If – Else If Yapısı
+        + Kritik
+    * If – Else If – Else Yapısı
+    * Scopesuz If Yapısı
+    * Örnek Senaryolar
+        1. Senaryo
+        2. Senaryo
+        3. Senaryo
+        4. Senaryo
+        5. Senaryo
 - Pattern Matching (C# 7.0)
-- Type Pattern
-- Kritik
-- Constant Pattern
-- Kritik
-- Var Pattern
-- Kritik 1
-- Kritik 2
-- Kritik 3
-- Recursive Pattern
-- Type ve Var Pattern Üzerine Kritik
+    * Type Pattern
+        + Kritik
+    * Constant Pattern
+        + Kritik
+    * Var Pattern
+        + Kritik 1
+        + Kritik 2
+        + Kritik 3
+    * Recursive Pattern
+    * Type ve Var Pattern Üzerine Kritik
 - Pattern Matching (C# 9.0)
-- Simple Type Patterns
-- Relational Patterns
-- Kritik
-- Logical Patterns
-- Not Patterns
+    * Simple Type Patterns
+    * Relational Patterns
+        + Kritik
+    * Logical Patterns
+    * Not Patterns
 - Özet

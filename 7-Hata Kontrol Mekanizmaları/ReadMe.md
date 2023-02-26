@@ -669,21 +669,21 @@ System.Console.WriteLine(i + i2);
 # 187) Hata Kontrol Mekanizmalarında Neler Öğrendik Özetleyelim
 -  Hata Kontrol Mekanizmaları Nedir? Ne Amaçla Kullanılır?
 -  Hata Türleri
--  Derleme/Syntax/Sözdizimi Hatası
--  Çalışma Zamanı(Run Time) Hatası
--  Çalışma Zamanı/Run-Time Hata Durumları​na Örnek Verelim
--  try – catch Mekanizması Teorik Anlatım
--  Pratikte try – catch Yapılanması
--  Kritik
--  Hata Parametreleri
--  Hata Türleri
--  Exception Dışında Farklı Bir Tür İle Hata Yakalama
--  Birden Çok Catch Durumu
--  finally Bloğu
--  when Yapısı Ile Hata Filtreleme(C# 6.0)
--  Mantıksal Hatalar
--  Örnek 1
--  Örnek 2
--  Örnek 3
+    *  Derleme/Syntax/Sözdizimi Hatası
+    *  Çalışma Zamanı(Run Time) Hatası
+    *  Çalışma Zamanı/Run-Time Hata Durumları​na Örnek Verelim
+        +  try – catch Mekanizması Teorik Anlatım
+            -  Pratikte try – catch Yapılanması
+                *  Kritik
+            -  Hata Parametreleri
+                *  Hata Türleri
+                *  Exception Dışında Farklı Bir Tür İle Hata Yakalama
+            -  Birden Çok Catch Durumu
+            -  finally Bloğu
+            -  when Yapısı Ile Hata Filtreleme(C# 6.0)
+    *  Mantıksal Hatalar
+        +  Örnek 1
+        +  Örnek 2
+        +  Örnek 3
 -  Özet
 

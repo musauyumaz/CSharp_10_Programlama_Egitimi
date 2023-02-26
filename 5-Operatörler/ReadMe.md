@@ -1025,38 +1025,38 @@ id ??= 1;//id null ise 1 değerini ata, yok eğer değilse değerini koru...
 ***
 # 125) C# Operatörler'de Neler İnceledik Gelin Özetleyelim
 - Operatör Nedir?
-- Operatör Okur Yazarlığı
+    * Operatör Okur Yazarlığı
 - Aritmetik Operatörler
-- Aritmetik Operatörler Geriye Dönüş Değeri
-- (int) * (double) = ?
-- (byte) * (int) = ?
-- (byte) * (byte) = ? (İstisna! – Mülakat!!!)
-- Matematiksel İşlemler(Öncelik Sırası)
+    * Aritmetik Operatörler Geriye Dönüş Değeri
+    * (int) * (double) = ?
+    * (byte) * (int) = ?
+    * (byte) * (byte) = ? (İstisna! – Mülakat!!!)
+    * Matematiksel İşlemler(Öncelik Sırası)
 - Karşılaştırma Operatörleri
-- Karşılaştırma Operatörleri Geriye Dönüş Değeri
+    * Karşılaştırma Operatörleri Geriye Dönüş Değeri
 - Mantıksal Operatörler
-- Mantıksal Operatörler Kullanım Mantığı(Solu Sağı bool olmalı)
-- Mantıksal Operatörler Geriye Dönüş Değeri
+    * Mantıksal Operatörler Kullanım Mantığı(Solu Sağı bool olmalı)
+    * Mantıksal Operatörler Geriye Dönüş Değeri
 - Arttırma Azaltma Operatörleri
 - Üzerine Ekleme Yığma Operatörleri
 - Metinsel İfadelerde Kullanılan Operatörler
 - Diğer Operatörler
-- ! Operatörü
-- Ternary Operatörü
-- Birden Fazla Condition Uygulamak
-- Örnek 1
-- Örnek 2
-- Atama(Assign) Operatörü
-- .(Member Access – üye Erişim) Operatörü
-- Cast Operatörü
-- sizeof Operatörü
-- ►typeof Operatörü
-- default Operatörü
-- is Operatörü
-- is null Operatörü
-- is not null Operatörü
-- as Operatörü
-- ?(Nullable) Operatörü
-- ??(Null-Coalescing) Operatörü
-- ??= Operatörü (Null-Coalescing Assignment) (C# 8.0)
+    * ! Operatörü
+    * Ternary Operatörü
+        + Birden Fazla Condition Uygulamak
+        + Örnek 1
+        + Örnek 2
+    * Atama(Assign) Operatörü
+    * .(Member Access – üye Erişim) Operatörü
+    * Cast Operatörü
+    * sizeof Operatörü
+    * typeof Operatörü
+    * default Operatörü
+    * is Operatörü
+    * is null Operatörü
+    * is not null Operatörü
+    * as Operatörü
+    * ?(Nullable) Operatörü
+    * ??(Null-Coalescing) Operatörü
+    * ??= Operatörü (Null-Coalescing Assignment) (C# 8.0)
 - Özet

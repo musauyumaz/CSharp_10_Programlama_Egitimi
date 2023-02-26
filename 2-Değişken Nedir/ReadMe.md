@@ -1109,36 +1109,37 @@ Console.WriteLine(x.GetType());
 # 71) Değişkenlerde Neler Öğrendik Özetleyelim
 - Değişken Nedir? Bir Programcının Değişkene Neden İhtiyacı Olur?
 - Value Type – Primitive Type – Değer Tipli Değişkenler
-- IsPrimitive
+    * IsPrimitive
 - Değişken Türleri Nelerdir?
 - C# Kuralları
 - Değişken Tanımlama
-- RAM’in Yapısı(Stack)
-- Değişkenler RAM’de Nasıl Tutulur?
-- Değişken Tanımlama Kuralları
-- İsimlendirme Kuralları(Name Convention) (Pascal Case | Camel Case | Snake Case)
-- Değişken İsimlerini @ Operatörüyle Tanımlama
+    * RAM’in Yapısı(Stack)
+    * Değişkenler RAM’de Nasıl Tutulur?
+    * Değişken Tanımlama Kuralları
+        + İsimlendirme Kuralları(Name Convention) (Pascal Case | Camel Case | Snake Case)
+        + Değişken İsimlerini @ Operatörüyle Tanımlama
 - Tanımlanmış Değişkene Değer Atama
-- Değişkene Değer Atama Kuralları
-- (_a, _b) = (a, b) Tuple Türüyle Değer Atama
-- Literal Düzenlemeler(C# 7.0)
-- Değişken Türüne Uygun Default Değer Atama
-- Default Literals
+    * Değişkene Değer Atama Kuralları
+    * (_a, _b) = (a, b) Tuple Türüyle Değer Atama
+    * Literal Düzenlemeler(C# 7.0)
+    * Değişken Türüne Uygun Default Değer Atama
+    * Default Literals
 - Tanımlanmış Değişkenin Değerini Okuma
-- Kritik 1
-- Kritik 2
-- Değeri Olmayan Değişkenler!
+    * Kritik 1
+    * Kritik 2
+    * Değeri Olmayan Değişkenler!
 - Değişken Davranışları Genel Bakış(ref için farkındalık)
 - Değişkenlerin Faaliyet Alanları (Scope Kavramı)
-- Custom Scope Oluşturmak
+    * Custom Scope Oluşturmak
 - Sabitler(const)
 - Global Değişkenler
 - Değişken Tanımlama Varyasyonları
 - Değişkenler Arası Değer Atama – Deep Copy
 - Değişkenler Arası Değer Atama – Shallow Copy
 - object
-- Boxing
-- Cast Operatörü
-- UnBoxing – Casting
+    * Boxing
+    * Cast Operatörü
+    * UnBoxing – Casting
 - var
 - dynamic
+- özet

@@ -749,48 +749,36 @@
 - Compiler Nedir?
     * Kodlar Nasıl Compile Edilir?
 
-- Ortam Tanıtımı
-    * Visual Studio
-        - Proje ve Solution Kavramları
-        - Proje Oluşturma 
-        - Derleme
-    * Visual Studio Code
-        - Proje Oluşturma
-        - Derleme
-
+- Ortam Tanıtımı Visual Studio
+    * Proje ve Solution Kavramları
+    * Proje Oluşturma Derleme
+- Ortam Tanıtımı Visual Studio Code
+    * Proje Oluşturma Derleme
 - Dotnet CLI
-    * Nedir?
-    * Temel Komutlar
-        - help
-        - new
-        - restore
-        - build
-        - publish
-        - run
-    * Proje Modifikasyon Komutları
-        - add package
-        - add reference
-        - remove package
-        - remove reference
-        - list reference
-
+    * Temel Komutlar - help
+    * Temel Komutlar - new
+    * Temel Komutlar - restore
+    * Temel Komutlar - build
+    * Temel Komutlar - publish
+    * Temel Komutlar - run
+    * Paket İle Referans Arasındaki Fark Nedir?
+    * Proje Modifikasyon Komutları - add package
+    * Proje Modifikasyon Komutları - add reference
+    * Proje Modifikasyon Komutları - remove package
+    * Proje Modifikasyon Komutları - remove reference 
+    * Proje Modifikasyon Komutları - list reference
 - Başlarken Temel İlkeler
     * Don't Repeat Yourself
     * Anlamlı İsimlendirme
-
-- Main Fonksiyonu
+- Main Fonksiyonu Nedir?
     * dotnet run -value- Yapısı İle Uygulamayı Çalıştırma ve args Parametresine Değer Gönderme(Parametrenin Ne Olduğunu Bilmeseniz Dahi?)
     * Top-Level Statements(C# 9.0)
-
 - Yorum Satırları ve Region
-
 - Todo Nedir?
-
 - Debugging Nedir?
     * Breakpoint Nedir ve Nasıl Yapılır?
     * Watch Penceresi
-    * Debugsız Uygulamyı Çalıştırma Nasıl Yapılır?
-
+    * Debugsız Uygulamayı Çalıştırma Nasıl Yapılır?
 - Özet
 
 <img src="60.png" width="auto">
