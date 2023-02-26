@@ -812,3 +812,31 @@ for (int i = 0; i < 10; i++)
 ```
 
 <img src="14.png" width="auto">
+
+***
+# 221) Foreach Bir Döngü mü?
+- Döngülerin aralarındaki farklar aslında mantıksal değil yapısaldır.
+
+- `foreach` bir döngü değil bir iterasyondur.
+
+- Döngü dediğimiz yapılanma bir kombinasyona bağlı bir şekilde çalışıp bir koşulun doğrulanması sürecinde periyodik işlemler yapan yapılanmalardır. Halbuki iterasyon böyle bişey değildir ne kombinasyona bağlıdır ne de şarta bağlıdır. İterasyon dediğiniz itere edebileceği bir sonraki veriyi getirebileceği bir yapılanmadır. Onun için iterasyonlar döngü değildir itere eden yapılanmalardır. 
+
+- Döngü : Belirli bir kombinasyon eşliğinde çalışan ve belirli bir şarta bağlı olan periyodik işlemler gerçekleştiren yapılanmalardır.
+
+- Döngü dediğin yapılanma şart ve kombinasyondan ibarettir.
+
+- İterasyon : İterasyon mantığında ne kombinasyon ne de şart vardır. İterasyonda; sonraki veri, öteki veri anlamına gelen itere etme fiili vardır. Bir veri kümesi üzerinde işlem yapmamızı/verileri elde etmemizi sağlayan yapılanmadır.
+
+- İterasyon felsefesini/kavramını/stratejisini/mantığını benimsemiş yapılanmalarda ne kombinasyon (bir matematiğe göre çalışırsınız) vardır ne de şart vardır. Orada tek olan şey bir veri bütünüdür. Verilerin itere edilebilir yani itere sonrakine geçiş yapabileceği bir kavram vardır orada.
+
+- Kombinasyon falan yok iterasyon bir veri kümesinde verileri tek tek sana elde etmeni sağlıyor.
+
+- Bir kombinasyon bir şart yok onun için döngülerdeki esneklik iterasyonlarda olmayacaktır.
+
+- Döngülerde herhangi bir veri kümesi üzerinde döngüyle dönerken istediğimi noktadan başlayabiliriz ama iterasyonda başlayamazsınız iterasyon baştan başlar ve sona kadar gidecektir.
+
+- `foreach` her ne kadar iterasyon olsa da döngü gibi kullanıldığını da farkedeceksiniz.
+
+- Her döngü işlemi yapan sistem döngü değildir.
+
+<img src="15.png" width="auto">
