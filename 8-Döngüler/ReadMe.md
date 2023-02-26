@@ -840,3 +840,42 @@ for (int i = 0; i < 10; i++)
 - Her döngü işlemi yapan sistem döngü değildir.
 
 <img src="15.png" width="auto">
+
+***
+# 222) Döngülerde Neler İnceledik Özetleyelim
+- Nedir Bu Döngüler?
+- Ders8.2‘Hangi Döngü Nerede Kullanılır?’ Yanlış Bir Sorudur! Doğru Soru ‘Hangi Döngü Nereye Yakışır?’
+- For Döngüsü
+    * İnceleme 1
+    * İnceleme 2
+    * İnceleme 3
+    * Örnek 1
+    * Örnek 2
+    * Örnek 3
+    * Varyasyonları
+        1. Varyasyon
+        2. Varyasyon
+        3. Varyasyon
+        4. Varyasyon
+        5. Varyasyon
+        6. Varyasyon
+        7. Varyasyon
+        8. Varyasyon
+- While Döngüsü
+    * For İle Kıyaslama
+    * İnceleme 1
+    * İnceleme 2
+    * İnceleme 3
+    * İnceleme 4
+    * İnceleme 5
+- Do While Döngüsü
+    * While İle Kıyaslama
+- Scopesuz Döngüler
+- Sonsuz Döngüler
+    * For
+    * While
+    * Do While
+- İç İçe Döngüler
+    * For
+- Foreach Bir Döngü mü?
+- Özet
