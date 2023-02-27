@@ -113,3 +113,11 @@ catch
 - `return` keywordünü herhangi birşey de kullanmaksızın bişeye bağımlı olmaksızın direkt kullanabiliyorsun. Ama `int`i kullanamıyorsun. `int` bir değişken bağlama konseptine bağımlı olmak zorunda.
 
 - Konseptsiz ifadeler çok fazla kullanılan ama çok az olan ifadelerdir.
+
+***
+# 227) Konseptli/Konseptsiz Keywordler'de Neler İnceledik Özetleyelim
+- Gelin Koda Bakış Açımızı Genişletelim
+- Keyword Nedir? Operatörden Farkı Nedir?
+- Konseptli Keywordler(While, If, switch, try catch)
+- Konseptsiz Keywordler(Break, Continue, Return, Goto)
+- Özet
