@@ -137,3 +137,47 @@ for (int i = 0; i < 5; i++)
 }
 #endregion
 ```
+
+***
+# 230) Manevratik Komutlar - break Komutunu Örneklendirelim 1
+- Senaryo : Kullanıcıdan 't' harfi girene kadar alınan sınırsız sayıda sayıyı toplayan ve sonucu ekrana yazdıran uygulamayı yazalım.
+
+- Bu senaryoda sonsuz döngüye gireriz. İşte bu senaryoda girilen değer `string` bir ifade olan `t` değeri olma ihtimali olduğu için kullanıcıdan gelen değeri `string` ile karşılarız. Daha sonrasında ise girilen değer `t` mi diye kontrol ederiz. Eğer `t` ise işlemi sonlandırır ekrana çıktıyı yazdırırız.
+
+- `break` komutu sürekli ve her yerde kullanılıyor. Bir döngüden `switch case` den çıkman gerekir. Çıkman gerektiğinde `break`i kullanacaksın.
+
+```C#
+#Break Örnek
+//Kullanıcıdan 't' harfi girene kadar alınan sınırsız sayıda sayıyı toplayan ve sonucu ekrana yazdıran uygulamayı yazalım.
+
+#Çözümüm
+int sayi, toplam = 0;
+string deger;
+while (true)
+{
+    System.Console.Write("Sayı Giriniz : ");
+    deger = Console.ReadLine();
+    if (deger == "t")
+        break;
+    sayi = int.Parse(deger);
+    toplam += sayi;
+}
+System.Console.WriteLine("Toplam : " + toplam);
+
+#Hocanın Çözümü
+int toplamH = 0;
+while (true)
+{
+    System.Console.WriteLine("Lütfen bir sayı giriniz.");
+    string girilenDeger = Console.ReadLine();
+    if (girilenDeger == "t")
+    {
+        System.Console.WriteLine("Toplam Sonuç : " + toplamH);
+        break;
+    }
+    else
+    {
+        toplamH += int.Parse(girilenDeger);
+    }
+}
+```
