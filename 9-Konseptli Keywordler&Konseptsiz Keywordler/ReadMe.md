@@ -83,7 +83,7 @@ do
 } while (true);
 do
 {
-    
+
 } while (true);
 try
 {
@@ -95,3 +95,21 @@ catch
 }
         
 ```
+
+***
+# 226) Konseptsiz Keywordler Genel Bakış
+- Bunlar daha azınlıkta olsa da belirli noktalarda kullanılan keywordlerdir.
+
+- Herhangi bir bütüne herhangi bir konsepte ihtiyaç duymaksızın tek başına anlam ifade eden keywordlerdir.
+
+- `return` konseptsiz keywordlerden bir tanesidir. Tek başına bir anlam ifade eder.
+
+- Bu yapılanmalarda çok sınırlıdır. Yani konseptsiz kullanılan keywordler toplasanız 5 tane 10 etmez.
+
+- Bunun dışındaki keyword yapılanmalarının hepsi ya parantez açar ya yanına bir ifade bekler vs. Bir konsept gerektirir.
+
+- Değişken türleri de bir konseptli keyworddür.
+
+- `return` keywordünü herhangi birşey de kullanmaksızın bişeye bağımlı olmaksızın direkt kullanabiliyorsun. Ama `int`i kullanamıyorsun. `int` bir değişken bağlama konseptine bağımlı olmak zorunda.
+
+- Konseptsiz ifadeler çok fazla kullanılan ama çok az olan ifadelerdir.
