@@ -30,3 +30,110 @@ for (int i = 0; i < 100; i++)
     }
 }
 ```
+
+***
+# 229) Manevratik Komutlar - break Komutu Nedir?
+- Programlama da iki farklı yerde kullanılan komuttur.
+    * `switch case`
+    * döngüler
+    - Sadece bu iki yapıda kullanılabilir bir keyworddür.
+
+- Kullanıldığı yapıdan çıkış yapılmasını/kullanıldığı yapıyı sonlandırmaya yarayan bir keyworddür.
+
+- Nerede kullanılıyorsa oradan çıkış yapacaktır.
+
+- Senin kullandığın `break` komutu diyelim ki iki tane iç içe döngü olsun eğer sen `break` komutunu içteki döngüde kullanırsan eğer kullanıldığı döngüden çıkacaktır yani içteki döngüden çıkacaktır.
+
+- `switch case` pattern matching kullanmıyorsanız en sade haliyle verilen değerin eşitlik durumunu incelediğimiz bir akış kontrol mekanizmasıydı. İşte bu mekanizmada `case` bloklarından sonra `break` komutunu kullanıyorduk. Çünkü `case` bloklarında yapılan işlem sonlanınca artık `switch` bloğundan çıkarak işlemimizi tamamlamamız gerekiyordu. Nihayetinde `break` komutunu kullanmazsan buradaki akış devam edecek ve devamındaki `case` bloklarına bakmaya devam edecek. Halbuki buradaki amacımız tek `case`in çalışması diğerlerine bakılmaması. İşte burada akış `break` komutunu gördüğü vakit direkt compiler buradan çıkacaktır. 
+
+<img src = "2.png" width = "auto">
+
+- `break` komutu döngülerde ve `switch case` yapılanmasında kullanılır.
+
+- `break` komutu iterasyon yapılanmasında da kullanılan bir keyworddür. Aynı şekilde `foreach`i de sonlandırmamızı sağlar.
+
+- Döngünün içinde kullandığın diğer tüm yapılanmalarda da kullanabilirsin tek şart döngünün içinde olması bu yapılanmaların.
+
+- `break` komutu zaten şarta bağlı bir şekilde kullanılır bu keyword genellikle. Döngüde dönüyorsun dönerken eğer ki şu durum gerçekleştiyse `break` burada eğer ifadesini yani `if` yapılanmasını zaten kullanman gerekecek.
+
+- Döngü içerisinde herhangi bir yapılanma varsa onun içinde de kullanabiliyoruz. 
+
+- Döngü içerisinde `try catch` yapısının kullanımı çok tavsiye edilmez çünkü ucuz bir işlem değildir bayaa maliyetlidir.
+
+- `break` komutuna döngülerde ve `switch` yapılanmalarında erişebilmekteyiz.
+
+- Görev olarak bu akış `break` komutunu tetiklediğinde kesinlikle ilgili döngüden `switch case` yapılanmasından çıkacağını artık biliyoruz.
+
+- `break` komutu kullanıldığı yerde ilk derece de çıkış yapacaktır. Sonraki derecelerde onları kendi içlerinde tetiklemeniz gerekecektir.
+
+```C#
+#region Break
+switch (10)
+{
+    case 5:
+        break;
+    case 10:
+        break;
+    case 15:
+        break;
+}
+while (true)
+{
+    break;
+}
+for (int i = 0; i < 10; i++)
+{
+    break;
+}
+do
+{
+    break;
+} while (true);
+foreach (var item in new[] { "" })
+{
+    break;
+}
+for (int i = 0; i < 10; i++)
+{
+    while (true)
+    {
+        break;
+    }
+}
+do
+{
+    if (true)
+    {
+        break;
+    }
+} while (true);
+while (true)
+{
+    try
+    {
+        break;
+    }
+    catch (System.Exception)
+    {
+        throw;
+    }
+}
+
+while (true)
+{
+    if (DateTime.Now.Second == 45)
+        break;
+    System.Console.WriteLine(DateTime.Now);
+}
+
+for (int i = 0; i < 5; i++)
+{
+    for (int j = 0; j < 3; j++)
+    {
+        if (j == 1)
+            break;
+        System.Console.WriteLine("i : " + i + " j : " + j);
+    }
+}
+#endregion
+```
