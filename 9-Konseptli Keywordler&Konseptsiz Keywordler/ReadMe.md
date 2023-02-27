@@ -47,3 +47,51 @@
 - Örneğin bizim bir `var` diye keywordümüz var. `var` keywordü hem pattern matchinglerde farklı bir operasyona yarıyor. Normal değişken seviyesinde bambaşka bir operasyona yarıyor. `var` keywordü değişken seviyesinde compile/derleme zamanında atanan değerin türüne bürünüyordu pattern matchingde ise runtime'de bürünüyordu.
 
 <img src="2.png" width ="auto">
+
+***
+# 225) Konseptli Keywordler Genel Bakış
+- Yapısal olarak tek başına kullanılmayan bir bütün olarak konsepte bağlı şekilde kullanılan keywordlerdir.
+
+- Örneğin `namespace` keywordü tek başına kullandığınızda herhangi bir anlam ifade etmiyor. Amma velakin yanına bir isim verip scope'larını açtığınız zamana yani konseptlerini göz önünde bulundurursanız artık hangi anlamı ifade ediyorsa o şekilde kullanılabiliyor. `class`ta aynı şekilde konseptli bir keyworddür. Tek başına hiçbir yerde hiçbir anlam ifade etmez ama sen `class`ı bir isim vererek scopelarıyla açarsan bu konsepti kullandığın taktirde anlam ifade edecektir. Yani derleyici açısından konsepti uygun bir şekilde yorumlanacaktır. `for` keywordü tek başına bir anlam ifade etmezken kullandığımız konseptiyle beraber bir anlam ifade etmektedir. Keywordün konseptine göre mantık işler. Mesela `while` keywordü. `while` keywordü de yanındaki şarta göre scope'unu tetikliyor. 
+ 
+- Bir keyword tek başına bir anlam ifade etmiyor. Yani keyword oradaki yapacağı eylemi/operasyonel işlemi nasıl şekillendireceğini hangi davranışı göstereceğini kendi kalıbı üzerinden tanımlanmış dolayısıyla bu kalıbını kullanmamız gerekiyor.
+
+- `do while` keywordü programlamada `do` yu kullanabileceğiniz başka herhangi bir yer yok. Benzer mantıkla `while`ıda tek başına kullanamıyorsunuz. `do while` `do` ve `while` keywordleriyle kullanılmak zorundadır.
+
+- Bazı keywordler vardır. Başka operasyonların içerisinde sadece onlara dahili şekilde kullanılırlar. Örneğin `delegate` dediğimiz temsilcilerimiz bizim milletvekilleri nasıl bizim temsilcilerimiz programatik metotlarımızı temsil eden `delegate` dediğimiz yapılanmaların içerisinde `add` keywordünü kullanacağız. Bir metot eklerken kullanabildiğimiz bir keyword. O keywordü orada kullanırken sadece orada kullanabildiğimizin farkına varacaksınız. Bir keyworddür ama bir kalıba bir özel bir operasyona özel bir keyworddür.
+
+- Konseptli keywordlerde dikkat edilmesi gereken mesele konseptli keywordlerin konseptine hakim olmak. Bir keywordün konseptine hakim olabilmek için de editörün size sağlamış olduğu kolaylaştırıcılıklardan uzaklaşmanız ilgili keywordü kullanırken manuel bir şekilde elinizle yazmanızı kesinlikle tavsiye ediyoruz. 
+
+- Bir keywordün konseptine ne kadar hakimseniz ilgili keywordün mahiyetine de hakim olursunuz. Nihayetinde bir yapıya hakim olmak demek o yapının işleyiş mantığını da daha hızlı bir şekilde kavramanız anlamına geliyor. Örneğin askere gittin askerde sana bir silah verdiler ama neyin neye yaradığını söylemediler. Şimdi acil bir durumda sen bu silahı nasıl kullanacağını bilemezsin çünkü mantığını bilmiyorsun. çalışma yapısını bilmiyorsun yapısını bilmiyorsun davranışını bilmiyorsun dolayısıyla eğer ki sen gerçek bir asker olacaksan elindeki silahına nasıl çalıştığını bilmen lazım. Yapısını bilmen lazım gözün kapalı takıp çıkarabiliyor olman lazım vs. Aynı şekilde yazılımda da kendi materyalleri neyse onlara hakim olman gerekiyor ki operasyon anında oradaki o hakim olduğun yapının mantığını operasyona yansıtabilesin. 
+
+- Bunu genellikle oyun oynarız counter oynarız Counter'da silahın hangi mesafe de ne kadarlık açıyla sıktığında nereye gideceğini biliriz artık iç güdüsel olarak biz Türk gençleri. Bunu bol bol tecrübeyle bol bol oyun oynayarak daha da önemlisi kullandığımız silahlara hakimdik. Hangi silahı daha iyi kullandığını bilen hangi silahı hangi noktalarda daha efektif olduğunu bilenler ilgili noktalara en doğru şekilde çıkıp oyunda üstünlük kuruyorlardı. Yazılımda da böyledir durum sen hangi senaryoda hangi keywordü kullanacağını bileceksin o ayrı mesele ama keywordün kalıbını da bileceksin keywordün mahiyetini de bileceksin ki hani ezberinde de olacak. Bu keywordü kağıda yazabilecek bir şekilde inşa edebileceksin ki operasyon esnasında oradaki o mahiyetiyle beraber düşünce sanatını da uygulayabilesin.
+
+- Konseptli keywordlerde konseptleri mümkün mertebe elinizle yazmaya çalışıp hakim olmaya çalışın.
+
+```C#
+for (int i = 0; i < 10; i++)
+{
+
+}
+while (true)
+{
+
+}
+do
+{
+
+} while (true);
+do
+{
+    
+} while (true);
+try
+{
+    
+}
+catch 
+{
+    
+}
+        
+```
