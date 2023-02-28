@@ -251,3 +251,59 @@ while (true)
     }
 }
 ```
+
+***
+# 233) Manevratik Komutlar - continue Komutunu Örneklendirelim 1
+- Senaryo : Kullanıcının girdiği sonsuz adet sayıdan pozitif olanlarını çarpan ve 't'(enter) yapıldığında sonucu ekrana yazdıran kodu yazalım.
+
+- Kullanıcı sonsuz adet sayı giriyorsa `while` döngüsünden sonsuz döngüye giriyoruz. Sonrasında girilen değeri `t` mi diye kontrol ediyoruz ki ekrana çıktı alabilelim. İstersen 1. ihtimalde eğer girilen sayi > 0 ise çarpım işlemine dahil et diyebilirsin. 2. İhtimalde ise `continue` kullanabilirsin yani sayi < 0 işleminde `continue` dersin yani bunu atla eğer büyükse sen bunu çarpım işlemine dahil et diyebilirsin.
+
+```C#
+#region Continue - Örnek
+//Kullanıcının girdiği sonsuz adet sayıdan pozitif olanlarını 
+#region Çözümüm
+string deger;
+int sayi, carpim = 1;
+while (true)
+{
+    System.Console.Write("Sayı Giriniz : ");
+    deger = Console.ReadLine();
+    if (deger == "t")
+    {
+        System.Console.WriteLine("Sonuç : " + carpim);
+        break;
+    }
+    else
+    {
+        sayi = int.Parse(deger);
+        if (sayi < 0)
+            continue;
+        carpim *= sayi;
+    }
+}
+#endregion
+#region Hocanın Çözümü
+int carpimH = 1;
+while (true)
+{
+    System.Console.WriteLine("Lütfen bir sayı giriniz.");
+    string girilenDeger = Console.ReadLine();
+    if (girilenDeger == "t")
+    {
+        System.Console.WriteLine(carpim);
+    }
+    else
+    {
+        int sayiH = int.Parse(girilenDeger);
+        #region 1. İhtimal
+        if (sayiH > 0)
+            carpimH *= sayiH;
+        #endregion
+        #region 2. İhtimal
+        if (sayiH < 0)
+            continue;
+        carpimH *= sayiH;
+        #endregion
+    }
+}
+```
