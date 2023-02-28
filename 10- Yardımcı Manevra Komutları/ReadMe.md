@@ -307,3 +307,22 @@ while (true)
     }
 }
 ```
+
+***
+# 234) Manevratik Komutlar - continue Komutunu Örneklendirelim 2
+- Senaryo : 1 ile 1000 arasında 7'nin katı olmayan sayıları ekrana yazdıralım.
+
+- 1'den 1000'e kadar gitmem gerekiyor benim için uygun döngü `for`.  Burada sayı eğer 7'nin katıysa `continue` komutuyla geçeceğiz.
+
+- `continue` bir sonraki adıma bir sonraki periyoda geçecek olan bir keyworddür.
+
+```C#
+#Continue - Örnek
+//1 ile 1000 arasında 7'nin katı olmayan sayıları ekrana yazdıralım.
+for (int i = 1; i <= 1000; i++)
+{
+    if (i % 7 == 0)
+        continue;
+    System.Console.WriteLine(i);
+}
+```
