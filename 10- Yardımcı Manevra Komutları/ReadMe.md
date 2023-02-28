@@ -208,3 +208,46 @@ while (durum)
     }
 }
 ```
+
+***
+# 232) Manevratik Komutlar - continue Komutu Nedir?
+- Sade ve sadece döngülerden erişilebilen ve döngülerde kullanılabilen bir keyworddür.
+
+- Amaç olarak devam et'e yani döngülerde bazen biz yapmış olduğumuz kombinasyona göre elde ettiğimiz değerler olacak işte o değerlere göre o anki turda ben işlem yapmak istemeyebilirim. Yani ben bu değerlere göre bu turda işlem yapmamam lazım ya da bir sonraki değere geçmem lazım gibi ihtiyacım olabiliyor. İşte böyle durumlarda döngünün o anki turunu bırakıp bir sonraki tura geçiş yapabilmenizi sağlayan bir keyworddür. Ondan dolayı devam et gülüm diyor.
+
+- Amaç : Döngüde bir sonraki tura geçilmesini sağlar. Yani bir sonraki periyoda direkt geçiş yaptırır.
+
+- Diyelim ki senin bir döngün var ve bu döngünün içinde belirli işlemler var. Döngünde `i` diye bir değişkenin var ve bunun değeri 33. değerde ve dış algoritmadan/parametrelerden/değişkenlerden gelen değerleri içeride işlediğini varsayalım. Belirli değerlere göre diyosun ki ya kardeşim eğer `i` 33 değerindeyse sen `continue` yap yani 33'te bunu işleme buradaki turda dur işlem yapma derseniz eğer `continue` kendinden sonraki kodları/komutları tetiklemeyecek/çalıştırmıyacaktır. Döngünün başına gelecek ve bir sonraki tura yani i'nin değeri 34'ten devam edecek. `continue` döngünün içerisinde nereye denk geldiyse oradan sonra bırakacak bir sonraki turdan devam edecek. Senin döngünün başına dönüp kombinasyonel baştan bahsetmiyoruz. Kombinasyonel işlemini devam ettirmenden bahsediyoruz. 
+
+- Kombinasyon devam etsin diyebilmen için kullandığımız bir keyworddür. Devam et kardeşim ben 33'te işlem yapmak istemiyorum 34'e sen devam et demenin yoludur.
+
+<img src="3.png" width="auto">
+
+- Senin bana getirmiş olduğun değerler algoritmada gelen bütün parametrik değerler benim işimi görmüyor ne gerek var bütün algoritmayı tekrar yapmaya geç kardeşim devam et sonraki değerleri getir. Hızlıca baktı işine yaramayan değer var bir sonraki tura geç demenin yoludur.
+
+- Sadece döngülerde kullanılır ve bütün döngülerde kullanabilirsiniz. Döngülerin içerisinde herhangi bir yapılanma olabilir ve orada da kullanabilirsiniz. `continue` hangi döngüdeyse bir sonraki tura geç kardeşim diyecek.
+
+- Yapısal olarak bir manevratik keyworddür. Nihayetinde sen döngüde dönerken bazen bir duruma göre dönmeyip bir sonraki işlemden devam edebiliyorsun.
+
+```C#
+#continue
+for (int i = 0; i < 10; i++)
+{
+    if (i % 2 != 0)
+        continue;
+    System.Console.WriteLine(i);
+}
+while (true)
+{
+    if (true)
+    {
+        switch (1)
+        {
+            case 5:
+                continue;
+                break;
+            default:
+        }
+    }
+}
+```
