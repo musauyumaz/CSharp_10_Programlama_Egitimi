@@ -181,3 +181,30 @@ while (true)
     }
 }
 ```
+
+***
+# 231) Manevratik Komutlar - break Komutunu Örneklendirelim 2
+- Senaryo : Kullanıcıdan alınan sonsuz adet sayı değerlerinden 37'nin katı girildiğinde sonlanan uygulamayı yazalım.  
+
+- Sayıları sınırsız isteyeceğiz yani burada sonsuz döngüsel bir işlem var. Ardından kullanıcıdan sayı isteyeceğiz. Sonra bu girilen sayıyı kontrol ediyoruz yani `sayi % 37 == 0` ise diyerek kontrolümü sağlayıp `break` keywordümü kullanıyorum.
+
+- `break` komutu burada yapmış olduğunuz manevranın yerine kendisi zaten manevrayı sağlıyor. Onun için manevratik komutlar diyoruz bu komutlara.
+
+- `break` komutu kullanıldığı yerler sadece döngüler ve `switch case` blokları. Sadece kullanıldığı döngüden ve `switch case` bloğundan çıkmamızı sağlayan bir manevratik komuttur.
+
+```C#
+#Break Örnek
+//Kullanıcıdan alınan sonsuz adet sayı değerlerinden 37'nin katı girildiğinde sonlanan uygulamayı yazalım.    
+bool durum = true;
+while (durum)
+{
+    System.Console.WriteLine("Lütfen Bir Sayı Giriniz.");
+    int sayi = int.Parse(Console.ReadLine());
+    if (sayi % 37 == 0)
+    {
+        System.Console.WriteLine("Uygulama Sonlanmıştır");
+        // durum = !durum;
+        break;
+    }
+}
+```
