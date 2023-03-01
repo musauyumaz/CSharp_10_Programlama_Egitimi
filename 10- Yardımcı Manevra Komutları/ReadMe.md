@@ -326,3 +326,25 @@ for (int i = 1; i <= 1000; i++)
     System.Console.WriteLine(i);
 }
 ```
+
+***
+# 235) Manevratik Komutlar - return Komutu Nedir?
+- Her yerde(metot içerisinde) kullanılabilir, erişilebilir bir keyworddür. Diğerlerine(`break`, `continue`) nazaran metodun içerisinde her yerde kullanabiliyorsun.
+
+- İki işlevi görmektedir;
+    1. Nerede çağırılıyorsa çağrılsın bulunduğu metottan çıkış yapar. Yani metodu sonlandırır...
+    2. İleride göreceğimiz metotlar konusunda geriye değer döndürme sorumluluğunuda üstlenen bir keyworddür.
+
+- Nerede çağırırsan çağır farketmiyor eğer ki akış return komutunu gördüyse ilgili metodu kesecektir. Uygulama sona erecektir haliyle.
+
+- Diyelim ki bir metodunuz var ve bu metotta istediğiniz yerde `return` keywordünü kullanın farketmiyor yeter ki metodun scope'ları içinde olsun. Compiler bu keywordü gördüğü zaman haydi selametle diyip metottan çıkacaktır.
+
+<img src="4.png" width="auto">
+
+- Metodun içerisinde her yerde kullanılırdan kastımız herhangi bir şeyin içerisinde tanımlanmış herhangi birşeylerin içerisinde de kullanılabilir.
+
+- Uygulama `return`ü gördüğü yerde metottan çıkacağı için devamı falan gelmez dolayısıyla `return`den sonra hangi komut varsa hiçbiri işlenmeyecektir.
+
+- `return`den sonra hangi komut geliyorsa gelsin metot sonlanacağı için İŞLENMEYECEKTİR!!!
+
+<img src="5.png" width="auto">
