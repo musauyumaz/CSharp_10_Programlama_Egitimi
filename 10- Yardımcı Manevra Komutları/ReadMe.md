@@ -348,3 +348,29 @@ for (int i = 1; i <= 1000; i++)
 - `return`den sonra hangi komut geliyorsa gelsin metot sonlanacağı için İŞLENMEYECEKTİR!!!
 
 <img src="5.png" width="auto">
+
+***
+# 236) Manevratik Komutlar - return Komutunu Örneklendirelim
+- Senaryo : Kullanıcı 'c' tuşuna basana kadar sonsuz döngüde dönen uygulamayı yazınız.
+
+- Burada `Console.ReadLine()` değerini almayacağız çünkü `Console.ReadLine()` komutu `enter` tuşuna basıldığında yazılan değeri gönderiyor. Ama burada direkt basan diyor tuşa bastığı anda denetlesin istiyorsak eğer `Console.ReadKey()` getirecektir.
+
+- `Console.ReadKey().KeyChar` : Tıklanan karakteri bize `char` olarak getirecektir.
+
+- `return` yazıldığı yerde tetiklendiği anda ilgili metottan çıkacak metodu sonlandıracaktır.
+
+```C#
+#return Örnek
+//Kullanıcı 'c' tuşuna basana kadar sonsuz döngüde dönen uygulamayı yazınız.
+while (true)
+{
+    if (Console.ReadKey().KeyChar == 'c')
+    {
+        System.Console.WriteLine();
+        System.Console.WriteLine("Uygulama Sona Ermiştir.");
+        return;
+    }
+    System.Console.WriteLine();
+    System.Console.WriteLine("Uygulama Çalışıyor...");
+}
+```
