@@ -466,3 +466,21 @@ a:
         goto a;
     }
 ```
+
+***
+# 240) Manevratik Komutlarda Neleri İnceledik Özetleyelim
+- Algoritmada Manevra Yapmamızı Sağlayan Komutlarda Neyin Nesi?
+- break
+    * Örnek 1
+    * Örnek 2
+- continue
+    * Örnek 1
+    * Örnek 2
+- return
+    * Örnek
+- goto
+- Örnek
+    * Kritik
+- Özet
+
+<img src="8.png" width = "auto">
