@@ -374,3 +374,61 @@ while (true)
     System.Console.WriteLine("Uygulama Çalışıyor...");
 }
 ```
+
+***
+# 237) Manevratik Komutlar - goto Komutu Nedir?
+- Kodun senkronizasyonunu bozup akışı ters istikamette almamızı sağlayan bir manevratik komuttur.
+
+- İstediğin herhangi bir yere kodu şimdi akış yukarıdan aşağıya ya akarken kod istediğin yere dönmeni sağlayabilen bir manevratik keyworddür.
+
+- Kodun akışı normalde konsept konsept yukarıdan aşağıya diyoruz ama konsept konsepttir yani soldan sağa doğru gider ya da yukarıdaki ilk önce var olan konsept işlenir ardından sonraki konsept işlenir ve bu akış her daim yukarıdan aşağıya olacak şekildedir. Dolayısıyla siz kodun akışını yukarıdan aşağıya olan bu akışı aşağıdan yukarıya normalde alamazsınız `goto` keywordü ile buradaki akış yön değiştirebilmekte. İstediğiniz herhangi bir noktadan önceden var olan tanımlanmış olan bir başka noktaya geri dönüş yapabiliyorsunuz. Şimdi bu işlemi işte biz `goto` ile sağlayabilmekteyiz.
+
+- Davranışsal olarak döngülere benzer... Döngü ne yapıyor dönüyor bir kodu bitiriyor bitirdikten sonra başa dönüyor her ne kadar belli bir kombinasyon olsa da yani önceden tanımlanmış komutları yeniden dönüyor ve onları tekrardan işliyor aslında döngülerde de senkronizasyon bozuluyor. Döngü bir kalıp olarak değerlendirilmediği sürece önceki komutlara geri dönüp işliyor. Senkronizasyon hani tek yönlüydü. Hani bir işlem bittikten sonra öbür işlem devam eder ve bu şekilde devam ederdi. Biten bir senkronizasyon tekrardan başa sarılıyor döngülerde. Döngü de problem yok döngü gayet tabii bir durum ama `goto` keywordüyle bu durumu yapmamız yazılımcılar açısından pek fazla önerilmiyor.
+
+- `goto` akıştaki bir kodu önceki kodlardan herhangi birine geri dönmeni sağlayan bir keyworddür. Dolayısıyla bir döngü değildir ama davranışsal olarak bir döngüye benzeyen yapılanmadır.
+
+- `switch case` yapılanmasında dahili olarak kullanılan bu komut, metot içerisinde her yerde kullanılabilir. Yani `switch case`de dahiliydi metodun içerisinde `switch`in dışında da her yerde kullanılabilir.
+
+- `switch` te biz berlirli bir değeri kontrol ederken bu değeri kontrol esnasında `case`lerden herhangi biri tetikleniyorsa bir başka `case` de işlem yaparken `goto case n` şeklinde ifade kullanıyorduk. Bu `goto` önceden tanımlanmış olan `case`lerden birine dönüş yapmamızı önceden tanımlanmış olanlardan birinin komutunun tetiklenmesini sağlıyordu yani önceye dönüyordu.
+
+- Yapısal olarak `goto` her yerde kullanılıyor. `goto` yapılanmasında 2 tane operasyon barındırmaktadır
+    1. Döneceği yeri işaretleyen herhangi bir referans tanımlamalısınız. Örneğin `a:` bundan sonraki `goto` keywordünü geri dönebileceği yerdir. yani `goto a;` dediğiniz an `a:` tanımlandığı yere akışı getirecek ve buradaki süreç tekrardan işleyecek. D
+
+- Davranışsal olarak döngüye çok benzer ama bir döngü değildir bir keyworddür bir manevra yapmanı sağlıyor yani bildiğin alenen bir manevra geriye dönme tekrardan devam et demeni sağlıyor. İşte böyle bir durumda biz `goto` yu aslında manevratik gayet efektif işlemler yapabiliyoruz ama altı doldurulamayan bazı sebeplerden dolayı `goto` keywordü ciddi manada piyasada ve kodlama süreçlerinde dışlanmış bir keyworddür.
+
+- `a:` Bir başlangıç referansı tanımlıyoruz ve ardından `goto a;` tanımlanmış olan referansa kodun akışını yönlendiriyoruz. Yani senkronizosyonu bozup kodu yukarı çıkarıyorsun tekrardan devam ettiriyorsun yön değiştiriyor.
+
+- Geleneksel coderlar tarafından pek sevilmeyen `goto` keywordü tavsiye edilmemektedir.
+
+- Teknik olarak programı yavaşlattığı söylenmektedir. Hatta yapılmış olan performans testlerini incelediğimizde bir nebze kayıp ve yavaşlık söz konusudur. Yani maliyeti diğer durumlara nazaran oldukça fazladır.
+
+- `goto` keywordüyle senkronizasyonu bozup başa dönme durumu bir döngüyle aynı işlemi yapmaya nazaran daha maliyetli olacaktır...
+
+- "İyi bir C# programcısı gerekmediği sürece kesinlikle `goto` anahtar sözcüğünü kullanmamalıdır...." Sefer Algan
+
+- Gerekmediği sürece kullanmamalısınız gerekiyorsa tabiki de kullanacaksın. Eğer ki yapmış olduğun operasyondaki manevra çok kritik bir manevraysa ve orada öyle döngüyle möngüyle ortalığı karıştıracağına `goto` ile çözüm getirebilirsin.
+
+- Diller geliştikçe ve yüksek seviyede oldukça bu komutun kalkması doğal bir süreçtir...
+
+- Aşağıya doğru referans tanımlanamamaktadır. Senkronizasyon aşağıya doğru zaten varsayılan olarak gideceğinden dolayı böyle bir kullanım yasaklanmıştır.
+
+```C#
+#goto
+switch (10)
+{
+    case 5:
+        System.Console.WriteLine("asdfgasgfasgfa");
+        break;
+    case 10:
+        goto case 15;
+    case 15:
+        break;
+}
+a:
+System.Console.WriteLine("Merhaba");
+System.Console.WriteLine("Dünya");
+goto a;
+```
+
+<img src="6.png" width="auto">
+<img src="7.png" width="auto">
