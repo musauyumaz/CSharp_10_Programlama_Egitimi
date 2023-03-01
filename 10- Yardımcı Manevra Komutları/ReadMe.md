@@ -432,3 +432,21 @@ goto a;
 
 <img src="6.png" width="auto">
 <img src="7.png" width="auto">
+
+***
+# 238) Manevratik Komutlar - goto Komutunu Örneklendirelim
+- Senaryo : 1'den 100'e kadar sayalım.
+
+- Herhangi bir döngüyle çok kolay yapabiliriz. Aslında `goto` ile daha kolay yapabiliriz. Aslıdna manevra açısından çok efektif bir çözüm getiriyor.
+
+```C#
+    #goto Örnek
+    //1'den 100'e kadar sayalım
+    int i = 1;
+ x:
+    System.Console.WriteLine(i++);
+    if (i <= 100)
+         goto x;
+    for (int i = 0; i <= 100; i++)
+        System.Console.WriteLine(i);
+```
