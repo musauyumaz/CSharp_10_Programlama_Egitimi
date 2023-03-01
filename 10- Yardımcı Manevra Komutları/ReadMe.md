@@ -450,3 +450,19 @@ goto a;
     for (int i = 0; i <= 100; i++)
         System.Console.WriteLine(i);
 ```
+
+***
+# 239) Manevratik Komutlar - goto Komutu Üzerine Kritik Yapalım
+- `goto` keywordü tanımlanan referansa geri dönüş yaparken scope kavramını dinlememektedir.
+
+- Bir keyword eğer ki scope yapılanmasını aşabiliyorsa orada artık hesaplamaları dahil ederken iyi kritik yapmanız gerekecektir. Senin buradaki `for` döngüsünde eğer ki referansa döndürebilme ihtimalin varsa bunu `for` döngüsünü sonsuz hale getirme ihtimali de vardır. Bu döngü sonsuzdur.
+
+```C#
+#goto Kritik
+a:
+    for (int i = 0; i < 190; i++)
+    {
+        System.Console.WriteLine(i);
+        goto a;
+    }
+```
