@@ -26,3 +26,17 @@ while (true);
 ```
 
 <img src="1.png" width="auto">
+
+***
+# 242) (Ekstra Bilgi) if Yapılanmasında Noktalı Virgül Operatörü İle Salt İfade Tanımları
+- `if` yapısında boş scope kullanmak istemediğimiz durumlarda da yine `;` operatörü ile çalışma yapabiliyoruz.
+
+- Eğer ki `if` scope'u bir ihtiyaca binaen boş kalması gerekiyorsa bu şekilde çalışabiliyorsunuz.
+
+```C#
+#if Yapısında Boş Scope Kullanmak İstemediğimiz Durumlarda ; Operatörü İle Temiz Kod Yazımı
+if (true)
+{
+}
+if (true) ;
+```
