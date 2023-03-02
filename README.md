@@ -13,4 +13,5 @@
 - ## [Hata Kontrol Mekanizmaları](https://github.com/musauyumaz/CSharp_10_Programlama_Egitimi/blob/main/7-Hata%20Kontrol%20Mekanizmalar%C4%B1/ReadMe.md)
 - ## [Döngüler](https://github.com/musauyumaz/CSharp_10_Programlama_Egitimi/blob/main/8-D%C3%B6ng%C3%BCler/ReadMe.md)
 - ## [Konseptli Keywordler Konseptsiz Kwywordler](https://github.com/musauyumaz/CSharp_10_Programlama_Egitimi/blob/main/9-Konseptli%20Keywordler%26Konseptsiz%20Keywordler/ReadMe.md)
+- ## [Yardımcı Manevra Komutları](https://github.com/musauyumaz/CSharp_10_Programlama_Egitimi/blob/main/10-%20Yard%C4%B1mc%C4%B1%20Manevra%20Komutlar%C4%B1/ReadMe.md)
 
