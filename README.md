@@ -12,4 +12,5 @@
 - ## [Akış Kontrol Mekanizmaları](https://github.com/musauyumaz/CSharp_10_Programlama_Egitimi/blob/main/6-Ak%C4%B1%C5%9F%20Kontrol%20Mekanizmalar%C4%B1/ReadMe.md)
 - ## [Hata Kontrol Mekanizmaları](https://github.com/musauyumaz/CSharp_10_Programlama_Egitimi/blob/main/7-Hata%20Kontrol%20Mekanizmalar%C4%B1/ReadMe.md)
 - ## [Döngüler](https://github.com/musauyumaz/CSharp_10_Programlama_Egitimi/blob/main/8-D%C3%B6ng%C3%BCler/ReadMe.md)
+- ## [Konseptli Keywordler Konseptsiz Kwywordler](https://github.com/musauyumaz/CSharp_10_Programlama_Egitimi/blob/main/9-Konseptli%20Keywordler%26Konseptsiz%20Keywordler/ReadMe.md)
 
