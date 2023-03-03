@@ -15,4 +15,5 @@
 - ## [Konseptli Keywordler Konseptsiz Kwywordler](https://github.com/musauyumaz/CSharp_10_Programlama_Egitimi/blob/main/9-Konseptli%20Keywordler%26Konseptsiz%20Keywordler/ReadMe.md)
 - ## [Yardımcı Manevra Komutları](https://github.com/musauyumaz/CSharp_10_Programlama_Egitimi/blob/main/10-%20Yard%C4%B1mc%C4%B1%20Manevra%20Komutlar%C4%B1/ReadMe.md)
 - ## [Ekstra Bilgi](https://github.com/musauyumaz/CSharp_10_Programlama_Egitimi/blob/main/11-Ekstra%20Bilgi/ReadMe.md)
+- ## [Diziler](https://github.com/musauyumaz/CSharp_10_Programlama_Egitimi/blob/main/12-Diziler(Arrays)/ReadMe.md)
 
