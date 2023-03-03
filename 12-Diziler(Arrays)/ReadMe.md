@@ -200,3 +200,15 @@
 int[] yaslar = new int[5];
 string[] adsadsa = new string[999999];
 ```
+
+***
+# 245) Dizi Nasıl Tanımlanır? - 2
+- Tanımlanan diziler bellekte alan tahsisinde bulunduktan sonra sistem tarafından otomatik indexlenirler/index numarası atanır.
+
+- Index numarası atamak bunları 0'dan n-1'e kadar ardışık sıralarla işaretlemekti. 
+
+- Normalde direkt varsayılan değerleri atama yapar. Birde bunun yanında index numarası/index no'yu atar. 0'dan n-1'e kadar.
+
+- Bir dizi değeri tanımladığınızda tanımlanır tanımlanmaz bellekte bir alan tahsisi gerçekleştiriliyor ardından bu alana default değerler atanıyor ve 2. durum bu her bir alan index numarasıyla işaretleniyor.
+
+<img src = "5.png" width = "auto">
