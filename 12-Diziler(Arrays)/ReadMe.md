@@ -403,7 +403,7 @@ do
 
 ```C#
 #Tanımlanmış Dizi İçerisinde Döngüyle Dönme - Kritik 1
-string[] personeller = new string[15];
+string[] personeller = new string[13];
 personeller[0] = "Hilmi";
 personeller[1] = "Hüseyin";
 personeller[2] = "Rıfkı";
@@ -417,6 +417,27 @@ personeller[6] = "Hüsnü";
 // personeller[10] = "Ayşe";
 // personeller[11] = "Fatma";
 // personeller[12] = "Nuriye";
+for (int i = 0; i < personeller.Length; i++)
+{
+    System.Console.WriteLine(personeller[i]);
+}
+```
+
+***
+# 249.2) Dizi İçerisinde Döngüyle Dönme Kritik
+- Tabikide değerleri silerken dizinin eleman sayısını da düzeltmeyi unutmuyoruz:)
+
+```C#
+#Tanımlanmış Dizi İçerisinde Döngüyle Dönme - Kritik 1
+string[] personeller = new string[7];
+personeller[0] = "Hilmi";
+personeller[1] = "Hüseyin";
+personeller[2] = "Rıfkı";
+personeller[3] = "Şuayip";
+personeller[4] = "Muiddin";
+personeller[5] = "Naci";
+personeller[6] = "Hüsnü";
+
 for (int i = 0; i < personeller.Length; i++)
 {
     System.Console.WriteLine(personeller[i]);
