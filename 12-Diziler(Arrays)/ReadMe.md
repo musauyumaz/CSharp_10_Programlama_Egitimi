@@ -344,3 +344,81 @@ System.Console.WriteLine(yaslar[7]);
 - Algoritma ondan sonra artık senin konuştuğun belagatına bağlı senin yapacağın edebiyatına bağlı.
 
 - Diziyi genellikle döngülerle beraber kullanır döngülerin kombinasyonuna göre işlemler yaparız.
+
+```C#
+#Tanımlanmış Dizi İçerisinde Döngüyle Dönme
+string[] personeller = new string[10];
+personeller[0] = "Hilmi";
+personeller[1] = "Hüseyin";
+personeller[2] = "Rıfkı";
+personeller[3] = "Şuayip";
+personeller[4] = "Muiddin";
+personeller[5] = "Naci";
+personeller[6] = "Hüsnü";
+personeller[7] = "Nurullah";
+personeller[8] = "Cabbar";
+personeller[9] = "Akif";
+
+#Ameleus 
+System.Console.WriteLine(personeller[0]);
+System.Console.WriteLine(personeller[1]);
+System.Console.WriteLine(personeller[2]);
+System.Console.WriteLine(personeller[3]);
+System.Console.WriteLine(personeller[4]);
+System.Console.WriteLine(personeller[5]);
+System.Console.WriteLine(personeller[6]);
+System.Console.WriteLine(personeller[7]);
+System.Console.WriteLine(personeller[8]);
+System.Console.WriteLine(personeller[9]);
+
+for (int i = 0; i < 10; i++)
+{
+    System.Console.WriteLine(personeller[i]);
+}
+int i = 0;
+do
+{
+    System.Console.WriteLine(personeller[i++]);
+} while (i < 10);
+```
+***
+# 249.1) Dizi İçerisinde Döngüyle Dönme Kritik
+- Bir dizinin içerisinde döngüyle dönerken döngünün kombinasyonundaki eleman sayısını statik belirlememeniz gerekiyor. Çünkü bir gün bu kod değişebilir bu dizideki eleman sayıları hem artabilir hem de azalabilir. İşte böyle bir durumda gidip yazılan döngüyü de değiştirmen gerekecektir. İşte burada artık dizi değiştikçe kodun devamındaki o diziyle alakalı yapılan tüm kombinasyonlardaki değerleri katsayıları değiştirmek zorunda kalırız. İşte böyle bir durumda buradaki yapılanma/algoritma döngüdeki şartı dizinin eleman sayısına bağlayacak ama bunu pratikte yapacak yani bunu kodla yapman gerekiyor.
+
+- Dizi içerisinde dönecek olan döngü kombinasyonunda dizinin eleman sayısını manuel bir şekilde kullanmamalı, bu sayısal değeri dizinin kendisinden almalıyız. Dizi ya kardeşim benim eleman sayım bu demeli. Aksi taktirde dizinin eleman sayısının artması durumunda veri kaybı söz konusu azalması durumunda unutursak eğer patlama/hata alma söz konusu olabilir.
+
+- İşte bu tarz durumlarda dizinin eleman sayısı değiştikçe diziye uygun bir şekilde operasyon gerçekleştiren döngüye de diziden gelecek eleman sayısını kullanmamız lazım. Biz manuel yazmamalıyız.
+
+<img src = "14.png" width="auto">
+
+- Bu işi yapabilmemiz için dizilerin içerisinde `Length` dediğimiz bir özellik var.
+
+- `Length` : Dizinin kaç elemanlı olduğunu `int` olarak geriye döndürür...
+
+<img src = "15.png" width="auto">
+
+- Bu durumda döngünün şart kısmına statik değer yazmaktansa dizinin `Length` özelliğini kullanarak artık dizinin eleman sayısı istediği kadar değişebilir eleman sayısı kaçsa o kadar şart kısmına direkt yansıyacaktır.Aslında buradaki manuel bağlılığı programatik bağlılığa çevirdik. Artık döngünün şart kısmındaki değerim direkt dizinin eleman sayısından geleceği için eleman sayısında hangi değişiklik olursa olsun ben kodun devamında bir düzenleme/değişiklik yapmak zorunda değilim.
+
+- Döngülerde dönerken kombinasyon genellikle dizinin eleman sayısı üzerinden yapıldığı için eleman sayısını `Length` özelliği üzerinden alıyoruz.
+
+```C#
+#Tanımlanmış Dizi İçerisinde Döngüyle Dönme - Kritik 1
+string[] personeller = new string[15];
+personeller[0] = "Hilmi";
+personeller[1] = "Hüseyin";
+personeller[2] = "Rıfkı";
+personeller[3] = "Şuayip";
+personeller[4] = "Muiddin";
+personeller[5] = "Naci";
+personeller[6] = "Hüsnü";
+// personeller[7] = "Nurullah";
+// personeller[8] = "Cabbar";
+// personeller[9] = "Akif";
+// personeller[10] = "Ayşe";
+// personeller[11] = "Fatma";
+// personeller[12] = "Nuriye";
+for (int i = 0; i < personeller.Length; i++)
+{
+    System.Console.WriteLine(personeller[i]);
+}
+```
