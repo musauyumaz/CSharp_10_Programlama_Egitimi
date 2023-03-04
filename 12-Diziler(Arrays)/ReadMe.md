@@ -443,3 +443,29 @@ for (int i = 0; i < personeller.Length; i++)
     System.Console.WriteLine(personeller[i]);
 }
 ```
+
+***
+# 250) Dizilerin Sınırlılıkları ve Koleksiyon Yapılarının Doğuşu
+- Kullanmadığın bir alanı tahsis etmek bir sınırlılıktır.
+
+- Tanımlanmış bir diziye değer verirken indexer operatörü üzerinden değer vermek zorundayız. Nihayetinde hangi index'te çalıştığını bilmen gerekiyor. Hangi alana atayacağını ve hangi elemanı atayacağını da bilmek bir sınırlılıktır.
+
+- Dizilerde elemanlara değer atarken indexer operatörüyle çok haşır neşir olunmaktadır. Bu durumda bir sınırlılıktır. İleride koleksiyon yapısını göreceğiz. Koleksiyonlarda indexer ile atama olmayacak direkt fonksiyonel bir atama söz konusu olacak daha programatik bir atama söz konusu olacak. Buradaki sınırlılıkta ortadan kaldırılmış olacak.
+
+- Diziler çok hızlı veri yapılarıdır. Yani bilgisayarda programlama dili seviyesinde olduklarından dolayı koleksiyonlara nazaran gayet hızlıdırlar.
+
+- Koleksiyonlar bizim oluşturduğumuz türetilmiş nesnel yapılanmalar. Tabikide diziye nazaran daha yavaş çalışan yapılanmalardır. Amma velakin biz dizilerde dizinin programlama seviyesinde olan bir yapılanma olduğunu bildiğimizden dolayı daha hızlı çalışabiliyoruz. daha efektif maliyeti düşük performanslı bir çalışma sergileyebiliyoruz. Gelin görün ki sınırlılıkları var.
+
+- Bu sınırlılıklar belirli algoritmalarla belirli tekniklerle yol ve yordamlarla rahatça aşılabiliyor. Ya da OOP bilen birisi bir diziyi yönetebilecek bir sınıf oluşturup o sınıf üzerinden dizideki bu sınırlılıklarıda ortadan kaldırabilir. İşte sen bunu yapmıyorsun mimaride gelen koleksiyonlar birileri tarafından yapılmış yapılanmalar oluyor.
+
+- Dizi ne kadar iyi hoş güzel bir şey olsa da bizler için sınırlılıkları olan bir yapılanmadır. Haliyle biz yazılımcılar bu sınırlılıklardan arınabilemek için koleksiyon dediğimiz adı üzerinde birden fazla veriyi kapsayabilen yapılar üretilmiştir. Üretilen bu koleksiyonlar davranışa göre de şekilleneceklerdir. Key Value tarzında çalışan koleksiyonlar `dictionary` dediğimiz ya da belirli generic yapılanmalara sahip koleksiyonlar türetilmiştir. Ya da FIFO(First In First Out), LIFO(Last In First Out) tarzında çalışan işte davranışsal olarak ilk giren son çıkar ilk giren ilk çıkar tarzında çalışan koleksiyonlar geliştirilmiştir. Ama hepsinin temelinde bu sınırlılıklardan arındırılmış gene birden fazla veriyi tutabilen yapılar vardır.
+
+- Koleksiyon dediğimiz yapılar dizilerdeki bu sınırlılıklardan arındırılarak yani bunlardan dolayı doğmuş çıkarılmış üretilmiş yapılardır.
+
+```C#
+#Sınırlılıklar
+//Dizilerde tanımlama yaparken eleman sayısının bildirilmesi zorunluluğu bir sınırlılıktır.
+//Diziler tanımlandığında kullansakta kullanmasakta bellekte belirtilen eleman sayısı kadar alan tahsisinde bulunurlar. Bu durumda bellek boyutunda ekstradan maliyete sebep olacağı için bir  sınırlılıktır.
+//Dizilerde eleman sayısının başta belirlenmesi durumunda, ihtiyaca binaen daha fazla değer atamak istediğimizde bu değerleri atayamayacağımızdan ve dizinin aralığını genişletemeyeceğimizden  dolayı bu durum bir sınırlılık olarak karşımıza çıkmaktadır.
+//Dizilerde elemanlara değer atarken indexer operatörüyle çok haşır neşir olunmaktadır. Bu durumda bir sınırlılıktır.
+```
