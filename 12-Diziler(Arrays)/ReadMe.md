@@ -261,6 +261,8 @@ string[] adsadsa = new string[999999];
 
 - Dizilerde değer ataması yaparken sıralamayı göz önünde tutmak zorunda değiliz...
 
+<img src="11.png" width="auto">
+
 - Dizilerde elaman sayısının aşılamaması durumu bir sınırlılıktır. Diyelim ki burada benim 7 elemanlık bir dizim var ama benim çalışacağım veri sayısı 8 oldu diyelim 9 oldu diyelim 10 oldu Şimdi ben elimdeki fazlalık değerleri elimdeki diziye veremiyorum. Dizinin boyutu bir kere tanımlandığı için büyütemiyoruz. O ilk başta nasıl tanımlandıysa ebediyen o şekilde kalır. Başk birşey yapamazsın dizinin boyutunu büyütemezsin. Böyle bir durumda senin ihtiyacın olduğu sürece dizinin aralığını dizinin eleman sayısını arttıramıyacağından dolayı bu bir sınırlılık olarak karşımıza çıkmaktadır.
 
 - Dizilerde eleman sayısının başta belirlenmesi durumunda, ihtiyaca binaen daha fazla değer atamak istediğimizde bu değerleri atayamayacağımızdan ve dizinin aralığını genişletemeyeceğimizden dolayı bu durum bir sınırlılık olarak karşımıza çıkmaktadır.
@@ -281,3 +283,32 @@ yaslar[2] = 5;
 yaslar[0] = 5;
 // yaslar[15] = 123;//Hata
 ```
+
+***
+# 247) Tanımlanmış Diziden Değer Okuma
+- Yine indexer operatörü(`[]`) üzerinden indexi belirterek ilgili değişkenin/elemanın değerini okuyabiliyoruz.
+
+- Normal bir değişken assign'ın solunda çağırılıyorsa kendisi geliyordu. Assign'ın sağında ya da bir fonksiyonun parametresinde çağırılırsa değişkenin değeri gönderilir. Burada aynı mantık eğer ki bir dizinin herhangi bir elemanı assign'ın solunda çağırılıyorsa değişkenin/elemanın kendisi gidecektir ve ilgili değeri alacak ilgili yere götürecektir yok eğer assign'ın sağında ya da herhangi bir fonksiyonun parametresinde çağırılıyorsa direkt değerini gönderecektir.
+
+- Bir dizinin değerini okumak istiyorsanız indexer operatörü(`[]`) ile ilgili elemanın index numarasını veriyorsunuz size değerini döndürüyor.
+
+- Birden fazla aynı mahiyetteki ve aynı türdeki değerlerimi tek bir değişken ismi üzerinden organize bir şekilde yönetebiliyorum. Şimdi bu organizasyon bana çok şey getirecek. Ben karışık kompleks değişken tanımlamalarından kurtuldum isimlendirme derdinden kurtuldum.
+
+- Dizilerde değer okurken dikkat edilmesi gereken tek mesele şudur; değer aralığını aşmamak. Bu her durumda bizim için önemli Dizilerde değer okurken değer aralığının aşılmamasına dikkat edilmesi gerekmektedir.
+
+- Değer aralığını aşarsanız size hata verir. İlgili aralığı aştığınıza dair bir hata alırsınız.
+
+```C#
+#Diziler - Array
+        
+int[] yaslar = new int[7];
+yaslar[3] = 10; 
+yaslar[2] = 5; 
+yaslar[0] = 5; 
+yaslar[5] = 123; 
+System.Console.WriteLine(yaslar[3]);
+System.Console.WriteLine(yaslar[6]);
+System.Console.WriteLine(yaslar[7]);
+```
+
+<img src = "12.png" width="auto">
