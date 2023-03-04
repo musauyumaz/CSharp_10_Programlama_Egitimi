@@ -312,3 +312,35 @@ System.Console.WriteLine(yaslar[7]);
 ```
 
 <img src = "12.png" width="auto">
+
+***
+# 248) Dizi İçerisinde Döngüyle Dönme
+- Bir dizinin içerisinde illa dönmemize gerek yoktur.
+
+- Normalde sen bir diziyi kullanırken bildiğin kurallar doğrultusunda kullanbilirsin.
+
+- Yazılımcı olarak şiar'ın şudur senin üslubun bu olacak bildiklerinle yeni gelenler arasında bir bağıntı kurmadan gece yatmayacaksın. Bu hayatın her daim her köşesinde her noktasında olan birşey. Yeni gelen bir yapılanma öncekilerden bağımsız olamaz bir kombinasyon bir bağıntı bir ilişki kurulması lazım. Dizideki elemanları ekrana yazdırmak için ameleus yöntemiyle damarlarındaki asil kanda mevcuttur diyerek yazarsın bu yöntemle. Bir yazılımcı açısından doğru bir yöntem mi? Bir bakarsın koda değil yani dizi var şimdi diziyi ben bu şekilde kullanıyorsam birşey eksik ya ben yapıyı anlamamışım ya da bu yapı lüzumsuz dersin daha efektifliği olması lazım. Yazacağın kodu öncekilerle ilişkilendirmen lazım. Şimdi diceksin ki ya kardeşim ben döngüyü biliyorum elime gelen diziyi nasıl öncekilerle daha güzel işleyebilirim? Bir düşün.. Döngü olur değil mi?
+
+- Bundan sonraki öğreneceklerinizde sen o düşünceye zaten varabilmek için çalışacaksın. Çalışmak demek emek harcamak demek artık işin tefekkürünü yapmak yani eldeki verileri doğru bir şekilde derinlemesine değerlendirip düşünmek.
+
+- Diziler genellikle döngülerle kullanılırlar. Dizi elinde birden fazla veriye hakim olan bir değişken var. Bunun içerisinde verilerde sen çalışırken tek tek çalışılır mı bunda?
+
+- Döngü yapılanmasıyla diziler genellikle bir bütün olarak işlenmekte ve çalıştırılmaktadır.
+
+- Diziler genellikle döngülerle birlikte algoritmalarda kullanılmaktadırlar/işlenmektedirler....
+
+- Diziler genellikle döngüler üzerinden döngülerle beraber operasyona katılırlar. Ama bu demek değildir ki %100 öyle hayır öyle değil yeri geldiğinde manuel indexer'lada çalışabilirsin. Ama döngü buradaki yapıyı daha efektif bir şekilde sağlayacaktır. Yani döngü bir yandan dönerken düşünsene 0'dan n-1'e kadar döndürebiliyorsun. Bütün sayılara karşılık gelebiliyor Haliyle bütün değerleri elde edebilirsin. Bu mantıkla düşündüğünde diziler genellikle döngülerle birlikte algoritmalarla görülecektir.
+
+- Döngülerde genellikle dizilerle ya da ileride göreceğimiz koleksiyonlarla birlikte de kullanılmaktadırlar. Ama buradaki genelleme istisnai durumları göz ardı edin anlamına gelmiyor kesin dizi deyince aklına döngü döngü diyince aklına dizi gelmeyecek. Bu ikisi birbirine kombinasyonel olarak çok uyumlu çünkü sen birden fazla veri kümesindeki elemanlara tek tek erişmektense senin yerine bunu yapabilecek döngülerin varken bunları kullanman inanılmaz güzel efektif çözümler getirmeni sağlıyor.
+
+<img src = "13.png" width="auto">
+
+- Bir döngüde diziyle dönmeden kastımız herhangi bir döngü `for` ,`while`, `do while` bunların hepsi bir kombinasyona göre çalışıyor sen kombinasyonla istediğin şekilde bir dizinin içerisindeki elemanlara çok rahat ulaşıp istediğin işlemi yapabilirsin. Elemanları çok rahat elde edebilirsin ve istediğin işleme tabi tutabilirsin. 
+
+- Bir dizide elemanların her birini döngüyle dönüp işlem yaptıracaksak eğer gerekli kombinasyonu ayarladıktan sonra döngü içinde dizinin elemanları üstünde istediğim her şeyi yapabilirim. Yani her seferinde buradaki dizinin indexlerine indexer operatörü(`[]`) ile teker teker erişip yani elemanlarını elde edip gerekli işlemleri gerçekleştirebilirim. 
+
+- Dizi içerisinde döngüyle dönmekten kasıt onu bir bağıntı kombinasyon olarak birlikte kullanmaktır.
+
+- Algoritma ondan sonra artık senin konuştuğun belagatına bağlı senin yapacağın edebiyatına bağlı.
+
+- Diziyi genellikle döngülerle beraber kullanır döngülerin kombinasyonuna göre işlemler yaparız.
