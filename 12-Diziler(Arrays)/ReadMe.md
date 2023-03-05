@@ -521,3 +521,17 @@ string[] isimler = { "Rıfkı", "Şuayip", "Hüseyin", "Hilmi", "Mehmet" };
 #3. Varyasyon
 string[] isimler = new string[] { "Rıfkı", "Şuayip", "Hüseyin", "Hilmi", "Mehmet" };
 ```
+
+***
+# 254) Dizi Tanımlama Varyasyonları - Varyasyon 4
+- Önceki varyasyonlara benzemektedir arada küçük bir fark vardır.
+
+- `string[] isimler = new string[3]{"sfsafsafasf","asfasfsafsaf","fasfsafsaf"};` sabit bir eleman sayısı belirleyebiliyorsunuz.
+    * Eğer ki süslü parantezle devam edeceksen ve indexer operatörü(`[]`) içerisine sayı yazdıysan buradaki sayı kadar değeri burada ataman lazım. Çünkü sayı değerin artık sabit eleman sayın ne 'ten küçük olabilir ne de büyük olabilir.
+    * Fazla ya da eksik girersen hata alacaksın.
+
+```C#
+#Dizi Tanımlama Varyasyonları
+#4. Varyasyon
+string[] isimler = new string[3]{"safasfsafsaf","asfasdsafas","asfasfsaf"};
+```
