@@ -535,3 +535,23 @@ string[] isimler = new string[] { "Rıfkı", "Şuayip", "Hüseyin", "Hilmi", "Me
 #4. Varyasyon
 string[] isimler = new string[3]{"safasfsafsaf","asfasdsafas","asfasfsaf"};
 ```
+
+***
+# 255) Dizi Tanımlama Varyasyonları - Varyasyon 5
+- Bakınca direkt diziye benzer bir yapılanması yok.
+
+- `int[] sayilar = new[]{}`
+    * Burada önemli olan illa bir değer girmeniz gerekiyor.
+- `var sayilar2 = new[] { 3, 4, 2, 7 };`
+    * Editöre geldiğiniz zaman editör bunun hem türünü hem de dizi olduğunu anlıyor.
+    * Tür bildirimini içindeki değerlerden alır.
+    * Dizi içinde sade ve sadece tek bir türde değer barındırabiliyor.
+
+- indexer operatörünü(`[]`) gördüğün yerde bunun bir dizi olduğunu söyleyebilirsin. `[]` operatörü yazılımda dizinin olduğu yerde ya da bir koleksiyonel yapının olduğu yerde kullanılıyor. Başka da bir yerde kullanıyor. Attribute yapılanmalarında. Metodun içinde çalışırken kullanılırsa bunun bir dizi olduğunu yakalayabilirsiniz
+
+```C#
+#Dizi Tanımlama Varyasyonları
+#5. Varyasyon
+int[] sayilar = new[] { 3, 5, 7 };
+var sayilar2 = new[] { "3", "4", "2", "7", "asfasfasfsa" };
+```
