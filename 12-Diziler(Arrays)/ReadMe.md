@@ -506,3 +506,18 @@ System.Console.WriteLine(yaslar[2]);
 int[] yaslar = { 30, 25, 41, 52 };
 string[] isimler = { "Rıfkı", "Şuayip", "Hüseyin", "Hilmi", "Mehmet" };
 ```
+
+***
+# 253) Dizi Tanımlama Varyasyonları - Varyasyon 3
+- 2 Varyasyona çok benzer.
+
+- `string[] isimler = new string[] { "Rıfkı", "Şuayip", "Hüseyin", "Hilmi", "Mehmet" };`
+    * Normalde eleman sayısını vermen gerekirken eleman sayısını vermeden süslü parantezleri yanında açtığın zaman vermiş olduğun değer kadarını kendisi yine otomatik alacaktır. İşte bu da bir varyasyondur.
+
+- İstediğiniz varyasyonu kullanın hepsi arka planda hem yapısal hem davranış hem fıtrat olarak aynı şey hepsi bir dizi.
+
+```C#
+#Dizi tanımlama Varyasyonları
+#3. Varyasyon
+string[] isimler = new string[] { "Rıfkı", "Şuayip", "Hüseyin", "Hilmi", "Mehmet" };
+```
