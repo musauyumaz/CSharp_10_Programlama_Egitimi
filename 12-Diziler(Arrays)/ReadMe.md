@@ -469,3 +469,24 @@ for (int i = 0; i < personeller.Length; i++)
 //Dizilerde eleman sayısının başta belirlenmesi durumunda, ihtiyaca binaen daha fazla değer atamak istediğimizde bu değerleri atayamayacağımızdan ve dizinin aralığını genişletemeyeceğimizden  dolayı bu durum bir sınırlılık olarak karşımıza çıkmaktadır.
 //Dizilerde elemanlara değer atarken indexer operatörüyle çok haşır neşir olunmaktadır. Bu durumda bir sınırlılıktır.
 ```
+
+***
+# 251) Dizi Tanımlama Varyasyonları - Varyasyon 1
+- Dizi tanımlama yapılırken farklı varyasyonlarla da tanımlanabilmektedir.
+
+- Dizinin ilk önce değişkenini tanımlıyorduk daha sonra diziye `new` operatörüyle dizinin gerçek değerini tanımlıyorduk.
+    1. İlk önce dizinin ismini çoğul veriyoruz çünkü birden fazla veri tutacağız.
+    2. Daha sonra türü indexer operatörü(`[]`) ile işaretlersen compiler'a şunun bilgisini vermiş oluyordun. Kardeşim sen bana bu türde dizi değişkeni oluştur demiş oluyorsun.
+    3. Ardından assign operatörünü(`=`) kullanarak `new` keywordüyle birlikte türün eleman sayısını bildiriyoruz. `int[] yaslar = new int[3];`
+
+- Bu tanımlama esasında dizinin en temel/ilkel tanımlamasıdır.
+
+- Değer atarken Indexer operatörü(`[]`) üzerinden ilgili indexi/alanımızı çağırıyorduk elemanımızı/değerimizi atıyoruz. Okurkende Indexer operatörü(`[]`) üzerinden ilgili indexle ilgili alandaki değeri talep ediyorduk.
+
+```C#
+#Dizi Tanımlama Varyasyonları
+#1. Varyasyon
+int[] yaslar = new int[3];
+yaslar[2] = 123;
+System.Console.WriteLine(yaslar[2]);
+```
