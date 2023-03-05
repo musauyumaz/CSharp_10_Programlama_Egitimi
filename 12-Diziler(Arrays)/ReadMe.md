@@ -490,3 +490,19 @@ int[] yaslar = new int[3];
 yaslar[2] = 123;
 System.Console.WriteLine(yaslar[2]);
 ```
+
+***
+# 252) Dizi Tanımlama Varyasyonları - Varyasyon 2
+- Her daim sol taraf aynı yani biz bir referans tanımlayacağız öncelikle bir değişkeni tanımlayacağız ardından değerini tanımlamamız gerekiyor. Yani değişkeni tanımlayıp assign operatöründen(`=`) sonra `{}` eşliğinde direkt değerlerimizi verebiliriz. 
+    * `int[] yaslar = {30, 25, 41, 52};` Sen bunu çalıştırdığın zaman compiler arka planda şu şekilde bir oluşum sağlıyor `int[] yaslar = new int[4];` Ardından ilgili değerleri de algılayıp arka planda kendisi yerleştiriyor. Burada yapmış olduğu işlem tek satırlık bir dizi tanımlama ve eleman sayılarını atadığın değerlerden alan bir varyasyon
+
+- Kaç tane değer verirsek ilgili dizinin eleman sayısı/`Length`i ona göre ayarlanacaktır.
+
+- Ne kadar değer veriyorsan bu varyasyonda compiler otomatik ilgili diziyi kendisi oluşturacaktır. ve 0'dan başlayıp n-1'e kadar ilgili değerleri uygun karşılıklarına gelen indexlerine yerleştirecektir. Burada Random rastgele bir yerleştirme söz konusu olmayacak soldan sağa doğru 0'dan n-1'e doğru sıralama söz konusu olacaktır. Sık kullanılan bir varyasyondur.
+
+```C#
+#Dizi Tanımlama Varyasyonları
+#2. Varyasyon
+int[] yaslar = { 30, 25, 41, 52 };
+string[] isimler = { "Rıfkı", "Şuayip", "Hüseyin", "Hilmi", "Mehmet" };
+```
