@@ -613,3 +613,29 @@ Array yaslar = new int[3];
 #Length
 #Rank
 ```
+
+***
+# 257) Bir Dizinin Kendi Türünde Tanımlanmasıyla Array Türünde Tanımlanması Arasındaki Fark Nedir?
+- Eğer ki bir diziyi kendi türünde bir referansla tutuyorsanız Indexer operatörünü kullanabilirsiniz. Array türünde tutuyorsanız indexer operatörü kullanılmaz.
+
+| Dizi ---> `int[] a = new int[5];`| Array ---> `Array a = new int[5];`|
+| ----------- | ----------- |
+| Dizi eğer ki kendi türünde referans ediliyorsa indexer operatörü kullanılabilir.|Yok eğer Array türünde referans ediliyorsa indexer operatörü kullanılamaz!|
+| Burada indexer operatörünü(`[]`) kullanarak anlık işlemler yapabilirsin.||
+| Burada indexer operatörünü(`[]`) kullanarak diziye veri ekleme ya da dizide var olan veriyi değiştirebilirsin.|Burada ise veri ekleme ya da dizide var olan veriyi değiştirmek için indexer operatörü(`[]`) ile değil fonksiyonel çalışma sergiliyorsunuz. |
+|Burada operatik çalışırsınız| Burada fonksiyonel çalışırsınız.|
+|Bu şekilde çalışıldığında ilgili diziye verisel müdahaleler operatif gerçekleştirilir.|Bu şekilde çalışıldığında ilgili diziye verisel müdahaleler fonksiyonel gerçekleştirilir.|
+|Veri ekleyeceksen/çağıracaksan Indexer Operatörü(`[]`) üzerinden ekliyorsun|Veri ekleyeceksen/çağıracaksan fonksiyon üzerinden ekliyorsun.|
+|Bu tür dizileri genellikle operasyonel kullanırız. Yani sen bir algoritma ya bu diziyi göndereceksen o algoritmada indexer falan ihtiyacın olabilir direkt kendi referansında gönderebilirsin.| Array türünde çalışıyorsak genellikle ilgili dizi üstünde işlem yaparız. Diziyi sıralarız dizinin boyutunu ölçeriz. Okunabilir midir değil midir bununla ilgili bilgi alırız vs. Diziyle ilgili işlem yapıyorsan sadece dizinin üstünde diziye dair bilgisel bir çalışma yapıyorsan Array formatında çalışırız.|
+|Gerçek algoritmalarda ilgili diziyi kullanıyorsan bu formatta çalışırız.||
+|Genellikle bu format algoritmalarda tercih edilir. Çünkü indexer algoritmalarda çok kullanılır.|Genellikle elimizdeki dizinin üzerinde tercih edilen formattır. Algoritmaya değilde diziye dair işlemler. Dizi hakkında bilgi edinirken vs. kullanılır...|
+
+```C#
+#Array Sınıfı
+        
+int[] a = new int[5];
+        
+Array a2 = new int[5];
+```
+
+<img src = "16.png" width="auto">
