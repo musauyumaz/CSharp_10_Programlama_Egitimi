@@ -639,3 +639,56 @@ Array a2 = new int[5];
 ```
 
 <img src = "16.png" width="auto">
+
+***
+# 258) Array Türünden Dizilere Değer Atama Okuma
+- Bir dizinin türü eğer ki `Array` türünden bir referansa verildiyse biz bunun üstünde indexer operatörünü(`[]`) kullanamamaktayız. 
+
+- `Array` türünden referans edilmiş bir diziye değer atarken 3 tane farklı yöntem deneyebiliriz.
+    * İlgili dizinin kendi türünden bir referansla karşılanıp değerleri doldurulup ardından ilgili referansın `Array` referansa verilmesi. Çok pratik bir yöntem değildir.
+        + Parametrik operatörsel bir yöntemdir.
+        + `int[] dizi = new int[3];` İlk önce bir normal dizi tanımı yapıyoruz indexer operatörünü(`[]`) kullanabileceğimiz. 
+            - Bu operatik bir dizidir.
+        + `dizi[0] = 30;` Daha sonrasında gerekli değer atamalarını yapıyorum.
+        + `Array dizi2 = dizi;` Ve daha sonra bu diziyi `Array` referansıyla işaretliyorum
+            - Diziye özel işlemler yapılabilecek farklı referansta tutabildiğim bir yöntem.
+    * İlgili dizide direkt varyasyonlar üzerinden değer ataması yapabiliriz.
+        + `Array dizi = new int[] { 3, 5, 7, 9 };`
+        + `Array dizi = new int[4] { 3, 5, 7, 9 };`
+        + `Array dizi = new[] { 3, 5, 7, 9 };`
+        + `Array dizi = { 3, 5, 7, 9 };`KULLANILAMAZ Ama bu varyasyon maalesef kullanılamaz. Türünü belirleyen bir varyasyon değildir. Direkt karşılığında dizinin kendi türünde bir tanımlama ister bu varyasyon özeldir. `Array`de de `var` da da kullanamayız.
+    * İlgili diziyi direkt `Array` dizisi üzerinden fonksiyonlarla işlem yapabiliriz.
+        + Fonksiyonel yöntemdir.
+        + `Array dizi = new int[3];`
+        + `dizi.SetValue(30,0);` Bu fonksiyon üzerinden ilgili dizinin ilgili indexine bir değer ataması yapabiliyoruz.
+        + `dizi.SetValue(31,1);`
+        + `dizi.SetValue(32,2);`
+
+- Bir dizinin değerini okurken indexer üzerinden ilgili indexi vererek değeri okuyabiliyorduk Burada ise `GetValue(index)` fonksiyonunu kullanarak okuma yapabiliriz.
+
+- `GetValue(index)` fonksiyonu değeri object olarak getirir. `GetValue(index)` fonksiyonu Arrayin içerisinde hangi türden dizi olduğuyla ilgilenmez o yüzden ilgili değer neyse `object`e boxing eder o şekilde gönderecektir bize. Bizde gerektirdiği taktirde onu unboxing yapıp ilgili knedi türünde değerinde kullanacağız.
+
+```C#
+#Array Türünden Dizilere Değer Atama / Okuma
+Array dizi = new int[3];
+#1. Yöntem
+int[] dizi = new int[3];
+dizi[0] = 30;
+dizi[1] = 31;
+dizi[2] = 32;
+Array dizi2 = dizi;
+
+#2. Yöntem
+Array dizi = new int[] { 3, 5, 7, 9 };
+Array dizi = new int[4] { 3, 5, 7, 9 };
+Array dizi = new[] { 3, 5, 7, 9 };
+Array dizi = { 3, 5, 7, 9 };//KULLANILAMAZ //Bu varyasyon maalesef ki kullanılamaz.
+
+#3. Yöntem
+Array dizi = new int[3];
+dizi.SetValue(30,0);
+dizi.SetValue(31,1);
+dizi.SetValue(32,2);
+object value = dizi.GetValue(1);
+Console.WriteLine(value);
+```
