@@ -555,3 +555,61 @@ string[] isimler = new string[3]{"safasfsafsaf","asfasdsafas","asfasfsaf"};
 int[] sayilar = new[] { 3, 5, 7 };
 var sayilar2 = new[] { "3", "4", "2", "7", "asfasfasfsa" };
 ```
+
+***
+# 256) Array Sınıfı Nedir? Ne Amaçla Kullanılır?
+- Dizi diyince aklınıza `Array` sınıfı `Array` sınıfı diyince aklınıza dizi gelecek.
+
+- Referans türlü değişkenler sınıflardan türeyen nesnelerdir. 
+
+- Heap'te çalışacaksan yani elindeki bir değer komplekse veriden daha fazlası varsa ve bunu heap'te tutuyorsan bu bir referans türlü değişken oluyor. 
+
+- `Array` sınıfı bir referans türdür. Diziler esasında bir `Array` sınıfıdır. Ondan dolayı bunlar referans türlü yapılanmalardır.
+
+- Bir dizi tanımladığımızda o diziyi ben kendi türündeki bir değişkenle tutabiliyorum.
+
+- Normalde sol sağ kuralımız vardı. Solda ne varsa hangi tür varsa sağdan gelecek değer uygun olmalı ya da sağdan gelecek değer neyse soldaki türü ona uygun bir tür seçmeliydik.
+
+- Dizi olarak tanımlanan değişkenler Array sınıfından türetilmektedirler.
+
+- Bir şey bir başka şeyden türüyorsa onu karşılayabilir onu referans edebilir. `object` bütün değerleri karşılayabilir çünkü bütün değerler `object`ten türerler.
+
+- `Array` sınıfından da diziler türüyorsa o zaman `Array` değişkeniyle sen bir diziyi karşılayabiliyorsun. Bu kalıtımın sonucudur. Hatta ileride biz buna Polimorfizm diyeceğiz çok biçimlilik.
+
+- Dizi olarak tanımlanan değişkenler `Array` sınıfından türetilen yapılanmalardır. Dolayısıyla `Array`den gelen belirli metotlar ve özelliklerle dizileri nitelendirirler.
+
+- Şimdi bir atom diye bir yapı var. Atom yapısının içerisinde en küçük parçalar Atom şimdi tek başına bir bütün içinde daha küçük atomik parçalar var. Şimdi sınıf dediğimiz yapı bir atom bir hücre metotlarla özellikler bunun atomik parçaları. Bir hücrenin içiresindeki küçük yapılanmalar. Belirli iş yapan zımbırtılar organizmalar. Metot dediğimiz bir sınıfın içinde iş yapan operasyon yapmamızı sağlayan temel yapıtaşıdır. Özellik ise metotlara çok benzerler ama genellikle kapsülleme dediğimiz encapsulation belirli değer alışverişlerinde kullandığımız yapılardır.
+
+- Biz bir dizinin üzerinde belirli operasyonları yapmak istiyorsak örneğin diziyi sıralamak istiyorsam verilerine göre ya da dizinin içerisinden bir eleman almak arama yapmak vs. istiyorsam metotları kullanabilirim.
+    * `Clear`
+    * `Copy`
+    * `IndexOf`
+    * `Reverse`
+    * `Sort`
+
+- Diziyle ilgili bir bilgi edinmek istiyorsam dizinin boyutuyla ilgili, elemans sayısıyla ilgili, dizinin okunabilir olup olmadığına vs. özellikleri bilgi verecektir.
+    * `IsReadOnly`
+    * `IsFixedSize`
+    * `Length`
+    * `Rank`
+
+- Fıtraten bir dizi direkt `Array` sınıfından türetildiği için senin herhangi birşey yapmana gerek yok direkt bu özellikler metotlar hangi dizi/array olursa olsun onların hepsinde mevcuttur.
+
+```C#
+#Array Sınıfı
+//Dizi olarak tanımlanan değişkenler Array sınıfından türetilmektedirler.
+//Dolayısıyla dizilerde Array sınıfından geleen belirli metolar ve özellikler mevcuttur.
+Array yaslar = new int[3];
+#Metotlar
+#Clear
+#Copy
+#IndexOf
+#Reverse
+#Sort
+        
+#Özellikler
+#IsReadOnly
+#IsFixedSize
+#Length
+#Rank
+```
