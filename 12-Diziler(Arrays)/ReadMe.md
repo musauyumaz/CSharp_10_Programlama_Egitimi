@@ -722,3 +722,39 @@ for (int i = 0; i < isimler.Length; i++)
     System.Console.WriteLine(isimler.GetValue(i));
 System.Console.WriteLine("Test");
 ```
+
+***
+# 260) Array Sınıfı Copy Metodu
+- Yapısal olarak bir dizinin değerlerini bir başka diziye kopyalamızı sağlayan bir fonksiyondur.
+
+- Buradaki fonksiyonda bir klonlama varmış gibi düşünebilirsiniz ama klonlama daha farklı bir yapılanma. Şimdi elindeki bir dizi olacak bir başka daha dizi olacak. Sen elindeki diziyi klonlamıyorsun. Var olan bir başka diziye bunun verilerini aktarıyorsun. Bu ayrı birşeydir bu kopyalamadır. Klonlamak dediğimiz var olan bir şeyi aynısından bir tane daha oluşturmak. Bütün özellikleriyle bir tane oluşturmak ayrıdır o klonlamaktır.
+
+- Bir kolonya düşünün bu kolonyayı bir bardağa dökersem bu kopyalamaktır diye düşünün elimdeki var olan kolonya 1 iken 2 olmadı. Ama klonlamak şudur Elimdeki kolonyanın aynısından bir tane daha ürettiğimizi varsayın.
+
+- Koyun doly vardı o klonlanan birşeydir. Varolan bütün değerleriyle beraber şak bir tane daha ondan oluşturuluyor. Bu klonlamaktır. Ama doly'nin tüylerini alıp yastık yaparsanız tüylerini kopyalamış oluyorsunuz oraya.
+
+- Kopyalama dediğimiz iki tane dizi olacak bir tane kaynak dizi olacak bir de hedef dizi olacak. Kaynak dizideki belirli verileri hedef dizide bunlara işte kopyalamayı yapabildiğimiz bir fonksiyon.
+
+- Elimizdeki bir dizinin verilerini bir başka diziye kopyalamamızı sağlayan bir fonksiyondur.
+
+- `Array` de kendi türündeki dizi tanımlaması da `type[]` ikisi de aynı yapılanmadır. İkisi de bir `Array`dir.
+
+- `Array.Copy(isimler, isimler2, 5);`
+    * Birinci parametre de kaynak dizi `Array sourceArray`
+    * İkinci parametre de hedef dizi `Array destinationArray`
+    * Üçüncü parametre de eleman sayısı `int length`
+
+```C#
+#Array Sınıfı
+Array isimler = new[] { "Hilmi", "Hüseyin", "Şuayip", "Rıfkı", "Hamdullah" };
+#Metotlar
+#Copy
+//Elimizdeki bir dizinin verilerini bir başka diziye kopyalamamızı sağlayan bir fonksiyondur.
+string[] isimler2 = new string[isimler.Length];
+Array.Copy(isimler, isimler2, 5);
+for (int i = 0; i < isimler2.Length; i++)
+    System.Console.WriteLine(isimler2[i]);
+Array.Copy(isimler, 2, isimler2, 3, 2);
+for (int i = 0; i < isimler2.Length; i++)
+    System.Console.WriteLine(isimler2[i]);
+```
