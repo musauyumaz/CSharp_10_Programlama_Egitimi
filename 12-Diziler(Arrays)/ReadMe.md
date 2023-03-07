@@ -808,3 +808,20 @@ Array.Reverse(isimler, 0, 3);
 for (int i = 0; i < isimler.Length; i++)
     System.Console.WriteLine(isimler.GetValue(i));
 ```
+
+***
+# 263) Array Sınıfı Sort Metodu
+- `Sort` fonksiyonu elimizdeki dizinin sıralanmasını sağlayan bir fonksiyondur. Küçükten büyüğe doğru sıralama işlemini gerçekleştirecek. Alfa numerikte ise A'dan Z'ye bir sıralama söz konusu olacaktır.
+
+```C#
+#Array Sınıfı
+Array isimler = new[] { "Hilmi", "Hüseyin", "Şuayip", "Rıfkı", "Hamdullah" };
+#Metotlar
+#Sort
+for (int i = 0; i < isimler.Length; i++)
+    System.Console.WriteLine(isimler.GetValue(i));
+Array.Sort(isimler);
+System.Console.WriteLine("****************************");
+for (int i = 0; i < isimler.Length; i++)
+    System.Console.WriteLine(isimler.GetValue(i));
+```
