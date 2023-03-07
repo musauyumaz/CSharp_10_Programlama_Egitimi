@@ -758,3 +758,29 @@ Array.Copy(isimler, 2, isimler2, 3, 2);
 for (int i = 0; i < isimler2.Length; i++)
     System.Console.WriteLine(isimler2[i]);
 ```
+
+***
+# 261) Array Sınıfı IndexOf Metodu
+- `IndexOf` fonksiyonu dizi içerisinde veri aramamızı sağlayan bir fonksiyondur. Arama işlemlerinde çok fazla kullanırız. Hatta bu fonksiyon dizisel operasyonlarda evrensel fonksiyondur diyebiliriz. Neredeyse diğer tüm programlama dillerinde bulunur. `IndexOf` fonksiyonu ile elimizdeki dizinin içerisinde bir elemanın olup olmadığını check edebiliyoruz. Hepsinde de aynı mantıkta çalışır.
+
+- Bir eleman varsa eğer bunu sorgulamamızı sağlıyor. Belirtilen değer dizi içerisinde bulunuyorsa eğer bize `int` olarak değerin index numarasını döndürecektir.
+
+- Dizi içerisinde bir elemanın var olup olmadığını sorgulayabildiğimiz fonksiyondur.
+
+- Arama neticesinde ilgili değer varsa int olarak o değerin index numarasını döndürecektir. Yoksa -1 değerini döndürür.
+
+```C#
+#Array Sınıfı
+Array isimler = new[] { "Hilmi", "Hüseyin", "Şuayip", "Rıfkı", "Hamdullah" };
+#Metotlar
+#IndexOf
+//Dizi içerisinde bir elemanın var olup olmadığını sorgulayabildiğimiz fonksiyondur.
+//Arama neticesinde ilgili değer varsa int olarak o değerin index numarasını döndürecektir. Yoksa -1 değerini döndürür.
+int index = Array.IndexOf(isimler, "Rıfkı");
+if (index != -1)
+{
+    //Demek ki aranana değer ilgili dizide bulunmaktadır...
+    System.Console.WriteLine("Var");
+}
+int index = Array.IndexOf(isimler, "Rıfkı", 0, 3);
+```
