@@ -825,3 +825,28 @@ System.Console.WriteLine("****************************");
 for (int i = 0; i < isimler.Length; i++)
     System.Console.WriteLine(isimler.GetValue(i));
 ```
+
+***
+# 264) Array Sınıfı IsReadOnly Propertysi
+- `IsReadOnly` bir dizinin readonly olup olmamasını kontrol eden ve sonuç olarak geriye `bool` döndüren bir property'dir.
+
+- Readonly'den kastımız salt okunabilirlik. Bir dizi sadece okunabilir ya da hem okunabilir hem de yazılabilir olup olmama durumudur. 
+
+- Bir dizinin okunabilir olup olmama durumunu `IsReadOnly` property'si ile öğrenebiliyoruz.
+
+- `IsReadOnly` property'si dizinin sadece okunabilir olup olmamasını kontrol eder. Hem okunabilir hem yazılabilir dizide `false` dönecektir.
+
+- Biz oluşturmuş olduğumuz bazı dizileri sadece okunabilir yani sadece içinde başlangıçta atanan değerleri daha sonraki süreçte okuyabilir ama bir daha yeni bir değer atılamaz şekilde geliştirmek isteyebiliriz. Süreçte bazen böyle değişimler böyle geliştirmeler yaptığımız için dizinin özelliği fıtratı sadece okunabilir oluyor.
+
+- OOP 2 dersleri altında generic koleksiyonlar başlığı altında `List` koleksiyonunu incelerken ReadOnly Collection diye bir tür inceleyeceğiz. İşte bu collection türü yapısal olarak ReadOnly olan koleksiyonları yani dizileri oluşturmamızı sağlıyor.
+
+- Bir dizinin sadece okunabilir olup olmadığını `bool` türde bildiren bir özelliktir.
+
+```C#
+#Array Sınıfı
+Array isimler = new[] { "Hilmi", "Hüseyin", "Şuayip", "Rıfkı", "Hamdullah" };
+#Özellikler
+#IsReadOnly
+//Bir dizinin sadece okunabilir olup olmadığını `bool` türde bildiren bir özelliktir.
+System.Console.WriteLine(isimler.IsReadOnly);
+```
