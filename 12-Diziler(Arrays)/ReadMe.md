@@ -784,3 +784,27 @@ if (index != -1)
 }
 int index = Array.IndexOf(isimler, "Rıfkı", 0, 3);
 ```
+
+***
+# 262) Array Sınıfı Reverse Metodu
+- `Reverse` fonksiyonu elimizdeki dizinin elemanlarını tersine sıralayan bir fonksiyon. Yani tersini alıyor.
+
+- İlgili diziyi takla attırır.
+
+```C#
+#Array Sınıfı
+Array isimler = new[] { "Hilmi", "Hüseyin", "Şuayip", "Rıfkı", "Hamdullah" };
+#Metotlar
+#Reverse
+//Elimizdeki dizinin elemanlarını tersine sıralayan bir fonksiyondur.
+for (int i = 0; i < isimler.Length; i++)
+    System.Console.WriteLine(isimler.GetValue(i));
+Array.Reverse(isimler);
+System.Console.WriteLine("*************************");
+for (int i = 0; i < isimler.Length; i++)
+    System.Console.WriteLine(isimler.GetValue(i));
+System.Console.WriteLine("*************************");
+Array.Reverse(isimler, 0, 3);
+for (int i = 0; i < isimler.Length; i++)
+    System.Console.WriteLine(isimler.GetValue(i));
+```
