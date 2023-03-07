@@ -850,3 +850,27 @@ Array isimler = new[] { "Hilmi", "Hüseyin", "Şuayip", "Rıfkı", "Hamdullah" }
 //Bir dizinin sadece okunabilir olup olmadığını `bool` türde bildiren bir özelliktir.
 System.Console.WriteLine(isimler.IsReadOnly);
 ```
+
+***
+# 265) Array Sınıfı IsFixedSize Propertysi
+- Bir dizinin boyutunun eleman sayısının sabit olup olmama durumunu bizlere vermektedir. 
+
+- Tüm diziler için `IsFixedSize` property'si `true` değerini döndürecektir. Çünkü dizilerde eleman sayısı sabittir.
+
+- İleride göreceğimiz `ArrayList` koleksiyonu vardır. Bu da bir yapısal koleksiyondur bir veri kümesidir. Ama bunun eleman sayısı sabit olmayacağından dolayı eklediğimiz sürece değişeceğinden dolayı bunun `IsFixedSize` özelliği `false` gelecektir. 
+
+- Bir dizinin ya da veri kümesinin eleman sayısının sabit olup olmamasını bu özellik üzerinden öğrenebiliriz.
+
+- Bir veri kümesinin eleman sayısının sabit olup olmama durumunu `IsFixedSize` ile öğrenebiliriz
+
+- Tümmmm dizilerde eleman sayısı sabit olduğu için sürekli `true` dönecektir. Örneğin `ArrayList` koleksiyonunda `false` dönmektedir. Çünkü orada eleman sayısı sabit değildir.
+
+```C#
+#Array Sınıfı
+Array isimler = new[] { "Hilmi", "Hüseyin", "Şuayip", "Rıfkı", "Hamdullah" };
+#Özellikler
+#IsFixedSize
+//Bir veri kümesinin eleman sayısının sabit olup olmama durumunu `IsFixedSize` ile öğrenebiliriz.
+//Tümmmm dizilerde eleman sayısı sabit olduğu için sürekli `true` dönecektir. Örneğin `ArrayList` koleksiyonunda `false` dönmektedir. Çünkü orada eleman sayısı sabit değildir.
+System.Console.WriteLine(isimler.IsFixedSize);
+```
