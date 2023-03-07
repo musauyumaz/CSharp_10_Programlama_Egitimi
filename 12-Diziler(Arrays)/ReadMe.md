@@ -692,3 +692,33 @@ dizi.SetValue(32,2);
 object value = dizi.GetValue(1);
 Console.WriteLine(value);
 ```
+
+***
+# 259) Array Sınıfı Clear Metodu
+- `Clear` fonksiyonu genellikle dizi içerisindeki tüm elemanları siliyor diye bilinir. Halbuki bu yanlıştır. Dizi içindeki tüm elemanları silmez dizinin türüne uygun tüm elemanlara varsayılan değerleri atama işlemi yapacaktır. Bu görevi görmektedir.
+
+- `Array isimler = new[] { "Hilmi", "Hüseyin", "Şuayip", "Rıfkı", "Hamdullah" };` Bu dizide eğer biz `Clear` fonksiyonunu kullanırsak varsayılan default değerleri yani `null` değerini ilgili diziye atayacaktır.
+
+- `Array.Clear(isimler, 0, isimler.Length);`
+    * Burada ilk olarak diziyi parametre olarak ister.`Array array`
+    * İkinci parametrede index numarasını ister. `int index` Burası başlangıç indexini belirtir.
+    * Üçüncü parametrede kaç elaman sileceğini ister. `int length` Bu ise kaç adet olacağını bildirir.
+    
+- `string`in defaultu `null` olduğundan dolayı elemanlar hala duruyor.
+
+- `Clear` fonksiyonu ile ilgili dizinin içerisindeki elemaları default değere çekebiliyoruz.
+
+```C#
+#Array Sınıfı
+Array isimler = new[] { "Hilmi", "Hüseyin", "Şuayip", "Rıfkı", "Hamdullah" };
+#Metotlar
+#Clear
+//Dizi içerisindeki tüm elemanları siliyor diye bilinir. Halbuki bu yanlıştır. Dizi içerisindeki tüm elemanlara, dizinin türüne uygun default/varsayılan değerleri atayan bir fonksiyondur.
+for (int i = 0; i < isimler.Length; i++)
+    System.Console.WriteLine(isimler.GetValue(i));
+Array.Clear(isimler, 0, isimler.Length);
+System.Console.WriteLine("*********************");
+for (int i = 0; i < isimler.Length; i++)
+    System.Console.WriteLine(isimler.GetValue(i));
+System.Console.WriteLine("Test");
+```
