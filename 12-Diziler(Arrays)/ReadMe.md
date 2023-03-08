@@ -932,3 +932,14 @@ int[] yaslar = new int[3];
 //Normalde yukarıdaki gibi yapılan dizi tanımlası esasında arka planda `Array` sınıfının `CreateInstance` metodunu kullanmaktadır. Bizler de bu metodu kullanarak fonksiyonel diziler oluşturabilmekteyiz.
 Array yaslar2 = Array.CreateInstance(typeof(int),3);
 ```
+
+***
+# 269) Array Sınıfı - CreateInstance Metodu İle Çok Boyutlu Dizi Tanımlama
+- `CreateInstance` metoduyla dizi oluştururken çok boyutlu diziler oluşturabiliyoruz.
+
+- `params` sınırsız gidebiliyorsunuz. Params parametrelere karşılık geliyor. Sınırsız girilebilir parametreler anlamına geliyor.
+
+```C#
+Array dizi = Array.CreateInstance(typeof(int), 5, 3, 5, 6, 32, 2, 23, 23, 2);
+System.Console.WriteLine(dizi.Rank);
+```
