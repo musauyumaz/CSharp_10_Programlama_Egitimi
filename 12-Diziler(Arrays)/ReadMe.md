@@ -943,3 +943,21 @@ Array yaslar2 = Array.CreateInstance(typeof(int),3);
 Array dizi = Array.CreateInstance(typeof(int), 5, 3, 5, 6, 32, 2, 23, 23, 2);
 System.Console.WriteLine(dizi.Rank);
 ```
+
+***
+# 270) (C# 8.0)Ranges and Indices Özelliği
+- Temelde iki tane tür iki tane de operatör kazandıran özelliktir.
+
+- `Index` ve `Range` türlerini dile kazandırmıştır. 
+
+- `..` , `^` operatörlerini dile kazandırmıştır.
+
+<img src = "17.png" width = "auto">
+
+- C# 8.0 ile veri kaynakları üzerinde gerekli manipülasyonu sağlayabilmek ve bunun yanında kaynak içerisindeki tüm veriler üzerinde yapılan genel sorgulamalar ve algoritmalardan kaçınmak, yani direkt olarak hedef veri/veriler odaklı çalışabilmek için yeni tipler ile operatörler geliştirilmiş bulunmaktadır.
+
+- Veri kaynakları üzerinde operasyonları sağlarken genel sorgulamalar yahut algoritmalardan kaçınarak direkt hedef verilere odaklanmamızı sağlayan bir özelliktir. Yani elinizdeki veri kaynağının üzerinde işlem yaparken ağır algoritmalarla siz elinizde istediğiniz verilere erişmek istiyorsanız eğer bunları algoritmalarla gerçekleştirebiliyorsunuz gerçi çok ağır olmasa da uzun uzun algoritma kullanarak işlem yapmanız gerekiyor. Ranges and Indices özelliği sayesinde hem belirli bir aralık belirleyebiliyorsunuz hemde index operasyonu gerçekleştirebiliyorsunuz.
+
+- Bu özellik veri kümeleri olan dizi gibi koleksiyon gibi yapılar üzerinde şu ana kadar yapabildiğimiz işlemleri daha spesifik daha efektif bir şekilde gerçekleştirmemizi sağlayan güzel bir özelliktir.
+
+<img src = "18.png" width = "auto">
