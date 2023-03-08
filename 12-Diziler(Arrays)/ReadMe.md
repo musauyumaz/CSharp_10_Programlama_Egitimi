@@ -911,3 +911,24 @@ int[,,] x = new int[3, 4, 5];
 System.Console.WriteLine(isimler.Rank);
 System.Console.WriteLine(x.Rank);
 ```
+
+***
+# 268) Array Sınıfı - CreateInstance Metodu İle Dizi Tanımlama
+- Bu metot üzerinden programatik olarak dizi tanımlayabiliyoruz.
+
+- Normalde bizim şu ana kadar yapmış olduğumuz dizi tanımlama operasyonlarında arka planda `Array` sınıfının `CreateInstance` metodu zaten kullanılıyordu.
+
+- `int[] yaslar = new int[3];` 3 elemanlı diziyi bu şekilde tanımlıyoruz. Benzer mantıkla bu tanımlamayı `CreateInstance` metodu ile de sağlayabiliyoruz.
+
+- `Array.CreateInstance(typeof(int),3);` `Array` sınıfının `CreateInstance` metodu var bu metot üzerinden yapabiliriz. 
+    * İlk parametrede bizden type istiyor. Bişeyde `Type` gördüyseniz oraya bir tür bildirmeniz gerekiyor. Bildireceğiniz tür `typeof` keywordüyle bildirilir.
+    * `typeof` keywordü ilgili türün reflection'ına girmemizi sağlayan o türle ilgili bilgi vermemizi sağlayan bir operatör.
+    * Bu operasyon bize `Array` türünde bir dizi gönderecektir.
+
+- Nihayetinde bazen programatik dizi oluşturmanız gerekebilir. Syntax'a dayalı değil sadece fonksiyonel oluşturmanız gerekebilir işte bu fonksiyon sizin imdadınıza yetişecek fonksiyondur.
+
+```C#
+int[] yaslar = new int[3];
+//Normalde yukarıdaki gibi yapılan dizi tanımlası esasında arka planda `Array` sınıfının `CreateInstance` metodunu kullanmaktadır. Bizler de bu metodu kullanarak fonksiyonel diziler oluşturabilmekteyiz.
+Array yaslar2 = Array.CreateInstance(typeof(int),3);
+```
