@@ -893,3 +893,21 @@ Array isimler = new[] { "Hilmi", "Hüseyin", "Şuayip", "Rıfkı", "Hamdullah" }
 //Bir dizinin eleman sayısını verir.
 System.Console.WriteLine(isimler.Length);
 ```
+
+***
+#267) Array Sınıfı Rank Propertysi
+- Bir dizinin bizlere derecesini döndürür.
+
+- Bir dizi birden fazla dereceye sahip olabilir.
+
+- `Rank` özelliği ilgili dizinin derece sayısını sana döndürecek.
+
+```C#
+#Array Sınıfı
+Array isimler = new[] { "Hilmi", "Hüseyin", "Şuayip", "Rıfkı", "Hamdullah" };
+#Özellikler
+#Rank
+int[,,] x = new int[3, 4, 5];
+System.Console.WriteLine(isimler.Rank);
+System.Console.WriteLine(x.Rank);
+```
