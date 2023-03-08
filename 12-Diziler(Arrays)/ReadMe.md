@@ -874,3 +874,22 @@ Array isimler = new[] { "Hilmi", "Hüseyin", "Şuayip", "Rıfkı", "Hamdullah" }
 //Tümmmm dizilerde eleman sayısı sabit olduğu için sürekli `true` dönecektir. Örneğin `ArrayList` koleksiyonunda `false` dönmektedir. Çünkü orada eleman sayısı sabit değildir.
 System.Console.WriteLine(isimler.IsFixedSize);
 ```
+
+***
+# 266) Array Sınıfı Length Propertysi
+- Birçok kez çağırdığımız ve çağıracağımız olan `Length` özelliğidir.
+
+- Özellikle dizileri döngülerle birlikte kullanırken oradaki kombinasyonu dizinin eleman sayısını ihtiyacımız olurken kullanırız.
+
+- Dizinin eleman sayısını döndüren özelliktir.
+
+- Bir dizinin üzerinde `Length` özelliğini çağırırsanız size ilgili dizinin toplam eleman sayısını verecektir.
+
+```C#
+#Array Sınıfı
+Array isimler = new[] { "Hilmi", "Hüseyin", "Şuayip", "Rıfkı", "Hamdullah" };
+#Özellikler
+#Length
+//Bir dizinin eleman sayısını verir.
+System.Console.WriteLine(isimler.Length);
+```
