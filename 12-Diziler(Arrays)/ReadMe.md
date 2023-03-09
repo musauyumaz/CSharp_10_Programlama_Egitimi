@@ -961,3 +961,39 @@ System.Console.WriteLine(dizi.Rank);
 - Bu özellik veri kümeleri olan dizi gibi koleksiyon gibi yapılar üzerinde şu ana kadar yapabildiğimiz işlemleri daha spesifik daha efektif bir şekilde gerçekleştirmemizi sağlayan güzel bir özelliktir.
 
 <img src = "18.png" width = "auto">
+
+***
+# 271) (C# 8.0)Ranges and Indices - System.Index Türü
+- Dizi ve koleksiyon yapılarındaki index kavramının bir tip olarak belirlenmiş/karşılanmış halidir.
+
+- Sen diziyi tanımladığında sistem tarafından kaç elemanlıysa her bir elemanı otomatik 0'dan n-1'e kadar bir sayı atanıyordu biz buna index diyorduk. Bu index normalde sayısal bir kavram. Bunu biz artık yazılımda bir tür olarak karşılayabiliyoruz onu da System.Index türüyle. 
+
+- `Index` türü indexlere/index numaralarına karşılık gelir.
+
+- Temelde index değerini bir tür ile tutmakla beraber `^` operatörüyle birlikte daha fazla anlam ifade etmekte ve dizinin index değerlerini tersine ifade edecek şekilde bir sorumluluk yüklenmektedir.
+
+- `Index i = 3;` bu 3 değerine sahip olan bir indexe karşılık gelecektir. 
+    * Bu ifade 0 1 2 3' e karşılık gelir
+    * soldan karşılık gelir.
+
+- `Index i = ^3;` tersini ifade edecek şekilde index'i çevirir. 3 2 1
+    * Tersinden alır.
+    * Tersine ifadesini kullanırken `^` index'i tersinden almaya çalıştığımızda 0'dan değil 1'den başlarız. 
+    * Bu ifade 3 2 1' e karşılık gelir
+    * sağdan karşılık gelir.
+    
+- `Index` normal gidişatta 0'dan başlar n-1'e doğru. Tersini aldığımızda 1'den başlar n'e doğru.
+
+- Normalde `Index` türü soldan sağa bildiğiniz 0'dan başlayan index'i baz alırken `^` bu operatör ile sağdan sola yani tersinden baz alıyor ve 1'den başlatıyor.
+
+<img src = "19.png" width = "auto">
+
+- `Index` türü normal index sayılarını ifade eden bir türdür. `Index` türünü direkt verdiğinizde karşılık olarak soldan alır 0'dan başlar. Eğer ki `^` bu operatör ile verirseniz sağdan alır 1'den başlar.
+
+- `^` operatörü ile tersine ibdex durumları kullanırken index değerinin 0'dan değil 1'den başladığına dikkat ediniz.
+
+<img src = "20.png" width = "auto">
+
+- Indexer Operatörü(`[]`) içerisine tan sayı verilebildiği gibi `Index` türüde verilebilir. 
+
+<img src = "21.png" width = "auto">
