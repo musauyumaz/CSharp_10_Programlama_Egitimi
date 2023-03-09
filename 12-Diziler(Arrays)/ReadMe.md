@@ -997,3 +997,54 @@ System.Console.WriteLine(dizi.Rank);
 - Indexer Operatörü(`[]`) içerisine tan sayı verilebildiği gibi `Index` türüde verilebilir. 
 
 <img src = "21.png" width = "auto">
+
+***
+# 272) (C# 8.0)Ranges and Indices - System.Index Türü İnceleme
+- `Index` türü bizim için index sayısını değerini tutmamızı sağlıyor ve `^` bu operatörü kullanmamızı sağlıyor. 
+
+- `^` bu operatör `Index` türüne özel bir operatördür.
+
+- Tersinden geleceksen index numarasında işte tersinden gelme mantığını yaparken bu `Index` türünü kullanman gerekecektir.
+
+- İlgili veri kümesinin solundan ya da sağından gitmeni sağlayan ve `^` operatörü kullanmamızı sağlayan bir türdür.
+
+```C#
+#Ranges and Indices
+int[] sayilar = { 3, 5, 7, 9, 1, 2, 31, 321, 534, 5643, 457, 56, 78 };
+// Index index = 5; //--> Soldan 0 - (n - 1)
+Index index = ^8; //--> Sağdan n - 1
+System.Console.WriteLine(sayilar[index]);s
+```
+
+***
+# 273) (C# 8.0)Ranges and Indices - System.Range Türü
+- Veri kümelerinde hangi değerler ile çalışacağımızı belirleyebilmek için index üzerinden aralık vermemizi ve bunu `..` operatörü ile gerçekleştirmemizi sağlayan yapılanmadır.
+
+- Veri kümelerinde yani dizide ileride de göreceğimiz koleksiyonlarda hangi değerlerle çalışacağımız yani ilgili dizi de hangi değer aralığında çalışacağımızı belirleyebilmek için index üzerinden aralık vermemizi ve bunu `..` operatörü ile gerçekleştirmemizi sağlayan bir yapılanmadır/Türdür.
+
+- Benim bir tane dizim var ve ben bu dizinin belirli bir aralığında çalışmak istiyorsam yani ne ötesi ne berisi benim bir işime yaramayacaksa sadece bana bu aralığı getir diyeceksem `..` operatörü ile bunu çok rahat bir şekilde bildirebilirsin.
+
+<img src = "22.png" width = "auto">
+
+- `Range range = 3..7;` 
+    * İlk parametre index numarasıdır. 0 1 2 3
+    * ikinci parametre ise sıra numarasıdır. 1 2 3 4 5 6 7
+    * İlgili aralığı bize Range türünde verir.
+
+- `..` operatörü hedeflenen aralığı bizlere `Range` türünde geri getirecektir. Böylece biz ilgili aralığı bir diziymiş gibi kullanabileceğiz.
+
+- Yani `..` operatörü geriye bir `Range` döner. Dönmüş olduğu `Range` üzerinde biz dizi mantığında çalışmalar yapabiliyoruz.
+
+<img src = "23.png" width = "auto">
+
+- `..` operatörünün solundaki değer index değerini sağındakli değer ise sıra numarasını ifade etmektedir.
+
+- `Range range = 3..^6;` Bu durumda 6. eleman aralığa dahil edilmeyecek sonraki eleman dahil edilecektir. Sağdaki bildirilen sayıya tersinden gelirken özellikle denk gelen ifade aralığa dahil edilmez. Ondan bir sonraki alınır.
+
+- `Range range = ^6..^3;` Bu durumda 6.eleman aralığa dahil edilecektir. Çünkü `..` operatörünün solunda yazılmıştır. Amma velakin 3. eleman aralık dışında kalacaktır çünkü `..` operatörünün sağında yazılmıştır
+
+<img src = "24.png" width = "auto">
+
+- Indexer operatörü(`[]`) içerisinde tam sayı veya Index türü verilebildiği gibi Range türüde verilebilir. Sana bu durumda belirttiğin alanı dizi üzerinden sana verecektir.
+
+<img src = "25.png" width = "auto">
