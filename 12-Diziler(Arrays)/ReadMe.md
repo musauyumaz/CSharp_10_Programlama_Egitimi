@@ -1078,3 +1078,26 @@ sayilar2[0] = 100;
 ```
 
 <img src = "26.png" width = "auto">
+
+***
+# 275) (C# 8.0)Ranges and Indices - System.Range İnceleme 2
+- `Range` türünde biz tersine index'i de alabilmekteyiz. 
+
+- Sağdan gelirken yani tersine sıra numarasını alırken 1'den başlıyor ve `Range` ile kullanırken de vermiş olduğunuz değerden bir sonrakini alacaktır.
+
+- Index yapılanmasından tersine gelirseniz sıra numarası gibi davranış sergilemez. Index'teki tersine durumu hangi hedefi hangi değeri verdiyseniz direkt ona gelecektir.
+
+- Senin yazmış olduğun kodda elindeki veri kümelerinde belirli aralıklardaki değerleri çekmen gerekecek. Eskiden bu özellik yoktu bunu algoritmalarla gerçekleştiriyorduk. Belirli bir mantığa göre o değer aralığının arasını çekene kadar bir sürü kod yazıyorduk. Bu operatörü bilerek artık çok kolay bir şekilde yapabilirsin.
+
+- Sakın kolaya Kaçma.
+
+- Bir operatörü öğrenmek demek kolaya kaçmak demekte değildir. Nihayetinde o operatörün mahiyetini bilmek aslında onun kahrını çeken bir kişinin bilebileceği bir durumdur. 
+
+```C#
+#Range and Indices
+int[] sayilar = { 3, 5, 7, 9, 1, 2, 31, 321, 534, 5643, 457, 56, 78 };
+Range range = 5..^3;
+var sayilar2 = sayilar[range];
+Range range = ^8..^3;
+var sayilar2 = sayilar[range];
+```
