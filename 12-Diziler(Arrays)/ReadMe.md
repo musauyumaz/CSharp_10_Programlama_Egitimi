@@ -997,3 +997,21 @@ System.Console.WriteLine(dizi.Rank);
 - Indexer Operatörü(`[]`) içerisine tan sayı verilebildiği gibi `Index` türüde verilebilir. 
 
 <img src = "21.png" width = "auto">
+
+***
+# 272) (C# 8.0)Ranges and Indices - System.Index Türü İnceleme
+- `Index` türü bizim için index sayısını değerini tutmamızı sağlıyor ve `^` bu operatörü kullanmamızı sağlıyor. 
+
+- `^` bu operatör `Index` türüne özel bir operatördür.
+
+- Tersinden geleceksen index numarasında işte tersinden gelme mantığını yaparken bu `Index` türünü kullanman gerekecektir.
+
+- İlgili veri kümesinin solundan ya da sağından gitmeni sağlayan ve `^` operatörü kullanmamızı sağlayan bir türdür.
+
+```C#
+#Ranges and Indices
+int[] sayilar = { 3, 5, 7, 9, 1, 2, 31, 321, 534, 5643, 457, 56, 78 };
+// Index index = 5; //--> Soldan 0 - (n - 1)
+Index index = ^8; //--> Sağdan n - 1
+System.Console.WriteLine(sayilar[index]);s
+```
