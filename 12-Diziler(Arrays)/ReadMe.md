@@ -1048,3 +1048,33 @@ System.Console.WriteLine(sayilar[index]);s
 - Indexer operatörü(`[]`) içerisinde tam sayı veya Index türü verilebildiği gibi Range türüde verilebilir. Sana bu durumda belirttiğin alanı dizi üzerinden sana verecektir.
 
 <img src = "25.png" width = "auto">
+
+***
+# 274) (C# 8.0)Ranges and Indices - System.Range İnceleme 1
+- `..` operatörü soluna ve sağına almış olduğu ifadelerle ilgili dizideki hangi aralıkta çalışacağını bildirebilmektedir. Sol tarafına index numarası sağ tarafına sıra numarasını alır. Bu operatör bize geriye `Range` türünden bir değer döner.
+
+- Kombinasyonel olarak buradaki değerler tutacaktır. İlgili değer aralığına ilgili indexteki o dizinin belirli alanını elde etmeni sağlayan bir yapılanma.
+
+- `Range range = 5..10;` `Range` sana değer aralığını taşıyan bir değerken `Range`i kullandığın zaman dizide sana ilgili dizinin o alanını ayrı bir dizi olarak tekrardan getirecek. Sende orada istediğin gibi gönül rahatlığıyla çalışabilirsin.
+
+- `var sayilar2 = sayilar[range];` Yeni bir dizi olarak getirir.
+
+- `Range range = ..;` `Range` türünde oluşturduğumuz değerde `..` operatörünün soluna ve sağına herhangi bir değer vermeden oluşturursak bu tüm diziye karşılık gelmektedir.
+    * Bir diziyi kopyalamak istiyorsanız bu özelliği kullanabilirsiniz.
+
+- `var sayilar2 = sayilar[range];` İlgili diziyi size kopyalayacaktır. Yani ilgili diziyi farklı bir dizi olarak tekrardan size getirecektir.
+
+- `..` operatörünü sayısal değerler olmadan kullanırsanız ilgili diziyi topyekün kopyalar ve geriye döndürür. Tabi kopyalayıp geriye döndürdüğü için bir dizin varken bir tane daha dizin olmuş olacaktır. Birbirinden farklı değerler olacaktır bunlar.
+
+```C#
+#Ranges and Indices
+int[] sayilar = { 3, 5, 7, 9, 1, 2, 31, 321, 534, 5643, 457, 56, 78 };
+Range range = 5..10;
+var sayilar2 = sayilar[range];
+sayilar2[0] = 100;
+Range range = ..; //--> Tüm diziye karşılık gelir.
+var sayilar2 = sayilar[range];
+sayilar2[0] = 100;
+```
+
+<img src = "26.png" width = "auto">
