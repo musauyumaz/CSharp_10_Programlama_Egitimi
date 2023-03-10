@@ -1125,3 +1125,19 @@ var sayilar2 = sayilar[range];
 
 
 <img src = "28.png" width="auto">
+
+***
+# 277) (C# 8.0)Ranges and Indices .. Operatörü İnceleme
+- `Index` türüyle sayısal türler birebir aynı olacaktır sadece `Index` türü index'e karşılık gelen türler yani `Index` olan bir türle `int` arasındaki temel fark aritmetik işlemler. Sen `Index`leri aritmetik işleme tabi tutamazsın. 
+
+- Yani tuttukları değer `Index` sayısal bir tür ama `Index` türü için bu sayısaldan öte bir `Index` hani aritmetik işleme tabi tutulan bişey değilde sadece türsel olarak `Index`e karşılık gelen bir değer. 
+
+```C#
+#Ranges and Indices
+int[] sayilar = { 3, 5, 7, 9, 1, 2, 31, 321, 534, 5643, 457, 56, 78 };
+// Index i1 = 5, i2 = 10;
+int i1 = 5, i2 = 10;
+Range range = i1..i2;
+var sayilar2 = sayilar[range];
+var sayilar2 = sayilar[i1..i2];
+```
