@@ -1168,3 +1168,17 @@ int[] sayilar = { 3, 5, 7, 9, 1, 2, 31, 321, 534, 5643, 457, 56, 78 };
 Range range = ^7..^3;
 var sayilar2 = sayilar[range];
 ```
+
+***
+# 280) Çok Boyutlu Diziler
+- Çok boyutlu diziler oyun programlama da derinlemesine istatistiksel çalışmada olsun programcının işine yaradığı kanaatindeyim.
+
+- Bizim şu ana kadar kullandığımız dizilerden daha fazla boyuta sahip olan dizilerdir. Şu ana kadar bizim kullandığımız diziler tek boyutludur.
+
+- Tek boyutlu diziyi siz sadece X eğrisi olarak düşünebilirsiniz. Çok boyutlu dizide örneğin iki dereceli bir diziyi ele alırsak X ve Y koordinatlarına hakim olan bir dizi olarak tabir edebilirsiniz.
+
+```C#
+#Çok Boyutlu/Biçimli/Dereceli Diziler
+//Çok boyutlu diziler oyun programlamada yahut yüksek istatistiksel çalışmalarda kullanılan bir yapıdır.
+int[] sayilar = new int[3];
+```
