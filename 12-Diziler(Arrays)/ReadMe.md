@@ -1151,3 +1151,20 @@ var sayilar2 = sayilar[i1..i2];
 - Genellikle bir dizinin son elemanına erişmek için kullandığımız karışık manevrasal algoritmalardan bizleri kurtarmaktadır.
 
 <img src = "29.png" width="auto">
+
+***
+# 279) (C# 8.0)Ranges and Indices ^ Operatörü İnceleme
+- `^` operatörü kullanman için `Index` türünü kullanman gerekiyor. Çünkü bu operatör geriye `Index` türü döndürür.
+
+<img src = "30.png" width="auto">
+
+- ` Range range = ^3..^5; `Eğer ki `^` operatörü index kısmında kullanırsan sağdan alır neyse oradakine denk getirir. Ama Sıra numarasında kullanırsan sağdan alır ve denk gelen değerden bir sonraki değeri alır.
+
+```C#
+#Range and Indices
+int[] sayilar = { 3, 5, 7, 9, 1, 2, 31, 321, 534, 5643, 457, 56, 78 };
+// Index i = ^3;
+// System.Console.WriteLine(sayilar[i]);
+Range range = ^7..^3;
+var sayilar2 = sayilar[range];
+```
