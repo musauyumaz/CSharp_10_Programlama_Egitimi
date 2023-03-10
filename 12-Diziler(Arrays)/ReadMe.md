@@ -1141,3 +1141,13 @@ Range range = i1..i2;
 var sayilar2 = sayilar[range];
 var sayilar2 = sayilar[i1..i2];
 ```
+
+***
+# 278) (C# 8.0)Ranges and Indices ^ Operatörü
+- Veri kümelerinde index değerinin tersini ifade eder.
+
+- Normal index yapılanmasına nazaran ters index durumu 0'dan değil 1'den başlamaktadır.
+
+- Genellikle bir dizinin son elemanına erişmek için kullandığımız karışık manevrasal algoritmalardan bizleri kurtarmaktadır.
+
+<img src = "29.png" width="auto">
