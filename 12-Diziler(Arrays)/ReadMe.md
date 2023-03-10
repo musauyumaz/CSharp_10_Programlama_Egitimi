@@ -1101,3 +1101,27 @@ var sayilar2 = sayilar[range];
 Range range = ^8..^3;
 var sayilar2 = sayilar[range];
 ```
+
+***
+# 276) (C# 8.0)Ranges and Indices .. Operatörü
+- Veri kümelerinde belirli bir aralığı temsil eden operatördür.
+
+- `..` operatörü ile sağına ve soluna vermiş olduğumuz değerlerle ona göre belirli bir index'i ve o index'e karşılık sıra numarasını ifade edebiliyorduk. Yani elimizdeki dizinin belirli bir aralığındaki değerler üstünde çalışmak istiyorsam `..` operatörü bu aralığı çok rahat bir şekilde tarif etmemi sağlayabiliyordu.
+
+- Aralık operatörü diye de isimlendirilebilir.
+
+- `Index .. Sıra Numarası` 
+    * `..` operatörünün Fıtratı bu şekildedir.
+    * `..` operatörünün soluna bir index sağına da bir indexel değer alıyor. 
+    * `System.Index` türünde tutulan değerleri de alabilir. Yani sen `System.Index` te tuttuğun bir değişkeni direkt buralara verebilirsin. Vermiş olduğun değerlere göre de işlemi kendisi otomatik yapacaktır.
+
+- `..` operatörü sağına ve soluna sayısal bir değer alabildiği gibi özü itibariyle `System.Index` türünden de değerler alabilir.
+
+<img src = "27.png" width="auto">
+
+- Geriye `System.Range` türünden yapı döndürür.
+
+- Sen `..` operatörüyle belirli bir aralığını tarif edeceksen o aralık `Range` türünde ifade edilen bir türdür.
+
+
+<img src = "28.png" width="auto">
