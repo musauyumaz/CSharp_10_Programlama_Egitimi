@@ -1182,3 +1182,42 @@ var sayilar2 = sayilar[range];
 //Çok boyutlu diziler oyun programlamada yahut yüksek istatistiksel çalışmalarda kullanılan bir yapıdır.
 int[] sayilar = new int[3];
 ```
+
+***
+# 281) Çok Boyutlu Dizi Tanımlama
+- `type[]` -> Normalde bizim kullandığımız tipe göre bir indexer belirlediğimizde bu tek boyutlu bir dizi tanımlamasıydı. 
+
+- `type[,]` -> Eğer ki kullandığın tipin index'erı içine `,` koyarsan komuş olduğun her bir `,` derecesinin bir alt kademesini belirler. Yani bir `,` iki derecelik bir diziye karşılık gelecektir. 
+
+- `type[,,,]` -> Virgülün her bir koyulduğu sağı solu o şekilde her bir boşluğu bir derece olarak nitelendirebilirsiniz.
+
+- Çok boyutlu dizilerde Indexer operatörü(`[]`) içerisinde virgül(`,`) ile tanımlama yapılmaktadır.
+
+- Virgül(`,`) sayısının +1 fazlası dizinin derecesini verecektir.
+
+<img src = "31.png" width="auto">
+
+- `int[,] sayilar = new int[3, 5];` Çok boyutlu dizi tanımlayıp atama yaparken her bir boyuta elaman sayısını `,` ile eleman sayısını karşılığında bildirmen lazım.
+
+- 2 Boyutlu diziler x ve y koordinatları üzerinde tahayyül edebileceğimiz dizilerdir.
+
+<img src = "32.png" width="auto">
+
+- 2 Boyutlu diziler kolay ama 2'den fazlasını artık tahayyül etmek günlük hayatta onlara yer bulmak pek fazla kolay değildir.
+
+- 2 dereceliden fazla olan dizileri günlük hayatta tahayyül etmek pek mümkün olmasa da programatik olarak inşa edebilmekteyiz.
+
+- Belki bir grafiği falan çizemeyebilirsiniz ama 4 boyutlu da 44 boyutlu da dizi tanımlaması yapabilirsiniz.
+
+<img src = "33.png" width="auto">
+
+- Çok boyutlu dizi tanımlanamın usulü tanımlarken `,`lerle bildiriyorsun daha sonrasında dizi ataması yaparken her bir dereceye karşılık eleman sayısını bildiriyorsun.
+
+```C#
+#Çok Boyutlu/Biçimli/Dereceli Diziler
+#Çok Boyutlu Dizi Tanımlama
+#Çift/2 Boyutlu Dizi Tanımlaması 
+int[,] sayilar = new int[3, 5];
+#2 Boyutludan Fazla Dizi Tanımlaması
+int[,,,] sayilar = new int[3, 4, 5, 6];
+```
