@@ -1221,3 +1221,36 @@ int[,] sayilar = new int[3, 5];
 #2 Boyutludan Fazla Dizi Tanımlaması
 int[,,,] sayilar = new int[3, 4, 5, 6];
 ```
+
+***
+# 282) Tanımlanmış Çok Boyutlu Diziye Değer Atama
+- İki boyutlu diziler matrislere benzemektedir. İki boyulu dizilerde değer atarken kesişen yere değer atanır.
+
+- Değer atarken Indexer operatörünün(`[]`) içine yine `,` ile ilgili derecelerin index numaralarını biz burada bildiriyoruz ve derece kaç olursa olsun index burada 0'dan başlıyor.
+
+- Ne kadar derecen varsa Indexer operatörü(`[]`) içerisinde o kadar derece artacaktır.
+
+- Çok boyutlu dizilerde diziye değer atarken yine biz `,`le Indexer operatörü(`[]`) içerisine hangi hücreye değer atayacağımızı indexler üzerinden elde ettiğimiz koordinatlarla belirleyebiliyoruz. Ve türe uygun diziye değerimizi gönderebiliyoruz.
+
+```C#
+#Çok Boyutlu/Biçimli/Dereceli Diziler 
+#Tanımlanmış Çok Boyutlu Diziye Değer Atama
+#2 Dereceli Dizi Örneklendirme
+int[,] sayilar = new int[3, 4];
+sayilar[1, 2] = 5;
+sayilar[2, 0] = 15;
+
+#Çok Dereceli Dizi Örneklendirme
+#Örnek 1 
+int[,,,] sayilar = new int[2, 3, 4, 5];
+sayilar[0, 0, 0, 0] = 15;
+sayilar[0, 0, 0, 1] = 16;
+sayilar[0, 0, 0, 2] = 17;
+sayilar[0, 0, 0, 3] = 18;
+sayilar[0, 0, 0, 4] = 119;
+sayilar[1, 0, 0, 0] = 119;
+
+#Örnek 2
+int[,,] sayilar = new int[2, 3, 4];
+sayilar[0, 0, 1] = 15;
+```
