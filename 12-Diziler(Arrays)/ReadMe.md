@@ -1254,3 +1254,37 @@ sayilar[1, 0, 0, 0] = 119;
 int[,,] sayilar = new int[2, 3, 4];
 sayilar[0, 0, 1] = 15;
 ```
+
+***
+# 283) Çok Boyutlu Dizilerde Değer Atama Farklı Varyasyon
+- `int[,] sayilar = {};` Normalde tek boyutlu dizilerde bu varyasyonla biz `,`le değerlerimizi verebiliyorduk ama eğer elimizdeki dizi çok boyutluysa süslü parantezlerle gene çok boyutlu diziye değer verebiliyoruz. Buradaki süslü parantezin ilkinde kaç kolonluk bir x olduğunu belirliyoruz. İkinci derecenin ise artık kaç satır olduğunu bildireceğiz.
+    * İlk derece de kaç tane tanımlamışsam bundan sonrakilerde o kadar olabilir ne fazla ne de eksik.
+
+```C#
+#Çok Boyutlu/Biçimli/Dereceli Diziler
+#Tanımlanmış Çok Boyulu Diziye Değer Atama
+#Varyasyonla Atama
+int[,] sayilar = {
+    {3,5,7},
+    {5,6,7},
+    {15,36,57},
+    {25,46,67},
+};
+int[,,,] sayilar2 = {
+    {
+        {
+            {0,1,2}
+        }
+    },
+    {
+        {
+            {10,21,32}
+        }
+    },
+    {
+        {
+            {40,51,62}
+        }
+    }
+};
+``` 
