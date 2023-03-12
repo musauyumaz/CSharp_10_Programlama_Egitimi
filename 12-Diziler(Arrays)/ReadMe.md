@@ -1437,3 +1437,29 @@ for (int i = 0; i < sayilar.GetLength(0); i++)
     System.Console.WriteLine("");
 }
 ```
+
+***
+# 289) Düzensiz Diziler Nedir?
+- Dizi içerisinde dizi tanımlama ya da dizi dizileri diye de nitelendirilir.
+
+- Örneğin tek dereceli ya da çok dereceli dizi ele alalım. Almış olduğumuz bu dizi her bir hücresinde ayrı bir diziyi barındırıyorsa biz buna düzensiz diziler diyoruz.
+
+- Örnek vermek gerekirse 3 elemanlık bir dizi tanımladığımızı varsayalım. Bu elemanlar her biri kendi içlerinde farklı bir dizi tanımlıyorlarsa bunlara biz düzensiz dizi diyoruz.
+
+- Düzensiz diziler; her bir elemanı ekndi içerisinde farklı bir dizi barındıran dizilerdir.
+
+- Teoride çok boyutlu dizilere benzerler ama aralarında ufak bir fark vardır. Çok boyutlu dizilerde sütun sayısı sabittir. 3'e 3 çok boyutlu dizi oluşturduysan eğer sütun sayısı sabittir. Bundan sonraki her bir alt gelecek veri 3 sütununda gelmek zorundadır. Amma velakin dizi içerisinde dizi tanımlama operasyonlarında yani düzensiz dizilerde her bir elemanın içindeki dizinin sütun sayısı sabit olmak zorunda değildir.
+
+- Hücresel bazda eleman sayıları değişebilir.
+
+- Dizi içerisinde dizi tanımlama sürecinde matrislerden yani çok boyutlu dizilerden tek farkı sütun sayılarının sabit olmamasıdır.
+
+- Çok boyutlu dizilerden tek farkı, çok boyutlu dizilerin sütun sayılarının sabit, halbuki düzensiz dizilerin ise sütun sayılarının değişken olmasıdır.
+
+- Eğer ki bir dizi içerisinde dizi tanımlanıyorsa biz buna düzensiz diziler diyeceğiz. Düzensiz dizilerin çok boyutlu dizilerden temel farkını ise çok boyutlu dizilerde sütun sayısının aynı düzensiz dizilerde ise farklı olduğundan ortaya koyabileceğiz bu farkı.
+
+```C#
+#Dizi İçerisinde Dizi Tanımlama/Düzensiz Diziler/Dizi Dizileri
+//Düzensiz diziler; her bir elemanı ekndi içerisinde farklı bir dizi barındıran dizilerdir.
+//Çok boyutlu dizilerden tek farkı, çok boyutlu dizilerin sütun sayılarının sabit, halbuki düzensiz dizilerin ise sütun sayılarının değişken olmasıdır.
+```
