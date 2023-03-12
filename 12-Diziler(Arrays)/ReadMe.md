@@ -1,3 +1,8 @@
+---
+modified: 2023-03-12T08:28:01.298Z
+title: 243) Dizi Nedir? Ne Amaca Hizmet Eder? Bir Programcı Açısından Neye Yarar?
+---
+
 ***
 # 243) Dizi Nedir? Ne Amaca Hizmet Eder? Bir Programcı Açısından Neye Yarar?
 - Diyelim ki bir sınıftayız ve sınıftaki bütün öğrencilerin yaşıyla ilgili işlem yapmak istiyorum. Normalde tek tek her bir öğrencinin yaşlarını tutmalıyım. n adet öğrencim olursa n adet değişken oluşturup bu öğrencilerin her birinin yaşını bu değişkenlerde tutup istediğim işlemi yapabilirim. Şimdi diyelim biz 40 45 kişilik sınıfta olsak yine bunları değişkenle mi tutacağız?
@@ -1326,4 +1331,36 @@ sayilar[1, 1] = 6;
 sayilar[1, 2] = 7;
 sayilar[3, 2] = 67;
 System.Console.WriteLine(sayilar.Rank);
+```
+
+***
+# 286) Çok Boyutlu Dizilerin Eleman Sayısını Hesaplama
+- Çok boyutlu dizilerde dizinin eleman sayısını hesaplamak istiyorsanız bunu size yine `Length` özelliği getirecektir.
+
+- Çok boyutlu dizideki total hücre sayısına göre eleman sayısını getirecektir. Total hücre sayısını hesaplayabilmek için tüm boyutların eleman sayılarını çarpmanız yeterli olacaktır.
+
+- İlgili dizinin totaldeki eleman sayısı tüm boyutların eleman sayılarının çarpımıyla elde edilir.
+
+<img src = "34.png" width="auto">
+
+```C#
+#Çok Boyutlu/Biçimli/Dereceli Diziler
+int[,,] sayilar = new int[2, 2, 4];
+sayilar[0,0,0] = 1;
+sayilar[0,0,1] = 2;
+sayilar[0,0,2] = 3;
+sayilar[0,0,3] = 4;
+sayilar[0,1,0] = 5;
+sayilar[0,1,1] = 6;
+sayilar[0,1,2] = 7;
+sayilar[0,1,3] = 8;
+sayilar[1,0,0] = 9;
+sayilar[1,0,1] = 10;
+sayilar[1,0,2] = 11;
+sayilar[1,0,3] = 12;
+sayilar[1,1,0] = 13;
+sayilar[1,1,1] = 14;
+sayilar[1,1,2] = 15;
+sayilar[1,1,3] = 16;
+System.Console.WriteLine(sayilar.Length);
 ```
