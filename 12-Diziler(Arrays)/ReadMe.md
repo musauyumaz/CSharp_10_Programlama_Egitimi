@@ -1463,3 +1463,23 @@ for (int i = 0; i < sayilar.GetLength(0); i++)
 //Düzensiz diziler; her bir elemanı ekndi içerisinde farklı bir dizi barındıran dizilerdir.
 //Çok boyutlu dizilerden tek farkı, çok boyutlu dizilerin sütun sayılarının sabit, halbuki düzensiz dizilerin ise sütun sayılarının değişken olmasıdır.
 ```
+
+***
+# 290) Düzensiz Dizi Tanımlama
+- Düzensiz dizi tanımlayabilmek için normal dizi tanımlama kuralını bilmek yeterli olacaktır.
+
+- `type[]` Normal bir diziyi tanımlarken hangi türde dizi tanımlayacaksak onu bildirip yanına Indexer operatörüyle(`[]`) diyorduk ki ben bu türde dizi tanımlayacağım.
+
+- `type[][]` Eğer ki dizi içerisinde dizi tanımlayacaksam bu şekilde tanımlama yapıyorum. `type` dizisi türünde değerler tutacak bir dizi tanımlamış oluyoruz.
+
+<img src = "35.png" width="auto">
+
+- Düzensiz diziler yapısal olarak hiçbir yerde kullanılmıyor desem yeridir çünkü çalıştığınız marjinal bir operasyon olmalı örneğin Image Processing dediğimiz yapılanmada çalışıyorsan eğer belki çok boyutlu dizileri kullanırsın ama düzensiz diziler artık işin ilkel algoritmasına kaçmak gibi birşey olacaktır.
+
+```C#
+#rDizi İçerisinde Dizi Tanımlama/Düzensiz Diziler/Dizi Dizileri
+int[][] sayilar = new int[3][];
+sayilar[0] = new int[3] { 3, 5, 7 };
+sayilar[1] = new int[5] { 3, 5, 7, 523, 01 };
+sayilar[2] = new int[10] { 3, 5, 7, 234, 234, 23, 4, 234, 234, 123 };
+```
