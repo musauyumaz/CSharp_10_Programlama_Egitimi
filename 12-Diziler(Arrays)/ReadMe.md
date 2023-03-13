@@ -1500,3 +1500,34 @@ System.Console.WriteLine(sayilar[0][0]);
 sayilar[0][0] = 13;
 System.Console.WriteLine(sayilar[0][0]);
 ```
+
+***
+# 292) Düzensiz Diziler - Eleman Sayısını Öğrenme
+- Düzensiz dizilerde total eleman sayısını hesaplamak çok boyutlu dizilerdeki mantıktan çok farklı. Çünkü çok boyutlu diziler kendi başlı başına bir yapılanma olduğu için orada çok boyutlu dizi üzerinden `Length` dediğinizde total/bütün elemanları sana döndürüyordu ama düzensiz dizi dediğimiz yapı programlama dilinde var olan hali hazırda bir yapılanma değil normal bildiğiniz bir dizi ama biz bunu düzensiz dizi mantığında kullanıyoruz. Yani benim stratejik bir düzenlememe bağlı bu. Birisi fiziksel bir yapılanma çok boyutlu dizi birisi fiziksel olmayan temeldeki dizi mantığında çalıştığımız bir mantığa dayalı bir stratejik yapılanma yani düzensiz diziler dediğimizde stratejiye dayanmakta. Biri sana total veriyi getirirken öbürü sana total veriyi falan getirmez.
+
+- Siz düzensiz dizi üzerinde `Length` özelliğini çağırırsanız dizinin toplam eleman sayısı gelecektir. Çünkü bu normal bir dizidir. İçindeki dizilerin eleman sayılarını toplayarak getirmez. Ama bundan sonra sen içindeki dizilerin eleman sayısını hesaplamak istiyorsan buradaki formülasyon bunların eleman sayılarının toplamına bağlı yani sen total hesabı elde edeceksen `Length` ile elde edemezsin.
+
+- Düzensiz dizinin eleman sayısını getirir. Bu bize total eleman sayısını vermez. Çok boyutlu dizilerde olduğu gibi düzensiz diziler başlı başına farklı bir dizi yapısı değildir.. Normal bir dizi yapılanmasıdır. Lakin içerisinde dizi barındıran bir dizidir. Haliyle eleman sayısını döndürür.
+
+- `Length` sana normal bir dizi olduğu için eleman sayısını döndürecek ama içindeki dizilerin eleman sayılarını totalde elde etmek istiyorsan her birini toplaman gerekecektir.
+
+- İçteki dizilerin eleman sayılarını totalde elde edebilmek için her birini toplamamız gerekmektedir.
+
+- Burada da topluyoruz buranın bir matrisi yok buradaki mantık bir dış ana bir dizi var her bir hücresinde senin koymuş olduğun diziler var. Toplam eleman sayısı hücrelere koyduğun dizilerin eleman sayılarının toplanmasıyla elde edilir.
+
+- Hesaplamaları döngüyle yapabilirsin farklı şekilde yapabilirsin algoritması sana kalmış.
+
+```C#
+#Dizi İçerisinde Dizi Tanımlama/Düzensiz Diziler/Dizi Dizileri
+int[][] sayilar = new int[3][];
+sayilar[0] = new int[3] { 3, 5, 7 };
+sayilar[1] = new int[5] { 3, 5, 7, 523, 01 };
+sayilar[2] = new int[10] { 3, 5, 7, 234, 234, 23, 4, 234, 234, 123 };
+        
+System.Console.WriteLine(sayilar.Length);//Ana Dizinin eleman sayısı
+//Düzensiz dizinin eleman sayısını getirir. Bu bize total eleman sayısını vermez. Çok boyutlu dizilerde olduğu gibi düzensiz diziler başlı başına farklı bir dizi yapısı değildir.. Normal bir dizi 
+yapılanmasıdır. Lakin içerisinde dizi barındıran bir dizidir. Haliyle eleman sayısını döndürür.
+//İçteki dizilerin eleman sayılarını totalde elde edebilmek için her birini toplamamız gerekmektedir.
+        
+System.Console.WriteLine(sayilar[0].Length + sayilar[1].Length + sayilar[2].Length);//Toplam Eleman sayısı : İçteki dizilerin `Length`lerinin eleman sayısı.
+```
