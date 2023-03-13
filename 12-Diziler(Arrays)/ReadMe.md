@@ -1531,3 +1531,25 @@ yapılanmasıdır. Lakin içerisinde dizi barındıran bir dizidir. Haliyle elem
         
 System.Console.WriteLine(sayilar[0].Length + sayilar[1].Length + sayilar[2].Length);//Toplam Eleman sayısı : İçteki dizilerin `Length`lerinin eleman sayısı.
 ```
+
+***
+# 293) Düzensiz Dizilerde İç İçe Döngülerle Çalışma
+- Yeri gelecek bu dizinin içindeki bütün elemanlara erişmemiz gerekecek. Yeri gelecek dizinin içerisinde istatistiksel çalışma yapacağım vs. vs. Yani bir şekilde bunda çalışma sergilemen gerekiyor.
+
+- Çok boyutlu dizilerdeki çalışma mantığıyla buradaki bir değil ama birbirine benzeyen yapılanmalar. Çok boyutlu dizilerde davranışsal olarak ve kodsal olarak çalışma yapılanmamızla düzensiz dizilerdeki farklı. Çok boyutlu dizilerde sen boyuta göre hareket ederken düzensiz dizilerde ana diziye göre hareket eder altındaki hücrelerin her birini bir değermiş gibi değerlendirir o şekilde operasyonu gerçekleştirirsin.
+
+```C#
+#Dizi İçerisinde Dizi Tanımlama/Düzensiz Diziler/Dizi Dizileri
+int[][] sayilar = new int[3][];
+sayilar[0] = new int[3] { 3, 5, 7 };
+sayilar[1] = new int[5] { 3, 5, 7, 523, 01 };
+sayilar[2] = new int[10] { 3, 5, 7, 234, 234, 23, 4, 234, 234, 123 };
+for (int i = 0; i < sayilar.Length; i++)
+{
+    for (int j = 0; j < sayilar[i].Length; j++)
+    {
+        System.Console.Write(sayilar[i][j] + "   -   ");
+    }
+    System.Console.WriteLine("");
+}
+```
