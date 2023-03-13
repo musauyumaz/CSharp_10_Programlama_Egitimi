@@ -1553,3 +1553,60 @@ for (int i = 0; i < sayilar.Length; i++)
     System.Console.WriteLine("");
 }
 ```
+
+***
+# 294) Diziler Konusunda Neler İnceledik Gelin Özetleyelim
+- Dizi Nedir?
+- Dizi Tanımlama
+- Tanımlanmış Diziye Değer Atama
+- Tanımlanmış Diziden Değer Okuma
+- Tanımlanmış Dizi İçerisinde Döngüyle Dönme
+    * Kritik 1
+- Dizilerin Sınırlılıkları ve Koleksiyon Yapılarının Doğuşu
+- Dizi Tanımlama Varyasyonları
+    * Varyasyon 1
+    * Varyasyon 2
+    * Varyasyon 3
+    * Varyasyon 4
+    * Varyasyon 5
+- Array Sınıfı
+    * Bir Dizinin Kendi Türünde Tanımlanmasıyla Array Türünde Tanımlanması Arasındaki Fark Nedir?
+    * Array Türünden Dizilere Değer Atama/Okuma
+    * Metotlar
+        + Clear
+        + Copy
+        + IndexOf
+        + Reverse
+        + Sort
+    * Özellikler
+        + IsReadOnly
+        + IsFixedSize
+        + Length
+        + Rank
+        + CreateInstance Metodu İle Dizi Tanımlama
+            - Çok Boyutlu Dizi Tanımlama
+- Ranges and Indices (C# 8.0)
+    * System.Index
+        + İnceleme
+    * System.Range
+        + İnceleme 1
+        + İnceleme 2
+    * .. Operatörü
+        + İnceleme
+    * ^ Operatörü
+        + İnceleme
+- Çok Boyutlu Diziler
+    * Çok Boyutlu Dizi Tanımlama
+    * Tanımlanmış Çok Boyutlu Diziye Değer Atama
+        + Çok Boyutlu Dizilerde Değer Atama Farklı Varyasyonu
+    * Çok Boyutlu Dizilerden Değer Okuma
+    * Dizinin Derecesini Öğrenme(Rank Özelliği)
+    * Çok Boyutlu Dizilerin Eleman Sayısını Hesaplama
+    * Çok Boyutlu Dizilerin Belirli Bir Derecesinin Eleman Sayısını Hesaplama
+    * Çok Boyutlu Dizilerdeki Verileri İç İçe Döngülerle Ekrana Yazdırma
+- Düzensiz Diziler
+    * Düzensiz Dizi Tanımlama
+    * Değer Atama/Değer Okuma
+    * Eleman Sayısını Öğrenme
+    * Düzensiz Dizilerde İç İçe Döngülerle Çalışma
+- Özet
