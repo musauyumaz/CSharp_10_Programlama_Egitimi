@@ -1,5 +1,5 @@
 ---
-modified: 2023-03-12T08:28:01.298Z
+modified: 2023-03-13T06:43:59.453Z
 title: 243) Dizi Nedir? Ne Amaca Hizmet Eder? Bir Programcı Açısından Neye Yarar?
 ---
 
@@ -1482,4 +1482,21 @@ int[][] sayilar = new int[3][];
 sayilar[0] = new int[3] { 3, 5, 7 };
 sayilar[1] = new int[5] { 3, 5, 7, 523, 01 };
 sayilar[2] = new int[10] { 3, 5, 7, 234, 234, 23, 4, 234, 234, 123 };
+```
+
+***
+# 291) Düzensiz Diziler - Değer Atama/Değer Okuma
+- `sayilar[0][]` Bir değer okurken yeni bir index'erla devam ediyorum. `,` ile ayırmıyorum.  `,` ile ayırdığımız çok biçimli/dereceli dizi. Bu yöntem bize bir dizi getirecek ve getirdiği dizinin üzerinden devam ediyoruz işte iç içe olan dizilerde yapmış olduğumuz manevratik yapılanma bu.
+
+- Çok boyutlu dizilerde çalışıyorsak `,` ile çalışıyoruz. Ama düzensiz dizilerde çalışıyorsak Indexer operatörü(`[]`) üzerine Indexer operatörü(`[]`) getirmek zorundayız.
+
+```C#
+#Dizi İçerisinde Dizi Tanımlama/Düzensiz Diziler/Dizi Dizileri
+int[][] sayilar = new int[3][];
+sayilar[0] = new int[3] { 3, 5, 7 };
+sayilar[1] = new int[5] { 3, 5, 7, 523, 01 };
+sayilar[2] = new int[10] { 3, 5, 7, 234, 234, 23, 4, 234, 234, 123 };
+System.Console.WriteLine(sayilar[0][0]);
+sayilar[0][0] = 13;
+System.Console.WriteLine(sayilar[0][0]);
 ```
