@@ -37,3 +37,94 @@
 int a = 5;
 string b = "Hilmi";
 ```
+
+***
+# 296.1) Null - Empty Durumları, Farkları
+- `string` referans türlüdür dedik. Referans türlü değişkenler `null` değer alabilir. Değer türlü değişkenler `null` değer alamaz. Değer türlülerin `null` alabilmesi için nullable yapılması gerekir.
+
+- `string` hem `null` değer alabiliyor hem de empty olabiliyor. 
+
+- Bir referans türlü, nullable değişken eğer ki `null` ise onun bellekte karşılığı yok demektir. Bu bir alan tahsisi bile yapmamış anlamına geliyor.
+
+- Bir değişken/nullable/referans eğer ki `null` alıyorsa bu durum ilgili değişkenin herhangi bir alanı tahsis etmediği anlamına gelir.
+
+- Bellekte 2 tane alan vardır biri Stack biri Heap sen bir değişken tanımlıyorsun şimdi bu değişken stack'te bir isim/değişken/referans olarak tanımlanabilir ama eğer ki bu `null` ise bunun bir karşılığı yok anlamına geliyor. Herhangi bir şeyi referans etmiyor anlamına gelecek. Evet bir değişken var ama tuttuğu herhangi bir değer yok. Değer olmadığından dolayı bu `null` anlamına geliyor.  karşıda bir anlamı tahsisi olmadığı durumda `null` söz konusudur.
+
+- Bir değişken/nullable/referans eğer ki empty ise bu değişkenin değeri yok anlamına gelir. Lakin alan tahsisinde bulunulmuştur.
+
+- Şimdi `null` ben bir değişkenim ama bir alan tahsisinde bulunmadım havada bir değişkenim. Ben eğer ki empty olan bir değişkensem alan tahsisinde bulundum arsa boş.
+
+- `null` arsa yok ama bir değişken var bir vatandaş var ama arsası bile yok. Empty vatandaş var arsası da var ama ev yok arsa boş. Yani empty'de alan tahsisi yapılıyor ama değer koymuyoruz yani içi boş olan ama bir alan tahsisi yapılmış bir değişkenden bahsediyoruz.
+
+- Sen bir değişkeni `null` olarak atıyorsan `null` veriyorsan buna o değişken tanımlanır ama o değişkenin karşılığında alan tahsisinde bulunulmaz. Yani senin belleğin 100 birimlik bir bellekse hala 100 olarak kalmaya devam eder. Amma velakin empty değerini atıyorsan empty olan değişkende bir alan tahsisinde bulunulur yani 100 birimlik alan 99'a düşer amma velakin ilgili alana bir değer koymazsın içi boş olur.
+
+- Değişkende alan tahsisinde bulunup ilgili alana bir değer koymuyorsan biz buna empty durum diyoruz.
+
+- Değer türlü değişkenler `null` alamazlar!
+
+- `null` alabilen türler sadece referans türlerdir.
+
+- Değer türlü değişkenlerin `null` alabilmesi için nullable(`?`) olmaları gerekmektedir.
+
+- Eğer ki bir değer türlü değişkeni `null` alabilir yani değişkeni tanımlayacağım ama bunun karşılığında herhangi bir değer tanımlamayacağım bir alan tahsisinde bulunmak istemiyorum diyorsanız bunu nullable(`?`) yapmanız gerekmektedir. Yani değer türlü bir değişkeni `null` almasını istiyorsanız nullable(`?`) yapmanız gerekiyor.
+
+- `string b = null;` `string` değişken tanımlanmıştır amma velakin buna bir alan tahsisinde bulunulmamıştır.
+
+- Tüm değerler empty atanabilir.
+
+- Alan tahsisinde bulunduktan sonra ilgili alana bir değer koymamak empty durumudur.
+
+- Default değerlerin olduğu durumlar empty olarak geçerler.
+
+- Bir değer türlü değişkene sen varsayılan default değerini atarsan ilgili değişken empty olarak nitelendirilir.
+
+- Bir dizi tanımladın ve tanımlamış olduğun array'de boş bir dizi veriyorsan o da bir empty'lik durumudur. Alan tahsisi vardır ama kullanmıyorsundur.
+
+- Empty dendiğinde aklına hiçbir tür gelmesin Empty dendiğinde aklınıza `string` bir değişkene "" değerinin verilmesi gelsin yeter.
+
+- Eğer ki bir `string` içerisine boş `string` verirseniz bu empty'dir. Empty değer yok anlamına gelmez. Bellekte yer kaplar.
+
+- `null` bellekte yer kaplamaz! lakin empty her ne kadar değer almasa da bellekte yer kaplayacak ve bir alan tahsisinde bulunmuş olacaktır...
+
+<img src = "2.png" width = "auto">
+
+- bir `string` değişkeni empty yapmak için;
+    * `string a = "";`
+    * `string a2 = string.Empty;`
+    * iki varyasyonla da çalışabilirsiniz.
+
+<img src = "3.png" width = "auto">
+
+- Bizim için empty kavramı genellikle `string`te hani empty adı üzerinde zaten boş var olan alan boş. `null` yok öyle bir alan. `null` alan tahsisi bile yok empty var ama içi boş. Boş olan şey var olupta içi boş olan bişeyden bahseder. `null` o da yok hani içi boş olacak bir alan bile yok.
+
+```C#
+#Null - Empty Durumları, Farkları
+        
+#Null
+//Bir değişken/nullable/referans eğer ki `null` alıyorsa bu durum ilgili 
+değişkenin herhangi bir alanı tahsis etmediği anlamına gelir.
+//Arsa Yok!
+//Değer türlü değişkenler `null` alamazlar!
+//`null` alabilen türler sadece referans türlerdir.
+//Değer türlü değişkenlerin `null` alabilmesi için nullable(`?`) olmaları 
+gerekmektedir.
+int? a = null;
+string b = null;
+
+#Empty
+//Bir değişken/nullable/referans eğer ki empty ise bu değişkenin değeri yok 
+anlamına gelir. Lakin alan tahsisinde bulunulmuştur.
+//Arsa var lakin ev Yok arsa Boş!
+//Tüm değerler empty atanabilir.
+//Alan tahsisinde bulunduktan sonra ilgili alana bir değer koymamak empty 
+durumudur.
+//Default değerlerin olduğu durumlar empty olarak geçer.
+//Empty dendiğinde aklınıza `string` bir değişkene "" değerinin verilmesi gelsin 
+yeter.
+int a = 0;
+bool b = false;
+int[] x = new int[55];
+string a = "";
+string _a = null;
+string a2 = string.Empty;
+```
