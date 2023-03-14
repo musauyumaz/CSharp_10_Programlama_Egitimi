@@ -234,5 +234,29 @@ if (!string.IsNullOrWhiteSpace(x))
 {
     //Operasyon...
 }
-
 ```
+
+***
+# 299) String RAM(Heap) İlişkisini İnceleyelim
+- `string` referans türlü bir değişkendir ve Heap'te tutulur.
+
+- Bir `string` ifade belleğin heap bölgesinde tutulduğunu artık biliyoruz.
+
+- Referans türlü değişkenleri ikiye ayıracağız;
+    * bir değer kısmı -> değişkenin değeri
+        + Heap'te tutulur.
+    * bir referans kısmı -> değişkenin kendisi olacak 
+        + Stack'te tutulur
+
+- Referans türlü değişkenlerin referansı Stack'te değerleri ise Heap'te bir nesne olarak tutulur.
+
+- Bir değişkenin referans türlü olması demek Stack'teki bir referansın Heap'teki bir nesneyi referans etmesi/göstermesi/işaretlemesi demektir.
+
+- `string` ifadeler belleğin Heap kısmında tutulurlar. `string` ifadelerin değerleri referans türlü olduklarında dolayı bir nesnedir. Nesne dediğinde Heap'te tutulur. Dolayısıyla `string` değerler belleğin Heap'inde tutulurken `string` değişkenler referans olduklarından dolayı Stack'te tutulacaktırlar.
+
+```C#
+#String Ram(Heap) İlişkisi
+string x = "asfsafsafasdfas";
+```
+
+<img src="4.png" width="auto">
