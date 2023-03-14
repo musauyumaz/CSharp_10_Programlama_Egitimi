@@ -209,3 +209,30 @@ if (!string.IsNullOrEmpty(x))
     //Operasyon...
 }
 ```
+
+***
+# 298) String İfadelerde IsNullOrWhiteSpace Kontrolü
+- Bazen de yapılan operasyonlar neticesinde elde edilen değerler `null` da gelebilir bazen empty gelmez boşluk olarakta gelebilir.
+
+- Elimizdeki `string` ifade empty değil içinde bir belirli karakterler barındıran yani bir metin barındıran bu metin yine space yani boşluk olan bir değer olduğunu düşünelim. Bu da bazen bizim için yeterli değildir. Bazı fonksiyonlar ya da uzaktan veri gönderen servisler `string` ifadeyi bazen boş olarak gönderebiliyor. Şimdi biz `IsNullOrEmpty` ile bunu denetlerken ne `null` ne de empty olmadığından dolayı sanki veri gelmiş gibi algılanıyor. Algoritma esnasında patlıyoruz. Ya mantık hatası ya da çalışma zamanı hatalarına sebep olabiliyor.
+
+- Elimizdeki ifadenin `null`, empty ya da whitespace buradaki boşluklardan ibaret olmadığı durumu hızlıca kontrol edebilmek için `IsNullOrWhiteSpace` fonksiyonunu kullanabiliriz.
+
+- `IsNullOrWhiteSpace` fonksiyonu: Elimizdeki `string` ifadenin `null`, empty yahut boşluk karakterlerinden ibaret olma durumunda geriye `bool` `true` değerini döndüren bir fonksiyondur.
+
+- `IsNullOrEmpty` kullanıyorsanız boşluklu/space olma durumunda empty olarak görmeyecek kod akışına devam edecektir `IsNullOrWhiteSpace` ile kontrol ederseniz boşluklu/space da olsa empty'de olsa `null` da olsa görecek ve kodun akışını etkileyecektir.
+
+```C#
+#IsNullOrWhiteSpace
+// `IsNullOrWhiteSpace` fonksiyonu: Elimizdeki `string` ifadenin `null`, empty yahut boşluk karakterlerinden ibaret olma durumunda geriye `bool` `true` değerini döndüren bir fonksiyondur.
+string x = "sebepsiz boş yere ayrılacaksan";
+// string x = "   ";
+// string x = "";
+// string x = string.Empty;
+// string x = null;
+if (!string.IsNullOrWhiteSpace(x))
+{
+    //Operasyon...
+}
+
+```
