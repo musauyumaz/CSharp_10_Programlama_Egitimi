@@ -164,3 +164,48 @@ string a = "";
 string _a = null;
 string a2 = string.Empty;
 ```
+
+***
+# 297) String İfadelerde IsNullOrEmpty Kontrolü,
+- `null` olan bir değerle empty olan bir değer arasında işlem farkı vardır. Empty olan bir değerin üzerinde işlem yapmaya çalıştığımızda her ne kadar beklediğimiz sonucu vermese de hata meydana gelmez çünkü bir alan tahsisinde bulunulmuş yazılım mimari ilgili alanın üzerinde çalışmasını yapabilecektir. Amma velakin `null` olan bir değişkenin üzerinde işlem yapmaya çalışırsanız yani o değişkenin bir karşılığı yok. Bir alan tahsisi yapılmadığından dolayı patlayacaktır. Dolayısıyla patlayacak uygulama sona erecektir.
+
+- Elimizdeki `string` ifadelerin işleme tabi tutulmadan önce kesinlikle kontrol edilmesi gerekmektedir.
+
+- Bazen biz yaptığımız operasyonlar neticesinde elde edilen `string` ifadeleri yeniden bir operasyona tabi tutmadan önce hem `null` hem de empty olup olmama durumunu kontrol ediyoruz. Empty'lik varsa sıkıntı yoktur ama biz empty olmasını da istemeyiz. Eğer ki elimizdeki `string` ifade empty ise yani demek ki boş yani demekki önceden bu değeri üretecek operasyonda bir eksiklik var o zaman başka birşey yapman lazım.
+
+- Authorazation Authentication dediğimiz noktalar vardır. Şimdi kimlik yetkilendirme durumunda kimliği yetkilendirirken kişinin eğer ki adı `null` ya da empty ise yani bana beklediğim değerler gelmiyorsa demek ki kişi `null` da olsa empty'de olsa kişi giriş yapmamıştır o zaman önce giriş yap diyeceğim ondan sonra kişiyi authorazation yapacağım. Yani yetkilendireceğim.
+
+- `null` olma durumu empty olma durumu davranışsal olarak yazılımda biri hata veriyor diğeri vermiyor ama biz elimizdeki `string`i işleme tabi tutacaksak elimizde bir değer olmasını isteriz.
+
+- Bir `string` ifadenin `null` olup olmamasını empty olup olmamasını daha hızlı kontrol edebilmemiz için `IsNullOrEmpty` diye bir fonksiyonumuz var. Bu fonksiyon elimizdeki `string` ifadenin hızlı bir şekilde kontrolünü yapmamızı sağlar.
+
+- `IsNullOrEmpty` fonksiyonu; elimizdeki `string` ifadenin `null` yahut empty olup olmama durumları hakkında bir check yapar ve geriye `bool` türde sonuç döner.
+
+- Uzun uzun operatörlerle çalışacağına burada direkt `IsNullOrEmpty` fonksiyonunu kullanabilirsin. Elindeki `string` ifadenin `null` olup olmama durumunu empty olup olmama durumunu her ikisini de kontrol edecek ve geriye sana sonuç dönecektir.
+
+- `string.IsNullOrEmpty(value)` 
+    * parametre eğer ki `null` ya da empty ise bu ifade `true` dönecektir.
+    * parametre olarak `string` değeri ister.
+
+- Eğer ki `null` ya da empty ise geriye `true` değilse `false` dönecektir.
+
+- Sen elindeki bir `string` ifadenin `null` ya da empty olmadığı durumlarda operasyon yapaacaksan `if(!string.IsNullOrEmpty(value))` şekilde kontrol edebilirsin.
+
+```C#
+#IsNullOrEmpty
+//Elimizdeki `string` ifadelerin işleme tabi tutulmadan önce kesinlikle kontrol edilmesi gerekmektedir.
+string x = "";//Empty
+// string x = string.Empty;//Empty
+// if (x != "")
+// if (x != string.Empty && x != null)
+if (x != string.Empty && x is not null)
+{
+    //Operasyon...
+}
+//IsNullOrEmpty fonksiyonu; elimizdeki `string` ifadenin `null` yahut empty olup olmama durumları hakkında bir check yapar ve geriye `bool` türde sonuç döner.
+//Eğer ki `null` ya da empty ise geriye `true` değilse `false` dönecektir.
+if (!string.IsNullOrEmpty(x))
+{
+    //Operasyon...
+}
+```
