@@ -260,3 +260,44 @@ string x = "asfsafsafasdfas";
 ```
 
 <img src="4.png" width="auto">
+
+***
+# 300) String Özünde Bir char Dizisidir!
+- Karakterlerin bir araya gelmiş haline biz metin diyoruz. Karakterlerin tekil olarak elde edilmiş haline de `char` yani karakter diyoruz. 
+
+- `string` referans türlü demiştik. Çünkü referans türlü olmaktan başka şansı yok. Çünkü `string` ifadeler esasında bir `char` dizisidir.
+
+- `string` ifadeler esasında bir `char` dizisidir. Yani elimizdeki `string` ifadeler bilgisayarda `char` dizisi olarak tutulurlar başka şansı yok.
+
+- `string` ifadeler esasında bir `char` dizisidir. Yani yazılım açısından `string` ifade yoktur! Esasında karakterlerin bir araya gelmiş hali vardır. Dolayısıyla karakterleri bir araya getirebilecek yegane şey bir dizidir. `string` ifadeler yazılımsal açıdan bilgisayarda bir `char` dizisi olarak tarif edilmekte ve o şekilde tutulmaktadırlar.
+
+- `string`ler `char` dizisiyse diziler referans türlü olduklarından `string`lerde referans türlüdür.
+
+- `string` ifadeler özünde bir `char` dizisi/yani dizi olmasından dolayı referans türlü değişkenlerdir. Çünkü diziler referans türlüdürler. Yani nesnedirler. yani Heap'te tutulurlar. Dolayısıyla kendisi bir referans türlü olan bir diziyse demekki `string`te dolaylı bile değil doğrudan referans türlü değer olarak karşımıza çıkıyor. Ondan dolayı referans türlü yoksa adamlarda bilirdi `string`i değer türlü yapmayı ama referans türlü olmak zorunda kaldıkları için referans türlü olarak dizi olarak yapmak zorunda kaldıklarından dolayı referans türlü bir değer olduğu ortadadır.
+
+- `string` ifadeler `char` dizisi olduklarından dolayı yapısal olarak her bir karakter baştan sona otomatik indexlenmektedir. Dolayısıyla `string` bir ifade üzerinde bizler indexer operatörünüde(`[]`) kullanabilmekteyiz... Yani 0'dan başlar en sonuncu karaktere kadar n-1 olarak gidecektir.
+
+- indexer operatörü(`[]`) sade ve sadece dizilerde ve koleksiyonel yapılanmalarda kullanılır. Haliyle `string`te bir `char` dizisi olduğundan dolayı `string`te de kullanabiliyoruz.
+
+- Bir `string` değerin karakter sayısını `Length` özelliği ile elde edilebilir.
+
+- Aynı şekilde `string` ifadelerde yine döngülerde kombinasyonel olarak dönebilir iterasyonlarla kullanbilirsin.
+
+- Yapısal olarak `string` bir `char` dizisi olabilir amma velakin yapısal olarak `string` olduğu için direkt `Array`e atanamaz.
+
+- `Array array = metin;`//`string` özünde bir `char` dizisi olabilir amma velakin yapısal olarak yine de `string` olduğu için `Array` referansına atılamaz `Array` ile karşılanamaz!!!
+
+- Özünde bir `char` dizisidir ama yine de bir `string` bunu da atlamamak lazım Dizilerdeki tüm özellikler burada kullanılabilir değildir tabiki de. Gidipte `int` dizisinde yapabildiklerinizin hepsini bir `string`ten beklemeyin. Çünkü `string` kendine has şahsına münhasır bir tür özünde `char` dizisidir ama yine de bir `string`tir
+
+```C#
+#String - char Dizisi
+//`string` ifadeler esasında bir `char` dizisidir. Yani yazılım açısından `string` ifade yoktur! Esasında karakterlerin bir araya gelmiş hali vardır. Dolayısıyla karakterleri bir araya getirebilecek yegane 
+şey bir dizidir. `string` ifadeler yazılımsal açıdan bilgisayarda bir `char` dizisi olarak tarif edilmekte ve o şekilde tutulmaktadırlar.
+//`string` ifadeler özünde bir `char` dizisi/yani dizi olmasından dolayı referans türlü değişkenlerdir. Çünkü diziler referans türlüdürler. Yani nesnedirler. yani Heap'te tutulurlar.
+//`string` ifadeler `char` dizisi olduklarından dolayı yapısal olarak her bir karakter baştan sona otomatik indexlenmektedir. Dolayısıyla `string` bir ifade üzerinde bizler indexer operatörünüde(`[]`) 
+kullanabilmekteyiz...
+string metin = "sebepsiz boş yere ayrılacaksan..";
+System.Console.WriteLine(metin[3]);
+System.Console.WriteLine(metin.Length);
+Array array = metin;//`string` özünde bir `char` dizisi olabilir amma velakin yapısal olarak yine de `string` olduğu için `Array` referansına atılamaz `Array` ile karşılanamaz!!!
+```
