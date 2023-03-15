@@ -368,3 +368,25 @@ var c = a + a2;
 System.Console.WriteLine(5 + 7 + 20 + "ahmet");
 System.Console.WriteLine(5 + 7 + 20 + "ahmet" + 84 + 78 + 95);
 ```
+
+***
+# 303) String Formatlandırma
+- İş hayatında sürekli bir `string` değer üzerinde formatlandırma işlemi yapmak neredeyse bütün yazılımcıların görevidir. Nihayetinde uzaktan bir servisten gelen bir sonucu uygun bir formatta yazdırmak isteyebilirsiniz. Ya da internetten yapmış olduğunuz bir satış neticesinde faturalandırma durumlarında elinizdeki `string`i formata uygun bir şekilde faturanın değerlerini uygun parametlerle uygun yerlere yerleştirmekte isteyebilirsiniz. Bunun gibi birçok senaryoda `string` kalıpları belirli formatlandırmalarla işlemlere tabi tutmak isteyebilirsiniz.
+
+- 3 Çeşit `string` formatlandırma operasyonu var.
+    * `+` operatörü ile gerçekleştirdiğimiz `string` formatlandırma operasyonu.
+    * `string.Format()` fonksiyonla gerçekleştirdiğimiz `string` formatlandırma operasyonu.
+    * C# 6.0 ile gelen String Interpolation dediğimiz bir operatör ile daha kolay ve efektif bir şekilde gerçekleştirebilmekteyiz.
+
+- `string` formatlandırma elimizdeki değerleri uygun yerlere yerleştirmemizi sağlayan programatik bir rapor ya da bir kalıpsal çıktı verme tekniğidir.
+
+```C#
+#String Formatlandırma
+string isim = "Musa", soyisim="Uyumaz", tcNo = "12345678910";
+int yas = 24;
+bool medeniHal = false;
+System.Console.WriteLine("TC No : .............. olan ..... ...... şahsın bilgileri | Yaş : .. | Medeni Hal : ..");
+```
+
+<img src="5.png" width = "auto">
+
