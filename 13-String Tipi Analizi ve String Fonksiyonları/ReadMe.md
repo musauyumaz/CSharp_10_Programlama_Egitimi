@@ -415,3 +415,28 @@ System.Console.WriteLine("TC No : .............. olan ..... ...... şahsın bilg
 #+ Operatörü
 System.Console.WriteLine("TC No : " + tcNo + "olan " + isim + " " + soyisim + " şahsın bilgileri | Yaş : " + yas + "| Medeni Hal : " + (medeniHal ? "Evli" : "Bekar"));
 ```
+
+***
+# 305) String Değeri string.Format Metodu İle Formatlandırma
+- `string.Format` fonksiyonu yıllarca kullanılan birçok makale de yer alan ta ki String Interpolation çıkana kadar çok kullanılmıştır.
+
+- `string` formatlandırma operasyonlarında `+` operatörü de kullanılıyor ama `+` operatörünün kullanıldığı koda bakan bir coder ya kodu yazan arkadaşın üşendiğini düşünür bir niyet okur ya da bilgisizliğini görür. Güncel olmadığını görür. String Interpolation'ı bilmemek hiç yoktan `string.Format`ı bilmemek bir bilgisizliğin kaynağı olarak yorumlanabilir. Dilde her zaman en güncel noktaya odaklanalım.
+
+- Elimizdeki `string` ifadeye belirli indexler atıyoruz ve atadığımız indexler üzerinden ilgili formata uygun değerleri gönderiyoruz. Index dediğimize göre 0'dan başlayacaktır. süslü parantezler({}) üzerinden index atamasını yaparız. Şimdi süslü parantezlerde atadığımız index numaralarına `,` dedikten sonra ilk göndereceğin değer 0'a  ikinci `,`den sonra göndereceğin değer 1'e şeklinde ve bu şekilde sıralı bir şekilde ilgili indexlere değerleri gönderebiliyorsun. 
+
+- `string.Format` fonksiyonu metinsel kalıbın içerisindeki indexel belirlenen noktalara sırasıyla değer göndermemizi sağlayan bir fonksiyondur.
+
+<img src="8.png" width = "auto">
+
+- `params`'ta sınırsız parametre girebilirsin.
+
+```C#
+#String Formatlandırma
+string isim = "Musa", soyisim = "Uyumaz", tcNo = "12345678910";
+int yas = 24;
+bool medeniHal = false;
+System.Console.WriteLine("TC No : .............. olan ..... ...... şahsın bilgileri | Yaş : .. | Medeni Hal : ..");
+#string.Format
+string sonuc = string.Format("TC No : {0} olan {1} {2} şahsın bilgileri | Yaş : {3} | Medeni Hal : {4}", tcNo, isim, soyisim, yas, medeniHal ? "Evli" : "Bekar");
+System.Console.WriteLine(sonuc);
+```
