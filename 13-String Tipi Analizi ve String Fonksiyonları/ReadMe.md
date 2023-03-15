@@ -1,3 +1,8 @@
+---
+modified: 2023-03-15T06:11:30.858Z
+title: 295) String Türü ve String Gerçeği
+---
+
 ***
 # 295) String Türü ve String Gerçeği
 - `string` özel bir türdür. Metinsel ifadeleri tutabildiğimiz özel bir türdür.
@@ -300,4 +305,28 @@ string metin = "sebepsiz boş yere ayrılacaksan..";
 System.Console.WriteLine(metin[3]);
 System.Console.WriteLine(metin.Length);
 Array array = metin;//`string` özünde bir `char` dizisi olabilir amma velakin yapısal olarak yine de `string` olduğu için `Array` referansına atılamaz `Array` ile karşılanamaz!!!
+```
+
+***
+# 301) Döngülerle String Metin İçerisindeki Her Bir Karaktere Ulaşma
+- Madem ki `string` bir nesne ve madem ki bir dizi o zaman biz bunun üzerinde belirli bir kombinasyon eşliğinde döngülerle rahatça dönüp tek tek bütün karakterlerini elde edebilir ona göre işlemler yapabiliriz.
+
+- Herhangi bir dizi üzerinde belirli bir kombinasyon eşliğinde döngüyle nasıl işlem yapabiliyorsam `char` dizisi olan `string` üzerinde de birebir döngülerle işlem gerçekleştirebilmekteyim.
+
+```C#
+#String - char Dizisi
+string metin = "sebepsiz boş yere ayrılacaksan...";
+for (int i = 0; i < metin.Length; i++)
+{
+    if (metin[i] == 'e')
+        System.Console.WriteLine(i);
+}
+int i = 0;
+do
+{
+    if (metin[i] == 'e')
+        System.Console.WriteLine(i);
+    i++;
+    
+} while (i < metin.Length);
 ```
