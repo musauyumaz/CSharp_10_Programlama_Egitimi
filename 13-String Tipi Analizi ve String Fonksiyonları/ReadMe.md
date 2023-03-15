@@ -390,3 +390,28 @@ System.Console.WriteLine("TC No : .............. olan ..... ...... şahsın bilg
 
 <img src="5.png" width = "auto">
 
+***
+# 304) String Değeri + Operatörü İle Formatlandırma
+- `string` ile herhangi bir ifadeyi `+` operatörü ile işleme tabi tuttuğumuzda yan yana birleştirme yapar ve sonuç olarak geriye `string` ifade döndürür.
+
+- `+` operatörü ile `string` birleştirme de ternary operatörü kullanılıyorsa bunu parantez içerisine almanız gerekmektedir....
+
+<img src="6.png" width = "auto">
+
+- `+` operatörü ile `string` formatlandırma operasyonu hem kod hem de performans açısından oldukça maliyetlidir... O yüzden tercih etmeyeceğiz.
+
+<img src="7.png" width = "auto">
+
+- Kullandığımız durumlardan bir diğeri de eskiden veritabanında birden fazla sorgu gönderirken bu sorguları düzenli bir şekilde yazabilmek için ya da sorgu parametrelerini girebilmek için biz `string` formatlandırma operasyonu yapıyorduk. Bir `INSERT` sorgusu yazıyorsan `INSERT` sorgunusun ilgili parametrelerine/ value kısmındaki değerler sen `string` olarak oluşturduğun o sorguda uygun değerleri bu şekilde girebiliyordun. 
+
+```C#
+#String Formatlandırma
+string isim = "Musa", soyisim = "Uyumaz", tcNo = "12345678910";
+int yas = 24;
+bool medeniHal = false;
+        
+System.Console.WriteLine("TC No : .............. olan ..... ...... şahsın bilgileri | Yaş : .. | Medeni Hal : ..");
+
+#+ Operatörü
+System.Console.WriteLine("TC No : " + tcNo + "olan " + isim + " " + soyisim + " şahsın bilgileri | Yaş : " + yas + "| Medeni Hal : " + (medeniHal ? "Evli" : "Bekar"));
+```
