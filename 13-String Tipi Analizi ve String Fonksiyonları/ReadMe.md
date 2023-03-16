@@ -535,3 +535,15 @@ System.Console.WriteLine("abc \b");
 System.Console.WriteLine("İsim\tSoyisim\tAdres\t");
 char c = '\'';
 ```
+
+***
+# 308) String Türlerde @(Verbatim Strings) Operatörü
+- Verbatim Strings(`@`) operatörü 3 farklı amaca hizmet eden operatördür.
+    * Keyword isimlerine karşılık tanımlamalar yapma durumu.
+
+- Belirli keywordlere karşılık gelen tanımlamalar yapmak istiyorsanız bu mümkün değildir. Ama illa yapacağım diyorsanız da `@` operatörü ile bu operasyonu gerçekleştirebiliyorduk.
+
+```C#
+#@(Verbatim Strings) Operatörü
+#1. Kullanım
+```
