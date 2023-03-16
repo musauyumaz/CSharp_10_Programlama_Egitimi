@@ -565,3 +565,20 @@ int @namespace = 5;
 
 void @void(){}
 ```
+
+***
+# 310) String Türlerde @(Verbatim Strings) Operatörü Kullanım Durumu 2
+- Verbatim Strings(`@`) Operatörünün bir diğer kullanıldığı senaryo ise kaçış karakterlerinin kullanılması gereken durumlardır.
+
+- İlgili özel karakterlerin eylemsel karakterlerin metin içerisinde ezilmesini istiyorsanız ilgili metinin `string` ifadenin en başına gelip Verbatim Strings(`@`) Operatörünü koyabilirsiniz. Verbatim Strings(`@`) Operatörünü koyduğunuz taktirde operasyonel olarak ilgili eylemsel operatörü/keywordü/karakteri kendisiyle tekrardan ezebiliyorsunuz.
+
+- Escape karakterlerinin kullanılması icap eden durumlarda Verbatim Strings(`@`) Operatörünü kullanarak metinsel ifadeye/ `string` ifadeye eylemsel karakterleri kendileriyle ezebilecek özellik kazandırabiliyoruz...
+
+<img src="16.png" width = "auto">
+
+```C#
+#@(Verbatim Strings) Operatörü
+#r1. Kullanım
+string metin = "hava çok \"güzel\"";
+string metin = @"hava çok ""güzel""";
+```
