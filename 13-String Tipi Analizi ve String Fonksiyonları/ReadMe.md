@@ -1,5 +1,5 @@
 ---
-modified: 2023-03-15T06:11:30.858Z
+modified: 2023-03-16T06:22:55.569Z
 title: 295) String Türü ve String Gerçeği
 ---
 
@@ -439,4 +439,53 @@ System.Console.WriteLine("TC No : .............. olan ..... ...... şahsın bilg
 #string.Format
 string sonuc = string.Format("TC No : {0} olan {1} {2} şahsın bilgileri | Yaş : {3} | Medeni Hal : {4}", tcNo, isim, soyisim, yas, medeniHal ? "Evli" : "Bekar");
 System.Console.WriteLine(sonuc);
+```
+
+***
+# 306) String Değeri $(String Interpolation) Operatörü İle Formatlandırma
+- `string` formatlandırma operasyonlarında günümüzde olmazsa olmaz String Interpolation yani `string` ifadenin arasına bir değer girmemizi sağlayan özelliktir. C# 6.0 ile yazılım dünyasına gelmiştir.
+
+- Aslınada amaç önceki operatörlerde yaptığımızı birebir aynısını yapmak ama bunu daha efektif yapabiliyoruz.
+
+- `string` ifadenin içerisinde süslü parantezi(`{}`) programatik etkileşimli hale getirdiler.
+
+- String Interpolation `string` ifadenin içerisinde süslü parantez(`{}`) ile araya girerek programatik bir değişkenin değerini bırakmamızı/eklememizi sağlayan bir operatördür.
+
+- Yani senin `string.Format`tan daha gelişmiş bir yapılanma olduğunu düşünürsen eğer senin değerlerini direkt `string.Format`taki gibi index mantığıyla değilde direkt ilgili süslü parantezlerin(`{}`) içine vermeni sağlayan bir operatördür.
+
+- Eğer ki `string` ifadenin başına `$` işaretini koyarsanız bu ilgili `string`e String Interpolation özelliğini kazandırıyor olacaktır.
+
+- Bir `string` değerin başına `$` operatörü koyulursa --> `$"..."` bu ifadenin içerisinde string interpolation operasyonunun/operatörünün kullanılabilirliği sağlanır. Yani ilgili `string` içerisindeki süslü parantezler(`{}`) bir interpolation özelliği sergilerler.
+
+- İlgili `string`in başında `$` işareti olmazsa normal bir metin olur Ama ilgili `string`in başına `$` işaretini koyarsan artık `string` içerisindeki süslü parantezler(`{}`) programatik anlam ifade edecek ve orada ilgili `string`in arasına bir değer koyabileceğin bir mekanizma bir operatör görevi görecektir.
+
+- `$"..............{}................."` String Interpolation ilk önce `$` ile `string` ifadenin başına koyulur ardından süslü parantezlerle(`{}`) de programatik ifadeler gerçekleştirilir.
+
+<img src="9.png" width = "auto">
+
+- Ne `+` operatörüyle çinceye benzer bir çıktı vermem gerekiyor/çalışma yapmam gerekiyor ne de `string.Format` ile uzun uzun index index uğraşıpta ondan sonra 3 5 tane index oldumu sıkıntı yok ama yeri geliyor 50 55 tane indexin olacak ne yapacaksın yeri geliyor bir mail göndermen lazım oradaki format 50 tane parametre gerektiriyor. String interpolation'da herhangi bir sayma yok herhangi bir `+` operatörü yok herhangi bir metini bölme yok. `string` ifadenin başına `$` operatörünü koyarsan bu String Interpolation özelliği aktifleştirilmiş bir `string` olacaktır ve bu `string`in içerisinde araya Interpolationları dahil edebiliyoruz. Yani metinleri dahil edebiliyoruz.
+
+- `"Medeni Hal : {(medeniHal ? "Evli" : "Bekar" )}"` String Interpolation içinde Ternary kullanıyorsanız parantez(`()`) koymaya özen gösteriyorsunuz.
+
+- String interpolation yapısal olarak `string.Format` fonksiyonuyla şekillenene bir operatördür...
+
+- Ternary vs. kullanılıyorsa parantez içerisine alınız...
+
+<img src="10.png" width = "auto">
+
+- String Interpolation kullanırken süslü parantezi(`{}`) oradaki kalıpta kullanmam gerekiyor String Interpolation değilde süslü parantezin(`{}`) olması lazım değersel olarak programatik olarak değil derseniz iki süslü parantez(`{}`) olarak kullanabilirsiniz. --> `$"......{{}}........"` İki String Polation birbirini programatik ezecektir.
+
+- String interpolation kullanılan `string` ifadelerde metinsel olarak süslü parantez(`{}`) kullanmak ihtiyacı durumunda operatif olan süslü parantezleri yine aynı operatörle ezerek metinsel hale getirebiliriz...
+
+<img src="11.png" width = "auto">
+
+```C#
+#String Formatlandırma
+string isim = "Musa", soyisim = "Uyumaz", tcNo = "12345678910";
+int yas = 24;
+bool medeniHal = false;
+System.Console.WriteLine("TC No : .............. olan ..... ...... şahsın bilgileri | Yaş : .. | Medeni Hal : ..");
+
+#$(String Interpolation) (C# 6.0)
+System.Console.WriteLine($"TC No : {tcNo} olan {isim} {soyisim} şahsın bilgileri | Yaş : {yas} | Medeni Hal : {(medeniHal ? "Evli" : "Bekar" )} {{ahmet}}");
 ```
