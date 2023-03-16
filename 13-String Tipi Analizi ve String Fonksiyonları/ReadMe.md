@@ -547,3 +547,21 @@ char c = '\'';
 #@(Verbatim Strings) Operatörü
 #1. Kullanım
 ```
+
+***
+# 309) String Türlerde @(Verbatim Strings) Operatörü Kullanım Durumu 1
+- Herhangi bir değişken tanımlarken ya da ileride göreceğimiz metotları tanımlarken bunların isimlerini programatik bir keyword veremiyoruz. İllaki vereceğim diyorsanız Verbatim Strings Operatörünü(`@`) kullanmanız gerekiyor.
+
+- Kullananlar var ama çokta geçerli bir yapı değildir.
+
+```C#
+#@(Verbatim Strings) Operatörü
+#1. Kullanım
+//Bir değişken yahut metot vs. ibi yapılanma isimlerinin programatik bir keyworde karşılık gelmesi mümkün değildir. Derleyici hatası verilir.
+//Eğer ki illa ben bir keyword ismi kullanacağım diyorsan eğer @(Verbatim Strings) Operatörünü kullanabilirsin.
+int @void = 5;
+int @class = 5;
+int @namespace = 5;
+
+void @void(){}
+```
