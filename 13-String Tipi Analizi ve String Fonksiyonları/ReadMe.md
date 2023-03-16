@@ -489,3 +489,49 @@ System.Console.WriteLine("TC No : .............. olan ..... ...... şahsın bilg
 #$(String Interpolation) (C# 6.0)
 System.Console.WriteLine($"TC No : {tcNo} olan {isim} {soyisim} şahsın bilgileri | Yaş : {yas} | Medeni Hal : {(medeniHal ? "Evli" : "Bekar" )} {{ahmet}}");
 ```
+
+***
+# 307) String Değerlerde (Escape)Kaçış Karakterleri
+- Yapısal olarak bu kompleks olan `string` yani metinsel değerlerin içerisinde bazen eylemsel karakterleri bir metinsel değer olarak kullanmak isteyebiliriz.
+
+- `string` ifadeler `"............"` ile biter. `"` eylemsel bir karakterdir. `string` açısından belirli bir operasyonu/eylemi/sorumluluğu üstlenen bir karakterdir. Dolayısıyla böyle bir karakteri metinin içerisinde salt bir şekilde kullanmamız mümkün değildir.
+
+- `".........."............."` Eğer ki bu şekilde `string` için özel eylemsel mahiyet ifade eden bir karakteri metinsel olarak kullanacaksam bu karakterin o anlık özel karakter olmadığını ifade etmem gerekmektedir.
+
+- Bir özel eylemsel karakteri metinsel ifadenin içerisinde kullanabilmen için o karakterin özel karakter olmadığını ifade etmeni Escape yani kaçış karakterleri sağlamaktadır.   
+
+- Bunun için Escağe/kaçış karakterleri kullanılmalıdır.
+
+- Kaçış karakteri dediğimiz aslında bir tanedir. Backslash(`\`)
+
+- `string` içerisinde kaçış karakteri olarak Backslash(`\`) kullanılmaktadır.
+
+- `string`in içerisinde Backslash(`\`) kullanıyorsan eğer özel karakterden ziyade özel karakterin özel karakter olmadığını ifade eden bir yapılanmadır.
+
+- `string` içerisinde özel/operatif karakterleri ezen ve bunları metinsel hale getirmemizi sağlayan bir karakterdir.
+
+<img src="12.png" width = "auto">
+
+- Backslash(`\`) kendisinden sonra gelen karakterin bir özel/eylemsel/operatif karakter olmadığını, metinsel bir değer olduğunu ifade eder.
+
+<img src="13.png" width = "auto">
+
+- `"\"Bugün Hava Çok Güzel\""` kardeşim benim `string`im bu içteki tırnaklar ise özel `string` eylemsel karakter değil normal metinsel karakterlerdir ve çıktı olarak Backslash'ı(`\`) yazdırmayacak direkt ilgili tırnakları yazdıracaktır. Bakın kaçış karakteri oradaki eylemsel özellikten biz ilgili karakteri kaçırdık normal bir metinsel değer haline getirdik.
+
+- `string` ifadenin içinde kaçış karakterini/Backslash'ı(`\`) direkt lalettayin kullanamazsınız. Kaçış karakterini ezmeniz lazım. Backslash(`\`)  yanına illaki özel bir karakter/eylemsel bir karakter bekler. Aksi taktirde hata verir. Metinsel olarak Backslash'ı(`\`) kullanmak istiyorsak eğer ilgili operatörü yine kendisiyle ezmeliyiz. `\\`
+
+<img src="14.png" width = "auto">
+
+- Görüldüğü üzere tab, enter, satır sonu vs gibi doğrudan klavye tarafından girilemeyen bazı tuşları oluşturmak için kullanıladabilir...
+
+<img src="15.png" width = "auto">
+
+```C#
+#String Kaçış Karakterleri
+System.Console.WriteLine("\"Bugün Hava Çok Güzel\"");
+System.Console.WriteLine("Musa\\Uyumaz");
+System.Console.WriteLine("\a");
+System.Console.WriteLine("abc \b");
+System.Console.WriteLine("İsim\tSoyisim\tAdres\t");
+char c = '\'';
+```
