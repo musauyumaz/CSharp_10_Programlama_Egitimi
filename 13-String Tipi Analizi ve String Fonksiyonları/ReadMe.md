@@ -689,3 +689,22 @@ Fiyat : {fiyat}";
     #TrimStart
 
 ```
+
+***
+# 314) String Fonksiyonları - Contains Metodu
+- Bir metinsel ifadenin içinde herhangi bir değerin olup olmadığını check eden ve sonuç olarak `bool` değer döndüren bir fonksiyondur.
+
+- C# büyük küçük harf duyarlılığına sahip bir dildir bu yüzden aramada da fark olacaktır.
+
+- `string` formatta karakter araması da yapabilirsiniz.
+
+- `Contains` ilgili metin içerisinde aradığın herhangi bir ifadenin/karakterin geçip geçmediğini denetleyen bir fonksiyondur.
+
+```C#
+#String Fonksiyonları
+string metin = "laylaylom galiba sana göre sevmeler...";
+
+#Contains
+bool sonuc = metin.Contains("Sana");
+System.Console.WriteLine(sonuc);
+```
