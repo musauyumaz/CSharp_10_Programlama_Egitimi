@@ -659,3 +659,33 @@ Fiyat : {fiyat}";
         System.Console.WriteLine(mailMessage);
         
 ```
+
+***
+# 313) String Fonksiyonları Nelerdir?
+- `string`/metinsel değerler sadece metinsel olacak değerler değillerdir. İşlem yapılması gereken değerlerde olabilir. Örneğin diyelim ki senin metinsel değerinde şiir var. Şimdi istatistiksel çalışma yapman gerekebilir örneğin kaç tane kelime var kaç tane 'a' harfi var ya da içinde 'keza' kelimesi geçiyor mu diye araman gerekebilir. Velhasıl kelam başı şöyle başlıyor mu sonu şöyle bitiyor mu diye sorular sorman gerekebilir. Bütün harflerini büyültmen/küçültmen gerekebilir. Belirli bir değer aralığını elde etmen değer aralığındaki değeri çıkarıp üzerinde işlem yapman gerekebilir. Silmen gerekebilir eklemen gereken noktalar olması gerekebilir vs.
+
+- `string` dediğin değer salt değerden öte üzerinde neredeyse veri bilimine dayanacak işlemler yapabileceğin onlarca operasyon barındırabilecek bir değerdir. Dolayısıyla bu olayları yapmamızı sağlayacak fonksiyonlara `string` fonksiyonları diyoruz.
+
+- `string` fonksiyonları `string` üzerinde işlemler yapmamızı sağlayan fonksiyonlardır.
+
+```C#
+#String Fonksiyonları
+    #Contains
+    #StartsWith
+    #EndsWith
+    #Equals
+    #Compare
+    #CompareTo
+    #IndexOf
+    #Insert
+    #Remove
+    #Replace
+    #Split
+    #Substring
+    #ToLower
+    #ToUpper
+    #Trim
+    #TrimEnd
+    #TrimStart
+
+```
