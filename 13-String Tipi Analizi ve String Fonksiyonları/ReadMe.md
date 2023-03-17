@@ -639,3 +639,23 @@ string mailMessage = @$"Merhaba {isim} {soyisim}\n
 {siparisNo} nolu sipariş talebiliniz tarafımızca alınmıştır.\n
 Fiyat : {fiyat}";
 ```
+
+***
+# 312.2) String Interpolation İle Verbatim String Birlikteliği (C# 8.0)
+- Verbatim Strings(`@`) Operatörünün kullanıldığı yerlerde Escape kaçış karakterleri bir anlam ifade etmez.
+
+- Sol kolona sıfırladığın zaman ondan sonra yazarsan en azından ürettiğin metinsel değerin formatını daha iyi bir şekilde görebilirsin.
+
+<img src="19.png" width = "auto">
+
+```C#
+        #String Interpolation İle Verbatim String Birlikteliği (C# 8.0)
+        string isim = "Musa", soyisim = "Uyumaz", siparisNo = "123123";
+        int fiyat = 150;
+        string mailMessage = 
+@$"Merhaba {isim} {soyisim} 
+{siparisNo} nolu sipariş talebiliniz tarafımızca alınmıştır.
+Fiyat : {fiyat}";
+        System.Console.WriteLine(mailMessage);
+        
+```
