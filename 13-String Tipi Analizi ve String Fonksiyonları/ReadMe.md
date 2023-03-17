@@ -708,3 +708,17 @@ string metin = "laylaylom galiba sana göre sevmeler...";
 bool sonuc = metin.Contains("Sana");
 System.Console.WriteLine(sonuc);
 ```
+
+***
+# 315) String Fonksiyonları - StartsWith Metodu
+- İlgili metinin verilen değerle/karakterle başlayıp başlamama durumunu kontrol edip sonuç olarak `bool` değer döndüren bir fonksiyondur.
+
+- Büyük küçük harf duyarlılığına dikkat etmelisiniz.
+
+```C#
+#String Fonksiyonları
+string metin = "laylaylom galiba sana göre sevmeler...";
+
+#StartsWith
+System.Console.WriteLine(metin.StartsWith("laylay"));
+```
