@@ -616,3 +616,26 @@ string metin3 = "asfasgagasgfassadasfasf " +
 "agfasgasdasdasfafga" +
 "asdfafasfas";
 ```
+
+***
+# 312.1) String Interpolation İle Verbatim String Birlikteliği (C# 8.0)
+- `string` ifadeler tek satırda yazılmazsa hata alınır Compiler izin vermez.
+
+- C# 8.0'da String Interpolation operatörünü(`$`) ve Verbatim Strings(`@`) Operatörünü beraber kullanabileceğimiz şekle getirilmiştir.
+
+- Verbatim Strings(`@`) Operatörü ve String Interpolation operatörü(`$`) aynı `string` ifade de kullanılıyorsa Verbatim Strings(`@`) Operatöründen sonra String Interpolation operatörü(`$`) bildirilmelidir.
+
+- `@` operatörü ile `$` operatörü birlikte kullanılıyorsa önce `@` sonra `$` bilidirilmelidir.
+
+<img src="18.png" width = "auto">
+
+- Bazen kod ne kadar analitik olsa da gözün de gördüğünü direkt algılayabilmeli haliyle yazılan metini dümdüz yanına doğru yazarsak çıktı yine aynı olacaktır ama biz kodu daha rahat inşa edebilmek için editörden destekler bekliyoruz. Belirli operatörler eşliğinde bu şekilde çalışmalar gerçekleştirebiliyoruz.
+
+```C#
+#String Interpolation İle Verbatim String Birlikteliği (C# 8.0)
+string isim = "Musa", soyisim="Uyumaz",siparisNo="123123";
+int fiyat = 150;
+string mailMessage = @$"Merhaba {isim} {soyisim}\n 
+{siparisNo} nolu sipariş talebiliniz tarafımızca alınmıştır.\n
+Fiyat : {fiyat}";
+```
