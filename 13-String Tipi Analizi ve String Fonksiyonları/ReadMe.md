@@ -1,5 +1,5 @@
 ---
-modified: 2023-03-16T06:22:55.569Z
+modified: 2023-03-17T06:22:06.097Z
 title: 295) String Türü ve String Gerçeği
 ---
 
@@ -581,4 +581,38 @@ void @void(){}
 #r1. Kullanım
 string metin = "hava çok \"güzel\"";
 string metin = @"hava çok ""güzel""";
+```
+
+***
+# 311) String Türlerde @(Verbatim Strings) Operatörü Kullanım Durumu 3
+- Verbatim Strings(`@`) Operatörünün kullanıldığı 3. durum ise `string` ifadelerdeki satırlı metinler için geçerlidir.
+
+- Metinsel ifadelerde çift tırnaklar(`""`) arasındaki ifadeler tek satırda yazılmak zorundadır. Siz bunları aşağı atlatamazsınız. Yani compiler seviyesinde hata verecektir.
+
+- Biz bazen yazmış olduğumuz metinsel ifadeleri belirli bir taslak/format halide yazmak istediğimiz için Kodda da onların alt alta olmasını isteriz ama `+` operatörleriyle değil sanki düzgün bir metinmiş gibi olmasını isteriz.
+
+- Normalde böyle satır satır `string` ifadeye izin vermeyen derleyici ilgili `string` ifadenin çift tırnaından(`""`) önce Verbatim Strings(`@`) Operatörü varsa compiler bunu algılayabiliyor.
+
+- C#'ta `string` ifade birleştirilmeden satır satır yazılamaz. Yazabilmek için Verbatim Strings(`@`) Operatörünü kullanabiliriz. Ya da metinsel birleştirme yapılabilir...
+
+<img src="17.png" width = "auto">
+
+```C#
+#@(Verbatim Strings) Operatörü
+ string metin = "asfasfsamfasfasf
+ qfpk
+  agiaeşgfk 
+  awğfg
+   awkgl 
+  aweşf";
+string metin2 = @"asfasfsamfasfasf
+ qfpk
+  agiaeşgfk 
+  awğfg
+   awkgl 
+  aweşf";
+string metin3 = "asfasgagasgfassadasfasf " +
+"asdfasgasasfafasfasfasf" +
+"agfasgasdasdasfafga" +
+"asdfafasfas";
 ```
