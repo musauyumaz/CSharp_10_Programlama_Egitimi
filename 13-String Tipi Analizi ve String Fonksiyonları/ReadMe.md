@@ -800,3 +800,38 @@ System.Console.WriteLine(metin.CompareTo("Z"));
 System.Console.WriteLine(metin.CompareTo("a"));
 System.Console.WriteLine(metin.CompareTo(metin));
 ```
+
+***
+# 320) String Fonksiyonları - IndexOf Metodu
+- `string` bir dizidir. Dolayısıyla `IndexOf` metoduda dizilerde olduğu için `string`lerde de geçerlidir.
+
+- Aradığımız değerin ilgili metinsel ifadenin içerisinde olup olmadığını bizlere sayısal olarak bildiren bir fonksiyon. Aradığımız değeri normalde ilgili dizide var mı yok mu diye bildiriyordu burada ise dizi olan `string`in içerisinde var mı yok mu diye bildirecek ikisinde de aynı amaca hizmet ediyor ikisinde de aynı şekilde işlevsellik gösteriyor Birinde dizi birinde `string` aslında arka planda aynı şeyler.
+
+- Verilen değerin `string` ifade içerisinde olup olmamasını geriye `int` döndüren bir fonksiyondur.
+
+- Geriye `int` olarak indexNo'yu döndürür.
+
+- `int` olarak geriye index numarasını döndürür.
+
+- Yani aradığın ifadenin index no'sunu döndürür.
+
+- Aradığın eğer bir kelimeyse kelimenin ilk harfinin index numarasını döndürür. Sen oradan bir kombinasyon oluşturabilesin diye.
+
+- Denk gelen bir değer yoksa eşleştirme söz konusu değilse -1 değerini döndürür.
+
+- `IndexOf` ilk eşleşen değerin index'ini döndürür. Yani istediği kadar tekrar etsin ilk eşleşen.
+
+```C#
+#String Fonksiyonları
+string metin = "laylaylom galiba sana göre sevmeler...";
+
+#IndexOf
+//Verilen değerin `string` ifade içerisinde olup olmamasını geriye `int` döndüren bir fonksiyondur.
+//geriye `int` olarak indexNo'yu döndürür.
+//-1 değerini döndürür.
+//IndexOf ilk eşleşen değerin index'ini döndürür.
+System.Console.WriteLine(metin.IndexOf("la"));
+System.Console.WriteLine(metin.IndexOf("lay"));
+System.Console.WriteLine(metin.IndexOf("La"));
+System.Console.WriteLine(metin.IndexOf("sana"));
+```
