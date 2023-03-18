@@ -781,3 +781,22 @@ System.Console.WriteLine(string.Compare(metin, "a"));
 System.Console.WriteLine(string.Compare(metin, metin));
 System.Console.WriteLine(string.Compare(metin, 9, metin, 8, 5));
 ```
+
+***
+# 319) String Fonksiyonları - CompareTo Metodu
+- `CompareTo` fonksiyonu ise `Compare` ile birebir aynı amaca hizmet eden bir fonksiyondur ve yapısal olarakta aynı şekilde kullanılmaktadırlar.
+
+- Aynı amaç yine metinsel ifadeleri karşılaştırıyoruz sonuç olarak `int` türde değer elde ediyoruz. Sonuçlarda yine aynı şekilde aynı mahiyete denk gelmekte amma velakin kullanımı biraz farklı yani değer üzerinden yola çıkıyorsun bu sefer `string`ten değil değer üzerinden yola çıkıyorsun.
+
+```C#
+#String Fonksiyonları
+string metin = "laylaylom galiba sana göre sevmeler...";
+#CompareTo
+//Metinsel ifadeleri karşılaştırmamızı ve sonuç olarak `int` türde değer elde etmemizi salar.
+//0 : Her iki değer birbirine eşittir.
+//1 : Soldaki sağdakinden alfa numerik olarak büyük
+//-1 : Soldaki sağdakinden alfa numerik olarak küçük
+System.Console.WriteLine(metin.CompareTo("Z"));
+System.Console.WriteLine(metin.CompareTo("a"));
+System.Console.WriteLine(metin.CompareTo(metin));
+```
