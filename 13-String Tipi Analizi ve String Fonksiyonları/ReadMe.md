@@ -730,5 +730,20 @@ System.Console.WriteLine(metin.StartsWith("laylay"));
 - Check ederken sonu şununla bitiyor mu diye sormanızı sağlayan bir fonksiyondur.
 
 ```C#
+#String Fonksiyonları
+string metin = "laylaylom galiba sana göre sevmeler...";
 
+#EndsWith
+System.Console.WriteLine(metin.EndsWith("...."));
+```
+
+***
+# 317) String Fonksiyonları - Equals Metodu
+- Elimizdeki metinsel ifadeyle herhangi bir ifadenin değersel olarak eşit olup olmamasını check eden/denetleyen  ve geriye `bool` sonuç dönen bir fonksiyon.
+
+```C#
+#String Fonksiyonları
+string metin = "laylaylom galiba sana göre sevmeler...";
+#Equals
+System.Console.WriteLine(metin.Equals("laylaylom galiba sana göre sevmeler..."));
 ```
