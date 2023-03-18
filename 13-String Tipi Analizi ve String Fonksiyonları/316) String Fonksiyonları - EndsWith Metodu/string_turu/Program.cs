@@ -8,7 +8,7 @@ class Program
         string metin = "laylaylom galiba sana göre sevmeler...";
 
         #region EndsWith
-        System.Console.WriteLine(metin.EndsWith("...."));
+        System.Console.WriteLine(metin.EndsWith("r..."));
         #endregion
         #endregion
     }

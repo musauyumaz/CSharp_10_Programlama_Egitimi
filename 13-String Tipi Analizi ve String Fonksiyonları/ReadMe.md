@@ -734,7 +734,7 @@ System.Console.WriteLine(metin.StartsWith("laylay"));
 string metin = "laylaylom galiba sana göre sevmeler...";
 
 #EndsWith
-System.Console.WriteLine(metin.EndsWith("...."));
+System.Console.WriteLine(metin.EndsWith("r..."));
 ```
 
 ***
@@ -745,5 +745,39 @@ System.Console.WriteLine(metin.EndsWith("...."));
 #String Fonksiyonları
 string metin = "laylaylom galiba sana göre sevmeler...";
 #Equals
+//Elimizdeki metinsel ifadeyle herhangi bir ifadenin değersel olarak eşit olup olmamasını check eden/denetleyen ve geriye `bool` sonuç dönen bir fonksiyon.
 System.Console.WriteLine(metin.Equals("laylaylom galiba sana göre sevmeler..."));
+```
+
+***
+# 318) String Fonksiyonları - Compare Metodu
+- Metinsel değerleri kendi aralarında karşılaştırma yapabiliyoruz. Bu karşılaştırma neticesinde sonuç olarak `int` dönüyor.
+
+- Bazen biz fonksiyonel yapılanmalarda sonuç olarak anlamlı bir metinsel bir sonuç dönmektense sembolik yani o metinsel karşılıklarını tam sayılarla ifade eden sonuçlar dönmek isteyebiliriz.
+
+- Dolayısıyla `Compare` fonksiyonu yapmış olduğu karşılaştırma neticesinde sana sonucu bir durumsal olarak yani sayısal olarak döndürüyor sen o sayılardan anlam çıkarıyorsun.
+
+- 0, 1 ya da -1 değerlerini dönecektir.
+    - 0: Her iki değer birbirine eşittir.
+    - 1: Karşılaştırma neticesinde metinsel ifadelerde soldaki yani ilk karşılaştırdığımız sağdakinden alfa numerik olarak büyükse yani soldaki Z ile başlıyordur sağdaki A ile başlıyordur. ya da sağdaki 1 ile başlıyordur soldaki 9 ile başlıyordur örneğin alfa numerik olarak büyük olduğu durumda 1 değerini döndürecektir. Aksi taktirde de -1 değerini döndürecektir.
+    - 2: Soldaki sağdakinden alfa numerik olarak küçük
+
+- Fonksiyonel yapılanmalarda sonuç olarak döndürülen bu tam sayılar bizim için bir anlam ifade ediyor. Eğer 0 dönerse birbirine eşitlik durumu eğer -1 dönerse soldakinin sağdakinden alfa numerik olarak küçük olduğu durumu yani dikkat ederseniz yazılımsal mantıkta her daim düz mantık değil Bazen de daha esnek mantıklar kullanılabiliyor. Yani ilişkisel sembolik değerler vs bunun gibi yapılanmaları düşünün ve kullanın.
+
+- OOP'de enumeration konusu bunun için oluşturulmuştur. enumeration dediğimiz yapılanma belirli ifadeleri tam sayılarla ifade edebilmemizi sağlayan yapılanmalardır. Örneğin sen Erkek Kadın diye cinsiyeti tarif ederken bunu yazılımsal seviyede 0 - 1 olarak tutabilirsin. Ya da evli bekar 0 - 1 yahut `true` `false` bu şekilde sembolik ifadelerle biz elimizdeki anlamsal değerleri karşılıklarını yazılımda kullanabiliyoruz.
+
+- Birden fazla parametreyle kıyaslama yapacağınız değerler üzerinde detaylı belirleme yapabiliyorsunuz işte elimdeki değerin şu kısmıyla elimdeki şu değerin şu kısmını kıyasla vs diyebiliyorsunuz.
+
+```C#
+#String Fonksiyonları
+string metin = "laylaylom galiba sana göre sevmeler...";
+#Compare
+//Metinsel ifadeleri karşılaştırmamızı ve sonuç olarak `int` türde değer elde etmemizi salar.
+//0 : Her iki değer birbirine eşittir.
+//1 : Soldaki sağdakinden alfa numerik olarak büyük
+//-1 : Soldaki sağdakinden alfa numerik olarak küçük
+System.Console.WriteLine(string.Compare(metin, "Z"));
+System.Console.WriteLine(string.Compare(metin, "a"));
+System.Console.WriteLine(string.Compare(metin, metin));
+System.Console.WriteLine(string.Compare(metin, 9, metin, 8, 5));
 ```
