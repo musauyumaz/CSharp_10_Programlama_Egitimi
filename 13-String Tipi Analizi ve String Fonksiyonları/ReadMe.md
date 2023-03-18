@@ -722,3 +722,13 @@ string metin = "laylaylom galiba sana göre sevmeler...";
 #StartsWith
 System.Console.WriteLine(metin.StartsWith("laylay"));
 ```
+
+***
+# 316) String Fonksiyonları - EndsWith Metodu
+-  İlgili metinin verilen değerle/karakterle sonlanıp sonlanmama durumunu kontrol edip sonuç olarak `bool` değer döndüren bir fonksiyondur. 
+
+- Check ederken sonu şununla bitiyor mu diye sormanızı sağlayan bir fonksiyondur.
+
+```C#
+
+```
