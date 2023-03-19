@@ -937,3 +937,25 @@ string metin = "laylaylom galiba sana göre sevmeler...";
 string[] dizi = metin.Split(' ');
 string[] dizi = metin.Split(' ', 'a');
 ```
+
+***
+# 325) String Fonksiyonları - Substring Metodu
+- `string` fonksiyonları içerisinde en önemlisi de diyebiliriz.
+
+- Bot yazılımları : Belirli bir kaynaktaki veriyi işleyip anlamlı hale getirip başka bir kaynağa set eden ya da bunları anlamlı hale getirdikten sonra analiz verileri olarak kullanmamızı sağlayabilen işte istatistiksel çalışmalar yapıp gene analiz verileri olarak anlamlı bir şekilde karşımıza sunan senin benim yapacağımız işlemleri otomatik yapan yazılımlardır.
+
+- Dolayısıyla bu yazılımlarda en çok belirlediğiniz kaynaktan verileri alırken alınan bu veriler genellikle `string` olarak alınır çünkü kaynaklar farklı farklı türlü türlü kaynaklar olabilir onun için C#'taki bütün türlere karşılık gelecek şekilde alamazsın sen değeri `string` olarak alır artık dilin kendine özgü bir şekilde buradaki gelen `string`i parse edip parçalayıp gerekli `string` fonksiyonları uygulayıp uygun değerleri içerisinden alıp dildeki uygun türlere dönüştürürsün dolayısıyla gelen kompleks bir veri de olabilir basit bir veri de olabilir. Amma velakin bunların üzerinde yani ilgili gelen verinin üzerinde çalışmayı yaparken kesinlikle `string` fonksiyonları üzerinde çalışmamız gerekecektir. Velhasılkelam `string` fonksiyonlarında bu bot yazılımları olsun derinlemesine algoritmalar olsun işte `string` üzerinde komleks çalışmalar vs. olsun bu tarz yapılanmalarda çalışırken buradaki fonksiyonlardan `Remove`, `Replace`, `Split` gibi fonksiyonlar aşırı derece de kullanılır. Ve bunların arasında biri vardır ki `Substring` çok ama çok kullanılır. En çok kullanılan `Substring`tir.
+
+- Elimizdeki metinsel ifade de belirli bir değer aralığını almamızı sağlıyor. Elindeki bir ifadenin belirli bir değer aralığını elde edebilmek orada işlem yapabilmek istiyorsan `Substring` ile çalışman lazım.
+
+- Var olan orjinal değeri bozmaz yeni bir `string` değer üretir.
+
+```C#
+#String Fonksiyonları
+string metin = "laylaylom galiba sana göre sevmeler...";
+
+#Substring
+//Metinsel ifadenin belirli bir aralığını elde etmemizi sağlar.
+System.Console.WriteLine(metin.Substring(5));//5. indexten sonuna kadar tüm değerleri getir.
+System.Console.WriteLine(metin.Substring(5,10));//5. indexten sonra 10 karakter getirecektir.
+```
