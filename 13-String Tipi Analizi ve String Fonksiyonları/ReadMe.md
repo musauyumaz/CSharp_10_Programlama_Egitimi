@@ -908,3 +908,32 @@ string metin = "laylaylom galiba sana göre sevmeler...";
 System.Console.WriteLine(metin.Replace('a','b'));;
 System.Console.WriteLine(metin.Replace("la","lo"));;
 ```
+
+***
+# 324) String Fonksiyonları - Split Metodu
+- `Split` fonksiyonu elimizdeki metinsel `string` olan değeri belirli bir ayraçla ya da ayraçlarla parçalamamızı sağlayan bir fonksiyondur.
+
+- İstatiksel çalışma yaparken siz elinizdeki bir metinsel ifade üzerinde parçalama işlemini yapabilirsiniz. Ya da belirli ifadelere boşluklara göre bütün kelime analizlerini vs yapabilirsiniz. İhityacınız olabilir. İşte bu ihtiyaç doğrultusunda algoritma oluşturmaktansa bu algoritmanın mantığını kullanan `Split` fonksiyonunu kullanabilirsiniz. Parçalıyor elindeki metinsel ifadeyi vermiş olduğun değere ayraca göre parçalıyor.
+
+- Metinsel ifadeyi verilen değeri ayraç olarak kullanıp, parçalayan ve sonucu `string` dizisi olarak döndüren bir fonksiyondur. 
+
+- Yani buradaki parçalama elindeki metinsel ifadeyi örneğin boşluklara göre parçalttığım zaman her bir parça kelime olarak bana gelecek gelen kelimeleri her birini bir dizi içerisinde item'larla getirecek yani indexlenmiş bir şekilde getirecektir.
+
+- Bu fonksiyon istatistiksel çalışmalardan tutun tüm `string` operasyonların birçoğunda aşırı derecede kullandığımız bir fonksiyon.
+
+-`Split` fonksiyonu vermiş olduğun değere göre algoritmayı çalıştıracak eldeki metini mümkün mertebe parçalayacak bu parçalama neticesinde ilgili değerleri `string` dizisi olarak getirecektir.
+
+- İlgili ifadeyi vermiş olduğunuz değere göre parçalar. Senin elindeki ifadeyi alıyor ifadenin içerisinde her verdiğin değere denk geldiğinde bunu parçalıyor bunu ayraç olarak görüyor. Ve her bir ifadeyi her bir aralığı sana dizi olarak dizinin elemanlarında getiriyor.
+
+<img src="21.png" width = "auto">
+
+- Birden fazla da ayraç kullanabiliriz.
+
+```C#
+#String Fonksiyonları
+string metin = "laylaylom galiba sana göre sevmeler...";
+#Split
+//Metinsel ifadeyi verilen değeri ayraç olarak kullanıp, parçalayan ve sonucu `string` dizisi olarak döndüren bir fonksiyondur.
+string[] dizi = metin.Split(' ');
+string[] dizi = metin.Split(' ', 'a');
+```
