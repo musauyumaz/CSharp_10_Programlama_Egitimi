@@ -835,3 +835,33 @@ System.Console.WriteLine(metin.IndexOf("lay"));
 System.Console.WriteLine(metin.IndexOf("La"));
 System.Console.WriteLine(metin.IndexOf("sana"));
 ```
+
+***
+# 321) String Fonksiyonları - Insert Metodu
+- Elimizdeki metinsel ifadeye değer eklememizi değer dahil etmemizi sağlayan bir fonksiyondur. 
+
+- Bir fonksiyon işlem yaparken sonuç olarak değer döndürüyor ya da gönderdiğin değere işlem yapıyor. 
+
+- `metin.Insert(17 ,"merhaba");` Araya dahil eder herhangi bir değeri ezmez. İlgili metinsel ifadeyi genişletir. Dolayısıyla `Insert` diyor ki bana kardeşim yapmış olduğun işlem neticesinde vermiş olduğun metine/ifadeye burada belirttiğin değeri/ifadeyi eklerim ve bunu `string` olarak geriye döndürürüm. Buradaki `string` dönen ifade eklenmiş hali olacaktır ama metinin orjinali yine elimizde tutulacaktır.
+    * Metinin orjinali elimizde duracak amma velakin senin burada eklemiş olduğun değer neticesinde dönen `string` sonucu sana eklenmiş halde döndürülecek. Dönenle orjinal metin arasında fark var.
+    * Araya dahil eder herhangi bir 17.indexteki değeri ezmeyecek. O araya dahil edecek İlgili metinsel ifadeyi genişletecek.
+    * 1.parametre index numarası : Hangi index'e değer ekleyeceksin.
+    * 2.parametre değer : belirlenen index'e hangi değeri atayacaksın.
+
+- İlgili ekleme operasyonu gerçekleştikten sonra eklenmiş hali `string` olarak döndürülecektir. Lakin metin orjinal verisi ayrı bir şekilde tutulacaktır. Yani dönen eklenmiş veriyle var olan metin arasında fark vardır. 
+
+- Sen burada eklemeyi yapıyorsan fiziksel olarak metini eklemiyorsun sen diyorsun ki metine ekle değeri ekledikten sonra yeni bir değer oluştur ama yine metin elimde metin diye çağırdığımda gelsin demiş oluyorsun.
+
+- `Insert` direkt orjinal verinin üzerine ekleme yapmaz orjinal veriyle beraber eklenmiş halini yeniden üreterek sana geri döndürecektir.
+
+<img src="20.png" width = "auto">
+
+```C#
+#String Fonksiyonları
+string metin = "laylaylom galiba sana göre sevmeler...";
+#Insert
+//Elimizdeki metinsel ifadeye bir değer dahil etmemizi/eklememizi sağlayan bir fonksiyondur.
+string eklenmisMetin = metin.Insert(17 ,"merhaba");
+System.Console.WriteLine(metin);
+System.Console.WriteLine(eklenmisMetin);
+```
