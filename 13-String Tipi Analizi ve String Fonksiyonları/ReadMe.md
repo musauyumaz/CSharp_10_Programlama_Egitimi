@@ -888,3 +888,23 @@ System.Console.WriteLine(metin.Remove(5));//5. indexten sonraki tüm değerleri 
 System.Console.WriteLine(metin.Remove(5,10));//5. indexten başla 10 adet sil
 System.Console.WriteLine(metin);
 ```
+
+***
+# 323) String Fonksiyonları - Replace Metodu
+- `Replace` fonksiyonu elimizdeki metinsel ifade de belirtilen değerlerin ya da karakterlerin değiştirilmesini sağlayan bir fonksiyondur gayet kullanışlı gayet efektif bir fonksiyon.
+
+- Elimizdeki metinsel ifade de belirtilen değerleri yahut karakterleri, belirtilen diğer değerler ya da karakterler ile değiştirmemizi sağlayan bir fonksiyondur.
+
+- Adı üstünde `Replace` oradaki değerlerin yerini değiştiriyor.
+
+- Sonuç olarak `string` değer üretecek ve geriye döndürecektir...
+
+```C#
+#String Fonksiyonları
+string metin = "laylaylom galiba sana göre sevmeler...";
+#Replace
+//Elimizdeki metinsel ifade de belirtilen değerleri yahut karakterleri, belirtilen diğer değerler ya da karakterler ile değiştirmemizi sağlayan bir fonksiyondur.
+//Sonuç olarak `string` değer üretecek ve geriye döndürecektir...
+System.Console.WriteLine(metin.Replace('a','b'));;
+System.Console.WriteLine(metin.Replace("la","lo"));;
+```
