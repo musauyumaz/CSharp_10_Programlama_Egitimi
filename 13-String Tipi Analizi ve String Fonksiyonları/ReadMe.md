@@ -865,3 +865,26 @@ string eklenmisMetin = metin.Insert(17 ,"merhaba");
 System.Console.WriteLine(metin);
 System.Console.WriteLine(eklenmisMetin);
 ```
+
+***
+# 322) String Fonksiyonları - Remove Metodu
+- `Remove` fonksiyonu metinsel ifade üzerinde verieln değer aralıklarındaki değeri ilgili veriyi silen ilgili metinden onları ayıklayan bir fonksiyondur.
+
+- Metinsel ifade de indexel olarak verilen değer aralığını silen bir fonksiyondur.
+
+- Elimizdeki verileri parse ederken fazlalık verileri işte belirli indexler aralığında temizlemek/ayıklamak elindeki metinsel ifadeyi mümkün mertebe sadeleştirebilmek için kullandığımız bir fonksiyon yani silme işlemi yapıyor kırpıyor.
+
+- `Remove` arkada işlem yapar yapmış olduğu işlem neticesinde sana yeni değeri tekrardan döndürür. Üreterek döndürür.
+
+- `Insert`te olduğu gibi ilgili fonksiyon yapmış olduğu işlem neticesinde yeni değeri üreterek bizlere `string` olarak döndürecektir. Elimizdeki orjinal veri değişmeyecektir.
+
+```C#
+#String Fonksiyonları
+string metin = "laylaylom galiba sana göre sevmeler...";
+#Remove
+//Metinsel ifade de indexel olarak verilen değer aralığını silen bir fonksiyondur.
+//`Insert`te olduğu gibi ilgili fonksiyon yapmış olduğu işlem neticesinde yeni değeri üreterek bizlere `string` olarak döndürecektir. Elimizdeki orjinal veri değişmeyecektir.
+System.Console.WriteLine(metin.Remove(5));//5. indexten sonraki tüm değerleri sil
+System.Console.WriteLine(metin.Remove(5,10));//5. indexten başla 10 adet sil
+System.Console.WriteLine(metin);
+```
