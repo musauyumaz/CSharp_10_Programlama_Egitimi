@@ -1021,7 +1021,20 @@ System.Console.WriteLine("      ahmet cümbül         ".Trim());
 ```C#
 #String Fonksiyonları
 string metin = "lAylaylOm galiba Sana göre sevmeler...";
+
 #TrimEnd
 System.Console.WriteLine("                 fasfasdfagfafawfwafawfawf                ".TrimEnd());
 
+```
+
+***
+# 330) String Fonksiyonları - TrimStart Metodu
+- `TrimEnd` fonksiyonunun tam tersi baştaki yani soldaki boşlukları silecektir.
+
+```C#
+#String Fonksiyonları
+string metin = "lAylaylOm galiba Sana göre sevmeler...";
+        
+#TrimStart
+System.Console.WriteLine("                 fasfasdfagfafawfwafawfawf                ".TrimStart());
 ```
