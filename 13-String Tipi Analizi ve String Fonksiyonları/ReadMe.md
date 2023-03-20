@@ -1013,3 +1013,15 @@ string metin = "lAylaylOm galiba Sana göre sevmeler...";
 System.Console.WriteLine("ahmet cümbül");
 System.Console.WriteLine("      ahmet cümbül         ".Trim());
 ```
+
+***
+# 329) String Fonksiyonları - TrimEnd Metodu
+- Elimizdeki metinsel ifadenin sağında yani bir başka deyişle sonunda boşluk varsa bunları temizlemizi sağlayan bir fonksiyondur.
+
+```C#
+#String Fonksiyonları
+string metin = "lAylaylOm galiba Sana göre sevmeler...";
+#TrimEnd
+System.Console.WriteLine("                 fasfasdfagfafawfwafawfawf                ".TrimEnd());
+
+```
