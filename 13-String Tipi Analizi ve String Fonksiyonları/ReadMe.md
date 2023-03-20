@@ -975,3 +975,19 @@ string metin = "lAylaylOm galiba Sana göre sevmeler...";
 System.Console.WriteLine(metin);
 System.Console.WriteLine(metin.ToLower());
 ```
+
+***
+# 327) String Fonksiyonları - ToUpper Metodu
+- `ToLower` fonksiyonunun tam tersi eldeki metinsel ifadenin tüm karakterlerini büyük karaktere dönüştürecek olan bir fonksiyondur.
+
+- Eldeki metinsel ifadenin tüm karakterlerini büyük karakter olarak düzenler.
+
+```C# 
+#region String Fonksiyonları
+string metin = "lAylaylOm galiba Sana göre sevmeler...";
+
+#region ToUpper
+//Eldeki metinsel ifadenin tüm karakterlerini büyük karakter olarak düzenler.
+System.Console.WriteLine(metin);
+System.Console.WriteLine(metin.ToUpper());
+```
