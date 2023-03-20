@@ -991,3 +991,25 @@ string metin = "lAylaylOm galiba Sana göre sevmeler...";
 System.Console.WriteLine(metin);
 System.Console.WriteLine(metin.ToUpper());
 ```
+
+***
+# 328) String Fonksiyonları - Trim Metodu
+- Varsayalım ki siz bir E-Ticaret sitesi üzerinde çalışıyorsunuz ve varsayalım ki orada herhangi bir ürün ya da bir hizmet satıyorsunuz vs. Şimdi siz kullanıcıdan belirli veri almanız lazım ve kullanıcı adını girecek sadece bu işte sende orada sipariş göndereceksin. İşte bu ismi girerken kullanıcı sağına soluna boşluk bırakabiliyor. `  ahmet  ` `ahmet` Yazılımcı olarak bu iki ahmet arasında fark vardır. Burada bulunan boşluklar elimdeki değerin gerçek mahiyetini değiştirmektedir. Dolayısıyla bu boşlukları biz temizlemek zorunda kalıyoruz. Çünkü sen burada boşluk karakterini silmezsen eğer `ahmet` ile ilgili istatistiksel bir çalışma yaptığında `  ahmet  ` - `ahmet` ikisi arasında fark olacaktır. Ve bu da bizim istediğimiz durum değildir.
+
+- İşte elimizdeki bir metinsel ifadenin varsa sağında ve solunda boşluk karakterleri bunları topyekin silmemizi sağlayan fonksiyon `Trim` fonksiyonudur.
+
+- Metinsel ifadelerin varsa solundaki ve sağındaki boşluk karakterlerini temizleyen bir fonksiyondur.
+
+- Yazılımsal boyutta çalışırken sektörde belirli bir sektör ya da genel sektörlere hizmet verirken şunu göreceksiniz ki yazılım dediğin insanların genel yeteneklerine insanların yatkınlığına göre geliştirilir. Hiçbir muhasebe programı yoktur ki kompleks olsun. Hepsi tek sayfa da bir muhasebecinin işlemini yapabilecek bir şekilde geliştirilir. Çünkü muhasebeci dediğin adam işini tek sayfada yapmak ister. ya da hiçbir sosyal medya mecrası yoktur ki kompleks sayfa türlerinden ibaret olsun. Oradaki amaç bellidir. Belirli bir durum paylaşımı ve beğeni durumları. Oradaki gençliğin kanının akışına da hizmet/eşlik eder. Aynı şekilde süreçte piyasaya yapacağın mesela emlakçılarla ilgili bir site tasarlayacaksın tasarladığın site emlakçıların genel yeteneğine göre olur. Dolayısıyla bu durumda senin kullandığın oluşturacağın ürün hedef kitlenin yeteneklerini uygun olmak zorunda kalacak. Ona göre geliştireceksin yazılımda zaten stratejilerin bir kısmı da ona göre gerçekleştiriliyor. Örneğin kullanıcı gelecek adını soyadını girecek girdiğinde başına da sonuna da ne hikmetse o boşluk karakterini koyacak he koyduğu zaman senin bunu temizlemen lazım önceden öngörmen lazım göremediysen sonraki süreçlerde veriler böyle boşluklu geldiğini gördükçe bunları temizlemen gerektiğini anlaman lazım. Olayı bir sosyolog olarak değerlendirmeniz gerekmektedir.
+
+- Metnin/değerin içerisinde yani değerin başında ve sonunda olmayan boşluk karakterleri olabilir bunlara dokunmuyor.
+
+```C#
+#String Fonksiyonları
+string metin = "lAylaylOm galiba Sana göre sevmeler...";
+
+#Trim
+//Metinsel ifadelerin varsa solundaki ve sağındaki boşluk karakterlerini temizleyen bir fonksiyondur.
+System.Console.WriteLine("ahmet cümbül");
+System.Console.WriteLine("      ahmet cümbül         ".Trim());
+```
