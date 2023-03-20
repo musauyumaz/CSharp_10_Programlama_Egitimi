@@ -1,5 +1,5 @@
 ---
-modified: 2023-03-17T06:22:06.097Z
+modified: 2023-03-20T06:19:34.699Z
 title: 295) String Türü ve String Gerçeği
 ---
 
@@ -958,4 +958,20 @@ string metin = "laylaylom galiba sana göre sevmeler...";
 //Metinsel ifadenin belirli bir aralığını elde etmemizi sağlar.
 System.Console.WriteLine(metin.Substring(5));//5. indexten sonuna kadar tüm değerleri getir.
 System.Console.WriteLine(metin.Substring(5,10));//5. indexten sonra 10 karakter getirecektir.
+```
+
+***
+# 326) String Fonksiyonları - ToLower Metodu
+- Metinsel ifadelerin tüm karakterlerini küçük karakter olarak değiştirmemizi sağlayan bir fonksiyondur.
+
+- Eldeki metinsel ifadenin tüm karakterlerini küçük karakter olarak düzenler.
+
+```C#
+#String Fonksiyonları
+string metin = "lAylaylOm galiba Sana göre sevmeler...";
+
+#ToLower
+//Eldeki metinsel ifadenin tüm karakterlerini küçük karakter olarak düzenler.
+System.Console.WriteLine(metin);
+System.Console.WriteLine(metin.ToLower());
 ```
