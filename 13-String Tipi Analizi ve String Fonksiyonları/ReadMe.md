@@ -1,5 +1,5 @@
 ---
-modified: 2023-03-20T06:19:34.699Z
+modified: 2023-03-21T06:47:20.308Z
 title: 295) String Türü ve String Gerçeği
 ---
 
@@ -1037,4 +1037,26 @@ string metin = "lAylaylOm galiba Sana göre sevmeler...";
         
 #TrimStart
 System.Console.WriteLine("                 fasfasdfagfafawfwafawfawf                ".TrimStart());
+```
+
+***
+# 331) String Fonksiyonları Örnek - Adımızın İlkten 3 Soyadımızın Sondan 5 Karakterini Getirelim
+- Mümkün mertebe kullandığımız tüm yapıları sorulara uygulamaya çalışın bir sorunun birden fazla çözümü olabileceğini unutmayın dolayısıyla olayı KPSS formatında matematik çalışır gibi değilde bir yazılımcı edasıyla değerlendirmekte her daim fayda var. Sen ne kadar elindeki yapılara hakimsen o kadar problemlere birden fazla alternatifte çözüm sunabilirsin. 
+
+- Prosedürel programlama da çözümleri bu şekilde sunacağız daha sonra mimarisel operasyonlarımızda çözümlerimiz kütüphanesel boyutta mimarisel boyutta olacak. Örneğin sen belirli yetkilendirme durumlarında temel bir web sitesinde yetkilendirme yapacaksan ve bu MVC web sitesiyse Identity mekanizmasını biliyorsan bunu kullanbilirsin. Ama dağınık sistemlerde çalışıyorsan ve farklı sistemler farklı web siteleri farklı bir web siteden yetki alacaksan identity server 4'ü kullanabilirsin. Farklı protokole girmen gerekiyor.
+
+- Ne kadar çok şey bilirseniz o kadar problemlere bakış açınız çözümsel olacaktır. Probleme problem gözüyle bakmayacaksınız çünkü herşeyin bir çözümü var bu senin bilgi sınırının çerçevesinde olacak yani senin sınırın neyse o sınırın içerisindeki bir yöntemle çözüm arayacağın için ona göre işini belirleyebiliyorsun onun için size tavsiyem mümkün mertebe bütün konulara hakim olmaya çalışın Hakim olamadığınız konularda da hani bir kendinizi ara ara test edin ve açıkları kapatmaya çalışın yazılım dediğiniz böyledir internetten udemy'den ya da farklı yerden edindiğiniz bilgiler aldığınız derslerle yazılımcı olamazsını bunlar size bir yol rehberlik verir üzerine siz artık gerçek operasyonlarınızla gerçek çalışmanızla yazılımcı yaparsınız kendinizi
+
+```C#
+#Adımızın İlketen 3. Soyadımızın Sondan 5. Karakterini Getirelim
+string adSoyad = "Musa Uyumaz";
+
+#1. Çözüm
+System.Console.WriteLine(adSoyad[2]);
+System.Console.WriteLine(adSoyad[adSoyad.Length - 5]);
+
+#2.Çözüm
+string aralik = adSoyad[2..^4];
+System.Console.WriteLine(aralik[0]);
+System.Console.WriteLine(aralik[aralik.Length - 1]);
 ```
