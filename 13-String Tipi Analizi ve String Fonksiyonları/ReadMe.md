@@ -1101,3 +1101,46 @@ while (true)
 }
 System.Console.WriteLine(adet);
 ```
+
+***
+# 334) String Tipi Analizi ve String Fonksiyonları Üzerine Neler İnceledik Gelin Özetleyelim
+- String Gerçeği
+    * Null – Empty Durumları, Farkları
+    * IsNullOrEmpty
+    * IsNullOrWhiteSpace
+- String RAM(Heap) İlişkisi
+- String char Dizisidir!
+- Döngülerle String Metin İçerisinde Her Bir Karaktere Ulaşma
+- String İfadelerde “+” Operatörü
+- String Formatlandırma
+    * Operatörü İle Formatlandırma
+    * String.Format
+    * $(String Interpolation) (C# 6.0)
+- Escape(Kaçış) Karakterleri
+- @(Verbatim Strings) Operatörü
+    * 1.Kullanım
+    * 2.Kullanım
+- String Interpolation İle Verbatim Strings Birlikteliği (C# 8.0)
+- String Fonksiyonlar
+    * Contains
+    * StartsWith
+    * EndsWith
+    * Equals
+    * Compare
+    * CompareTo
+    * IndexOf
+    * Insert
+    * Remove
+    * Replace
+    * Split
+    * Substring
+    * ToLower
+    * ToUpper
+    * Trim
+    * TrimEnd
+    * TrimStart
+- Örnek Çalışmalar
+    * Adımızın İlkten 3. Soyadımızın Sondan 5. Karakterini Getirelim
+    * Girilen Metnin İçerisinde Kaç Adet “n” Karakterinin Geçtiğini Hesaplayalım
+    * Girilen Metindeki Kelime Sayısını Hesaplayalım
+- Özet
