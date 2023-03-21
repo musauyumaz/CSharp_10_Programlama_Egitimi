@@ -1060,3 +1060,20 @@ string aralik = adSoyad[2..^4];
 System.Console.WriteLine(aralik[0]);
 System.Console.WriteLine(aralik[aralik.Length - 1]);
 ```
+
+***
+# 332) String Fonksiyonları Örnek -Girilen Metnin İçerisinde Kaç Adet n Karakterinin Geçtiğini Hesapla
+- Ardışık operasyonlarda `for` döngüsü daha yatkındır daha şıktır. 
+
+```C#
+#Girilen Metnin İçerisinde Kaç Adet "n" Karakterinin Geçtiğini Hesaplayalım
+System.Console.WriteLine("Lütfen Bir Metin Giriniz.");
+string metin = Console.ReadLine();
+int adet = 0;
+for (int i = 0; i < metin.Length; i++)
+{
+    if (metin[i] == 'n')
+        adet++;
+}
+System.Console.WriteLine(adet);
+```
