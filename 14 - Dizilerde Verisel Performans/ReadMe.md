@@ -108,3 +108,21 @@ sayilar2[4] *= 10;
 
 string text = "laylaylom galiba sana göre sevmeler";
 ```
+
+***
+# 337) ArraySegment Türü Nedir?
+- Dizilerdeki maliyetli durumların kullanıldıklarında yeniden alan tahsisi yapmalarının ya da belirli alanları temsil ederken ilgili verilerin tekrar etmesinin mükerrer olmasının getirdiği maliyetleri ortadan kaldırabilmek ve bir dizinin sadece belirli bir alanını referans etmek kopyalamadan çalışabilmek için `ArraySegment` struct'ı kullanılabilmektedir.
+
+- Bir dizinin bütününden ziyade belirli bir kısmına yahut parçasına ihtiyaç dahilinde ilgili diziyi kopyalamak yerine(ki görece oldukça maliyetli bir operasyondur) bağımsız bir referans ile erişmemizi ve böylece salt bir şekilde temsil etmemizi sağlayan bir yapıdır.`ArraySegment` dediğimiz yapılanma. Bunun muadili `StringSegment`tir.
+
+- Dizilerde belirli bir alan temsil ederken onu kopyalamak ekstradan alan tahsisi ekstradan verilerin mükerrer etmesi vs. bir maliyet söz konusudur. Dolayısıyla kopyalamak yerine o alanı referans göstererek kullanmak daha iyi olacaktır.
+
+- Bir dizinin bütününden ziyade belirli bir kısmına yahut belirli bir parçasına ihtiyaç dahilinde ulaşmamız gerekirse orayı biz normal davranış hani hiçbişey kullanmazsan `ArraySegment` falan kullanmazsan ve dilin getirdiği yapılanmaları ve fonksiyonları kullanırsan davranışsal olarak varsayılan orasını kopyalayacak, mükerrer kayıtlar oluşturacak ilgili RAM'de alan tahsisinde bulunacak ve maliyetli bir şekilde bizim çalışmamızı sağlayacaktır. Ama `ArraySegment` sana ilgili alanı ilgili dizinin üzerinde temsil edecek sen ilgili dizinin üzerinde işlem yapmanı sağlayabilecek bir türdür. İşte bu da bu şekilde maliyeti ortadan kaldırabilecek bir fıtrata sahiptir.
+
+- Dizilerde belirli bir alanda çalışmak istediğimde bu değerleri tekrardan mükerrer bir şekilde RAM'de oluşturuyor. varsayılan davranış budur.
+
+- `ArraySegment` sen elindeki dizi üzerinde belirli bir alanı o dizi üzerinden referans edebiliyorsun ve bunu yaptığında yapmış olduğun her işlem direkt o diziye yansımaktadır. Daha hızlı daha performanslı bir çalışma ortaya koyabilmektesin. Böyle bir çalışma elindeki RAM'ide elindeki işlemciyi de yani kaynakları daha az tüketeceğinden dolayı verilerinizi türetmemeniz gereken durumlarda kesinlikle göstermeniz gereken bir yaklaşımdır.
+
+```C#
+
+```
