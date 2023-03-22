@@ -16,5 +16,5 @@
 - ## [YARDIMCI MANEVRA KOMUTLARI](https://github.com/musauyumaz/CSharp_10_Programlama_Egitimi/blob/main/10-%20Yard%C4%B1mc%C4%B1%20Manevra%20Komutlar%C4%B1/ReadMe.md)
 - ## [EKSTRA BİLGİ](https://github.com/musauyumaz/CSharp_10_Programlama_Egitimi/blob/main/11-Ekstra%20Bilgi/ReadMe.md)
 - ## [DİZİLER(ARRAYS)](https://github.com/musauyumaz/CSharp_10_Programlama_Egitimi/blob/main/12-Diziler(Arrays)/ReadMe.md)
-- ## [STRING TİPİ ANALİZİ VE STRING FONKSİYONLARI]()
-
+- ## [STRING TİPİ ANALİZİ VE STRING FONKSİYONLARI](https://github.com/musauyumaz/CSharp_10_Programlama_Egitimi/blob/main/13-String%20Tipi%20Analizi%20ve%20String%20Fonksiyonlar%C4%B1/ReadMe.md)
+- ## [DİZİLERDE VERİSEL PERFORMANS](https://github.com/musauyumaz/CSharp_10_Programlama_Egitimi/blob/main/14%20-%20Dizilerde%20Verisel%20Performans/ReadMe.md)
