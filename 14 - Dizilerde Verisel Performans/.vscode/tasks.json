@@ -1,0 +1,41 @@
+{
+    "version": "2.0.0",
+    "tasks": [
+        {
+            "label": "build",
+            "command": "dotnet",
+            "type": "process",
+            "args": [
+                "build",
+                "${workspaceFolder}/336) Dizilerde Verisel Açıdan Maliyetleri İnceleyelim/dizilerde_verisel_performans/dizilerde_verisel_performans.csproj",
+                "/property:GenerateFullPaths=true",
+                "/consoleloggerparameters:NoSummary"
+            ],
+            "problemMatcher": "$msCompile"
+        },
+        {
+            "label": "publish",
+            "command": "dotnet",
+            "type": "process",
+            "args": [
+                "publish",
+                "${workspaceFolder}/336) Dizilerde Verisel Açıdan Maliyetleri İnceleyelim/dizilerde_verisel_performans/dizilerde_verisel_performans.csproj",
+                "/property:GenerateFullPaths=true",
+                "/consoleloggerparameters:NoSummary"
+            ],
+            "problemMatcher": "$msCompile"
+        },
+        {
+            "label": "watch",
+            "command": "dotnet",
+            "type": "process",
+            "args": [
+                "watch",
+                "run",
+                "--project",
+                "${workspaceFolder}/336) Dizilerde Verisel Açıdan Maliyetleri İnceleyelim/dizilerde_verisel_performans/dizilerde_verisel_performans.csproj"
+            ],
+            "problemMatcher": "$msCompile"
+        }
+    ]
+}

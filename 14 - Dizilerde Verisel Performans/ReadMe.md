@@ -155,3 +155,29 @@ ArraySegment<int> segment2 = new ArraySegment<int>(sayilar, 2, 5);
 segment1[0] *= 10;
 segment2[0] *= 10;
 ```
+
+***
+# 339) ArraySegment Slicing(Dilimleme) Özelliği
+- `ArraySegment` her ne kadar dizilerdeki mükerrer kayıtların mükerrer tahsislerin maliyetini düşüren bir tür olsada kendi içerisinde ekstradan bizlere efektiflik sağlayan belirli işlemleri daha hızlı yapmamızı sağlayan bir türdür bir yapıdır.
+
+- `ArraySegment` kendi içerisinde slicing/dilimleme desteğini getiren bir özelliktir. Elinizdeki herhangi bir diziyi siz belirli noktalarını farklı farklı türlerdeki `ArraySegment`lerle temsil etmek isteyebilirsiniz. Bunlar için farklı farklı segmentler oluşturup temsilinizi manuel bir şekilde yapabiliyorsunuz. Ya da ilgili diziyi tek bir `ArraySegment` ile temsil edip üzerine dilimlemeyi o `ArraySegment` üzerinden talep edebiliyorsunuz bu daha da hızlı çalışmanızı sağlıyor.
+
+- Bir dizi üzerinde birden fazla parçada çalışılacaksa eğer her bir parçayı ayrı bir ArraySegment olarak tanımlayabiliriz. Bu tanımlamaların dışında diziyi tek bir ArraySegment ile referans edip ilgili parçaları o segment üzerinden talep edebiliriz . Yani ilgili diziyi tek bir segment üzerinden daha rahat bir şekilde parçalayabiliriz. Bu durumda bize yazılımsal açıdan yani kodun gelişimi açısından efektiflik kazandırmış olacaktır.
+
+- Fonksiyonlarda geriye dönecek değeri biz kendimiz tanımlıyoruz.
+
+- Bu şekilde yapılan çalışmalarda belirli değer aralıklarını elimizdeki ana diziyi tutan ana diziyi referans eden `ArraySegment` üzerinden dilimleyerek gerçekleştirebiliyorsunuz. `Slice` fonksiyonunu kullanmak kod maliyeti açısından da daha kolay olmuş olacaktır.
+
+```C#
+#ArraySegment Slicing(Dilimleme)
+int[] sayilar = { 10, 20, 30, 40, 50, 60, 70, 80, 90, 100 };
+
+//Bir dizi üzerinde birden fazla parçada çalışılacaksa eğer her bir parçayı ayrı bir ArraySegment olarak tanımlayabiliriz. Bu tanımlamaların dışında diziyi tek bir ArraySegment ile 
+referans edip ilgili parçaları o segment üzerinden talep edebiliriz . Yani ilgili diziyi tek bir segment üzerinden daha rahat bir şekilde parçalayabiliriz. Bu durumda bize yazılımsal 
+açıdan yani kodun gelişimi açısından efektiflik kazandırmış olacaktır.
+
+ArraySegment<int> segment = new ArraySegment<int>(sayilar);
+ArraySegment<int> segment1 = segment.Slice(0, 3);
+ArraySegment<int> segment2 = segment.Slice(4, 7);
+ArraySegment<int> segment3 = segment.Slice(5, 10);
+```
