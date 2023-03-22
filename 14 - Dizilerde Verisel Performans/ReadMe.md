@@ -1,3 +1,8 @@
+---
+modified: 2023-03-22T06:11:52.168Z
+title: 335) Dizilerde Verisel Performans Nedir?
+---
+
 # 335) Dizilerde Verisel Performans Nedir?
 - Dizilerin getirisi olduğu kadar götürüsü de olacaktır.
 
@@ -73,3 +78,33 @@
 - Elimizde bir tane dizi var `ArraySegment` ile bu dizi üzerindeki belirli bir alanı temsil ettiğimizi varsayalım. Bu tür sayesinde bu türden değişkende yaptığım işlemler orjinal `Array`in üzeride gerçekleştirilmekte ekstradan bir türetme ekstradan bir alan tahsisi yapılmadığından dolayı gayet performanslı bir çalışma sergilenmektedir.
 
 <img src="10.png" width="auto">
+
+***
+# 336) Dizilerde Verisel Açıdan Maliyetleri İnceleyelim
+- `int[] sayilar = { 10, 20, 30, 40, 50, 60, 70, 80, 90, 100 };`
+- `int[] sayilar2 = sayilar[2..7];`
+    * Elimde bir dizi var o dizinin belirli bir değer aralığını temsil etmeyi istediğim bir başka dizi var. Ama dikkat bir başka dizi var çünkü bu operasyon ilgili diziden o aralığı istediğin aralığı sana bir başka dizi olarak bellekte farklı bir şekilde tahsiste bulunulmuş bir dizi olarak döndürecektir. Dolayısıyla bu bir verisel maliyettir. Çünkü buradaki maliyet bize yapısal olarak durum getiriyor
+        + elimizdeki veriler bir iken çok oldu yani mükerrer olmaya başladı RAM'de alan tahsisi fazla olmaya başladı.
+        + ikinci dizide yani çoğaltılan dizide tutulan değerler üzerinde yapılacak olan işlemler orjinal diziye yansımayacaktır. Bazen işlem yapmak isteyebiliriz ama orjinal dizide bu işlemler yansımayacağından dolayı bazen elimizdeki değerler ya da kullandığımız elimimizdeki diziler karışabilmekte.
+        + Bu yeni dizi artık diğerinden bağımsızdır.
+        + sayilar2 dizisi artık yeni bir dizi dolayısıyla 0. index'ten başlayacaktır.
+        + Eğer ki bu sayilar2 dizisi klonlanmamış kopyalanmamış RAM'de yeni alan açılmamış olsaydı sayilar2 üzerinde yaptığım işlemler sayilar dizisinde de görünebilecekti.
+        + Ya kardeşim sen temsil ettiğin alanda çalış temsil ettiğin alanı farklı bir şekilde RAM'de alan tahsisinde bulunmaksızın ilgili dizi üzerinde işlem yap Hani maliyete gerek yok biz sadece o alanda gerçekten şu verilerde çalışmak istiyoruz bunların kopyalarında türevlerinde değil demek istiyorsanız eğer `ArraySegment` kullanman gerekecektir. Benzer mantıkta bunu `string` varyasyonu da vardır.
+
+<img src="11.png" width="auto">
+
+- `string text = "laylaylom galiba sana göre sevmeler";`
+    * Burada belirli bir değer aralığında çalışmak istiyorsan örneğin 'galiba' üzerinde işlem yapacaksan bu normalde text türetilecek ve üzerinde işlem yapılmış hali sana döndürelecektir. Amma velakin sen `string` olduğu için `StringSegment`te çalışırsan direkt bu dizinin bu nesnenin üzerindeki 'galiba'da ilgili işlemi yapabilirsin ve başka bir mükerrer kayda gerek duymadan bu işlemi yapabilirsin. Dolayısıyla biz `ArraySegment` ve `StringSegment` yapacağımız operasyonlarda temsil ettiğimiz alanda yapmış olduğumuz işlem direkt orjinal verilere yansıyacaktır.
+
+```C#
+int[] sayilar = { 10, 20, 30, 40, 50, 60, 70, 80, 90, 100 };
+int[] sayilar2 = sayilar[2..7];
+
+sayilar2[0] *= 10;
+sayilar2[1] *= 10;
+sayilar2[2] *= 10;
+sayilar2[3] *= 10;
+sayilar2[4] *= 10;
+
+string text = "laylaylom galiba sana göre sevmeler";
+```
