@@ -124,5 +124,34 @@ string text = "laylaylom galiba sana göre sevmeler";
 - `ArraySegment` sen elindeki dizi üzerinde belirli bir alanı o dizi üzerinden referans edebiliyorsun ve bunu yaptığında yapmış olduğun her işlem direkt o diziye yansımaktadır. Daha hızlı daha performanslı bir çalışma ortaya koyabilmektesin. Böyle bir çalışma elindeki RAM'ide elindeki işlemciyi de yani kaynakları daha az tüketeceğinden dolayı verilerinizi türetmemeniz gereken durumlarda kesinlikle göstermeniz gereken bir yaklaşımdır.
 
 ```C#
+#ArraySegment Nedir?
+//Bir dizinin bütününden ziyade belirli bir kısmına yahut parçasına ihtiyaç dahilinde ilgili diziyi kopyalamak yerine(ki görece oldukça maliyetli bir operasyondur) bağımsız bir referans ile erişmemizi ve 
+böylece salt bir şekilde temsil etmemizi sağlayan bir yapıdır.
+```
 
+***
+# 338) ArraySegment Türü İle Dizinin Belli Bir Alanını Referans Etmek
+- `struct` bir nesne değil değer üretimi söz konusu olduğu için ilk önce değer üretmemiz gerekiyor. 
+
+- `int[] sayilar = { 10, 20, 30, 40, 50, 60, 70, 80, 90, 100 };`
+- `ArraySegment<int> segment1 = new ArraySegment<int>(sayilar); `
+    * Burada sayilar dizisi var ve sayilar dizisini buradaki `ArraySegment`'in segment1 isimli referansıyla da referans etmiş oldum. Şu anda sayıları komple bu referansta segment1'de referans ediyor.
+    * Şimdi bu diziye erişebilmem için sayilar var birde segment1 isimli bir referansım daha var. Sen bu dizinin üzerinde herhangi bir işlem yaptığında nasıl ki sayılardan o ilgili diziye eriştiğinde o değişiklikleri görebiliyorsan segment1'de de aynı şekilde aynı değişiklikleri görebileceksin. Çünkü ikisi de bellekte aynı diziyi tutmaktadırlar. Yani `ArraySegment` ilgili diziyi türetmez mükerrer bir şekilde verilerini çoğaltmaz
+    * Burada herkes birbirini etkiler çünkü hepsi aynı merkez bir veriyi merkez bir diziyi kullanmaktadır. Bunlar sayesinde bir mükerrerlik yok. İşte daha maliyetsiz çalışmamızı sağlayan yapılanma bu yapılanmadır.
+
+<img src="12.png" width="auto">
+
+- Burada kaynaklar daha hafif düzeyde tüketilir. Bir yazılımcının yapması gerekeni yapıyoruz aslında çünkü benim burada ilgili değer aralıklarında çalışıken türetmeme mükerrer kayıt oluşturmama yeni alan tahsisinde bulunamama ne gerek var. Gerek varsa yap bunu kullanma ama gerek yoksa bunu kullan.
+
+- `ArraySegment` elimizdeki dizisel veriler üzerinde ilgili dizinin belirli parçalarını farklı referanslarda temsil etmeni sağlayıp her bir parçada ayrı ayrı çalışmanı sağlayan ama bütünsel olarak tek bir dizide operasyonları gerçekleştirmeni sağlayan mümkün mertebe maliyeti azaltmış olan bir `struct`tır/yapıdır.
+
+```C#
+#ArraySegment İle Dizinin Belli Bir Alanını Referans Etmek
+int[] sayilar = { 10, 20, 30, 40, 50, 60, 70, 80, 90, 100 };
+
+ArraySegment<int> segment1 = new ArraySegment<int>(sayilar);//Dizinin tüm elemanlarını temsil eder.
+ArraySegment<int> segment2 = new ArraySegment<int>(sayilar, 2, 5);
+
+segment1[0] *= 10;
+segment2[0] *= 10;
 ```
