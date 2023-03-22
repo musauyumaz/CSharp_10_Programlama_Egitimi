@@ -1,8 +1,3 @@
----
-modified: 2023-03-21T06:47:20.308Z
-title: 295) String Türü ve String Gerçeği
----
-
 ***
 # 295) String Türü ve String Gerçeği
 - `string` özel bir türdür. Metinsel ifadeleri tutabildiğimiz özel bir türdür.
