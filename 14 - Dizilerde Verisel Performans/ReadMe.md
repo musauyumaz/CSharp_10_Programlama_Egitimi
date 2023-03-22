@@ -181,3 +181,32 @@ ArraySegment<int> segment1 = segment.Slice(0, 3);
 ArraySegment<int> segment2 = segment.Slice(4, 7);
 ArraySegment<int> segment3 = segment.Slice(5, 10);
 ```
+
+***
+# 340) StringSegment Türü Nedir?
+- Dizisel işlemlerde performansı arttırabilmek için bir diğer türümüz `StringSegment` türüdür.
+
+- `StringSegment` `ArraySegment`in `string` değerler nezdindeki bir muadilidir.
+
+- Yapısal olarak `string` `char` dizisi kökenli olan `string` türleri üzerinde performans odaklı çalışmalar yapmak istiyorsak `StringSegment`i kullanacağız.
+
+- `string` bir `char` dizisidir kökende ama `char` dizisinde olmayan fonksiyonlara sahiptir. Örneğin `Substring`, `Index` diyip araya bir değer sokabiliyorsunuz. Her ne kadar fıtrat olarak bir dizi olsa da yapısal olarak kendisine ait fonksiyonlar barındırdığı için ve bu fonksiyonlar arkada davranışsal olarak yine maliyetli çalıştığı için biz `ArraySegment`le bu fonksiyonlara karşılık maliyeti absorve edemiyoruz. O zaman adamlar demişlerki ya kardeşim `string` kendine özel bir tür o zaman biz arkada ne kadar `char` dizisi kullansa da oradaki maliyeti düşürmek için `string`e özel bir `StringSegment` oluşturalım oradaki maliyeti oradan yönetsinler demişler.
+
+- `StringSegment` dediğimiz yapı `ArraySegment`in sadece `string` değerler üzerindki muadili. Esasındaki metinsel değerlerdeki birçok analitik operasyondan bizleri kurtaran `Substring` gibi vs bunun gibi fonksiyonlar yerine  `string` değerlerde hedef kesit olan nokta üzerinde maliyetsiz işlem yapmamızı sağlayan bir türdür.
+
+- Esasında metinsel değerlerdeki birçok analitik operasyonlardan bizleri kurtarmakta ve `Substring` vs. gibi fonksiyonlar yerine `string` değerde hedef kesit üzerinde işlem yapmamızı sağlayan bir türdür.
+
+- Şimdi bir cümlede belirli bir noktada çalışmak istiyorsam ben bunu `Substring` ile aldığımda `Substring` bunu alıyor klonluyor/çoğaltıyor yeniden bellekte bir değer haline getiriyor bunu mükerrer hale getirip bana getiriyor. Dolayısıyla ben bu cümlenin üzerinde `Substring`le ya da `string` fonksiyonlarının herhangi biriyle işlem yaptığımda bana dönen sonuç orjinal verideki sonuç olmuyor. Çünkü bu veri başka bir veri oluyor. orjinal veri bambaşka bir veri olarak bellekte bambaşka bir şekilde alan tahsisi yapılmış veri olarak geliyor. Normal dizilerdeki davranışı sergiliyor.
+
+- Bu davranışta belirli bir noktaya sadece o noktaya çalışmak o noktayı referans etmek istiyorsam bunu `StringSegment` ile çok rahat bir şekilde gerçekleştirebilirim.
+
+- `StringSegment` `Substring`in yerine daha hızlı daha az maliyetli çalışma sergileyen ve diğer `string` fonksiyonlarına nazaranda performansı arttıran bir türdür.
+
+```C#
+string text = "Ölüme gidelim dedin de mazot mu yok dedik.";
+
+#StringSegment Nedir?
+//`StringSegment` `ArraySegment`in `string` değerler nezdindeki bir muadilidir.
+//Esasında metinsel değerlerdeki birçok analitik operasyonlardan bizleri kurtarmakta ve `Substring` vs. gibi fonksiyonlar yerine `string` değerde hedef kesit üzerinde işlem yapmamızı 
+sağlayan bir türdür.
+```
