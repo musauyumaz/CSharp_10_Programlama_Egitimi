@@ -246,3 +246,32 @@ StringSegment segment = new StringSegment(text);
 StringSegment segment1 = new StringSegment(text, 2, 5);
 System.Console.WriteLine(segment1);
 ```
+
+***
+# 342) StringBuilder Sınıfı Nedir? Ne Amaçla Kullanılır?
+- Dizilerde çalışma yaptığımız operasyonlar bizler için maliyetli olabiliyor. Aynı şekilde `string`te bir dizi olduğundan dolayı `string`in üzerinde yapılan bütün işlemler ekstradan da maliyetli olmakta. Dolayısıyla biz genellikle yazmış olduğumuz yazılımlarda `string` operasyonlarında `+` operatörünü kullanarak `string` birleştirmeyi çok fazla yaparız ve buradaki maliyeti göz ardı ederiz.
+
+- Elimizde makul sayıda değişken varsa bunları `string` olarak birleştirmek istiyorsanız String Interpolation ya da `string.Format`ı kullanabilirsiniz ya da daha da kolayca hızlı bir şekilde `+` operatörünü kullanabilirsiniz. Ama buradaki değişken/değer/parametre sayısı yani `string` birleştirilecek ifadelerin sayısı adedi artıyorsa artık makul değilse haddinden fazlaysa buna bir sınır koyamayız belki ama 5'i buluyorsa örneğin artık buradaki maliyeti göz ardı etmeniz sizin için kazançlı olmayacaktır. Çünkü hadi 5 değeri 15 olsun ciddi bir maliyet söz konusu olacaktır. Kaynakları ciddi bir şekilde tüketeceksiniz. Böyle bir durumda biz kaynakları ciddi manada tüketmemek için `StringSegment`le bu operasyonları gerçekleştirmek isteriz. İşte `StringBuilder` diyor ki bana kardeşim ben arka planda `StringSegment` algoritmasını kullanıyorum yani `StringSegment`i kullanıyorum ve kullandığım bu operasyon bu türle senin istediğin operasyonu hızlı bir şekilde maliyeti düşürülmüş ve performansı arttıracak bir şekilde gerçekleştiriyorum. Dolayısıyla sen gel bunu kullan `+` operatörünü kullanacağına birkaç satır fazla kod yaz ama `StringBuilder`ı kullan demiş oluyor.
+
+- `StringBuilder` `string` birleştirme operasyonlarında `+` operatörüne nazaran yüksek maliyeti absorbe edebilmek için arka planda `StringSegment` algoritmasını kullanan ve bu algoritma ile bizlere ilgili değerleri olabilecek ennn az maliyetle birleştirip döndüren bir sınıftır.
+
+- Makul bir sayıyı geçtikten sonra `StringBuilder`ı kullanmamız yazılımımız açısından daha performanslı daha tercih edilir olacaktır. Bunun sebebi de `StringBuilder`ın arka planda `StringSegment`i kullanmasıdır.
+
+- `Append` diye fonksiyonumuz var. Birleştirme yapılacak tüm `+` operatörü yerine `Append`la birleştirme yapılacak değerleri kattığımız/işleme tabi tuttuğumuz bir fonksiyon. Her bir `+` operatörü yerine bu fonksiyonu kullanmanız buradaki maliyeti minimize edecektir.
+
+- `StringBuilder` `string` formatlandırma operasyonlarında olabilecek maliyeti minimize etmek için kullandığımız hazır bir sınıftır/türdür.
+
+```C#
+#StringBuilder Sınıfı
+//`StringBuilder` `string` birleştirme operasyonlarında `+` operatörüne nazaran yüksek maliyeti absorbe edebilmek için arka planda `StringSegment` algoritmasını 
+kullanan ve bu algoritma ile bizlere ilgili değerleri olabilecek ennn az maliyetle birleştirip döndüren bir sınıftır.
+string isim = "Musa";
+string soyisim = "Uyumaz";
+System.Console.WriteLine(isim + soyisim);
+
+StringBuilder builder = new StringBuilder();
+builder.Append(isim);
+builder.Append(" ");
+builder.Append(soyisim);
+System.Console.WriteLine(builder.ToString());
+```
