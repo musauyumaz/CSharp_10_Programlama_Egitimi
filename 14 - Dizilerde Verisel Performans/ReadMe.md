@@ -353,3 +353,33 @@ System.Console.WriteLine(builder.ToString());
 - `Memory` türünün sadece okunabilir halidir.
 
 <img src="20.png" width="auto">
+
+- `Span<int> span = new Span<int>(sayilar);` İlgili bellekteki sayılar dizisinin tüm alanlarına karşılık gelecek yani sayıları birebir refere edecektir. 
+- `Span<int> span2 = sayilar;` Eğer ki bu şekilde tam refere söz konusuysa bu semantiği kullanabilirsiniz. ilgili diziyi topyekün şekilde referans edecektir.
+- `Span<int> span3 = new Span<int>(sayilar, 3, 5);` belirli bir aralığını da bu şekilde temsil edebiliyoruz.
+
+- `Span<int> span4 = sayilar.AsSpan();` Benzer mantıkla `Span` türüne elimizdeki herhangi bir diziyi verebiliyoruz aynen bu şekilde ya da diziden de `Span` türünde bir nesne talepte edebiliyoruz.
+
+- `Span<int> span5 = sayilar.AsSpan(3, 5);` Eğer ki sen belirli bir aralığını herhangi bir `Span` referansında referans eden bir nesneyi döndürmek istiyorsan
+
+- Metinsel ifadeler üzerinde bir referans söz konusuysa readonly olarak gelecektir.
+
+- Elindeki metinsel ifadelerin belirli bir kısmını referans ediyorsan bu readonly olarak davranış sergileyecektir.
+
+- `Span` ile metinsel ifade de çalışamazsınız.
+
+```C#
+#Span Türü
+int[] sayilar = { 10, 20, 30, 40, 50, 60, 70, 80, 90, 100 };
+
+Span<int> span = new Span<int>(sayilar);
+Span<int> span2 = sayilar;
+Span<int> span3 = new Span<int>(sayilar, 3, 5);
+
+Span<int> span4 = sayilar.AsSpan();
+Span<int> span5 = sayilar.AsSpan(3, 5);
+
+string text = "Sen kalbimde batan güneş, ben yollarda çilekeş...";
+ReadOnlySpan<char> readOnlySpan = text.AsSpan();
+ReadOnlySpan<char> span6 = text;
+```
