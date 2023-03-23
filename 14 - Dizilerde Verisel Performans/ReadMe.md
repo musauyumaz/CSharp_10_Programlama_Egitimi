@@ -1,5 +1,5 @@
 ---
-modified: 2023-03-22T06:11:52.168Z
+modified: 2023-03-23T07:36:01.545Z
 title: 335) Dizilerde Verisel Performans Nedir?
 ---
 
@@ -209,4 +209,40 @@ string text = "Ölüme gidelim dedin de mazot mu yok dedik.";
 //`StringSegment` `ArraySegment`in `string` değerler nezdindeki bir muadilidir.
 //Esasında metinsel değerlerdeki birçok analitik operasyonlardan bizleri kurtarmakta ve `Substring` vs. gibi fonksiyonlar yerine `string` değerde hedef kesit üzerinde işlem yapmamızı 
 sağlayan bir türdür.
+```
+
+***
+# 341) StringSegment Türü İle Dizinin Belli Bir Alanını Referans Etmek
+- `StringSegmet`i direkt kullanmaya çalıştığımızda kullanamamaktayız. Biz `StringSegment`i kullanabilmek için uygulamada Microsoft.Extensions.Primitives isimli bir paketi yüklememiz gerekiyor.
+
+- `StringSegment` türünü kullanabilmek için uygulamaya Microsoft.Extensions.Primitives paketinin yüklenmesi gerekmektedir.
+
+- Paket belirli bir işe odaklanmış kodlar bütünüdür.
+
+- `using`te hangi paket varsa onun içerisindeki kodları kullanmanı sağlıyor.
+
+<img src="13.png" width="auto">
+
+- Yine konseptimiz `struct` olduğundan dolayı değer üretme üstüne kurulu.
+
+- `StringSegment`te aynı şekilde verilen `string` değerle aynı yeri işaret eder/gösterir.
+
+- Belirli bir aralığın üzerinde de çalışabilirsin.
+
+- `string` ifadelerin üzerinde belirli bir aralığın üstünde çalışmak istiyorsak `Substring` ile çekerek çalışıyorduk. Gelişmiş performansa odaklı bellek optimizasyonu yapılan kodlarda `Substring` olsun ve diğer fonksiyonlar olsun bunlar kullanılmaz `StringSegment` gibi noktalara temas edebilen hani performans açısından bellek optimizasyonu açısından o noktalara temas edebilen fonksiyonlar/yapılar kullanılır. 
+
+- Dolayısıyla biz burada `Substring` yerine `StringSegment` kullanıyorsam yeni bir değer üretilmeyecek var olan değerin üzerinde ilgili alanı temsil edilecektir. İşte bu da bana yüksek bir performans kazandıracaktır.
+
+- `StringSegment` ileri düzey programlama da göreceğimiz implicit dediğimiz bir tür dönüşümü var yani derinlemesine ileri düzey bir tür dönüşüm yapılanması. Dolayısıyla burada `StringSegment` esasında direkt `string`e dönüştürülebiliyor. Bu yüzden istediğim yerde çağırıp kullanabilirim.
+
+- Maliyeti düşürmekte performansı arttırmış olmaktayız.
+
+```C#
+string text = "Ölüme gidelim dedin de mazot mu yok dedik.";
+
+#StringSegment İle Dizinin Belli Bir Alanını Referans Etmek 
+//`StringSegment` türünü kullanabilmek için uygulamaya Microsoft.Extensions.Primitives paketinin yüklenmesi gerekmektedir.
+StringSegment segment = new StringSegment(text);
+StringSegment segment1 = new StringSegment(text, 2, 5);
+System.Console.WriteLine(segment1);
 ```
