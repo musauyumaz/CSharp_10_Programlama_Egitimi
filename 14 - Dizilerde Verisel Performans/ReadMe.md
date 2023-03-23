@@ -275,3 +275,81 @@ builder.Append(" ");
 builder.Append(soyisim);
 System.Console.WriteLine(builder.ToString());
 ```
+
+***
+# 343) Span, ReadOnlySpan, Memory ve ReadOnlyMemory Türleri Nedir? Nasıl Kullanılır?
+
+<img src="14.png" width="auto">
+
+- `Span` türü bellek üzerinde belirli bir alanı temsil ederek işlemler gerçekleştirmemizi sağlayan bir `struct`tır.
+
+- RAM üzerinde bellekteki herhangi bir alanı temsil edebildiğimiz bir tür.
+
+- Bellekteki herhangi bir alanı temsil edebilmek demek `ArraySegment`ten yola çıkarsak eğer `ArraySegment` elindeki herhangi bir `string` ya da dizi değerinin üzerinde belirli parçaları temsil edebiliyorken `Span` diyor ki sana bellekteki herhangi bir alandaki aralığı temsil edebiliyor. Demek ki `ArraySegment` ve `StringSegment` sadece dizilerde çalışırken `Span` türü dizinin dışındaki türlerde de çalışma sergileyebiliyor.
+
+- Bu belirli alanlardan kasıt tabi ki de ardışıl alan kaplayan `Array` değerleridir.
+
+- Tabi genellikle biz RAM'de belirli bir alandan bahsediyorsak RAM'deki bu alan genellikle ardışıl olan `Array`lerdir.
+
+- `ArraySegment` neydi bizim dizilerimizde `string` değerlerimizde ya da normal dizilerimizde nihayetinde `string`te bir `char` dizisi farketmiyor dizilerde belirli bir alanı tahsis edilen belirli bir alanı referans etmemizi sağlıyorduç Şimdi bu referans edilen alanlarda bizim içinde nihayetinde ardışıl bir şekilde tahsis edilmiş indexlenmiş alan. Biz bunları referans edebiliyoruz. `Span` da aynısını yapıyor ama `Span` diyor ki kardeşim illaki bir dizi ya da `string` beklemiyorum başka türde de çalışabilirim ben diyor.
+
+- Normal şartlarda `Array`lerin belleğin HEAP kısmında tutulduğunu biliyoruz. Lakin `stackalloc` keyword'ü sayesinde STACK'te de `Array` tanımlayabilmekteyiz.
+
+- `ArraySegment` dizilerde çalışıyordu dizilerde belirli bir alanı kaplıyordu dolayısıyla dizi nerdeydi dizi belleğin HEAP'indeydi HEAP'teki bir alanı çok rahat temsil edebiliyordu. Bu cepte şimdi sen ne biliyorsun `Array`lerin normalde HEAP'te tutulduğunu biliyorsun ama pointerlar konusuna gidersen `Array`lerin `stackalloc` keyword'ü sayesinde STACK'te de tanımlandığını görebileceksin. `stackalloc` keyword'ü STACK'te ardışıl bir şekilde belirli bir alan tahsisinde yapmamızı sağlıyor.
+
+- `Span` ile `ArraySegment`ten farkın şu. `ArraySegment` sadece HEAP'teki dizilerde ya da `string`lerde belirli bir alanı referans ederken `Span` istersen `stackalloc` keyword'ünü kullanarak STACK'te belirli bir alanı referans edebilirsin ya da HEAP'teki herhangi bir dizi olur `string` olur bak bunlarda olmaz değil ama bunlardan daha fazlası da olabilir belirli bir aralığı referans edebilirsin.
+
+- `Span` STACK yahut HEAP farketmeksizin tanımlanmış olan `Array`lerin tümünü yahut bir bölümünü bizler için refere edebilen ve üzerinde işlemler gerçekleştirmemizi sağlayan kullanışlı bir yapıdır.
+
+- `Span`lar bir `struct`tır.
+
+- Bellekte HEAP ya da STACK farketmiyor iki türlü de belleğin iki alanında da belirli bir alanı temsil ediyor ve oraları tekrardan bir mükerrerlik söz konusu olmadan bir kopyalama bir veri tekrarı olmadan yönetmemizi sağlayan `ArraySegment`in akrabası olan işlevsel olarak birbirine çok benzeyen bir türdür.
+
+- Aslında `ArraySegment`e çok benziyor bellekte belirli bir alanı temsil edip işlem yapabiliyoruz. Yani `Span` illa bir `string` ya da dizi olmasına gerek kalmaksızın bellekte belirli alanı temsil ediyor yahut `ArraySegment`teki gibi birebir aynı davranışı sergilemeye devam ediyor.
+
+<img src="15.png" width="auto">
+
+- `ArraySegment`i ne amaçla kullanıyorsan `Span`ıda bu seviyede aynı amaçla kullanabilirsin.
+
+- `Span` dizi ve `string` gibi maliyetli veriler üzerinde yapılacak operasyonlarda performans açısından yüksek getiriyle birlikte maliyeti olabildiğince düşütmekte ve ekstradan değer kopyalamaya gerek kalmaksızın tüm faaliyetleri gerçekleştirmemize olanak sağlamaktadır.
+
+<img src="16.png" width="auto">
+
+- `ReadOnlySpan<T>`, `Span` niteliklerinin tümünü sağlamakta lakin adı üzerinde sadece okunabilir kılmaktadır.
+
+- `Span` dediğimiz tür temsil ettiği alandaki verilere müdahale edebiliyor ettiği zamanda istediği gibi orjinal veriyi değiştirebiliyorsun. Eğer ki sen bir alanı temsil edeceksin ve sadece orayı temsil edeceksin yani ReadOnly bir veri atamayacaksın bir değişiklik yapmayacaksan `ReadOnlySpan<T>` ı kullanabilirsin.
+
+- Bir `Span` olduğunuzu düşünürsek ve bir alanı tuttuğunuzu varsayarsak eğer bu alanı referans ederken sizin üzerinizden yapılan tüm müdahaleler gerçek alana işlenmiş olacaktır ama `ReadOnlySpan<T>` olarak burayı tutarsak sadece bunu okuyabilirim ama müdahale edemem.
+
+<img src="17.png" width="auto">
+
+## Span ile ArraySegment & StringSegment Farkı Nedir?
+- İkisi normalde belirli noktalarda kesişiyor.
+
+- Kesiştiği nokta `Span` `string` ve dizilerde de operasyon yapabiliyor ama `ArraySegment`in çıkış yapamadığı müdahale edemediği yerlere de `string` ve dizinin dışındaki alanlarada mesela STACK'teki `stackalloc` keywordüyle elde edilen tahsis edilen alana referans edebiliyor ve oralarda temsiliyet neticesinde işlemler yapmamıza müsaade ediyor.
+
+| Span | ArraySegment & StringSegment   |
+|---|---|
+|Bellek üzerinde olan herhangi bir yeri temsil edebilir.|Sadece `string` ve dizilerde temsiliyet yapabilir.|
+|`Span`da da edilir ama `ReadOnlySpan<T>`da bu verisel operasyonlar engellenebilir ve sadece okunabilir bir davranış sergilenebilir. |Referans edilen her türlü alana müdahale edilebilir.|
+|Daha geniş kapsamda belleğe müdahale edip belirli bir kısmını temsil edip orada işlem yapacaksanız tabiki de orada `Span`dan başka şansınız yok. |Sadece `string` yahut `Array` türler ile çalışılacaksa eğer `ArraySegment` ve `StringSegment` tavsiye edilir.|
+
+<img src="18.png" width="auto">
+
+## Memory Türü Nedir?
+- `Span` `ref struct` olarak tasarlanmış bir `struct`tır.
+
+- `Span`ın Dolayısıyla HEAP'te allocation(tahsis) edilmeme, `object`, `dynamic` yahut `interface` türleri aracılığıyla referans edilmeme yahut bir `class` içerisinde field veya property olarak tanımlanmama gibi kısıtlamaları vardır.
+
+- `Memory` türü `Span`ın bu kısıtlamalarından münezzeh versiyonudur.
+
+- `Span` ile `Memory` birlikte kullanılıyor. Çünkü `Memory` türü `Span`ın bu kısıtlamalardan münezzeh versiyonudur. Yani `Span`da bu durumlar söz konusu bu durumların dışına çıkıp `Span`ın işini yapmak istiyorsanız `Memory`i kullanmanız gerekiyor.
+
+<img src="19.png" width="auto">
+
+## ReadOnlyMemory Türü Nedir?
+- Nasıl ki `Span`ın `ReadOnlySpan`ı var `Memory`inde `ReadOnlyMemory`si var.
+
+- `Memory` türünün sadece okunabilir halidir.
+
+<img src="20.png" width="auto">
