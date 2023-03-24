@@ -202,7 +202,13 @@ System.Console.WriteLine(match.Success);
 //Baş harfi a ya da b ya da c olan metinsel ifadeyi girelim
 //a|b|c
 string text = "ahmet";
-Regex regex = new Regex(@"a|b|c");
+Regex regex = new Regex(@"^a|^b|^c");
 Match match = regex.Match(text);
 System.Console.WriteLine(match.Success);
 ```
+
+***
+# 350) Regular Expressions Operatörleri {n} Operatörü
+- Elimizdeki metinsel ifadelerin belirli noktalarında sabit sayıda karakterin olmasını garanti altına alabilmekteyiz. bunun için `{}` operatörünü kullanmaktayız.
+
+- Sabit sayıda karakterin olması isteniyorsa {adet} şeklinde belirtilmeli.
