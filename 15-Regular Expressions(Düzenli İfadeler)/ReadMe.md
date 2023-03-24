@@ -1,5 +1,5 @@
 ---
-modified: 2023-03-23T10:53:56.062Z
+modified: 2023-03-24T02:34:56.305Z
 title: 345) Regular Expressions(Düzenli İfadelerde) Neyin Nesi?
 ---
 
@@ -80,3 +80,37 @@ title: 345) Regular Expressions(Düzenli İfadelerde) Neyin Nesi?
 - Piyasada birçok yazılımcı Regular Expressions'ları kullanmamış olabilir metinsel ifadeleri içlerindeki belirli tekrarları ya da patternları yakalayabilmek için kod seviyesinde çalışmayı tercih edebilir ama bununla tanışan yazılımcı bundan da vazgeçemez
 
 <img src="10.png" width="auto">
+
+***
+# 346) Regular Expressions Operatörleri ^ Operatörü, Regex Sınıfının Kullanımı
+- Elimizde bir metin var ve bu metin üzerinde belirli formatlandırma yani bir pattern uygulamamız gerekiyorsa bunu da Regular Expressions'larla sağlayacaksak bizlere ilgili konunun getirmiş olduğu operatörlerden istifade etmemiz gerekmektedir.
+
+- Eğer ki bir kurallı metinsel ifade oluşturmak istiyorsanız ve o ifadenin satır başında herhangi bir değerle ifadeyle başlanmasını istiyorsanız `^` operatörünü kullanabilirsiniz.
+
+- `^` Operatörü : Satır başının istenilen ifadeyle başlamasını sağlar.
+
+- `^9`: Bu şekilde bir ifade de bulunuyorsanız eğer yazı 9 ile başlamalı. Yazı ne olursa olsun 9 ile başlamalı. 9 ile başlamıyorsa buradaki Regular Expressions'larda check etme durumu başarısızlıkla sonuçlanacaktır.
+    * Sana verilecek metin kesinlikle 9 ile başlamalı eğer 9 ile başlamıyorsa sen ona onay verme.
+    * Uygun : 9asfafdas, 9414156, 9''!3123
+    * Uygun Değil : asfasfsaf, 123, 1239, 0912312
+
+- biz bir değeri check etmek için `Match` fonksiyonunu kullanırız. `Match` fonksiyonuna verdiğiniz değeri Regex'in içindeki pattern ne ise sen bu pattern üzerinden pattern'ı .çağırdığında vermiş olduğun metinsel değer her ne ise check edilecek ve diyecek ki pattern'a bu değer uygundur ya da değildir. Sonuç olarak'ta `Match` isimli bir sınıfı döndürür.
+
+- `Match.Success` property'si eğer ki vermiş olduğun değer uygun ise `true` değilse `false` dönecektir.
+
+- `Regex regex = new Regex("^91");`//Burada değer 91 ile başlamalı eğer başlamıyorsa `false` dönecektir.
+    * Regex'e yazılan karakterlerde kompozitlik vardır bütün karakterleri bir bütün olarak alır.
+
+```C#
+#Regular Expressions Operators
+//`^` Operatörü : Satır başının istenilen ifadeyle başlamasını sağlar.
+
+//^9 : 
+//Uygun : 9asfafdas, 9414156, 9''!3123, 
+//Uygun değil : asfasfsaf, 123, 1239, 0912312
+
+string text = "9212347123asadgagfakmgag";
+Regex regex = new Regex("^91");//Burada değer 91 ile başlamalı eğer başlamıyorsa `false` dönecektir.
+Match match = regex.Match(text);
+System.Console.WriteLine(match.Success);
+```
