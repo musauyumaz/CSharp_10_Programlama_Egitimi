@@ -23,7 +23,7 @@ class Program
         //^9\d\S
         string text = "94 54131563415sfasfasdfasfsafasf";
         Regex regex = new Regex(@"^9\d\S");
-        Match match = new Match(text);
+        Match match = regex.Match(text);
 
         System.Console.WriteLine(match.Success);
         #endregion

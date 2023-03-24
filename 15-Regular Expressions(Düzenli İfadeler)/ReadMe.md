@@ -1,5 +1,5 @@
 ---
-modified: 2023-03-24T02:34:56.305Z
+modified: 2023-03-24T09:22:11.138Z
 title: 345) Regular Expressions(Düzenli İfadelerde) Neyin Nesi?
 ---
 
@@ -158,5 +158,34 @@ System.Console.WriteLine(match.Success);
 string text = "94 54131563415sfasfasdfasfsafasf";
 Regex regex = new Regex(@"^9\d\S");
 Match match = new Match(text);
+System.Console.WriteLine(match.Success);
+```
+
+***
+# 348) Regular Expressions Operatörleri + Operatörü
+- `+` operatörü kesinlikle aritmetik operatör olarak algılanmamalı bu operatör Regular Expressions operasyonlarında belirtilen gruptaki karakterlerden 1 ya da daha fazlasının olmasını istediğimiz durumda kullanılan bir operatördür.
+
+- Belirtilen gruptaki o grubun kullanıldığı alanda bir ya da daha fazla birden fazla olmasını istediğimiz durumlarda `+` operatörünü kullanıyoruz.
+
+- 9 ile başlayan 2. karakteri herhangi bir sayı olan ve son karakteri de boşluk olmayan bir düzenli ifade oluşturalım.
+- `^9\d\S` Burada sıra önemliydi çünkü direkt sıraya atıfta bulunuyordu. Haliyle ben burada normal şartlarda grupları kullanıyorsam eğer karakter bazlı yani hane bazlı kullanmış oluyorum.
+
+- `+` operatörü ilgili grubun birden fazla kullanılabilme ihtimalinde kullandığımız bir operatördür.
+
+```C#
+#Regular Expressions Operators
+#+ Operatörü
+//Belirtilen gruptaki karakterlerden bir ya da daha fazlasının olmasını istiyorsak kullanılan operatördür.
+//9 ile başlayan arada herhangi bir sayısal değerleri olan ve son karakteri de boşluk olmayan bir düzenli ifade oluşturalım.
+//^9\d+\S
+
+// string text = "1987454511d";false
+// string text = "9a7454511d";false
+// string text = "9874a54511d";true
+// string text = "9874 54511d";true
+// string text = "98 54511d";false
+string text = "98 54511d";
+Regex regex = new Regex(@"^9\d+\S");
+Match match = regex.Match(text);
 System.Console.WriteLine(match.Success);
 ```
