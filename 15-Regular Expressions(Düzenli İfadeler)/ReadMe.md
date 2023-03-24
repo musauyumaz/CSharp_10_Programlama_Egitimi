@@ -114,3 +114,49 @@ Regex regex = new Regex("^91");//Burada değer 91 ile başlamalı eğer başlam�
 Match match = regex.Match(text);
 System.Console.WriteLine(match.Success);
 ```
+
+***
+# 347) Regular Expressions Operatörleri \ Operatörü
+- Bu operatör mahiyet açısından kullanıldığı noktada yani ilgili metinsel ifade de kullanıldığı noktada belirtilen karakter gruplarını içermesini istiyorsak kullanılan bir operatördür.
+
+- Elimizde bir metinsel ifade olduğunu düşünelim ve bu metinsel ifadenin belirli bir noktasında alfanümerik olan ya da olmayan değerlerin kullanılmasını istiyorsam veyahut sadece rakamların kullanılmasını istiyorsam ya da rakamın dışında farklı değerlerin alfanümerik ya da değil kullanılmasını istiyorsam bunun gibi patternlar uygulamabilmek için kullandığımız bir operatördür.
+
+- `\` : Belirli karakter gruplarını içermesini istiyorsak kullanırız.
+
+- `\` tek başına kullanılmaz yanına aldığı parametrelerle asıl davranışını şekillendirir.
+
+- `\`  : Belirli karakter gruplarını içermesini istiyorsak kullanırız.
+
+- `\D` : Metinsel değerlerin ilgili yerinde rakam olmayan tek bir karakterin bulunması gerektiği belirtilir
+    * Elindeki metinsel ifadede bildirdiğin noktada rakam olmayan tek bir karakterin bulunmasını istiyorsan kullanılır.
+- `\d` : Metinsel değerlerin ilgili yerinde 0 - 9 arasında tek bir sayı olacağı ifade edilir.
+    * Yok eğer elindeki metinsel ifadenin belirtilen noktasında sadece rakam olan tek bir değerin olmasını istiyorsan kullanılır.
+
+- `\W` : Metinsel değerin ilgili yerinde alfanümerik olmayan karakterin olması gerektiğini bildirir. Alfanümerik karakterler :  a-z A-Z 0-9
+    * `!`,` `, `?` gibi karakterlerin kullanılmasını istiyorsanız ilgili yerde kullanabilirsiniz.
+- `\w` : Metinsel değerin ilgili yerinde alfanümerik olan karakterin olacağı ifade edilir.
+    * `!`,` `, `?` gibi karakterlerin kullanılmasını istemiyorsanız ilgili yerde kullanabilirsiniz.
+
+- `\S` : Metinsel değerin ilgili yerinde boşluk karakterleri(tab/space) dışında herhangi bir karakterin olamayacağı belirtilir.
+    * Metinsel değerin ilgili alanında boşluk karakteri olmayacak diyorsanız kullanabilirsiniz.
+- `\s` : Metinsel değerin ilgili yerinde sadece boşluk karakterinin olacağı ifade edilir.
+    * Metinsel değerin ilgili alanında sadece boşluk karakteri olacak diyorsanız kullanabilirsiniz.
+
+```C#
+#Regular Expressions Operators
+#\ Operatörü
+// \  : Belirli karakter gruplarını içermesini istiyorsak kullanırız.
+// \D : Metinsel değerlerin ilgili yerinde rakam olmayan tek bir karakterin bulunması gerektiği belirtilir
+// \d : Metinsel değerlerin ilgili yerinde 0 - 9 arasında tek bir sayı olacağı ifade edilir.
+// \W : Metinsel değerin ilgili yerinde alfanümerik olmayan karakterin olması gerektiğini bildirir. Alfanümerik karakterler :  a-z A-Z 0-9
+// \w : Metinsel değerin ilgili yerinde alfanümerik olan karakterin olacağı ifade edilir.
+// \S : Metinsel değerin ilgili yerinde boşluk karakterleri(tab/space) dışında herhangi bir karakterin olabileceği belirtilir.
+// \s : Metinsel değerin ilgili yerinde sadece boşluk karakterinin olacağı ifade edilir.
+//Örn;
+//9 ile başlayan 2. karakteri herhangi bir sayı olan ve son karakteri de boşluk olmayan bir düzenli ifade oluşturalım.
+//^9\d\S
+string text = "94 54131563415sfasfasdfasfsafasf";
+Regex regex = new Regex(@"^9\d\S");
+Match match = new Match(text);
+System.Console.WriteLine(match.Success);
+```
