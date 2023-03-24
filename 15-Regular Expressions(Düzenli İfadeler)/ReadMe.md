@@ -157,7 +157,7 @@ System.Console.WriteLine(match.Success);
 //^9\d\S
 string text = "94 54131563415sfasfasdfasfsafasf";
 Regex regex = new Regex(@"^9\d\S");
-Match match = new Match(text);
+Match match = regex.Match(text);
 System.Console.WriteLine(match.Success);
 ```
 
@@ -186,6 +186,23 @@ System.Console.WriteLine(match.Success);
 // string text = "98 54511d";false
 string text = "98 54511d";
 Regex regex = new Regex(@"^9\d+\S");
+Match match = regex.Match(text);
+System.Console.WriteLine(match.Success);
+```
+
+***
+# 349) Regular Expressions Operatörleri |(veya) Operatörü
+- Birden fazla karakter grubundan bir ya da birkaçının ilgili yerde olabileceğini belirtmek istiyorsak mantıksal veya operatörü kullanılır.
+
+- Elimizdeki metinsel ifadenin belirli noktasında birden fazla karakterin kullanılabilme durumu söz konusuysa eğer bunu `|` operatörü ile izah edebilmekteyiz.
+
+```C#
+#| Operatörü
+//Birden fazla karakter grubundan bir ya da birkaçının ilgili yerde olabileceğini belirtmek istiyorsak mantıksal veya operatörü kullanılır.
+//Baş harfi a ya da b ya da c olan metinsel ifadeyi girelim
+//a|b|c
+string text = "ahmet";
+Regex regex = new Regex(@"a|b|c");
 Match match = regex.Match(text);
 System.Console.WriteLine(match.Success);
 ```
