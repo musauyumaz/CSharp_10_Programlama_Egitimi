@@ -212,3 +212,9 @@ System.Console.WriteLine(match.Success);
 - Elimizdeki metinsel ifadelerin belirli noktalarında sabit sayıda karakterin olmasını garanti altına alabilmekteyiz. bunun için `{}` operatörünü kullanmaktayız.
 
 - Sabit sayıda karakterin olması isteniyorsa {adet} şeklinde belirtilmeli.
+
+***
+# 351) Regular Expressions Operatörleri ? Operatörü
+- Bazen bizler metinsel ifadelerin içerisinde belirli karakterlerin yalnızca bir kere yahut hiç kullanılmamasını tercih edebilmekteyiz. İşte böyle bir durumu izah edebilmek için `?` operatörünü kullanmaktayız. `?` operatörü işlevsel açıdan önüne gelen karakterin en fazla 1 en az 0 defa olabileceğini ifade etmektedir.
+
+- Bu karakterin önüne gelen karakter en fazla bir en az sıfır defa olabilmektedir.
