@@ -328,3 +328,23 @@ Regex regex = new Regex(@"[(]\d{3}[)]\s\d{3}\s\d{2}\s\d{2}");
 Match match = regex.Match(text);
 System.Console.WriteLine(match.Success);
 ```
+
+***
+# 355) Regular Expressions Match Sınıfı Özellikleri
+- `Success` : Eğer ki ilgili metinsel ifade pattern'a uyuyorsa burada Success durumu başarılı olup olmadığına dair `bool` bir sonuç döner.
+- `Value`   : Doğrulanan verinin ne olduğunu bize veriyor. 
+- `Index`   : Doğrulamanın hangi index numarasında başladığını ifade ediyor.
+- `Length`  : Sadece doğrulamanın yapıldığı ifadenin kaç karakterli olduğunu bizlere bildiriyor
+- `Text`    : Kontrol edilen mevcut değerin hepsini gösterir.
+
+```C#
+#Regular Expressions Operators     
+string text = "(555) 555 55 55";
+Regex regex = new Regex(@"[(]\d{3}[)]\s\d{3}\s\d{2}\s\d{2}$");
+Match match = regex.Match(text);
+System.Console.WriteLine($"Success :  {match.Success}");
+System.Console.WriteLine($"Value :  {match.Value}");
+System.Console.WriteLine($"Index :  {match.Index}");
+System.Console.WriteLine($"Length :  {match.Length}");
+// System.Console.WriteLine($"Text :  {match.Text}");
+```
