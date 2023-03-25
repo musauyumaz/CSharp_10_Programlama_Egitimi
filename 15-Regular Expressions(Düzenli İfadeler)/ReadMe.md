@@ -279,6 +279,10 @@ System.Console.WriteLine(match.Success);
 
 - `\B` ya da `\b` sonunda ya da başlangıcında ilgili ifadenin ne şekilde ifade/değer barındıracağını bildiren bir operatördür.
 
+- \B: Bu ifade ile kelimenin başında ya da sonunda olmaması gereken karakterler bildirilir.
+
+- \b: Bu ifade ile ilgili kelimenin belirtilen karakter dizisi ile sonlanmasını sağlar
+
 ```C#
 #Regular Expressions Operators
 #\b \B Operatörleri
@@ -294,5 +298,33 @@ string text = "123dır";
 string text = "123dır2";
 Regex regex = new Regex(@"\d{3}dır\B ");
 Match match = regex.match(text);
+System.Console.WriteLine(match.Success);
+```
+
+***
+# 354) Regular Expressions Operatörleri [n] Operatörleri
+- Metinsel ifade de belirli bir noktada belirli karakter aralığındaki değerlerin olmasını istiyorsak eğer `[]` operatörünü kullanabilmekteyiz.
+
+- `[n]` : Karakter aralığı belirtilebilir.
+
+- Ayrıca özel karakterlerin yerinde yazılmasınıda ifade eder. 
+
+- Regılar expressions'lar sayesinde biz kompleks metinsel değerleri rahat bir şekilde doğrulayabilmekteyiz.
+
+```C#
+#Regular Expressions Operators
+#[n] Operatörü
+//`[n]` : Karakter aralığı belirtilebilir.
+//Ayrıca özel karakterlerin yerinde yazılmasınıda ifade eder. 
+        
+//\d{3}[A-E]
+string text = "123A";
+string text = "123C";
+string text = "123F";
+//(555) 555 55 55  
+//[(]\d{3}[)]\s\d{3}\s\d{2}\s\d{2}
+string text = "(555) 555 55 55";
+Regex regex = new Regex(@"[(]\d{3}[)]\s\d{3}\s\d{2}\s\d{2}");
+Match match = regex.Match(text);
 System.Console.WriteLine(match.Success);
 ```
