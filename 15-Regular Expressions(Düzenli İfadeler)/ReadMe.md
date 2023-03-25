@@ -218,3 +218,11 @@ System.Console.WriteLine(match.Success);
 - Bazen bizler metinsel ifadelerin içerisinde belirli karakterlerin yalnızca bir kere yahut hiç kullanılmamasını tercih edebilmekteyiz. İşte böyle bir durumu izah edebilmek için `?` operatörünü kullanmaktayız. `?` operatörü işlevsel açıdan önüne gelen karakterin en fazla 1 en az 0 defa olabileceğini ifade etmektedir.
 
 - Bu karakterin önüne gelen karakter en fazla bir en az sıfır defa olabilmektedir.
+
+***
+# 352) Regular Expressions Operatörleri . Operatörü
+- İlgili yerde alfanümerik olan ya da olmayan herhangi bir karakterin kullanılabileceğini ifade edebilmekteyiz.
+
+- `\n` karakteri dışında herhangi bir karakteri ifade etmek istiyorsanız `.` operatörünü kullanabilirsiniz.
+
+- `\n` : Kullanıldığı yerde `\n` karakteri dışında herhangi bir karakter bulunabilir
