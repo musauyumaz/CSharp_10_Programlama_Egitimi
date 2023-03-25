@@ -213,11 +213,43 @@ System.Console.WriteLine(match.Success);
 
 - Sabit sayıda karakterin olması isteniyorsa {adet} şeklinde belirtilmeli.
 
+```C#
+#Regular Expressions Operators
+#{n} Operatörü
+//Sabit sayıda karakterin olması isteniyorsa {adet} şeklinde belirtilmeli.
+
+//555-5555555
+//\d{3}-\d{6}
+
+string text = "555-5555555";
+Regex regex = new Regex(@"\d{3}-\d{7}$");
+Match match = regex.Match(text);
+System.Console.WriteLine(match.Success);
+```
+
 ***
 # 351) Regular Expressions Operatörleri ? Operatörü
 - Bazen bizler metinsel ifadelerin içerisinde belirli karakterlerin yalnızca bir kere yahut hiç kullanılmamasını tercih edebilmekteyiz. İşte böyle bir durumu izah edebilmek için `?` operatörünü kullanmaktayız. `?` operatörü işlevsel açıdan önüne gelen karakterin en fazla 1 en az 0 defa olabileceğini ifade etmektedir.
 
 - Bu karakterin önüne gelen karakter en fazla bir en az sıfır defa olabilmektedir.
+
+```C#
+#Regular Expressions Operators
+#? Operatörü
+//Bu karakterin önüne gelen karakter en fazla bir en az sıfır defa olabilmektedir.
+
+//\d{3}B?A
+//234BA, true
+//543BA, true
+//543A,  true 
+//123BBA false
+
+string text = "234BA";//true
+string text = "123BBA";//false
+Regex regex = new Regex(@"\d{3}B?A");
+Match match = regex.Match(text);
+System.Console.WriteLine(match.Success);
+```
 
 ***
 # 352) Regular Expressions Operatörleri . Operatörü
@@ -226,3 +258,41 @@ System.Console.WriteLine(match.Success);
 - `\n` karakteri dışında herhangi bir karakteri ifade etmek istiyorsanız `.` operatörünü kullanabilirsiniz.
 
 - `\n` : Kullanıldığı yerde `\n` karakteri dışında herhangi bir karakter bulunabilir
+
+```C#
+#Regular Expressions Operators
+#. Operatörü
+//`\n` : Kullanıldığı yerde `\n` karakteri dışında herhangi bir karakter bulunabilir
+
+//\d{3}.A
+
+string text = "123'A";
+string text = @"123\nA";
+Regex regex = new Regex(@"\d{3}.A");
+Match match = regex.Match(text);
+System.Console.WriteLine(match.Success);
+```
+
+***
+# 353) Regular Expressions Operatörleri \b - \B Operatörleri
+- `\` operatöründe hep böyle gruplamalar bir büyük bir küçük harf olacak şekilde belirtiliyor. Büyük harfler olumsuzluğu ifade ederken küçük harfler tam tersi olumlu aralığı ifade eder.
+
+- `\B` ya da `\b` sonunda ya da başlangıcında ilgili ifadenin ne şekilde ifade/değer barındıracağını bildiren bir operatördür.
+
+```C#
+#Regular Expressions Operators
+#\b \B Operatörleri
+//\B: Bu ifade ile kelimenin başında ya da sonunda olmaması gereken karakterler bildirilir.
+//\b: Bu ifade ile ilgili kelimenin belirtilen karakter dizisi ile sonlanmasını sağlar
+
+//\d{3}dır\B 
+//123dır  false
+//dır123  false
+//123dır2 true
+
+string text = "123dır";
+string text = "123dır2";
+Regex regex = new Regex(@"\d{3}dır\B ");
+Match match = regex.match(text);
+System.Console.WriteLine(match.Success);
+```
