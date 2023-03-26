@@ -35,3 +35,13 @@
 - Yapısal olarak var olan birşeyi öğrenmek bir kere bir yazılımcının borcudur.
 
 <img src="1.png" width="auto">
+
+***
+# 357) ArrayList Koleksiyonu
+- Esasında bizim onlarca koleksiyonumuz var. Bu koleksiyonlar arasından ilkidir. 
+
+- Dizilerdeki sınırlılıklardan kurtulmak için koleksiyonlar oluşturuyoruz ya bu ilk oluşturulan koleksiyon olarak düşünebilirsiniz. Haliyle kendine göre sınırlılıkları da olacak. Yani bir acemilik süreci olarak düşünebilirsiniz. Bu sınırlılıklardan dolayı başka koleksiyonlarında çıkışına sebep olacak bir koleksiyon hani evrimsel açıdan geçiş süreci olarak düşünebiliriz.
+
+- `ArrayList` dediğimiz koleksiyon dizilerdeki sınırlılıkları tam olarak %100 kaldıran onları atan bir koleksiyondur. Verisel çalışmalarda kullanıyoruz. Yani diğer koleksiyonlardan ve dizilerden bu amaçla hiçbir farkı yok. Sadece koleksiyonların ilkidir diyebiliriz.
+
+- Koleksiyonlara geçişlerde ilk ara geçiş örneği olarak ele alacağımız koleksiyondur.
