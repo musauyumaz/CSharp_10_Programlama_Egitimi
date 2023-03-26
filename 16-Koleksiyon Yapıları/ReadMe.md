@@ -95,3 +95,31 @@ yaslar[5] = 123;
 
 _yaslar.Add(123);
 ```
+
+***
+# 360) ArrayList Tanımlanmış Koleksiyondan Değer Okuma
+- Burada değer okumayı ele alırken dizilerdekinden bir fark olmadığını göreceğiz. Dizilerle koleksiyonların tek benzer noktası budur. Yani dizilerde koleksiyonlarda farketmeksizin ikisi de aynı şekilde değer okunabilmektedir. Direkt indexer üzerinden değer okumamız gerekecektir.
+
+- indexer operatörünü(`[]`) çağırdığın zaman indexer diyorki kardeşim ben sana ilgili index üzerinden vermiş olduğun index'e karşılık değeri sana döndürürüm diyor.
+
+- index dediğimiz yapı koleksiyonlarda da vardır. Dizilerde birden fazla veri söz konusu olduğundan dolayı sistem/mimari/dil tarafından her bir elemana otomatik index dediğimiz numaralar atanıyordu. Aynı yapılanma aynı amaca hizmet eden yapılanma sadece daha gelişmişi daha konforlusu olan koleksiyonlarda da indexer olacaktır index olacaktır. Nihayetinde ona koymuş olduğumuz değerler arka planda index numarasıyla işaretlenecek ve biz bu index numaraları üzerinden belirli operasyonlar gerçekleştirebileceğiz. İşte biz bunu index dediğimiz değeri dizilerde sürekli kullanırken değer atarken değer alırken başka bir işlem yaparken sürekli kullanıyoruz. Ama koleksiyonlarda sadece koleksiyonun değerini alırken işte o zaman kullanabiliyoruz. Öbür türlü index'le falan çok fazla işimiz yok.
+
+```C#
+#ArrayList
+int[] yaslar = new int[17];
+
+ArrayList _yaslar = new ArrayList();
+
+#Tanımlanmış Koleksiyondan Değer Okuma
+for (int i = 0; i < 17; i++)
+{
+    yaslar[i] = i + 10;
+    _yaslar.Add(i + 10);
+}
+
+//Diziler
+System.Console.WriteLine(yaslar[5]);
+
+//Koleksiyonlar
+System.Console.WriteLine(_yaslar[5]);
+```
