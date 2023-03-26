@@ -45,3 +45,28 @@
 - `ArrayList` dediğimiz koleksiyon dizilerdeki sınırlılıkları tam olarak %100 kaldıran onları atan bir koleksiyondur. Verisel çalışmalarda kullanıyoruz. Yani diğer koleksiyonlardan ve dizilerden bu amaçla hiçbir farkı yok. Sadece koleksiyonların ilkidir diyebiliriz.
 
 - Koleksiyonlara geçişlerde ilk ara geçiş örneği olarak ele alacağımız koleksiyondur.
+
+***
+# 358) ArrayList Koleksiyonu Tanımlama
+- Dizi tanımlarken öncelikle türünü bildiriyorduk ardından index'er ile tanımlama yapıyorduk.  Sonrasında da kaç elemanla çalışacaksak bildiriyorduk.
+
+- Yani eleman sayısı eksik olduğunda fazlasını yazamıyoruz. Fazla olduğunda eksiğini yazabiliyoruz belki ama bellekte bu sefer fazla alan tahsisinde bulunuyor.
+
+- Koleksiyonlar `System.Collections` namespace'i altında toplanmıştır. Bunlar esasında özünde bir sınıftır.
+
+- `ArrayList _yaslar = new ArrayList();` Nesne oluşturma operasyonudur.
+
+- `ArrayList _yaslar = new ArrayList();`
+- `int[] yaslar = new int[17];`
+    * Burada yaşlar isminde iki tane birden fazla veriyi tutabilecek küme/kaynak oluşturmuş oldum. Bu kaynağın birisi dizi diğeri koleksiyon.
+    * Dizilerde başlangıçta kaç tane eleman tutacağını kaç eleman üzerinde işlem yapacağını bildirmen gerekir. Koleksiyonda herhangi bir başlangıç değeri tanımlamana gerek yok. İstediğin kadar veri atayabilirsin.
+
+- `ArrayList` koleksiyonlar arasındaki en ilkelidir diyebiliriz.
+
+```C#
+#ArrayList
+#ArrayList Koleksiyonu Tanımlama
+int[] yaslar = new int[17];
+//Diziler tanımlanırken kaç eleman tutacakları bildirilmek zorundadır.
+ArrayList _yaslar = new ArrayList();
+```
