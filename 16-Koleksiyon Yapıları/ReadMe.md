@@ -70,3 +70,28 @@ int[] yaslar = new int[17];
 //Diziler tanımlanırken kaç eleman tutacakları bildirilmek zorundadır.
 ArrayList _yaslar = new ArrayList();
 ```
+
+***
+# 359) ArrayList Tanımlanmış Koleksiyona Değer Atama
+- `ArrayList` yapılanması yani koleksiyon yapılanması dizilerdeki değer atama operasyonlarına da dokunuyor ve buradaki hantallığı daha da dinamik hale getiriyor.
+
+- `yaslar[5]` 0'dan 4.index'e kadar olan aralık hala default değerler için duruyor. Ben direkt diğerlerini atladım 5. index'e değerini koyuyorum. 
+    * Böyle bir çalışmada hem atladığımız alanlar oluyor. Hemde biz bir değer atayabilmek için dizilerde illaki boş alanı index'erla bildirmek zorunda kalıyoruz. yani ben n elemanlı bir dizinin içerisinde hangi elemanların boş olduğunu bir şekilde ya zihnen ya da kodların üzerinde ya da not alarak takip etmeliyim.
+    * Sen dizilerde hangi elemana değer atayacağını düşünürken koleksiyonlar diyor ki sana sen değer atarken hangi index'e bu değeri vereceğinle ilgilenmene gerek yok. Sen direkt değeri bana ver ben direkt sıralı bir şekilde arkada bunları indexleyecem zaten diyor. Haliyle koleksiyonlarda değer atama işlemlerinde ki sınırlılıklarda ortadan kaldırılıyor. Koleksiyona veriyorsun değerini o uygun yere direkt yerleştiriyor. Sen buradaki index'le bilmemneyle ilgilenmek zorunda kalmıyorsun.
+
+- `_yaslar.Add(123);` Bu kendi içindeki bir sonraki index'e yerleştirme yapıyor.
+    * Örneğin senin koleksiyonun içerisinde 35 tane veri vardır. Vermiş olduğun bir sonraki değer 36'ya yani 35. index'e atanır. Ama dizilerde böyle değildir. Dizilerde 50'lik bir dizinin içerisinde 35 tane veri dağınık bir şekilde yerleştirilebilir. Dolayısıyla yönetimi de zordur değer ataması da zordur.
+
+- Koleksiyonlarda dizilerdeki olduğu gibi zahmetli bir değer atama operasyonu yapılmıyor bunu fonksiyonel bir şekilde hallettmekteyiz. Tüm koleksiyonlarda `Add` fonksiyonu kullanılmamakta ama birçoğunda `Add` fonksiyonu ile atama yapıyoruz.
+
+```C#
+#ArrayList
+#Tanımlanmış Koleksiyona Değer Atama
+int[] yaslar = new int[17];
+
+ArrayList _yaslar = new ArrayList();
+
+yaslar[5] = 123;
+
+_yaslar.Add(123);
+```
