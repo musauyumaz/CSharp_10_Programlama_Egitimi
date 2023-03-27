@@ -1,3 +1,9 @@
+---
+modified: 2023-03-27T02:07:02.932Z
+title: 356) Koleksiyonlar Nelerdir? Diziler Varken Neden Koleksiyon Yapıları
+  İnşa Edilmiştir?
+---
+
 ***
 # 356) Koleksiyonlar Nelerdir? Diziler Varken Neden Koleksiyon Yapıları İnşa Edilmiştir?
 - Dizilerin daha gelişmiş yapılamasıdır.
@@ -122,4 +128,51 @@ System.Console.WriteLine(yaslar[5]);
 
 //Koleksiyonlar
 System.Console.WriteLine(_yaslar[5]);
+```
+
+***
+# 361) ArrayList Boxing - Unboxing Durumlarından Dolayı Sınırlılıklar
+- Dizilerdeki sınırlılıkları kaldırmak için üretilmiş ilk koleksiyondur. İlk koleksiyon olduğundan dolayı kendine has belirli sınırlılıklarla üretilmiştir. Yani biraz acemiliğe denk gelmiştir.
+
+- Diziyi oluştururken içerisine hangi türden veri alacağını bildiriyorduk. Ama `ArrayList` oluştururken böyle bir bildirimde bulunmayız. `ArrayList` `object` olarak veriyi alır. Şimdi bir `object` türe herhangi bir türdeki değeri verdiğimizde Boxing işlemi yaparız. Benzer mantıkla `object` olan bir değeri ben kendi türünde elde etmek istiyorsam Unboxing yapmam gerekiyor. 
+
+- Eğer ki biz hangi türden olursa olsun birden fazla veriyi `ArrayList`te tutuyorsak bu verileri kendi türlerinde elde etmek istiyorsak Unboxing işlemine tabi tutmamız gerekecektir. Çünkü `ArrayList`e vermiş olduğumuz değerler otomatik Boxing işlemine tabi tutuluyor.
+
+- `ArrayList`e `Add` fonksiyonuyla bir değer vermek istediğimde burada `object` olarak aldığından dolayı zaten buradaki değer özünde farklı bir değer de olsa arka planda `object`e dönüştürülüyor. Yani Heap'te tutuluyor.
+
+- `ArrayList`, verilen datayı boxing işlemine tabi tutar bu bir maliyettir. Ama esas maliyet şudur ki ben bu veriler üzerinde işlem yapacaksam işim gücüm yok birde bunları Unboxing yapmak zorundayım cast etmek zorundayım. Maliyet burada hem fazladan iş yapmış oluyoruz hem de kod maliyeti de ortaya çıkmış oluyor. Fazladan kod açısından da işlem yapmış oluyoruz.
+
+- `ArrayList` içerisindeki herhangi bir veriyi talep ettiğimizde o veri `object` olarak gelecektir. Dolayısıyla kendi türünde işlem yapabilmek için unboxing işlemine tabi tutmamız gerekir.
+
+- Elinde bir koleksiyon var ben bu koleksiyon içerisine veriyi koyduğumda eğer ki kendi türünde koyamıyorsam ve bu koleksiyonun içerisinden veriyi çektiğimde kendi öz türünde veriyi çekemiyorsam bu bizim için bir maliyet olacaktır. Dolayısıyla `ArrayList` kendisi her ne kadar dizilere nazaran daha gelişmiş bir yapılanma olsa dahi bu maliyeti bizlere yaşatan buna bir şekilde çözüm getirmemizi gerektiren bir koleksiyondur.
+
+- Şimdi sen operasyon yaparken dizi içerisindeki bütün değerlerin üzerinde işlem yaparken herhangi bir dönüşüm yapmana gerek yok. Burada dizi bir tık daha öne çıkmış oluyor. Ama `ArrayList`te çalışıyorsanız `ArrayList` boxing yaptığından dolayı kendi türünde işlem yapacaksanız bunu Unboxing yapıp o şekilde operasyona tabi tutmanız lazım. Koleksiyonlardan `ArrayList`in diziye karşı bir adım geride olduğu tek konu bu diyebiliriz. Bunu da şu şekilde aşarız diğer koleksiyon yapılarımız var bu koleksiyonlarda Generic yapılanmalar söz konusu olacak işte Generic koleksiyon dediğimiz yapılanmalar kendi içerisinde hangi türleri alabildiğini bileceğinden dolayı herhangi bir dönüşüme boxing'e unboxing'e gerek duymaksızın işlem yapmamıza yarayacaktır.
+
+- `ArrayList` koleksiyonlarının getirmiş olduğu sınırlılıklar ileride Generic dediğimiz koleksiyonlar sayesinde aşılacağından dolayı şöyle düşünebilirsiniz Generic koleksiyonlar daha gelişmiş koleksiyonlar sanki buradaki sınırlılıktan dolayı oluşturulmuştur diye düşünmenizde herhangi bir zarar yok.
+
+- Koleksiyonlarda eleman sayısını öğrenebilmek için `Count` property'sini kullanırız. Dizi de çalışıyorsak eğer `Length` eleman sayısını verir.
+
+- `as` operatörünü kullanabilmeniz için ilgili dönüşüm yapılacak hedef türün nullable/referans türlü olması gerekir.
+
+- `ArrayList`in generic hali `List` koleksiyonlar zaten bu işlem için yani boxing - unboxing meselesinden dolayı üretilmiştir. `ArrayList` ile birebir fıtraten aynıdır sadece generic halidir. Yani özel genelleştirilmiş hali herhangi bir türü veriyorsun o türe özel bir tek içerisine veri alıyor.
+
+- `ArrayList` her ne kadar dizilerdeki sınırlılıkları kaldıran bir fonksiyon olsa da kendine has belirli sınırlılıkları mevcuttur işte bu sınırlılıkları ortadan kaldırabilmek için generic koleksiyonlar çıkmıştır bunların çıkış sebebi bu ve bunun gibi sebeplere dayalıdır.
+
+```C#
+#ArrayList
+#ArrayList Kullanırken Boxing - Unboxing Durumları
+ArrayList _yaslar = new ArrayList();
+for (int i = 0; i < 17; i++)
+{
+    _yaslar.Add(i);
+}
+
+//`ArrayList`, verilen datayı boxing işlemine tabi tutar. 
+//`ArrayList` içerisindeki herhangi bir veriyi talep ettiğimizde o veri `object` olarak gelecektir. Dolayısıyla kendi türünde işlem yapabilmek için unboxing işlemine tabi tutmamız gerekir.
+
+int toplam = 0;
+for (int i = 0; i < _yaslar.Count; i++)
+{
+    toplam += (int)_yaslar[i];
+}
 ```
