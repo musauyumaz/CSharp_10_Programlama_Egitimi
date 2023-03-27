@@ -34,3 +34,37 @@ title: 363) İterasyon Nedir?
 - İterasyon yapılanmasının itere eden ya da yazılımsal açıdan baktığınızda elinizdeki herhangi bir koleksiyonun içerisindeki bütün değerleri tek tek elde etmenizi sağlayan bir yapı olduğunu bilelim.
 
 <img src="1.png" width="auto">
+
+***
+# 364) İterasyon ile Döngü Arasındaki Fark Nedir?
+- Elimizde bir veri kümesi var ve bu veri kümesi üzerinde tek tek bütün verilere ulaşıp işlem yapmak istiyorsak burada 2 tane farklı yapılanmayı kullanabiliriz.
+    1. Döngüler
+    2. Mantığını bildiğimiz `foreach` yani iterasyon.
+
+- Foreach(İterasyon) BİR DÖNGÜ DEĞİLDİR!!!!
+
+- Özünde iterasyon başka birşeydir döngü başka birşeydir.
+
+- Döngüyle işlem yaparken esasında bir sonraki işlem önemli değildir. Kombinasyon önemlidir. Döngü dediğimiz yapılanmalar belirli bir matematiğe göre mantığa göre işleyen kombinasyonla çalışan yapılanmalardır. Döngülerin her biri illaki bir mantıksal kombinasyon üzerinden işlem yapmak zorunda. Yani bir döngüyü sen sonsuza kadar çalıştırabilirsin buradaki kombinasyonu sonsuza kadar doğruladığın sürece. Ama iterasyonda böyle bişey yok iterasyon sonsuza kadar çalışmaz. İterasyon dediğin yapılanma belirli kombinasyona göre işlem yapmaz. İterasyon elindeki veri kümesindeki eleman sayısı kadar işlem yapar. Ama döngü bir kombinasyona göre işlem yapar. O kombinasyonu biz elimizdeki veri kümesiyle eş zamanlı bir şekilde tutturacak bir şekilde ilgili verileri tek tek elde ederiz öyle düşünün. Bir matematik yapıyorsub oradaki matematikte her bir işlem esnasında üretilen bir değer elindeki veri kümesindeki her bir elemana karşılık geliyor. Bunu sen matematikle kurarsın bu ayrıdır bu döngüdür. İterasyonu kullanırsın iterasyonda bir mantık yok direkt sana zaten ilgili veri kümesini getirecektir.
+
+- Döngüler illa ki bir veri kaynağıyla çalışmak zorunda değil elindeki herhangi bir koleksiyon ya da dizi üzerinde çalışmak zorunda değilsin döngülerde kombinasyonla çalışabilirsin. Ekstradan işlemler yapabilirsin yapmayadabilirsin. Ama iterasyonla çalışmak istiyorsan elinde kesinlikle bir veri kaynağının olması gerekiyor. Elinde veri kaynağı olmadığı sürece `foreach`in hiçbir anlamı yok. Dolayısıyla döngüyle iterasyon yapılanması esasında çok farklı şeyler. Sadece operasyonel işlemsel açıdan bunlar benzer şeyler. İkisi de adım adım belirli kombinasyonlar sağlıyor belirli işlemler yapabileceğimiz adımlar sağlıyor biz bunlara döngü diyoruz haliyle. Ama teknik olarak hem teoride esasında pratikte de farklı yapılanmalardır.
+
+- Döngü dediğiniz yapılanmada kombinasyon değişince döngünün herhangi bir akışında bozukluk olur mu olmaz. Tabiki de senin yapmış olduğun oradaki operasyon algoritma her neyse orada değerler değişince belki akışta fark olabilir ama bu döngünün genel akışında yani dinamiziminde bir sıkıntı yaratmayacaktır. Ama `foreach`te öyle değil `foreach` zaten çalışabilmek için bir koleksiyona/diziye/veri kümesine muhtaç. Haliyle çalışma esnasında elindeki veri kümesi değişirse patlar hata alırsınız.
+
+- `foreach` dediğimiz yapılanma veri kümesi olmadan çalışmadığından dolayı ilgili veri kaynağı yani üzerinde iterasyona başladığı veri kaynağının değişmemesi gerekiyor. Değiştiği taktirde patlayacaktır. Ama döngülerde herhangi bir bağımlılık yoktur sadece orada kombinasyon var bir matematik var o matematiğe uygun bir şekilde döngü şart sağlandığı sürece tetiklenecektir.
+
+- İterasyonel yapılanmalarda elindeki veri kümesini değiştirdiğin zaman iterasyonun patlamasının altında yatan sebepte esasında iterasyonun bir sonraki değeri takip edebilme mekanizmasıdır. Şimdi düşünsene ben elimde bir kese var bu kesede altınlarımız var ben şimdi tek tek itere ediyorum hani bir filmde vardı ya Kemal Sunal'ın tek tek adam altınları sayıyor napıyor itere ederek sayıyor. Bir yerden sonra kafa karışınca ya da kaynak değişince ya da senin saydıklarınla saymadıkların aynı havuza atıldığında iterasyon devam etmez nerde olduğunu bilemez iterasyonda nerede olduğunu bilmen lazım. İterasyon mantık bu şekilde işler. Dolayısıyla veri kümesi değişmez.
+
+- Iterator design pattern var. Iterator design pattern bizzat burada bahsi geçen işlemleri uyguladığımız tasarım desenidir. İleri de biz Iterator design pattern'ı uygulayıp kendi `foreach`ımızı yapacağız. Ama kendi döngümüzü yapabilmemiz için design pattern'dan ziyade daha fonksiyonel çalışmamız gerekecek yani recursive fonksiyonlar gibi düşünebilirsiniz.
+
+- İterasyon yani `foreach` bir döngü değildir. Halk arasında döngü diyoruz ama özünde değildir.
+
+```C#
+#Iterasyon vs Döngü
+//Foreach(İterasyon) BİR DÖNGÜ DEĞİLDİR!!!!
+int[] sayilar = { 3, 213, 423, 42, 34, 234, 234, 234 };
+for (int i = 0; i < sayilar.Length; i++)
+{
+    
+}
+```
