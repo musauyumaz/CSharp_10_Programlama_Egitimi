@@ -68,3 +68,41 @@ for (int i = 0; i < sayilar.Length; i++)
     
 }
 ```
+
+***
+# 365) Foreach İterasyonu Nasıl Kullanılır?
+- İterasyonu kullanabilmek için ya iterator design pattern'ı uygulamamız gerekecektir. Ya da dilin semantik açıdan syntax'ında bize getirmiş olduğu bir yapılanma var. `foreach` dediğimiz iterasyon. `foreach` kalıbı. Yani bir döngü `for` nasıl bir kalıp `while` nasıl bir kalıpsa `foreach` kalıbı da iterasyonel mantıkta çalışan bir kalıptır.
+
+- `foreach`in çalışabilmesi için elimizde bir tane veri kümesi olması gerekiyor. Ya bu dizi olacak ya da koleksiyon olacak. Elindeki veri kümesi üzerinde tüm verilerde adım adım sıralı bir şekilde çalışmak istiyorsan döngüyü kullanabilirsin amenna ama `foreach`'ide kullanabilirsin. İterasyon mantığında çalışan `foreach` yapılanması sadece koleksiyonlarda ya da dizilerde kullanılır. Yani lalettayin herhangi bir noktada kullanamazsınız. Elinizde bir veri kümesinin olması gerekiyor. Başka bir şekilde kullanamazsın. `for` ve `while` ile sen 1000 kere tetikleme yaparsın ama `foreach` kullanarak bir tetikleme de bulunabilmen için onu tetikleyecek bir veri kümesine ihtiyacın var. İterasyonla çalıştığı için adım adım sayabileceği verilerin bulunduğu bir kümeye ihtiyacı var.
+
+- `foreach( değişken  in collection ){}`
+    * `in` keywordünün bir sağı var birde solu var.
+    * sağına geliyorsun diyorsun ki kardeşim iterasyona tabi tutulacak olan koleksiyon hangisiyse onu yazıyorsun. Dizi, Koleksiyon, Veri kümesi
+    * sol tarafta da bu elindeki koleksiyonun içinde sen her bir elemanı tek tek elde etmeyecek misin iterasyonla elde edeceksin işte her bir elemanı elde ederken sen bu elemanları temsil edeceğin bir değişken tanımlamalısın.
+    * Veri kaynağında her bir iterasyonda sana gelecek elde edilecek o anki değer nesne hangisiyse onu sen buradaki değişkenle temsil edebileceksin.
+    * Diyelim bir koleksiyonu sen `foreach` iterasyonuyla itere ediyorsun verdikten sonra her bir iterasyon adımında her bir nesneyi tek tek buradaki değişken temsil edecek ve işlemini yapacaktır. Bu işlem iterasyon sonlanana kadar devam edecektir. Yani ta ki elimizdeki veri kümesinin değerleri içindeki veriler bitene kadar buradaki işlem gerçekleştirilecektir.
+    * Tabikide elindeki veri kümesinein sana vereceği içindeki elemanlara uygun o elemanları karşılayabilecek bir değişken tanımlaman gerekiyor.
+
+- C#'ta bir kalıp vardır o kalıbın yanında parantezle içerisine belirli parametreler aktarılır. `while`da, `for`da,`do while`'da, `foreach`de böyle yani birçok semantikte barındırılan yapıyla ilgili çalışmamız bu şekilde olacaktır. Haliyle compiler gelirken bakacak burada `foreach` mi var. Bu `foreach` ile ilgili işlem yapılacaksa parantez içindeki parametrelere göre yapayacağını anlayacaktır.
+
+<img src="2.png" width="auto">
+
+- Dizilerde yapılan çalışmada dizinin kombinasyonu değiştiğinde dizi devam edebiliyor çalışmasına ama `foreach`in çalışmasını sağlayan yapılanma neydi ilgili koleksiyondu/veri kümesiydi/diziydi. İşte bu koleksiyonda/veri kümesinde/dizide bir değişiklik olduğu zaman bizim `foreach` yapılanmamız patlıyor yani çalışmasına devam edemiyor.
+
+- Biz `foreach` yapılanmasını kullanıyorsak mümkün mertebe kaynağı/veri kümesini değiştirmemeliyiz. Kayna değişecekse veri kümesindeki eleman sayısı oynayacaksa bu şekildeki operasyonlarda döngü kullanmalıyız.
+
+```C#
+#Foreach İterasyonu
+ArrayList sayilar = new ArrayList { 123, 123, 325, 2, 534, 5, 345, 345 };
+
+foreach (object item in sayilar)
+{
+    System.Console.WriteLine(item);
+}
+
+foreach (object item in sayilar)
+{
+    sayilar.Add(123123123);
+    System.Console.WriteLine(item);
+}
+```
