@@ -176,3 +176,26 @@ for (int i = 0; i < _yaslar.Count; i++)
     toplam += (int)_yaslar[i];
 }
 ```
+
+***
+# 362) ArrayList Collection Initializers(Koleksiyon İlklendirici)
+- Dizilerde nasıl ki tanımlama varyasyonları mevcuttu `ArrayList`te de bir başka varyasyon mevcut. Esasında biz bu varyasyona Collection Initializers diyeceğiz.
+
+- `ArrayList`lere istediğimiz tipte değer atayabiliriz. Çünkü `object` türü tüm değerleri karşılayabilir.
+
+- Dizilere değer atarken dizinin türü neyse o türde bir değer vermen gerekiyordu. Ama gel gör ki `ArrayList` `object` türde temelde çalıştığından dolayı `object`in karşılayabildiği bütün türleri verebilirsin.
+
+- `ArrayList`in içine verilen birden fazla farklı türdeki değerlerin üzerinde çalışırken bu değerlerin hangi türde olduğunu kontrol edip ona göre operasyonlara tabi tutmanız gerekecektir. 
+
+```C#
+#ArrayList
+#ArrayList Collection Initializers(Koleksiyon İlklendirici) İle Değer Ekleme
+
+ArrayList arrayList = new ArrayList() 
+{ 
+    "Ahmet",
+    123,
+    'a',
+    true 
+};
+```
