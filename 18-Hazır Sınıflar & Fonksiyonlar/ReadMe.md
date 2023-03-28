@@ -58,3 +58,17 @@ title: 366) C#'da Hazır Sınıflar ve Fonksiyonlar Nedir?
 int i = Math.Abs(5);
 int i2 = Math.Abs(-5);
 ```
+
+***
+# 368) Math Sınıfı - Ceiling Fonksiyonu
+- Yazılımda matematiğe ihtiyacınız varsa eğer bu matematiği genellikle yuvarlama üzerinden olabilmekte. Yani elinizdeki herhangi bir küsüratlı değeri yuvarlayıp tam sayıya dönüştürmeniz gerekebilir.
+
+- Elimizdeki herhangi bir ondalıklı değeri tam sayıya dönüştürürken yukarıya yuvarlayarak dönüştürür. 
+
+- Parametre olarak `double` ya da `decimal` alabilir ve sonuç olarak bizlere `double` döndürür.
+
+```C#
+#Math Sınıfı
+#Ceiling
+System.Console.WriteLine(Math.Ceiling(3.14));
+```
