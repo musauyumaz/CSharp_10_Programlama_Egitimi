@@ -84,3 +84,17 @@ System.Console.WriteLine(Math.Ceiling(3.14));
 #Floor
 System.Console.WriteLine(Math.Floor(3.14));
 ```
+
+***
+# 370) Math Sınıfı - Round Fonksiyonu
+- Elimizdeki ondalık değerin kendisine en yakın olan tam sayıya yuvarlanma işlemini sağlayan bir fonksiyondur. Bu fonksiyon sayesinde siz elinizde bir işlem neticesinde üretmiş olduğunuz ondalıklı değeri herhangi bir kontrole ya da işleme bir iradeye sahip olmaksının en yakın olan tam sayıya direkt yuvarlayabiliyorsunuz.
+
+- Tam ortadayken rastgele tercih yapmaz. Bu bir kabuldür. O bişeyin yarısı tamamına genellemedir. Örneğin birşeyin yarısı yanlışsa tamamı yanlıştır. Matematiksel bir mantık yürüterek tamamına gidebilirsiniz. Yarısına gelmiş bundan sonra gideceği yer üste doğru yukarı doğru yuvarlama işlemini gerçekleştirecektir.
+
+```C#
+#Math
+#Round
+System.Console.WriteLine(Math.Round(3.4));
+System.Console.WriteLine(Math.Round(3.5));
+System.Console.WriteLine(Math.Round(3.6));
+```
