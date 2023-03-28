@@ -41,3 +41,20 @@ title: 366) C#'da Hazır Sınıflar ve Fonksiyonlar Nedir?
 #Next Fonksiyonu
 #NextDouble Fonksiyonu
 ```
+
+***
+# 367) Math Sınıfı - Abs Fonksiyonu
+- `Math` sınıfına ihtiyacımız var operasyon yapacaksın herhangi bir işlem yapman lazım matematiksel. Haliyle Math sınıfını önce çağırman lazım ardından ilgili fonksiyonu çağıracaksın.
+
+- Direkt `Math` yazınca gelecektir herhangi bir namespace'i kütüphaneyi using etmeye gerek yok. `System` kütüphanesi altındadır. Bu yüzden using'lere `System` namespace'i eklenmiş olması gerekir. Dolayısıyla varsayılan olarak `System` her daim ekli geleceğinden dolayı yani using edilmiş olarak geleceğinden dolayı `Math`te `System`ın altında bir sınıf olduğundan dolayı direkt hangi C# dosyasında çalışırsanız çalışın direkt gelecektir.
+
+- `Abs` mutlak değer işlemi yapar. Sizin elinizdeki herhangi bir sayısal değerin bu fonksiyon sonunda değeri 0'dan büyük olacaktır. Operasyon olarak bir matematiksel işlemde bir sayısal değeri mutlak değere tabi tutuyorsanız ilgili değeri pozitif olarak geri döndürecektir.
+
+```C#
+#Math Sınıfı
+#Abs
+//Mutlak Değer
+//Absolute Value
+int i = Math.Abs(5);
+int i2 = Math.Abs(-5);
+```
