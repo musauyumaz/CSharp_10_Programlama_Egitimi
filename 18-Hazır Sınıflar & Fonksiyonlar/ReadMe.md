@@ -65,10 +65,22 @@ int i2 = Math.Abs(-5);
 
 - Elimizdeki herhangi bir ondalıklı değeri tam sayıya dönüştürürken yukarıya yuvarlayarak dönüştürür. 
 
-- Parametre olarak `double` ya da `decimal` alabilir ve sonuç olarak bizlere `double` döndürür.
+- Parametre olarak `double` ya da `decimal` alabilir ve sonuç olarak bizlere `double` değer verirsek `double`, `decimal` değer verirsek `decimal` döndürür.
 
 ```C#
 #Math Sınıfı
 #Ceiling
 System.Console.WriteLine(Math.Ceiling(3.14));
+```
+
+***
+# 369) Math Sınıfı - Floor Fonksiyonu
+- `Ceiling` fonksiyonunun tam tersi olarak elimizdeki herhangi bir küsüratlı sayıyı aşağıya yuvarlamak istiyorsak `Floor` fonksiyonunu kullanabiliriz.
+
+- Parametre olarak `double` ya da `decimal` alabilir ve sonuç olarak bizlere `double` değer verirsek `double`, `decimal` değer verirsek `decimal` döndürür.
+
+```C#
+#Math
+#Floor
+System.Console.WriteLine(Math.Floor(3.14));
 ```
