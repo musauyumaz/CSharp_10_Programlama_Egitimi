@@ -132,3 +132,15 @@ System.Console.WriteLine(Math.Sqrt(55));
 #Truncate
 System.Console.WriteLine(Math.Truncate(3.14));
 ```
+
+***
+# 374) DateTime - Now Özelliği
+- Bir yazılımda en çok kullanılan hazır fonksiyonlar nedir derseniz eğer `string` fonksiyonlarından sonra `DateTime` fonksiyonları diyebiliriz.
+
+- `Now` şimdiki zamanı döndüren şimdi, o an o kodun tetiklendiği andaki zamanı milisaniyeye kadar döndüren bir property'dir. Property dışarıdan parametre almaz sadece sana değer döndürür.
+
+```C#
+#DateTime Struct'ı
+#Now
+System.Console.WriteLine(DateTime.Now);
+```
