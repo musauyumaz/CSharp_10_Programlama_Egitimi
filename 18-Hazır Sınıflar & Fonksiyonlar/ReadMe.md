@@ -122,3 +122,13 @@ System.Console.WriteLine(Math.Sqrt(4));
 System.Console.WriteLine(Math.Sqrt(16));
 System.Console.WriteLine(Math.Sqrt(55));
 ```
+
+*** 
+# 373) Math Sınıfı - Truncate Fonksiyonu
+- Bazen matematiksel işlemler neticesinde üretmiş olduğumuz ondalıklı değerlerin sadece tam sayısını elde etmek isteyebiliriz. Bakın burada dikkat etmeniz gereken nokta şu elinizdeki ondalıklı değeri tam sayılara yuvarlamak değil sadece elindeki değerin tam sayı kısmını elde etmek isteyebilirsin. Yani `Ceiling`, `Round`, `Floor` ile yapmış olduğumuz değilde yani sadece yuvarlama yapmadan ilgili tamsayı değerini elde etmek istiyorsan `Truncate`i kullanabilirsin.
+
+```C#
+#Math
+#Truncate
+System.Console.WriteLine(Math.Truncate(3.14));
+```
