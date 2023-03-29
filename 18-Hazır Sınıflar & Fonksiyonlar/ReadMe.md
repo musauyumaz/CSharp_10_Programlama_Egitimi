@@ -1,5 +1,5 @@
 ---
-modified: 2023-03-28T02:11:54.404Z
+modified: 2023-03-29T10:05:27.404Z
 title: 366) C#'da Hazır Sınıflar ve Fonksiyonlar Nedir?
 ---
 
@@ -97,4 +97,16 @@ System.Console.WriteLine(Math.Floor(3.14));
 System.Console.WriteLine(Math.Round(3.4));
 System.Console.WriteLine(Math.Round(3.5));
 System.Console.WriteLine(Math.Round(3.6));
+```
+
+***
+# 371) Math Sınıfı - Pow Fonksiyonu
+- Bazen yazılımsal olarak herhangi bir sayının üssünü almanız gerekebilir. Örneğin 7'nin 9. kuvvetti nedir diye merak ettiğimizde bunun için fonksiyon oluşturmanız gerekecektir. Tabi böyle bir durumda fonksiyon oluşturup bununla ilgili işlemler yapmaktansa matematikteki `Pow` fonksiyonunu kullanabilirsiniz. Direkt üs almanızı sağlayacak olan bir fonksiyondur.
+
+- Sonuç olarak `double` döner çünkü üs alma neticesinde büyük bir değer dönebilir.
+
+```C#
+#Math Sınıfı
+#Pow
+System.Console.WriteLine(Math.Pow(7, 9));
 ```
