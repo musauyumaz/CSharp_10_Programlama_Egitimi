@@ -144,3 +144,14 @@ System.Console.WriteLine(Math.Truncate(3.14));
 #Now
 System.Console.WriteLine(DateTime.Now);
 ```
+
+***
+# 375) DateTime - Today Özelliği
+- `Today` property'si ise tetiklendiği andaki tarih bilgisini getirir. `Now` property'si tetiklendiği an tarih zaman bilgisini getirirken `Today` sadece tarih bilgisini getirir.
+
+```C#
+#DateTime Struct'ı
+#Today
+System.Console.WriteLine(DateTime.Now);
+System.Console.WriteLine(DateTime.Today);
+```
