@@ -110,3 +110,15 @@ System.Console.WriteLine(Math.Round(3.6));
 #Pow
 System.Console.WriteLine(Math.Pow(7, 9));
 ```
+
+***
+# 372) Math Sınıfı - Sqrt Fonksiyonu
+- Elimizdeki değerlerin 2.dereceden kökünü yani karekökünü almak istiyorsanız `Sqrt` fonksiyonunu kullanabilirsiniz.
+
+```C#
+#Math Sınıfı
+#Sqrt
+System.Console.WriteLine(Math.Sqrt(4));
+System.Console.WriteLine(Math.Sqrt(16));
+System.Console.WriteLine(Math.Sqrt(55));
+```
