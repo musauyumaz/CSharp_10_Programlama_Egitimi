@@ -254,3 +254,17 @@ System.Console.WriteLine(random.Next()); //0 - ....
 System.Console.WriteLine(random.Next(100)); //0 - 100
 System.Console.WriteLine(random.Next(50, 100)); //50 - 100
 ```
+
+***
+# 380) Random Sınıfı - NextDouble Fonksiyonu
+- `NextDouble` Fonksiyonu ile `Random` sınıfımız 0 ile 1 arasında rastgele bir sayı üretir.
+
+- Bu sayıların mükerrer olma ihtimali çok düşüktür.
+
+```C#
+#Random Sınıfı
+#NextDouble Fonksiyonu
+Random random = new Random();
+while (true)
+    System.Console.WriteLine(random.NextDouble());
+```
