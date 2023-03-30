@@ -208,3 +208,18 @@ System.Console.WriteLine("AddTicks : "+DateTime.Now.AddTicks(999));
 #AddYears
 System.Console.WriteLine("AddYears : "+DateTime.Now.AddYears(999)); 
 ```
+
+***
+# 378) TimeSpan Türü İle İki Tarih Farkının Karşılanması
+- İki tarih arasındaki farkı `TimeSpan` türüyle karşılayabilirsiniz. İki `DateTime` arasındaki farkı `-` operatörünü kullanarak alabilirsiniz.
+
+- Operatör Overloading dediğimiz işlem var. Biz operatörleri farklı türlerde de `class` yapılarında nesneler üzerinde vs işlem yapabilir hale getiriyoruz. Yani onlara ekstradan çoklu yükleme yapabiliyoruz.
+
+```C#
+#TimeSpan Struct'ı
+DateTime t1 = DateTime.Now;
+DateTime t2 = new DateTime(2000,1,1);
+TimeSpan span = t1 - t2;
+System.Console.WriteLine(span.Days);
+System.Console.WriteLine(span.Minutes);
+```
