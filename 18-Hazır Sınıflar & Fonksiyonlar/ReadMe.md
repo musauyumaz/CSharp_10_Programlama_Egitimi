@@ -1,5 +1,5 @@
 ---
-modified: 2023-03-29T10:05:27.404Z
+modified: 2023-03-30T10:08:10.390Z
 title: 366) C#'da Hazır Sınıflar ve Fonksiyonlar Nedir?
 ---
 
@@ -154,4 +154,29 @@ System.Console.WriteLine(DateTime.Now);
 #Today
 System.Console.WriteLine(DateTime.Now);
 System.Console.WriteLine(DateTime.Today);
+```
+
+***
+# 376) DateTime - Compare Fonksiyonu
+- Yazılım süreçlerinde iki tarihsel değer arasında karşılaştırma yapma ihtiyacı hissedebiliriz. Dolayısıyla bu ihtiyaca istinaden `Compare` fonksiyonunu da kullanabiliriz.
+
+- `Compare` fonksiyonu vermiş olduğumuz iki tarihi kıyaslayarak sonuç olarak `int` bir değer döndüren fonksiyondur.
+
+- `Compare` fonksiyonu -1, 0, 1 değerlerini döndürür.
+    * -1 ise ilk değer ikinci değerden küçük yani geride bir zaman
+    * 0 ise iki değerde eş zaman
+    * 1 ise ilk değer ikinci değerden büyük yani ileri bir zaman.
+
+```C#
+#DateTime Struct'ı 
+#Compare
+DateTime tarih1 = new DateTime(2022, 01, 01);
+DateTime tarih2 = new DateTime(2023, 01, 01);
+int result = DateTime.Compare(tarih1, tarih2);
+if (result < 0)
+    System.Console.WriteLine($"{tarih1} küçüktür {tarih2}");
+else if (result == 0)
+    System.Console.WriteLine($"{tarih1} eşittir {tarih2}");
+else
+    System.Console.WriteLine($"{tarih1} büyüktür {tarih2}");
 ```
