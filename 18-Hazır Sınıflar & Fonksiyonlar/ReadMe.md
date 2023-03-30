@@ -223,3 +223,34 @@ TimeSpan span = t1 - t2;
 System.Console.WriteLine(span.Days);
 System.Console.WriteLine(span.Minutes);
 ```
+
+***
+# 379) Random Sınıfı - Next Fonksiyonu
+- `Random` ile operasyon yapabilmek için bir nesne üretmemiz gerekecektir.
+
+- `Random` adı üstünde rastgele sayısal değer oluşturmamızı sağlayan bir sınıftır.
+
+- Algoritmalarda böyle değerlere bazen ihtiyacımız olacaktır.
+
+- `Random` sınıfının dışında farklı mimaride de sınıflar var rastgele sayı oluşturmanızı sağlayan.
+
+- `Random` sınıfında belirli bir aralıkta tam sayısal değer oluşturmak istiyorsanız `Next` fonksiyonunu kullanabilirsiniz.
+
+- `Random.Next();` 0 ile `Integer.MaxValue` arasında değer üretecektir.
+- `Random.Next(100);` 0 ile 100 arasında değer üretecektir.
+    * Max değer aralığını belirtebilirsiniz.
+- `Random.Next(50,100);` 50 ile 100 arasında değer üretecektir.
+    * Min ve Max değer aralığını belirtebilirsiniz.
+
+- Belirttiğiniz Minimum değer dahilken Maximum değer dahil değildir.
+
+- Sayısal değerlerde sadece pozitif değerleri size döndürecektir. Negatif değer üretmeyecektir. Eğer ki negatif değere ihtiyacın varsa üretilen değeri -1 ile çarpabilirsin.
+
+```C#
+#Random Sınıfı
+#Next Fonksiyonu
+Random random = new Random();
+System.Console.WriteLine(random.Next()); //0 - ....
+System.Console.WriteLine(random.Next(100)); //0 - 100
+System.Console.WriteLine(random.Next(50, 100)); //50 - 100
+```
