@@ -180,3 +180,31 @@ else if (result == 0)
 else
     System.Console.WriteLine($"{tarih1} büyüktür {tarih2}");
 ```
+
+***
+# 377) DateTime - Tarihsel Zamana Saat, Gün, Ay, Yıl Ekleyerek Sonucu Hesaplamak
+- `DateTime` fonksiyonları arasında en çok kullanacağımız fonksiyonlardan diğerleri ise `Add` fonksiyonlarıdır. Elimizdeki herhangi bir tarihsel zamanın üzerine filanca gün eklediğimizde şu kadar zaman eklediğimizde hangi tarih oluşuyor vs. gibi sormak istiyorsak bunu bu fonksiyonlarlar gerçekleştirebiliriz.
+
+- Bu fonksiyonlar operasyonlar inanılmaz bizim işimize yarıyor çünkü yeri gelecek bazı token'ları falan kontrol etmeniz gerekecek. Bunlar senin için önemli. Buradaki tarihin zamanını bildirebilmek elindeki bir yapının ne kadar bir ömre sahip olduğunu oraya ifade edebilmek için bu fonksiyonları kullanırız. Mesela bunun ömrü şimdiden itibaren 5 dk geçerlidir demek için kullanılır.
+
+```C#
+#DateTime Struct'ı
+#AddDays
+System.Console.WriteLine("AddDays : "+DateTime.Now.AddDays(999)); 
+#AddHours
+System.Console.WriteLine("AddHours : "+DateTime.Now.AddHours(999)); 
+#AddMicroSeconds
+System.Console.WriteLine("AddMicroSeconds : " + DateTime.Now.AddMicroseconds(999));
+#AddMilliseconds
+System.Console.WriteLine("AddMilliseconds : "+DateTime.Now.AddMilliseconds(999)); 
+#AddMinutes
+System.Console.WriteLine("AddMinutes : "+DateTime.Now.AddMinutes(999)); 
+#AddMonths
+System.Console.WriteLine("AddMonths : "+DateTime.Now.AddMonths(999)); 
+#AddSeconds
+System.Console.WriteLine("AddSeconds : "+DateTime.Now.AddSeconds(999)); 
+#AddTicks
+System.Console.WriteLine("AddTicks : "+DateTime.Now.AddTicks(999)); 
+#AddYears
+System.Console.WriteLine("AddYears : "+DateTime.Now.AddYears(999)); 
+```
