@@ -20,6 +20,6 @@
 - ## [DİZİLERDE VERİSEL PERFORMANS](https://github.com/musauyumaz/CSharp_10_Programlama_Egitimi/blob/main/14%20-%20Dizilerde%20Verisel%20Performans/ReadMe.md)
 - ## [REGULAR EXPRESSIONS(DÜZENLİ İDADELER)](https://github.com/musauyumaz/CSharp_10_Programlama_Egitimi/blob/main/15-Regular%20Expressions(D%C3%BCzenli%20%C4%B0fadeler)/ReadMe.md)
 - ## [KOLEKSİYON YAPILARI](https://github.com/musauyumaz/CSharp_10_Programlama_Egitimi/blob/main/16-Koleksiyon%20Yap%C4%B1lar%C4%B1/ReadMe.md)
-- ## [FOREACH İTERASYONU](https://github.com/musauyumaz/CSharp_10_Programlama_Egitimi/tree/main/17-Foreach%20Iterasyonu)
+- ## [FOREACH İTERASYONU](https://github.com/musauyumaz/CSharp_10_Programlama_Egitimi/blob/main/17-Foreach%20Iterasyonu/ReadMe.md)
 - ## [HAZIR SINIFLAR & FONKSİYONLAR](https://github.com/musauyumaz/CSharp_10_Programlama_Egitimi/blob/main/18-Haz%C4%B1r%20S%C4%B1n%C4%B1flar%20%26%20Fonksiyonlar/ReadMe.md)
 - ## [METOTLAR(FUNCTIONS)](https://github.com/musauyumaz/CSharp_10_Programlama_Egitimi/blob/main/19-Metotlar(Functions)/ReadMe.md)
