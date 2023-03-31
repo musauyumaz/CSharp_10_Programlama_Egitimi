@@ -22,3 +22,4 @@
 - ## [KOLEKSİYON YAPILARI](https://github.com/musauyumaz/CSharp_10_Programlama_Egitimi/blob/main/16-Koleksiyon%20Yap%C4%B1lar%C4%B1/ReadMe.md)
 - ## [FOREACH İTERASYONU](https://github.com/musauyumaz/CSharp_10_Programlama_Egitimi/tree/main/17-Foreach%20Iterasyonu)
 - ## [HAZIR SINIFLAR & FONKSİYONLAR](https://github.com/musauyumaz/CSharp_10_Programlama_Egitimi/blob/main/18-Haz%C4%B1r%20S%C4%B1n%C4%B1flar%20%26%20Fonksiyonlar/ReadMe.md)
+- ## [METOTLAR(FUNCTIONS)](https://github.com/musauyumaz/CSharp_10_Programlama_Egitimi/blob/main/19-Metotlar(Functions)/ReadMe.md)
