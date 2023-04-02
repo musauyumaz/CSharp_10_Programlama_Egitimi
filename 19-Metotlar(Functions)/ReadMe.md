@@ -203,3 +203,41 @@ ihtiyacın neyse onu yap. Sadece geriye bir değer döndürmüyor dışarıdan d
     System.Console.WriteLine("Geriye Değer Döndürmeyen, Parametre Almayan Metot oluşturuldu");
 }
 ```
+
+***
+# 386) Metot Tanımlama/Oluşturma Varyasyonları - Geriye Değer Döndürmeyen Parametre Alan Metot Türü
+- Eğer ki yapacağınız operasyon geriye herhangi bir değer döndürmeyecek ama dış dünyadan herhangi bir değer alacaksa bu şekilde bir imzada fonksiyon oluşturmamız gerekecektir.
+
+- Yine fonksiyon oluştururken erişim belirleyicisi ile başlayacağız. Geriye değer döndürmediği için `void` keywordünü kullanırız. Daha sonra bir isim veririz. Şimdi bunun parametre alabilmesi için parametre alan bir fonksiyon olabilmesi için burada benim herhangi bir türde parametre tanımlamam gerekiyor.
+
+- `void` keywordünü gördüğünde aklına ne gelecek? bu metot geriye herhangi bir değer göndermiyor/döndürmüyor.
+
+- Metotlardaki parametrelerde normal bildiğiniz değişkenlerin ta kendileridir.
+
+- Metotlarda sınırsız sayıda parametre değeri girebilirsiniz. 
+
+- Parametreler bizim için normal bildiğiniz değişkenlerdir.
+
+- Oluşturmuş olduğunuz metotlardaki parametre değerlerine metodun gövdesinden yani scope'undan yani bir başka deyişle faaliyet alanında erişebilmekteyiz. Ve bu değerleri içeride kullanabilmekteyiz.
+
+- Eğer ki bir değişken metodun parametre kısmında tanımlanıyorsa biz buna terminolojik olarak parametre diyeceğiz. Yok eğer bu değişken metodun içerisinde ya da `class`ın içerisinde tanımlanıyorsa biz buna değişken diyeceğiz. Hatta OOP'ye geçtiğimizde orada göreceksiniz ki bir değişken `class`ın içerisinde tanımlanıyorsa buna biz field diyeceğiz. Yani tanımlandığı yere göre ismi değişiyor. Çünkü sorumluluğu değişiyor. Davranışı değişiyor.
+
+- Geriye değer döndürmeyen parametre kaç tane olursa olsun en az bir tane aldığı sürece parametre alan bir fonksiyon oluşturduk.
+
+- Bir iş yaparken oluşturacağınız fonksiyonun ulan geriye değer döndüren parametre alan diye düşünmenize gerek yok. Yapacağınız iş hangi türde fonksiyon oluşturmanız gerektiğini size söyleyecektir.
+
+- Bir fonksiyonun geriye değer dönüp dönmemesi bir parametre alıp almaması senin yapacağın işle/senle alakalıdır. Bunu belirleyecek olan iş ve sensin.
+
+```C#
+#Geriye Değer Döndürmeyen, Parametre Alan Metot
+public void Metot2(int a)//Burada `int` türünde a isminde bir değişken tanımladım artık oldu mu sana geriye değer döndürmeyen parametre alan bir fonksiyon.
+{
+} 
+public void Metot3(int a, bool b)
+{
+}
+public void Metot2(int a, bool b, char c)
+{
+    
+}
+```
