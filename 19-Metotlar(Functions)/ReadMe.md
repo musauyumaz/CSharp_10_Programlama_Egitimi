@@ -1,5 +1,5 @@
 ---
-modified: 2023-03-31T15:21:54.882Z
+modified: 2023-04-03T10:09:50.234Z
 title: 381) Metot Nedir? Bir Programcı Gözünden Ne İşe Yarar?
 ---
 
@@ -224,7 +224,7 @@ ihtiyacın neyse onu yap. Sadece geriye bir değer döndürmüyor dışarıdan d
 
 - Geriye değer döndürmeyen parametre kaç tane olursa olsun en az bir tane aldığı sürece parametre alan bir fonksiyon oluşturduk.
 
-- Bir iş yaparken oluşturacağınız fonksiyonun ulan geriye değer döndüren parametre alan diye düşünmenize gerek yok. Yapacağınız iş hangi türde fonksiyon oluşturmanız gerektiğini size söyleyecektir.
+- Bir iş yaparken oluşturacağınız fonksiyonun ulan Updageriye değer döndüren parametre alan diye düşünmenize gerek yok. Yapacağınız iş hangi türde fonksiyon oluşturmanız gerektiğini size söyleyecektir.
 
 - Bir fonksiyonun geriye değer dönüp dönmemesi bir parametre alıp almaması senin yapacağın işle/senle alakalıdır. Bunu belirleyecek olan iş ve sensin.
 
@@ -239,5 +239,62 @@ public void Metot3(int a, bool b)
 public void Metot2(int a, bool b, char c)
 {
     
+}
+```
+
+***
+# 387) Metot Tanımlama/Oluşturma Varyasyonları - Geriye Değer Döndüren Parametre Almayan Metot Türü
+- Bu fonksiyonlarda geriye programatik kesinlikle bir değer döndüreceğiz. Bu değerden kastımız herhangi bir türdeki değer olabilir. `int`/`ahmet`/`mehmet`/`char` olabilir. `string`/`boolean` aklına ne geliyorsa olabilir. Amma velakin dışarıdan parametre alıyor mu almıyor mu ona göre zaten varyasyonlarımızı değerlendireceğiz.
+
+- ` [erişim belirleyici] [geri dönüş değeri] [Metot Adi](........){}`  Yine aynı imzaya sahip olmalı.
+    * İlk olarak erişim belirleyiciyi yazarız. 
+    * Ardından geriye değer döndüren fonksiyon oluşturacaksak eğer `void` diyemeyiz. Onun yerine döndüreceğimiz türü bildirmeliyiz. 
+    * Ardından ismini bildirmeliyiz.
+
+- geriye değer döndüren fonksiyon oluşturacaksak eğer buna `void` diyemeyiz. `void`de geriye bir değer döndürmediğinizi ifade ediyordunuz. Artık geriye bir değer döndüreceğinizi bildirmeniz gerekiyor. `int` gibi `bool` gibi `char` gibi geriye değer döndüreceğiniz değerin türünü bildirmeniz gerekiyor. Bunu bildirerek benim fonksiyonum geriye bildirdiğim türde değer döndürecek demiş oluyoruz.
+
+- Eğer ki bir metot geriye herhangi bir türde değer döndüreceğini ifade ediyorsa yani herhangi bir türde ben geriye değer döndüreceğim diyorsa kesinlikle o türde bir değer DÖNDÜRMELİDİR!!! Aksi taktirde HATA VERİR.
+
+<img src="8.png" width="auto">
+
+- Bir metot geriye değer döndüreceğim diyorsa ve biz eğer ki içeride/metot gövdesinde belirtilen türde değer döndürme yapmazsak eğer hata verir. Geriye değer döndüren fonksiyonlarda geriye bir değer döndürmek zorunludur. 
+
+- Geriye değer döndüren fonksiyonlarda ilgili türde geriye bir değer döndürebilmemiz için `return` keywordünü kullanmaktayız. `return` geriye değer döndüren fonksiyonlarda değeri döndürmemizi sağlayan bir keyworddür. Kodun içerisinde herhangi bir yerde `return` diyip geri dönüş türüm neyse o türde bir değer döndürürüz.
+
+- Geriye değer döndüren fonksiyonlarda bildirilen türde bir değer döndürebilmek için `return` keywordünü kullanmamız gerekmektedir. `return` keywordü ilgili fonksiyonda geriye değer döndürmemizi sağlıyor. 
+
+- `return`; nerede işlenirse orada ilgili fonksiyondan/metottan çıkılır. Yani bir fonksiyon içerisinde herhangi bir yerde `return` komutunu tetiklettiysem o fonksiyon komple sona erecektir. Dolayısıyla bunun ikinci sorumluluğuda burada devreye giriyor. `return` tetiklendiği yerde ilgili fonksiyondan çıkış yaparken bir yandan da eğer ki o fonksiyon geriye değer döndürüyorsa değer de döndürmeni sağlayan bir keyworddür.
+
+<img src="9.png" width="auto">
+
+- Biz belirli şartlara göre geriye değer döndürebiliriz.
+
+- Belirli bir şarta göre değer döndüreceğiniz durumlar varsa şunu sakın demeyin. Ben `return`ü kullandığım halde hala bu hata veriyor. Niye veriyor. Şimdi compiler az buçuk bunu da bir yapay zeka olarak düşünün. Nihayetinde diyor ki adam sana şartın `false` olduğu durumlarda da bu fonksiyonu çağırdığında ilgili fonksiyon geriye yine bir değer döndürebilmelidir. Yani şartın her iki durumunda da değer döndürmen gerekir. Bunu unutmayacaksın aksi taktirde yine hata verecektir.
+
+- İçeride bir condition kullanıyorsan eğer tüm durumlara göre `return` değeri döndürmen gerekiyor. 
+
+- Bir metot geriye değer döndürecekse döndüreceği değerin türü neyse bildirilmelidir. 
+
+- Aynı şekilde eğer ki bir metot geriye değer döndürecekse yani bildirim yapıldıysa kesinlikle geriye bir değer döndürmelidir.
+
+- Bildirilen tür ne ise o türe uygun değerler döndürülmelidir. Eğer ki sen `char` dediğin halde `bool` bir değer döndürmeye çalışırsan derleyici hatası alırsın. Zaten bu programlamada da geçerli olan bir ahlak. Elimdeki herhangi bir değişkene o değişken türünden değer nasıl atıyorsam elinde bir türü yani geri dönüş türü her neyse o türden bir değeri geriye döndürebiliyorum. Hep tür neyse o türdeki değerlerle çalışabiliyorum. Zaten programlamanın temel mantığı buradan gelir.
+
+- Bir fonksiyonu oluştururken eğer ki `private` olacaksa yani dışarıdan erişilmesini istemiyorsanız `private` keywordünü kullanmanıza gerek yok. Yazsan da `private` `private`tır. Yazmadığın taktirde de C# programlama dilinde default olarak tanımlanan erişim belirleyicisi yine `private` olacaktır. Eğer ki `public` olmasını istiyorsan o zaman gidip iradenle bunu yazman gerekecektir.
+
+- Fonksiyonda geriye değer döndürme sürecinde artık değeri nerede döndürüyorsanız ilgili yerde `return` keywordünü zaten kullanmak zorundasınız. Koca programlamada `return`den başka geriye değer döndüren bir keyword yok. 
+
+- `return`ü kodun içinde görüyorsanız bilin ki ilgili fonksiyonun değerini sonlandırıyor ve varsa yanında bir değer o değeri de geri döndürüyor. Haliyle yazmış olduğunuz algoritmanın içinde `return`le herhangi bir değeri döndürüyorsanız orada fonksiyon sona erecek ve oradaki değeri geriye döndürecektir. Sonraki `return`lerin hiçbirini tetiklemeyecektir. Bu `return`ün normal davranışı olarak bizlere yansımaktadır.
+
+```C#
+#Geriye Değer Döndüren, Dışarıdan Parametre Almayan Metot
+private char Metot5()//Metot5 isminde dışarıdan erişilemeyen geriye de `char` türünden bir değer döndüren fonksiyon oluşturmuş olduk. Eğer ki bu fonksiyon geriye değer döndüreceğini bildirdiği halde değer döndürmezse hata verir. Aynı şekilde geriye değeri `return` ile döndürdüğümde hata da gidiyor.
+{
+    return 'a';
+}
+private int Metot6()
+{
+    if (DateTime.Now.Second > 10)
+        return 5;
+    return 123;
 }
 ```
