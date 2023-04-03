@@ -298,3 +298,34 @@ private int Metot6()
     return 123;
 }
 ```
+
+***
+# 388) Metot Tanımlama/Oluşturma Varyasyonları - Geriye Değer Döndüren Parametre Alan Metot Türü
+- Yine aynı şekil metot imzası geçerlidir.
+
+- ` [erişim belirleyici] [geri dönüş değeri] [Metot Adi](........){}`  Yine aynı imzaya sahip olmalı.
+    * İlk olarak erişim belirleyiciyi yazarız. 
+    * Ardından geriye değer döndüren fonksiyon oluşturacaksak eğer `void` diyemeyiz. Onun yerine döndüreceğimiz türü bildirmeliyiz. 
+    * Ardından ismini bildirmeliyiz.
+
+- Bir metot geriye değer döndürüyorsa kesinlikle `return`le bildirilen türde bir değeri geriye döndürmemiz gerekiyordu. Geriye döndürdüğümüz tür bildirdiğimiz türle uyumlu olmalıdır.
+
+- `return [işlem yapılabilir]` keywordü devamında işlem yapmaya müsaade eder. Yani şöyle bir işlem örneğin ternary operatörü ile gelip burada bir değer dönebilirsiniz. Ya da belirli karşılaştırma ya da mantıksal sonuçlar dönebilirsiniz. Eğer ki `bool` türde birşey dönüyorsak. Yani sen ilgili türde değer dönde nasıl işlem yaparsan yap önemli değildir.
+
+- Basit bir hesap makinesi de yapsanız uzaya füzede gönderseniz farketmiyor yapacağınız tüm işlerde kesinlikle bu 4 varyasyondan birini oluşturmanız gerekecek. Bunun dışında başka bir varyasyon yok. 
+
+- Siz bir operasyon yaparken bir metot oluşturacaksanız eğer ulan ben geriye değer döndüren mi oluşturacam parametre alacak mı vs. diye düşünmene gerek yok. Bunları düşünerek kod yazamazsın. Yapacağın işlemi düşün yapacağın işlem zaten olması gereken fonksiyonu sana koyacaktır/yaptıracaktır. Sen buradan yola çıkarak yapacağın işlemi uygun bir fonksiyon koyamazsın. İşten yola çıkarak o işe uygun fonksiyonu ortaya koyabilirsin.
+
+- Metodu kullanmak demek çağırmak ya da ilgili metodu tetiklemek demektir.
+
+```C#
+#Geriye Değer Döndüren, Parametre Alan Metot
+public bool Metot7(int x)
+{
+    return true || false;
+}
+public int Metot8(int x)
+{
+    return DateTime.Now.Year > 2000 ? 1 : 0;
+}
+```
