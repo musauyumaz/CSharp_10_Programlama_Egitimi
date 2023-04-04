@@ -1,5 +1,5 @@
 ---
-modified: 2023-04-03T10:09:50.234Z
+modified: 2023-04-04T10:02:09.574Z
 title: 381) Metot Nedir? Bir Programcı Gözünden Ne İşe Yarar?
 ---
 
@@ -327,5 +327,104 @@ public bool Metot7(int x)
 public int Metot8(int x)
 {
     return DateTime.Now.Year > 2000 ? 1 : 0;
+}
+```
+
+***
+# 389) Metodun Geriye Değer Döndürmesi Ne Demektir?
+- Metot kod yazma sürecinde bir işlemi bir faaliyeti yani bir fiiliyatı bir operasyonu bir algoritmayı yapıyorsa bunu yapmanı sağlayan ortamı sağlayacak olan yapıdır. Yani bir başka deyişle metot bir işlem/operasyon/algoritma artık bunun gibi bir fiiliyatı yaptığın yegane yerdir. Bir işlem yapacaksan programlamada metodun içerisinde yaparsın. Başka hiçbir yerde yapamazsın.
+    * Veritabanına veri göndermek bir işlem midir? işlemdir. Bir fiiliyat var. Veritabanına veri ekliyorsun. Bir fiiliyatın olduğu bu işlem metodun içinden başka bir yerde yapılamaz. 1 + 1 bir işlem midir? işlemdir. Metodun dışında başka bir yerde yapamazsın. Yani sen dünyanın en iyi programcısı ol metodun dışında 1 ile 1'i toplayamazsın. Onun dışında uzaya da füze gönder. Uzaya füze gönderirken bunu da metodun içinde yapman lazım. Bu da bir işlem yani algoritma gerektiren her türlü süreç metotların içerisinde yapılması gerekir.
+
+- 1 ile 1'i toplayabilmen için kod dosyasının içerisinde illaki bir metodun olması gerekiyor. 1 ile 1'i toplamak bir işlemse bir fiiliyatsa ki fiiliyat bunu metodun dışında yapamazsın.
+
+- Metot en küçük program/algoritma/operasyon/işlem/fiiliyat parçacığıdır... 
+    * Yani sen veritabanına kayıt örneğinden yola çıkarsak bu algoritmayı gerçekleştireceksen bir metodun içinden başka şansın yoktur.
+    * Neden En küçük program parçacığıdır diyorsun da program parçacığıdır demiyorsun?
+        + Diyelim ki ben bir evi temizleyeceğim ben temizlik metoduyum bir yandan da perdeleri asacağım şimdi ben temizlik ve perde asma işleri ayrı işler ayrı fiiliyatlar olduğundan dolayı her ikisini yapabilirim ama ileride SOLID prensiplerini göreceksin. SOLID prensibi der ki bir metot iş yapsa dahi bir metot sadece bir iş yapmalı prensip olarak bunu prensip edin gardaşım der. Dolayısıyla bir metot sadece bir işlem yapacaksa iki tane işlemi yapabilir ama bir tanesine odaklı yap haliyle en küçük işlem yapan program parçacığı olsun mantığında hareket edilir. Bir metot birden fazla işlemi hem temizliği hem perde asmayı yapabilir. Ama ben diyorum ki perdeyi ben asayım temizliği sen yap. Ya da temizliği ben yapayım perdeyi sen as. Yani herkes bir tane iş yapsın. Dolayısıyla ondan dolayı en küçük program parçacığıdır denir. Ama bu en küçük program parçacığında birden fazla sorumluluk iş yaparak küçüklüğünden ziyade daha rezil hani tavsiye edilmeyen birden fazla sorumluluğu olan metotlar oluşturabilirsiniz. Bir yandan toplama işi yapıp bir yandan da veri tabanına kaydetme işlemini de bir metot yapabilir mi yapabilir ama prensip açısından bu doğru değildir. Yapabilirsin ama ilkelere aykırıdır. Dolayısıyla tanım açısından da buraya en küçük kelimesini getiriyoruz.
+
+- Metot program parçacığıdır. Yani iş yapar. En küçük program parçacığı olmasının sebebi bu bizim ilkelerimiz doğrultusunda arzuladığımız halidir.
+
+<img src="10.png" width="auto">
+
+- Metot oluştururken access modifiers'larımızla başlarız.
+    * public => Bu metodun dışarıdan erişilebilir olmasını sağlar.
+
+- Metotlar geriye değer döndürebilen yapılardır. Eğer ki sayısal döndüreceksem `int` diyebilirim. mantıksal döndüreceksem `bool` diyebilirim. hiçbişey döndürmeyeceksem `void` diyebilirim.
+
+- `void` keywordü kullanılıyorsa eğer bu metot iş yapar ama geriye bir değer döndürmez.
+
+- Metodun ne iş yapacaksa ona göre imzayı oluşturuyordun.
+
+- Bir metot geriye değer döndüreceğini bildirdiği halde içeride bir yerde geriye değer döndürmediysen o türde bir değer döndürmediysen hata verir. Der ki ya gardaşım sen bana hem burda değer döndüreceğini söylüyon hemde döndürmüyon bende ondan dolayı hata veriyorum. Değeri `return` keywordüyle döndürebiliriz.
+
+- Oluşturduğum metodu `static` olan Main metodunda kullanabilmek için `static` ile işaretlememiz gerekir.
+
+- Bir metodun geriye değer döndürmesi demek, içeride yapılan işlem neticesinde üretilen sonuçların ekrana yazılması demek DEĞİLDİR!
+
+<img src="11.png" width="auto">
+
+- Metodun değer döndürmesi demek ekrana çıktı vermesi demek değildir.
+
+- Metodun değer döndürmesi demek, metodun yaptığı işlem neticesinde üretilen değeri ekrana/console/veritabanına herhangi bir log ekranına/web uygulamasına yani neresi olursa olsun mobile yani bir çıktı vermesi demek DEĞİLDİR!!!
+
+- `return` ettiğin değer geriye döndürdüğün değerdir.
+
+- Metdoun geriye döndürdüğü değer programatik olarak yakalanıp algoritmanın akışında farklı yönlendirmelere sebebiyet verebilen değerdir!!!
+
+- Metotta bir işlem yapıyorsun yapmış olduğun süreçte işlem neticesinde bir sonuç elde ediyorsun elde ettiğin sonucu sen metotta geriye değer döndürürsen ilgili metodun çağırıldığı yerde o değeri sen yakalayıp algoritmanın devamında o değeri yani geri dönen değeri kullanıp farklı işlemlere tabi tutabiliyorsun. Yani metodun geriye değer döndürdüğü değer algoritmada akışta kullanılabilir değer oluyor.
+
+- Metodun geriye döndürdüğü değer algoritmanın akışında kullanılabilir değerdir!!!
+
+- Ekrana vermiş olduğunuz çıktı algoritmanın akışında kullanılabilir bir çıktı mıdır? Tabikide değildir. Sen ekrana merhaba dünya yazdın ya algoritma nerden bilsin ekrana ne yazdığını. Sen onu evirip çevirip farklı değerler yazabilirsin. Ya da ekrandaki farklı bir makyaja da tabi tutulabilir. Metodun geri dönüş değeri söz konusuysa bizi ekran çıktıları ya da veritabanına yazılanlar ilgilendirmiyor. Bizi metodun geriye dönen değeri bu yapılan işlem ile ilgili bir sonuç geriye döndürür. Bu sonucu da algoritmik olarak değerlendirebiliriz. 
+    * Şimdi bir metodumuz var ve bu metot bir veritabanına personel ekleme operasyonu gerçekleştiriyor. Ama bizim şöyle bir kıstasımız var. Personel 20 yaşın altındaysa veritabanına eklenmesin. Şimdi sen metotta başlıyorsun ilgili değerleri gönderiyorsun. Adını soyadını, medeni halini vs. gönderdin. İçeride ekleme işlemi yapıyor ve buradaki değerleri veritabanına ekliyor. Eğer ki personelin yaşı 20'nin altındaysa eklemiyor. Şimdi sen bu göndermiş olduğun parametrelere uygun personelin veritabanına eklenip eklenmediğini nerden anlıyorsun. Senin metodun geriye `true` ya da `false` döndürüyor. Yakalıyorsun o değeri diyorsun ki eğer metodun döndürdüğü değer `true` ise demek ki veritabanına ekleme işlemi gerçekleştirilmiş Yok eğer `false` ise ekleme işlemi gerçekleştirilmemiş anlamına geliyor. Yani ben daha kodun devamını getiriyorum. Metottan dönen değer her neyse ben onu yakalayıp kodun içerisinde algoritmaya tabi tutabiliyorum. Algoritmamı ona göre şekillendirebiliyorum. Ama sen veritabanına veri kaydetmişsin kaydetmemişsin ekrana merhaba dünya yazmışsın o anda döviz kurunu takip ediyorsun ekranda başka şeyler dönüyor beni onlar ilgilendirmiyor `true` ya da `false`.
+    * Şimdi ben PersonelEkle metodunu kullanırken personelin eklenip eklenmediğini gidip veritabanından kontrol etmeyeceğim bakmayacağım orada he demek ki eklenmiş o zaman bu herif 20'nin üzerindeymiş falan demeyeceğim. Metotta kontrol edip `true` ya da `false` döndüreceğim.
+
+<img src="12.png" width="auto">
+
+- Eğer bir metot geriye değer dönüyorsa aynı türde bir değişkenle ilgili fonksiyonun dönmüş olduğu değeri programatik olarak yakalayıp artık bu sonucun üzerinde farklı işlemler gerçekleştirebilirsin. Fonksiyonun geriye döndürdüğü sonucu değeri yakalayıp algoritmada farklı algoritmaları devreye sokabiliyorum. 
+
+- Ekrana çıktı vermek ilgili metodun geriye döndürdüğü değerle alakalı bişey değildir. İlgili metodun geriye döndürdüğü değer algoritmada yakalanıp kullanılabilir orada tabi edilebilir bir değer oluyormuş.
+
+- Akıştaki metodun yapmış olduğu değere göre sonucu elde edip farklı algoritmaları devreye sokabiliyorum. Bu sonucu farklı bir metoda gönderip orada farklı işlemler yaptırabiliyorum. vs vs vs. Yani anlayacağınız metodun geriye değer döndürmesi demek ekrana çıktı vermek demek değildir bu değeri programatik olarak yakalayıp farklı işlemlere tabi tutabilmemizi sağlayan bir özelliktir metotların yapısal niteliğidir.
+
+- Eğer ki yazılımcı olacaksanız işin felsefesine hakim olmanız lazım haliyle bu felsefelerle bilinç altımızı ya da bilgilerimizi yoğurarak sağlam yazdığımızın ne olduğunu yazarken neyi yazdığımızı ne şekilde yazdığımızı hangi mantıkla yazdığımızı bilelim ki konuya tam hakim olalım. Yani biz bilgisayarla konuşurken kullandığımız dile ne kadar hakim olursak o kadar sağlam anlaşabiliriz. O kadar sağlam yazılımlar ortaya koyabiliriz. Bunlara bu bakış açılarını ne kadar iyi bilirseniz ileri düzeyi daha rahat anlarsınız. Yani bu temelde zorlandığın kadar ileri düzeyde zorlanmayacaksın. 
+
+```C# 
+static void Main(string[] args)
+{
+    int sonuc = Topla(3, 5);
+    if (sonuc > 10)
+    {
+        System.Console.WriteLine("Sonuç 10'dan büyük");
+    }
+    bool sonuc2 = PersonelEkle("Rıfkı","Cümbül",25);
+    if(sonuc2)
+    {
+    }
+    else
+    {
+        
+    }
+    #region Metodun Geriye Değer Döndürmesi Ne Demektir?
+    #endregion
+}
+    
+static public bool PersonelEkle(string adi,string soyadi,int yas)
+{
+    if(yas>= 20)
+    {
+        //....Veritabanına eklendi
+        return true;
+    }else
+    {
+        System.Console.WriteLine("Personel 20'den küçük olamaz!");
+        return false;
+    }
+}
+static public int Topla(int sayi1, int sayi2)
+{
+    int sonuc = sayi1 + sayi2;
+    System.Console.WriteLine(sonuc);//Burada ekrana yazdırdığın değer bu metodun döndürdüğü değer değil.
+    return sonuc;
 }
 ```
