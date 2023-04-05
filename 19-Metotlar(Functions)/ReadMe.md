@@ -1,5 +1,5 @@
 ---
-modified: 2023-04-04T10:02:09.574Z
+modified: 2023-04-05T08:16:11.105Z
 title: 381) Metot Nedir? Bir Programcı Gözünden Ne İşe Yarar?
 ---
 
@@ -426,5 +426,83 @@ static public int Topla(int sayi1, int sayi2)
     int sonuc = sayi1 + sayi2;
     System.Console.WriteLine(sonuc);//Burada ekrana yazdırdığın değer bu metodun döndürdüğü değer değil.
     return sonuc;
+}
+```
+
+***
+# 390) Metotlarda Optional Parameters(İsteğe Bağlı Parametreler)
+- Metotlar parametrik yapılandırmalardır.
+
+- Opsiyonel isteğe bağlı demek ister yap ister yapma. Örneğin sen arkadaşınla akşam görüşecek misin diye sorduğumda ya opsiyonel diyorsun yani belki görüşürüm belki görüşmem. İşte sallıyorum yarın maça gidecek misin opsiyonel belki giderim belki gitmem. Opsiyonel isteğe bağlı belki yaparsın belki yapmazsın.
+
+- Opsiyonel parametreler yani parametreye ister değer gönder ister gönderme.
+
+- Bir metot eğer parametreliyse normal şartlarda o metodu kullanırken/çağırırken/tetiklerken o metodun parametrelerini türlerine uygun değerleri göndermek zorundasın.
+
+- Sen bir metot kullanıyorsan ve o metot parametreliyse bu parametrelere değeri göndermek zorundasın.
+
+- Sen bir metodu kullanırken o metodun parametrelerine değer gönderme zorunluluğunu atmak istiyorsan o parametreleri opsiyonel şekilde göndermek ya da göndermemek istiyorsan opsiyonel hale getirmek istiyorsan ilgili parametreyi o parametre opsiyonel parametre olması gerekiyor.
+
+- Parametreli bir metot kullanılırken/çağırılırken/tetiklenirken parametrelerine uygun değerler gönderilmek ZORUNLUDUR! 
+
+- Eğer ki bir metodun parametrelerine zorunlu bir şekilde değer göndermek istemiyorsak, parametreye değeri isteğimize göre/opsiyonel olarak göndermek istiyorsak o parametrenin bu durumu karşılayabilecek bir özellikte olması gerekmektedir. İşte bu özelliğe opsiyonel parametreler denmektedir.
+
+- Yani ilgili parametre eğer opsiyonel fıtratta bir parametreyse sen ona bir değer göndermek zorunda kalmıyorsun.
+
+<img src="13.png" width="auto">
+
+- `static public void X(int a, int b){}` direkt bu fonksiyonu çağırdığımızda hata alırız. Diyor ki bana ya gardaşım X'i çağıracaksan normal parametrelerine değeri göndermek zorundasınd aksi taktirde derleyici buna izin vermez sen bunu derlediğin zamanda hata alacaksın.
+
+- Bir metot kullanılırken o metodun parametrelerine değer göndermek zorundasın.
+
+- Bir parametrenin opsiyonel olması demek o parametrenin varsayılan/default değeri olması demektir. 
+
+- Eğer ki sen bir parametreye değer göndermediğinde o parametre derleyici tarafından hangi değeri alacağını biliyorsa default olarak yani varsayılan olarak o zaman senin göndermene gerek duymuyor. Yani adam diyor ki ya gardaşım ben varsayılan bir parametreyim bana istersen değer gönder gönderdiğin değeri kabul ederim ona göre işleme tabi tutarım. Yok eğer değer göndermiyorsan benim varsayılan bir değerim var onu işleme tabi tutarım. Yani fonksiyona dış dünyadan illaki bir değer benden gidecek. Bu değer senin gönderdiğinde olabilir ya da default olarak bana verilen değerde olabilir. Artık buradaki karar senin diyor. Haliyle varsayılan bir default değer ayarlamamız gerekiyor.
+
+<img src="14.png" width="auto">
+
+- Biz metotlarımızda parametrelerimize default değer atarsak o parametreler opsiyonel parametreler olacaktır. 
+
+- Eğer ki parametreye assign operatörü(`=`) ile değer atarsam varsayılan değerini bildirmiş olurum. 
+
+- Metot parametrelerine assign operatörü(`=`) ile bir değer atanırsa eğer o parametreye varsayılan değeri atanmış olur. Haliyle opsiyonel parametre haline getirilmiş olunur...
+
+- Opsiyonel parametreye kullanıcı kullanırken bir değer göndermek zorunda değil.
+
+- Bir metodun birden fazla parametresi de opsiyonel olabilir.
+
+<img src="15.png" width="auto">
+
+- Birden fazla parametre içerisinde bir kısmı opsiyonel olabilir mi?
+    * Birden fazla parametre durumunda opsiyonel olanlar sağ tarafta TANIMLANMALIDIR!
+
+- Opsiyonel olan parametreden sonra zorunlu olan bir parametre tanımlarsanız derleyici hatası alırsınız. Çünkü kullanım durumunda tutarsızlık meydana gelir.
+
+- Buradaki karışıklığı engellemek için C# geliştiricileri tarafından opsiyonel olmayan parametreler sol tarafta opsiyonel olanlarda sağ tarafta olacak şekilde tanımlanması gerektiği söylenmiştir bu şekilde de problem ortadan kaldırılmıştır.
+
+- Normalde bir metodun parametrlerine hizalı bir şekilde değerler göndermek zorundayız.
+
+```C#
+static void Main(string[] args)
+{
+    #region Optional Parameters(İsteğe Bağlı Parametreler)
+    X(15, 20);
+    X(15);
+    X();
+    X(5, 7);
+    X(5);
+    #region Kritik 1
+    //Tüm parametreler opsiyonel olabilir.
+    #endregion
+    #region Kritik 2
+    //Birden fazla parametre içerisinde bir kısmı opsiyonel olabilir mi?
+    //Birden fazla parametre durumunda opsiyonel olanlar sağ tarafta TANIMLANMALIDIR!
+    X(5, 10, 15);
+    X(5,10);
+    #endregion
+    #endregion
+}
+static public void X(int a, int x, int y, int b = 0, int c = 0)
+{
 }
 ```
