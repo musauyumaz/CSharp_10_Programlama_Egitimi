@@ -506,3 +506,63 @@ static public void X(int a, int x, int y, int b = 0, int c = 0)
 {
 }
 ```
+
+***
+# 391) Tanımlanmış Metodun Kullanımı - Tanımlandığı Sınıf İçerisindeki Metotlar Tarafından Kullanımı
+- Metotu biz `class` dediğimiz yapılanma içerisinde oluşturuyoruz. İleride OOP'de `struct` denilen yapılanmada da oluşturabildiğimizi göreceğiz.
+
+- Bir metot tanımlandığı sınıf içerisindeki farklı bir metot içerisinden çağırılacaksa eğer tek yapılması gereken sadece isminin çağırılmasıdır/tetiklenmesidir/çalıştırılmasıdır.
+
+- Aynı sınıfın içerisinde birden fazla metodumuz var. Bu metotlar birbilerini kullanacaksa eğer sınıfın ismiyle ilgili herhangi bir şey yazmana gerek yok. Aynı sınıfın içerisinde olduklarından dolayı bu metotlar isimsel olarak birbileriyle haberleşebilir. Yani birbirlerini tetikleyebilirler.
+
+- Aynı sınıfın içerisinde tanımlanmış olan metotlar direkt kendi isimleri üzerinden başka bir metodun içinde çağrılabilmektedirler/tetiklenebilmektedirler.
+
+- Bunun başka yöntemleri yok mu? İleri düzey programlamada göreceğiz Reflection dediğimiz yapılanma var. Onun dışında delegate dediğimiz yapılanma var bunla da sen herhangi bir metodu tetikleyebiliyorsun.
+
+- Aynı sınıf içerisinde birden fazla metot var ve bu metotlar kendilerini çağırmaları tetiklemeleri gerekiyorsa direkt metodun ismini çağırman yeterli olacaktır.
+
+- Metotların kullanımında şu ana kadar yapmış olduğumuz tüm çalışmalarda alışılageldiği üzere metodun imzasındaki parametreler neyse o parametrelere uygun değerleri göndermemiz gerekiyor. 
+
+- Tanımlandığı sınıf içerisinde bir metodu farklı bir metotta kullanmak istiyorsanız ismi üzerinden erişim yapmanız yeterli olacaktır.
+
+- `static` olan bir yapının içerisinde başka bir yapıyı metodu tetikleyeceksek onun da `static` olması gerekir.
+
+```C#
+class Program
+{
+    static void Main(string[] args)
+    {
+        #region Tanımlanmış Metodun Kullanımı
+        //Tetikleme = Çağırma = Kullanım
+        #region Tanımlandığı Sınıf İçerisinde Kullanımı
+        //Bir metot tanımlandığı sınıf içerisindeki farklı bir metot içerisinden çağırılacaksa eğer tek yapılması gereken sadece isminin 
+çağırılmasıdır/tetiklenmesidir/çalıştırılmasıdır.
+        X();
+        #endregion
+        #region Başka Sınıflarda Kullanımı
+        #endregion
+    }
+
+    static void X()
+    {
+
+    }
+}
+
+class Ornek
+{
+    public void A()
+    {
+        B();
+    }
+
+    private void B()
+    {
+        C(5);
+    }
+    private int C(int a)
+    {
+        return a;
+    }
+}
+```
