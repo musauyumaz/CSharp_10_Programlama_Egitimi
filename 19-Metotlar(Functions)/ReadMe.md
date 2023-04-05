@@ -566,3 +566,78 @@ class Ornek
     }
 }
 ```
+
+***
+# 392) Başka Sınıfta Tanımlanmış Metotların Erişimi-Referans ve Nesne İlişkisine Hafiften Temas Edelim
+- Bir metot neden başka bir sınıfta tanımlanır? 
+  * Kaşığını çatalını çekmecede belirli alanlara koyarsın değil mi? Kaşıklar belli alanda bulunur Çatallar ayrı bir alanda bulunur. Yani senin birine ihtiyacın olduğu zaman nereye bakacağını bilirsin. Ya da Tornavidadır yan keskidir pensedir bunun gibi alet çantaları belli bir kutuda bulunurken işte faredir klavyedir elektronik cihazlardır bunlar ayrı bir kutuda bulunur. Senin böyle tornavidaya ihtiyacın olduğu zaman nereye bakacağını bilirsin elektronik bir cihaza ihtiyacın olduğu zaman başka bir kutudur oraya bakacağını bilirsin. 
+  * Yani günlük hayatta işini kolaylaştıracak şekilde nesneleri kategorize ediyorsun değil mi? Aslında metotlarıda farklı sınıflarda oluşturmamızın sebebi bizzat budur. Senin bir metodun var toplama işlemi yapıyor. Bir başka metodun daha var çıkarma işlemi yapıyor bir başka metodun daha var çarpma işlemi yapıyor dikkat edersen matematiksel işlem yapan metotlarım var. Şimdi bunların tanımladığın sınıfla veritabanı işlemi yapan metodun tanımlandığı sınıf aynı olursa eğer belirli bir güncelleme yapman gerektiğinde ya da çalışma durumu gerektiğinde bir karşıklık ortaya çıkmayacak mı? Nihayetinde veritabanı işlemleri yaptığın sınıfın ayrı olsa matematiksel işlemleri yaptığın metotlarında farklı bir sınıfta olsa bu daha anlamlı olmuyor mu? Yani günlük hayatta senin yapmış olduğun bu kategorizeyi yazılımda da yapmış olmanı sağlamıyor mu? İşte bu mantıkla metotları farklı sınıflarda tanımlarız
+
+- İleride design pattern'da göreceksin ki biz solid prensiplerimiz vardı bu solid prensiplerinde tek sorumluluk prensibi var. Şimdi sınıflar tek bir sorumluluğa odaklı olmalı. Bir sınıf hem matematik işlemleri yapan metotları barındırıp hem de bir yandan veritabanı işlemleri yapan bir yandan reflection işlemi yapan bir yandan uzaya füze gönderen işlemleri yapan metotları barındırmamalı. Her birbirine yakın olgu farklı sınıflara dağıtılmalı ki tek sorumluluk prensibi olsun. Biz bu ihtiyaca istinaden belli kategorize edilmiş örneğin matematik fonksiyonları gibi bunu matematik sınıfında tanımlanmayı tercih ederiz. Yani kategorize etmek için metotlarımızı farklı sınıflara parçaladığımızı düşünebilirsiniz.
+
+- Değersel boyutta düşünürsek eğer bizim için şu ana kadar bildiğimiz ilkel türler eşlik edebiliyor. 3 diyince `int` diyebiliyorsun. "Ahmet" deyince `string` diyebiliyorsun. Ama kompleks değerlerimiz de olabiliyor. İşte örneğin Gençay Hoca başlı başına ne bir `string`tir ne de `int`tir. Başlı başına daha fazla anlam ifade eden bir yapılanmadır. Yani Gençay Hocanın bir adı vardır. Soyadı vardır. yaşı vardır. medeniHal vardır. gözRengi vardır. Gençay Hocayı ifade eden değerler bütünüdür. Haliyle biz bu değerler bütününe nesne diyoruz. adı `string`, soyadı `string` yas `int` medeniHal `bool` olabilir ama bunların hepsi bir araya geldiği zaman bir bütün olarak Gençay Hocayı ifade edeceğinden dolayı Gençay Hoca daha kompleks bir türdür. Haliyle bu türün karşılığı bunlardan biri değil hepsinin bir araya gelmiş halidir. Biz buna nesne diyoruz.
+
+- Yazılımda kompleks değerler üretmemizi sağlayan yapılar vardır. Bu yapılardan biriside yani nesne dediğimiz olguyu oluşturmamızı sağlayan yapı `class`tır. Diğer yapılar ise `strut`, `record`.
+
+- `class` kompleks değerlerin bir bütün olarak bir nesneyi yer yüzündeki bir olguya karşılık gelen halini oluşturmamızı sağlayan yapılanmadır. Sen bir sınıf oluşturduğunda kompleks bir tür ortaya koyabiliyorsun. Bir Gençay Hocayı ifade edebiliyorsun. Bir arabayı ifade edebiliyorsun yeryüzündeki herhangi bir olguyu `class` denen yapılanmayla bir bütün olarak ifade edebiliyorsun. Yani `class` yeryüzündeki olguları ifade edebilmeni sağlayan yazılımsal olarak bunları modelleyebilmeni sağlayan bir yapılanmadır.
+
+- Nesne `class`ın veri halidir. `class` bir modelse nesne `class`ın verisidir. Yani ben `class` denen yapıdan bu modelden yeryüzündeki herhangi bir olguyu modellediğim bu yapıdan bir nesne üretiyorum ve o nesneyle o olgudan bir tanesini modelliyorum.
+  * Örneğin adı soyadı yaşı medeniHal gözrengi vs. tarzında bir modelleme olan `class`ın Gençay'a uygun halini oluşturmak istiyorsam buna nesne diyorum.
+
+- Nesne dediğimiz kavram `class`ın bir verisidir. Yani sen `class`tan bir data oluşturacaksan o kompleks datanın karşılığı nesnedir.
+  * Örneğin benim bir `class`ım var adı Ogrenci olsun
+    + `string adi;`
+    + `string soyadi;`
+    + `int yas;`
+    + `int sinif;`
+  * Bir öğrenciyi modelledik dikkat ederseniz bir öğrenci tek başına `int` ya da `string` değil ama bunların bir araya gelmiş hali bir öğrenciye karşılık oluyor. Bu bir öğrenciye karşılık gelebilecek genel bir modelleme. Şimdi bundan bir tane nesne oluşturalım
+    + adi = "Ahmet"
+    + soyadı = "Yılmaz"
+    + yas = 20;
+    + sinif = 3;
+  * Üstteki modelden Ahmet'e özel verileri tutan bir nesne oluşturmuş olduk. Yani Ogrenci `class`ından bir değer oluşturdum. bu kompleks değere ben nesne diyorum. İşte bu nesne bizim kompleks değerimizin nesnesidir. Bundan ben istediğim kadar oluşturabilirim
+    + adi = "Mehmet"
+    + soyadı = "Yıldız"
+    + yas = 24;
+    + sinif = 2;
+  * `class`tan üretilen değerlere nesne diyoruz. Bu nesnenin içerisinde değerler olduğu gibi metotlarımızda olabilir. Bu metot tanımlamalarıda `class` içerisinde yapılır.
+
+- Bizler nesnelerimizin içlerindeki verileri işleyebilmek için o verileri işleyecek temel basit program parçacıkları koyuyoruz `class` içerisine. Metotlarla o `class`ın içerisindeki alanlardaki/değişkenlerdeki değerleri nesneler üzerinde hızlı bir şekilde işleyebilmemizi sağlıyor.
+
+- Bir `class` var bu `class` ın içinde metotlarımız var ve bu `class`tan üretilen nesneler üzerinden o metotlara rahatlıkla erişim sağlayarak tetikleme yapabiliyoruz.
+
+- Demek ki bizim ürettiğimiz `class`ın içerisindeki bir metoda erişebilmek için o `class`ın objesine yani nesnesine ihtiyacımız var ve o nesne üzerinden ilgili metoda erişim sağlayabiliyoruz.
+
+- Farklı sınıflarda oluşturulmuş metotlara erişebilmek için o sınıflardan nesne oluşturmamız gerekiyor. Nesneyi `new` keywordüyle oluşturuyoruz. `new` keywordü yanına vermiş olduğumuz type ne ise ki bu type `class` türüdür /`class` türü neyse o türde bir nesne oluşturur. 
+  * `Randon r = new Random();` Örneğin `Random` sınıfı vardı `Random` sınıfının üzerinde işlem yapabilmen için onun metotları üzerinde işlem yapabilmen için onun nesnesini oluşturuyordun.
+  
+- `Type type = new Type();` Eğer ki sen bir nesne oluşturduğunda bu nesneyi rahat bir şekilde erişim göstermek istiyorsan bu nesneyi aynı türde bir değişkenle işaretlemen gerekiyor. `Random`dakiyle aynı mantık. `Random` türünde r diye bir değişken oluşturduk ardından `new Random();` yazarak esasında `Random` türünde bir nesne oluşturup artık bu değişken üzerinden bu nesnenin içerisindeki metotlara erişilebilir vaziyette hali hazırda bir nesne elde etmiş olduk.
+
+- Bundan sonra ben Ogrenci diye bir sınıf oluşturursam ve Ogrenci sınıfının içerisindeki bir metoda erişmek isteyeceksem Ogrenci türünde herhangi bir isimde değişken oluşturup onun karşılığına da `new Ogrenci()` diyerek bir nesne oluşturacam ve o nesneyi buradaki referansla işaretleyeceğim. Artık bu referans üzerinden ilgili nesnede ki metotlara çok rahat erişim gösterip kullanabilecem.
+
+- Biz başka bir sınıfta tanımlanmış bir metoda erişebilmek için o sınıfın nesnesine ihtiyacımız var ki o nesne üzerinden metoda erişebiliyoruz. Nesne `class`ın verisel halidir. `class`tan bir veri oluşturacaksak `class`ın bir verisini bir datasını elde etmek istiyorsan buna biz nesne diyoruz. Nesneyi kullanırken referansla kullanıyoruz. Referans oluşturulan nesnenin işaretlenmesini sağlayıp o nesneye de işaretleyerek benim erişmemi sağlayan bir değişken. Ben o değişken üzerinden ilgili nesne içerisindeki metotlara erişip başka sınıfta tanımlanmış metodu kullanmış oluyorum.
+
+<img src="16.png" width="auto">
+
+- Sınıf (Class) = Yeryüzündeki herhangi bir olguyu modellememizi sağlayan yapılanma! İçerisinde ilgili olguya dair verileri tutacak alanları(field) barındıran ve 
+bu alanlar üzerinde işlem yapmamızı sağlayacak olan(metot) metotları barındıran bir yapı!
+
+- Nesne = Class'tan üretilen değer/veri
+
+- Referans = Class'tan üretilen değeri kullanmamızı sağlayan yapı!
+
+- Bir `class`ım var ve bu `class`ın içinde bir tane metodumuz olsun. Eğer ki ben bu `class`taki bu metoda erişmek istiyorsam eğer Öncelikle bu `class`tan bir değişken oluşturuyorum ve bu değişkenin karşılığı olarakta ilgili `class`tan new operatörü ile bir nesne oluşturuyorum. assign/atama operatörünün(`=`) sağındaki değer eğer ki bir `class`sa artık assign/atama operatörü(`=`) değil referans etme operatörü olacaktır.
+
+- Bir metodun erişim belirleyicisi `public` ya da `private` olabilir. Eğer `public` ise dışarıdan erişilebilir `private` ise sadece bu sınıfın içerisinde erişilebilir.
+
+<img src="17.png" width="auto">
+
+```C#
+#Tanımlanmış Metodun Kullanımı
+#Başka Sınıflarda Kullanımı
+#Referans ve Nesne İlişkisine Hafiften Temas Edelim
+// Sınıf (Class) = Yeryüzündeki herhangi bir olguyu modellememizi sağlayan yapılanma! İçerisinde ilgili olguya dair verileri tutacak alanları(field) barındıran ve 
+bu alanlar üzerinde işlem yapmamızı sağlayacak olan(metot) metotları barındıran bir yapı!
+// Nesne = Class'tan üretilen değer/veri
+//Referans = Class'tan üretilen değeri kullanmamızı sağlayan yapı!
+```
