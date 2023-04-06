@@ -787,3 +787,110 @@ değiştirebiliriz (Çünkü parametreler özünde bir değişkendir.)
     }
 }
 ```
+
+***
+# 396) Local Functions(Metot İçerisinde Tanımlanabilir Yerel Metotlar)
+- Metotlar sade ve sadece `class` içinde tanımlanmamaktadırlar. `interface`lerde, `struct`larda, `abstract class`larda tanımlanabilir.
+
+- Bir metot içerisinde tanımlanmış olan metotlardır.
+
+- C# 7.0 ile birlikte metotların içinde metot tanımlayabiliyoruz.
+
+- Bir metoda özel metod tanımlama işlemine biz local function diyebiliyoruz. C# bunu destekleyebiliyor.
+
+- Eğer ki sen bir metodu salt bir şekilde tanımlayacaksan senin normal bir metoda ihtiyacın varsa `class` içerisinde tanımlaman yeterli.
+
+- Bir metodu bir metodun içerisinde tanımlayabilirsin. O tanımladığın metoduda sadece tanımladığın metodun içerisinde kullanabilirsin.
+
+- C#'ta metotlar sade ve sadece `class` içerisinde tanımlanırlar diye söylemiştik! Halbuki OOP'de göreceğimiz `struct`, `abstract class`, `interface`, `record` yapılanmalarında da metotlar tanımlanmaktadır. Metotlar bu saydıklarımızın dışında KESİNLİKLE başka bir yerde tanımlanamaz!!!
+
+- Metotlar kesinlikle metotların içerisinde tanımlanamaz demiştik!!! Halbuki C# 7.0'Da gelen Local Function özelliği sayesinde metot içerisinde metot tanımlabilmektedir.
+
+- `[erişim belirleyicisi] [getiye dönüş değeri] [metot adı](.......){}`
+    * `[erişim belirleyicisi]` => Tanımlanmış metodun tanımlandığı sınıf dışından erişilip erişilememesi durumunu belirleyen ifadelerdir!
+        + Bir metodu sınıfın içerisinde tanımlıyorsam eğer dışarıdan o sınıf üzerinden erişilip erişilmemesi için erişim belirleyicisi kullanıyorum.
+        + Metot içerisinde olan bir metot sınıfın elemanı olmuyor Haliyle metoda ait bir eleman olduğu için metotlarda sadece tetiklenebilir yapılar olduğu için biz bu metodun içindeki metoda başka bir yerden zaten erişemeyiz.
+        + Erişim belirleyicisini belirtmezsek defaultta `private`tır.
+
+- Local Function'larda erişim belirleyicileri yoktur! Yani direkt geri dönüş değerinden başlanır.
+
+- Bir metot içerisinde oluşturacağım Local Function'ın yine `private` olması lazım dışarıdan zaten erişilebilir gibi bir özelliği olmamalı. Metot dışarıya değer döndürür en fazla. Bir nesne vermez bişey yapmaz. Hani metot başlı başına bir içinde erişilebilir bir yapılanma değildir. Metot ya tetiklenir ve sonuç olarak sana bir değer döndürür. Dolayısıyla metodun içerisinde tanımlanmış bir local function sadece o metodun içerisinde erişilebilir olacaktır. Haliyle herhangi bir erişim belirleyicisi tanımlayamayacağımızdan dolayı ki zaten syntax olarak buna da müsaade etmeyecek haliyle `private` olacaktır.
+
+<img src="18.png" width="auto">
+
+- Ben metot içerisinde bir metot tanımlarken `[erişim belirleyicisi]` access modifiers denen zımbırtıyı tanımlamıyorum.
+
+## Tanımlama Kuralları
+1. Erişim belirleyici(Access Modifier) yazılmaz!
+
+2. Local Function olarak tanımlanan fonksiyon adı tanımlandığı fonksiyonun adından farklı olmalıdır! Aksi taktirde derleyici hatası VERMEZ!!!
+    * Recursive fonksiyolarda bir metot kendini çağırabilir. Yani tanımlandığı bünyesinde kendini tetikleyebilir.
+    ```C#
+    public int X()
+    { 
+        void X()
+        {
+
+        }   
+        X();//Local Function eğer ki tanımlandığı metotla aynı isimde olursa onun ismini kendi içinde eziyor. Haliyle recursive'e giremiyorsun. Onun için olmamalıdır. Dikkat edin. Aksi taktirde derleyici hatası vermediğinden dolayı burada sen kendisini çağırmaya çalıştığını düşünürken local function'ı çağırıyorsundur farkına da varmama ihtimalin var.
+        return 0;
+    }
+    ``` 
+        
+## Kullanım Kuralları
+1. Bir local function sade ve sadece tanımlandığı metodun içerisinde kullanılabilir
+
+2. Local function tanımlandığı metodun içerisinde her yerden erişilebilir.
+
+- Local function bir metodun içerisinde tanımladın tanımladığın local function o metodun içerisinde dikey bir düzlemdeymiş gibi düşünme. Bu özünde arka planda bir metot. Bu metot her yerden tetiklenebilir bir yapıymış gibi düşünebilirsin. Sadece metodun içerisinde erişilebiliyor. Haliyle metodun içerisinde tanımlandığı noktadan önce ya da sonra erişilebiliyor. Değişkenlerdeki mantıktaki gibi düşünmene gerek yok. Değişken tanımlandıktan sonra erişilebilir. Ama metotta öyle bişey yok. Metot tanımlandıktan önce ya da sonra yatay düzlemde olacağından dolayı çok önemli değildir. Yani her iki taraftanda erişebilirsiniz. Öncelik yoktur.
+
+
+## Amacı
+1. Local function, sadece tek bir metotta tekrarlı bir şekilde kullanılacak bir algoritamayı/kod parçacığını/işlemi o metoda özel bir şekilde tek seferlik tanımlamamızı ve kullanmamızı sağlamaktadır.
+
+- Bir metot düşünün bu metot içerisinde birden fazla böyle manevratik algoritma kullanıyor ama bu algoritmaları sade ve sadece bu metot kullanıyor başka da metot kullanmıyor işte böyle bir durumu düşün. Böyle bir durumda ilgili parçaları `class` member olacak şekilde farklı metotlara dağıtmaktansa biz bu metodun içerisindeki bu algoritmaları Local Function olarak dağıtarak kullanmayı tercih edebiliyoruz.
+    * Metodun içerisinde tekrar eden algoritmaları sadece o metodun içerisindeki tekrar edecek algoritmaları farklı bir sınıfın elemanı olan metodu almaktansa sadece bu sınıfta kullanılacağından dolayı local function haline getirip tekrar eden algoritmaları tek bir fonksiyon olarak tetiklemeyi tercih edebiliyoruz. Bunu şöyle düşün bir tane fonksiyonun var içinde 15 tane merhaba yazacam. Ama sadece o merhaba algoritmasını o metotta yazacam
+
+- Bir metotta yapılacak işlem, o metotta birden fazla kez yapılacaksa local function kullanılabilir
+
+## Muadilleri 
+1. Anonim, Delagate, Func
+
+- Biz bir metodun içerisinde farklı bir metoda ihtiyacımız olduğu durumlarda local functionlar yerine anonim dediğimiz function'ları kullanıyorduk. Ya da Delegate dediğimiz yapıları kullanıyorduk. Ya da Func dediğimiz özel tanımlı fonksiyonlarımız vardı. expression dediğimiz yapılanmalar. Bunlarda metodun içerisinde metot tanımlamamızı sağlayan yapılanmalar
+
+- Delegate'ler metotları temsil eden yapılanmalar.
+
+```C#
+static void Main(string[] args)
+{
+    #region Local Functions
+    //Bir metot içerisinde tanımlanmış olan metotlardır.
+    //C#'ta metotlar sade ve sadece `class` içerisinde tanımlanırlar diye söylemiştik! Halbuki OOP'de göreceğimiz `struct`, `abstract class`, `interface`, `record` yapılanmalarında da metotlar tanımlanmaktadır. Metotlar bu saydıklarımızın dışında KESİNLİKLE başka bir yerde tanımlanamaz!!!
+    //Metotlar kesinlikle metotların içerisinde tanımlanamaz demiştik!!! Halbuki C# 7.0'Da gelen Local Function özelliği sayesinde metot içerisinde metot tanımlabilmektedir.
+    #endregion
+    #region Tanımlama Kuralları
+    //1. Erişim belirleyici(Access Modifier) yazılmaz!
+    //2. Local Function olarak tanımlanan fonksiyon adı tanımlandığı fonksiyonun adından farklı olmalıdır! Aksi taktirde derleyici hatası VERMEZ!!!
+    #endregion
+    #region Kullanım Kuralları
+    //1. Bir local function sade ve sadece tanımlandığı metodun içerisinde kullanılabilir
+    //2. Local function tanımlandığı metodun içerisinde her yerden erişilebilir.
+    #endregion
+    #region Amacı
+    //Local function, sadece tek bir metotta tekrarlı bir şekilde kullanılacak bir algoritamayı/kod parçacığını/işlemi o metoda özel bir şekilde tek seferlik tanımlamamızı ve kullanmamızı sağlamaktadır.
+    #endregion
+    #region Muadilleri
+    //Anonim, Delagate, Func
+    #endregion
+}
+public static int X()
+{
+    Y();
+    void Y()
+    {
+        System.Console.WriteLine("Merhaba");
+    }
+    Y();
+    return 0;
+}
+```
