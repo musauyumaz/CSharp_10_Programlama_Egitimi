@@ -733,3 +733,57 @@ static void X(int a, int b, string c)
 {
 }
 ```
+
+***
+# 395) Metotlarda In Parametreleri (C# - In Keywordü)
+- Metot dediğimizde 3 tane farklı keyword devreye girecek. 
+    1. `ref`, 
+    2. `out`,
+    3. `in`
+- Bu keywordler sayesinde farklı davranışlar sergileyerek işlemlerimizi daha profesyonel bir şekilde gerçekleştirebiliyoruz.
+
+- Metotlar parametre alan yapılanmalardır. Metotlardaki parametreler dış dünya da yani metodun çalıştığı ekosistemin dışından herhangi bir değeri metot içerisine alıp işleyebilmemizi sağlayan yapılanmalardır.
+
+- Metotun parametreleri üzerinde; 
+    1. Parametrenin değerini metodun içerisinde herhangi bir noktada çağırıp artık hangi algoritmayı tetikliyorsak ne işlem yapıyorsak orada o değeri kullanabilirim.
+    2. Parametrenin değerini üzerinde değişiklik yapacak şekilde kullanabilirim. 
+        + Metodun parametresi bir değişken değil mi? Değişken yani değeri değişebilen bir yapı. Haliyle değeri değişebilen bir yapı olduğundan dolayı içeride bir değer oluşmuştur o değeri bir değişkene atmam gerekir. O değişkeni manuel bir şekilde oluşturmaktansa var olan parametrenin üzerine atayabilirim. Yani dış dünyadan gelen değeri de ezip yeni içeride oluşturulmuş olan değeri bu parametrenin üzerine ekleyebilirim.
+
+- Parametrenin değerini metodun içerisinde herhangi bir yerde çağırıp kullanabiliriz.
+
+- Metot içerisinde üretilen herhangi bir değeri tutacak değişken oluşturmaktansa parametre üzerinde bu değeri tutabiliriz. Yani parametreni değerini değiştirebiliriz (Çünkü parametreler özünde bir değişkendir.)
+
+- Biz metotlardaki parametrelerimizin dış dünyadan gelen değerleri bizim için kritik olabilir. Haliyle o anki developer'ın dalgınlığına gelip o değerin değiştirilmesine bile müsaade edilmeyecek şekilde ilgili parametrenin değerini sabit hale getirmek isteyebiliriz. Yani metotlardaki parametreler dış dünyadan gelen değer metodun içerisinde sürekli sabit olmasını istiyorsak yani bunu developer'ın insiyatifine bırakmak istemiyorsam `in` keywordünü kullanabilirim. 
+
+- `in` komutu sayesinde parametreye verilen değeri sabit tutabilmekteyiz.
+
+- `in` komutunu kullanmadığın için metodun içerisinde ilgili parametrenin değerini çok rahat değiştirebiliyorsun. Ama `in` komutunu kullandığında metodun içerisinde o metodun parametresi olan `in` komutuyla kullanılmış olan parametresinin değerini değiştiremeyeceksin. Derleyici hatası verecektir.
+
+- `in` komutu, metodun parametresini readonly(Sadece okunabilir) hale getirir.
+
+- Dış dünyadan bir değer gelecek ve bu değeri parametre temsil edecektir. Bu parametrenin değerini sen içeride değiştireme `in` keywordü sayesinde ilgili parametrenin değerini koruruz. Yani salt okunur/readonly hale getiriyoruz.
+
+- `in` komutunun kullanıldığı eğer ki metot içerisinde farklı bir assign durumu söz konusu olursa derleyici hatası verecektir.
+
+```C#
+class Program
+{
+    static void Main(string[] args)
+    {
+        //1. Parametrenin değerini metodun içerisinde herhangi bir yerde çağırıp kullanabiliriz.
+        //2. Metot içerisinde üretilen herhangi bir değeri tutacak değişken oluşturmaktansa parametre üzerinde bu değeri tutabiliriz. Yani parametreni değerini 
+değiştirebiliriz (Çünkü parametreler özünde bir değişkendir.)
+        #region In Parameters
+        //`in` komutu sayesinde parametreye verilen değeri sabit tutabilmekteyiz.
+        //`in` komutu, metodun parametresini readonly(Sadece okunabilir) hale getirir.
+        //`in` komutunun kullanıldığı eğer ki metot içerisinde farklı bir assign durumu söz konusu olursa derleyici hatası verecektir.
+        #endregion
+    }
+    static void X(in int a, int b, in char c)
+    {
+        a = 123;
+        b = 5;
+        c = 'a';
+    }
+}
+```
