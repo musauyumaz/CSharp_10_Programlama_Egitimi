@@ -1,5 +1,5 @@
 ---
-modified: 2023-04-05T08:16:11.105Z
+modified: 2023-04-06T07:37:56.638Z
 title: 381) Metot Nedir? Bir Programcı Gözünden Ne İşe Yarar?
 ---
 
@@ -640,4 +640,65 @@ bu alanlar üzerinde işlem yapmamızı sağlayacak olan(metot) metotları barı
 bu alanlar üzerinde işlem yapmamızı sağlayacak olan(metot) metotları barındıran bir yapı!
 // Nesne = Class'tan üretilen değer/veri
 //Referans = Class'tan üretilen değeri kullanmamızı sağlayan yapı!
+```
+
+***
+# 393) Başka Sınıfta Tanımlanmış Metotların Erişimi
+- Biz kendimize ait herhangi bir `class` oluşturacaksak bunu `class`ın dışında da oluşturabilirsiniz `class`ın içerisinde de oluşturabilirsiniz. `namespace` scope'unun içinde birden fazla `class` oluşturabiliyoruz. Başka yerlerde de oluşturabiliyoruz. `namespace`in dışında da oluşturabiliyoruz.
+
+- Nerde oluşturursanız oluşturun eğer ki oluşturacağınız bir `class`sa o `class`ın içerisindeki herhangi bir metoda erişim her yerde aynıdır. Eğer ki metot `static` değilse ve tabiki `public` olacak. Yani ilgili metoda dışarıdan erişilebilir olacak.
+
+- İlgili fonksiyonun içerisinde barındırıldığı sınıftan bir tane referans oluşturuyoruz.
+
+- Eğer ki değişken `class` türündeyse `int` `byte` `bool` gibi primitive türlerde değilse biz buna değişken demiyoruz referans diyoruz.
+
+- `Matematik matematik = new Matematik();`
+    * Burada matematik referansı ile Matematik nesnesini işaretlemiş olduk. matematiği her kullandığın yerde Matematik nesnesini kullanmış olacaksın. 
+    * Artık başka bir sınıftaki memberlara/elemanlara/fonksiyonlara/property'lere/field'lara erişilebilir hale getirmiş olduk.
+
+- Erişim belirleyicisi bir sınıfın içerisindeki herhangi bir fonksiyonu o sınıfın dışındaki öteki sınıflardan erişilebilir olup olmamasını ayarlayan özel keywordlerdir.
+
+- Bir sınıftaki fonksiyonu farklı bir sınıf içerisinde kullanmak istiyorsan ilgili fonksiyonun bulunduğu sınıfta `public` olması gerekiyor. İlgili fonksiyonun tanımlaması `public` olarak tanımlanmış olması gerekiyor.
+
+- İlgili yapının metodun dış sınıflardan diğer sınıflardan erişilebilir olması için `public` ile işaretlenmiş olması gerekiyor.
+
+```C#
+class Program
+{
+    static void Main(string[] args)
+    {
+        #region Başka Sınıfta Tanımlanmış Bir Metodun Kullanımı
+        Matematik matematik = new Matematik();//Burada matematik referansı ile Matematik nesnesini işaretlemiş olduk. matematiği her kullandığın yerde Matematik nesnesini 
+kullanmış olacaksın. 
+        //Artık başka bir sınıftaki memberlara/elemanlara/fonksiyonlara/property'lere/field'lara erişilebilir hale getirmiş olduk.
+        //Program farklı bir sınıf Matematik farklı bir sınıf. Bunlar birbirleri için öteki. Erişim belirleyicisi bir sınıfın içerisindeki herhangi bir fonksiyonu o 
+sınıfın dışındaki öteki sınıflardan erişilebilir olup olmamasını ayarlayan özel keywordlerdir. Bir sınıftaki fonksiyonu farklı bir sınıf içerisinde kullanmak 
+istiyorsan ilgili fonksiyonun bulunduğu sınıfta `public` olması gerekiyor. İlgili fonksiyonun tanımlaması `public` olarak tanımlanmış olması gerekiyor.
+        System.Console.WriteLine(matematik.Carp(3, 5));  
+        #endregion
+    }
+}
+
+class Matematik
+{
+    public int Topla(int sayi1, int sayi2)
+    {
+        return sayi1 + sayi2;
+    }
+
+    public int Cikar(int sayi1, int sayi2)
+    {
+        return sayi1 - sayi2;
+    }
+
+    public int Carp(int sayi1, int sayi2)
+    {
+        return sayi1 * sayi2;
+    }
+
+    public int Bol(int sayi1, int sayi2)
+    {
+        return sayi1 / sayi2;
+    }
+}
 ```
