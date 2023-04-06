@@ -1,5 +1,5 @@
 ---
-modified: 2023-04-06T07:37:56.638Z
+modified: 2023-04-06T08:48:50.483Z
 title: 381) Metot Nedir? Bir Programcı Gözünden Ne İşe Yarar?
 ---
 
@@ -700,5 +700,36 @@ class Matematik
     {
         return sayi1 / sayi2;
     }
+}
+```
+
+***
+# 394) Metotlarda Non Trailing Named Arguments Özelliği
+- Bir metodumuz var ve bu metodu kullanırken kullanabildiğimiz ekstra bir özelliktir. Şimdi normalde sen bir metodu kullanırken o metodun imzasına uygun bir şekilde parametrelerine değer göndermeye dikkat edersin. Yani parametreleri yollarken sıralı bir şekilde değerleri göndermelisin.
+
+- Normal şartlarda bir fonksiyonda varolan parametrelere sıralı bir şekilde değerlerini göndermek zorundasın. bunun dışında ilgili parametreleri değer gönderirken sırasını bozmak istiyorsan ya da uygun sıralamayı kendine göre seçmek istiyorsan Non Trailing Named Arguments özelliğini kullanabilirsin.
+
+- Bir metodun parametrelerine isimlerini baz alarak direkt hedef gönderim yapmak istiyorsanız sıra bazlı değilde isimsel bazda hedefsel gönderim yapmak istiyorsanız bu özelliği kullanabilirsiniz.
+
+- Non Trailing Named Arguments özelliğini kullanıyorsanız mümkün mertebe tüm parametreler için kullanmaya bakın aksi taktirde karışıklık yaşayacaksınız.
+
+- Bazen bazı fonksiyonlarımız olur bir sürü parametre alıyordur. Şimdi onlarca parametrenin arasından ben istediğim değerleri göndermek istiyorsam ve diğer parametreler optional'sa yani onlara değer göndermem gerekmiyorsa Non Trailing Named Arguments özelliğini kullanabilirim. İstediklerine hedef olarak gönderiyorsun diğerleri de default değerleri neyse onu kullansın istiyorsak bu tarz durumlarda bu özellik kullanabiliyoruz.
+
+- Hangi parametreye hangi değerlerin gönderildiğini direkt görebilmek için bu özelliği kullanırız.
+
+- Göreceli bir şekilde çok parametreli fonksiyonlarda hedef parametrelere değer göndermemizi sağlayan bir özelliktir.
+
+```C#
+static void Main(string[] args)
+{
+    #region Non-Trailing Named Arguments
+    X(3, 5, "abc");
+    X(c: "abc", a: 5, b: 15);
+    //Hangi parametreye hangi değerlerin gönderildiğini direkt görebilmek için bu özelliği kullanırız.
+    //Göreceli bir şekilde çok parametreli fonksiyonlarda hedef parametrelere değer göndermemizi sağlayan bir özelliktir.
+    #endregion
+}
+static void X(int a, int b, string c)
+{
 }
 ```
