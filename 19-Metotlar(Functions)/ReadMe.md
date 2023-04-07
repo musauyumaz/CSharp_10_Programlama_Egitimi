@@ -1,5 +1,5 @@
 ---
-modified: 2023-04-06T08:48:50.483Z
+modified: 2023-04-07T06:57:40.518Z
 title: 381) Metot Nedir? Bir Programcı Gözünden Ne İşe Yarar?
 ---
 
@@ -892,5 +892,43 @@ public static int X()
     }
     Y();
     return 0;
+}
+```
+
+***
+# 397) Static Local Functions(Metot İçerisinde Tanımlanabilir Statik Yerel Metotlar)
+- Bir metot esasında başka bir metodun içinde de tanımlanabiliyordu. Biz buna local function diyoruz.
+
+- Local function içerisinde bulunduğu metodun parametresine ya da o metotta tanımlanmış olan herhangi bir değişkene erişim sağlayabiliyor.
+
+- C# geliştiricileri Normal bir fonksiyonun içerisindeki yerel local değişkenlerin ya da parametrelerin local function'ın içerisinde erişim sağlayabilmesi oldukça maliyetli bir süreç aslında. Yani arka planda compile seviyesine baktığınız zaman bu sürecin maliyetli olduğunu söylüyorlar. Dolayısıyla adamlar demişler ki Biz bir metodun içerisindeki herhangi bir parametrenin ya da değişkenin local function'dan direkt erişimini engellemek istiyorsak ya da buradaki maliyeti minimize etmek istiyorsak yani ortadan kaldırmak istiyorsak local function'ı `static` keywordüyle işaretlememiz yeterli olacaktır. Dolayısıyla buradaki `static` keywordünün bizlere getirmiş olduğu özellikten kaynaklı ilgili metodun içerisindeki parametreye ya da local değişkene direkt local function içerisinden erişim sağlanamamaktadır.
+
+- Bir local function içerisinde bulunduğu diğer/üst metodun içerisindeki yerel değişkenlere erişim sergilerken buradaki maliyeti ortadan kesin kaldırmak istiyorsan herhangi bir dalgınlıkla erişim yapılmasını istemiyorsan bu local function'ı `static` ile işaretle.`static` ile işaretledeğinde değişkenler artık içeriden erişilebilir olmuyor yani erişemiyorsun.
+
+- Buradaki maliyet ortadan kalktıktan sonra artık sen dışarıdaki değişkenleri içeri sokacaksan bunları parametre ile almak zorunda kalıyorsun. Birgün bu local function'ı kullanıyorsam eğer tetiklerken parametre olarak bu üst metot parametrelerini ve local değişkenleri verebiliyoruz. Bu şekilde ilgili yerel değişkenlerimi/parametrelerimi/değerlerimi local function içerisine gönderebiliyorum.
+
+- `static` local function kullanmak local function'lara nazaran daha performanslıdır.
+
+- Bir yapı `static`se bu bir metot olabilir, local metot olabilir farketmiyor herhangi bir `static` yapı gördüysen `static` olmayan başka bir yapı onun içerisinden erişilemez. 
+
+```C#
+class Program
+{
+    static void Main(string[] args)
+    {
+        Console.WriteLine("Hello, World!");
+    }
+
+    public void X(int a)
+    {
+        int b = 0;
+        static void Y(int a, int b)
+        {
+            System.Console.WriteLine(a);
+            System.Console.WriteLine(b);
+        }
+
+        Y(a, b);
+    }
 }
 ```
