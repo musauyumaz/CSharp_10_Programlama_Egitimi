@@ -932,3 +932,127 @@ class Program
     }
 }
 ```
+
+***
+# 398) Metotlarda Overloading(Çoklu Yükleme)
+- Bir class içerisinde aynı isimde birden fazla metot tanımlanamaz.
+
+- Bir sınıfın içerisinde aynı isimde birden fazla metot tanımlanamaz dedik ama özünde tanımlanamaz! belirli kurallar dışında!
+
+- Bir sınıfın içinde aynı isimde birden fazla metot tanımlayabiliyorsan yani o kuralları sağlıyorsan buna overloading diyoruz. Buradaki overloading'ten kasıt o isme birden fazla metot yüklemiş oluyorsun bundan dolayı çoklu yükleme deniliyor.
+
+- Bir `class`ta aynı isimde birden fazla metot tanımlanmışsa eğer(belirli kurallar çerçevesinde) o isme overloading yapılmıştır.
+
+- Aynı nitelikteki birden fazla metodu farklı şekilde oluşturman gerekiyor. Aynı nitelikteki birbirine yakın nitelikteki birden fazla metodu oluştururken farklı isimlerde oluşturmak yerine bunları tek bir isimde oluşturuyorsun amma velakin bu metotlar fiziksel olarak farklı metotlar ve davranışsal açıdan da farklı metotlar olacaklarından dolayı biz bunlara overloading diyoruz. Yani bir metodun birden fazla türevi söz konusu olabilir. 
+
+- Nitelik olarak birbirlerine yakın olduklarından dolayı tüm bu operasyonları aynı isim altında birleştiriyorum/overload ediyorum ama davranışlarını ayırıyorum.
+
+<img src="19.png" width="auto">
+
+- Overloading : Çoklu Yükleme
+
+- Bir `class` içerisinde belirli kurallar çerçevesinde aynı isimde birden fazla metot oluşturmaya Method Overloading denir.
+
+- Bir metodun birden fazla overloading'i yani aynı isimde birden fazla metot söz konusuysa aynı sınıfta bunlar artık birbirlerinin overload'ı oluyor. Yani aynı isimde farklı işlem yapan metotlar bulunur.
+
+- Bizde kendi metotlarımızı oluştururken benzer nitelikte aynı mahiyette yakın davranışlarda olacak metotlarımızı  metot1 metot2 metot3 diye isimlendirmek yerine bunları overloading'e tabi tutabiliriz ki tutmalıyızda zaten.
+
+- Yani istersek biz metotlarımıza ayrı isimler vererekte kullanabiliriz. Ama hiç kullanışlı olmaz. Bir el çantan var senin bu el çantası o kadar karışık ki her şeye isim vermişsin yani her bir çivinin numarası var gerek var mı? Çiviyse çivi kardeşim al kullan. Yani ismi aynı olmalı bu metotların. Sen artık hangi parametreleri yolluyorsan ona göre compiler hangisini kullandığını bilmeli. Ayrı isimler verebilirsin ama işin sanatına belagatına uygun değil.
+
+## Overloading Kuralları
+- Bir sınıf içerisinde birden fazla aynı isimde metot tanımlayabilmek için şu kurallara dikkat edilmesi gerekmektedir.
+
+- Metot Overloading işlemini yapabilmek için metotların isimleri aynı olmalıdır.
+
+- Bu metotlar içerisinde fark yaratmamız gerekmektedir.
+
+- Bu fark bizzat metot imzalarında OLMALIDIR!
+
+- Metotlar arasında farkı yaratırken erişim belirleyicileri ve geri dönüş değerleri aktif rol oynamamaktadır.
+
+- Parametre sayıları ya da parametre türleri farklı olmalıdır.
+
+- Şimdi aynı isimde birden fazla metot oluştururken bu metotların hepsi birebir birbirleriyle aynı olurlarsa tabiki de sen bunları oluşturamazsın compiler dicek ki ya kardeşim sen bunlardan çağırıyon da hangisini çağırıyon. Ama yapısal olarak bu imzalarında bir fark yaratabilirsen eğer yaratılan bu farka göre kullanıcı hangi metodu kullandığını compiler'a rahat bir şekilde bildirimde bulunabilir.
+
+- Algoritmada farklılık olabilir bu Overloading kuralları için geçerli değil Overloading kuralı olabilmesi için metotların imzaları farklı olması gerekiyor. Amma velakin burada erişim belirleyicisi ve geri dönüş değeri aktif rol oynamamaktadır.
+
+- Bir metot ismine overloading yapacaksan dikkat etmen gereken tek nokta parametre sayıları ya da parametre türlerinin farklı olmasıdır. Aynı isimde oldukları zaman bu fark sağlanıyorsa compiler zaten buradaki tanımlamaya müsaade edecek ve ilgili metot adına overloading'i sağlamış olacaktır.
+
+- Parametreler imzada fark yaratıyorsa hiçbir sıkıntı yok. 
+
+- Bir metot ismiyle daha derli toplu bir şekilde aynı nitelikte birden fazla metodumu kullanabilmekteyim.
+
+<img src="20.png" width="auto">
+
+- Overloading işlemine tabi tutulmuş metotlardan istediğimizi kullanabilmek için o metodun imzasına uygun parametreleri tetiklememiz(ya da bir başka deyişle o imzadaki metodu kullanmamız) yeterli olacaktır.
+
+- Overloading yapılanmasında herhangi bir metodu kullanabilmenin tek yolu ilgili metodun imzasına uygun değerleri göndermektir.
+
+- Aynı sayıda parametre barındıran overload'larda eğer ki bu parametrelerin her biri sayısalsa burada dikkat edilmesi gereken nokta temel varsayım öncelikle `int`tir.
+
+- Programlamada bir sayı temelde direkt olarak `int`tir.
+ 
+- Sayısal türlerde temel varsayılan tür `int`tir. Varsayılan değerde 0'dır.
+
+- `class`'larda aynı isimde birden fazla metot tanımlayabilmeye overloading denmektedir. Bir `class`ın içerisinde birden fazla aynı isimde metot tanımlayabilmek için belirli kurallarımız vardır. Bu kurallarımız iki tanedir;
+    1. Parametrelerin türleri farklı olacak
+    2. Parametrelerin sayıları farklı olacak
+- Bu kurallar çerçevesinde oluşturacağınız nitelik olarak birbirine yakın olan bütün fonksiyonları overload hale getirebilir ve şık daha güzel daha düzenli bir yapı inşa edebilirsiniz.
+
+- Eğer ki C# yada Java overloading yapılanmasına destek vermeseydi artık biz herhangi bir basit sınıfa'da nokta dediğimizde karşımıza onlarca lüzumsuz metot gelecekti çünkü overloading'e izin vermiyorsa demek ki metotlarda işlevsel yakınlığı olsa dahi isimsel fark yaratabilmek için saçma sapan isimlerle metotlar görecektik. Çok şükür ki programlamada overloading denen mekanizma var ki daha şık bir şekilde kodumuzu farklı davranışlarla hızlı bir şekilde inşa edebilmekteyiz.
+
+```C#
+class Program
+{
+    static void Main(string[] args)
+    {
+        #region Method Overloading(Çoklu Yükleme)
+        //Overloading : Çoklu Yükleme
+        //Bir `class` içerisinde belirli kurallar çerçevesinde aynı isimde birden fazla metot oluşturmaya Method Overloading denir.
+
+        Random random = new Random();
+        random.Next();
+
+        Matematik matematik = new Matematik();
+        matematik.Topla(2, 5);
+        matematik.Topla(2, (byte)5, 1, 2);
+
+        #region Overloading Kuralları
+        //Bir sınıf içerisinde birden fazla aynı isimde metot tanımlayabilmek için şu kurallara dikkat edilmesi gerekmektedir.
+        //Metot Overloading işlemini yapabilmek için metotların isimleri aynı olmalıdır.
+        //Bu metotlar içerisinde fark yaratmamız gerekmektedir.
+        //Bu fark bizzat metot imzalarında OLMALIDIR!
+        //Metotlar arasında farkı yaratırken erişim belirleyicileri ve geri dönüş değerleri aktif rol oynamamaktadır.
+        //Parametre sayıları ya da parametre türleri farklı olmalıdır.
+        #endregion
+        #endregion
+
+        //Overloading işlemine tabi tutulmuş metotlardan istediğimizi kullanabilmek için o metodun imzasına uygun parametreleri tetiklememiz(ya da bir başka deyişle o imzadaki metodu kullanmamız) yeterli olacaktır.
+    }
+}
+class Matematik
+{
+    //Bir class içerisinde aynı isimde birden fazla metot tanımlanamaz
+    public int Topla(int sayi1, int sayi2)
+    {
+        return sayi1 + sayi2;
+    }
+    public int Topla(int sayi1, double sayi2)
+    {
+        return (int)(sayi1 + sayi2);
+    }
+    public int Topla(int sayi1, int sayi2, int sayi3)
+    {
+        return sayi1 + sayi2 + sayi3;
+    }
+    public int Topla(int sayi1, double sayi2, int sayi3, int sayi4)
+    {
+        return (int)(sayi1 + sayi2 + sayi3 + sayi4);
+    }
+
+    public int Topla(int sayi1, byte sayi2, int sayi3, int sayi4)
+    {
+        return sayi1 + sayi2 + sayi3 + sayi4;
+    }
+}
+```
