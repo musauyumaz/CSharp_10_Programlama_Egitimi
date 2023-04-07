@@ -1056,3 +1056,132 @@ class Matematik
     }
 }
 ```
+
+***
+# 399) Recursive(Tekrarlamalı/Özyinelemeli) Metotlar
+- Özünde bir fonksiyonu kullanım çeşididir bir yaklaşımdır.
+
+- Recursive bir teknik yapılanma değildir. Recursive bildiğin metodun üzerinden farklı bir semantik kazandıran teknik bir yapılanma değildir. Recursive denen bildiğin metotların kullanım yaklaşımıdır.
+
+- Recursive Fonk : Kendi içerisinde kendisini çağıran/tetikleyen fonksiyonlardır.
+
+- Bir fonksiyon tasarlıyorsun bunu başka bir fonksiyondan çağırıp tetikleyebilirsin bunda sıkıntı yok ama bu fonksiyonu kendi içerisinde kendinde tetikliyorsan kendinde çağırıyorsan işte bu bir farklı yaklaşımdır. İşte bu farklı yaklaşıma Recursive fonksiyonlar diyoruz.
+
+- Özyinelemeli/Tekrarlamalı Fonk.
+
+- Yani bir fonksiyon kendi içerisinde kendisini tetikliyorsa çağırıyorsa biz buna Özyinelemeli/Tekrarlamalı yani kendini tekrar ediyor kendini durmadan tetikliyor bu yaklaşımı/manevrayı benimseyen fonksiyonlara biz recursive fonksiyon diyoruz.
+
+- Recursive fonksiyonlar bir yaklaşımdır!
+
+- Recursive fonksiyon bir özellik değil bir teknik tanımlama değil herhangi bir yapı değil bildiğin fonksiyonu kullanım yaklaşımı.
+
+- Yazılımda algoritma oluşturuyorsun bu algoritmalardaki uç noktalar vardır. Belli durumlara profesyonel çözümler getirmeye çalışıyorsun ya işte bu algoritma seviyesinde uç noktadır Recursive Fonksiyon. Haliyle zordur.
+
+- Anlaşılması, kullanması ve anlatılması zordur!
+
+- Recursive Fonksiyonlar ne amaçla kullanılmaktadır?
+    * Bir iş yapacaksın öngörülemeyen durumlar var öngörülemeyecek kadar tekrar etmen lazım.
+    * Bir işlem yapacaksın yapacağın işlemde bir derinlik mevzusu var ve orada tahmin edemiyorsun ne kadar derin olacağını Örneğin bir klasör dizinindeki dosyaları çıkarman lazım. Peki klasör dizinin içindeki alt klasörleri, onların altındakileri, onların altındakileri diye öyle gider. Derinliğinin biliyor musun? Haliyle burada öyle bir çözüm getirmen gerekiyor ki o klasör yapısının klasörün altındaki derinliğini/derecesini bilemediğim klasörlerdeki/klasör yapılanmasındaki dosyaları getirebilmek onları tahmin edebilmek onları ekrana yansıtabilmek recursive durumu düşünmenizi gerektirebilir. Kendini tekrar ede ede bilemediğiniz derinliklere kadar inip sondan bütün dosyaları toplayıp getirebilirsiniz.
+    * Sonu bilinmeyen durumlarda döngüler yerine kullanmayı tercih edebilirsiniz.
+
+- Öngöremediğin tekrarlı durumlar varsa, derinliğini tahmin edemediğin algoritmalar/operasyonlar yapman gerekiyorsa ya da sonunu bilemediğin işlem sayısının sonunu bilemediğin durumlara gitmen gerekiyorsa döngüleri düşünebilirsin sıkıntı yok ama birde recursive'i düşün.
+
+- Bir fonksiyon kendi içinde kendini çağırıyorsa Recursive fonksiyon.
+
+- Hiçbir recursive fonksiyon kendi içinde tetiklenen fonksiyon kendisini çağıran ana fonksiyona geri dönemiyor çünkü her seferinde işini bitirmeden başka bir fonksiyon çağırıyor. Yani recursive olarak sonsuza kadar iç içe gidiyor.
+
+- Recursive fonksiyonlarla ilgili kod yazarken yazmış olduğunuz algoritmayı iyi yönetebilmeniz lazım aksi taktirde sonsuza kadar gider yönetemezsiniz. Yani sonsuza kadar giden bir yapılanmada artık istediğiniz çözümleri sağlayamayabilirsiniz.
+
+- Bir şekilde Recursive fonksiyonu kontrol etmen gerekiyor unutma bu bir şekildeki yegane çözüm parametrelerdir. Recursive fonksiyonlarda parametrelerden kontrol sağlayabilirsin.
+
+- Belirli şartlara göre bu Recursive fonksiyonda işlem yaptırmak istiyorsan yani recursive'le şart varsa parametre üzerinden bu şart haberleşir.
+
+<img src = "21.png" width ="auto">
+
+- Recursive fonksiyon gider geri gelir. Yani derinliğe inersin derinlikten geri gelirsin. Yani boomerang gibi. Koşarak gittiğin yoldan sürünerek geri gelirsin öyle düşün :)
+
+- Döngülerin kullanıldığı her noktada recursive fonksiyonlar kullanılabilir. Amma velakin recursive fonksiyonların kullanıldığı her yerde döngü KULLANILAMAZ!!!
+
+- Recursive fonksiyonu kullandığın her noktada döngüyü kullanamazsın çünkü döngü öngörülebilir düz bir hizada gider derinlik yoktur. Ama recursive derinliklere inebilmeni sağlar. Derece kavramını recursive'de sağlayabilirsin. Ama döngüde lineer bir şekilde dümdüz yardırırsın. Döngünün kullanıldığı her yerde recursive kullanabilirsin. Ama recursive kullandığın her yerde döngü kullanamazsın kullanabilmen için saçmalaman lazım. 
+
+- Recursive ciddi manada bazı noktalara cuk diye oturur. Döngüyü o noktaya oturtabilmen için 40 takla atman gerekir. Ama döngüyü kullandığın yerde yine recursive'i rahat bir şekilde kullanabilirsin.
+
+```C#
+class Program
+{
+    static void Main(string[] args)
+    {
+        //Recursive Fonksiyon : Kendi içerisinde kendisini çağıran/tetikleyen fonksiyonlardır.
+        //Özyinelemeli/Tekrarlamalı Fonksiyon
+
+        //Recursive fonksiyonlar bir yaklaşımdır!
+
+        //Anlaşılması, kullanması ve anlatılması zordur!
+
+        //Recursive Fonksiyonlar ne amaçla kullanılmaktadır?
+        //Öngörülemeyen, derinliği tahmin edilemeyen, sonu bilinmeyen durumlarda tercih edilebilir.
+
+        //Döngülerin kullanıldığı her noktada recursive fonksiyonlar kullanılabilir. Amma velakin recursive fonksiyonların kullanıldığı her yerde döngü KULLANILAMAZ!!!
+
+        // X();
+        // System.Console.WriteLine(Topla(0, 50));
+        List<FileInfo> files =  DosyaYazdir("");
+        foreach (FileInfo file in files)
+        {
+            System.Console.WriteLine(file.FullName);
+        }
+    }
+
+    // static void X(int a = 1)
+    // {
+    //     System.Console.WriteLine(a + ". Merhaba");
+    //     if (a < 3)
+    //     {
+    //         X(a++);
+    //     }
+
+    // }
+    // void X(int a = 1)
+    // {
+    //     System.Console.WriteLine("Merhaba");
+    //     if (a < 7)
+    //     {
+    //         X(++a);
+    //     }
+    //     System.Console.WriteLine("Dünya");
+    // }
+
+    #region Örnek 1
+    //Belirli değer aralığındaki 5'in katı olan tüm sayıları toplayan recursive fonksiyonu yazalım.
+
+    static int Topla(int baslangic, int bitis)
+    {
+        if (baslangic % 5 == 0)
+            return baslangic + Topla(++baslangic, bitis);
+        if (baslangic <= bitis)
+            return Topla(++baslangic, bitis);
+        return 0;
+    }
+
+    #endregion
+    #region Örnek 2
+    List<FileInfo> DosyaYazdir(string path)
+    {
+        List<FileInfo> fileInfos = new();
+
+        DirectoryInfo directoryInfo = new DirectoryInfo(path);
+        DirectoryInfo[] directoryInfos = directoryInfo.GetDirectories();
+
+        if (directoryInfos.Any())
+            foreach (DirectoryInfo directory in directoryInfos)
+                DosyaYazdir(directory.FullName);
+        else
+            fileInfos.AddRange(directoryInfo.GetFiles());
+
+        return fileInfos;
+
+
+    }
+    #endregion
+}
+```
