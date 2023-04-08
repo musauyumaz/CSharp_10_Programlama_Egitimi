@@ -1185,3 +1185,157 @@ class Program
     #endregion
 }
 ```
+
+***
+# 400) C#'ta ref Keyword'ü Nedir? Ne Amaçla Kullanılmaktadır?
+- `ref` keywordü genellikle metotlard üzerinden örneklendirilen bir keyword. Günlük hayatta operasyonlarımızda `ref` keywordünü genellikle metotlarda kullanıyor olabiliriz. Ama bu `ref` keywordünün metot denilen yapının atomik bir parçası olduğu anlamına gelmemektedir. `ref` keywordü başlı başına bir yapılanma.
+
+- `ref` keywordü referansın kısaltmasıdır.
+
+- Referans Nesne tabanlı programlamanın asli unsurudur.
+
+- ref keywordü referanstan gelmektedir.
+
+- Referans OOP kavramıdır.
+
+- OOP'de nesneler(object) RAM'de HEAP bölgesinde tutulmaktadır.
+
+- HEAP bölgesinde tutulan objelere direkt bizim erişim yetkimiz yoktur.
+
+- RAM'de 2 bölge bulunmaktadır. Biri STACK, Biri HEAP
+
+- Bir yazılımcının STACK'e direkt erişmesi mümkündür. STACK'teki verilere değişkenlere vs. direkt erişmesi mümkündür. Amma velakin bir yazılımcı doğrudan HEAP'teki verilere direkt erişemez. Mümkün değildir. 
+
+- HEAP'te objelerimiz vardır. Obje bir veriden daha fazlasını daha fazla anlam ifade edebilen bir yapılanmaydı. Bir değerdi. Tamam başlı başına bir veriydi ama salt bir veriden daha fazlasını daha fazla anlam ifade edebilen bir veriydi. Örneğin benim adım Gençay. Gençay bir veridir ama obje değildir. Yaşım var mesela 30 yaşındayım bu bir veridir ama obje değildir saçımın rengi siyah bir veridir ama obje değildir. Obje nedir? Obje bir bütündür. Bu verilerin bir araya gelip beni oluşturmasıdır. Yani ben bir objeyim.
+
+- HEAP'teki objelere direkt erişmemiz mümkün değil. Yani HEAP'teki objeyi kullanabilmemiz için dolaylı yoldan HEAP'e bir şekilde erişmemiz gerekiyor. Burada referans dediğimiz mekanizmayı kullnıyorduk. Peki referans nedir? Referans benim yazılımcı olarak direkt erişebildiğim alanlara oluşturulabilen ve o alandan HEAP'teki nesneyi işaretleyebilmemi/referans etmemi sağlayabilen değişkenlerdi.
+  * Yani STACK'te bir değişken oluşturuyorum oluşturduğum bu değişkenin bir ismi oluyor r olsun bu r referans türünde bir değişkense bununla ben HEAP'teki herhangi bir nesneyi işaretleyebiliyordum ya da bir başka deyişle referans edebiliyordum. Dolayısıyla ben direkt STACK'e erişebiliyorum STACK'te r referansı var. r'ye erişiyorsam r'de HEAP'teki objeye erişebiliyorsa ben dolaylı yoldan HEAP'teki objeyi elde etmiş oluyorum ondan sonra istediğin operasyonu çekebiliyorsun. Yani o nesne üzerinden istediğin işlemleri gerçekleştirebiliyorsun. 
+
+- Referansın değer türlü değişkenlerden temel farkı bir objeyi işaretleyebilmesi. Uzaktaki farklı bir ortamdaki bir şeyi refere ediyor onu temsil ediyor ondan dolayı biz buna değişken demiyoruzda referans türlü değişken diyoruz.
+
+- STACK'te bir referans daha oluşturduğumuzu düşünelim r2 diyelim. 
+    * `r2 = r;` dediğimiz zaman burada değişkenlerimiz referans türlü değişkenlerse artık `=` bu operatör assign operatörü değildir referans etme operatörüdür. r olarak ben bir referansım r2'de haliyle referans. r'nin referans ettiği nesneyi r2'de referans etsin demiş oluyoruz.
+    * Burada her iki değişkende aynı nesneyi referans edecektir. r2 ile r aynı nesneyi temsil etmektedir.
+    * r üzerinde yapılan değişiklik r2'ye yansıyacak aynı şekilde r2 üzerinde yapılan değişiklikte r'ye yansıyacaktır. 
+    * Referanslar birbirlerine `=` operatörü kullandığında aynı nesneyi işaretlettirmektedirler. Yani bir nesne birden fazla referans üzerinden işaretlenebilmektedir.
+
+- Referans özünde HEAP'teki bir objeyi erişilebilir kılan değişken türüdür.
+
+<img src="22.png" width="auto">
+<img src="23.png" width="auto">
+
+- Biz burada bu davranışı değer türlü değişkenlerde nasıl yapabiliriz diye sorarsanız eğer işte orada cevabı `ref` keywordüyle veriyoruz.
+
+- RAM'de herhangi bir veriyi tutmak istiyorsak değişkenleri kullanırız.
+
+- Haliyle adı üzerinde değişken. Sen değişkene bir değer atadığın zaman başka bir değeride gönderebiliyorsun.
+
+- OOP'de referanslar `=` operatörü ile iletişime geçebilmektedirler. Bir referans, işaretlediği herhangi bir nesneyi `=` operatörü sayesinde farklı bir referansa işaretletebilir.
+
+- Yani referanslar da `=` operatörü neticesinde herhangi bir verisel/nesnesel türeme söz konusu olmamakta, işaretlenmiş nesne diğer referans tarafından işaretlenmektedir.
+
+- Eğer ki arada `=` operatörü varsa ve bu değerler sol ve sağ taraftaki kullanılan yapılar değer türlü değişkenlerse buradaki operatörümüzün adı assign/atama operatörü olur.
+
+- `int b = a;`
+  * Atama operatörü söz konusu olduğunda atama operatörünün(`=`) sağında bulunan değişken neyse o değişkenin değeri atama operatörünün sağında olduğu için değeri geliyor onun yerine.
+  * Bu davranışı değer türlü değişkenlerde yaptığında referans türlü değişkenlerde olduğu gibi referans etme durumu falan olmuyor. Değer türüyor/kopyalanıyor. Deep Copy diyoruz biz buna.
+  * Değer türlü değişkenleri birbirine atarsak ortaya çıkan sonucu Deep Copy olarak değerlendiriyoruz. Çünkü buradaki değerler türüyorlar.
+  * Bellekte alanımız var buna 5 değerini koyuyorsun ve bu alanı sen bir değişkenle işaretlemiş oluyorsun. Daha sonra bu işlemden sonra yine bellekte başka bir alana yine 5 değerini koyuyorsun bunu da başka bir değişkenle işaretlemiş oluyorsun. Bu durumda önceden bellekte bir adet 5 değeri varken artık 2 tane 5 değeri var yani sen veriyi klonlamış oluyorsun.
+
+- `ref` keywordü değer türlü değişkenlerde referans operasyonları yapmamızı sağlayan bir keyworddür. 
+
+- `ref` keywordü değer türlü değişkenlerin referanslarını çağırmamızı/kullanmamızı sağlayan bir keyworddür.
+
+- yani sen `ref` keywordünü kullanıyorsan değer türlü değişkenin referansını çağırmış kullanmış oluyorsun.
+
+- `int b = a;`
+  * Normalde a'yı assign'ın sağında çağırdığında a'nın yerine  gidiyor. 5 gittiğinden dolayı b'ye de 5 atanıyor haliyle burada değerimiz çoğaltılmış oluyor. Ben burada a'yı gönderirken bu değer türlü değişkende yani 5 yerine a'nın bizzat referansını göndermiş olsaydım burada a'nın bellekte işaretlemiş alanı göndermiş olacaktım haliyle bu alanda b'ye işaretletmiş olacaktım. İşte bunu yapabilmek için yani ben bellek üzerinde sadece tek bir alanı iki farklı değer türlü değişkene işaretletebilmek için ya da bir başka deyişle değer türlü değişkenleri belleğin STACK'inde referans türlüymüş gibi kullanabilmek için `ref` keywordünü kullanacaktım.
+
+- `ref int b = ref a;` a'nın referansını göndermek istediğimizde böyle tanımlarız.
+  * Burada artık b değişkenine bir değer gelmemektedir. b'ye referans gelmektedir.
+  * a değişkenin referansı geliyor.
+  * a'nın kendisi gidecektir. b değişkeni a'nın kendisini işaretlemiş olacaktır bunu kullanacaktır.
+  * artık buradaki assign operatörü referans atama operatörüne dönüşecektir.
+  * Artık her iki değişkende aynı bellek adresinden besleniyor anlamına gelecektir.
+  * Bu operasyondan sonra a değişkenin değeri değiştiğinde b'ye b değişkeninin değeri değiştiğinde a'ya yansıyacaktır.
+
+- `ref` keywordü yanındaki değişkenin referansını temsil eder.
+
+<img src="24.png" width="auto">
+
+- Değer türlü değişkenlerde referans çalışması yapmak istiyorsak eğer `ref` keywordü kullanılır!
+
+- `ref` keywordü, değer türlü değişkenlerin referans türlü değişkenler gibi çalışmasını sağlayan bir komuttur.
+
+- Değer türlü değişkenlerde shallow copy yapmamızı sağlayan bir keyworddür.
+
+- Shallow copy yüzeysel kopyalamadır. Yani sen yapmış olduğun işlem neticesinde veri türetmiyorsan RAM'deki mevcut veri bir iken iki olmuyorsa dolayısıyla shallow copy yapmış oluyorsun. İşte bunu değer türlü değişkenlerde yapabilmek için `ref` keywordünden istifade ediyoruz.
+
+<img src="25.png" width="auto">
+
+- Referansı gönderilen bir değişkeni değer türlü bir değişken karşılayamaz programlamanın temel mantığına aykırı değer geliyorsa değer karşılayacaksın `int` geliyorsa `int` karşılayacaksın `string` geliyorsa `string` karşılayacaksın `ahmet` geliyorsa `ahmet` karşılayacaksın. Haliyle referans geliyorsa artık bir değer gelmiyorsa onu değer olarak bekleyemezsin artık bir referans geleceğini bildirmen gerekiyor.
+
+- `ref int b = ref a;`
+  * referansı referans karşılar.
+  * a'nın referansını b referansıyla işaretlemiş olduk.
+  * `=` operatörümüz her ne kadar değer türlü değişkenler olsa da bir assign operatörü olarak davranış sergilememektedir çünkü referansları işaretlemektedir.
+  * bu operasyonda a'da b'de aynı bellek adresini görmektedir. Çünkü a'nın referansını b referansıyla işaretliyoruz.
+  * Bu saatten sonra a'yı da b'yi de aynı bellek adresinden beslediğimizden dolayı ikisinin üzerinde yapılan herahngi bir değişiklik diğer değişkene de yansıdığını göreceğiz.
+
+- Değer türlü değişkenlerde referans mantığında çalışmak istiyorsak ya da değer türlü değişkenlerin referanslarını çağırmak istiyorsak `ref` keywordünü kullanıyoruz.
+
+- Bir metoda ya da assign'ın sağına bir değişkeni gönderiyorsak parametre olarakta gönderirken oraya değeri giderdi. 
+
+- Bir metoda bir değişkenin değerinden ziyade değişkenin referansını göndermek istiyorsan `ref` keywordünü kullanman gerekiyor.
+
+<img src="26.png" width="auto">
+
+- Bir şeyin kendisinin gitmesiyle değerinin gitmesi arasında fark var. Mesela kavgaya gidiyorsun senin adına küfretmeleriyle direkt senin sıfatına küfretmeleri arasında fark var yani adını bir kağıda yazıp orada değerin üzerinde işlem yapmak var birde ağzının yüzünün üzerinde işlem yapmak var. Kendin gittiğinde değişkenliği direkt hissedersin.
+
+<img src="27.png" width="auto">
+
+```C#
+class Program
+{
+    static void Main(string[] args)
+    {
+        #region Ref Keywordü
+        //ref keywordü referanstan gelmektedir.
+        //Referans OOP kavramıdır.
+        //OOP'de nesneler(object) RAM'de Heap bölgesinde tutulmaktadır.
+        //OOP'de referanslar `=` operatörü ile iletişime geçebilmektedirler. Bir referans, işaretlediği herhangi bir nesneyi `=` operatörü sayesinde farklı bir referansa işaretletebilir.
+        //Yani referanslar da `=` operatörü neticesinde herhangi bir verisel/nesnesel türeme söz konusu olmamakta, işaretlenmiş nesne diğer referans tarafından işaretlenmektedir.
+        //Değer türlü değişkenlerde referans çalışması yapmak istiyorsak eğer `ref` keywordü kullanılır!
+        //`ref` keywordü, değer türlü değişkenlerin referans türlü değişkenler gibi çalışmasını sağlayan bir komuttur.
+        //Değer türlü değişkenlerde shallow copy yapmamızı sağlayan bir keyworddür.
+
+        #region Örnek 1
+        int a = 5;
+        ref int b = ref a;
+
+        System.Console.WriteLine(b);
+        System.Console.WriteLine(a);
+
+        a *= 5;
+        System.Console.WriteLine(b);
+
+        b -= 10;
+        System.Console.WriteLine(a);
+        #endregion
+
+        #region Örnek 2
+        int y = 10;
+        X(ref y);
+        System.Console.WriteLine(y);
+
+        void X(ref int a)
+        {
+            a = 25;
+        }
+        #endregion
+        #endregion
+        #region Ref Returns
+        #endregion
+    }
+}
+```
