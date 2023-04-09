@@ -1339,3 +1339,53 @@ class Program
     }
 }
 ```
+
+***
+# 401) C#'ta Ref Returns Özelliği Nedir? Ne Amaçla Kullanılmaktadır?
+- `ref` keywordü referanstan gelir.
+
+- Referans dediğimiz OOP'deki referans objeleri, HEAP'teki nesneleri işaretlememizi sağlayan bir değişken iken `ref` ise objeleri değil STACK'teki değer türlü değişkenlerin referanslarını temsil etmemizi sağlayan bir keyworddür. Haliyle burada `ref` değer türlü değişkenlerin referanslarını ele almamızı sağlıyor. Yani buradaki mevzu bahis değer türlü değişkenlerdir.
+
+- Değer türlü değişkenlerin referansları mevzu bahis olduğunda `ref` keywordünü kullanıyoruz. `ref` keywordü üzerinden değer türlü değişkenlerin referanslarını yani kendilerini sağa sola gönderiyoruz istersen başka bir değişkene gönder istersen herhangi bir metoda gönder bu tarz referans işlemleri yapmamız gerektiği durumda `ref` keywordünü kullanıyoruz.
+
+- `ref` keywordüyle bir değer türlü değişkenin referansını bir yere gönderiyorsan eğer gönderdiğin yerde artık değer değil referans karşılayan bir değişken olmalıdır. Değişken değer almak zorundadır.
+
+- Değer türlü değişkenlerde shallow yani yüzeysel kopyalama yapmak istiyorsanız `ref` keywordünü kullanabilirsiniz.
+
+- Ref returns değer yerine referans return etmemi/döndürmemi sağlayan bir özelliktir. 
+
+- Return işlemi metotlarda yapılır. Ref returns özelliği sadece metotlarda kullanılır.
+
+- ref returns özelliği sadece metotlarda geçerlidir.
+
+- Ne olursa olsun bişeyi  geri döndürüyorsan metoda ihtiyacın var.
+
+- Metotlar geriye değer döndürebilen yapılardır. Ayrıca metotlarda geriye nesnelerde döndürebilmekteyiz. Ayrıca ref returns özelliği sayesinde değer türlü değişkenlerin referanslarınıda geriye döndürebilmekteyiz.
+
+- Nesneyi ya da referansını döndürdüğü durumda bu nesneyi ya da referansı başka bir noktada yani metodun çağırıldığı noktada yakalayıp farklı bir referansa atama işlemini gerçekleştirebiliyorum. Şimdi bu işlemi nesnelerin dışında değer türlü değişkenler içinde gerçekleştirebiliyoruz ref returns özelliği sayesinde.
+
+- ref returns özelliği metotlarda değer türlü değişkenlerimizin referanslarını geriye döndürmemizi sağlıyor. İlla bir nesne olmasına gerek yok bir değer türlü değişkenin vardır bunu sen metoda göndermişsindir referans olarak içeride işlem yapılmıştır ve bu işlem neticesinde bu referansı sen tekrardan dışarı çıkarmak istiyorsan yani metottan geri döndürmek istiyorsan ref returns özelliğini kullanman yeterli olacaktır.
+
+<img src="28.png" width="auto">
+<img src="29.png" width="auto">
+
+- Metotlardan değer türlü değişkenlerimizin referansını geriye döndürmek istediğimizde ref returns özelliğini kullanmamız yeterli oluyor. Haliyle ref returns özelliğini kullanabilmemiz için metodun geri dönüş değerini bildirdiğimiz noktada `ref` ile burada referansın döneceğini ifade etmemiz gerekiyor aksi taktirde zaten normal bir değer döndüren bir metot olacaktır. Eğer ki ben referans geriye döndüren değer türlü değişkenlerin referansını geriye döndüren bir metot oluşturmak istiyorsam yani ref returns niteliğini kazandırdığım bir metot oluşturmak istiyorsam metot imzasını düzenlemeliyim.
+
+```C#
+#region Ref Returns
+//ref returns özelliği sadece metotlarda geçerlidir.
+//Metotlar geriye değer döndürebilen yapılardır. Ayrıca metotlarda geriye nesnelerde döndürebilmekteyiz. Ayrıca ref returns özelliği sayesinde değer türlü değişkenlerin referanslarınıda 
+geriye döndürebilmekteyiz.
+#region Örnek 1
+int a = 5;
+int b = X(ref a);
+System.Console.WriteLine(a);
+System.Console.WriteLine(b);
+ref int X(ref int y)
+{
+    y = 25;
+    return ref y;
+}
+#endregion
+#endregion
+```
