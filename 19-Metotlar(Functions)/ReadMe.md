@@ -1389,3 +1389,74 @@ ref int X(ref int y)
 #endregion
 #endregion
 ```
+
+***
+# 402) C#'ta out Keyword'ü Nedir? Ne Amaçla Kullanılmaktadır?
+- Programlamada dikkat ederseniz eğer algoritmalarla erişemeyeceğimiz belirli davranışları bize kazandıran belli başlı keywordler vardır. Örneğin `ref` keywordü. `ref` keywordü herhangi bir değişkenin referansını elde edip belirli operasyonlara tabi tutmamızı sağlayan bir keyworddür. Şimdi ben algoritmalarla bir değişkenin referansını elde edip belirli operasyonlara tabi tutabilmek çok zor olacaktır. Pointerlara gir onu yap bunu yap. Bayaa bayaa uzun işlerle uğraşmam gerekecek. Haliyle bu tarz kritik bir manevrayı bana sağlayan `ref` keywordü sayesinde ihtiyaç doğrultusunda hızlı bir şekilde bu manevrayı sağlayabiliyorum kullanabiliyorum ve gerekli işlemleri yapabiliyorum. Bunun gibi önceden gördüğümüz ve sonradan göreceğimiz farklı keywordlerimizde var. Örneğin `in` keywordü var, `params` keywordümüz var şimdi inceleyeceğimiz `out` keywordümüz var. Yani bu keywordler programlama dilinde senin algoritma yeteneğinin dışında farklı nitelikler kazanımlar sağlayan keywordlerdir.
+
+- `out` keywordü adı üstünde bak out yani bişeyi dışarı çıkarmamızı sağlayan bir keyword bir davranış sergiliyor o davranış dışarı çıkarma davranışı adından belli.
+
+- Bir sistem düşünelim bu sistem açık ya da kapalı bir sistem olabilir. Sistemden kastım şirket olabilir istihbarat teşkilatı olabilir ya da programlamadaki herhangi bir metot olabilir. Şimdi sistemlerde şöyle bir kaide vardır. Bir sisteme dış dünyadan herhangi bir veri geliyorsa eğer biz bu gelen verinin davranışına INPUT deriz. Benzer mantıkla bir sistemden dış dünyaya bir veri çıkıyorsa biz bu çıkan veriye buradaki davranışa OUTPUT deriz.
+  * Örneğin bir metoda dış dünyadan gelen veriler yani parametreler INPUT'ken bir metottan dış dünyaya yani dışarıya gönderilen değerler OUTPUT'tur. Örneğin bir metodun `return` ettiği herahangi bir değer metodun içinden dış dünyaya dışarıya gönderilen değer midir? evet değerdir. Haliyle bu OUTPUT değeridir.
+
+- Bir sistemde dış dünyaya bir değer gönderiyorsan biz buan output diyoruz. Haliyle `out` keywordü programlamada bir yerden/metotlardan dışarıya değer göndermemizi sağlayan bir keyworddür.
+
+- `out` keywordü metotların parametreleri üzerinden dışarıya değer göndermemizi sağlayan bir keyworddür.
+
+- `return` yanına yazdığımız değer metodun dışına değeri göndermemizi sağlar. Bu da bir OUTPUT'tur. Ama ben metodun `return` komutuyla değil parametreleri sayesinde dış dünyaya bir değer göndermek istiyorsam bunu da biz `out` keywordüyle sağlıyoruz.
+
+- `out` keywordü metodun parametresi üzerinden dışarıya değer göndermemizi sağlar.
+
+- Bir metodun parametreleri varsayılan olarak INPUT'tur. Haliyle metotlarda tanımlanmış parametreler direkt olarak içeriye değer almaya odaklanırlar.
+
+- Çoğu metotta ilgili parametreye biz değer göndeririz. İlgili değeri alıp metodun içinde işlenebilir hale getirdi. Yani dış dünyadan metodun içerisine bir değer sokmak istiyorsanız parametre tanımlamanız gerekiyor. ve tanımladığımız parametreler default olarka INPUT olacaktır.
+
+- Eğer ki bir metodun parametresi dışarıya değer çıkaracaksa o parametrenin `out` keywordüyle işaretlenmesi gerekmektedir. 
+
+- Bir parametre `out` ile işaretlendiyse metodun dışarısına değer gönderecek bir parametre olmuş oluyor.
+
+- Default davranış olarak INPUT söz konusu iken OUTPUT davranışı sergilemek istiyorsak eğer `out` keywordünü kullanıyoruz.
+
+<img src="30.png" width="auto">
+
+- Bir metotta birden fazla parametrenin bir kısmı INPUT bir kısmı OUTPUT olabilir. 
+
+- Bir metotta eğer ki OUTPUT parametreler varsa kesinlikle o metodun içerisinde OUTPUT parametrelere değer verilmesi gerekir. Çünkü madem bu parametreler dışarıya değer gönderecek o değeri seve seve göndermek zorundasın. Bir metot geriye değer döndürüyorsa onu nasıl ki seve seve `return` etmek zorundaydık ya benzer mantıkla bir method `out` parametreler barındırıyorsa bunlara kendi içerisinde değer vermek zorunda.
+
+- Metodu çağırırken `out` olan parametrelere benim değer göndermemem gerekiyor. Çünkü `out` içeriden bana değer verecek e haliyle içeriden değer verecek bir parametreye o değeri karşılayacak bir değişken tanımlamam lazım.
+
+- OUTPUT parametre barındıran bir metodu kullanırken `out` parametrelerden gelecek olan değerleri karşılayacak değişkenler tanımlanmalıdır!
+
+- `out` parametrelere o parametrelerden gelecek olan değerleri karşılayacak değişkenleri verirken salt olarak vermiyoruz bunları biz `out` keywordü ile işaretliyoruz. Çünkü biz buraya ilgili değişkenin değerini değil karşılayacak olan değişkeni yollamış oluyoruz.
+
+- Bir metodun içerisinde parametre üzerinden dış dünyaya değer göndereceksek ilgili parametreyi `out` ile işaretliyoruz dış dünyadan o parametreden gelecek olan değeri yakalayacak olan değişkeni de kullnırken `out` ile işaretleyerek kullanıyoruz.
+
+- Tür dönüşümlerinde elimizdeki değerlerin hedef türe uygun olup olmamasını bu duruma göre dönüşümün sağlanmasını `TryParse` fonksiyonlarıyla çok rahat bir şekilde sağlayabilmekteyiz.
+
+```C#
+#region Out Keyword
+//OUTPUT parametre barındıran bir metodu kullanırken `out` parametrelerden gelecek olan değerleri karşılayacak değişkenler tanımlanmalıdır!
+#region Kullanım 1
+int _b = 0;
+string _d = "";
+int a = X(out _b, 123, out _d);
+#endregion
+#region Kullanım 2
+int a = X(out int _b, 123, out string _d);
+System.Console.WriteLine(_b);
+System.Console.WriteLine(_d);
+#endregion
+int X(out int b, int c, out string d)
+{
+    //Bir metot `out` parametre(ler) barındırıyorsa o parametrelere kendi içerisinde değer atanması gerekmektedir! Aksi taktirde derleyici hatası alınacaktır.
+    b = 25;
+    d = "ahmet";
+    return 0;
+}
+#region TryParse
+string s = "123";
+if (int.TryParse(s, out int r)) { }
+else { }
+#endregion
+#endregion
+```
