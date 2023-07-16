@@ -132,6 +132,8 @@
 
 - Bir kodu inşa ediyorsunuz ve bu inşa ettiğiniz kod derlenmediği sürece kullanılabilir hale gelmemektedir. Onun için kodu bizim derleyip daha sonra çalıştırmamız gerekiyor. Dolayısıyla buradaki süreçten kodun geçmesi gerekiyor. Buradaki süreç manuel bir şekilde geçmeyecektir. Bunu kullanacağımız editörler ya da .NET CLI dediğimiz asistan sayesinde çok rahat bir şekilde gerçekleştirebiliriz.
 
+ - C# kodları, önce C# kaynak kodundan, C# derleyicisi tarafından makine diline daha yakın olan ara dil olan "Common Intermediate Language" (CIL) veya "Microsoft Intermediate Language" (MSIL) olarak adlandırılan bir ara kod formuna derlenir. Bu ara kod daha sonra .NET Framework veya .NET Core gibi ortamlarda çalıştırılabilir hale gelmek üzere Just-In-Time (JIT) derleyici tarafından hedef makine diline (örneğin, x86, x64) derlenir.
+
 <img src="10.png" width="auto">
 <img src="11.png" width="auto">
 
