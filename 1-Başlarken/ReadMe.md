@@ -133,6 +133,89 @@
 - Bir kodu inşa ediyorsunuz ve bu inşa ettiğiniz kod derlenmediği sürece kullanılabilir hale gelmemektedir. Onun için kodu bizim derleyip daha sonra çalıştırmamız gerekiyor. Dolayısıyla buradaki süreçten kodun geçmesi gerekiyor. Buradaki süreç manuel bir şekilde geçmeyecektir. Bunu kullanacağımız editörler ya da .NET CLI dediğimiz asistan sayesinde çok rahat bir şekilde gerçekleştirebiliriz.
 
  - C# kodları, önce C# kaynak kodundan, C# derleyicisi tarafından makine diline daha yakın olan ara dil olan "Common Intermediate Language" (CIL) veya "Microsoft Intermediate Language" (MSIL) olarak adlandırılan bir ara kod formuna derlenir. Bu ara kod daha sonra .NET Framework veya .NET Core gibi ortamlarda çalıştırılabilir hale gelmek üzere Just-In-Time (JIT) derleyici tarafından hedef makine diline (örneğin, x86, x64) derlenir.
+  
+```C#
+using System;
+
+public class Example
+{
+    public static void Main()
+    {
+        int a = 5;
+        int b = 10;
+        int result = Add(a, b);
+        Console.WriteLine("The result is: " + result);
+    }
+
+    public static int Add(int x, int y)
+    {
+        return x + y;
+    }
+}
+```
+
+```CIL
+.assembly extern mscorlib
+{
+  .ver 4:0:0:0
+  .publickeytoken = (B7 7A 5C 56 19 34 E0 89)
+}
+.assembly 'CILExample'
+{
+  .hash algorithm 0x00008004
+  .ver 0:0:0:0
+}
+.module 'CILExample.exe'
+// MVID: {A6936B3D-B84C-487E-A5B9-DA7738B8ED5B}
+.imagebase 0x00400000
+.file alignment 0x00000200
+.stackreserve 0x00100000
+.subsystem 0x0003       // WINDOWS_CUI
+.corflags 0x00000001    //  ILONLY
+// Image base: 0x00240000
+
+.class private auto ansi beforefieldinit Example
+       extends [mscorlib]System.Object
+{
+  .method public hidebysig static void
+          Main() cil managed
+  {
+    // Method begins at RVA 0x2050
+    // Code size 22 (0x16)
+    .maxstack 2
+    .entrypoint
+    IL_0000:  ldc.i4.5
+    IL_0001:  stloc.0
+    IL_0002:  ldc.i4.s   10
+    IL_0004:  stloc.1
+    IL_0005:  ldloc.0
+    IL_0006:  ldloc.1
+    IL_0007:  call       int32 Example::Add(int32, int32)
+    IL_000c:  stloc.2
+    IL_000d:  ldstr      "The result is: {0}"
+    IL_0012:  ldloc.2
+    IL_0013:  box        [mscorlib]System.Int32
+    IL_0018:  call       void [mscorlib]System.Console::WriteLine(string, object)
+    IL_001d:  ret
+  } // end of method Example::Main
+
+  .method public hidebysig static int32
+          Add(int32 x,
+              int32 y) cil managed
+  {
+    // Method begins at RVA 0x206c
+    // Code size 6 (0x6)
+    .maxstack 2
+    IL_0000:  ldarg.0
+    IL_0001:  ldarg.1
+    IL_0002:  add
+    IL_0003:  stloc.0
+    IL_0004:  ldloc.0
+    IL_0005:  ret
+  } // end of method Example::Add
+
+} // end of class Example
+```
 
 <img src="10.png" width="auto">
 <img src="11.png" width="auto">
