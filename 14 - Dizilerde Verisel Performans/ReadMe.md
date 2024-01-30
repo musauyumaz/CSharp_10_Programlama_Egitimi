@@ -1,8 +1,4 @@
----
-modified: 2023-03-23T07:36:01.545Z
-title: 335) Dizilerde Verisel Performans Nedir?
----
-
+***
 # 335) Dizilerde Verisel Performans Nedir?
 - Dizilerin getirisi olduğu kadar götürüsü de olacaktır.
 
