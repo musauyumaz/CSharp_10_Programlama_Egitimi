@@ -1,8 +1,3 @@
----
-modified: 2023-03-24T09:22:11.138Z
-title: 345) Regular Expressions(Düzenli İfadelerde) Neyin Nesi?
----
-
 ***
 # 345) Regular Expressions(Düzenli İfadelerde) Neyin Nesi?
 - Metinsel ifadeler üzerinde periyodik ve düzenli operasyonlar gerçekleştirmemizi sağlayan Regular Expression'ı inceleyeceğiz.
