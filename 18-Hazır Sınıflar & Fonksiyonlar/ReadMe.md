@@ -1,8 +1,3 @@
----
-modified: 2023-03-30T10:08:10.390Z
-title: 366) C#'da Hazır Sınıflar ve Fonksiyonlar Nedir?
----
-
 ***
 # 366) C#'da Hazır Sınıflar ve Fonksiyonlar Nedir?
 - C#'ta belirli işlemleri hızlı bir şekilde yapmamızı sağlayan hazır fonksiyonlarımız mevcuttur.
