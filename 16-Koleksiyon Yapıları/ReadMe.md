@@ -1,9 +1,3 @@
----
-modified: 2023-03-27T02:07:02.932Z
-title: 356) Koleksiyonlar Nelerdir? Diziler Varken Neden Koleksiyon Yapıları
-  İnşa Edilmiştir?
----
-
 ***
 # 356) Koleksiyonlar Nelerdir? Diziler Varken Neden Koleksiyon Yapıları İnşa Edilmiştir?
 - Dizilerin daha gelişmiş yapılamasıdır.
