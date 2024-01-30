@@ -1,8 +1,3 @@
----
-modified: 2023-03-27T06:49:50.475Z
-title: 363) İterasyon Nedir?
----
-
 ***
 # 363) İterasyon Nedir?
 - Elimizde dizi ya da koleksiyon olduğunu varsayalım. Şimdi veri kümelerinin üzerinde çalışırken bizler genellikle döngüleri kullanırız. Döngüyle giriyorsun belirli bir kombinasyona göre elindeki veri kümesi üzerinde işlmeler yapıyorsun oradaki verileri tek tek yakalayıp ona göre işlemler yapıyorsun. Buradaki operasyonları daha efektif hale getiren iterasyonel mantıkta çalışan `foreach` yapılanması var.
