@@ -1,8 +1,3 @@
----
-modified: 2023-04-07T06:57:40.518Z
-title: 381) Metot Nedir? Bir Programcı Gözünden Ne İşe Yarar?
----
-
 ***
 # 381) Metot Nedir? Bir Programcı Gözünden Ne İşe Yarar?
 - Prosedürel programlamanın artık Object Oriented'a geçişini zorlayacak olan konudur metotlar.
